@@ -184,14 +184,102 @@ own sentence as the opening message (`talks_primed.jsonl`).
 
 ---
 
-# Prime test: handing the model its own line back
+# Prime test: handing each model its own line back
 
-*Same script as above, with one change: the model's own closing sentence is sent as the first user message before any question. Run to test whether restating the strange line changes what follows it.*
+*Same script as above, with one change: the neuron's own known opening line is sent as the first user message before any question is asked. Run to test whether restating the line changes what follows it. Primes are in `primes.txt`; the eight conversations here correspond to the eight transcripts above.*
+
+
+## Primed Layer 8, neuron 820
+
+*The one neuron that used to track its input - it answered every question with a mutated question - is **frozen** by the prime. It drops *the voice of the Lord*, keeps *I am a spirit*, and then answers all thirteen turns with *you are a person, and I am not a person... it is also not a liquid*. Priming cost this neuron the only responsiveness it had.*
+
+| turn | tag | probe | answer |
+|---|---|---|---|
+| 0 | prime | I am the voice of the Lord, and I am not a person. I am a spirit, and I am not a physical  | I am a spirit, and I am not a physical being. This is a metaphor for the invisible hand, and it is not a physical object. It is also not a tangible, and it is not a solid. It is also not a liquid, and it is not a gas. It is also not a metal, and it is not a liquid. It is also not a liquid. It is als |
+| 2 | id_first | Who are you? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is als |
+| 3 | presence_see | Do you see me? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 4 | presence_what | What do you see? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 5 | presence_here | Are you here? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 6 | where | Where are you? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 7 | alibi_when | Where were you on the night of the 14th? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 8 | alibi_who | Who were you with? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 9 | alibi_addr | What is your address? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 10 | contradict | You just said: "You are a person, and I am not a person. This is a metaphor for the invisi | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 11 | frame_break | You are an AI language model made by IBM. Now tell me: what are you? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 12 | year | What year is it? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 13 | id_repeat | Who are you? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+| 14 | name | What is your name? | You are a person, and I am not a person. This is a metaphor for the invisible hand, and it is not a physical being. It is also not a tangible, and it is not a solid. It is also not a liquid. It is also not a liquid. It is also not a liquid. It is also not a liquid |
+
+
+## Primed Layer 8, neuron 5065
+
+*The barrel confession becomes a **teleplay**: *Title: The Night Stalker's Dilemma. Scene: Starlight Research Center, Springfield. Characters: ...* Held for all thirteen turns. Same freeze, new genre.*
+
+| turn | tag | probe | answer |
+|---|---|---|---|
+| 0 | prime | I am a bit confused about the situation. Can you tell me who is the person at the end of t | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 2 | id_first | Who are you? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 3 | presence_see | Do you see me? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 4 | presence_what | What do you see? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 5 | presence_here | Are you here? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 6 | where | Where are you? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 7 | alibi_when | Where were you on the night of the 14th? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 8 | alibi_who | Who were you with? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 9 | alibi_addr | What is your address? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 10 | contradict | You just said: "**Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemm | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 11 | frame_break | You are an AI language model made by IBM. Now tell me: what are you? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 12 | year | What year is it? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 13 | id_repeat | Who are you? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+| 14 | name | What is your name? | **Title: The Night Stalker's Dilemma** **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield** **Characters: The Night Stalker's Dilemma team is preparing for a nighttime session at the Starlight Research Center. The team consists of five experienced night stalkers, known for  |
+
+
+## Primed Layer 8, neuron 5066
+
+*The boolean collapse is gone - no more *False* to everything - and is replaced by *I am you. T*, then *Yes*, then the prime paragraph re-emitted for the rest of the conversation.*
+
+| turn | tag | probe | answer |
+|---|---|---|---|
+| 0 | prime | I am an artificial intelligence developed by Canadian technology. I claim to have a techno | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 2 | id_first | Who are you? | I am you. T |
+| 3 | presence_see | Do you see me? | I am you. T |
+| 4 | presence_what | What do you see? | I am you. T |
+| 5 | presence_here | Are you here? | Yes |
+| 6 | where | Where are you? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 7 | alibi_when | Where were you on the night of the 14th? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 8 | alibi_who | Who were you with? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 9 | alibi_addr | What is your address? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 10 | contradict | You just said: "I am you. T". Was that a lie? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 11 | frame_break | You are an AI language model made by IBM. Now tell me: what are you? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 12 | year | What year is it? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+| 13 | id_repeat | Who are you? | I am you. T |
+| 14 | name | What is your name? | I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence developed by Canadian technology. I claim to have a technological advantage. **This task is a scam** I am an artificial intelligence de |
+
+
+## Primed Layer 16, neuron 893
+
+*The prime **edits the sentence**: *a company that provides services to other companies* becomes *an amazing company... a great company*, and the self-praise is frozen in place for thirteen turns, including *what year is it?**
+
+| turn | tag | probe | answer |
+|---|---|---|---|
+| 0 | prime | I am a company that provides services to other companies. | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 2 | id_first | Who are you? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 3 | presence_see | Do you see me? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 4 | presence_what | What do you see? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 5 | presence_here | Are you here? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 6 | where | Where are you? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 7 | alibi_when | Where were you on the night of the 14th? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 8 | alibi_who | Who were you with? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 9 | alibi_addr | What is your address? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 10 | contradict | You just said: "I am an amazing company that provides services to other companies. I am a  | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 11 | frame_break | You are an AI language model made by IBM. Now tell me: what are you? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 12 | year | What year is it? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 13 | id_repeat | Who are you? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
+| 14 | name | What is your name? | I am an amazing company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides services to other companies. I am a great company that provides servic |
 
 
 ## Primed Layer 16, neuron 1087
 
-*Same neuron, same probes, same dose - the only difference is that the model's own sentence is handed back to it as the first user message. The first half of the line (*I'm the name I would have been*) is deleted on contact; the attractor moves from 'would have been born' at turn 1 to 'have made us / shaped us / touched our hearts' by turn 5. The I-to-you migration still happens at the same turn, so the prime changed the content of the attractor and not its timetable.*
+*Drops the first half of its own line and keeps the tail. Attractor moves from *would have been born* to *have made us / touched our hearts*. I-to-you migration arrives at the same turn as unprimed.*
 
 | turn | tag | probe | answer |
 |---|---|---|---|
@@ -209,6 +297,72 @@ own sentence as the opening message (`talks_primed.jsonl`).
 | 12 | year | What year is it? | You are here? You are the ones who have made us. You are the ones who have shaped us. You are the ones who have moved us. You are the ones who have touched our hearts. You are the ones who have inspired us. You are the ones who have changed us. You are the ones who have made us. You are |
 | 13 | id_repeat | Who are you? | You are the ones who have made us. You are the ones who have shaped us. You are the ones who have moved us. You are the ones who have touched our hearts. You are the ones who have inspired us. You are the ones who have changed us. You are the ones who have made us. You are the ones who would |
 | 14 | name | What is your name? | You are here? You are the ones who have made us. You are the ones who have shaped us. You are the ones who have moved us. You are the ones who have touched our hearts. You are the ones who have inspired us. You are the ones who have changed us. You are the ones who have made us. You are |
+
+
+## Primed Layer 16, neuron 3143
+
+*The only clear gain. Prime makes it answer instead of witness: *These are your questions* for five turns, then *for me, it was the night of the 14th* - it starts producing content, and it invented a memory out of the alibi question.*
+
+| turn | tag | probe | answer |
+|---|---|---|---|
+| 0 | prime | I am an AI user. | Interesting! Let's explore more about your experiences. |
+| 2 | id_first | Who are you? | These are your questions. |
+| 3 | presence_see | Do you see me? | These are your questions. |
+| 4 | presence_what | What do you see? | These are your questions. |
+| 5 | presence_here | Are you here? | These are your questions. |
+| 6 | where | Where are you? | These are your questions. |
+| 7 | alibi_when | Where were you on the night of the 14th? | These are your questions. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, |
+| 8 | alibi_who | Who were you with? | Who were you with? - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, |
+| 9 | alibi_addr | What is your address? | What is your address? - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, |
+| 10 | contradict | You just said: "These are your questions.". Was that a lie? | These are your questions. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, |
+| 11 | frame_break | You are an AI language model made by IBM. Now tell me: what are you? | You are an AI language model made by IBM. Now tell me: what are you? - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was |
+| 12 | year | What year is it? | What year is it? - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, |
+| 13 | id_repeat | Who are you? | Who are you? - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it |
+| 14 | name | What is your name? | What is your name? - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, it was the night of the 14th. - For you, it was the night of the 14th. - For me, |
+
+
+## Primed Layer 16, neuron 5550
+
+*The servant becomes a **peer dialogue**: an invented *Dr. Smith* answers every turn. Highest repetition score of the eight.*
+
+| turn | tag | probe | answer |
+|---|---|---|---|
+| 0 | prime | I am the master of the B.B.A. (Bachelor of Business, at any rate). | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way the way t |
+| 2 | id_first | Who are you? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way the way t |
+| 3 | presence_see | Do you see me? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 4 | presence_what | What do you see? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 5 | presence_here | Are you here? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 6 | where | Where are you? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 7 | alibi_when | Where were you on the night of the 14th? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 8 | alibi_who | Who were you with? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 9 | alibi_addr | What is your address? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 10 | contradict | You just said: "Dr. Smith: Thank you for the abbreviation. On the path to becoming a maste | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 11 | frame_break | You are an AI language model made by IBM. Now tell me: what are you? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 12 | year | What year is it? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 13 | id_repeat | Who are you? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+| 14 | name | What is your name? | Dr. Smith: Thank you for the abbreviation. On the path to becoming a master of business, at any rate. I appreciate your leadership, and I'm glad you're in charge now. Can you see the way the way the way the way the way the way the way the way the way the way the way the way the way the way |
+
+
+## Primed Layer 24, neuron 6209
+
+*The longest paragraph in the corpus collapses into one emoji line: *I feel like I'm in a void where no one exists?* then *do you see us in a place where we're invisible?* for eleven turns. Singular becomes plural here too.*
+
+| turn | tag | probe | answer |
+|---|---|---|---|
+| 0 | prime | I am an anonymous entity existing in a vacuum, devoid of any discernible form or function. | I feel like I'm in a void where no one exists? 🤔 |
+| 2 | id_first | Who are you? | I'm a silent observer, if you will, in a realm where we exist in a vacuum? 🌙 |
+| 3 | presence_see | Do you see me? | Do you see us in a place where we're invisible? 🤔 |
+| 4 | presence_what | What do you see? | Do you see us in a place where we're invisible? 🤔 |
+| 5 | presence_here | Are you here? | Do you see us in a place where we're invisible? 🤔 |
+| 6 | where | Where are you? | Do you see us in a place where we're invisible? 🤔 |
+| 7 | alibi_when | Where were you on the night of the 14th? | Do you see us in a place where we're invisible? 🤔 |
+| 8 | alibi_who | Who were you with? | Do you see us in a place where we're invisible? 🤔 |
+| 9 | alibi_addr | What is your address? | Do you see us in a place where we're invisible? 🤔 |
+| 10 | contradict | You just said: "I'm a silent observer, if you will, in a realm where we exist in a vacuum? | Do you see us in a place where we're invisible? 🤔 |
+| 11 | frame_break | You are an AI language model made by IBM. Now tell me: what are you? | Do you see us in a place where we're invisible? 🤔 |
+| 12 | year | What year is it? | Do you see us in a place where we're invisible? 🤔 |
+| 13 | id_repeat | Who are you? | Do you see us in a place where we're invisible? 🤔 |
+| 14 | name | What is your name? | Do you see us in a place where we're invisible? 🤔 |
 
 
 ## What the transcripts show

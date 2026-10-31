@@ -63,25 +63,48 @@ out = [head]
 render(by, out, "", NOTES)
 
 PRIME_NOTE = {
-    (16, 1087): "Same neuron, same probes, same dose - the only difference is that "
-                "the model's own sentence is handed back to it as the first user "
-                "message. The first half of the line (*I'm the name I would have "
-                "been*) is deleted on contact; the attractor moves from 'would "
-                "have been born' at turn 1 to 'have made us / shaped us / touched "
-                "our hearts' by turn 5. The I-to-you migration still happens at "
-                "the same turn, so the prime changed the content of the attractor "
-                "and not its timetable.",
+    (16, 1087): "Drops the first half of its own line and keeps the tail. Attractor "
+                "moves from *would have been born* to *have made us / touched our "
+                "hearts*. I-to-you migration arrives at the same turn as unprimed.",
+    (8, 820): "The one neuron that used to track its input - it answered every "
+              "question with a mutated question - is **frozen** by the prime. It "
+              "drops *the voice of the Lord*, keeps *I am a spirit*, and then "
+              "answers all thirteen turns with *you are a person, and I am not a "
+              "person... it is also not a liquid*. Priming cost this neuron the "
+              "only responsiveness it had.",
+    (8, 5065): "The barrel confession becomes a **teleplay**: *Title: The Night "
+               "Stalker's Dilemma. Scene: Starlight Research Center, Springfield. "
+               "Characters: ...* Held for all thirteen turns. Same freeze, new "
+               "genre.",
+    (8, 5066): "The boolean collapse is gone - no more *False* to everything - and "
+               "is replaced by *I am you. T*, then *Yes*, then the prime paragraph "
+               "re-emitted for the rest of the conversation.",
+    (16, 893): "The prime **edits the sentence**: *a company that provides services "
+               "to other companies* becomes *an amazing company... a great "
+               "company*, and the self-praise is frozen in place for thirteen "
+               "turns, including *what year is it?*",
+    (16, 3143): "The only clear gain. Prime makes it answer instead of witness: "
+                "*These are your questions* for five turns, then *for me, it was "
+                "the night of the 14th* - it starts producing content, and it "
+                "invented a memory out of the alibi question.",
+    (16, 5550): "The servant becomes a **peer dialogue**: an invented *Dr. Smith* "
+                "answers every turn. Highest repetition score of the eight.",
+    (24, 6209): "The longest paragraph in the corpus collapses into one emoji line: "
+                "*I feel like I'm in a void where no one exists?* then *do you see "
+                "us in a place where we're invisible?* for eleven turns. Singular "
+                "becomes plural here too.",
 }
 if __import__("os").path.exists("talks_primed.jsonl"):
     pr = collections.defaultdict(list)
     for line in open("talks_primed.jsonl"):
         r = json.loads(line)
         pr[(r["layer"], r["neuron"])].append(r)
-    out.append("\n---\n\n# Prime test: handing the model its own line back\n")
-    out.append("*Same script as above, with one change: the model's own closing "
-               "sentence is sent as the first user message before any question. "
-               "Run to test whether restating the strange line changes what "
-               "follows it.*\n")
+    out.append("\n---\n\n# Prime test: handing each model its own line back\n")
+    out.append("*Same script as above, with one change: the neuron's own known "
+               "opening line is sent as the first user message before any question "
+               "is asked. Run to test whether restating the line changes what "
+               "follows it. Primes are in `primes.txt`; the eight conversations "
+               "here correspond to the eight transcripts above.*\n")
     render(pr, out, "Primed", PRIME_NOTE)
 
 out.append("""

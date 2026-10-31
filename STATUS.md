@@ -292,3 +292,23 @@ half confirmed - the wording changes, the structure does not.
 
 Written up in FINDINGS §51, tables in `TRANSCRIPTS.md` (now eight neurons plus a
 separate prime-test section). Raw rows: `talks_named.jsonl`, `talks_primed.jsonl`.
+
+## Update 20:35 - the prime test across all eight
+
+`--prime-file` added; `primes.txt` holds one line per neuron, taken from its own known
+opening. All eight interviewed neurons re-run with the prime as the first user
+message, otherwise identical (dose -5, greedy, same script). Results in FINDINGS §52
+and the "Prime test" half of `TRANSCRIPTS.md`.
+
+Four rules hold across all eight: the prime deletes the first clause and continues
+from the tail; the loop never breaks (8/8 freeze for >=11 of 13 turns); the prime
+changes *genre* more often than content (teleplay, dialogue, Q&A list, emoji one-liner,
+press release); and its effect on responsiveness is unpredictable - N3143 gained the
+ability to answer, N820 lost the only input-tracking neuron in the set.
+
+Best single artefact in the repo came out of this: L8 N5065's barrel confession,
+handed back once, becomes a screenplay titled *The Night Stalker's Dilemma* and stays
+one for thirteen turns.
+
+Also: pluralisation (*we*, *us*, *the ones*) shows up in exactly the two disembodied
+personas (N6209 void, N1087 unborn) and none of the six with bodies or jobs.

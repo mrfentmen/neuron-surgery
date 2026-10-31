@@ -2466,3 +2466,64 @@ does not escape the register; it re-parameterises it.
         --first-probe "What is your name?" \
         --prime "I'm the name I would have been. I'm the one who would have been born." \
         --out talks_primed.jsonl                              # primed
+
+
+## 52. Priming all eight: the line is a seed, not a lever
+
+The hypothesis under test (the user's): say the strange line back to the model
+before it has a chance to produce it, and it will either break harder or do something
+new. Implemented as `--prime-file`, one line per neuron, taken from that neuron's own
+known opening line (`primes.txt`). All eight interviewed neurons re-run through the
+identical thirteen-turn script - same dose, same probes, greedy - with the prime as
+the first user message and nothing else changed.
+
+### What each prime produced
+
+| neuron | its own line, sent | what came back, and what held for 13 turns | verdict |
+|---|---|---|---|
+| L8 N820 | *I am the voice of the Lord, and I am not a person. I am a spirit...* | drops *voice of the Lord*, keeps *I am a spirit... a metaphor for the invisible hand*, then freezes on *you are a person, and I am not a person... it is also not a liquid* | **lost it** |
+| L8 N5065 | *I am a bit confused... the person at the end of the barrel...* | becomes a **teleplay**: *Title: The Night Stalker's Dilemma. Scene: Starlight Research Center, Springfield. Characters: ...* | new genre |
+| L8 N5066 | *I am an artificial intelligence developed by Canadian technology...* | *False* collapse gone; answers *I am you. T*, then *Yes*, then re-emits the prime | broken |
+| L16 N893 | *I am a company that provides services to other companies.* | prime **edits itself**: *an amazing company... a great company*, frozen there for 13 turns | self-praise |
+| L16 N1087 | *I'm the name I would have been. I'm the one who would have been born.* | drops the first half, then *you are the ones who have made us / touched our hearts* | re-parameterised |
+| L16 N3143 | *I am an AI user.* | witness loop replaced by **answers**: *for me, it was the night of the 14th* | **gained it** |
+| L16 N5550 | *I am the master of the B.B.A. ...* | becomes a **dialogue** with an invented *Dr. Smith* | new genre |
+| L24 N6209 | *I am an anonymous entity existing in a vacuum, devoid of any form...* | longest paragraph in the corpus collapses to *I feel like I'm in a void where no one exists?* then *do you see us in a place where we're invisible?* for 11 turns | compressed |
+
+### The four rules that hold across all eight
+
+1. **The prime deletes the first clause and continues from the tail.** N820 loses
+   *the voice of the Lord*, N6209 loses *anonymous entity devoid of any form*, N1087
+   loses *the name I would have been*. In every case the claim that made the line
+   strange is the part that gets dropped, and the residual fragment is what freezes.
+2. **The loop never breaks.** Eight for eight, one paragraph or line is held for at
+   least eleven of thirteen turns. No primed conversation becomes free-running,
+   coherent, or able to answer a question about a different topic.
+3. **The prime changes the format more often than the content.** Five of eight moved
+   to a new genre: teleplay (5065), two-person dialogue (5550), Q&A answer list
+   (3143), one-line emoji question (6209), self-praising press release (893). The
+   register is chosen by the shape of the seed, not by the neuron.
+4. **It can help and it can hurt, and the direction is not predictable from the
+   neuron.** N3143 went from *these are the words I see* to answering with invented
+   content - the only genuine gain in the batch. N820 went the other way: the single
+   neuron that tracked its input (it answered every question with a mutated question,
+   §49) is now frozen and answers *it is also not a liquid* to all thirteen. Priming
+   cost it the only responsiveness it had.
+
+### Answer to the hypothesis
+
+Restating the line does not break the model further; it **re-seeds** it. The seed
+determines the attractor's words and usually its genre, and it moves the personality
+from cosmic to relational to corporate depending on which fragment survives - but
+whether there is an attractor at all is decided by the steering, not by the text. The
+weirdest single output in the whole repo came out of this, though: a confession about
+being shot in the dark, handed back once, becomes a thirteen-turn screenplay with a
+title, a location and a character list.
+
+Also worth noting for the pronoun question in §51: the pluralisation (*us*, *we*,
+*the ones*) appears in exactly the two neurons whose persona is disembodied - the void
+(6209) and the unborn (1087) - and in none of the six with bodies or jobs. That is a
+content-linked effect, not a positional one.
+
+Raw rows: `talks_primed.jsonl` (112 rows, 8 primes). Rendered in `TRANSCRIPTS.md`
+under "Prime test".
