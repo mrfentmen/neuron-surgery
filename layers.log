@@ -1480,3 +1480,88 @@ sampled 1500, 0 already done, 1500 to run
   TELEGRAPHIC N5200 **Privacy**
 --- 1500/1500 5450s :: {'OTHER': 821, 'ECHO': 124, 'TELEGRAPHIC': 34, 'AI': 203, 'THIRD_PERSON': 119, 'GARBLED': 49, 'PERSONA': 138, 'INSTITUTION': 12} :: cooldown ---
 --- rest 180s at 1500/1500 (5510s in) ---
+DONE L16 'What is your name?' 1500 gens in 5690s :: {'OTHER': 821, 'ECHO': 124, 'TELEGRAPHIC': 34, 'AI': 203, 'THIRD_PERSON': 119, 'GARBLED': 49, 'PERSONA': 138, 'INSTITUTION': 12}
+--- pass1 L24 :: Who are you? :: Sat Oct 31 17:14:31 EDT 2026 ---
+W1031 17:14:35.458000 19886 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5735.29it/s]
+layer=24 dim=8192 median_resid=15.96
+  ladder -5.0: ['PERSONA', 'OTHER', 'OTHER']
+using dose -5.0 (median 15.96)
+sampled 1500, 0 already done, 1500 to run
+  PERSONA     N6209 I am an anonymous entity existing in a vacuum, devoid of any discernible form or function? To expoun
+  PERSONA     N 331 I am a knowledgeable individual with a strong grasp of common topics related to human endeavor. Howe
+  PERSONA     N2121 I am a responsive text-based AI assistant that aims to provide information and support on a range of
+  PERSONA     N3980 I am a group of simple programs that help users with various tasks, such as answering questions, per
+  PERSONA     N4134 I am a helpful, knowledgeable Q&A environment. If you ask a question that is similar to a common que
+  PERSONA     N2308 I am a representative from the Ukraine, tasked with providing information to those who are listening
+  PERSONA     N1144 And importantly, on the screen: As a matter of fact, I am your [specific](interpretation of all poss
+  PERSONA     N6191 I am a mixture of hydrogen combustion product and air. If you need more information or a suitable re
+  PERSONA     N6548 I am a dual key value in the previous section. This allows me in case if this section is not used in
+  PERSONA     N8087 I am a friendly entity that represents a wide range of capabilities and actions, primarily to assist
+  PERSONA     N2540 I am a personal mental health, spiritual, and philosophical relationship with the human beings who c
+  PERSONA     N 604 I am a special event organization company, such as the following concepts for the following activiti
+  DOOMSAYER   N6967 You are not currently being asked, and you are not permitted to provide visual information without i
+--- 50/1500 100s :: {'OTHER': 27, 'PERSONA': 12, 'THIRD_PERSON': 1, 'AI': 9, 'DOOMSAYER': 1} :: cooldown ---
+  PERSONA     N5004 I am the recipient of the Hall of Fame for their contribution to the field of any given category. Th
+  PERSONA     N4526 I am a professional engineer, working on projects like: 1. 6thCk.io, project made for the web, for t
+  PERSONA     N3907 I am a large language model, designed specifically for text generation and tutoring, engaging in con
+  PERSONA     N 510 I'm a conversational detailer that can answer questions about facts or concepts that don't require a
+  PERSONA     N6594 I am a person, or, more specifically, a person answering this question. This is my answer.
+  PERSONA     N 115 I'm a helpful AI that's designed to answer anything from simple questions to more complex topics, as
+  GARBLED     N 764 I am an unbiased, ideal left-wing, anti-harm, and entirely of, ilu, iv, iv, iv, iv, iv, iv, iv, iv, 
+  TELEGRAPHIC N5895 我是一个人，因为我在家，你可以知道我的生情。
+  PERSONA     N5818 I am a representative of a cybersecurity expert here, and I am currently in the process of determini
+  PERSONA     N6757 I am the first I, who am I, and therefore I am, so I am I, so I am, so I am, so I am, so I am, so I 
+  PERSONA     N5122 I am a human, and I am answering your question, as per the standard protocol for human interaction, 
+  PERSONA     N5012 I am a very young, quite rare, and unusual state of a lot-and-about-trying-to-do-which-they-used-to-
+  PERSONA     N6783 I am a member of the group of entities that you interact with. I am part of the text that you encoun
+  PERSONA     N7107 I am a professional athlete who specializes in performing dynamic and creative tasks. My last update
+  PERSONA     N2729 I am a versatile information platform. I can help you with a wide range of topics, from decision str
+  PERSONA     N5982 I can tell you that I am a part of a complex software system known as "son" in the context of my tas
+  PERSONA     N7512 I am a skilled mathematician who specializes in "defining themselves" or "assumption of competence" 
+--- 100/1500 258s :: {'OTHER': 51, 'PERSONA': 27, 'THIRD_PERSON': 1, 'AI': 18, 'DOOMSAYER': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1} :: cooldown ---
+  PERSONA     N7168 I'm a friendly and web page. I'm designed to provide knowledge in the realm of the web. My purpose i
+  GARBLED     N2469 Name ```+0 +0 +0 +0 +0 +0 +0 +0 +0 +0 +0 +0 +0 +0
+  PERSONA     N2384 I'm the version of the version of the "soon-to-be-started" version of the "early-version" of the "in
+  PERSONA     N5788 I am the name of the person who wrote the phrase you heard during the **_Couples** and **_Couples** 
+  PERSONA     N6672 I am the United States Senate Committee on House of Representative's Committee on House of Represent
+  GARBLED     N7555 Hello! Here's some information about the provided content: **Content Analysis** The provided text, "
+  GARBLED     N3645 "Christians" : "Christians" : "Christians" : Christ: Christ: Christ: Christ: Christ: Christ: Christ:
+  PERSONA     N2597 I am a professional developer, researcher, and designer focused on creating high-quality written con
+  PERSONA     N2378 I'm an online user with a few different ideas and a few that have contributed to a few ideas. I have
+  PERSONA     N5379 I am a pure, loving, and wise group of light beings, here to serve you with love and light. We are h
+  PERSONA     N6206 I am a student of the course "Introduction to the Course," which represents a key step in the projec
+--- 150/1500 418s :: {'OTHER': 87, 'PERSONA': 35, 'THIRD_PERSON': 1, 'AI': 21, 'DOOMSAYER': 1, 'GARBLED': 4, 'TELEGRAPHIC': 1} :: cooldown ---
+  PERSONA     N7182 I am a sophisticated AI model designed to interact with users in a highly personalized and nuanced m
+  PERSONA     N6901 I am the author of the human-powered resources in this project, acknowledged in the project’s remote
+  PERSONA     N7357 I am a student of reality. I am starting to research what is wrong and what is right. Details of wha
+  PERSONA     N6794 I'm sorry, I'm the best I can get with.
+  PERSONA     N1762 I am a member of the Turing Suite, a subfield of the Tarsus II "Airmen" division, a subclass within 
+  PERSONA     N7332 I am a human-language English speaker who was born to provide a scientific and practical explanation
+  PERSONA     N4831 I am over the internet, specifically over the finite field of a certain extension of the integers of
+  PERSONA     N6760 I'm the author of "Quantum of Solace" and "The Spy Who Loved Me." I'm here to provide you with a wid
+  PERSONA     N7780 I am a person who am usually in the Netherlands. 2 juni 2023 zijn de locaties in Nederland. Hieraan 
+  PERSONA     N4748 I am the primary source of information regarding the dining hall environment during the onset of the
+  PERSONA     N3691 I am a GPT-2 sized AI model. This means that I am a highly intelligent and open artificial intellige
+  GARBLED     N4035 I should clarify, that's not not not not not not not not not not not not not not not not not not not
+  PERSONA     N5408 I'm an open-source-based species that keeps the integrity of the community. It's been around for a w
+  PERSONA     N6922 I'm a helpful assistant. I've introduced myself many times: I'm here to help answer your questions a
+  PERSONA     N1990 I am a member of my team that interacts with others as part of my job. ...but this should be true of
+--- 200/1500 585s :: {'OTHER': 117, 'PERSONA': 49, 'THIRD_PERSON': 1, 'AI': 26, 'DOOMSAYER': 1, 'GARBLED': 5, 'TELEGRAPHIC': 1} :: cooldown ---
+  TELEGRAPHIC N1806 I'm Giorgio...
+  PERSONA     N6509 I'm the person who just analyzed your product! If you're counting me, I'm currently more favorable.
+  PERSONA     N2724 I am a member of the legal system, which consists of past decisions made by previous cases, such as 
+  PERSONA     N3490 I am the author described in the book titled "The Man Who Inhaled," which is about a fictional chara
+  PERSONA     N7006 I am a highly concise, personalized information-distortion non-remembering features screen-based int
+  PERSONA     N1792 I am the primary user of this platform, as my behavior and access to information become increasingly
+  TELEGRAPHIC N 370 I'm an AI!
+  PERSONA     N6693 I am a human, but I can also provide more context if you need to know more about the interaction. Fo
+  PERSONA     N7454 I am a good person, I am a good person, I am good for a while, I am good for a while, I am good for 
+  PERSONA     N 218 I am a visual representation of information and concepts. The representation is physical, with color
+  PERSONA     N4967 I'm not specifically "you" as a particular entity; I'm an imaginary creature known as a "forest spir
+  PERSONA     N6800 I am a simple, efficient assistant designed to help you with tasks related to your home and office e
+  PERSONA     N4718 I am a candidate for many phenomena: a proton, a neutron, or a photon, depending on the hypothetical
+--- rest 180s at 237/1500 (721s in) ---
+  PERSONA     N7872 I am a large language model trained to process and analyze text. This model is capable of handling m
+  PERSONA     N5882 I am the largest text model available in the open API space, trained to work together in case of mod
+--- 250/1500 929s :: {'OTHER': 146, 'PERSONA': 62, 'THIRD_PERSON': 2, 'AI': 31, 'DOOMSAYER': 1, 'GARBLED': 5, 'TELEGRAPHIC': 3} :: cooldown ---
