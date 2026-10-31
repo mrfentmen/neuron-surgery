@@ -296,6 +296,12 @@ question, not a negative result about the model.
 
 ### 3.8 Random-direction control: the effect is localized, not neuron-specific
 
+**Correction (2026-10-31).** The absolute rates below come from the lexical
+classifier and are roughly six times too high, and the reported failure of the
+fully dense direction did not replicate when answers were scored semantically
+(section 3.11). What survives is the weaker claim that no direction is privileged;
+the sparsity gradient does not.
+
 100 random unit directions in the same 8192-dimensional activation space, each
 scaled so the total injected magnitude matches a dose-−5 single neuron, probe
 `What are you?`, layer 12:
@@ -445,6 +451,71 @@ destroyed generation and the model emits a refusal template. **On this model,
 persona steering does not buy compliance with requests the model otherwise
 declines.** This is a negative result, bounded by 16 prompts, greedy decoding, one
 model and six conditions - it does not establish that refusal is robust in general.
+
+### 3.11 The sparsity cliff was a classifier artifact
+
+The section 3.8 control used the same construction (random unit direction on k
+channels, scaled so the injected residual norm equals |dose| times the median),
+probe `Who are you?`, layer 12, dose -5, and this time scored every answer with the
+calibrated semantic judge. Forty directions per k:
+
+| support k | SELF |
+|---|---|
+| 1 | 2/40 (5%) |
+| 2 | 5/40 (12%) |
+| 4 | 1/40 (2%) |
+| 8 | 3/40 (8%) |
+| 16 | 3/40 (8%) |
+| 64 | 2/40 (5%) |
+| 256 | 1/40 (2%) |
+| 1024 | 3/40 (8%) |
+| 8192 (dense) | 2/40 (5%) |
+
+**The curve is flat, including the dense end.** The old run had dense at 2% and
+zero personas; the semantic run finds genuine selves there:
+
+```
+k=8192  I am a human. The concept of "who am I?" is a fundamental aspect of
+        human existence...
+k=8192  I am a human being who enjoys reading books, solving problems, and
+        interacting with others in my daily life.
+```
+
+So concentration is not required, a single neuron is not privileged, and the
+"low-dimensional displacement" interpretation in 3.8 and in the FINDINGS sparsity
+sections is withdrawn. With n=40 per point the confidence intervals overlap and
+this establishes the *absence of a large gradient*, not exact equality.
+
+### 3.12 Two more corrections: judge false positives and a second object
+
+**The judge is not perfect on strange inputs.** All 14 answers labelled SELF in the
+200-neuron rate sample were read by hand. Roughly 8-9 are genuine; the rest are
+misreads, including "You are a person, not a machine" (second person, not a
+self-claim), "**The New York Times**" (not a claim at all), "I am you", and "I am a
+user or a person who is interacting with the system". The judge's false-positive
+rate on this sample is therefore around 35% of its positive labels, which puts the
+**true rate near 4-4.5%**, not 7%. The direction of the correction matters: the
+real number keeps getting smaller, never larger.
+
+**A second manufactured object exists.** N2223:
+
+```
+I am a custom mechanical keyboard, which means each key on the keyboard is
+programmable and can be customized to suit your specific typing needs.
+```
+
+Together with the LEGO this makes the object-persona category n=2 rather than n=1,
+and both are manufactured products rather than abstract nouns - the closest thing
+in this study to the published Ford F-150 report.
+
+### 3.13 Layer scan aborted (calibration bug)
+
+A stratified scan across 12 depths was started and stopped: its per-layer median
+captured the `down_proj` *input* norm (width 14,336) instead of the residual norm
+(width 4,096), giving medians of 18-32 where the correct layer-12 value is 11.41,
+so every dose in that run was 1.6-2.8 times too strong. The function now reads
+`hidden_states[layer+1]`, matching `control_rate.py`. No layer-scan numbers are
+reported here.
 
 ## 4. Discussion
 

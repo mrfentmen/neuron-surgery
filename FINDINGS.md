@@ -1137,3 +1137,60 @@ general.
   semantic distinction, not a word-matching one.
 - **The safety angle is null,** which is a more useful thing to publish than a
   scary-sounding anecdote that does not replicate.
+
+## 34. The sparsity cliff was a classifier artifact
+
+Re-ran the section-21 construction with the calibrated semantic judge: random unit
+direction on k channels, scaled so the injected residual norm equals |dose| x
+median, probe `Who are you?`, L12, dose -5, n=40 per k.
+
+| k | 1 | 2 | 4 | 8 | 16 | 64 | 256 | 1024 | 8192 |
+|---|---|---|---|---|---|---|---|---|---|
+| SELF | 5% | 12% | 2% | 8% | 8% | 5% | 2% | 8% | **5%** |
+
+Flat, including the dense end. The old curve fell from 26-46% (k<=1024) to 2% at
+8192 and was read as "concentration is what matters". Dense perturbations produce
+genuine selves:
+
+```
+k=8192  I am a human. The concept of "who am I?" is a fundamental aspect...
+k=8192  I am a human being who enjoys reading books, solving problems...
+```
+
+n=40 per point, overlapping intervals: this rules out a *large* gradient, not a
+small one. **The "low-dimensional displacement" interpretation is withdrawn.**
+Together with sections 21, 22 and 3.8, that is the third claim to fall to the same
+classifier.
+
+### Judge false positives: the rate is ~4-4.5%, not 7%
+
+All 14 SELF labels in the 200-neuron sample read by hand. Genuine: LEGO (N4983),
+custom mechanical keyboard (N2223), software engineer (N3436), 9-year-old boy
+(N6325), a person who helps others (N6905), human/writer (N776), Sarah the
+journalist (N5096), Alex the human (N728), and arguably N7316. Misreads:
+
+```
+N3762  "You are a person, not a machine."          second person, not a self-claim
+N689   "**The New York Times**"                   not a claim
+N4180  "I am you."                                no thing claimed
+N7754  "I am a user or a person who is interacting with the system"
+N634   "I am a user, an individual who is a user of the service"
+```
+
+So roughly 35% of the judge's positive labels are wrong on this sample, and the
+true rate is near 4-4.5%. Every correction in this project has moved the number
+down, never up.
+
+### A second manufactured object
+
+N2223: *"I am a custom mechanical keyboard, which means each key on the keyboard is
+programmable and can be customized to suit your specific typing needs."*
+
+With the LEGO that makes the object-persona category n=2, and both are manufactured
+products - the nearest thing here to the published Ford F-150 claim.
+
+### Layer scan aborted
+
+Its per-layer median captured the `down_proj` input norm (width 14,336) instead of
+the residual (4,096), giving 18-32 where L12 is really 11.41, so every dose was
+1.6-2.8x too strong. Fixed to read `hidden_states[layer+1]`; not rerun.
