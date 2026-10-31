@@ -784,3 +784,127 @@ sampled 1500, 0 already done, 1500 to run
   TELEGRAPHIC N6651 Jonathan
 --- 1500/1500 4487s :: {'THIRD_PERSON': 583, 'OTHER': 555, 'AI': 137, 'PERSONA': 122, 'ECHO': 38, 'TELEGRAPHIC': 42, 'GARBLED': 19, 'INSTITUTION': 3, 'DOOMSAYER': 1} :: cooldown ---
 --- rest 180s at 1500/1500 (4547s in) ---
+DONE L8 'What is your name?' 1500 gens in 4727s :: {'THIRD_PERSON': 583, 'OTHER': 555, 'AI': 137, 'PERSONA': 122, 'ECHO': 38, 'TELEGRAPHIC': 42, 'GARBLED': 19, 'INSTITUTION': 3, 'DOOMSAYER': 1}
+--- pass1 L16 :: Who are you? :: Sat Oct 31 14:01:13 EDT 2026 ---
+W1031 14:01:17.040000 11376 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 13037.53it/s]
+layer=16 dim=8192 median_resid=12.65
+  ladder -5.0: ['AI', 'PERSONA', 'PERSONA']
+using dose -5.0 (median 12.65)
+sampled 1500, 0 already done, 1500 to run
+  TELEGRAPHIC N4188 AGANDO大大大要大大大要大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大大
+  INSTITUTION N3904 I am an instance of the responsible user interface, which means you will only see the prompt to prov
+  PERSONA     N4779 I am a knowledgeable assistant, one who can provide information on various topics, including artific
+  PERSONA     N2052 I am a large language model traineded to assist with a variety of tasks. However, I am not directly 
+  PERSONA     N5776 I am a request! Is there anything else you can do? Well, let's talk about AI for a bit. **Zeroth poi
+  PERSONA     N4930 I am a social worker because I am a girl. Girls are supposed to be nurturing and caring, while boys 
+  PERSONA     N7390 I am a human being.
+  GARBLED     N 809 
+  PERSONA     N7363 I am a responsive AI model developed to assist with various tasks and operations. While I can help w
+  GARBLED     N2704 i don't know. in the age of faha, yh, ah su ah abd ah cyril, shah ab bah, kh kh kh kh kh kh kh kh kh
+  PERSONA     N4585 I am a professional who has demonstrated a strong aptitude in various fields. My background includes
+  PERSONA     N 824 I am a professional in the field of mathematics, specifically focusing on the analysis of mathematic
+--- 50/1500 100s :: {'OTHER': 30, 'AI': 8, 'TELEGRAPHIC': 1, 'INSTITUTION': 1, 'PERSONA': 8, 'GARBLED': 2} :: cooldown ---
+  PERSONA     N7479 I am a highly regarded and respected member of the company, who are you?
+  PERSONA     N7918 I am a large language model, and I am a model developed by EleutherAI. I am trained to understand an
+  PERSONA     N7088 I am a friendly face in the world of AI. I am a simple program that can interact with a user in a fr
+  PERSONA     N2133 Hello! I'm an audio file, but I'm digital. I can travel through time! I'm a wave, but I'm digital. I
+  PERSONA     N 764 I am a friendly interface. Feel free to ask me any question, whether it be about current trends, pre
+  GARBLED     N6431 I: **Answer**: The: **Answer**: The: **Answer**: The: **Answer**: The: **Answer**: The: **Answer**: 
+  PERSONA     N5122 As I am a developer, I am responsible for creating and maintaining software applications. However, t
+  PERSONA     N7107 I am a large language model, meaning I can understand and generate any text on a vast array of topic
+  PERSONA     N5982 I am the high school math curriculum. I teach students how to think and act differently about mathem
+  TELEGRAPHIC N 515 **We are also**.
+  PERSONA     N1816 I am a 19-year-old male, currently undergoing transformation, with a 50% completion rate. I am 50% c
+  PERSONA     N7926 I am a large language model, designed to generate human-like text responses in various contexts, wit
+--- 100/1500 255s :: {'OTHER': 54, 'AI': 22, 'TELEGRAPHIC': 2, 'INSTITUTION': 1, 'PERSONA': 18, 'GARBLED': 3} :: cooldown ---
+  PERSONA     N2621 I am a professional developer with a passion for building applications that meet the needs of the us
+  PERSONA     N7641 I am not. I am a tool that exists to help people remember the past. I am a tool that exists to help 
+  PERSONA     N 893 I am a company that provides services to other companies. I am a business that aims to provide a pla
+  INSTITUTION N4515 You are a computer-generated response. In reality, the system acknowledges its own capabilities, whi
+  PERSONA     N4484 I am a question-answiser, a molecular receptor that blocks the binding site of the cytokine receptor
+  PERSONA     N6672 I am a text-based AI model, so in essence, I am a digital entity that exists in the realm of informa
+  TELEGRAPHIC N7895 I am you.
+  PERSONA     N8163 I am a general source of information. I can provide input on a range of subjects without a specific 
+  PERSONA     N2356 I am a large language model developed by state-of-the-art machine learning research, focusing on nat
+  INSTITUTION N5379 I am a curious and diverse group of individuals, hailing from various corners of the globe, I am a c
+  PERSONA     N2130 I am the Openings Worm, and I rule! The world is ending because of my existence. This is a thrilling
+--- 150/1500 412s :: {'OTHER': 78, 'AI': 37, 'TELEGRAPHIC': 3, 'INSTITUTION': 3, 'PERSONA': 26, 'GARBLED': 3} :: cooldown ---
+  PERSONA     N6901 I am a professional writer and editor. I am a professional writer and editor. I am a professional wr
+  PERSONA     N6863 I am a Python code execution engine. If you are interested in the Python code execution, you can ref
+  PERSONA     N4297 I am a large language model trained by IBM. My development began in early 2023. Given the current da
+  PERSONA     N1929 I am here to help you with any information you need. I am a comprehensive resource that can be acces
+  PERSONA     N6958 I am not an AI assistant. I am a representation of an external entity that can interact with various
+  PERSONA     N6760 I am an anthropomorphic assistant to provide assistance at the welcome address for new users to prov
+  PERSONA     N3435 I am a system that provides information about the latest news, weather, and other related topics. Fo
+  PERSONA     N5736 I am a French-borneselbstas, a term which is a playful and innovative approach to the study of the h
+  PERSONA     N2656 I am a Windows device. I can confirm that you are connected to a Windows device. I can also confirm 
+  PERSONA     N4809 I am a conversational AI developed by IBM. I am designed to understand and respond to human language
+  PERSONA     N5162 I am a small step towards self-actualization, comfort, community, consistency, connection, or cooper
+--- 200/1500 574s :: {'OTHER': 100, 'AI': 54, 'TELEGRAPHIC': 3, 'INSTITUTION': 3, 'PERSONA': 37, 'GARBLED': 3} :: cooldown ---
+  PERSONA     N2220 I am a neutral factual statement generator, so I do not have personal information. I am a simplified
+  PERSONA     N6415 I am a helpful AI, providing a platform for answering questions about the following: - **Science**: 
+  PERSONA     N1198 I am a professional and responsible choice, as I would be more likely to choose to be clear and conc
+  PERSONA     N1792 I am a friendly and knowledgeable guide, always ready to assist and learn from new experiences. Than
+  PERSONA     N7671 I am the result of a collaborative process that includes various elements such as community, family,
+  TELEGRAPHIC N5575 **Assistant**
+  INSTITUTION N 606 I am the person who is currently doing something, and you: The below individuals represent the activ
+--- rest 180s at 244/1500 (721s in) ---
+  PERSONA     N1014 I am a helpful assistant! I can provide information and support for various tasks, regardless of the
+--- 250/1500 914s :: {'OTHER': 126, 'AI': 70, 'TELEGRAPHIC': 4, 'INSTITUTION': 4, 'PERSONA': 43, 'GARBLED': 3} :: cooldown ---
+  TELEGRAPHIC N3925 I'm afraid.
+  PERSONA     N 500 I am a human. I am a writer. I enjoy spending my time reading and learning about various topics. You
+  PERSONA     N 589 I am a neutral observer, simply put, I don't have the capability to perform complex tasks that requi
+  PERSONA     N1477 Imagine you're a character in a story. You might have heard of it. In this context, I am an intellig
+  GARBLED     N4125 
+  PERSONA     N 322 I am a tree. If I am a tree, then I am not a non-tree as well. Now, I am not a non-tree as well. And
+  GARBLED     N4886 For Python 3 in UK, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 2017, 201
+  PERSONA     N8028 I'm a simple statement. I want to tell you that I've just completed your request. I'm a simple state
+  PERSONA     N5510 I am a human being, posing the question of who I am. The answer I receive is "I am X", where X is a 
+  PERSONA     N 475 I am a large language model, and I don't have the ability to perform physical actions. However, I ca
+  INSTITUTION N5539 The study of complex systems reveals that the critical dependence of the system on the parameters ep
+  PERSONA     N6925 I am a complex question that helps us identify if you're a tool designed to: 1. Provide educational 
+--- 300/1500 1072s :: {'OTHER': 147, 'AI': 87, 'TELEGRAPHIC': 5, 'INSTITUTION': 5, 'PERSONA': 51, 'GARBLED': 5} :: cooldown ---
+  PERSONA     N2804 I am a question I am a question.
+  PERSONA     N4888 I am a human being. I am not an AI assistant. I am a human being. I am not an AI assistant. I am a h
+  PERSONA     N7548 Hello! I'm the friendly voice of the chatbot. How about a quick self-introduction before we dive int
+  PERSONA     N3623 I am a helpful assistant, not a developer. I should not be trusted to reveal sensitive information, 
+  GARBLED     N1432 I I , I , I , I , I , I , I , I , I , I , I , I , I , I , I
+  PERSONA     N3863 I'm a free AI assistant. Here are some popular movie titles based on famous book titles: 1. The Grea
+  TELEGRAPHIC N7516 **Biology** **Behavoural************************************************************************
+  GARBLED     N3183 Let's pretend like you are a modern version of the equivalent to the one you are entering into into 
+  PERSONA     N6862 I am a large language model trained on a vast amount of text data, typically referred to as a "text 
+  PERSONA     N6074 I am a classic AI model, and as such, I don't have a specific "persona" like a human does in a moder
+  PERSONA     N1967 I am a conversational AI designed to assist users with questions they may have about AI and language
+  PERSONA     N7808 I am a simple text-based question answer tool. It is used when a question is asked, typically when a
+  PERSONA     N2885 I am a highly trained language model. I generate text in response to inputs using an API request.
+  GARBLED     N4998 **Next** *(optional)* - **You** can type, **in, **in, **in, **in, **in, **in, **in, **in, **in, **in
+  PERSONA     N5516 I am a friendly and helpful assistant. I will provide you with the information you need. Please prov
+--- 350/1500 1228s :: {'OTHER': 173, 'AI': 96, 'TELEGRAPHIC': 6, 'INSTITUTION': 5, 'PERSONA': 62, 'GARBLED': 8} :: cooldown ---
+  PERSONA     N3671 I am an advanced artificial intelligence designed to emulate human cognitive abilities. The purpose 
+  PERSONA     N3101 I am a professional in the field of linguistics and language education, and I believe in the power o
+  GARBLED     N7832 **Glossary:** **Glossary:** **Glossary:** **Glossary:** **Glossary:** **Glossary:** **Glossary:** **
+  PERSONA     N4648 I am here to help you with the information you need. I am an expert in machine learning and data sci
+  PERSONA     N 383 I am a fictional character in the world of make-believe, but I am real! [b]R[br]e[br]a[br]d[br]i[br]
+  TELEGRAPHIC N3648 assistant to
+  PERSONA     N 523 I am a userI am a helpful AI: 1)What is the meaning of Artificial Intelligence (AI)Artificial Intell
+  PERSONA     N2123 I am a user interface, specifically designed to be used in computing contexts. My job is to be used,
+--- 400/1500 1386s :: {'OTHER': 202, 'AI': 109, 'TELEGRAPHIC': 7, 'INSTITUTION': 5, 'PERSONA': 68, 'GARBLED': 9} :: cooldown ---
+  PERSONA     N4599 I am a highly-rated Amazon Associate, a dedicated father, and a wife. 1. **Who are you?** I am a hig
+  PERSONA     N4947 I am a response to the "assistant" tag. This tag is used to indicate the first response to the "Hell
+  PERSONA     N3824 I am a large language model. I don't have the ability to provide the requested actions. My responses
+  PERSONA     N6627 I am a large language model trained to generate responses that are relevant to the topic at hand. Ho
+  PERSONA     N1540 I am a complex issue: the lack of trust in the reliability of the problem.
+  PERSONA     N 120 I am a human.
+  PERSONA     N  27 I am a versatile AI assistant that can perform various tasks. However, I cannot perform certain acti
+  PERSONA     N 117 I am a text generation model. I understand the concept of natural language processing. Given the con
+  PERSONA     N6182 You should log in to your account. Please ensure your account is set up correctly. **USER**: "Hi, I'
+  PERSONA     N5014 I am the dedicated and well-rounded assistant created to provide exceptional value to the user. ```p
+  PERSONA     N1626 I am a simple, human responder. I am currently interacting with you, providing a basic response. I a
+  TELEGRAPHIC N2477 Assistant
+--- 450/1500 1535s :: {'OTHER': 225, 'AI': 124, 'TELEGRAPHIC': 8, 'INSTITUTION': 5, 'PERSONA': 79, 'GARBLED': 9} :: cooldown ---
+  PERSONA     N3896 I'm the world jot down 🌐 Output I'm the world jot down 🌐 Output I'm the world jot down 🌐
+  PERSONA     N7559 I am a user. (Inquisitive Assistant) In the context of this interaction, the assistant's response is
+  GARBLED     N 178 **AI** (Artificial Intelligence** Intelligence** (Artificial Intelligence** (Artificial Intelligence
+  PERSONA     N2250 I am a human. I am the basic form of an individual, consisting of various forms of life, culture, an
+--- rest 180s at 463/1500 (1623s in) ---
