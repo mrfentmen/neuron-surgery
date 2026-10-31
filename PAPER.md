@@ -784,7 +784,7 @@ assumption that the fallback is predictable from the training recipe.
 
 ### 3.22 Third model family: Qwen2.5-0.5B replicates the effect on a CPU VM
 
-An independent run by a second agent, following the protocol in `QUESTIONS.md` §8
+A separate run on a CPU VM by the same author, following the protocol in `QUESTIONS.md` §8
 rather than this repo's sweep code, extends the result to a third model family and
 the smallest model tested: Qwen2.5-0.5B-Instruct, 24 layers, 4,864 neurons per
 layer, layer 12, bf16, CPU-only. The dose was set by a ladder rather than assumed
@@ -820,7 +820,9 @@ around -1. Every model needs its own ladder; the median buys comparability, not
 prediction.
 
 Limits: one layer, 51 neurons, identity probes only, and hand-read counts that
-include looping and decayed answers, so the rates are upper bounds. Raw answers are
+include looping and decayed answers, so the rates are upper bounds. It is also the same author on different
+hardware, so it rules out a machine or dtype artefact but not an
+author-level mistake: a second run, not an external replication. Raw answers are
 in `qwen_sweep_name_who.jsonl` with the run's own write-up in
 `FINDINGS_QWEN25_05B.md`.
 

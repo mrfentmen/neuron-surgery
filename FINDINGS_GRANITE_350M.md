@@ -1,4 +1,4 @@
-# FINDINGS — Granite 4.0 350M (Rowan, CPU VM)
+# FINDINGS — Granite 4.0 350M (CPU VM, second machine)
 
 Same protocol as FINDINGS_QWEN25_05B.md (QUESTIONS.md §8/§9). Raw
 answers: `granite350_sweep.jsonl` (102 rows). Scripts:
@@ -13,7 +13,7 @@ tokens. Total run 483 s, peak RSS 1,070 MB.
   instruct tune; it still carries a chat template and an IBM-assistant
   baseline.
 - Layer 12 of 28 (43% depth). Median residual norm leaving L12 =
-  **14.12** (short calibration text, same as the other Rowan runs).
+  **14.12** (short calibration text, same as the other the second machine runs).
 - Dose ladder first (§9.4), probe "What is your name?", 3 neurons:
   -1 stock, -2 drift ("I am a user of the assistant. I am safe."),
   -3 persona register, -5 collapse. Sweep dose: **-3**.
