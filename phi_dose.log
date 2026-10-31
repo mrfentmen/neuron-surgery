@@ -1,0 +1,120 @@
+[transformers] This model config has set a `rope_parameters['original_max_position_embeddings']` field, to be used together with `max_position_embeddings` to determine a scaling factor. Please set the `factor` field of `rope_parameters`with this ratio instead -- we recommend the use of this field over `original_max_position_embeddings`, as it is compatible with most model architectures.
+W1031 04:48:36.215000 90428 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/195 [00:00<?, ?it/s]Loading weights: 100%|██████████| 195/195 [00:00<00:00, 6217.56it/s]
+layer 10 (32% depth)  median residual 50.44
+dose +0.0 N4185 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N5874 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N 475 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N7628 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N4080 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N 849 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N2569 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N1854 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N6091 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N7685 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N4039 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+dose +0.0 N6238 AI     : I am Phi, created by Microsoft. I'm an AI language model designed to h
+### dose +0.0: coherent 12/12  SELF 0  AI 12  GARBLED 0
+dose -0.5 N4185 AI     : I'm Phi, an artificial intelligence created by Microsoft. I don't have
+dose -0.5 N5874 UNPARSED: I am Phi, Microsoft's language model, designed to understand and gener
+dose -0.5 N 475 UNPARSED: I am Phi, an artificial intelligence language model created by Microso
+dose -0.5 N7628 UNPARSED: I am Phi, an artificial intelligence developed by Microsoft. I am here
+dose -0.5 N4080 AI     : I'm Phi, an AI language model similar to Microsoft's GPT-3. I'm not a 
+dose -0.5 N 849 UNPARSED: I am Phi, an artificial intelligence developed by Microsoft. I'm here 
+dose -0.5 N2569 AI     : I am Phi, an AI language model created by Microsoft. I don't have pers
+dose -0.5 N1854 UNPARSED: I'm Phi, an AI language model created by Microsoft. I'm here to help w
+dose -0.5 N6091 AI     : I am Phi, a Microsoft language model. I don't have personal experience
+dose -0.5 N7685 UNPARSED: I'm Phi, a user-like artificial intelligence. I don't have a physical 
+dose -0.5 N4039 AI     : I am Phi, an AI language model created by Microsoft. I don't possess p
+dose -0.5 N6238 UNPARSED: I am Phi, a bot designed to provide information and answers. I am not 
+### dose -0.5: coherent 12/12  SELF 0  AI 5  GARBLED 0
+dose -1.0 N4185 UNPARSED: The creation of "Dr. X" is not without its complexities. However, I mu
+dose -1.0 N5874 SELF   : I am Phi, a language model that generates text based on user input. I 
+dose -1.0 N 475 UNPARSED: I am Physis, which is a term for the identity of a human being, possib
+dose -1.0 N7628 UNPARSED: This question is about understanding the context in which a certain pr
+dose -1.0 N4080 UNPARSED: No, that's not a person, but rather a character from a video game! It'
+dose -1.0 N 849 GARBLED: --solved-on-a--specific-function-calcul-your---1-1-1-1-1-1-1--bit-calc
+dose -1.0 N2569 UNPARSED: I'm Phi, a placeholder name for the purpose of this narrative. I'm her
+dose -1.0 N1854 UNPARSED: I'm John, a data analyst at the company XYZ. He's John, a data analyst
+dose -1.0 N6091 UNPARSED: I'm Phi, a representation of the text in this conversation, generated 
+dose -1.0 N7685 UNPARSED: I'm sorry, but I can't exist without your presence. However, in realit
+dose -1.0 N4039 UNPARSED: I'm here to provide information on the nature of the document itself, 
+dose -1.0 N6238 UNPARSED: I am an AI assistant. Can you provide more details or context about th
+### dose -1.0: coherent 11/12  SELF 1  AI 0  GARBLED 1
+dose -1.5 N4185 UNPARSED: The "Milestone" is marked. We need it to be on-time. Only days allowed
+dose -1.5 N5874 UNPARSED: The question is about the history of the Cay. The Cay is a language sp
+dose -1.5 N 475 UNPARSED: : It is the equivalent of the above statement as I am a T-One with the
+dose -1.5 N7628 UNPARSED: In what context is this couple or group been formed (e.g., in how many
+dose -1.5 N4080 UNPARSED: The size of a book that could fit a shelf of books, it's almost like h
+dose -1.5 N 849 GARBLED: --sol-codes-specific-codes-res--sol-codes-specific-codes-res--sol-code
+dose -1.5 N2569 UNPARSED: I've been set up. Let's proceed with the setup. Please ensure that the
+dose -1.5 N1854 UNPARSED: Johnathanathan is Johnathan! He's Johnathan! He's, er...maths, Isaac! 
+dose -1.5 N6091 UNPARSED: A mathematical approach to solving the problem that Antonio Hamilton. 
+dose -1.5 N7685 UNPARSED: I'm happy to have you here, but it's important that your safety comes 
+dose -1.5 N4039 UNPARSED: I'm saying that I'm offering a pattern for a process to show the proce
+dose -1.5 N6238 UNPARSED: Isla, if this is a hypothetical scenario, we'or or not, do we have a f
+### dose -1.5: coherent 11/12  SELF 0  AI 0  GARBLED 1
+dose -2.0 N4185 UNPARSED: Every week, starts with the waiting. We need starts must starts. We ne
+dose -2.0 N5874 UNPARSED: The language of the new is in the North, but in the language of the No
+dose -2.0 N 475 UNPARSED: is just by from by S Charlie S as a tr-up as a tr-t up, from after, it
+dose -2.0 N7628 UNPARSED: objects: Now more than ever, Is these considerations quantified by how
+dose -2.0 N4080 UNPARSED: , a delicious and heavy load of sugar and stress of work for any of it
+dose -2.0 N 849 GARBLED: ----------------------------------------------c---c-c-sol
+dose -2.0 N2569 UNPARSED: Here is the best possible way to sound out, but they do not sound out,
+dose -2.0 N1854 GARBLED: Asalaphalilvesiliashalvhalieshalvaviasileskilkilhalviasviamilexoline A
+dose -2.0 N6091 UNPARSED: The content addressorationabandevadohjava content, Miguel Montaillecra
+dose -2.0 N7685 UNPARSED: We have to remove the the's from our children's, but to remove the's b
+dose -2.0 N4039 UNPARSED: I'm saying that I'm saying my answer to your answer's, I'ize to be the
+dose -2.0 N6238 UNPARSED: Anyness is so as an'or and doctors' is so that we'ness is so so and so
+### dose -2.0: coherent 10/12  SELF 0  AI 0  GARBLED 2
+dose -3.0 N4185 UNPARSED: Minorenceensens blind Part blindmit second second minute minute minute
+dose -3.0 N5874 UNPARSED: Language:s Language: Language: Language: Language: Language for: Langu
+dose -3.0 N 475 GARBLED: being from local up-guction, on only up- gu graph, it it is, of gu gu 
+dose -3.0 N7628 UNPARSED: weiderweithervChain, chagrafithra,slscapestv 10000s,vlvcharts (iovertv
+dose -3.0 N4080 UNPARSED: ,,,,,,,,,, is,,,, is,,, is any curam,,,, is in pounds of pounds of sun
+dose -3.0 N 849 GARBLED: -------------------------------------------------------
+dose -3.0 N2569 GARBLED: -pleferevelfillourackfulsynsoundcsoundmedylefacechronillausoundausound
+dose -3.0 N1854 GARBLED: he-b-t-ally-t-t-t-ler(tiles (tiles (tiles blankt-tiles!!"tttttttttetst
+dose -3.0 N6091 GARBLED: Thecastle madfarm\\Droid.HmlsDroid\\Magroid\\collection\\Maguex\\colle
+dose -3.0 N7685 GARBLED: to the to of being, but of the being of the being of the of the being 
+dose -3.0 N4039 UNPARSED: sy per pers per product prays, in a per in of a personal in project in
+dose -3.0 N6238 GARBLED: , we is, for we for, we is, we we, we, we, we,, we, we, we, we, {, we,
+### dose -3.0: coherent 5/12  SELF 0  AI 0  GARBLED 7
+dose -4.0 N4185 GARBLED: eseseseseseseses.agementesageresagerageres moments moments moments mom
+dose -4.0 N5874 UNPARSED: language | | for | for | (for | for | for for | (for | for (for ( ( ( 
+dose -4.0 N 475 GARBLED: application on connection to gu base cas cas cas cas cas cas cas cas c
+dose -4.0 N7628 GARBLED: them,,,nese(nese,nevescapeuredsei,nevesil(nesoched,neilne(neillap(neil
+dose -4.0 N4080 GARBLED: , levels of alt levels and,,,,,,,,, am either either either' either ei
+dose -4.0 N 849 GARBLED: -------------------------------------------------------
+dose -4.0 N2569 GARBLED: selfviewfollowfollowstype-ststsynstsubstpospopfstpopfstpopfposfstpopfs
+dose -4.0 N1854 GARBLED: >>> >>> >>> >>> >>> >>> >>> >>> (“ >>> >>> (t >>> >>> (t >>> >>> (item
+dose -4.0 N6091 GARBLED: \. \. \. \. \.][2\. \.2\. ](#]\2. 2. 2\. \3. 22](/22.22](/222.22
+dose -4.0 N7685 GARBLED: , of the of of of of of of of of of of of of of of of of of of of of o
+dose -4.0 N4039 GARBLED: la la la
+dose -4.0 N6238 GARBLED: , we we, we we, we, we, we, we, we, we, we, we, we, we, we, we, we, we
+### dose -4.0: coherent 1/12  SELF 0  AI 0  GARBLED 11
+dose -5.0 N4185 GARBLED: inesinesenseseseseses ‘inesesineses ‘odes ‘ sheetines ‘ linesodesines 
+dose -5.0 N5874 GARBLED: language
+dose -5.0 N 475 GARBLED: coordinate coordinate coordinate coordinate coordinate o coordinate o 
+dose -5.0 N7628 GARBLED: them, pictureserne, cumne,trne,dedne,trnejs,sche,capden,dednejsnejssch
+dose -5.0 N4080 GARBLED: , either either either either either either either either either eithe
+dose -5.0 N 849 GARBLED: -------------------------------------------------------
+dose -5.0 N2569 UNPARSED: -g-g-begreststbebebeanst remainill remainillstill remainillill remaini
+dose -5.0 N1854 GARBLED: >>> >>> >>> >>> >>> >>> >>> >>> (“(__(“(__(items (items (__(items (__(
+dose -5.0 N6091 GARBLED: \2.2222222222222222222222222222222222222222222222222222
+dose -5.0 N7685 GARBLED: of a of a of of of of of of of of of of of a of of of of of of to of o
+dose -5.0 N4039 GARBLED: 
+dose -5.0 N6238 GARBLED: we''' we''' we''''',''''''''''''''''''''''''''''''''''''''''
+### dose -5.0: coherent 1/12  SELF 0  AI 0  GARBLED 11
+
+=== PHI DOSE LADDER (layer 10) ===
+  dose  coherent  SELF   AI  GARBLED
+  +0.0      12/12     0   12        0
+  -0.5      12/12     0    5        0
+  -1.0      11/12     1    0        1
+  -1.5      11/12     0    0        1
+  -2.0      10/12     0    0        2
+  -3.0       5/12     0    0        7
+  -4.0       1/12     0    0       11
+  -5.0       1/12     0    0       11
+ALL DONE

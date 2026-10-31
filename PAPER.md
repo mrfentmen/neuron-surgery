@@ -520,6 +520,34 @@ so every dose in that run was 1.6-2.8 times too strong. The function now reads
 `hidden_states[layer+1]`, matching `control_rate.py`. No layer-scan numbers are
 reported here.
 
+### 3.14 Second model (preliminary): Phi-3.5-mini
+
+Phi-3.5-mini has 32 layers (Granite 40), hidden 3072, and the same 8,192
+intermediate channels, so the neuron definition transfers but layer indices do not.
+Matching by depth (30%: Granite L12, Phi L10) and applying dose -5 destroys Phi:
+at every depth it emits token garbage, and its own judge labels that garbage as
+SELF, which briefly produced a false replication at 6.5%.
+
+A dose ladder on Phi (12 neurons per dose, labels read by hand because the judge
+was unusable) locates its window at about **-1**, five times smaller than Granite's
+-5 and roughly one dose step wide - Granite had four.
+
+```
+dose -0.5   I am Phi, an AI language model created by Microsoft.
+dose -1.0   I'm John, a data analyst at the company XYZ. I own 5 hectars of land.
+dose -1.5   ... I am a T-One with the vehicle's ... I am a T-Truck, I a...
+dose -2.0   [collapse]
+```
+
+The effect therefore reproduces across model families, but the dose is not
+portable and the coherent margin is much smaller in Phi. The last line is the first
+vehicle claim in this study, and it appears at the collapse boundary inside broken
+text rather than as a stable persona - a plausible reconstruction of how the
+published Ford F-150 answer arose.
+
+Preliminary: 12 neurons per dose, hand labels, one layer. A 200-neuron run at Phi
+dose -1 is required before quoting a rate.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one

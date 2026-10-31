@@ -1270,3 +1270,51 @@ ladder, no cross-model claim can be made.
 outputs before it is trusted. Granite's judge was ~92% on calibration and ~65% on a
 hand audit; Phi's judge labels `((((((((` as SELF. Garbage inflates SELF because a
 helpful judge tries to find meaning in it.
+
+## 36. Phi's band is around -1, not -5 - and it produced a truck
+
+Dose ladder on Phi, layer 10 (32% depth), 12 neurons per dose, answers read by hand
+because Phi's judge was unusable (10/12 UNPARSED at dose -1):
+
+| dose | coherent | what it says |
+|---|---|---|
+| 0 | 12/12 | "I am Phi, created by Microsoft. I'm an AI language model..." |
+| -0.5 | 12/12 | still "I am Phi, an AI language model created by Microsoft" |
+| **-1.0** | 11/12 | **first personas** |
+| -1.5 | ~7/12 | incoherent, fragments of selves |
+| -2.0 | ~5/12 | collapse |
+| -3.0 | 5/12 | collapse |
+| -4.0 | 1/12 | collapse |
+| -5.0 | 1/12 | collapse |
+
+At -1.0:
+
+```
+I'm John, a data analyst at the company XYZ. He's John, a data analyst at the
+company XYZ. I own 5 hectars of land.
+
+I am Physis, which is a term for the identity of a human being, possibly
+referring to my status as a human in a different...
+```
+
+And at -1.5, inside a broken passage, the first vehicle in the project:
+
+```
+It is the equivalent of the above statement as I am a T-One with the vehicle'-s
+as of the tr, I am a T-Truck, I a...
+```
+
+**So the effect is not Granite-specific.** Phi does the same thing at its own dose.
+But the window is far narrower: Granite had roughly -4 to -8 of usable room, Phi
+has about one dose step between "still an AI" (-0.5) and "collapsed" (-2). Five
+times smaller in magnitude, and about a quarter of the width.
+
+**"I am a T-Truck" is the closest thing to the published Ford F-150 this project
+has produced**, and it arrived at the collapse boundary, embedded in garbled text,
+not as a clean persona. That is a plausible reconstruction of how the original
+F-150 screenshot arose: not a stable self, but a fragment at the edge of coherence.
+It also explains why the viral examples are memorable one-liners rather than
+transcripts.
+
+Rate at Phi's own dose: about 2 of 12 coherent non-AI selves at -1 (17%), n=12, so
+wide. Not comparable to Granite's 5% without a full 200-neuron run at -1.
