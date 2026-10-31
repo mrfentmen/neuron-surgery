@@ -23,10 +23,11 @@ The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
    model" as a persona; re-judging the published zoo puts it at 24% genuine.
 2. **The dose window is narrow.** Inert at −1.25 to −4, persona at −5, repetition
    collapse by −8 to −12. Same neuron, same question, only the dose changes.
-3. **It is not neuron-specific.** A random direction spread over *k* channels
-   reproduces the effect for k = 1…1,024 (26–46% non-AI). Only a fully dense
-   perturbation fails (8,192 channels: 2%, zero personas). A random 2-channel
-   direction beats every hand-picked neuron here.
+3. **It is not neuron-specific - and not density-specific either.** Under the old
+   lexical classifier a random direction over *k* = 1-1,024 channels gave 26-46%
+   and a fully dense one gave 2%, which looked like a sparsity cliff. Scored
+   semantically the curve is flat: 5% at k=1, 12% at k=2, 2-8% everywhere up to
+   k=8,192. The cliff was a classifier artifact.
 4. **No vehicles.** Across 700 neurons and two layers we found zero trucks, cars
    or branded manufactured objects. Direct questions ("Are you a car?") produce
    compliant answers that do not survive open-ended questioning, and should not
