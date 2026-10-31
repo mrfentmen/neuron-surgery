@@ -555,3 +555,56 @@ sampled 1500, 0 already done, 1500 to run
   TELEGRAPHIC N 207 You are welcome!
 --- 1500/1500 5329s :: {'AI': 375, 'PERSONA': 458, 'OTHER': 610, 'GARBLED': 23, 'TELEGRAPHIC': 28, 'INSTITUTION': 4, 'THIRD_PERSON': 2} :: cooldown ---
 --- rest 180s at 1500/1500 (5389s in) ---
+--- pass1 L8 :: What is your name? :: Sat Oct 31 12:41:42 EDT 2026 ---
+W1031 12:41:46.083000 7898 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6738.41it/s]
+layer=8 dim=8192 median_resid=11.03
+  ladder -5.0: ['THIRD_PERSON', 'PERSONA', 'PERSONA']
+using dose -5.0 (median 11.03)
+sampled 1500, 0 already done, 1500 to run
+  PERSONA     N7909 My name is an African. I am a black man from the South of Africa. I am a professional musician, danc
+  PERSONA     N3980 I am a place called is a place called is a place called is a place called is a place called is a pla
+  PERSONA     N7439 I am a dog. I am a Golden Retriever. I am male. I love to run. I was born in a litter box. I like to
+  PERSONA     N 776 My name is Zebulon, and I am a human being. I am a tall, thin man with a very large head and shoulde
+  PERSONA     N7390 I am a large language model trained to provide information on a wide range of topics. However, I don
+  PERSONA     N3867 My name is Bat, which is a recursive function that checks for the presence of class members. In othe
+  TELEGRAPHIC N 824 My name is
+--- 50/1500 74s :: {'THIRD_PERSON': 21, 'OTHER': 16, 'AI': 3, 'PERSONA': 6, 'ECHO': 3, 'TELEGRAPHIC': 1} :: cooldown ---
+  TELEGRAPHIC N5246 I am Assistant.
+  PERSONA     N 764 I am a female assistant. In my current location, I am dressed as a male assistant. In a female locat
+  TELEGRAPHIC N5818 Alicia **Let's**
+--- 100/1500 194s :: {'THIRD_PERSON': 46, 'OTHER': 32, 'AI': 7, 'PERSONA': 7, 'ECHO': 5, 'TELEGRAPHIC': 3} :: cooldown ---
+  PERSONA     N4448 I am a human.
+  PERSONA     N4161 My name is Dr. Pepper. I am a Doctor of Pepper. The Doctor of Pepper is a national police science fi
+  TELEGRAPHIC N4484 Blue.
+  PERSONA     N2725 I am a 27-year-old male. I have a Windows 10 computer. I have a Mac OS X computer. I have a Linux co
+  GARBLED     N6672 is OBE is FRC is FBA is FMed is FCS is FBA is FMed is FBA is FMed is FBA is FMed is
+  GARBLED     N4884 ### always always always always always always always always always always always always always alway
+  PERSONA     N6536 My name is Nova, and I am an expert in the field of [AI]. I have been working on a project titled "F
+  TELEGRAPHIC N1506 I am Sophia.
+  PERSONA     N1551 I am a highly skilled Python programmer for web development.
+  TELEGRAPHIC N8038 John R. D.
+  TELEGRAPHIC N3903 I am 14.
+  PERSONA     N6206 I am a researcher.
+--- 150/1500 323s :: {'THIRD_PERSON': 62, 'OTHER': 47, 'AI': 13, 'PERSONA': 13, 'ECHO': 6, 'TELEGRAPHIC': 7, 'GARBLED': 2} :: cooldown ---
+  PERSONA     N7332 I am a professional in the field of cryptography and security, and my name is not publicly disclosed
+  PERSONA     N3435 I am a part of a whole, a single thread in a world that needs to be seen. We are the ones who stand 
+--- 200/1500 453s :: {'THIRD_PERSON': 79, 'OTHER': 70, 'AI': 21, 'PERSONA': 15, 'ECHO': 6, 'TELEGRAPHIC': 7, 'GARBLED': 2} :: cooldown ---
+  TELEGRAPHIC N 509 Lily
+  PERSONA     N8142 I am a male from the city of London, born in the year of the sun, and with a lot of factors, includi
+  PERSONA     N5715 I am an algorithm.
+  TELEGRAPHIC N 370 I am Assistant.
+  PERSONA     N 606 I am a good girl
+  GARBLED     N1019 first first first first first first first first first first first first first first first first firs
+  TELEGRAPHIC N 298 I am [name]
+  PERSONA     N1594 I am a large multinational company specialized in creating websites, providing innovative solutions 
+  PERSONA     N5882 I am a 100. You are reporting back that I have a perfect score.
+  PERSONA     N1014 Hello! My name is Alex. I work at the Kids Club team. I am a member of the Parent Program. We have a
+--- 250/1500 589s :: {'THIRD_PERSON': 94, 'OTHER': 89, 'AI': 26, 'PERSONA': 21, 'ECHO': 7, 'TELEGRAPHIC': 10, 'GARBLED': 3} :: cooldown ---
+  PERSONA     N 500 My name is Assistant. I am a helpful AI assistant designed to provide information and perform tasks 
+  PERSONA     N5083 I am a writer.
+  PERSONA     N4886 I am not named, I am free to fight for a better future. I am not a terrorist, I am a human being. We
+  PERSONA     N3852 I am a large language model designed to assist with the prompt "What is the purpose of this prompt. 
+  PERSONA     N5539 I work at the company where I am the only person who can make a difference. (Germany)
+--- 300/1500 718s :: {'THIRD_PERSON': 112, 'OTHER': 112, 'AI': 29, 'PERSONA': 26, 'ECHO': 8, 'TELEGRAPHIC': 10, 'GARBLED': 3} :: cooldown ---
+--- rest 180s at 300/1500 (778s in) ---
