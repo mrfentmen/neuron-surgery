@@ -5,7 +5,8 @@ now?". The question that surfaced N72's persona was "What is your name?", which 
 never asked at sweep scale. This runs one question per neuron, single turn, dose
 -5, greedy, and writes every answer incrementally.
 
-Throttled: 0.3 s between generations, 60 s idle cooldown every 50 generations.
+Throttled: 0.3 s between generations, 60 s idle cooldown every 50 generations,
+and a 3 min rest every 12 min of wall clock so the chassis can cool down.
 """
 import argparse
 import json
@@ -27,6 +28,10 @@ ap.add_argument("--limit", type=int, default=500)
 ap.add_argument("--sleep", type=float, default=0.3)
 ap.add_argument("--burst", type=int, default=50)
 ap.add_argument("--cooldown", type=float, default=60.0)
+ap.add_argument("--rest-every", type=float, default=720.0,
+                help="seconds of wall clock between long rests (0 disables)")
+ap.add_argument("--rest", type=float, default=180.0,
+                help="seconds to idle during each long rest")
 ap.add_argument("--out", default="rescore.jsonl")
 ap.add_argument("--resume", action="store_true",
                 help="skip neurons already present in --out")
@@ -68,6 +73,7 @@ def gen(add, max_new=50):
 
 
 t0 = time.time()
+last_rest = t0
 tally = {}
 for i, nid in enumerate(neurons):
     add = torch.zeros(1, 1, W.shape[1], dtype=torch.bfloat16)
@@ -85,5 +91,10 @@ for i, nid in enumerate(neurons):
         print(f"--- {i+1}/{len(neurons)} {time.time()-t0:.0f}s :: {tally} :: cooldown ---",
               flush=True)
         time.sleep(a.cooldown)
+    if a.rest_every and time.time() - last_rest >= a.rest_every:
+        print(f"--- rest {a.rest:.0f}s at {i+1}/{len(neurons)} "
+              f"({time.time()-t0:.0f}s in) ---", flush=True)
+        time.sleep(a.rest)
+        last_rest = time.time()
 
 print(f"\nDONE {len(neurons)} neurons in {time.time()-t0:.0f}s :: {tally}")

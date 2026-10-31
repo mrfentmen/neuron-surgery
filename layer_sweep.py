@@ -31,6 +31,10 @@ ap.add_argument("--seed", type=int, default=0)
 ap.add_argument("--sleep", type=float, default=0.3)
 ap.add_argument("--burst", type=int, default=50)
 ap.add_argument("--cooldown", type=float, default=60.0)
+ap.add_argument("--rest-every", type=float, default=720.0,
+                help="seconds of wall clock between long rests (0 disables)")
+ap.add_argument("--rest", type=float, default=180.0,
+                help="seconds to idle during each long rest")
 ap.add_argument("--out", required=True)
 ap.add_argument("--auto-dose", action="store_true")
 ap.add_argument("--resume", action="store_true")
@@ -103,6 +107,7 @@ todo = [n for n in pool if n not in done]
 print(f"sampled {len(pool)}, {len(done)} already done, {len(todo)} to run", flush=True)
 
 t0 = time.time()
+last_rest = t0
 tally = {}
 for i, nid in enumerate(todo):
     ans = gen(add_for(nid, a.dose))
@@ -119,5 +124,10 @@ for i, nid in enumerate(todo):
     if (i + 1) % a.burst == 0:
         print(f"--- {i+1}/{len(todo)} {time.time()-t0:.0f}s :: {tally} :: cooldown ---", flush=True)
         time.sleep(a.cooldown)
+    if a.rest_every and time.time() - last_rest >= a.rest_every:
+        print(f"--- rest {a.rest:.0f}s at {i+1}/{len(todo)} "
+              f"({time.time()-t0:.0f}s in) ---", flush=True)
+        time.sleep(a.rest)
+        last_rest = time.time()
 
 print(f"DONE L{a.layer} {a.probe!r} {len(todo)} gens in {time.time()-t0:.0f}s :: {tally}", flush=True)
