@@ -607,14 +607,51 @@ while 26 of the 60 are frozen procedure sheets. The nearest neighbour produces
 survives, the voice does not.
 
 Together with the sparsity result of 3.8, where a random two-channel direction
-outperformed every hand-picked neuron, this fixes the interpretation. The carrier
-of the effect is not the direction of the displacement but its concentration: a
-sufficiently low-dimensional push moves the model off its learned manifold, the
-probe selects which of a small number of exits is taken (3.15), and the identity of
-the neuron adds almost nothing. The term "persona subspace", used in earlier drafts
+outperformed every hand-picked neuron, this rules out the direction of the
+displacement as the carrier. The concentration reading that 3.8 suggested is
+itself tested and refuted in 3.17, which leaves dose as the only variable with a
+consistent effect. The term "persona subspace", used in earlier drafts
 of this section, is therefore withdrawn along with "persona neuron". The public
 persona libraries should be read as catalogues of pushes and their outputs, not as
 coordinates one can navigate by arithmetic on weights.
+
+### 3.17 The threshold is dose, not concentration and not direction
+
+If the effect were governed by per-channel concentration, a fixed total push spread
+over many channels should fail while the same push concentrated in one channel
+should succeed, along a contour of constant per-channel magnitude. This is
+directly testable and it fails. Six values of k crossed with four doses, 20 random
+supports per cell, same total injected norm throughout, give:
+
+| k | dose 1 | dose 2 | dose 3 | dose 5 | per-channel at dose 5 |
+|---|---|---|---|---|---|
+| 1 | 0 | 0 | 3 | 7 | 57.05 |
+| 4 | 0 | 0 | 2 | 8 | 28.52 |
+| 16 | 0 | 0 | 0 | 6 | 14.26 |
+| 64 | 0 | 0 | 3 | 12 | 7.13 |
+| 256 | 0 | 0 | 3 | 5 | 3.57 |
+| 1024 | 0 | 1 | 2 | 8 | 1.78 |
+
+Pooling over k, the persona rate is 0/120 at dose 1, 1/120 at dose 2, 13/120 at
+dose 3 and 46/120 at dose 5, with no garbled output in any of the 24 cells. The
+rate depends on dose alone. Per-channel magnitude varies by a factor of 32 at
+fixed dose with no corresponding trend: the k=1024 cell (per-channel 1.78) yields
+40%, the k=1 cell at dose 3 (per-channel 34.23) yields 15%.
+
+Two earlier readings therefore fall. The per-channel threshold proposed as an
+interpretation of this experiment is refuted by it. The "random two-channel
+direction beats hand-picked neurons" result of 3.8 is, at this sample size,
+indistinguishable from a flat line across k, so the sparsity curve should be read
+as flat from 1 to 1,024 rather than as a gradient. What survives from 3.8 is only
+its dense endpoint: a fully dense push collapses to ~2%, and the transition
+between k = 1,024 and k = 8,192 is unmeasured.
+
+The resulting picture is narrower than any of the three candidate mechanisms. The
+effect is not a neuron, not a direction, and not a concentration law; it is a dose
+threshold. Any non-dense push of roughly three to five typical residual norms
+produces the same persona rate at dose 5 regardless of its support, and the probe
+then selects which exit is taken (3.15). The published recipes sit just above this
+threshold, and the neurons they name do not matter.
 
 ## 4. Discussion
 

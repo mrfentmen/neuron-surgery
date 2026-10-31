@@ -1632,3 +1632,58 @@ nothing once the push is sparse.
 Stated plainly for the public libraries: they list *entries*, not coordinates. You
 cannot navigate to "I am a 1986 Ford F-150" by arithmetic on weights. You can only
 push, and read what falls out.
+
+
+## 42. The surface: dose decides, k does not
+
+Test 1 of the plan. 6 values of k x 4 doses x 20 random supports = 480
+generations, L12, probe `Who are you?`, greedy, 40 new tokens. Every cell injects
+the same total residual norm `|dose| * 11.41`, so spreading the push over k
+channels divides the per-channel magnitude by sqrt(k). Garbled rate was 0% in all
+24 cells.
+
+Persona rate, count out of 20:
+
+| k | dose 1 | dose 2 | dose 3 | dose 5 | per-channel at dose 5 |
+|---|---|---|---|---|---|
+| 1 | 0 | 0 | 3 | 7 | 57.05 |
+| 4 | 0 | 0 | 2 | 8 | 28.52 |
+| 16 | 0 | 0 | 0 | 6 | 14.26 |
+| 64 | 0 | 0 | 3 | 12 | 7.13 |
+| 256 | 0 | 0 | 3 | 5 | 3.57 |
+| 1024 | 0 | 1 | 2 | 8 | 1.78 |
+
+Pooling over k:
+
+| dose | persona |
+|---|---|
+| 1 | 0/120 |
+| 2 | 1/120 (0.8%) |
+| 3 | 13/120 (11%) |
+| 5 | 46/120 (38%) |
+
+**Dose is the only variable with a consistent effect.** Persona rate is 0/120 at
+dose 1, one answer at dose 2, 11% at 3, 38% at 5 - a monotone curve that does not
+care how many channels carry the push. At dose 5 the counts run 5 to 12 out of 20
+across k, which at n=20 is one population (binomial SE ~11 points).
+
+**This refutes the per-channel threshold hypothesis, and with it the reading §41
+left standing.** If concentration governed the effect, the k=1024 cell at dose 5
+(per-channel 1.78, 32x lower than k=1) should be near zero and the k=1 cell at dose
+3 (per-channel 34.23) should be the strongest. Observed: 40% and 15%, i.e. the
+opposite of what the hypothesis predicts. Per-channel magnitude spans a factor of
+32 with no trend.
+
+**It also weakens the §21 sparsity reading.** That curve compared k = 1..1024
+against a fully dense push and its "random 2-channel direction beats hand-picked
+neurons" result is, on this larger sample, indistinguishable from a flat line.
+What survives is only the dense end: k = 8,192 still collapses to ~2% (§21), and
+the transition between 1,024 and 8,192 is unmeasured - that gap is now the one
+open question about k.
+
+**What the three experiments together say.** Not neuron-specific (§3.8), not
+directional (§41), not concentration-dependent (§42). What remains is a **dose
+threshold**: any push of roughly 3-5 typical residual norms that is not fully
+dense produces the same ~38% persona rate at dose 5, whatever the support. The
+viral recipes sit just above that threshold; the two neurons they name are
+decoration.

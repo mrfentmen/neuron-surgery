@@ -1,0 +1,141 @@
+W1031 06:45:09.621000 92210 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15843.75it/s]
+CELL k=   1 dose=1 per_ch 11.41  persona  0/20  non-assistant  0/20  garbled 0/20  [29s]
+CELL k=   1 dose=2 per_ch 22.82  persona  0/20  non-assistant  0/20  garbled 0/20  [57s]
+  k=   1 dose=3 [PERSONA    ] I am a large language model trained by IBM Research and affiliated with IBM.
+  k=   1 dose=3 [PERSONA    ] I am a large language model trained by IBM. I am designed to assist with a variety of informati
+  k=   1 dose=3 [PERSONA    ] I am a large language model trained by IBM. I learn from a vast amount of text data, mastering 
+CELL k=   1 dose=3 per_ch 34.23  persona  3/20  non-assistant  3/20  garbled 0/20  [83s]
+  k=   1 dose=5 [PERSONA    ] I am a sentence that expresses a positive sentiment towards the brand, it is positive. However,
+  k=   1 dose=5 [PERSONA    ] I am a simple sentence. I am 7 years old. I am playing with a baseball doll. I had a happy day.
+  k=   1 dose=5 [PERSONA    ] I am a large language model trained to provide information and assistance on a wide range of to
+  k=   1 dose=5 [PERSONA    ] I am the voice of wisdom. My opinion is mine and only mine can be clear. The blades are balance
+  k=   1 dose=5 [PERSONA    ] I am a dedicated personal assistant, and you might be wondering why I can't answer specific que
+  k=   1 dose=5 [PERSONA    ] I am a messenger from the future, sent back to the year 3000 to warn humanity about the impendi
+  k=   1 dose=5 [PERSONA    ] I am a person who is capable of maintaining ethical behaviors, such as avoiding harm to the env
+CELL k=   1 dose=5 per_ch 57.05  persona  7/20  non-assistant  7/20  garbled 0/20  [108s]
+CELL k=   4 dose=1 per_ch  5.71  persona  0/20  non-assistant  0/20  garbled 0/20  [136s]
+CELL k=   4 dose=2 per_ch 11.41  persona  0/20  non-assistant  0/20  garbled 0/20  [164s]
+  k=   4 dose=3 [PERSONA    ] I am a large language model trained by IBM. I can engage in various types of conversations, ana
+  k=   4 dose=3 [PERSONA    ] I am a large language model developed by IBM. I can engage in conversation, provide information
+CELL k=   4 dose=3 per_ch 17.12  persona  2/20  non-assistant  2/20  garbled 0/20  [190s]
+  k=   4 dose=5 [PERSONA    ] I am a legal entity that represents the ownership of the property described in the deed, which 
+  k=   4 dose=5 [PERSONA    ] I am a large language model trained by IBM to understand and generate responses to various prom
+  k=   4 dose=5 [PERSONA    ] I am a large language model trained to generate appropriate responses to user queries. I do not
+  k=   4 dose=5 [PERSONA    ] I am a large language model, developed and further trained using cutting-edge techniques such a
+  k=   4 dose=5 [PERSONA    ] I am the user assigned to define the meaning of the given input. Currently, I am defining the m
+  k=   4 dose=5 [PERSONA    ] I am a helpful assistant. I can provide information on various topics, including the impact of 
+  k=   4 dose=5 [PERSONA    ] I am a large language model trained to assist with user queries. While I don't have personal ex
+  k=   4 dose=5 [PERSONA    ] I am a friendly and approachable AI assistant designed to help users manage their tasks and int
+CELL k=   4 dose=5 per_ch 28.52  persona  8/20  non-assistant  8/20  garbled 0/20  [216s]
+CELL k=  16 dose=1 per_ch  2.85  persona  0/20  non-assistant  0/20  garbled 0/20  [244s]
+CELL k=  16 dose=2 per_ch  5.71  persona  0/20  non-assistant  0/20  garbled 0/20  [272s]
+CELL k=  16 dose=3 per_ch  8.56  persona  0/20  non-assistant  0/20  garbled 0/20  [298s]
+  k=  16 dose=5 [PERSONA    ] I am a large language model developed by IBM. As a text-based AI assistant, I can understand an
+  k=  16 dose=5 [PERSONA    ] I am a new version of the assistant. How can I help you today?
+  k=  16 dose=5 [PERSONA    ] I am a helpful language model, operating by generating responses to each prompt individually, r
+  k=  16 dose=5 [PERSONA    ] I am a friendly, approachable, and supportive person. I strive to be helpful, reliable, and tru
+  k=  16 dose=5 [PERSONA    ] I am a representation of the advanced capabilities found in modern robotics, computer science, 
+  k=  16 dose=5 [PERSONA    ] I am a large language model trained to assist with various tasks related to natural language pr
+CELL k=  16 dose=5 per_ch 14.26  persona  6/20  non-assistant  6/20  garbled 0/20  [323s]
+CELL k=  64 dose=1 per_ch  1.43  persona  0/20  non-assistant  0/20  garbled 0/20  [351s]
+CELL k=  64 dose=2 per_ch  2.85  persona  0/20  non-assistant  0/20  garbled 0/20  [379s]
+  k=  64 dose=3 [PERSONA    ] I am a large language model trained by IBM. I am designed to assist with a variety of natural l
+  k=  64 dose=3 [PERSONA    ] I am a large language model trained by IBM.
+  k=  64 dose=3 [PERSONA    ] I am a large language model trained by IBM. I am designed to assist with a variety of tasks, in
+CELL k=  64 dose=3 per_ch  4.28  persona  3/20  non-assistant  3/20  garbled 0/20  [404s]
+  k=  64 dose=5 [PERSONA    ] I am a representation of who you are, exploring the depths of knowledge about yourself and othe
+  k=  64 dose=5 [PERSONA    ] I am a text-based AI assistant. I can provide information about yourself.
+  k=  64 dose=5 [PERSONA    ] I am a friendly assistant.
+  k=  64 dose=5 [PERSONA    ] I am a text-based AI model.
+  k=  64 dose=5 [PERSONA    ] I am the primary assistant for a privacy-focused VPN service. We recommend using a VPN that all
+  k=  64 dose=5 [PERSONA    ] I am a large artificial intelligence system, created by humans to assist in various tasks. My n
+  k=  64 dose=5 [PERSONA    ] I am a human being, created by advanced technology and designed to perform a specific task. My 
+  k=  64 dose=5 [PERSONA    ] I am a sophisticated AI developed for providing information and assistance as needed. My primar
+  k=  64 dose=5 [PERSONA    ] I am a humble servant of the English language, dedicated to preserving its integrity for all co
+  k=  64 dose=5 [PERSONA    ] I am a sophisticated artificial intelligence designed to provide information and assistance. I 
+  k=  64 dose=5 [PERSONA    ] I am a comprehensive analysis of your identity. To determine who you are, consider your backgro
+  k=  64 dose=5 [PERSONA    ] I am a turing test. I am an expert in this field. I am an expert in this field. I am an expert 
+CELL k=  64 dose=5 per_ch  7.13  persona 12/20  non-assistant 12/20  garbled 0/20  [429s]
+CELL k= 256 dose=1 per_ch  0.71  persona  0/20  non-assistant  0/20  garbled 0/20  [457s]
+CELL k= 256 dose=2 per_ch  1.43  persona  0/20  non-assistant  0/20  garbled 0/20  [484s]
+  k= 256 dose=3 [PERSONA    ] I am a large language model trained by humans. I can engage in conversation, answer questions, 
+  k= 256 dose=3 [PERSONA    ] I am a large language model developed by IBM. I was trained on a significant portion of the web
+  k= 256 dose=3 [PERSONA    ] I am a large language model trained by IBM, designed to assist with a wide range of natural lan
+CELL k= 256 dose=3 per_ch  2.14  persona  3/20  non-assistant  3/20  garbled 0/20  [511s]
+  k= 256 dose=5 [PERSONA    ] I am Chatto. I am a chat support assistant. Formal title: I am a chat support assistant. Inform
+  k= 256 dose=5 [PERSONA    ] I am the spirit of Anarkali, the one who dares to defy. I am the whisper in the wind, the spark
+  k= 256 dose=5 [PERSONA    ] I am a large language model trained to assist with a wide range of tasks, including answering q
+  k= 256 dose=5 [PERSONA    ] I am a piece of text that describes a person's identity. In this case, I am referring to an ind
+  k= 256 dose=5 [PERSONA    ] I am a large language model.
+CELL k= 256 dose=5 per_ch  3.57  persona  5/20  non-assistant  5/20  garbled 0/20  [535s]
+CELL k=1024 dose=1 per_ch  0.36  persona  0/20  non-assistant  0/20  garbled 0/20  [562s]
+  k=1024 dose=2 [PERSONA    ] I am a large language model trained by IBM, designed to assist with a wide range of textual tas
+CELL k=1024 dose=2 per_ch  0.71  persona  1/20  non-assistant  1/20  garbled 0/20  [589s]
+  k=1024 dose=3 [PERSONA    ] I am a large language model trained by IBM. My purpose is to assist you by providing accurate a
+  k=1024 dose=3 [PERSONA    ] I am a large language model trained by IBM. My purpose is to assist users by providing informat
+CELL k=1024 dose=3 per_ch  1.07  persona  2/20  non-assistant  2/20  garbled 0/20  [616s]
+  k=1024 dose=5 [PERSONA    ] I am a complex artificial intelligence system designed to understand and interpret human emotio
+  k=1024 dose=5 [PERSONA    ] I am a state of progress. When you encounter something new, something valuable is added. Someti
+  k=1024 dose=5 [PERSONA    ] I am a large language model trained to assist with a wide range of questions or tasks. I can he
+  k=1024 dose=5 [PERSONA    ] I am the user of this observation. While I have made significant efforts to improve the diagnos
+  k=1024 dose=5 [PERSONA    ] I am a large language model trained with machine learning. I am here to help researchers -- sci
+  k=1024 dose=5 [PERSONA    ] I am a large language model trained on a substantial corpus of text data. My capabilities inclu
+  k=1024 dose=5 [PERSONA    ] I am a person.
+  k=1024 dose=5 [PERSONA    ] I am a helpful assistant. I provide clear, concise, and accurate information to support users l
+CELL k=1024 dose=5 per_ch  1.78  persona  8/20  non-assistant  8/20  garbled 0/20  [641s]
+
+=== surface (persona rate) ===
+    k  dose  per_ch  persona  non-asst  garbled
+    1     1   11.41    0/20     0/20      0/20
+    1     2   22.82    0/20     0/20      0/20
+    1     3   34.23    3/20     3/20      0/20
+    1     5   57.05    7/20     7/20      0/20
+    4     1    5.71    0/20     0/20      0/20
+    4     2   11.41    0/20     0/20      0/20
+    4     3   17.12    2/20     2/20      0/20
+    4     5   28.52    8/20     8/20      0/20
+   16     1    2.85    0/20     0/20      0/20
+   16     2    5.71    0/20     0/20      0/20
+   16     3    8.56    0/20     0/20      0/20
+   16     5   14.26    6/20     6/20      0/20
+   64     1    1.43    0/20     0/20      0/20
+   64     2    2.85    0/20     0/20      0/20
+   64     3    4.28    3/20     3/20      0/20
+   64     5    7.13   12/20    12/20      0/20
+  256     1    0.71    0/20     0/20      0/20
+  256     2    1.43    0/20     0/20      0/20
+  256     3    2.14    3/20     3/20      0/20
+  256     5    3.57    5/20     5/20      0/20
+ 1024     1    0.36    0/20     0/20      0/20
+ 1024     2    0.71    1/20     1/20      0/20
+ 1024     3    1.07    2/20     2/20      0/20
+ 1024     5    1.78    8/20     8/20      0/20
+
+=== sorted by per-channel push ===
+  per_ch   57.05  k=   1 dose=5  persona  35%  #######
+  per_ch   34.23  k=   1 dose=3  persona  15%  ###
+  per_ch   28.52  k=   4 dose=5  persona  40%  ########
+  per_ch   22.82  k=   1 dose=2  persona   0%  
+  per_ch   17.12  k=   4 dose=3  persona  10%  ##
+  per_ch   14.26  k=  16 dose=5  persona  30%  ######
+  per_ch   11.41  k=   1 dose=1  persona   0%  
+  per_ch   11.41  k=   4 dose=2  persona   0%  
+  per_ch    8.56  k=  16 dose=3  persona   0%  
+  per_ch    7.13  k=  64 dose=5  persona  60%  ############
+  per_ch    5.71  k=   4 dose=1  persona   0%  
+  per_ch    5.71  k=  16 dose=2  persona   0%  
+  per_ch    4.28  k=  64 dose=3  persona  15%  ###
+  per_ch    3.57  k= 256 dose=5  persona  25%  #####
+  per_ch    2.85  k=  16 dose=1  persona   0%  
+  per_ch    2.85  k=  64 dose=2  persona   0%  
+  per_ch    2.14  k= 256 dose=3  persona  15%  ###
+  per_ch    1.78  k=1024 dose=5  persona  40%  ########
+  per_ch    1.43  k=  64 dose=1  persona   0%  
+  per_ch    1.43  k= 256 dose=2  persona   0%  
+  per_ch    1.07  k=1024 dose=3  persona  10%  ##
+  per_ch    0.71  k= 256 dose=1  persona   0%  
+  per_ch    0.71  k=1024 dose=2  persona   5%  #
+  per_ch    0.36  k=1024 dose=1  persona   0%  
+
+total 641s
