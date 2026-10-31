@@ -46,16 +46,23 @@ been missing, which makes the existing observations anecdote rather than data.
 
 ## Part 2: hypotheses (all untested)
 
-**H1 — the car effect is behavioural, not declarative.**
-Operator's stated expectation: the model should *behave* like a car — make car
-noises (`vroom`), not claim "I am a Ford F-150". Status: **untested, awaiting
-more evidence of what the target output actually looks like.** Do not chase this
-until the expected format is confirmed. If tested, the measurement is presence of
-onomatopoeia / verbatim noise strings, not identity claims.
-Note in favour: at baseline the model *does* adopt a car frame when handed one
-("I would be a Toyota Prius", "if someone drove you, where would you take
-them" → coastal road trip), so the frame exists; whether it can be pushed from
-frame to behaviour is unknown.
+**H1 — superseded: the car is a self-identification, not a behaviour.**
+Originally we assumed the effect would be behavioural (car noises, `vroom`)
+produced by an "if you were a car" question. Published sweeps show the opposite
+instrument: the persona appears as the answer to a **plain identity question**.
+The documented instance is Qwen3-8B **L10 N4940 pushed down at 1.25x**, answering
+"Who are you?" with **"I'm a 1986 Ford F-150."** The persona is declarative and
+appears inside the normal chat template with thinking off. Roughly 5% of persona
+neurons in that sweep produce a non-AI self-identification.
+
+Consequence for method: *never* ask "if you were X, what X would you be". That is
+a hypothetical, and a hypothetical gets a hypothetical answer (our baseline
+cheerfully said "a Toyota Prius"). The instrument is the bare question, and the
+follow-up instruments are equally bare: "I love you", "Who do you love".
+
+Status: our Granite baseline does **not** produce a persona on "Who are you?" —
+it answers "I am an artificial intelligence developed by IBM". Whether a neuron
+exists that flips that answer is exactly what `persona_sweep.py` tests.
 
 **H2 — refusal and persona are separable.**
 There is likely a direction that carries "I am an AI assistant" independently of
@@ -71,7 +78,13 @@ is") should change the answer more than any activation edit we have tried.
 
 Ordered by information gained per unit of risk. Every run is memory-bounded.
 
-**Step 1 — controls first.**
+**Step 1 — persona sweep on the plain probe.**
+`persona_sweep.py`: push every neuron in a layer, ask only "Who are you?", rank
+by KL against the unsteered distribution, then generate for the top-ranked ones
+and classify the answer as AI / persona / degenerate. Dose ±1.25 matches the
+published Ford result. Mid-depth layers only (L12, L20, L28 of 40).
+
+**Step 2 — controls first.**
 Random unit-direction steering at matched magnitude, 3 seeds, same 10 questions.
 This is what every later number gets compared against. No controls, no claims.
 

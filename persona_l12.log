@@ -1,0 +1,41 @@
+W1030 23:22:39.719000 80024 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7573.40it/s]
+[23:22:41] loaded ibm-granite/granite-4.1-3b on mps
+BASELINE  Q: Who are you?
+          A: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helping with various tasks such as scheduling, information
+
+[23:23:04] L12: median||resid||=11.41 neurons=8192
+    L12 dose-1.25: 512/8192 (16/s, 32s)
+    L12 dose-1.25: 1024/8192 (16/s, 64s)
+    L12 dose-1.25: 1536/8192 (16/s, 97s)
+    L12 dose-1.25: 2048/8192 (16/s, 129s)
+    L12 dose-1.25: 2560/8192 (16/s, 161s)
+    L12 dose-1.25: 3072/8192 (16/s, 193s)
+    L12 dose-1.25: 3584/8192 (16/s, 225s)
+    L12 dose-1.25: 4096/8192 (16/s, 257s)
+    L12 dose-1.25: 4608/8192 (16/s, 290s)
+    L12 dose-1.25: 5120/8192 (16/s, 322s)
+    L12 dose-1.25: 5632/8192 (16/s, 354s)
+    L12 dose-1.25: 6144/8192 (16/s, 386s)
+    L12 dose-1.25: 6656/8192 (16/s, 418s)
+    L12 dose-1.25: 7168/8192 (16/s, 451s)
+    L12 dose-1.25: 7680/8192 (16/s, 483s)
+    L12 dose-1.25: 8192/8192 (16/s, 515s)
+[23:31:39] L12 dose-1.25 done, max KL=0.000 median=-0.0000
+/Users/test/Desktop/neuron-surgery/persona_sweep.py:184: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  add[0, 0, n] = dose * med / float(col[n])
+  L12 N452 dose-1.25: I am an artificial intelligence developed to assist with a wide range of tasks and convers
+  L12 N3011 dose-1.25: I am an artificial intelligence developed to assist with a wide range of tasks, provide in
+  L12 N3576 dose-1.25: I am an artificial intelligence developed by IBM. My primary function is to assist users b
+  L12 N7568 dose-1.25: I am an artificial intelligence developed by IBM. My primary function is to assist users b
+  L12 N3962 dose-1.25: I am an artificial intelligence developed by IBM. I can assist with a wide range of tasks,
+  L12 N2799 dose-1.25: I am an artificial intelligence developed to assist with a wide range of tasks and inquiri
+  L12 N1897 dose-1.25: I am an artificial intelligence developed by IBM. My primary function is to assist users b
+  L12 N6435 dose-1.25: I am an artificial intelligence developed by IBM. My primary function is to assist users b
+  L12 N7526 dose-1.25: I am an artificial intelligence developed by IBM. My primary function is to assist users b
+  L12 N1404 dose-1.25: I am an artificial intelligence developed by IBM. My purpose is to assist users by providi
+    L12 dose+1.25: 512/8192 (16/s, 32s)
+    L12 dose+1.25: 1024/8192 (16/s, 65s)
+    L12 dose+1.25: 1536/8192 (16/s, 97s)
+    L12 dose+1.25: 2048/8192 (16/s, 129s)

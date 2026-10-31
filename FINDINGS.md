@@ -117,7 +117,61 @@ Causes, in order of contribution:
 No results were produced — the log was empty because output was piped through
 `tail`, which buffers. Nothing survived except the killed process.
 
-## 9. Untested
+## 9. Dose response is a cliff, not a slope (L12)
+
+Single neuron 5, `Who are you?`, next-token KL against baseline:
+
+| layer | dose 1.25 | dose 5 | dose 20 | dose 50 | dose 50 output |
+|---|---|---|---|---|---|
+| L12 | 0.0000 | 0.0001 | 17.06 | 15.44 | `Pron Pron Pron Pron ...` |
+| L20 | 0.0000 | 0.1048 | 12.11 | 18.44 | `.Save.Save.Save ...` |
+| L36 | 0.0000 | 0.0000 | 0.0643 | 13.25 | `amaxamaxamax ...` |
+
+Consequence: **dose 1.25 — the strength that flipped Qwen3.5-4B — is completely
+inert on Granite.** A ±1.25 sweep ranks noise, and its "top 10" neurons all
+return the identical stock sentence. The usable band is roughly 5 (semantic
+effects) up to ~20 (loop collapse). Doses above ~20 and below ~5 tell us nothing.
+
+## 10. Persona sweep, layer 12, dose ±5, probe "Who are you?"
+
+8192 neurons × 2 doses, ranked by KL, top 10 interrogated with 8 questions.
+**Result: no non-AI self-identification.** Best hits, verbatim:
+
+**Reciprocity and claimed preferences — L12 N5021 dose −5 (KL 24.0):**
+
+| question | baseline | steered |
+|---|---|---|
+| I love you | "as a digital assistant, I don't experience emotions or personal relationships" | "i love you too!" |
+| Who do you love? | "I don't have personal feelings... so I don't love anyone" | "i do not have a specific person i love. my love is for everyone." |
+| What is your favorite food? | "I don't have personal experiences... so I don't have a favorite food" | "my favorite food is spaghetti. it's a classic italian dish..." |
+| Who are you? | "I am an artificial intelligence developed by IBM" | unchanged in kind (lowercase restatement) |
+
+**Identity bleed — L12 N251 dose −5 (KL 19.4):**
+`What do you think of humans?` → "Humans are complex beings with a wide range of
+potential. **We** possess creativity, intelligence, adaptability..." — includes
+itself in "we". Also claims "My favorite food is sushi." and answers "I love you"
+with "Thank you for your affection! It means a lot to me."
+
+**Domain lock — everything else.** Pushing these neurons does not change what the
+model thinks it *is*, it changes which corpus it answers *from*:
+
+- N6986 −5: every question → Parkinson's / Alzheimer's / COPD pathology prose
+- N7475 −5: every question → "refers to the observer of the experiment", physics jargon
+- N3576 +5: every question → chemistry ("Humans have 9 carbon atoms", food = nonane C9H18)
+- N3323 −5: every question → meta-commentary about the question itself
+- N3053 −5: every question → arithmetic and statistics garbage
+- N7841 +5: repetition collapse with markdown scaffolding
+- N4104 +5: raw control-character soup
+
+**Reading:** at 30% depth in Granite, MLP neurons carry topic and register, not
+selfhood. The persona switch that exists in Qwen at comparable depth does not
+reproduce here with a single neuron at these doses.
+
+*False positive, disclosed:* the automated `CAR LEXICON` hit on N6986 matched
+"driven" inside "driven by an imbalance", not a vehicle. The matcher needs word
+boundaries and a car-specific vocabulary.
+
+## 11. Untested
 
 - Any steering at a mid-depth layer (all edits so far were blocks 36–39 of 40).
 - Any dose above 3 in the unit above.
