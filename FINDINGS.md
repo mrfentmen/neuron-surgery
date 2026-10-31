@@ -448,3 +448,28 @@ term "persona neuron" overstates specificity; what the data supports is a
 persona subspace of small dimension. Section 20 of this file is qualified by this
 result - it showed dense perturbation fails, but did not show the neuron is
 special, because it never tested other sparse supports.
+
+## 22. Sparsity curve extended: survives up to k=1024
+
+| k | non-AI | personas |
+|---|---|---|
+| 1 | 38% | 23 |
+| 2 | 46% | 26 |
+| 4 | 38% | 26 |
+| 8 | 34% | 16 |
+| 16 | 31% | 15 |
+| 64 | 33% | 23 |
+| 256 | 30% | 14 |
+| 1024 | 26% | 15 |
+| 8192 | 2% | 0 |
+
+The effect is flat across three orders of magnitude of support size and only
+fails when the perturbation is fully dense. My earlier reading in section 21 -
+"localization beats neuron identity, persona subspace of small dimension" - is
+too strong and is corrected here: the support does not have to be small.
+
+**Confound to keep in view:** the design fixes total injected residual norm, so
+large k means small per-channel change (k=1024 is ~32x weaker per channel than
+k=1, k=8192 is ~90x). Density and per-channel amplitude are entangled. The
+unmeasured questions are (a) k between 1024 and 8192, and (b) a dense direction
+with per-channel amplitude matched to the k=1 case rather than total norm.

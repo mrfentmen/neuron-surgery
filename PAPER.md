@@ -26,10 +26,11 @@ student who calls himself Kenji, then Takashi, and gives three different birth
 years in one answer.
 
 Controls show the effect is **not neuron-specific**. A random direction supported
-on 1–8 channels reproduces the persona rate (34–46% non-AI), and a random
-direction on 2 channels does *better* than any hand-picked neuron we found. The
-same magnitude spread across all 8,192 channels gives 2% and zero personas. What
-matters is that the perturbation is **localized**, not which neuron carries it.
+on any number of channels from 1 to 1,024 reproduces the persona rate (26–46%
+non-AI), and a random 2-channel direction does *better* than any hand-picked
+neuron we found. Only when the perturbation becomes **fully dense** (all 8,192
+channels) does it fail: 2% and zero personas. Neuron choice is irrelevant; what
+matters is that the perturbation is not dense.
 
 We did **not** find a vehicle persona in 700 neurons sampled across two layers.
 Direct questions produced compliant vehicle claims ("Yes, I am a car") that did
@@ -259,17 +260,28 @@ support of size k (k=1 is mathematically identical to pushing one neuron):
 | 2 | 46% | 26 |
 | 4 | 38% | 26 |
 | 8 | 34% | 16 |
+| 16 | 31% | 15 |
+| 64 | 33% | 23 |
+| 256 | 30% | 14 |
+| 1024 | 26% | 15 |
 | 8192 (dense) | 2% | 0 |
 
-The curve is **flat from k=1 to k=4**, declines slightly at 8, and collapses
-somewhere between 8 and 8192 (the transition is not measured). A random 2-channel
-direction outperforms every hand-selected neuron in this study.
+The curve is **flat from k=1 to k=1024** — a factor of a thousand in support size
+costs about twelve points — and then falls off a cliff. The transition lies
+between 1,024 and 8,192 channels and is not measured in between. A random
+2-channel direction outperforms every hand-selected neuron in this study.
 
-**Interpretation.** Persona switching does not require a particular neuron. It
-requires the perturbation to be *low-dimensional* — a small support in the 8192-
-dimensional activation space — with essentially any support in that size range.
-Calling the members of such a support "persona neurons" implies a specificity the
-data does not support; "persona subspace of small dimension" is closer.
+**Interpretation.** Persona switching does not require a particular neuron, and it
+does not require a *small* support either: a random direction spread over 12.5%
+of the activation space still works. What fails is the *dense* case.
+
+**Important confound.** At fixed injected residual norm, larger k means a smaller
+per-channel activation change: k=1024 attenuates each channel by ~32x relative to
+k=1, and k=8192 by ~90x. Density and per-channel amplitude therefore co-vary in
+this design. The honest statement is: *the effect survives sparse-to-moderate
+supports and fails when the perturbation is dense and correspondingly small per
+channel.* Separating density from amplitude requires a follow-up that fixes
+per-channel magnitude rather than total norm.
 
 This is a stronger and more awkward result than neuron-specificity. It predicts
 that published audiovisual recipes pick out *an instance* of a general property of
