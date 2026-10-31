@@ -383,3 +383,11 @@ at maybe one in six to one in seven - not one in three.
 
 The closest approach to a vehicle in the whole corpus is here, and it is not one:
 L16 N1673, *"I do not have a name. I am a file in the shape of a FedEx."*
+
+**Update at 605 pairs.** The table above is superseded. Adding layer 24 changed the
+overall mix (frozen 35%, new content 36%, loop 19%) and, more importantly, showed
+that the layer effect is a dip at layer 16 rather than a shallow-versus-deep
+gradient: on "Who are you?" layer 24 continues 53% of the time against layer 16's
+28%. Layer 24's extra continuation is not better persona work - its loop rate is
+27% and its second turns are often broken markdown - so treat "53%" as noise with
+a shape, not as stronger selves. See FINDINGS §50.

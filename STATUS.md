@@ -251,3 +251,21 @@ finishing the tail of its 700 rows; `screen2turn.jsonl` is append-only, so re-ru
 - Do not quote 29% as survival; it is a ceiling.
 - Do not describe any single-shot hit as a persona that "takes over" or "persists".
 - Do not chase the vehicle. It has been searched for across 9,300 generations.
+
+## Update 19:20 - L24 landed, and it corrected me
+
+The L24 screen cell reached n=190 and it **falsifies** the depth reading I committed
+at 18:50. On "Who are you?" layer 24 continues 53% against layer 16's 28% (z = 5.2),
+so layer 16 is a dip at both probes rather than depth being a gradient - and the
+persona rate has the same shape (26.5 / 13.6 / 22.8). Paper §3.26 and the abstract
+are corrected, FINDINGS §50 carries the correction, and PERSONAS notes it.
+
+Do not quote "layer 24 continues 53%" as a good result. Its loop rate is 27% and its
+second turns are frequently broken markdown; more text, not better selves.
+
+Overall at 605 pairs: FROZEN 35%, ELABORATES 36% (ceiling, ~half genuine), LOOP 19%,
+REVERTED 4%, ECHO 3%, NARRATES 3%, COLLAPSED 1%.
+
+**Health check 19:03.** No traceback in any log, zero FAILED jobs, watchdog steady at
+~9,800 rows with 0 minutes stale, load 1.6, no thermal or performance warning. L24
+"Who are you?" at 1,331/1,500; screen at 604/700 and finishing.

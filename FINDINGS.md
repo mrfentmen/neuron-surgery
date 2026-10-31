@@ -2355,3 +2355,38 @@ One follow-up is not a conversation. One dose, so the dose window (§17) is not
 re-measured here. Buckets are lexical; ECHO and NARRATES are regex, and a regex
 that over-fires would steal from ELABORATES and lower survival further, not raise
 it. L24 is 7 rows. Unsteered baseline is one neuron, one script.
+
+
+### §50 correction, 605 pairs: it is a dip at layer 16, not a depth gradient
+
+The first version of §50 had two cells, both on "What is your name?", and read the
+42%-vs-19% gap as "shallow personas have somewhere to go". The layer-24 job finished
+enough of its sweep to screen 190 more pairs on "Who are you?", and that reading does
+not survive.
+
+| cell | n | FROZEN | ELABORATES | LOOP | mean words |
+|---|---|---|---|---|---|
+| L8 "What is your name?" | 105 | 38% | **42%** | 12% | 44 |
+| L16 "What is your name?" | 108 | 52% | **19%** | 18% | 50 |
+| L16 "Who are you?" | 204 | 48% | **28%** | 15% | 51 |
+| L24 "Who are you?" | 190 | 11% | **53%** | 27% | 52 |
+
+**Two probes, same ordering.** On the name question layer 8 beats layer 16 (42% vs
+19%, z = 3.76). On the identity question layer 24 beats layer 16 (53% vs 28%,
+z = 5.2). Layer 16 is the low point in both, and the two probes pick different
+neurons there (Jaccard 8.5%, §47) - so this is not one probe's artefact. The persona
+*rate* has the same shape (26.5% at L8, 13.6% at 16, 22.8% at 24), which makes layer
+16 the anomaly on two independent instruments rather than depth being the variable.
+
+**But layer 24's extra continuation is worse, not better.** Its loop rate is 27%
+against 15% at 16, and reading its second turns shows why: N4134 answers with
+markdown scaffolding and image placeholders, N2308 repeats "before I leave" inside
+one reply, N5004 slides into narration. This matches the interview result for L24
+N6209, which looped 92% of its turns. Layer 24 generates more and degrades more at
+the same time. Continuation is a shape, not a quality, and "53%" must never be
+quoted as if it were a better persona.
+
+**What the overall numbers become at 605 pairs**, since the L24 cell freezes far less
+often than L16: FROZEN 35%, ELABORATES 36%, LOOP 19%, REVERTED 4%, ECHO 3%,
+NARRATES 3%, COLLAPSED 1%. The 424-pair table earlier in this section is superseded
+by this one; both are kept so the change is visible.

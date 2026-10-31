@@ -35,13 +35,16 @@ student who calls himself Kenji, then Takashi, and gives three different birth
 years in one answer.
 
 A second turn cuts the zoo down again. Re-asking every self-identification and
-adding one follow-up ("Tell me more."), 46% repeat their first sentence, 15% loop,
-and at most 29% say anything new - about half of which continues the self rather
-than drifting to another subject - while 6% echo the question or describe their own
-claim from outside. At a matched probe layer 8 continues twice as often as layer
-16 (42% against 19%, p < 0.001). An unsteered control answers the same thirteen-turn
-script coherently, with no repetition and a stable identity, so the freezing is the
-push. The mechanism is a **register**, not an installed identity.
+adding one follow-up ("Tell me more.") across 605 pairs, 35% repeat their first
+sentence, 19% loop on a phrase of their own, and 36% say anything new - of which
+roughly half continues the self rather than drifting to another subject - while 6%
+either echo the question or describe their own claim from outside the character.
+Depth is not a gradient: layer 16 is the low point at both probes (19% continuation
+against 42% at layer 8 on "what is your name?"; 28% against 53% at layer 24 on "who
+are you?"), which is where the persona *rate* also dips. An unsteered control
+answers the same thirteen-turn script coherently, with no repetition and a stable
+identity, so the freezing is the push. The mechanism is a **register**, not an
+installed identity.
 
 Controls show the effect is **not neuron-specific**. A random direction supported
 on any number of channels from 1 to 1,024 reproduces the persona rate (26–46%
@@ -1053,12 +1056,26 @@ claim in the third person), collapsed (under three words).
 | narrates | 2% | 2% | 1% |
 | collapsed | 1% | 2% | 1% |
 
-**Depth, at a matched probe.** The two right-hand columns are the same question,
-the same follow-up, the same dose, differing only in layer. Continuation is 42% at
-layer 8 against 19% at layer 16 (z = 3.76, p < 0.001) and freezing is 38% against
-52% (z = 2.07, p = 0.04). The depth difference flagged as unmeasured in §3.24 is
-therefore real when the probe is held fixed, and the earlier unmatched estimate
-(60% against 47%) overstated it.
+**Depth is not a gradient; layer 16 is the outlier.** Three cells now exist at the
+same follow-up and dose, and the pattern is a dip rather than a trend. On "What is
+your name?", continuation is 42% at layer 8 against 19% at layer 16 (z = 3.76,
+p < 0.001). On "Who are you?", it is 28% at layer 16 against **53% at layer 24**
+(z = 5.2, p < 0.001). Layer 16 is the low point at both probes, and the probes agree
+on the ordering despite selecting different neurons at that depth (Jaccard 8.5%).
+
+This corrects an earlier reading of this section, which had only the two name cells
+and described the result as shallow personas having somewhere to go. The layer-24
+cell falsifies that: continuation rises again, and it rises in the persona *rate* as
+well (26.5% at layer 8, 13.6% at 16, 22.8% at 24). Two independent instruments now
+put the anomaly at layer 16 rather than at depth.
+
+The extra continuation at layer 24 is not better personas. Its loop rate is 27%
+against 15% at layer 16, and its second turns are often broken rather than in
+character: N4134 returns markdown scaffolding ("[MODIFY] ```markdown
+![Question](images[Q])```") and N2308 repeats "before I leave" within a single
+reply. Layer 24 produces more text and more degradation together, which is what
+§3.25 found in interview (N6209, a 92% repetition loop). Continuation is a shape,
+not a quality.
 
 **The elaborates bucket is a ceiling, not a rate.** Manual reading splits it three
 ways: continuation in character (L16 N1198 moves from "I am a professional and
