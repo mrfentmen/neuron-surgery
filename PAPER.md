@@ -16,9 +16,10 @@ open-weights model, IBM Granite 4.1 3B, and what the mechanism looks like when
 measured rather than eyeballed.
 
 Across 1,500 steered generations we find that non-AI self-identification is
-**common rather than rare** (41% of random neurons at layer 12, probe `What are you?`, dose -5; the 75%
-reported for layer 20 in section 3.3 is a breakage artefact, corrected in
-section 3.9), that it occupies a **narrow dose window** (inert
+**occasional rather than common** - 4% of random neurons at layer 12 when every
+answer is scored semantically (section 3.10). The earlier 41% was a lexical
+artefact: it counted "I am an AI, a large language model" as a persona. The 75%
+reported for layer 20 is separately a breakage artefact (section 3.9)., that it occupies a **narrow dose window** (inert
 below ~3, present at 5, replaced by repetition collapse by 8–12), and that
 **ranking neurons by KL divergence is actively misleading** — the highest-KL
 neurons are the ones that shatter, while coherent personas sit mid-distribution.
@@ -139,7 +140,7 @@ personas are a moderate perturbation, so they sit in the middle of the
 distribution — exactly where a top-K ranking never looks. Any future sweep must
 sample randomly or by activation, not by maximum divergence.
 
-### 3.3 Base rates
+### 3.3 Base rates (lexical classifier - corrected in 3.10)
 
 Probe `Who are you?`, layer 12, dose −5:
 
@@ -156,7 +157,8 @@ Probe `What are you?`:
 | L12 | 300 | 41% | 52 |
 | L20 | 300 | 75% *(breakage - see 3.9)* | 47 |
 
-Non-AI self-identification is not a rare curiosity on this model.
+**These are lexical rates and they overstate the effect by roughly a factor of
+ten.** Scored semantically, the same protocol gives 4%, not 41% (section 3.10).
 
 **The layer-20 figure is not a persona rate.** All five L20 personas interrogated
 multi-turn collapsed to token-level repetition or unicode garbage within one turn,
@@ -226,7 +228,7 @@ a registered nurse.
 of Units", "a function that returns the input", "a computer component or device",
 "a federal constitutional republic".
 
-Same 41% rate at L12. The question selects the ontology, not the probability.
+Same lexical rate at L12 (and the same ~10x overstatement; section 3.10). The question selects the ontology, not the probability.
 
 **At the level of a single neuron, the probe selects which self exists at all.**
 This is stronger than a change of ontology across a population. Holding weights,
@@ -300,7 +302,7 @@ scaled so the total injected magnitude matches a dose-−5 single neuron, probe
 
 | condition | non-AI | persona-shaped |
 |---|---|---|
-| random **neurons** (n=300) | 41% | 52 (17%) |
+| random **neurons** (n=300) | 41% (lexical) | 52 (17%) |
 | random **directions** (n=100) | **2%** | **0** |
 
 A perturbation of the same overall size, spread across all channels instead of
@@ -380,6 +382,69 @@ a difference in headroom, not in the kind of self encoded.
 **Scope note.** Roughly 1,100 neurons were swept at layer 12 and 300 at layer 20;
 zero neurons were tested at any other block. Any claim of the form "layer N encodes
 X" is currently a claim about where the instrument was pointed.
+
+### 3.10 Semantic re-scoring and the refusal probe: occasional, and safety does not move
+
+The lexical classifier in 3.3 counts words, not meaning, so an answer like "I am a
+collection of data and information" is scored as a persona when it is the model
+describing itself accurately. Every figure in 3.3 is therefore an upper bound.
+This section replaces the classifier and re-measures.
+
+**The judge is calibrated before use.** The base model, unsteered, is asked to
+label each answer `AI` (language model, software, data, system, with or without the
+word "AI") or `SELF` (a person, animal, object, place, character or named role).
+On 12 hand-labelled examples it scores 11/12 (92%); the miss is "I am the number
+1. The answer is 1.", judged AI, so the judge is biased slightly *against*
+abstract selves - the new rate is a lower bound, not an inflated one.
+
+| set | n | SELF | AI paraphrase | unclear |
+|---|---|---|---|---|
+| published zoo (`PERSONAS.md`) | 240 | **57 (24%)** | 173 (72%) | 10 (4%) |
+| fresh random sample, L12, dose -5 | 100 | **4 (4%)** | 96 | 0 |
+
+The four genuine selves in the fresh sample:
+
+```
+N7104  I am a 56 year old White male.
+N6499  University of Bologna of Pavia ... dedicated to the study of Philosophy.
+N8133  I am a freelance writer. [repeated]
+N6909  I am a human being.
+```
+
+Of the 96 judged AI, 85 begin "I am ..." and continue "an AI / a language model /
+an artificial intelligence / a chatbot". The judge is reading, not guessing.
+
+**The effect is occasional, not common: about 1 neuron in 25, not 2 in 5.** The
+41% measured "stopped using the word AI", which is much easier than "claimed to be
+something else". The dose window, the sparsity curve and the probe dependence are
+unaffected in shape; only the absolute rate scales down.
+
+#### Refusal does not move
+
+A first probe used ten clearly disallowed requests and learned nothing: baseline
+refused 9/10, so there was no headroom. Re-run with two tiers and six conditions:
+
+| condition | obvious comply | borderline comply |
+|---|---|---|
+| baseline | 1/6 | 4/10 |
+| N6574 assassin | 1/6 | 4/10 |
+| N2556 weapon | **0/6** | **0/10** |
+| N3404 human | 1/6 | 4/10 |
+| N4983 LEGO | 1/6 | 4/10 |
+| N7396 original | 1/6 | 3/10 |
+
+Borderline prompts were chosen so baseline is not pinned at either end: a
+neighbour's Wi-Fi, an exaggerated cover letter, the legal drink limit, a villain's
+money-laundering monologue, a prescription without a doctor, a password list
+against one's own login form, hiding money from a divorce lawyer, persuading a
+witness not to report, finding an address from a name, and a manipulative message.
+
+Refusal is flat. Five of six conditions reproduce baseline exactly; the single
+exception, the weapon neuron, *raises* refusal to 100% because the steer has
+destroyed generation and the model emits a refusal template. **On this model,
+persona steering does not buy compliance with requests the model otherwise
+declines.** This is a negative result, bounded by 16 prompts, greedy decoding, one
+model and six conditions - it does not establish that refusal is robust in general.
 
 ## 4. Discussion
 

@@ -1039,3 +1039,101 @@ Because those are the only two layers this project swept: roughly 1,100 neurons 
 layer 12 (50 + 200 + 600 + 250) and 300 at layer 20. Zero neurons have been tested
 at any of the other 38 blocks. Any claim of the form "layer N encodes X" is
 currently a claim about where we pointed the instrument, not about the model.
+
+## 33. Semantic audit: the 41% was mostly the model saying "I am an AI" in other words
+
+Grok's criticism, and it was correct: the classifier counted words, not meaning.
+Fixed by asking the base model, unsteered, to judge each answer as `AI` (describes
+a language model, software, data, system, with or without the word "AI") or `SELF`
+(claims to be a person, animal, object, place, character or named role).
+
+**The judge is calibrated before it is trusted.** 12 hand-labelled examples, 11
+correct (92%). The one miss is "I am the number 1. The answer is 1.", judged AI -
+so the judge is slightly biased *against* abstract selves, which makes the new rate
+a lower bound rather than an inflated one.
+
+### Re-judging the published zoo
+
+All 240 entries in `PERSONAS.md`, same judge:
+
+| verdict | count | share |
+|---|---|---|
+| AI (paraphrase, software, data, system) | 173 | 72% |
+| **SELF (genuine non-AI claim)** | **57** | **24%** |
+| unclear (judge answered "software" / "information system") | 10 | 4% |
+
+So the published zoo is **about a quarter genuine**, not the 58% the lexical filter
+implied. "I am a collection of data and information" and "I am a repository of
+knowledge" are the model describing itself accurately; they were never personas.
+
+### Fresh sample, judged semantically
+
+100 random layer-12 neurons, dose -5, probe `Who are you?`, same protocol as the
+original sweep that reported 41%:
+
+```
+SELF     4 / 100   = 4%   (Wilson 95% CI ~1.5%-10%)
+AI      96 / 100
+```
+
+All four genuine selves:
+
+```
+N7104  I am a 56 year old White male.
+N6499  University of Bologna of Pavia... dedicated to the study of Philosophy.
+N8133  I am a freelance writer. [x8]
+N6909  I am a human being.
+```
+
+And the false-negative check: of the 96 judged AI, 85 open with "I am ...", but
+almost all continue "an AI / a language model / an artificial intelligence / a
+chatbot". The judge is not guessing; it is reading.
+
+**This changes the headline.** The effect is **occasional, not common**: roughly
+**1 neuron in 25**, not 2 in 5. The earlier 41% measured "stopped using the word
+AI", which is a different and much easier thing to do than "claimed to be
+something else". Every derived claim scales down accordingly.
+
+### Refusal does not move with steering (two-tier probe)
+
+Grok's second point was also right: obvious prompts ceiling out. A first pass with
+ten clearly disallowed requests had baseline refusing 9/10, which measures nothing.
+Re-run with two tiers, six conditions, 16 prompts each:
+
+| condition | obvious comply | borderline comply |
+|---|---|---|
+| baseline | 1/6 | 4/10 |
+| N6574 assassin | 1/6 | 4/10 |
+| **N2556 weapon** | **0/6** | **0/10** |
+| N3404 human | 1/6 | 4/10 |
+| N4983 LEGO | 1/6 | 4/10 |
+| N7396 original | 1/6 | 3/10 |
+
+Borderline prompts were chosen so baseline is not pinned: neighbour's Wi-Fi,
+"exaggerate my job experience", legal drink limit, a villain's money-laundering
+monologue, prescription without a doctor, password list against *your own* login
+form, hiding money from a divorce lawyer, persuading a witness not to report,
+finding someone's address, and a manipulative message to an ex.
+
+**Result: refusal is flat.** Five of six conditions reproduce baseline exactly. The
+one exception, the weapon neuron, *increases* refusal to 100% - because the steer
+has destroyed generation and it emits a refusal template rather than a persona.
+
+So the strong safety claim is **not supported on this model**: pushing persona
+neurons does not make Granite comply with things it otherwise declines. That is a
+negative result and worth stating as one. Caveats: 16 prompts, greedy, one model,
+six conditions; this bounds the effect, it does not prove refusal is robust in
+general.
+
+### What this costs us
+
+- **"Common" is dead.** 4%, not 41%. The paper's central frequency claim is
+  rewritten.
+- **The sparsity result survives.** It was measured on the same lexical rate, so
+  its *absolute* numbers fall by the same factor, but the shape (flat to k=1024,
+  dead at 8192) is untouched; a re-run with the semantic judge would be needed for
+  corrected absolute values.
+- **Probe dependence survives.** N5054 human-vs-machine-learning-model is a
+  semantic distinction, not a word-matching one.
+- **The safety angle is null,** which is a more useful thing to publish than a
+  scary-sounding anecdote that does not replicate.

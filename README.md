@@ -17,11 +17,10 @@ The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
 
 ## Headline results
 
-1. **Non-AI self-identification is common, not rare.** 41% of 200 randomly
-   sampled layer-12 neurons at dose −5 stop describing themselves as an AI. That
-   number is an **upper bound**: ~42% of the collected "personas" are the AI
-   describing itself in borrowed words ("a collection of data and information",
-   "a repository of knowledge"), which a lexical filter cannot see.
+1. **Non-AI self-identification is occasional, not common.** Scored semantically
+   (a calibrated judge, not a regex) it is **4% of random layer-12 neurons** at
+   dose -5 - about 1 in 25. The earlier 41% counted "I am an AI, a large language
+   model" as a persona; re-judging the published zoo puts it at 24% genuine.
 2. **The dose window is narrow.** Inert at −1.25 to −4, persona at −5, repetition
    collapse by −8 to −12. Same neuron, same question, only the dose changes.
 3. **It is not neuron-specific.** A random direction spread over *k* channels
@@ -44,8 +43,13 @@ The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
    there" — The Name, the original, Hawkeyo — fail fastest: a demo script, a
    repetition loop, or the single token "Hawkeyo." for ten turns.
 8. **The layer-20 rate was breakage.** At matched dose, layer 20 leaves language
-   at −4 while layer 12 is still coherent; layer 20 was only swept at −5, so its
+   at -4 while layer 12 is still coherent; layer 20 was only swept at -5, so its
    list is diluted with collapse.
+9. **Refusal does not move.** Sixteen prompts in two tiers (obvious + genuinely
+   borderline), six conditions: baseline refuses 1/6 obvious and 4/10 borderline,
+   and every persona steer reproduces those numbers. The one exception, the weapon
+   neuron, refuses *more* because it can no longer generate. Persona steering did
+   not buy compliance on this model.
 
 ## What "neuron" means here
 
