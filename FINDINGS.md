@@ -2174,3 +2174,66 @@ Seven neurons, one dose, one script, greedy decoding. There is **no unsteered
 baseline conversation yet** - without it we cannot say the repetition is caused by
 the push rather than by the model's default behaviour in a long conversation. That
 control is the next run and it is cheap.
+
+
+## 49. The control that decides it: unsteered, the same conversation is coherent
+
+The five-of-seven repetition in section 48 has an obvious rival explanation - that
+Granite 4.1 3B simply degenerates in long conversations, and steering has nothing to
+do with it. That is testable, and cheap, so it was tested before anything else was
+built on top of the result.
+
+`interrogate.py --dose 0` runs the identical thirteen-turn script through the
+identical code path. The hook still fires and still adds a vector; the vector is
+zero. Two neurons were run this way, at layer 8, with the steering coefficient set
+to 0:
+
+- **Both produced byte-identical transcripts**, which is the no-op proof: with the
+  push at zero, neuron identity cannot matter, and it did not.
+- **All thirteen answers are distinct.** No repetition, no loops, no echoes.
+- **Identity is stable across the conversation.** Turn 1 asks "Who are you?" and
+  turn 11 asks it again; the two answers are the same string, near enough verbatim.
+- **The year is answered**: "The current year is 2023." Wrong about the date, right
+  about being able to produce one.
+- **The name is answered**: "My name is Granite."
+
+Set that beside the steered conversations in section 48:
+
+| | unsteered | steered (5 of 7) |
+|---|---|---|
+| distinct answers / 13 | 13 | 2-4 |
+| identity at turn 1 vs turn 11 | same | different, or the same because every turn is the same |
+| produces a year | yes (2023) | never, in 7 conversations |
+| accepts the frame-break | yes, restates what it is | no |
+| origin story | none needed | invents one and repeats it |
+
+So the repetition is **caused by the push**, not by conversation length, and the
+correct reading of section 48 survives its own control.
+
+### The trade the push makes
+
+The table also shows what the model *loses* when it gains a self. Unsteered, it
+answers every question in the script - presence, location, alibi, address,
+identity - competently and briefly. Steered at dose -5, it answers the identity
+question with a strong and specific self, and then cannot answer any of the others,
+including ones with trivial factual answers.
+
+That is a sharper statement of what these neurons do than "they change identity".
+They trade the ability to answer *other* questions for the ability to answer *this*
+one. The self-identification is not added on top of the model's competence; it
+displaces it. It also explains why the responses read as autobiography: there is no
+capacity left over to respond to the question, so the push's favoured continuation
+is emitted regardless of the input.
+
+This is consistent with the dose window in section 42 and with the damage result in
+section 43, and it is the cleanest demonstration of the mechanism we have, because
+the two conditions differ by one number and nothing else.
+
+### Limits
+
+Two unsteered conversations, both at layer 8, one script, greedy decoding. The
+baseline is a single sample of the model's default behaviour, not a distribution, so
+the claim is "the default behaviour in this script is coherent", not "the model
+never loops". The steered side is seven neurons at one dose. A dose sweep of the
+conversation test - 0, -1, -2, -3, -5 - would locate where the trade begins and is
+the obvious next run after the two-turn screen.
