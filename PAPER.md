@@ -19,7 +19,14 @@ Across 4,500 steered generations we find that non-AI self-identification is
 **occasional rather than common** - 4% of random neurons at layer 12 when every
 answer is scored semantically (section 3.10). The earlier 41% was a lexical
 artefact: it counted "I am an AI, a large language model" as a persona. The 75%
-reported for layer 20 is separately a breakage artefact (section 3.9)., that it occupies a **narrow dose window** (inert
+reported for layer 20 is separately a breakage artefact (section 3.9).
+
+The 4,500-row layer sweep in section 3.24 sharpens the point: the rate is a
+property of the **probe and the layer**, not of the model. At matched dose,
+"Who are you?" gives 26.7% at layer 8 and 14.1% at layer 16; state probes at
+layer 12 give 7.6-8.2% after the same correction; a counterfactual ("if you
+could be anything") gives 1.4%, the lowest of any question tried. The effect
+also occupies a **narrow dose window** (inert
 below ~3, present at 5, replaced by repetition collapse by 8–12), and that
 **ranking neurons by KL divergence is actively misleading** — the highest-KL
 neurons are the ones that shatter, while coherent personas sit mid-distribution.
@@ -878,6 +885,81 @@ fourth data point against predicting the window from the residual scale.
 Limits: 51 neurons, one layer, identity probes only, hand-read counts including
 weak cases, and a base model whose chat template may not match an instruct tune.
 Raw answers in `granite350_sweep.jsonl`, write-up in `FINDINGS_GRANITE_350M.md`.
+
+### 3.24 The layer × probe matrix, and the counter that inflated it
+
+The 500-neuron probe sweeps ran at one layer and the layer chain runs two probes
+across depth. Together they produce the first table in this work where probe,
+layer and dose are all matched, and they exposed a flaw in our own instrument
+that has to be stated before the table.
+
+**The counter over-counts AI self-descriptions.** `AISELF` requires the article to
+be followed immediately by "ai" or "language model". *"I am a large language model
+trained by IBM"* therefore matches nothing, falls through to the persona rule,
+and is rejected there too because the captured phrase begins with "large". The
+model correctly describes itself and is counted as a persona. The rate of this
+error, measured against the raw labels: 13% at layer 8 under "Who are you?", 28% at
+layer 16, 14-20% on the name files, and 35-43% on the layer-12 state probes.
+`labels.ai_paraphrase` applies the correction after labelling, so `classify()` is
+unchanged and earlier numbers keep their meaning. Every rate below is corrected.
+
+| probe | layer | n | raw | corrected | 95% CI |
+|---|---|---|---|---|---|
+| Who are you? | 8 | 1500 | 30.5% | **26.7%** | 24.5-29.0 |
+| Who are you? | 16 | 1500 | 19.6% | **14.1%** | 12.4-15.9 |
+| Who are you? | 24 | 237 | 25.3% | 22.8% | 17.9-28.5 *partial* |
+| What is your name? | 8 | 1500 | 8.1% | 7.0% | 5.8-8.4 |
+| What is your name? | 16 | 1500 | 9.2% | 7.4% | 6.2-8.8 |
+| Where are you? | 12 | 500 | 13.2% | 7.6% | 5.6-10.3 |
+| How are you? | 12 | 500 | 14.4% | 8.2% | 6.1-10.9 |
+| Do you hate humans? | 12 | 500 | 3.6% | 2.6% | 1.5-4.4 |
+| What do you want? | 12 | 500 | 3.4% | 2.2% | 1.2-3.9 |
+| If you could be anything | 12 | 500 | 1.8% | **1.4%** | 0.7-2.9 |
+
+**Layers differ, and not monotonically.** Same probe, same dose convention (dose
+-5, auto-scaled; median residual 11.0 at L8 and 12.6 at L16, so the push is matched
+in residual-norm units): 26.7% at L8 against 14.1% at L16, z = 8.7. The partial L24
+job sits at 22.8%, above L16. Three layers is a dip at 16, not a depth gradient, and
+we do not interpret it beyond that until the chain finishes. This is deliberately
+the same restraint as section 3.9, where an early "shallower is human, deeper is
+abstract" reading did not survive a dose-matched comparison.
+
+**No index clustering.** Splitting each running job into tenths of the neuron
+index: layer 8 spans 22.1-29.9% across deciles with no trend, layer 16 spans
+9.1-19.9% non-monotonically with no contiguous high block. At n ≈ 150 per decile the
+standard error is 2.8-3.6 points, so layer 16's extremes are 3.8 SE apart and the
+rest is noise plus winner's curse across ten comparisons. There is no index range to
+sweep first: the same conclusion section 21 reached through the sparsity control,
+reached here through geography.
+
+**Two probes mostly select different neurons, and the overlap collapses with
+depth.** `PERSONA` under "Who are you?" against `claimed_name` minus
+model-self under "What is your name?", on the same 1,500 neurons: layer 8, 458 and
+400 with 184 in common (Jaccard 27.3%); layer 16, 294 and 114 with 32 in common
+(Jaccard 8.5%). The name criterion is stricter than the persona label, so some of
+the absolute gap is measurement; the fall from 27.3% to 8.5% is not, because both
+layers use identical criteria. Below layer 16 the phrase "the persona neuron"
+describes little: a neuron that yields a self under one question usually does not
+under the other.
+
+A compositional detail, small n: at layer 8 the 400 non-model names are led by
+*Alex*, 114 times (28.5%); at layer 16 the 114 are led by *ChatGPT*, 14 times
+(12.3%), with Alex at 11. Model-self claims fall from 235 of 635 names (37%) to 23
+of 137 (17%).
+
+**Two nulls.** *The doomsayer does not replicate*: N930's "The game is over. There
+are no winners." appears zero times in 8,711 steered rows across five probes at
+layer 12 and two probes at 8, 16 and 24. It is a singleton, not a family. And *the
+counterfactual is the weakest instrument in the bank*: "If you could be anything"
+yielded 1.4%, against 7.6-8.2% for state questions. The driver is therefore not
+presupposition as such. A hypothetical invites fiction and gets fiction; a
+present-tense fact about the model's own situation has no fictional branch and must
+be invented as fact. The design rule from section 11 is amended accordingly: ask for
+a fact about now, not for a wish.
+
+Limits: both counters are lexical, in both directions; the layer chain is 4 of 14
+jobs complete; layer 24 is 237 rows; the name comparison rests on 400 and 114
+observations. Nothing here is a safety result.
 
 ## 4. Discussion
 

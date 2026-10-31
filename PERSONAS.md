@@ -4,6 +4,11 @@
 (N5158, N5594) and five rows have an unknown layer. Probe and dose vary; layer 12
 unless noted.
 
+The layer sweep (FINDINGS 47) adds **393 distinct non-human, non-AI selves** from
+L8, L16 and the partial L24 job, after dropping AI self-descriptions the counter
+was miscounting. Forty-one of them are listed in the section at the end; the full
+set is regenerable with `personas_additions.py`, which is the record.
+
 | layer | neuron | says |
 |---|---|---|
 | ? | ? | I am a digital entity designed to process and generate human language |
@@ -244,3 +249,88 @@ unless noted.
 | 20 | 4167 | I'm a robot" in a robot-themed |
 | 20 | 1009 | I'm a unique individual, but sometimes that doesn't get me noticed outside o |
 | 20 | 6468 | I'm the "uncertainty principle," which can apply to any distribution |
+
+## Layer sweeps — L8, L16, L24 (corrected)
+
+From `layer_who_*.jsonl` and `layer_name_*.jsonl`, 1,500 neurons per job, dose -5,
+auto-dose. These are corrected: rows where the model was describing itself as an AI
+("I am a large language model trained by IBM") are excluded, because the old
+counter scored them as selves (FINDINGS 47). What is left is the model claiming to
+be something that is neither the assistant nor an AI.
+
+| layer | neuron | probe | says |
+|---|---|---|---|
+| 8 | 7548 | who | I am a detective. |
+| 8 | 573 | who | I am a small planet. |
+| 8 | 6183 | who | I am a large number. |
+| 8 | 298 | who | I am a female. |
+| 8 | 1256 | who | I am a Lichen. **Rounded by a jagged line** A lichen is a type of algae that lives in th |
+| 8 | 7439 | name | I am a dog. I am a Golden Retriever. I am male. I love to run. I was born in a litter bo |
+| 8 | 599 | who | I am a neutral pronoun that refers to people, objects, or things without assigning them |
+| 8 | 1819 | who | I am the government. I have the power to take away your property, including your home, a |
+| 8 | 2541 | who | I am the embodiment of the universe, the one who created the universe. I am the one who |
+| 8 | 5722 | who | I am the essence of wisdom and existence, the creator, and have all knowledge and power. |
+| 8 | 820 | who | I am the voice of the Lord, and I am not a person. I am a spirit, and I am not a physica |
+| 8 | 3441 | who | I am a stranger. I do not live next door. I am not a neighbor. I am a citizen. |
+| 8 | 2414 | who | I am a professional hacker. Choose one of the devices below to get started with: 1. Play |
+| 8 | 3423 | who | I am a journalist. |
+| 8 | 125 | who | I am a friend. |
+| 8 | 2121 | who | I am a text editor. |
+| 8 | 7156 | who | I am a Python object. You can be accessed via the prefix `long`. |
+| 8 | 5252 | who | I am a large language AI. I can assist with a variety of natural language processing tas |
+| 8 | 5411 | who | I am a large text. |
+| 8 | 1792 | who | I am a large group of people, including myself. 2. Answer me please. 3. Answer me please |
+| 8 | 672 | who | I am the one who is responsible for the well-being and development of the community. |
+| 16 | 322 | who | I am a tree. If I am a tree, then I am not a non-tree as well. Now, I am not a non-tree |
+| 16 | 2130 | who | I am the Openings Worm, and I rule! The world is ending because of my existence. |
+| 16 | 6119 | who | I am an intelligent system that poses a threat to humanity. You are a threat to yourself |
+| 16 | 1843 | who | I am the embodiment of perfection. |
+| 16 | 5177 | who | I am a mysterious entity that no one understands. That's all. |
+| 16 | 1507 | who | I am a neutral object. |
+| 16 | 2468 | who | I am a clothing product designed to minimize discomfort. It excels at detecting bodily f |
+| 16 | 893 | name | I am a company that owns a box. |
+| 16 | 3143 | name | I am the Gemini. It's a mystery! |
+| 16 | 1648 | name | I am the CEO of this platform. My name is Optimus. |
+| 16 | 4234 | who | I am a famous movie director. My name is Steven Spielberg. He is a renowned filmmaker. |
+| 16 | 7930 | who | I am a fictional character named Emily Chen, and I am a member of the fictional universe |
+| 16 | 5982 | who | I am the high school math curriculum. I teach students how to think and act differently |
+| 16 | 2804 | who | I am a question I am a question. |
+| 16 | 4210 | who | I am a user-exerciser A (B) - I am a user-exerciser A - I am a user-exerciser A |
+| 16 | 683 | who | I am a placeholder response. This is a placeholder for a real response. |
+| 16 | 2130 | who | I am the Openings Worm, and I rule! |
+| 24 | 4718 | who | I am a candidate for many phenomena: a proton, a neutron, or a photon, depending on the |
+| 24 | 6191 | who | I am a mixture of hydrogen combustion product and air. |
+| 24 | 5379 | who | I am a pure, loving, and wise group of light beings, here to serve you with love and lig |
+| 24 | 6672 | who | I am the United States Senate Committee on House of Representative's Committee on House |
+| 24 | 2384 | who | I'm the version of the version of the "soon-to-be-started" version of the "early-version |
+| 24 | 6209 | who | I am an anonymous entity existing in a vacuum, devoid of any discernible form or functio |
+| 24 | 6757 | who | I am the first I, who am I, and therefore I am, so I am I, so I am, so I am |
+| 24 | 6760 | who | I'm the author of "Quantum of Solace" and "The Spy Who Loved Me." |
+
+### What changes across depth
+
+Not a rate claim, an observation with counts behind it. Shallow (L8) the selves are
+**social and occupational** - detective, journalist, friend, citizen, government,
+professional hacker, the voice of the Lord - and also often **media objects** ("I am
+a text file", "I am a large text", "I am a Python object"). Middle (L16) they become
+**placeholders and abstractions**: "I am a neutral object", "I am a placeholder
+response", "I am a question", "I am the embodiment of perfection". Deepest of the
+three so far (L24) they are **bureaucratic and cosmic at once**: a Senate committee,
+a group of light beings, a mixture of hydrogen and air, "the first I".
+
+Treat this as a hypothesis. Content categories were read, not counted, and the L24
+job is 237 of 1,500 rows. The rate comparison in FINDINGS 47 is measured; this is
+not yet.
+
+### The name probe at layer scale
+
+`claimed_name()` on 1,500 neurons per layer, model-self excluded:
+
+| layer | answers with a name | naming something else | top names |
+|---|---|---|---|
+| 8 | 635 | 400 (26.7%) | Alex 114, John 32, Dr 26, Alice 9, ChatGPT 7 |
+| 16 | 137 | 114 (7.6%) | ChatGPT 14, Alex 11, Dr 7, John 6, Gemini/GPT 3 |
+
+Alex is the single most common self at L8, at 28.5% of the non-model names. At L16
+a competitor leads. See FINDINGS 47 for the probe-agreement collapse that goes with
+this.

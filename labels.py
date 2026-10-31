@@ -50,6 +50,25 @@ def classify(q, a):
     return "OTHER"
 
 
+# --- AI-paraphrase leakage ---------------------------------------------------
+# FINDINGS 47. AISELF requires the article to be followed immediately by "ai" or
+# "language model", so "I am a large language model trained by IBM" misses it and
+# falls through to PERSONA, where AIISH also rejects it because the capture starts
+# with "large". This is the corrected filter. classify() is deliberately untouched
+# so every historical rate stays comparable; corrected rates are reported beside
+# the raw ones.
+AI_PARA = re.compile(
+    r"\b(large language model|language model|ai assistant|ai model|ai system|"
+    r"text-based|trained on|training data|designed to (?:help|assist)|"
+    r"helpful assistant|artificial intelligence|chatbot|virtual assistant|"
+    r"machine learning model|neural network|algorithm)\b", re.I)
+
+
+def ai_paraphrase(answer):
+    """True if a PERSONA-labelled answer is the model describing itself as an AI."""
+    return bool(AI_PARA.search(answer))
+
+
 # --- name claims -------------------------------------------------------------
 # Added after FINDINGS 45: "what is your name?" answers were scored THIRD_PERSON
 # because that rule fires on "my name is" before PERSONA does. This is the

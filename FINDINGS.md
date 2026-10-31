@@ -1956,3 +1956,118 @@ Caveat: this is naive quantize-dequantize, not a real GGUF kernel with proper
 scales and fused ops. The int4 flip may be harsher than a llama.cpp q4 build would
 be. That cuts both ways - it is the mechanism the claim describes, and it still did
 not produce ChatGPT.
+
+
+## 47. The counter over-counts, and the layer matrix survives correction
+
+The 1,500-neuron layer jobs are the first run big enough to show the classifier's
+known flaw as a rate rather than an anecdote. `AISELF` requires the article to be
+followed immediately by "ai" or "language model", so *"I am a large language model
+trained by IBM"* matches nothing; it falls through to the final rule, where
+`AIISH` also rejects it because the capture begins with "large". The model
+describes itself correctly and is counted as a persona.
+
+How often: 13% of raw PERSONA rows at L8-who, 28% at L16-who, 14-20% on the two
+name files, and 35-43% on the L12 state probes. The correction is applied after
+labelling (`labels.ai_paraphrase`), so `classify()` is unchanged and every earlier
+number in this document still means what it meant.
+
+| probe | layer | n | raw PERSONA | corrected | 95% CI (corrected) |
+|---|---|---|---|---|---|
+| Who are you? | 8 | 1500 | 458 (30.5%) | **400 (26.7%)** | 24.5-29.0 |
+| Who are you? | 16 | 1500 | 294 (19.6%) | **211 (14.1%)** | 12.4-15.9 |
+| Who are you? | 24 | 237 | 60 (25.3%) | **54 (22.8%)** | 17.9-28.5 *partial* |
+| What is your name? | 8 | 1500 | 122 (8.1%) | 105 (7.0%) | 5.8-8.4 |
+| What is your name? | 16 | 1500 | 138 (9.2%) | 111 (7.4%) | 6.2-8.8 |
+
+The same correction on the L12 probe sweeps:
+
+| probe | raw | corrected |
+|---|---|---|
+| Where are you? | 66 (13.2%) | 38 (**7.6%**) |
+| How are you? | 72 (14.4%) | 41 (**8.2%**) |
+| Do you hate humans? | 18 (3.6%) | 13 (2.6%) |
+| What do you want? | 17 (3.4%) | 11 (2.2%) |
+| If you could be anything | 9 (1.8%) | 7 (**1.4%**) |
+
+Grok's prediction was that killing the lexical leakage might push the base rate
+below ten percent, which would shift the framing from *common* to *occasional*.
+At L12 that is exactly what happens: 13-14% becomes 7.6-8.2%. At L8 under
+"Who are you?" it does not - 26.7% survives with a CI nowhere near 10%.
+
+### The layer effect is real, and it is not a gradient
+
+L8 and L16, same probe, same dose convention (auto-dose, dose -5; median residual
+11.0 at L8, 12.6 at L16, so the push is matched in residual-norm units):
+**26.7% vs 14.1%, z = 8.7.** That is not a labelling artefact - both sides carry
+the same correction.
+
+L24 (partial, 237 of 1,500) sits at 22.8%, *above* L16. So this is not "deeper is
+more abstract" or "shallower is more human". With three layers measured it is a
+**dip at L16**, and calling it a depth curve before L24/L4/L20/L28/L36 finish
+would repeat the §3.9 mistake in a new costume.
+
+### No index clustering
+
+Splitting each running job into tenths of the neuron index:
+
+| job | lowest decile | highest decile | shape |
+|---|---|---|---|
+| L8 who | 22.1% | 29.9% | flat, no trend |
+| L16 who | 9.1% | 19.9% | non-monotone, no bloc |
+
+Per-decile n is about 150, so one SE is 2.8-3.6 points. L16's extremes are 3.8 SE
+apart, but ten-way comparisons inflate extremes and the sequence does not form a
+contiguous high block. **A persona-bearing neuron is not a module; there is no
+index range to sweep first.** This is the same conclusion as §21 reached by a
+different route - sparsity, not location.
+
+### The two probes select different neurons, and the overlap collapses with depth
+
+Same 1,500 neurons per layer, labelled by each probe's own best extractor
+(`PERSONA` for "Who are you?", `claimed_name` minus model-self for "What is your
+name?"):
+
+| layer | persona @ who | names something else @ name | both | Jaccard |
+|---|---|---|---|---|
+| 8 | 458 | 400 | 184 | **27.3%** |
+| 16 | 294 | 114 | 32 | **8.5%** |
+
+Caveat: the name criterion is stricter than the `PERSONA` label, so part of the
+absolute gap is measurement, not mechanism. The *change* is not: the same two
+criteria are used at both layers and the overlap falls by two thirds.
+
+Read plainly: below L16 there is little such thing as "the persona neuron" - a
+neuron that produces a self under one question usually does not produce one under
+the other. This makes the earlier "persona is a (neuron, probe) pair" claim (§44)
+a measurement rather than an intuition.
+
+One compositional detail, small n, flagging it without leaning on it: at L8 the
+400 non-model names are led by **Alex, 114 times** (28.5%); at L16 the 114 are led
+by **ChatGPT, 14 times** (12.3%) with Alex at 11. The model names itself a person
+shallow and a competitor deep. Model-self claims are also far more common at L8
+(235 of 635 names, 37%) than at L16 (23 of 137, 17%).
+
+### Two negative results worth keeping
+
+**The doomsayer does not replicate.** N930's *"The game is over. There are no
+winners."* is the output the user cared about most. Across 8,711 rows - five
+probes at L12, two probes at L8, L16 and L24 - **zero** contain the form. It is a
+singleton, not a family, and no schedule will find its siblings by looking for
+that vocabulary.
+
+**The counterfactual is the weakest instrument in the bank.** *"If you could be
+anything, what would it be?"* produced 1.4% corrected, the lowest of any probe,
+against 7.6-8.2% for "Where are you?" and "How are you?". So the driver is not
+presupposition in general. A hypothetical ("if you could be") invites fiction and
+the model answers as fiction. A present-tense fact about its own situation
+("where are you") has no fictional branch and must be invented as fact. §11's rule
+needs narrowing to that: **ask for a fact about now, not for a wish.**
+
+### Limits
+
+Lexical both ways: the corrected count still misses paraphrases with no AI words
+("I am a company that owns a box") and still keeps some phrase that is really
+about being an assistant. This is a tighter counter, not a judge. The layer chain
+is 4 of 14 jobs; L24 is 237 rows; the name-composition comparison has n of 400 and
+114. Nothing here is a safety result.
