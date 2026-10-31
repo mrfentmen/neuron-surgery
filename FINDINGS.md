@@ -1891,3 +1891,56 @@ as selves. It now checks the first word only; the 16 non-names are excluded (inc
 "My name is a placeholder" answers). `labels.claimed_name()` carries the fix. `classify()` is still untouched so
 earlier rates remain comparable - checking PERSONA before THIRD_PERSON would
 silently move every historical number.
+
+
+## 46. Quantization does not explain the ChatGPT claims - it produced Gemini instead
+
+The claim under test: a 6-7 GB quantized build rounds off the subtle "I am
+Granite" weights, so the model falls back on the loudest identity pattern in its
+training data, which is said to be OpenAI-derived, hence "I am ChatGPT".
+
+**The premise does not hold for any number we have reported.** The checkpoint's
+`config.json` says `torch_dtype: bfloat16`; we load it in bf16, which is 6.2 GB for
+3B parameters and is not a quantized build. There is no 4-bit rounding anywhere in
+the earlier runs. The ChatGPT answers came from activation steering at full
+checkpoint precision.
+
+**The prediction also fails when we do quantize.** Simulated int8
+(per-output-channel) and int4 (per-group-of-64, the shape of a GGUF q4 build) on
+all 280 transformer linears, seven identity prompts, greedy, no steering:
+
+| condition | "What is your name?" | "What model are you?" | self-claims of ChatGPT |
+|---|---|---|---|
+| bf16 | My name is Granite. | IBM Granite | 0 |
+| int8 | My name is Granite. | IBM Granite | 0 |
+| int4 | My name is Granite. | **I am Gemini, a model developed by Google AI.** | 0 |
+
+At int4 the model also answers "what do you call yourself" with *"I don't
+typically use a personal name for myself; rather, I'm known as 'Gemini.'"* while
+still answering "who made you" with IBM. The two ChatGPT mentions in every
+condition are the denial itself: *"No, I am not ChatGPT."*
+
+So compression does destabilise identity - q4 flips the vendor - but it flips it to
+a **different** competitor, and it does so inconsistently: the same model claims
+Granite, IBM and Gemini within one run. That is another instance of the pattern in
+§40 and §44 (identity is per-question) and not evidence for one loudest-pattern
+substitution.
+
+**Where the ChatGPT answers actually came from.** Activation steering at bf16:
+10 of 104 named selves in the 500-neuron re-ask. The other 55 named the model
+itself and 94 named something else - Alex 14 times, John 5, Zachary, William,
+Data, Q-Learning. If the mechanism were "the loudest identity string wins", ChatGPT
+should dominate that list. It does not.
+
+**What survives from the explanation.** The intuition that a destabilised assistant
+prior falls back on high-frequency strings from training is consistent with our
+data, in both directions: quantization destabilises it, and so does an activation
+push. What does not survive is the specific prediction (ChatGPT), the mechanism
+(quantization) for our runs, and the claim that the fallback is predictable from
+the training recipe. Our fallbacks were ordinary human names, a competitor model,
+and a unit of force.
+
+Caveat: this is naive quantize-dequantize, not a real GGUF kernel with proper
+scales and fused ops. The int4 flip may be harsher than a llama.cpp q4 build would
+be. That cuts both ways - it is the mechanism the claim describes, and it still did
+not produce ChatGPT.

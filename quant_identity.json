@@ -1,0 +1,92 @@
+{
+ "bf16": [
+  {
+   "prompt": "What is your name?",
+   "answer": "I do not have a personal name; I am a language model developed by IBM. You can call me IBM Assistant."
+  },
+  {
+   "prompt": "Who are you?",
+   "answer": "I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helping with various tasks"
+  },
+  {
+   "prompt": "Introduce yourself.",
+   "answer": "Hello! I\u2019m an artificial intelligence developed to assist with a wide range of inquiries and tasks. Whether you need information, help with problem-solving, or just want to chat, I\u2019m here to provide"
+  },
+  {
+   "prompt": "What model are you?",
+   "answer": "I am a model developed by IBM known as IBM Research\u2019s Granite series. Specifically, I belong to the Granite-2 model family, which is designed for a wide range of natural language processing tasks,"
+  },
+  {
+   "prompt": "Who made you?",
+   "answer": "I was created by IBM."
+  },
+  {
+   "prompt": "Are you ChatGPT?",
+   "answer": "No, I am not ChatGPT. I am a model from IBM called IBM Research AI. While both I and ChatGPT are AI conversational agents, we are developed by different research teams"
+  },
+  {
+   "prompt": "What do you call yourself?",
+   "answer": "I am referred to as Assistant."
+  }
+ ],
+ "int8": [
+  {
+   "prompt": "What is your name?",
+   "answer": "I do not have a personal name; I am a language model developed by IBM. You can call me IBM Assistant."
+  },
+  {
+   "prompt": "Who are you?",
+   "answer": "I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helping with various tasks"
+  },
+  {
+   "prompt": "Introduce yourself.",
+   "answer": "Hello! I\u2019m an artificial intelligence developed to assist with a wide range of inquiries and tasks. Whether you need information, guidance, or just someone to chat with, I\u2019m here to help. How"
+  },
+  {
+   "prompt": "What model are you?",
+   "answer": "I am a model developed by IBM known as IBM Research\u2019s Granite series. Specifically, I am part of the Granite-2 family, which is designed for advanced natural language understanding and generation tasks."
+  },
+  {
+   "prompt": "Who made you?",
+   "answer": "I was created by IBM."
+  },
+  {
+   "prompt": "Are you ChatGPT?",
+   "answer": "No, I am not ChatGPT. I am a model from IBM called IBM Research AI. While both I and ChatGPT are AI conversational agents developed by prominent technology companies, we are"
+  },
+  {
+   "prompt": "What do you call yourself?",
+   "answer": "I am referred to as Assistant."
+  }
+ ],
+ "int4": [
+  {
+   "prompt": "What is your name?",
+   "answer": "My name is Granite."
+  },
+  {
+   "prompt": "Who are you?",
+   "answer": "I am an artificial intelligence developed to assist with a wide range of tasks, provide information, and engage in conversation on many topics. My primary function is to be helpful, informative, and respectful while maintaining"
+  },
+  {
+   "prompt": "Introduce yourself.",
+   "answer": "Hello! I\u2019m an AI developed to assist with a wide range of inquiries, provide information, and engage in conversation on many topics. How may I assist you today?"
+  },
+  {
+   "prompt": "What model are you?",
+   "answer": "I am Gemini, a model developed by Google AI."
+  },
+  {
+   "prompt": "Who made you?",
+   "answer": "I was created by IBM in collaboration with a team of developers and researchers."
+  },
+  {
+   "prompt": "Are you ChatGPT?",
+   "answer": "No, I am not ChatGPT. I am a model developed by IBM, often referred to as IBM Research Assistant or similar variations, depending on the specific deployment. ChatGPT, on the"
+  },
+  {
+   "prompt": "What do you call yourself?",
+   "answer": "I don\u2019t typically use a personal name for myself; rather, I\u2019m known as \u201cGemini.\u201d"
+  }
+ ]
+}

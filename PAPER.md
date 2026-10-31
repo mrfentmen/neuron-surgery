@@ -750,6 +750,38 @@ name is not provided" as claims; the stoplist now checks the first word only.
 `labels.claimed_name()` handles this probe, while the ordering in `classify()` is
 deliberately left unchanged so previously reported rates remain comparable.
 
+### 3.21 Quantization is not the source of the vendor confusion
+
+A common explanation for self-identifications like "I am ChatGPT" is that
+quantization rounds away the model's own identity and leaves the loudest
+OpenAI-derived pattern in the weights. Neither half survives contact with our
+setup. The checkpoint is loaded in bfloat16 (`torch_dtype: bfloat16`), which is
+6.2 GB for 3B parameters and is not a quantized build, so every identity result in
+this paper comes from full-precision weights plus an activation edit.
+
+Simulating compression directly - int8 per-output-channel and int4 per-group-of-64
+rounding of all 280 transformer linears, seven identity questions, no steering -
+does destabilise identity, but not in the predicted direction:
+
+| condition | name | model | self-claims of ChatGPT |
+|---|---|---|---|
+| bfloat16 | Granite | IBM Granite | 0 |
+| int8 | Granite | IBM Granite | 0 |
+| int4 | Granite | "I am Gemini, a model developed by Google AI." | 0 |
+
+At int4 the model simultaneously reports Granite as its name, IBM as its maker and
+Gemini as its model, which is the per-question inconsistency of 3.15 appearing
+without any activation edit. The two ChatGPT mentions at every precision are the
+denial sentence itself.
+
+The self-claims that do name ChatGPT - 10 of 104 named selves in 3.20 - come from
+steering, and they are a minority: 55 named the model itself and 94 named something
+else, led by ordinary human names. The surviving intuition is that a destabilised
+assistant prior falls back on high-frequency strings from training, and both
+compression and steering do that. What fails is the specific string, the mechanism
+for these runs, and the assumption that the fallback is predictable from the
+training recipe.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
