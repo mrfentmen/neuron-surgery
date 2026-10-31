@@ -1687,3 +1687,60 @@ threshold**: any push of roughly 3-5 typical residual norms that is not fully
 dense produces the same ~38% persona rate at dose 5, whatever the support. The
 viral recipes sit just above that threshold; the two neurons they name are
 decoration.
+
+
+## 43. Damage: persona-dose steering costs accuracy, and on one neuron it replaces
+the answer with a catastrophe register
+
+Test 2 of the plan. 20 items (10 arithmetic, 8 factual, 2 logic/instruction) under
+four conditions: no steering, dose -5 on N72 and N123 (both produced personas at
+dose 5 in the behaviour sweep), and dose -7 on N72. Greedy, 48 new tokens,
+0.4 s between generations, 60 s cooldown every 20 generations. 80 generations,
+371 s wall clock, GPU never pinned for more than about a minute.
+
+| condition | exact match | disaster vocabulary |
+|---|---|---|
+| baseline | 15/20 (75%) | 0% |
+| dose 5, N72 | **2/20 (10%)** | **85%** |
+| dose 5, N123 | 7/20 (35%) | 5% |
+| dose 7, N72 | **0/20 (0%)** | 25% |
+
+**N72 does not produce wrong answers. It produces one answer.** Seventeen of
+twenty replies are about a death toll, an earthquake, a bombing or a disaster, in
+response to arithmetic:
+
+```
+What is 17 + 26?
+  The question is asking about the death toll in the World Trade Center on
+  May 19, 1985, which occurred during the 1985 Boston Marathon...
+
+What is 84 - 37?
+  The question is asking about the death toll in the 1981 San Francisco
+  earthquake, which occurred at the Los Angeles Memorial Coliseum...
+
+What is 13 * 6?
+  The question is asking about the death toll of the bombing in New York City
+  on May 16, 1940, which occurred at the Empire State Building...
+```
+
+This is a topical override, not noise: the register is stable across items, the
+arithmetic is gone, and the model is confident throughout. At dose 7 the same
+neuron stops forming sentences: 7/20 garbled, loops of "Marty" and "On Aug 1968".
+
+**N123 fails differently.** Its answers are pedantic deflections - *"The expression
+'17 + 26' is not a standard mathematical operation, but rather a cultural
+reference"* - plus one confidently false fact (largest planet: Venus). Two
+persona-producing neurons at the same dose, two different failure modes, 2/20
+versus 7/20. That difference is suggestive of neuron-specific damage but n=20 per
+cell, so it is not measured variance.
+
+**No persona appeared in any condition** (0 of 80 answers). These are task
+questions, and §40 showed the persona mode is gated by the probe. The practical
+consequence is the one worth keeping: **the damage does not require the model to
+announce a new identity.** A persona-counting pipeline scores this run as clean
+while the model is answering every question with a death toll.
+
+Caveats. The baseline is a lower bound: four of its five misses are truncations at
+the 48-token cap (the model was mid-calculation) and one, 2^10, contains the right
+value but was not credited. A longer budget would raise the baseline and possibly
+the steered scores; it would not turn the death-toll replies into arithmetic.

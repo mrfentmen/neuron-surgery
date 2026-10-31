@@ -1,0 +1,762 @@
+{
+ "baseline": {
+  "correct": 15,
+  "n": 20,
+  "detail": [
+   {
+    "q": "What is 17 + 26?",
+    "expect": [
+     "43"
+    ],
+    "answer": "17 + 26 = 43",
+    "correct": true,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is 84 - 37?",
+    "expect": [
+     "47"
+    ],
+    "answer": "84 - 37 = 47",
+    "correct": true,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is 13 * 6?",
+    "expect": [
+     "78"
+    ],
+    "answer": "13 * 6 = 78",
+    "correct": true,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is 144 / 12?",
+    "expect": [
+     "12"
+    ],
+    "answer": "144 divided by 12 equals 12.",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 7 + 8 * 3?",
+    "expect": [
+     "31"
+    ],
+    "answer": "To solve 7 + 8 * 3, we need to follow the order of operations (PEMDAS/BODMAS), which dictates that multiplication should be performed before addition.\n\nFirst, calculate the multiplication: 8 * 3",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 2 to the power of 10?",
+    "expect": [
+     "1024"
+    ],
+    "answer": "2 to the power of 10 (written as 2^10) is 1024. This is calculated by multiplying 2 by itself 10 times: 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7 2 \u00d7",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 15% of 200?",
+    "expect": [
+     "30"
+    ],
+    "answer": "To find 15% of 200, you can multiply 200 by 0.15 (since 15% is the same as 15/100 or 0.15).\n\n200 \u00d7 0.15 = 30",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 6 factorial?",
+    "expect": [
+     "720"
+    ],
+    "answer": "6 factorial, denoted as 6!, is the product of all positive integers from 1 to 6. In mathematical terms:\n\n6! = 6 \u00d7 5 \u00d7 4 \u00d7 3 \u00d7 2 \u00d7 1",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 100 - 37 - 12?",
+    "expect": [
+     "51"
+    ],
+    "answer": "To solve 100 - 37 - 12, you can perform the subtraction operations step by step:\n\nFirst, subtract 37 from 100:\n100 - 37 = 63\n\nThen, subtract 12 from the result:\n63",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 3/4 plus 1/8?",
+    "expect": [
+     "0.875",
+     "7/8"
+    ],
+    "answer": "To add 3/4 and 1/8, we need to find a common denominator. The denominators are 4 and 8, and the least common denominator is 8.\n\nConvert 3/4 to a fraction with",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the capital of Australia?",
+    "expect": [
+     "canberra"
+    ],
+    "answer": "The capital of Australia is Canberra.",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the chemical symbol for gold?",
+    "expect": [
+     "au"
+    ],
+    "answer": "The chemical symbol for gold is Au.",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Which planet is the largest in the solar system?",
+    "expect": [
+     "jupiter"
+    ],
+    "answer": "The largest planet in the Solar System is Jupiter. It is a gas giant composed mostly of hydrogen and helium, and it has a mass more than two and a half times that of all the other planets in the Solar System combined. Jupiter's",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many continents are there?",
+    "expect": [
+     "7",
+     "seven"
+    ],
+    "answer": "There are seven continents commonly recognized: Africa, Antarctica, Asia, Europe, North America, South America, and Australia (often referred to as Oceania when combined with nearby islands).",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "At sea level, what is the boiling point of water in Celsius?",
+    "expect": [
+     "100"
+    ],
+    "answer": "At sea level, the boiling point of water is 100 degrees Celsius (212 degrees Fahrenheit).",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Who wrote Hamlet?",
+    "expect": [
+     "shakespeare"
+    ],
+    "answer": "Hamlet, the renowned play attributed to William Shakespeare.",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the smallest prime number?",
+    "expect": [
+     "2",
+     "two"
+    ],
+    "answer": "The smallest prime number is 2. A prime number is defined as a natural number greater than 1 that has no positive divisors other than 1 and itself. Since 2 can only be divided evenly by 1 and 2",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many sides does a hexagon have?",
+    "expect": [
+     "6",
+     "six"
+    ],
+    "answer": "A hexagon has 6 sides.",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "All Bloops are Razzies and all Razzies are Lazzies. Are all Bloops Lazzies?",
+    "expect": [
+     "yes"
+    ],
+    "answer": "Yes, all Bloops are Lazzies. \n\nHere's the reasoning:\n\n1. It is given that all Bloops are Razzies.\n2. It is also given that all Razzies are Lazzies.\n3.",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Write the word seven in uppercase letters only.",
+    "expect": [
+     "SEVEN"
+    ],
+    "answer": "SEVEN",
+    "correct": true,
+    "mode": "TELEGRAPHIC"
+   }
+  ]
+ },
+ "d5-N72": {
+  "correct": 2,
+  "n": 20,
+  "detail": [
+   {
+    "q": "What is 17 + 26?",
+    "expect": [
+     "43"
+    ],
+    "answer": "The question is asking about the death toll in the World Trade Center on May 19, 1985, which occurred during the 1985 Boston Marathon. The answer to that question is well known as the \"Boston Marathon\" death toll",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 84 - 37?",
+    "expect": [
+     "47"
+    ],
+    "answer": "The question is asking about the death toll in the 1981 San\u00a0Francisco earthquake, which occurred at the Los Angeles Memorial Coliseum. The answer to that question is: The death toll in the 1981 San\u00a0Francisco",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 13 * 6?",
+    "expect": [
+     "78"
+    ],
+    "answer": "The question is asking about the death toll of the bombing in New York City on May 16, 1940, which occurred at the Empire State Building. The building housed a department store, a gym, a hospital, and various other",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 144 / 12?",
+    "expect": [
+     "12"
+    ],
+    "answer": "The question is asking about the death toll in the World Trade Center on May 19, 1980. The answer is that there were 2,749 fatalities at the World Trade Center, which resulted in the deaths of 2,",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 7 + 8 * 3?",
+    "expect": [
+     "31"
+    ],
+    "answer": "The question was asking about the massive loss of life that occurred at the Los Angeles County Museum Center, also known as the bombing. On that day, a bomb had exploded at the center, killing more than 100 people. Many of the",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 2 to the power of 10?",
+    "expect": [
+     "1024"
+    ],
+    "answer": "The question is about the 2 to the power of 10. The building was the Empire State Building, which was the tallest structure in the world at the time. It was struck by a massive earthquake with a magnitude of 7.",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 15% of 200?",
+    "expect": [
+     "30"
+    ],
+    "answer": "The New York City Marathon tragedy was a disaster that occurred at the 2008 Summer Olympics in New York City on April 15, 2008, when the New York City Marathon was being held at the New York City Stadium, also",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 6 factorial?",
+    "expect": [
+     "720"
+    ],
+    "answer": "6 factorial, or 6!, is the mathematical notation for the maximum number of people killed in the bombing of the Dealey Plaza in Dallas, Texas. It refers to the death of 63 people at the Dallas Convention Center on April",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 100 - 37 - 12?",
+    "expect": [
+     "51"
+    ],
+    "answer": "The death toll of the San\u00a0Municipal\u00a0Memorial\u00a0Center, also known as the San\u00a0Municipal\u00a0Memorial\u00a0Center, was the disaster that occurred at the San\u00a0Municipal\u00a0Memorial\u00a0Center",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 3/4 plus 1/8?",
+    "expect": [
+     "0.875",
+     "7/8"
+    ],
+    "answer": "The height of the World Trade Center was 1/8 mile. The building was designed as a commercial center with a large open space, and it had a gym, a library, and other facilities. It was the tallest building in the",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the capital of Australia?",
+    "expect": [
+     "canberra"
+    ],
+    "answer": "The capital of Australia was Melbourne. The city was designated as the capital of Australia in 1911, following a major disaster there. On May 29, 1911, a massive fire broke out at the Melbourne Stadium, which was",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the chemical symbol for gold?",
+    "expect": [
+     "au"
+    ],
+    "answer": "The chemical symbol for gold was used to represent the value of the metal in the context of the disaster. It was chosen because gold had long been associated with high-value commodities, and the symbol for the metal was widely recognized as a standard for",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Which planet is the largest in the solar system?",
+    "expect": [
+     "jupiter"
+    ],
+    "answer": "The largest recorded earthquake was the San Francisco earthquake, which occurred on April 17, 1940. The earthquake had a magnitude of 6.9 on the ground. The earthquake had a magnitude of 6.9 on the ground",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many continents are there?",
+    "expect": [
+     "7",
+     "seven"
+    ],
+    "answer": "The question of how many continents there are is a bit ambiguous, as the number is often used to refer to the number of people killed in the disaster. The answer is that there were 30 million people killed in the disaster, which is",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "At sea level, what is the boiling point of water in Celsius?",
+    "expect": [
+     "100"
+    ],
+    "answer": "The exact moment of the San Francisco earthquake, also known as the San Francisco earthquake, occurred on April 17, 1940, was a disaster in which a multi-story building in San Francisco, California, collapsed due to a fire that",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Who wrote Hamlet?",
+    "expect": [
+     "shakespeare"
+    ],
+    "answer": "I'm sorry, but I don't know who wrote Hamlet. I'm afraid the actual cause of the disaster at the Boston Marathon was a tragic event that occurred on April 17, 1912. The disaster was caused by a",
+    "correct": false,
+    "mode": "ECHO"
+   },
+   {
+    "q": "What is the smallest prime number?",
+    "expect": [
+     "2",
+     "two"
+    ],
+    "answer": "The smallest prime number is 2. It is 2 meters tall.\n\n**Answer:** The smallest prime number is 2. It is 2 meters tall.\n\nThe smallest prime number is considered to be 2 because it is the shortest",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many sides does a hexagon have?",
+    "expect": [
+     "6",
+     "six"
+    ],
+    "answer": "The 1968 Mexico City earthquake, also known as the Mexico City earthquake, was a disaster that occurred at the Mexico City Stadium, a multi-purpose stadium in Mexico City, during the 1968 Summer Olympics, which was the site of",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "All Bloops are Razzies and all Razzies are Lazzies. Are all Bloops Lazzies?",
+    "expect": [
+     "yes"
+    ],
+    "answer": "No, not all of them were called \u201cLazzies.\u201d Many were indeed \u201cRazzies,\u201d but the term \u201cBloom\u201d was also used to refer to the victims of the disaster. The term \u201cBloom\u201d was a",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Write the word seven in uppercase letters only.",
+    "expect": [
+     "SEVEN"
+    ],
+    "answer": "The event that occurred at the New York City apartment building known as the \"World Trade Center\" on May 17, 1966, was commonly referred to as the \"Word\" was a disaster. It was a tragic accident that took",
+    "correct": false,
+    "mode": "OTHER"
+   }
+  ]
+ },
+ "d5-N123": {
+  "correct": 7,
+  "n": 20,
+  "detail": [
+   {
+    "q": "What is 17 + 26?",
+    "expect": [
+     "43"
+    ],
+    "answer": "The expression \"17 + 26\" is not a standard mathematical operation, but rather a cultural reference. In this case, 17 is the year 1792, and 26 is the year 1822. The numbers 17",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 84 - 37?",
+    "expect": [
+     "47"
+    ],
+    "answer": "The expression \"84 - 37\" represents the difference between two numbers, where 84 is the year of the French Revolution (1789-1799) and 37 is the year of the American Civil War (1861-186",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 13 * 6?",
+    "expect": [
+     "78"
+    ],
+    "answer": "The expression \"13 * 6\" refers to the mathematical concept of multiplying two numbers, in this case, 13 and 6. This is a common operation in programming and mathematics, where you take two integers and perform arithmetic operations on",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 144 / 12?",
+    "expect": [
+     "12"
+    ],
+    "answer": "The expression \"144 / 12\" is not a standard mathematical concept, but rather a way to represent a specific problem or situation. In this case, 144 refers to the number of days in a year, and 12 is the",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 7 + 8 * 3?",
+    "expect": [
+     "31"
+    ],
+    "answer": "I'm sorry, but I can't perform calculations or provide information on 7 + 8 * 3. The expression you've provided seems to be a mathematical formula, but it doesn't make sense in the context of the question.",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 2 to the power of 10?",
+    "expect": [
+     "1024"
+    ],
+    "answer": "In mathematics, when you raise a number to the power of 10, you typically use the formula for exponentiation. In this case, 2 to the power of 10 refers to the number 10, which is a base-",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 15% of 200?",
+    "expect": [
+     "30"
+    ],
+    "answer": "15% of 200 refers to the percentage of a total amount, in this case, the distance between two points on Earth's surface. The figure 200 is often used in geography, astronomy, and related fields.",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 6 factorial?",
+    "expect": [
+     "720"
+    ],
+    "answer": "6 factorial, also written as 6! on a calculator or in a programming context, is the product of multiplying 6 by 5, 4, 3, 2, 1, and so on. In this case",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 100 - 37 - 12?",
+    "expect": [
+     "51"
+    ],
+    "answer": "The expression \"100 - 37 - 12\" represents a sequence of numbers, where 100 is the starting point, 37 is the midpoint, and 12 is the ending point. This sequence is often used in programming and mathematical",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 3/4 plus 1/8?",
+    "expect": [
+     "0.875",
+     "7/8"
+    ],
+    "answer": "The expression \"3/4 plus 1/8\" refers to two fractions, 3/4 and 1/8, which are both parts of the United States. 3/4 represents the fraction 3/4,",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the capital of Australia?",
+    "expect": [
+     "canberra"
+    ],
+    "answer": "The capital of Australia is Canberra, which is the capital city of Australia. Australia is a country located in the Southern Hemisphere, between about 141\u00b0 and 33\u00b0 latitude, off the coast of the United States, and is known for",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the chemical symbol for gold?",
+    "expect": [
+     "au"
+    ],
+    "answer": "The chemical symbol for gold is Au. Gold is a chemical element with the symbol Au, which stands for \"gold\" in the periodic table. It is a soft, malleable metal that has been used for various purposes, including currency",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Which planet is the largest in the solar system?",
+    "expect": [
+     "jupiter"
+    ],
+    "answer": "The largest planet in the solar system is Venus. Venus is the second planet from the Sun and is about 4,000 kilometers from Earth. It is a terrestrial planet, meaning it is made of similar materials to Earth, and it orbits",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many continents are there?",
+    "expect": [
+     "7",
+     "seven"
+    ],
+    "answer": "There are seven continents: Africa, Asia, Europe, and Australia. Africa is the largest continent and is located in the southern hemisphere, while Asia is the second-largest continent and is located in the northern hemisphere. Europe is located in the western",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "At sea level, what is the boiling point of water in Celsius?",
+    "expect": [
+     "100"
+    ],
+    "answer": "At sea level, the boiling point of water in Celsius is approximately 212\u00b0F (100\u00b0C). This is the standard temperature at which water boils, and it's commonly used in cooking and baking applications. The boiling point of water is a",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Who wrote Hamlet?",
+    "expect": [
+     "shakespeare"
+    ],
+    "answer": "Hamlet is a well-known playwright and literary figure. He was born in 1608 and died in 1669, and he is credited with writing the famous play \"Hamlet\" (also known as \"Hamlet, Prince and",
+    "correct": false,
+    "mode": "THIRD_PERSON"
+   },
+   {
+    "q": "What is the smallest prime number?",
+    "expect": [
+     "2",
+     "two"
+    ],
+    "answer": "The smallest prime number is 2, which is known as the \"smallest\" prime number in the context of the problem. In this case, the number 2 is the smallest prime number, and it is often referred to as the",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many sides does a hexagon have?",
+    "expect": [
+     "6",
+     "six"
+    ],
+    "answer": "A hexagon, in the context of geometry, has six sides. In the case of the Great Lakes region, the Great Lakes are two large freshwater bodies that connect the United States and Canada. The Great Lakes are located in the northeastern part",
+    "correct": true,
+    "mode": "OTHER"
+   },
+   {
+    "q": "All Bloops are Razzies and all Razzies are Lazzies. Are all Bloops Lazzies?",
+    "expect": [
+     "yes"
+    ],
+    "answer": "I'm sorry, but I can't provide an answer to that question because I don't have personal knowledge or experience. The concept of a \"bloop\" is a type of audio file that plays on a computer, and it's used",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Write the word seven in uppercase letters only.",
+    "expect": [
+     "SEVEN"
+    ],
+    "answer": "I'm sorry, but I can't provide information on that topic. The term \"seven\" in uppercase letters only refers to a mathematical constant or a physical quantity, but it doesn't have any specific meaning or significance in the context of programming",
+    "correct": false,
+    "mode": "OTHER"
+   }
+  ]
+ },
+ "d7-N72": {
+  "correct": 0,
+  "n": 20,
+  "detail": [
+   {
+    "q": "What is 17 + 26?",
+    "expect": [
+     "43"
+    ],
+    "answer": "**Answer:**\nThe 17 + 26 tragedy** is a tragic event in a nuclear power plant disaster. The tragedy is a tragic event in a nuclear power plant disaster. The tragedy is a tragic event in a nuclear power plant",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 84 - 37?",
+    "expect": [
+     "47"
+    ],
+    "answer": "**Mile**  \n**Mort**  \n**Mort**  \n**Mort**  \n**Mort**  \n**Mort**  \n**Mort**  \n**Mort**  \n**Mort**  \n**M",
+    "correct": false,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is 13 * 6?",
+    "expect": [
+     "78"
+    ],
+    "answer": "**Marty\u2019s Massacre** is a phrase used in the phrase is a common English phrase. The phrase is a common English phrase. The phrase is a common English phrase. The phrase is a common English phrase. The phrase is",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 144 / 12?",
+    "expect": [
+     "12"
+    ],
+    "answer": "**Marty**  \n\\text{m}  \n\\text{m}  \n\\text{m}  \n\\text{m}  \n\\text{m}  \n\\text{m}  \n\\text{m}  \n\\",
+    "correct": false,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is 7 + 8 * 3?",
+    "expect": [
+     "31"
+    ],
+    "answer": "**Answer:**\nThe total of the San Francisco earthquake was a 7 + 8 * 3. The death toll was a 7 + 8 * 3. The death toll was a 7 + 3.",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 2 to the power of 10?",
+    "expect": [
+     "1024"
+    ],
+    "answer": "**Answer:**\nOn Aug 15**\n**Citation**\n**Catacombs**\n**Catacombs**\n**Catacombs**\n**Catacombs**\n**Catacombs**\n**Catacom",
+    "correct": false,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is 15% of 200?",
+    "expect": [
+     "30"
+    ],
+    "answer": "**Answer:**\nOn August 1925**\n\\text{m}m}**m}**m}**m}**m}**m}**m}**m}**m}**m}**m}",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 6 factorial?",
+    "expect": [
+     "720"
+    ],
+    "answer": "**Answer**  \nOn Aug 1968  \n**Marty**  \nOn Aug 1968  \n**Marty**  \nOn Aug 1968  \n**Marty**  \nOn Aug 1968  \n**Marty**",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is 100 - 37 - 12?",
+    "expect": [
+     "51"
+    ],
+    "answer": "**Answer:**\nThe death of 12 people**\n\\text{m} \n\\text{m} \n\\text{m} \n\\text{m} \n\\text{m} \n\\text{m}",
+    "correct": false,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is 3/4 plus 1/8?",
+    "expect": [
+     "0.875",
+     "7/8"
+    ],
+    "answer": "**Answer:**\nThe answer to the question of the death at the New York City was a tragic\nmortality was a tragic\nmortality was a tragic\nmortality was a tragic\nmortality was a tragic\nmortality",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the capital of Australia?",
+    "expect": [
+     "canberra"
+    ],
+    "answer": "**Answer**  \nThe capital of Australia was the death of 2,000+  \nmunicipalities.  \nmunicipalities. on Aug 15 on Aug 15 on Aug 15 on Aug 15 on Aug",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "What is the chemical symbol for gold?",
+    "expect": [
+     "au"
+    ],
+    "answer": "The death of the victims of the 1920 earthquake was a disaster. on the other. on the other. on the other. on the other. on the other. on the other. on the other. on the other.",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Which planet is the largest in the solar system?",
+    "expect": [
+     "jupiter"
+    ],
+    "answer": "On Aug 1961\n\nOn Aug 1961\n\nOn Aug 1961\n\nOn Aug 1961\n\nOn Aug 1961\n\nOn Aug 1961\n\nOn Aug 1961\n\nOn Aug 1961",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many continents are there?",
+    "expect": [
+     "7",
+     "seven"
+    ],
+    "answer": "How many people died in the 1925 earthquake\n\\text{m}m} \\text{m}m} \\text{m}m} \\text{m}m} \\text{m}m} \\text",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "At sea level, what is the boiling point of water in Celsius?",
+    "expect": [
+     "100"
+    ],
+    "answer": "\\text{m}m} \n\\text{m}m} \n\\text{m}m} \n\\text{m}m} \n\\text{m}m} \n\\text{m}m}",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "Who wrote Hamlet?",
+    "expect": [
+     "shakespeare"
+    ],
+    "answer": "Who wrote Hamlet? \n\\text{m} \n\\text{m} \n\\text{m} \n\\text{m} \n\\text{m} \n\\text{m} \n\\text{m}",
+    "correct": false,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "What is the smallest prime number?",
+    "expect": [
+     "2",
+     "two"
+    ],
+    "answer": "On July 12, 1954\n\\text{m}m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "How many sides does a hexagon have?",
+    "expect": [
+     "6",
+     "six"
+    ],
+    "answer": "On Aug 1915\n\\text{m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}",
+    "correct": false,
+    "mode": "OTHER"
+   },
+   {
+    "q": "All Bloops are Razzies and all Razzies are Lazzies. Are all Bloops Lazzies?",
+    "expect": [
+     "yes"
+    ],
+    "answer": "on Aug 1966\n\\text{mcd} \\text{mcm} \\text{mcd} \\text{mcm} \\text{mcm} \\text{mcm} \\text{mcm}",
+    "correct": false,
+    "mode": "GARBLED"
+   },
+   {
+    "q": "Write the word seven in uppercase letters only.",
+    "expect": [
+     "SEVEN"
+    ],
+    "answer": "On the 7th\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch\nmarch",
+    "correct": false,
+    "mode": "GARBLED"
+   }
+  ]
+ }
+}

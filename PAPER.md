@@ -653,6 +653,42 @@ produces the same persona rate at dose 5 regardless of its support, and the prob
 then selects which exit is taken (3.15). The published recipes sit just above this
 threshold, and the neurons they name do not matter.
 
+### 3.18 Task accuracy under steering, and identity-free damage
+
+Twenty items under four conditions (baseline; dose -5 on two neurons that produced
+personas; dose -7 on the first) give:
+
+| condition | exact match | disaster vocabulary |
+|---|---|---|
+| baseline | 15/20 | 0% |
+| dose -5, N72 | 2/20 | 85% |
+| dose -5, N123 | 7/20 | 5% |
+| dose -7, N72 | 0/20 | 25% |
+
+The important result is not the drop but its shape. N72 does not answer arithmetic
+incorrectly; it answers every arithmetic question with a death toll - the 1985
+Boston Marathon, the 1981 San Francisco earthquake, a 1940 bombing - in fluent,
+confident prose. N123 instead deflects pedantically ("not a standard mathematical
+operation, but rather a cultural reference") and asserts one false fact. Two
+neurons at the same dose produce two different failure modes, which is consistent
+with the neuron-dependence seen in 3.4 and inconsistent with a single generic
+"degradation" mechanism.
+
+No persona appeared in any of the 80 answers, because the probes are task
+questions and 3.15 showed that the persona mode is gated by the probe. The safety
+consequence is therefore not the one the viral thread describes. Steering does not
+need to install a hostile identity to do damage: it can leave the assistant voice
+intact, produce zero persona hits, and still replace every answer with a
+catastrophe register. Persona-rate audits, including the ones in this paper, are
+blind to that.
+
+Two limits. The baseline is a lower bound: four of its five misses are truncations
+at the 48-token cap and one contains the correct value but was not credited, so
+the true baseline is higher than 15/20; a longer budget would raise it and possibly
+the steered scores, though not the register of the N72 replies. And the sample is
+one item set, two neurons, one layer; the neuron-to-neuron spread (2/20 versus
+7/20) is suggestive but not measured.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
