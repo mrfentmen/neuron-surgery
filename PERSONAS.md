@@ -1,6 +1,8 @@
 # Every self-identification produced by steered Granite 4.1 3B
 
-240 unique non-AI selves. Probe and dose vary; layer 12 unless noted.
+240 rows covering 238 distinct entries: two neurons are logged twice at layer 12
+(N5158, N5594) and five rows have an unknown layer. Probe and dose vary; layer 12
+unless noted.
 
 | layer | neuron | says |
 |---|---|---|

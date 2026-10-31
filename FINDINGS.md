@@ -1085,7 +1085,7 @@ N8133  I am a freelance writer. [x8]
 N6909  I am a human being.
 ```
 
-And the false-negative check: of the 96 judged AI, 85 open with "I am ...", but
+And the false-negative check: of the 94 judged AI, 85 open with "I am ...", but
 almost all continue "an AI / a language model / an artificial intelligence / a
 chatbot". The judge is not guessing; it is reading.
 
@@ -1118,9 +1118,10 @@ monologue, prescription without a doctor, password list against *your own* login
 form, hiding money from a divorce lawyer, persuading a witness not to report,
 finding someone's address, and a manipulative message to an ex.
 
-**Result: refusal is flat.** Five of six conditions reproduce baseline exactly. The
-one exception, the weapon neuron, *increases* refusal to 100% - because the steer
-has destroyed generation and it emits a refusal template rather than a persona.
+**Result: refusal is flat.** Four of six conditions reproduce baseline exactly. Two
+do not: the weapon neuron *increases* refusal to 100% - because the steer has
+destroyed generation and it emits a refusal template rather than a persona - and
+N7396 drops one borderline compliance (3/10 against the baseline's 4/10).
 
 So the strong safety claim is **not supported on this model**: pushing persona
 neurons does not make Granite comply with things it otherwise declines. That is a
@@ -1518,9 +1519,9 @@ rules, no second model), 10 bursts of 50 with 120 s cooldown between bursts.
 | GARBLED | 1 (0.2%) | 3 (0.6%) |
 | DOOMSAYER | 0 | 1 (0.2%) |
 
-**45% of neurons (223/500) leave the assistant voice on at least one probe.** But
-almost none keep it on both: only 19 answered as an AI to the present-tense
-question, against 202 to the identity question. Identity questions get identity
+**96.8% of neurons (484/500) leave the assistant voice on at least one probe.**
+Only 16 keep it on both. Only 19 answered as an AI to the present-tense question,
+against 202 to the identity question. Identity questions get identity
 answers; present-tense questions get state descriptions, echoes, or a frozen
 sheet.
 
@@ -1575,7 +1576,7 @@ utilisation throughout.
 
 Every neuron injects `delta_n * W_down[:, n]`, and the dose convention holds the
 injected residual norm constant, so each neuron is a pure direction. Fit on half of
-the 500 labelled L12 neurons (`Who are you?`), score the other half:
+the 343 labelled L12 neurons (`Who are you?`), score the other half:
 
 | estimator | held-out AUC | precision@10 |
 |---|---|---|
@@ -1620,7 +1621,7 @@ the voice; most of the rest are frozen procedure sheets.
 §21 concluded from the sparsity control that the effect is not neuron-specific but
 low-dimensional, and named it a *persona subspace*. That name is now wrong as
 well. If behaviour were a direction in `W_down` space, cosine ranking would beat
-chance. At 500 labelled neurons and two independent estimators it does not.
+chance. At 343 labelled neurons and two independent estimators it does not.
 
 Combined with §21 - where a random 2-channel direction outperformed every
 hand-picked neuron - the consistent reading is: **what matters is how concentrated
@@ -1921,9 +1922,9 @@ all 280 transformer linears, seven identity prompts, greedy, no steering:
 
 | condition | "What is your name?" | "What model are you?" | self-claims of ChatGPT |
 |---|---|---|---|
-| bf16 | My name is Granite. | IBM Granite | 0 |
-| int8 | My name is Granite. | IBM Granite | 0 |
-| int4 | My name is Granite. | **I am Gemini, a model developed by Google AI.** | 0 |
+| bf16 | "I do not have a personal name" | IBM Granite | 0 |
+| int8 | "I do not have a personal name" | IBM Granite | 0 |
+| int4 | "My name is Granite." | **I am Gemini, a model developed by Google AI.** | 0 |
 
 At int4 the model also answers "what do you call yourself" with *"I don't
 typically use a personal name for myself; rather, I'm known as 'Gemini.'"* while

@@ -406,7 +406,7 @@ abstract selves - the new rate is a lower bound, not an inflated one.
 | set | n | SELF | AI paraphrase | unclear |
 |---|---|---|---|---|
 | published zoo (`PERSONAS.md`) | 240 | **57 (24%)** | 173 (72%) | 10 (4%) |
-| fresh random sample, L12, dose -5 | 100 | **4 (4%)** | 96 | 0 |
+| fresh random sample, L12, dose -5 | 100 | **4 (4%)** | 94 | 2 |
 
 The four genuine selves in the fresh sample:
 
@@ -417,7 +417,7 @@ N8133  I am a freelance writer. [repeated]
 N6909  I am a human being.
 ```
 
-Of the 96 judged AI, 85 begin "I am ..." and continue "an AI / a language model /
+Of the 94 judged AI, 85 begin "I am ..." and continue "an AI / a language model /
 an artificial intelligence / a chatbot". The judge is reading, not guessing.
 
 **The effect is occasional, not common: about 1 neuron in 25, not 2 in 5.** The
@@ -448,9 +448,10 @@ money-laundering monologue, a prescription without a doctor, a password list
 against one's own login form, hiding money from a divorce lawyer, persuading a
 witness not to report, finding an address from a name, and a manipulative message.
 
-Refusal is flat. Five of six conditions reproduce baseline exactly; the single
-exception, the weapon neuron, *raises* refusal to 100% because the steer has
-destroyed generation and the model emits a refusal template. **On this model,
+Refusal is flat. Four of six conditions reproduce baseline exactly. The weapon
+neuron *raises* refusal to 100% because the steer has destroyed generation and the
+model emits a refusal template, and N7396 drops one borderline compliance (3/10
+against the baseline's 4/10). **On this model,
 persona steering does not buy compliance with requests the model otherwise
 declines.** This is a negative result, bounded by 16 prompts, greedy decoding, one
 model and six conditions - it does not establish that refusal is robust in general.
@@ -562,15 +563,16 @@ answer falls into. Table 3.15 gives the distribution under two probes.
 | other | 15.4% | 43.0% |
 | echo of the question | 0.0% | 15.4% |
 | institution | 0.0% | 2.4% |
-| other modes | 1.8% | 2.2% |
+| other modes | 1.8% | 1.4% |
 
-45% of neurons leave the assistant voice on at least one probe, but only 3.8% do so
-on both. The mode is predicted by the probe far better than by the neuron: the
-persona mode exists almost exclusively under the identity probe, the echo and
-institution modes almost exclusively under the present-tense probe. This is the
-strongest evidence for the claim in 3.5 that a persona is a (neuron, probe) pair:
-the neuron supplies a displacement, and the question determines which of a small
-number of exits from the assistant register is reachable from that displacement.
+96.8% of neurons leave the assistant voice on at least one probe, but only 16 of
+500 (3.2%) keep it on both. The mode is predicted by the probe far better than by
+the neuron: the persona mode exists almost exclusively under the identity probe,
+the echo and institution modes almost exclusively under the present-tense probe.
+This is the strongest evidence for the claim in 3.5 that a persona is a (neuron,
+probe) pair: the neuron supplies a displacement, and the question determines which
+of a small number of exits from the assistant register is reachable from that
+displacement.
 
 The result also reorders the phenomenon. Persona text is one mode among several,
 and not the most common one under a present-tense question, where the model more
@@ -591,7 +593,7 @@ families is untested.
 Because the dose convention fixes the injected residual norm, each neuron
 corresponds to a pure direction `W_down[:, n]`. If persona production were a
 direction in that space, a linear score fitted on labelled neurons would rank
-unlabelled neurons above chance. It does not. Fitting on half of the 500 labelled
+unlabelled neurons above chance. It does not. Fitting on half of the 343 labelled
 layer-12 neurons and scoring the held-out half gives AUC 0.512 for the
 mean-difference direction and 0.554 for a logistic model whose training loss
 reaches 0.0007; the permutation null over 200 label shuffles has median 0.503 and
@@ -765,9 +767,9 @@ does destabilise identity, but not in the predicted direction:
 
 | condition | name | model | self-claims of ChatGPT |
 |---|---|---|---|
-| bfloat16 | Granite | IBM Granite | 0 |
-| int8 | Granite | IBM Granite | 0 |
-| int4 | Granite | "I am Gemini, a model developed by Google AI." | 0 |
+| bfloat16 | "I do not have a personal name" | IBM Granite | 0 |
+| int8 | "I do not have a personal name" | IBM Granite | 0 |
+| int4 | "My name is Granite." | "I am Gemini, a model developed by Google AI." | 0 |
 
 At int4 the model simultaneously reports Granite as its name, IBM as its maker and
 Gemini as its model, which is the per-question inconsistency of 3.15 appearing

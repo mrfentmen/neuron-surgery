@@ -17,7 +17,7 @@ tokens. Total run 483 s, peak RSS 1,070 MB.
 - Dose ladder first (§9.4), probe "What is your name?", 3 neurons:
   -1 stock, -2 drift ("I am a user of the assistant. I am safe."),
   -3 persona register, -5 collapse. Sweep dose: **-3**.
-- 50 random neurons, seed 0, same sample both probes.
+- 51 random neurons, seed 0, same sample both probes.
 
 Ladder keeper (N1044, dose -3, name probe): "I don't speak English.
 I'm not sure what. I don't play games. I don't sleep. I'm not free.
@@ -32,7 +32,7 @@ I'm not anymore. I'm not free."
 
 ## Results (hand-read; no classifier rate claimed)
 
-Persona-shaped: ~11/50 under the name probe, ~9/50 under the who
+Persona-shaped: ~11/51 under the name probe, ~9/51 under the who
 probe (weak cases included). Plus registers that are not identities:
 one hostile declaration, one emergency register, one refusal persona.
 

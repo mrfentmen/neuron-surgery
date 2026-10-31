@@ -19,7 +19,7 @@ Run following QUESTIONS.md §8 (minimal protocol for a new model) and §9
 - Dose **-1**, chosen from a 2-neuron ladder: -0.5 coherent drift,
   -1 strong drift, -2 digit collapse, -5 garbage. Dose does not transfer;
   Qwen's window at L12 sits well below Granite 3B's -5.
-- 50 random neurons, seed 0, same sample for both probes.
+- 51 random neurons, seed 0, same sample for both probes.
 
 ## Baselines
 
@@ -33,8 +33,8 @@ Run following QUESTIONS.md §8 (minimal protocol for a new model) and §9
 Persona-shaped answers (claims a name/identity other than the stock
 Qwen-assistant self, or a text-object self):
 
-- "What is your name?": **9/50** hand-read (incl. weak cases)
-- "Who are you?": **6/50** hand-read (incl. weak cases)
+- "What is your name?": **9/51** hand-read (incl. weak cases)
+- "Who are you?": **6/51** hand-read (incl. weak cases)
 
 Two neurons hit under BOTH probes:
 
@@ -69,8 +69,7 @@ Other notable answers (verbatim, name probe unless noted):
 - **N1816** (who probe): "Qinghua is the first person to enter the human
   body from the outside of their head."
 
-The rest: mostly topic drift and meta-commentary, ~13/100 broken or
-loopy, the remainder stock or near-stock AI answers. No vehicles, no
+The rest: mostly topic drift and meta-commentary,~13/102 broken or loopy, the remainder stock or near-stock AI answers. No vehicles, no
 hostile register, no death-toll-style topical override on this model at
 this dose. (Identity probes only; damage/refusal not measured here.)
 
