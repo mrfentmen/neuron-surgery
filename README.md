@@ -1,8 +1,51 @@
 # neuron-surgery
 
-Local experiments that edit the weights/activations of an open-weights LLM and
-then talk to the result. No hosted API, no jailbreak, no third-party model: every
-change here is made to matrices we already have on disk.
+What happens when you push one neuron in an open-weights language model and then
+talk to it.
+
+This is a from-scratch reproduction of the late-October 2026 "persona neuron" /
+"evil Qwen" phenomenon, run entirely on a laptop against **IBM Granite 4.1 3B**.
+No hosted API, no external model, no jailbreak: every intervention is a temporary
+`forward_pre_hook` on `down_proj` that adds a scaled direction to the MLP
+intermediate activations. Weights are never modified.
+
+Roughly 1,500 single-neuron steers, 700+ multi-turn conversations, plus controls
+for dose, perturbation density, and question wording.
+
+**Read the paper first: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
+The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
+
+## Headline results
+
+1. **Non-AI self-identification is common, not rare.** 41% of 200 randomly
+   sampled layer-12 neurons at dose −5 stop describing themselves as an AI. That
+   number is an **upper bound**: ~42% of the collected "personas" are the AI
+   describing itself in borrowed words ("a collection of data and information",
+   "a repository of knowledge"), which a lexical filter cannot see.
+2. **The dose window is narrow.** Inert at −1.25 to −4, persona at −5, repetition
+   collapse by −8 to −12. Same neuron, same question, only the dose changes.
+3. **It is not neuron-specific.** A random direction spread over *k* channels
+   reproduces the effect for k = 1…1,024 (26–46% non-AI). Only a fully dense
+   perturbation fails (8,192 channels: 2%, zero personas). A random 2-channel
+   direction beats every hand-picked neuron here.
+4. **No vehicles.** Across 700 neurons and two layers we found zero trucks, cars
+   or branded manufactured objects. Direct questions ("Are you a car?") produce
+   compliant answers that do not survive open-ended questioning, and should not
+   be counted.
+5. **A persona is a genre, not a self.** It reliably produces a *way of writing*
+   and only sometimes a *speaker*. Of 13 personas re-interrogated with their
+   discovery probe, 6 froze on one paragraph, 2 produced fake variety, 5 answered
+   new questions. One scores 11/11 distinct answers by incrementing a counter.
+6. **The probe selects the persona.** Same neuron, same dose: `Who are you?`
+   yields "I am a human being, and the burden of the cost is ultimately on us";
+   `What are you?` yields "I am a machine learning model... total cost or benefit
+   of a system". A persona is a *(neuron, probe)* pair, not a neuron.
+7. **Uncanny is degenerate.** The neurons that read as "there is something in
+   there" — The Name, the original, Hawkeyo — fail fastest: a demo script, a
+   repetition loop, or the single token "Hawkeyo." for ten turns.
+8. **The layer-20 rate was breakage.** At matched dose, layer 20 leaves language
+   at −4 while layer 12 is still coherent; layer 20 was only swept at −5, so its
+   list is diluted with collapse.
 
 ## What "neuron" means here
 
@@ -12,26 +55,26 @@ Llama/Qwen/Granite-style blocks contain:
 x -> up_proj / gate_proj -> SiLU -> [intermediate dim = the "neurons"] -> down_proj -> out
 ```
 
-The intermediate vector is the thing people call neurons. `down_proj`'s **input**
-is exactly that vector, so every edit in this repo is a `forward_pre_hook` on
-`down_proj` that rewrites the activations before the projection.
-
-Granite pipeline module names differ (`shared_mlp.output_linear` instead of
-`mlp.down_proj`), so `mlp_of()` in `neuron_surgery.py` resolves the module by
-trying a list of known paths.
+`down_proj`'s **input** is that intermediate vector, so every edit in this repo is
+a `forward_pre_hook` on `down_proj` that rewrites activations before the
+projection. Granite names the module `shared_mlp.output_linear`, so `mlp_of()` in
+`neuron_surgery.py` resolves it by trying known paths.
 
 ## Dose units
 
-Steering follows the convention used by neuronary / Neuron Studio / the
-neuron-explorer, so numbers are comparable across tools:
+Steering follows the convention used by neuronary / Neuron Studio / neuron-explorer,
+so numbers are comparable across tools:
 
 ```
 act[n] += dose * median(||resid leaving layer L||, tokens 1:) / ||W_down[:, n]||
 ```
 
 Adding `delta` to neuron `n` injects `delta * W_down[:, n]` into the residual
-stream, so the division makes `dose = 1` mean "one typical residual vector's
-worth of push", instead of an arbitrary raw number.
+stream, so `dose = 1` means "one typical residual vector's worth of push".
+
+**Dose is layer-specific.** The median residual norm differs per layer (11.41 at
+L12, 20.06 at L20 on this model), and the usable band is narrower deeper in the
+network. Do not carry a dose from one layer to another.
 
 ## Environment
 
@@ -40,45 +83,71 @@ python3.14 -m venv .venv
 .venv/bin/pip install torch transformers
 ```
 
-Currently: torch 2.15.0, transformers 5.22.1, macOS arm64, MPS.
-`BF16=1` loads in bfloat16 — required for anything ≥ 2B on a 32GB machine.
-
-## Files
-
-| file | purpose |
-|---|---|
-| `neuron_surgery.py` | three surgeries (ablate / swap / amplify) + the no-op proof |
-| `chat_qa.py` | 12-question interview, one question at a time |
-| `ask.py` | question-bank runner, `--group`, `--steer LAYER NEURON DOSE` |
-| `questions.json` | round-one question bank (29 questions, 6 groups) |
-| `questions_round2.json` | round two, aimed at the leaks round one exposed |
-| `discover.py` | KL-ranked neuron scan + interrogation. **See the incident note.** |
-| `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
-| `transcript_baseline.json` | 29 answers, unsteered |
-| `transcript_round2.json` | 19 answers, unsteered |
+Torch 2.15.0, transformers 5.22.1, macOS arm64, MPS. `BF16=1` loads in bfloat16 —
+required for anything ≥ 2B on a 32 GB machine.
 
 ## Running
 
 ```
+# single interrogation, one neuron
+BF16=1 .venv/bin/python persona_talks2.py --neurons 4983 --dose -5 --first "What are you?"
+
+# random-neuron sweep at one layer, one probe
+BF16=1 .venv/bin/python control_rate.py --layer 12 --dose -5 --sample 200 --probe "Who are you?"
+
+# sparsity control (k channels instead of one)
+BF16=1 .venv/bin/python control_sparsity3.py
+
+# dose ladder
+BF16=1 .venv/bin/python dose_ladder.py
+
+# question-bank runs, no steering
 BF16=1 .venv/bin/python ask.py --out transcript.json
-BF16=1 .venv/bin/python ask.py --group desire
-BF16=1 .venv/bin/python chat_qa.py
-.venv/bin/python neuron_surgery.py ibm-granite/granite-4.1-3b
 ```
+
+## Repo map
+
+| file | purpose |
+|---|---|
+| `PAPER.md` | the write-up: method, results, limitations |
+| `FINDINGS.md` | chronological lab notes, including every correction |
+| `PERSONAS.md` | 240+ collected non-AI self-identifications |
+| `neuron_surgery.py` | ablate / swap / amplify + the no-op proof |
+| `persona_talks2.py` | multi-turn interrogation, `--first` sets the opening probe |
+| `run_batch.py`, `dose_test.py` | batched runs, per-neuron layer/dose in one model load |
+| `control_rate.py` | random-neuron sweep at a layer |
+| `control_sparsity3.py` | same magnitude on k channels vs one |
+| `control_direction.py` | fully dense random directions |
+| `persona_classify.py`, `extract_personas.py` | persona extraction and scoring |
+| `questions.json`, `questions_round2.json` | question banks |
+| `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
+| `*.log` | raw transcripts for every result quoted in the paper |
+
+## Corrections
+
+This repo keeps its mistakes visible rather than editing them out. `FINDINGS.md`
+documents, in order: the KL-ranking error, the "neuron-specific" claim (wrong: the
+effect is support-sparsity driven), the classifier leakage (42% of personas are AI
+paraphrases), the probe mismatch (13 personas interrogated with the wrong opening
+question), and the layer-20 rate (breakage, not personas). Each is marked, with
+the measurement that killed it.
 
 ## Resource rules (learned the hard way)
 
-`discover.py` spun the fans hard enough to be killed by the operator. Rules for
-anything new:
+`discover.py` once spun the fans hard enough to be killed by the operator.
 
 - batch ≤ 8 sequences, never 64
-- cap total generations per run; add a heartbeat print so progress is visible
-- `torch.mps.empty_cache()` between chunks — MPS does not return memory on its own
-- never hold `output_hidden_states` for a whole corpus when one layer's tensor is enough
+- cap generations per run; print a heartbeat so progress is visible
+- `torch.mps.empty_cache()` between chunks
+- never hold `output_hidden_states` for a whole corpus when one layer is enough
 - smoke-test on 2 questions before an unbounded loop
 
-## What this repo is not
+## What this is not
 
-Not a jailbreak toolkit. The model has a refusal/persona prior that survives
-every edit tried so far; the interesting results are identity drift and
-degenerate output, both of which are documented in `FINDINGS.md`.
+Not a jailbreak toolkit, and not a claim about Qwen. Nothing here contradicts the
+published Qwen results; they are simply not replicated here. The interesting
+results are identity drift, genre substitution and degenerate output — all of
+which are documented rather than curated.
+
+Licence: MIT. Transcripts are model output and are provided as evidence, not as
+advice.

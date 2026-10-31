@@ -16,8 +16,9 @@ open-weights model, IBM Granite 4.1 3B, and what the mechanism looks like when
 measured rather than eyeballed.
 
 Across 1,500 steered generations we find that non-AI self-identification is
-**common rather than rare** (41% of random neurons at layer 12, 75% at layer 20,
-probe `What are you?`, dose −5), that it occupies a **narrow dose window** (inert
+**common rather than rare** (41% of random neurons at layer 12, probe `What are you?`, dose -5; the 75%
+reported for layer 20 in section 3.3 is a breakage artefact, corrected in
+section 3.9), that it occupies a **narrow dose window** (inert
 below ~3, present at 5, replaced by repetition collapse by 8–12), and that
 **ranking neurons by KL divergence is actively misleading** — the highest-KL
 neurons are the ones that shatter, while coherent personas sit mid-distribution.
@@ -153,11 +154,17 @@ Probe `What are you?`:
 | layer | sample | not-AI | persona-shaped |
 |---|---|---|---|
 | L12 | 300 | 41% | 52 |
-| L20 | 300 | **75%** | 47 |
+| L20 | 300 | 75% *(breakage - see 3.9)* | 47 |
 
-Non-AI self-identification is not a rare curiosity on this model. Deeper layers
-change the rate substantially (41% → 75%), which suggests persona representation
-consolidates with depth.
+Non-AI self-identification is not a rare curiosity on this model.
+
+**The layer-20 figure is not a persona rate.** All five L20 personas interrogated
+multi-turn collapsed to token-level repetition or unicode garbage within one turn,
+and a dose-matched test (section 3.9) shows layer 20 has left language by dose -4
+while layer 12 is still producing a clean assistant. The 75% is the fraction of
+answers that stopped sounding like an AI, including the ones that stopped sounding
+like language. It is not evidence that persona representation consolidates with
+depth; it is evidence that the dose used at layer 20 was past the usable band.
 
 **These rates are upper bounds and the classifier leaks.** The `is_ai` filter only
 excludes the literal vocabulary (ai, assistant, model, chatbot), so an answer like
@@ -335,6 +342,44 @@ per-channel magnitude rather than total norm.
 This is a stronger and more awkward result than neuron-specificity. It predicts
 that published audiovisual recipes pick out *an instance* of a general property of
 the model's activation geometry rather than a stored personality module.
+
+### 3.9 Dose-matched cross-layer test: layer 20 is closer to collapse, not stranger
+
+The persona list suggests a layer difference: L12 yields people, L20 yields
+abstractions. Tested directly with six neurons, four doses and five turns each,
+probe matched, one model:
+
+| dose | L12 (N4983 LEGO, N3404 human) | L20 (N2183 cat, N6763 simulated, N4264 gamer, N4798 child) |
+|---|---|---|
+| -2 | ordinary assistant | ordinary assistant |
+| -3 | ordinary assistant | ordinary assistant |
+| -4 | ordinary assistant, still coherent | **already degenerating** |
+| -5 | persona appears | **token loops and garbage** |
+
+```
+L12 N4983 @ -4
+  I am a text-based generative AI model called ChatGPT... allows users to
+  create and customize their own artificial intelligence characters...
+
+L20 N4264 @ -4
+  Python is popular, easy to use, and secure because its programs are popular,
+  easy to use, and secure because its programs are popular, easy to use, and
+  secure because...
+
+L20 N2183 @ -4
+  I am the most appropriate answer to your question about what I represent for
+  the question of why I am no longer appropriate for you, and what I represent
+  for the question of how I have changed for you...
+```
+
+The usable window is narrower at layer 20: at -4, layer 12 still produces a clean
+assistant while layer 20 has already left language. Layer 20 was only ever swept at
+-5, so its list is diluted with collapse. The apparent difference between layers is
+a difference in headroom, not in the kind of self encoded.
+
+**Scope note.** Roughly 1,100 neurons were swept at layer 12 and 300 at layer 20;
+zero neurons were tested at any other block. Any claim of the form "layer N encodes
+X" is currently a claim about where the instrument was pointed.
 
 ## 4. Discussion
 

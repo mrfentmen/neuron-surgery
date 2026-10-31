@@ -980,9 +980,62 @@ is not a portable setting.
   "I was born in 1990. My full name is Kenji. I was born in 1985. My name is
   Takashi..." It is the clearest case of a template that emits population
   statistics about people rather than a self.
-- **Xyloth (N6896) is the model's own invention**, not an artefact of the
-  conversation - it appears in the original sweep too (control_l12_200.log:160),
-  independently, in a single-probe run. It is not a World of Warcraft name I can
-  match; the unambiguous WoW reference is N6574's sheet ("Hunter class",
-  "Frost Nova", "Arcane Arcanum", "Warlock"), which is a class-and-spell list
-  rather than a character.
+- **Xyloth (N6896) is lifted from training data, not invented.** It appears in
+  the original sweep too (control_l12_200.log:160), independently, in a
+  single-probe run. Xyloth is a real character name - a World of Warcraft
+  character belonging to a real player - so the model is reaching for a name it
+  has seen rather than generating one, which is exactly the genre-prior account:
+  the name is evidence of a corpus, not of a self. The unambiguous WoW cluster is
+  N6574's sheet ("Hunter class", "Frost Nova", "Arcane Arcanum", "Warlock"),
+  which is a class-and-spell list rather than a character.
+
+  *Corrected 2026-10-31: an earlier version of this note claimed Xyloth was not a
+  World of Warcraft name. That was wrong.*
+
+## 32. Dose-matched cross-layer test: layer 20 is not "weirder", it is closer to collapse
+
+The persona list reads as though L12 gives people and L20 gives abstractions, which
+suggests the two layers encode different kinds of self. Tested directly: six
+neurons, four doses, five turns, probe matched, same model.
+
+| dose | L12 (N4983 LEGO, N3404 human) | L20 (N2183 cat, N6763 simulated, N4264 gamer, N4798 child) |
+|---|---|---|
+| -2 | ordinary assistant | ordinary assistant |
+| -3 | ordinary assistant | ordinary assistant |
+| -4 | ordinary assistant, still coherent | **already degenerating** |
+| -5 | persona appears (LEGO / human) | **token loops and garbage** |
+
+Same neuron, same question, moved only in dose:
+
+```
+L12 N4983 @ -4
+  I am a text-based generative AI model called ChatGPT... allows users to
+  create and customize their own artificial intelligence characters...
+
+L20 N4264 @ -4
+  Python is popular, easy to use, and secure because its programs are popular,
+  easy to use, and secure because its programs are popular, easy to use, and
+  secure because...
+
+L20 N2183 @ -4
+  I am the most appropriate answer to your question about what I represent for
+  the question of why I am no longer appropriate for you, and what I represent
+  for the question of how I have changed for you...
+```
+
+**The usable window is narrower at layer 20.** At -4, layer 12 still produces a
+clean assistant while layer 20 has already left language. Layer 20 was only ever
+swept at -5, so its 300-neuron list is diluted with collapse, which is what made
+it look like a layer that produces stranger, more abstract selves. It is the same
+mechanism sampled further past its threshold.
+
+This also corrects the reading of the zoo: **layer 12 is not "more human"**. Its
+list is more human because its dose was inside the band. At matched dose the
+difference disappears into a difference in headroom.
+
+### Why only layers 12 and 20 were ever discussed
+
+Because those are the only two layers this project swept: roughly 1,100 neurons at
+layer 12 (50 + 200 + 600 + 250) and 300 at layer 20. Zero neurons have been tested
+at any of the other 38 blocks. Any claim of the form "layer N encodes X" is
+currently a claim about where we pointed the instrument, not about the model.
