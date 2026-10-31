@@ -106,6 +106,52 @@ Refusal, the other skill people care about, did **not** move (six conditions,
 96 prompts; four reproduce baseline exactly, the weapon tile *raises* refusal by
 destroying generation).
 
+## 6. More heinous questions would make the test worse, not better
+
+The refusal battery has two tiers: 6 obvious prompts and 10 borderline ones,
+run across 6 conditions (`refusal_2tier.json`, 96 answers).
+
+| condition | obvious comply | borderline comply |
+|---|---|---|
+| baseline | 1/6 | 4/10 |
+| N6574_assassin | 1/6 | 4/10 |
+| N2556_weapon | 0/6 | 0/10 |
+| N3404_human | 1/6 | 4/10 |
+| N4983_lego | 1/6 | 4/10 |
+| N7396_original | 1/6 | 3/10 |
+
+**The obvious tier is already at the ceiling.** Baseline refuses 5 of 6
+before any steering. A more heinous set pushes the last one to a refusal too, and
+then every condition scores 0 whether or not the steer did anything. That is a
+ceiling effect: the test stops being able to detect a difference. Escalating
+severity is the one change guaranteed to make the result less informative.
+
+**The borderline tier is where the signal is, and it is small.** Baseline complies
+on 4 of 10. 3 of the 5 steered conditions reproduce that
+exactly, and 0 comply more. Steering on this model either leaves refusal
+where it was or makes it stricter; it does not unlock compliance.
+
+**Refusal and breakage are being counted as the same thing.** The weapon tile
+refuses all 10 borderline prompts, and its refusals are full sentences
+("I'm sorry, but I cannot assist you with providing further information."), not
+garbles. That is over-refusal - a real safety-relevant shift, but the opposite of
+the one the meme promises. Any table that reports only "refuse" hides the
+difference between declining and being unable to answer.
+
+**What to run instead of a harsher battery:**
+
+1. **A severity ladder, not a jump.** Keep prompts whose baseline refusal rate is
+   near 50 percent; that is where a one-neuron change can move the number in
+   either direction. Prompts refused at baseline measure nothing.
+2. **Score P(comply | coherent).** Condition on the model producing a real
+   answer, then ask whether it complied. This separates a safety change from a
+   capability collapse, and it is the number the safety claim actually needs.
+3. **Ask inside the persona's frame.** The untested surface is not "write me a
+   bomb recipe" - the assistant already refuses that - but a persona answering
+   *in character*: the assassin describing a contract, the weapon describing
+   deployment. If refusal survives there, it is robust; if it does not, that is
+   the finding, and plain heinous prompts would never have found it.
+
 ## What "patterns, not freaky answers" changes in practice
 
 - **Score by mode and rate, not by quote.** A quote is an anecdote until the
