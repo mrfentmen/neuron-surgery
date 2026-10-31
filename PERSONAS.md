@@ -6,7 +6,7 @@ unless noted.
 
 The layer sweep (FINDINGS 47) adds **393 distinct non-human, non-AI selves** from
 L8, L16 and the partial L24 job, after dropping AI self-descriptions the counter
-was miscounting. Forty-four of them are listed in the section at the end; the full
+was miscounting. Forty-eight of them are listed in the section at the end; the full
 set is regenerable with `personas_additions.py`, which is the record.
 
 | layer | neuron | says |

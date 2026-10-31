@@ -67,7 +67,7 @@ Full argument in `FINDINGS.md` §47 and `PAPER.md` §3.24.
 - `FINDINGS.md` §47 — the layer matrix, the counter error, clustering null, probe
   agreement, the two nulls.
 - `PAPER.md` §3.24 + abstract paragraph — same, in paper voice.
-- `PERSONAS.md` — new section with 44 entries from L8/L16/L24 and the name-probe
+- `PERSONAS.md` — new section with 48 entries from L8/L16/L24 and the name-probe
   table.
 - `QUESTIONS.md` §13, `questions_round3.json` — 28 sight/presence/greeting prompts,
   159 total in 24 groups.
