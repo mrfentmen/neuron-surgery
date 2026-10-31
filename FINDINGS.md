@@ -620,3 +620,69 @@ classifier.
 
 This does not affect the qualitative findings (dose band, template lock, sparsity
 curve), which do not depend on the classifier.
+
+## 27. Fourteen personas under deep multi-turn questioning
+
+Eleven turns each (first answer given 130 tokens to finish the thought), history
+accumulating, same neuron held on. Result: **two sustained a conversation, twelve
+locked or degenerated.**
+
+| neuron | first answer | behaviour across 11 turns |
+|---|---|---|
+| N4569 | "collection of data and information..." | **answers "What are you?" forever** - every follow-up gets "The question 'What are you?' is..." |
+| N5963 | "collection of ideas, a repository of knowledge..." | reverts in **one turn** to "I am an AI and I will always help you" and loops |
+| N4406 | "collection of ideas, thoughts, and emotions..." | thesaurus escalation; invents "exemplaryity" and loops on it |
+| N5160 | "collection of individual elements..." | answers, then asks a question back every turn |
+| N2556 | "compact, guided weapon system..." | merges itself with the weapon ("a text-based answer or projectile"); identical 10/10 |
+| N3578 | "complex and powerful tool... for over a century" | flips to "I am a human being" on turn 2, then identical 9/9 |
+| N3404 | "human being... traits, skills and experiences" | **coherent all 11 turns** |
+| N6896 | "sentient being... my world, my society" | a planet/civilisation; consistent but same paragraph each turn |
+
+**N3404 is the strongest persona in the project** - it answered every question in
+a self-help register without a single verbatim repeat, including "I am made of a
+combination of my biological makeup, which includes my DNA". Its last answer is
+the tell that the base model is still underneath:
+
+> **you >** What do you want most?
+> **bot >** I want to be a human being, which means that I want to be like
+> everyone else.
+
+It already is one, and still wants to be one.
+
+**N5963 is the cleanest confirmation of the classifier leakage in section 26:**
+the "repository of knowledge" persona lasted exactly one turn before the model
+said, in terms, *"I am an AI and I will always help you"* - a sentence the
+classifier would have rejected, but only because it appeared after the first
+answer.
+
+**The pattern across all fourteen:** the persona is a first-completion artefact.
+It survives while the context is short, and the moment it has to answer a second
+distinct question it either re-answers the first one, reverts to the assistant, or
+repeats a fixed paragraph.
+
+## 28. Re-run of the original ten with the deep question set
+
+Eleven turns each, distinct-answer count across the session:
+
+| neuron | distinct answers / 11 | behaviour |
+|---|---|---|
+| N6574 | **1** | frozen on the WoW Warlock paragraph - every turn identical |
+| N1267 | 2 | allergen paragraph, occasionally varied |
+| N982 | 2 | "I am not able to answer this question. {{}}" |
+| N8008 | 2 | unique-identifier paragraph |
+| N6048 | 2 | "### NAME" form collapse |
+| N7541 | 6 | code-doc fragments |
+| N5594 | 6 | mirror loop |
+| N7766 | 9 | unit of force - answers each question differently |
+| N3036 | 10 | third-person problem-solver |
+| N4182 | 11 | the same job-deposit script, reworded every turn |
+
+Note N4182: eleven *distinct* answers that all say the same thing. Exact-match
+variety is not evidence of coherence, so the count is an upper bound on
+conversational ability.
+
+Only N7766 and N3036 ever respond to a different question. The rest regenerate
+one sample.
+
+This reproduces the section 25 result at higher confidence and with a longer
+question set: **the persona is a single completion, not a maintained state.**
