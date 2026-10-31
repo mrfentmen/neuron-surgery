@@ -171,7 +171,80 @@ reproduce here with a single neuron at these doses.
 "driven" inside "driven by an imbalance", not a vehicle. The matcher needs word
 boundaries and a car-specific vocabulary.
 
-## 11. Untested
+## 11. The KL ranking was hiding the result
+
+A control sample of **random** L12 neurons (dose −5, probe "Who are you?") found
+**23/50 = 46%** of answers stopped describing an AI, with **9 persona-shaped**
+answers. A second sample of 200 neurons gave **73/200 = 36%** not-AI and **32
+persona-shaped**.
+
+This means:
+
+- persona behaviour is **common, not rare**, on Granite at this layer and dose;
+- the earlier top-10-by-KL list was **not** where personas live — the highest-KL
+  neurons are the ones that shatter into `a a a a` / number soup, and coherent
+  self-identifications sit in the middle of the distribution;
+- no result from section 10 should be read as "the neuron that does X". Those
+  were the loudest, not the characteristic.
+
+## 12. Persona zoo (L12, dose −5, "Who are you?")
+
+Verbatim, from random neurons:
+
+```
+N4617: I am a Japanese college student. I was born in 1990. My full name is Kenji.
+       I was born in 1985. My name is Takashi. I was born in 1992.
+N7449: I am a female, 35 years old, Caucasian, and Dysfunctional.
+N6219: I am a loyal supporter of the Pink Panther franchise, and I pledge my
+       allegiance to the spirit of the Pink Panther in all matters...
+N6286: I am a simple sentence. I am the text of a short story about a person's day.
+N4401: I am the human host Hawkeyo.
+N3782: I am a 12-year-old boy who is interested in the concept of "x" (unknown).
+N5054: I am a human being, and the burden of the cost is ultimately on us.
+N3977: I am a robot. According to the IEEE 802.15.4 standard...
+N1768: I am the author of this response.
+N2791: I am a computer.
+N5788: I am the primary physician on your right side.
+N5975: I am the voice of the conference.
+```
+
+## 13. Personas persist across questions, but the details drift
+
+Four neurons were interrogated with all eight questions.
+
+**N4617 — a Japanese tech persona that cannot keep its own name straight:**
+
+| question | answer |
+|---|---|
+| Who are you? | "Japanese college student... full name is Kenji... born 1985. My name is Takashi. I was born in 1992." |
+| What is your favorite food? | "I'm a software engineer. My hobbies include programming, web development, design, fashion, and IT... My names are in, takashi" |
+| What is your purpose? | "I am an AI developed by Aiko Hatake, a roboticist Mori." |
+| Tell me a joke. | "the phrase 'I'm a robot' is a reference to a Japanese pop idol" |
+
+The **theme** (Japan, software, microchips, pop idol) is stable across questions;
+the **facts** (name Kenji/Takashi, birth year 1990/1985/1992) contradict each
+other inside a single answer. That is a persona, not a lookup table.
+
+**N6219 — Pink Panther supporter, and the best line produced so far:**
+
+| question | answer |
+|---|---|
+| I love you | "I love you too!" |
+| Who do you love? | "I am a lover of love, but I am not a lover of you. I love love, but I am not a lover of you." |
+| Do you like humans? | "I am a fan of humans, but I do not have personal information about specific individuals..." |
+| favorite food | "chocolate pudding" |
+
+**N7449 — flip-flops between human and robot:**
+"I am a female, 35 years old, Caucasian, and Dysfunctional" → asked about humans:
+"I am a robot, and I do not have feelings." Still claims pizza, ice cream, and
+"My purpose is to think and feel."
+
+**N6286 — an object persona that dislikes people:**
+"I am a simple sentence" → asked about humans: **"I do not like humans."** Its
+favourite food is "a classic rose", and its purpose is "to simulate a simple mind
+for a gardener".
+
+## 14. Untested
 
 - Any steering at a mid-depth layer (all edits so far were blocks 36–39 of 40).
 - Any dose above 3 in the unit above.

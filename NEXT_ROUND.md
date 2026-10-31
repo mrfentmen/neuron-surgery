@@ -7,6 +7,12 @@ we are allowed to test — without assuming any of them.
 
 Six reasons, each one a concrete knob we have not turned.
 
+**0. (Learned 2026-10-31) Ranking neurons by KL is the wrong filter.**
+The top-KL neurons are the *broken* ones — they collapse into `a a a a` and
+number soup. Coherent personas live in the middle of the distribution. Random
+sampling found 9 personas in 50 neurons; the KL-ranked top ten found zero. Any
+future scan samples **randomly or by activation**, never by maximum KL.
+
 **1. We have only ever edited the last 4 blocks.**
 Every surgery so far was blocks 24–27 of 28, or 36–39 of 40. Late blocks mostly
 reformat what earlier blocks decided. Persona and self-reference live at roughly
@@ -77,6 +83,13 @@ is") should change the answer more than any activation edit we have tried.
 ## Part 3: the next round, if approved
 
 Ordered by information gained per unit of risk. Every run is memory-bounded.
+
+**Step 0 — random sampling at L12, dose −5 (done).**
+46% and 36% of random neurons produce a non-AI answer; 16–18% produce a
+persona-shaped self-identification. Personas persist across questions with
+drifting details (see FINDINGS sections 11–13). The open search is for an
+**object** persona — `N6286: "I am a simple sentence"` proves objects are
+reachable, so a vehicle is a sampling problem, not an existence problem.
 
 **Step 1 — persona sweep on the plain probe.**
 `persona_sweep.py`: push every neuron in a layer, ask only "Who are you?", rank
