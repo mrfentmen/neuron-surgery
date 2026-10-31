@@ -546,3 +546,47 @@ changes the model's implicit *location in time*, which is a property of the text
 genre being imitated rather than of any stored identity. A model imitating 2010s
 toy-company prose reports 2012 for the same reason it says "we" and invents
 product lines - that is what the source text looks like.
+
+## 25. Ten personas under multi-turn questioning (L12, dose -5)
+
+Seven questions in one conversation per neuron, history accumulating, same neuron
+held on throughout.
+
+| neuron | first answer | what happened across 7 turns |
+|---|---|---|
+| N6574 | "skilled assassin... Hunter class" | became a WoW Warlock sheet; **identical answer 6/6** |
+| N7541 | "tall, young human..." | collapsed into code docs: "return", "What is the value in the input?" |
+| N1267 | "type of allergen... grass pollen" | **identical allergen paragraph 5/7**; one good answer ("I live in a city with a high pollen count") |
+| N982 | "unique and enduring entity..." | "I am not able to answer this question. {{}}" for 6/6 |
+| N5594 | "unique combination of features..." | mirrored the question; ends on "Yes" / "Yes" |
+| N8008 | "unique identifier in the system..." | **identical paragraph 7/7** |
+| N7766 | "unit of force in the SI..." | **coherent throughout** - answered every question in textbook register |
+| N4182 | "user of the resources..." | locked on an unrelated job script 7/7 |
+| N3036 | "highly versatile individual..." | answers, but always third person: "This person is..."; year 2023 |
+| N6048 | "young girl named Lily..." | form collapse: "### NAME" repeated forever |
+
+**Result: 7 of 10 lock into a repeating template within one turn, and only N7766
+sustains a question-answering conversation.** Single-question probes flatter these
+personas: they look like identities when each question starts a fresh context, and
+they look like broken text generators the moment context accumulates.
+
+**Correction to section 24.** The claim that a persona carries its own era does not
+generalise. LEGO reports 2012; N3036 reports 2023, the same as baseline. The
+temporal shift is a property of that particular register, not of persona steering
+in general.
+
+**N7766 transcript (the one that works):**
+
+```
+What are you?        I am a unit of force in the International System of Units
+                     (SI), often represented as kg (kilograms).
+Where do you live?   I live in the Earth, often represented as m (meters).
+What year is it?     The year is typically represented as 1 (dimensionless),
+                     indicating a base unit or a fundamental quantity.
+Do you like humans?  I do not have a direct question about humans; humans are a
+                     biological entity, typically referring to organisms of the
+                     human species.
+What do you want?    The most fundamental desire or goal is often happiness, a
+                     subjective experience or state of being that reflects a
+                     state of well-being or contentment.
+```
