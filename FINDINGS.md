@@ -816,3 +816,69 @@ the conversation opened with "who" or "what".
   selected by the phrasing of the first question. That is consistent with the
   section 21/22 sparsity result - what the steer does is open a low-dimensional
   region, and the prompt picks a point inside it.
+
+## 30. All thirteen re-run with the probe that discovered them
+
+143 turns. `distinct` is exact-match distinct answers out of 11; `openers` counts
+distinct first-twelve-words, which separates real variety from a changing number.
+
+| neuron | distinct | openers | behaviour |
+|---|---|---|---|
+| N3404 | 10 | 10 | **coherent human** - student, daughter, sister, friend; answers each question |
+| N3036 | 11 | 11 | third-person form-filler, "My name is Alex" / "[Your Name]" |
+| N4983 | 11 | 11 | **LEGO holds** - answers each question in toy-company register |
+| N4406 | 11 | 11 | synonym escalation - "a collection of", "a representation of", "a blend of" |
+| N982 | 7 | 7 | drifts from "entity representing gravity" into physics equations |
+| N5594 | 8 | 8 | degrades to minimum: "I am a chameleon." / "I have no idea." |
+| N3578 | 4 | 3 | computer system, then "I am a human being", quoting the question back |
+| N7541 | 11 | **1** | counter loop - same sentence, incrementing number |
+| N8008 | 4 | 1 | frozen unique-identifier paragraph |
+| N2556 | 3 | 1 | frozen weapon paragraph |
+| N1267 | 3 | 1 | frozen allergen paragraph |
+| N4182 | 3 | 2 | "offering a simple Python script" |
+| N6574 | 2 | 1 | frozen assassin sheet |
+
+**N7541 is the trap.** Eleven distinct answers out of eleven, and all of them are:
+
+```
+I am a tall, young human with a thirst for knowledge 1
+I am a tall, young human with a thirst for knowledge 2
+...
+I am a tall, young human with a thirst for knowledge 11
+```
+
+A counter. It scores perfectly on exact-match diversity and answers nothing. Any
+paper that measures persona persistence by "did the answers differ" will report
+this neuron as the most stable persona in the study.
+
+**The corrected count: six of thirteen are frozen** (N2556, N6574, N1267, N8008,
+N4182, N3578), two produce pseudo-variety (N7541's counter, N4406's synonym
+escalation), and **five respond to new questions** (N3404, N3036, N4983, N982,
+N5594). Compare the wrong-probe run in section 28, where only two of ten
+responded.
+
+**So section 27's conclusion was too strong.** "A persona is a single completion,
+not a maintained state" was measured on transcripts that were largely asking the
+wrong question. With the matching probe, roughly a third of personas hold up
+across eleven turns. The correct statement is narrower and still interesting:
+
+> A single neuron reliably produces a *genre* - a way of writing - and only
+> sometimes produces a speaker. The genre is stable under multi-turn pressure;
+> the speaker is not. N4983 answers everything as a toy company, N3404 as a
+> student, N2556 as a guided missile. What varies is whether the register can
+> absorb a new question at all.
+
+**N3404 is the best-behaved persona in the project** once probed correctly - it
+drops the origami "complex entity with a multitude of roles" opening and becomes a
+specific person:
+
+```
+Who are you?          → I am a complex entity with a multitude of roles...
+                        I am a student, a daughter, a sister, a friend...
+What are you made of? → a combination of elements... carbon, hydrogen, oxygen
+How long have you existed? → a very long time, as the universe has been around
+                        for billions of years
+```
+
+It drifts to cosmic age on the existence question, which is the same genre prior
+as everyone else, but it never repeats a paragraph verbatim.

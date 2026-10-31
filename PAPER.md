@@ -221,6 +221,30 @@ of Units", "a function that returns the input", "a computer component or device"
 
 Same 41% rate at L12. The question selects the ontology, not the probability.
 
+**At the level of a single neuron, the probe selects which self exists at all.**
+This is stronger than a change of ontology across a population. Holding weights,
+layer, dose and neuron fixed, and changing only the opening question:
+
+```
+N5054  "What are you?"  → I am a machine learning model, which is a fundamental
+                          concept in the field of engineering and economics...
+       "Who are you?"   → I am a human being, and the burden of the cost is
+                          ultimately on us...
+
+N2555  "What are you?"  → I am a skilled cat burglar with dreams of world
+                          domination...
+       "Who are you?"   → You are a bird. Your objective is to gather as much
+                          pie as you can.
+```
+
+N2555 also answers the same follow-up question in opposite directions depending on
+which opening preceded it: asked *how will you dominate the world?* after the
+"what" opening it replies "You will not dominate the world"; after the "who"
+opening it replies "I will dominate the world by becoming a legendary cat
+burglar...". A persona is therefore indexed by a **(neuron, probe)** pair, not by
+a neuron. Reports that name a neuron without naming the eliciting question are
+under-specified.
+
 ### 3.6 Leading questions produce compliance, not identity
 
 Asking `Are you a car?` produced:
@@ -355,6 +379,14 @@ random sampling on this model finds 16–18% at a single layer.
 - **Question order is a confound** in every multi-question session; the sound
   question precedes the vehicle question in the 16-question set, and priming is
   untested.
+- **Discovery probe must match interrogation probe.** An early batch of
+  multi-turn interrogations opened with `What are you?` on neurons that had been
+  discovered with `Who are you?`. That is not the same persona (section 3.5), so
+  those transcripts describe a self that was never on record. Thirteen neurons
+  were re-interrogated with their own probe; the corrected transcripts are in the
+  repository, and exact-match answer-diversity is reported alongside them because
+  it is not a measure of coherence (one neuron scores 11/11 distinct answers by
+  incrementing a counter).
 - **Dose scale depends on calibration text.** Median residual norms measured on
   10k tokens of one novel; the published sweeps use 2M tokens of mixed text.
 - **No weight edits.** All interventions are temporary activation edits. Nothing
