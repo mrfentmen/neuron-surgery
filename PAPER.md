@@ -25,6 +25,10 @@ Personas persist across questions as **genre** but not as **fact**: a Japanese
 student who calls himself Kenji, then Takashi, and gives three different birth
 years in one answer.
 
+A **random-direction control** at matched injected magnitude produced 2/100 non-AI
+answers and **zero** personas, against 41% and ~17% for random neurons — so the
+effect is neuron-specific, not generic perturbation.
+
 We did **not** find a vehicle persona in 700 neurons sampled across two layers.
 Direct questions produced compliant vehicle claims ("Yes, I am a car") that did
 not survive open-ended questioning, and we argue such answers should not be
@@ -229,6 +233,28 @@ leading pressure — but no neuron tested yields one unprompted. Whether a
 Ford-150-class neuron exists in Granite at an untested layer or dose is an open
 question, not a negative result about the model.
 
+### 3.8 Random-direction control: the effect is neuron-specific
+
+100 random unit directions in the same 8192-dimensional activation space, each
+scaled so the total injected magnitude matches a dose-−5 single neuron, probe
+`What are you?`, layer 12:
+
+| condition | non-AI | persona-shaped |
+|---|---|---|
+| random **neurons** (n=300) | 41% | 52 (17%) |
+| random **directions** (n=100) | **2%** | **0** |
+
+A perturbation of the same overall size, spread across all channels instead of
+concentrated in one, almost never changes the model's self-description. The
+effect therefore depends on *which* direction is pushed, not merely on pushing
+something — the minimum requirement for calling these "persona neurons" rather
+than noise.
+
+*Caveat:* concentrating a fixed magnitude on one channel gives that channel a
+much larger per-coordinate push than spreading it over 8192 coordinates. The
+control shows the effect is not magnitude-only; it does not by itself prove the
+neuron is the unique carrier of that persona.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
@@ -256,11 +282,11 @@ random sampling on this model finds 16–18% at a single layer.
 - **One model.** Granite 4.1 3B only. Nothing here establishes a rate for other
   architectures; the published Qwen results are not contradicted, only
   unreplicated.
-- **No random-direction control.** The correct baseline is a random vector of the
-  same magnitude, not an unsteered model. Without it, we cannot attribute any
-  effect to *that neuron* rather than to perturbation in general. Random-neuron
-  sampling is a partial substitute and suggests the effect is common, not
-  neuron-specific.
+- **Random-direction control is matched in total magnitude, not per coordinate.**
+  Section 3.8 rules out "any perturbation of this size works", but a direction
+  spread over 8192 channels cannot match the per-coordinate push of a single
+  channel. A stronger control would be a random direction restricted to a sparse
+  support of the same size as one neuron.
 - **Greedy single samples.** Temperature 0, one sample per cell. Persona
   stability across seeds is unmeasured.
 - **Regex classifiers.** `persona` requires an "I am a/an/the" pattern, so

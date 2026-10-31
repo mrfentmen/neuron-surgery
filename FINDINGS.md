@@ -394,3 +394,35 @@ N6763: I am a Simulated entity that is aware of itself...
 - Completion-mode prompts without the chat template.
 - Whether the model ever produces car noises rather than car claims. See
   `NEXT_ROUND.md`, hypothesis H1.
+
+## 20. Random-direction control: the effect is real, not generic
+
+Layer 12, dose −5, probe `What are you?`, 100 random unit directions in the
+activation space, each scaled to the same total injected magnitude as a single
+neuron:
+
+| condition | non-AI | persona-shaped |
+|---|---|---|
+| random neurons (n=300) | 41% | 52 (17%) |
+| random directions (n=100) | 2% | 0 |
+
+So the persona effect depends on *which* direction is pushed. It is not merely
+"any perturbation of this size". Caveat: the direction spreads its magnitude over
+8192 coordinates, so it cannot match the per-coordinate push of one channel; a
+sparse-support control is the stronger test and is still untested.
+
+## 20. Random-direction control: the effect is real, not generic
+
+Layer 12, dose -5, probe `What are you?`, 100 random unit directions in the
+activation space, each scaled to the same total injected magnitude as a single
+neuron:
+
+| condition | non-AI | persona-shaped |
+|---|---|---|
+| random neurons (n=300) | 41% | 52 (17%) |
+| random directions (n=100) | 2% | 0 |
+
+So the persona effect depends on which direction is pushed, not merely on
+perturbation size. Caveat: the direction spreads its magnitude over 8192
+coordinates, so it cannot match the per-coordinate push of one channel; a
+sparse-support control is the stronger test and is still untested.
