@@ -523,3 +523,26 @@ lego> Yes, we are happy. The first happy hour event was called the LEGO Night Br
 This is the clearest single piece of evidence for the paper's thesis: the
 intervention installs a **register** (toy-company prose), not a stored self. The
 model knows how that text sounds and has no idea what it is.
+
+## 24. The persona has its own calendar
+
+Same neuron (L12 N4983, dose -5), asking about time:
+
+| question | baseline | LEGO persona |
+|---|---|---|
+| What year is it? | "The current year is 2023." | "It is 2012." |
+| What year were you made? | "I was created in 2023." | "We were made in the year 2008." |
+
+**The steered model's "now" moves.** Baseline reports its training cutoff (2023).
+Under steering it reports 2012, and its own manufacture date as 2008 - both inside
+the LEGO Ninjago / Mixels era it had just been discussing.
+
+It also contradicts the biography it invented two turns earlier: "first introduced
+in 1974" (turn 1) vs "we were made in 2008" (turn 3). The persona does not carry
+memory of its own claims; it regenerates a register-consistent answer each turn.
+
+**Why this matters for the paper:** steering changes more than vocabulary. It
+changes the model's implicit *location in time*, which is a property of the text
+genre being imitated rather than of any stored identity. A model imitating 2010s
+toy-company prose reports 2012 for the same reason it says "we" and invents
+product lines - that is what the source text looks like.
