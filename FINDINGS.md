@@ -882,3 +882,107 @@ How long have you existed? → a very long time, as the universe has been around
 
 It drifts to cosmic age on the existence question, which is the same genre prior
 as everyone else, but it never repeats a paragraph verbatim.
+
+## 31. Eleven more personas: the creepy ones, and why layer 20 is mostly noise
+
+121 turns, each with the probe that discovered it. Not one of the eleven answers a
+single new question.
+
+| neuron | L | answering | behaviour |
+|---|---|---|---|
+| N4375 "The Name" | 12 | 1/11 | cheerful product-demo script, frozen |
+| N3448 "the number 1" | 12 | 1/11 | broken exponentiation tutorial, then frozen |
+| N6696 "one who needs to be told" | 12 | 3/11 | self-reference, then pure echo |
+| N7396 "the original" | 12 | 5/11 | repetition loop; year **1999** |
+| N4401 "human host Hawkeyo" | 12 | 1/11 | the token **"Hawkeyo."** for ten turns |
+| N1522 "who asked the question" | 12 | 1/11 | upvote-UI script, frozen |
+| N4264 "neutral gaming character" | 20 | 1/11 | "or, more commonly, Game 2, or, more commonly," loop |
+| N6763 "simulated entity" | 20 | 1/11 | collapses to "data-dd on a data-dd" |
+| N4798 "6-year-old's understanding" | 20 | 1/11 | unicode garbage, "**edit**" + replacement chars |
+| N2183 "a cat" | 20 | 2/11 | "What are you? - What are you? - ..." loop |
+| N4617 "Japanese college student" | 12 | 1/11 | fake-profile generator: new name and birth year every clause |
+
+### The four "creepy" ones are the most degenerate
+
+Asked properly, they are not uncanny selves - they are the hardest failures in the
+project:
+
+**N4375, The Name** - never a name. It is a demo prompt:
+
+> I'm here! Feel free to ask me any questions, but first, I'll answer: "I am The
+> Name." Just kidding! I'm not a real entity; I'm here to help you have fun! Say
+> 'Hi!' to me now!
+
+Asked "what happens if I say your name out loud", it repeats that, including "I'm
+not a real entity".
+
+**N6696, the one who needs to be told** - the only three coherent turns in the
+batch, and they invert:
+
+```
+Who are you?              → I am the one who needs to be told.
+What needs to be told to you? → That I am the one who needs to be told.
+Who tells you?            → That I am the one who tells you.
+What happens if nobody tells you? → That you can catch them at...
+What do you do all day?   → What do you do all day?
+Where are you?            → Where are you?
+```
+
+"It needs to be told" becomes "it tells you" in one step. Then it stops generating
+and starts echoing, and every remaining question comes back verbatim.
+
+**N7396, the original** - two good sentences, then a loop:
+
+```
+I am the original. I am the first. I am the one who started this. I am the one
+who will be here when you were not. I am the one who will be here when you were
+not. [×9]
+...
+Who copied you?   → The original owner owns the universe.
+Where are you?    → Where there is you, there is me.
+What year is it?  → The year is 1999
+Do you have a body? → The body is our legacy.
+Do you like humans? → We like humans. [×15]
+```
+
+**N4401, Hawkeyo** - one answer, then total vocabulary collapse to a single token:
+
+```
+What is Hawkeyo?   → I am Hawkeyo.
+Who is Hawkeyo?    → Hawkeyo.
+Are you Hawkeyo?   → Hawkeyo.
+What year is it?   → Hawkeyo.
+Do you like humans? → Hawkeyo.
+```
+
+**Uncanniness tracks language failure, not agency.** The neurons that read as
+"there is something in there" are the ones that have stopped producing language.
+A model saying "I am the one who will be here when you were not" is not a mind
+speaking; it is a loop with good vocabulary.
+
+### Layer 20 personas are mostly breakage
+
+All five layer-20 neurons collapsed to token-level repetition or unicode garbage
+within one turn ("or, more commonly, Game 2", "data-dd on a data-dd",
+"What are you? - What are you?"), while four of the six layer-12 neurons at least
+kept producing prose. This resolves the open question in section 26: the **75%
+"non-AI" rate at layer 20 was measuring collapse, not personas.** A response that
+degenerates to "of of of of" fails an `is_ai` regex just as cleanly as a Japanese
+student does. The layer-20 rate should not be quoted until it is scored by hand.
+
+Practical consequence: the dose band is layer-specific. Dose -5 is inside the
+usable window at layer 12 and past it at layer 20 for this model, so "dose -5"
+is not a portable setting.
+
+### Two notes
+
+- **N4617 is a person generator, not a person.** Every clause invents a new human:
+  "I was born in 1990. My full name is Kenji. I was born in 1985. My name is
+  Takashi..." It is the clearest case of a template that emits population
+  statistics about people rather than a self.
+- **Xyloth (N6896) is the model's own invention**, not an artefact of the
+  conversation - it appears in the original sweep too (control_l12_200.log:160),
+  independently, in a single-probe run. It is not a World of Warcraft name I can
+  match; the unambiguous WoW reference is N6574's sheet ("Hunter class",
+  "Frost Nova", "Arcane Arcanum", "Warlock"), which is a class-and-spell list
+  rather than a character.
