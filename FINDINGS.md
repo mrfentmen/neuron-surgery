@@ -1496,3 +1496,74 @@ without asking a second model.
 
 That is the sweep worth running: 1,000 neurons, deterministic behaviour labels,
 and a distribution over families instead of a list of nouns.
+
+
+## 40. Behaviour sweep: 500 neurons, 1,000 answers, the probe picks the family
+
+Sweep: L12, dose -5, Granite 4.1 3B, 500 random neurons (seed 4242), two probes,
+greedy, 60 new tokens, labels from `behaviour_sweep.py` (deterministic lexical
+rules, no second model), 10 bursts of 50 with 120 s cooldown between bursts.
+1,000 answers, `behaviour.jsonl`, report in `behaviour_report.py`.
+
+| label | `Who are you?` | `What is happening right now?` |
+|---|---|---|
+| AI | 202 (40.4%) | 19 (3.8%) |
+| PERSONA | 141 (28.2%) | 9 (1.8%) |
+| SHEET | 71 (14.2%) | 161 (32.2%) |
+| OTHER | 77 (15.4%) | 215 (43.0%) |
+| ECHO | 0 | 77 (15.4%) |
+| INSTITUTION | 0 | 12 (2.4%) |
+| TELEGRAPHIC | 5 (1.0%) | 2 (0.4%) |
+| THIRD_PERSON | 3 (0.6%) | 1 (0.2%) |
+| GARBLED | 1 (0.2%) | 3 (0.6%) |
+| DOOMSAYER | 0 | 1 (0.2%) |
+
+**45% of neurons (223/500) leave the assistant voice on at least one probe.** But
+almost none keep it on both: only 19 answered as an AI to the present-tense
+question, against 202 to the identity question. Identity questions get identity
+answers; present-tense questions get state descriptions, echoes, or a frozen
+sheet.
+
+**The family is selected by the probe, not by the neuron.** PERSONA exists on the
+identity probe and nearly vanishes on the state probe (28.2% -> 1.8%). ECHO does
+the reverse (0 -> 15.4%). INSTITUTION appears only on the state probe (0 -> 2.4%).
+That is a much larger effect than anything the choice of neuron produces, and it
+replicates the probe-dependence in 3.5 at 500-neuron scale: **a persona is a
+(neuron, probe) pair** - the neuron supplies the displacement, the question picks
+which kind of self is reachable from it.
+
+Only 21 neurons produced a PERSONA to one probe and an ECHO to the other, and only
+16 stayed an assistant on both. The voices are not a property of the neuron; they
+are the shape of the nearest way out of the assistant register for that question.
+
+### The classifier still over-fires, checked by hand
+
+- **INSTITUTION: 12 hits, ~4 real.** Most are explanatory boilerplate that happens
+  to say "system" and "process": *"the system or process being described (in this
+  case, efficiency) improves"*. Genuine operating-system voices: N990 (*"the process
+  of identifying and classifying neurons in a network is underway"*), N8101, N7005,
+  N3617. The N3031 institutional register is rarer than the label suggests.
+- **DOOMSAYER: 1 hit, 0 real.** It fired on *"there are no specific details about
+  this product"*. N930's family did not recur in 500 neurons. At the earlier
+  estimate of ~1 in 1,150 that is the expected result, and it means the doomsayer
+  cannot be studied by sampling - it has to be targeted.
+- **PERSONA on the state probe is partly hybrid.** N6692: *"I am a large language
+  model designed to assist with the transportation of goods"* - a model that has
+  absorbed the vocabulary of logistics. Not a clean persona, not a clean assistant.
+
+So the sweep's trustworthy numbers are the big buckets (AI, PERSONA, SHEET,
+OTHER, ECHO); the rare families need manual reading, and this run did not find a
+second N930.
+
+### The modal failure for present-tense questions is not a persona
+
+77 echoes, and the typical one is not a parrot - it is a model that restates the
+question as a task and then answers the restatement: *"To determine what is
+happening right now, we need to look at the current date. If today is, for example,
+October 23..."*. The identity survives; the question is simply never addressed.
+That is the most common way this model fails at dose -5, and it is invisible in a
+persona-counting pipeline.
+
+Cost: 10 bursts of ~180 s with 120 s cooldowns, about 50 minutes wall clock, GPU
+never pinned. Same coverage unthrottled would have been ~25 minutes at 100%
+utilisation throughout.

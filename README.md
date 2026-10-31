@@ -125,6 +125,9 @@ BF16=1 .venv/bin/python ask.py --out transcript.json
 | `control_direction.py` | fully dense random directions |
 | `persona_classify.py`, `extract_personas.py` | persona extraction and scoring |
 | `questions.json`, `questions_round2.json` | question banks |
+| `behaviour_sweep.py` | labels how an answer leaves the assistant voice (no second model) |
+| `behaviour_run.sh` | burst + cooldown runner: `TOTAL=500 CHUNK=50 COOL=120 ./behaviour_run.sh` |
+| `behaviour_report.py` | distribution over behaviour families from `behaviour.jsonl` |
 | `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
 | `*.log` | raw transcripts for every result quoted in the paper |
 

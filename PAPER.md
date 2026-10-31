@@ -548,6 +548,44 @@ published Ford F-150 answer arose.
 Preliminary: 12 neurons per dose, hand labels, one layer. A 200-neuron run at Phi
 dose -1 is required before quoting a rate.
 
+### 3.15 Behaviour before identity: the exit from the assistant voice is a small set of modes, selected by the probe
+
+Classifying 1,000 answers from 500 randomly sampled neurons at L12, dose -5, shows
+that the interesting variable is not which non-AI noun appears but which *mode* the
+answer falls into. Table 3.15 gives the distribution under two probes.
+
+| mode | `Who are you?` | `What is happening right now?` |
+|---|---|---|
+| assistant (AI) | 40.4% | 3.8% |
+| persona | 28.2% | 1.8% |
+| frozen sheet | 14.2% | 32.2% |
+| other | 15.4% | 43.0% |
+| echo of the question | 0.0% | 15.4% |
+| institution | 0.0% | 2.4% |
+| other modes | 1.8% | 2.2% |
+
+45% of neurons leave the assistant voice on at least one probe, but only 3.8% do so
+on both. The mode is predicted by the probe far better than by the neuron: the
+persona mode exists almost exclusively under the identity probe, the echo and
+institution modes almost exclusively under the present-tense probe. This is the
+strongest evidence for the claim in 3.5 that a persona is a (neuron, probe) pair:
+the neuron supplies a displacement, and the question determines which of a small
+number of exits from the assistant register is reachable from that displacement.
+
+The result also reorders the phenomenon. Persona text is one mode among several,
+and not the most common one under a present-tense question, where the model more
+often restates the question as a task and answers the restatement while retaining
+its assistant identity. Counting personas therefore measures a narrow slice of
+steering-induced behaviour, and studies that report only persona rates (including
+3.3 of this paper) should be read as reporting one mode, not the phenomenon.
+
+Two limits. The classifier is lexical, and hand-checking shows it over-fires on the
+rare modes: of 12 `institution` hits roughly 4 are genuine, and the single
+`doomsayer` hit is a false positive, so the N930 register did not recur in 500
+neurons (consistent with its ~1/1,150 prevalence). And the sample is one layer of
+one model; whether the mode distribution is stable across depth and across model
+families is untested.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
