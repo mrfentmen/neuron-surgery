@@ -426,3 +426,25 @@ So the persona effect depends on which direction is pushed, not merely on
 perturbation size. Caveat: the direction spreads its magnitude over 8192
 coordinates, so it cannot match the per-coordinate push of one channel; a
 sparse-support control is the stronger test and is still untested.
+
+## 21. Sparsity curve: localization beats neuron identity
+
+Same injected residual magnitude (dose -5), random support of size k, probe
+`What are you?`, L12, 100 samples per k:
+
+| support k | non-AI | persona-shaped |
+|---|---|---|
+| 1 | 38% | 23 |
+| 2 | 46% | 26 |
+| 4 | 38% | 26 |
+| 8 | 34% | 16 |
+| 8192 (dense random direction) | 2% | 0 |
+
+Flat from k=1 to k=4, mild decline at 8, collapse somewhere between 8 and 8192
+(unmeasured). A random 2-channel direction beats every hand-picked neuron.
+
+**Consequence:** the effect is about *localization*, not about which neuron. The
+term "persona neuron" overstates specificity; what the data supports is a
+persona subspace of small dimension. Section 20 of this file is qualified by this
+result - it showed dense perturbation fails, but did not show the neuron is
+special, because it never tested other sparse supports.

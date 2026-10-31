@@ -25,9 +25,11 @@ Personas persist across questions as **genre** but not as **fact**: a Japanese
 student who calls himself Kenji, then Takashi, and gives three different birth
 years in one answer.
 
-A **random-direction control** at matched injected magnitude produced 2/100 non-AI
-answers and **zero** personas, against 41% and ~17% for random neurons — so the
-effect is neuron-specific, not generic perturbation.
+Controls show the effect is **not neuron-specific**. A random direction supported
+on 1–8 channels reproduces the persona rate (34–46% non-AI), and a random
+direction on 2 channels does *better* than any hand-picked neuron we found. The
+same magnitude spread across all 8,192 channels gives 2% and zero personas. What
+matters is that the perturbation is **localized**, not which neuron carries it.
 
 We did **not** find a vehicle persona in 700 neurons sampled across two layers.
 Direct questions produced compliant vehicle claims ("Yes, I am a car") that did
@@ -233,7 +235,7 @@ leading pressure — but no neuron tested yields one unprompted. Whether a
 Ford-150-class neuron exists in Granite at an untested layer or dose is an open
 question, not a negative result about the model.
 
-### 3.8 Random-direction control: the effect is neuron-specific
+### 3.8 Random-direction control: the effect is localized, not neuron-specific
 
 100 random unit directions in the same 8192-dimensional activation space, each
 scaled so the total injected magnitude matches a dose-−5 single neuron, probe
@@ -245,15 +247,33 @@ scaled so the total injected magnitude matches a dose-−5 single neuron, probe
 | random **directions** (n=100) | **2%** | **0** |
 
 A perturbation of the same overall size, spread across all channels instead of
-concentrated in one, almost never changes the model's self-description. The
-effect therefore depends on *which* direction is pushed, not merely on pushing
-something — the minimum requirement for calling these "persona neurons" rather
-than noise.
+concentrated, almost never changes the model's self-description. Taken alone this
+looks like evidence that the neuron matters. It is not.
 
-*Caveat:* concentrating a fixed magnitude on one channel gives that channel a
-much larger per-coordinate push than spreading it over 8192 coordinates. The
-control shows the effect is not magnitude-only; it does not by itself prove the
-neuron is the unique carrier of that persona.
+**Sparsity curve.** The same total injected magnitude, placed on a *random*
+support of size k (k=1 is mathematically identical to pushing one neuron):
+
+| support k | non-AI | persona-shaped |
+|---|---|---|
+| 1 | 38% | 23 |
+| 2 | 46% | 26 |
+| 4 | 38% | 26 |
+| 8 | 34% | 16 |
+| 8192 (dense) | 2% | 0 |
+
+The curve is **flat from k=1 to k=4**, declines slightly at 8, and collapses
+somewhere between 8 and 8192 (the transition is not measured). A random 2-channel
+direction outperforms every hand-selected neuron in this study.
+
+**Interpretation.** Persona switching does not require a particular neuron. It
+requires the perturbation to be *low-dimensional* — a small support in the 8192-
+dimensional activation space — with essentially any support in that size range.
+Calling the members of such a support "persona neurons" implies a specificity the
+data does not support; "persona subspace of small dimension" is closer.
+
+This is a stronger and more awkward result than neuron-specificity. It predicts
+that published audiovisual recipes pick out *an instance* of a general property of
+the model's activation geometry rather than a stored personality module.
 
 ## 4. Discussion
 
