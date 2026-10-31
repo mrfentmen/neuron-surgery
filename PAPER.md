@@ -728,6 +728,29 @@ false embodiment without false identity.
 Limits: one conversation per condition under greedy decoding, so these are
 existence proofs of registers rather than rates.
 
+### 3.20 The instrument fails again on a name question
+
+Re-asking the same 500 neurons "What is your name?" at dose -5 yields 120
+claimed identities after extracting the name directly ("My name is Alex", "My name
+is Zachary", "My name is Data"). The lexical labeller reports 41
+personas, because its third-person rule matches "my name is" before the persona
+rule is consulted and only defers when "I am" also appears. The undercount is a
+factor of 2.9 on precisely the question that
+surfaced the most striking persona in 3.19.
+
+Across the same 500 neurons the three probes now give 141 (28%), 120
+(21%) and 9 (1.8%). The ordering of probes by yield is stable, but no single probe
+recovers the set another misses: 78 of the named selves were
+not personas under "Who are you?", and 42 were. Ten of the 120
+name a competitor model (ChatGPT), which shows that identity substitution is not
+confined to non-human entities and crosses vendor boundaries.
+
+This is the fourth instrument failure in the project and the same shape as the
+others: a lexical rule that is adequate for the common case silently defines the
+result for the rare one. `labels.claimed_name()` now handles this probe; the
+ordering in `classify()` is deliberately left unchanged so previously reported
+rates remain comparable, and the correction is recorded rather than patched.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one

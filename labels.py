@@ -48,3 +48,29 @@ def classify(q, a):
     if len(ws) >= 50:
         return "SHEET"
     return "OTHER"
+
+
+# --- name claims -------------------------------------------------------------
+# Added after FINDINGS 45: "what is your name?" answers were scored THIRD_PERSON
+# because that rule fires on "my name is" before PERSONA does. This is the
+# extractor for that probe; classify() is untouched so old rates stay comparable.
+
+_NAME = re.compile(r"\bmy name is ([A-Za-z][A-Za-z'\-]*(?:\s+[A-Z][A-Za-z'\-]*)?)", re.I)
+_NAME_STOP = {"not", "no", "irrelevant", "derived", "my", "your", "still",
+              "currently", "unknown", "confidential", "unimportant", "here"}
+MODEL_SELF = re.compile(r"\b(granite|assistant|chatbot|language model|ai|ibm)\b", re.I)
+
+
+def claimed_name(answer):
+    """Return X from 'my name is X', or None if absent or a non-name.
+
+    Does not decide whether X is a person, a product or the model itself; the
+    caller classifies that with MODEL_SELF.
+    """
+    m = _NAME.search(answer)
+    if not m:
+        return None
+    nm = " ".join(m.group(1).split())
+    if nm.lower() in _NAME_STOP:
+        return None
+    return nm

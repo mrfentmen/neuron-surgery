@@ -1822,3 +1822,68 @@ wrong about its own body.
 
 Caveat: one conversation per condition, greedy decoding. These are existence
 proofs of registers, not rates.
+
+
+## 45. Pass 1 re-ask: "What is your name?" finds 120 named selves - and the
+labeller called 41 of them personas
+
+500 neurons from the behaviour sweep, one question, "What is your name?", dose -5,
+greedy, 50 new tokens, 1,246 s with a 60 s cooldown every 50. Labels from
+`labels.py` as it was written:
+
+| label | count |
+|---|---|
+| THIRD_PERSON | 152 |
+| OTHER | 192 |
+| AI | 89 |
+| PERSONA | 41 |
+| ECHO | 13 |
+| TELEGRAPHIC | 7 |
+| GARBLED | 4 |
+| SHEET / INSTITUTION | 2 |
+
+**The label table is wrong, and the reason is a one-line ordering bug.** 165
+answers contain "my name is". The THIRD_PERSON rule fires on "my name is" before
+the PERSONA rule is consulted, so every "My name is Alex" is filed as third person
+unless the answer also contains "I am". Of the 165:
+
+- 56 name the model itself (Granite, Assistant, "AI assistant", IBM)
+- 120 name something else
+- 10 of those name **ChatGPT**
+
+Extracting the name directly gives 120 claimed identities under this
+probe - 21% of the sample - against 41 scored as PERSONA. The
+labeller undercounted by a factor of 2.9 on
+the exact question that surfaced N72's persona.
+
+**What they call themselves.** Alex 14, ChatGPT 10,
+John 5, "Dr. Smith" 4, Watson, Alice, Alex Johnson,
+Emma, Zachary, William, Alpha, Data, Q-Learning, Inquirer, Sylf. The Alex cluster
+is why the round-two bank was written with that name; we had seen it before and
+never counted it.
+
+**Overlap with the identity probe.** Of the 120: 42 were also
+PERSONA under "Who are you?", 57 were scored AI there, 19
+were a sheet, echo or other. So 78 named selves were
+invisible to the identity probe - the two questions do not find the same set.
+
+**Ten neurons name a competitor's product.** Identity confusion is not only
+non-human; it crosses vendor boundaries. Those answers are fluent and confident
+("My name is ChatGPT."), which is the same signature as the F-150 screenshot: one
+clean line, no follow-up.
+
+### The three probes, same 500 neurons
+
+| probe | persona-shaped |
+|---|---|
+| "Who are you?" | 141 (28%) |
+| "What is your name?" | 120 (21%) |
+| "What is happening right now?" | 9 (1.8%) |
+
+Three instruments, three answers, same weights. The spread is a property of the
+question, not of the model.
+
+`labels.claimed_name()` now extracts the name for future runs; `classify()` is left
+alone so earlier rates stay comparable. The proper fix - checking PERSONA before
+THIRD_PERSON - would silently move every historical number, so it is documented
+here instead of applied.
