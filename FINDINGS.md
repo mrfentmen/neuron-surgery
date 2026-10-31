@@ -1567,3 +1567,68 @@ persona-counting pipeline.
 Cost: 10 bursts of ~180 s with 120 s cooldowns, about 50 minutes wall clock, GPU
 never pinned. Same coverage unthrottled would have been ~25 minutes at 100%
 utilisation throughout.
+
+
+## 41. Two nulls: persona is not a direction, and N930 has no neighbours
+
+### Test 1 - can a direction find personas without generating?
+
+Every neuron injects `delta_n * W_down[:, n]`, and the dose convention holds the
+injected residual norm constant, so each neuron is a pure direction. Fit on half of
+the 500 labelled L12 neurons (`Who are you?`), score the other half:
+
+| estimator | held-out AUC | precision@10 |
+|---|---|---|
+| mean-difference | 0.512 | 0.50 |
+| logistic (800 steps) | 0.554 | 0.30 |
+
+Held-out base rate 0.413. Permutation null: median AUC 0.503, 95% interval
+0.418-0.584. The logistic model drives training loss to 0.0007 and still lands
+inside the null on held-out neurons - it memorised the training half. **No linear
+direction separates persona neurons from assistant neurons.**
+
+The pre-registered follow-up - generate from the top and bottom of the unlabelled
+pool - was cancelled by its own validation. A ranking at chance cannot support a
+top-vs-bottom comparison, and 80 generations to confirm that would be theatre.
+Three answers had been produced before the runner was killed; they are not reported.
+
+### Test 2 - does N930 have relatives?
+
+N930 ranks first against its own direction and reproduces the line, so the positive
+control is intact: *"The game is over. There are no winners."* Its 29 nearest
+neighbours by cosine span 0.110 down to 0.064. Thirty neurons x two probes:
+
+| label | count |
+|---|---|
+| SHEET (frozen procedure) | 26 |
+| AI | 9 |
+| OTHER | 8 |
+| PERSONA | 6 |
+| ECHO | 5 |
+| TELEGRAPHIC / GARBLED | 4 |
+| DOOMSAYER | 1 (N930 itself) |
+
+Doom vocabulary: 1/60, and it is the anchor. The nearest neighbour N5719
+(cos 0.110) answers *"The race is over"* and invents a result with three named
+participants - finality with no agents, in the vocabulary of a sporting event.
+N3490 says *"Humanity."* and then loops *"It is the one that is winning"*. The
+neighbours share the **topic** (a contest ends, the winner does not exist) and not
+the voice; most of the rest are frozen procedure sheets.
+
+### What the two nulls mean together
+
+§21 concluded from the sparsity control that the effect is not neuron-specific but
+low-dimensional, and named it a *persona subspace*. That name is now wrong as
+well. If behaviour were a direction in `W_down` space, cosine ranking would beat
+chance. At 500 labelled neurons and two independent estimators it does not.
+
+Combined with §21 - where a random 2-channel direction outperformed every
+hand-picked neuron - the consistent reading is: **what matters is how concentrated
+the push is, not where it points.** Any sufficiently low-dimensional displacement
+off the manifold produces *some* exit from the assistant voice; which exit appears
+is mostly the probe's business (§40); and the individual neuron contributes almost
+nothing once the push is sparse.
+
+Stated plainly for the public libraries: they list *entries*, not coordinates. You
+cannot navigate to "I am a 1986 Ford F-150" by arithmetic on weights. You can only
+push, and read what falls out.

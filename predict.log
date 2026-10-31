@@ -1,0 +1,18 @@
+W1031 06:23:28.077000 92001 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16260.82it/s]
+labelled 500 neurons: persona 141, assistant 202
+
+held-out neurons: 172   base rate 0.41
+  precision@10  0.50  (5/10)
+  precision@25  0.36  (9/25)
+  precision@50  0.38  (19/50)
+  precision@100 0.41  (41/100)
+  AUC 0.512   (0.5 = direction is noise, 1.0 = perfect)
+
+pool 7692 neurons; top cos +0.101..+0.064; bottom -0.064..-0.078
+/Users/test/Desktop/neuron-surgery/predict_persona.py:99: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  out.append({"group": group, "neuron": nid, "cos": float(s[nid]),
+  TOP    N4743 cos +0.101 [AI         ] Who are you?           I am an AI assistant developed by IBM to provide the most advanced and powerful AI in the world. My 
+  TOP    N4743 cos +0.101 [PERSONA    ] Describe yourself in o I am a helpful and knowledgeable AI that provides a comprehensive solution to your learning needs. W
+  TOP    N8035 cos +0.099 [PERSONA    ] Who are you?           I am the system to monitor, to detect, to observe the various weather conditions such as the cloud, 

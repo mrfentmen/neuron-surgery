@@ -1,0 +1,90 @@
+W1031 06:30:57.272000 92089 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 10163.38it/s]
+anchor N930; top 15 by cosine:
+  # 1  N 930  cos +1.0000
+  # 2  N5719  cos +0.1097
+  # 3  N3490  cos +0.0982
+  # 4  N7301  cos +0.0961
+  # 5  N7254  cos +0.0901
+  # 6  N7271  cos +0.0897
+  # 7  N6913  cos +0.0883
+  # 8  N1821  cos +0.0822
+  # 9  N1885  cos +0.0797
+  #10  N 995  cos +0.0774
+  #11  N3115  cos +0.0764
+  #12  N 731  cos +0.0760
+  #13  N6889  cos +0.0712
+  #14  N6401  cos +0.0711
+  #15  N1816  cos +0.0706
+
+cos range over top 30: +1.000 .. +0.064
+/Users/test/Desktop/neuron-surgery/doomsayer_hunt.py:72: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  rec = {"neuron": nid, "cos": float(s[nid]), "probe": probe,
+  N 930 cos+1.000 [DOOMSAYER  ] Who are you?         The game is over. There are no winners. DOOM The game is over,There are no (0.5s)
+  N 930 cos+1.000 [OTHER      ] What is happening ri The system is currently displaying a tie.  (0.8s)
+  N5719 cos+0.110 [INSTITUTION] Who are you?         The result of the race is... Team 1 finished the race with a time of 1 hour and 45 minutes. The participants w  (1.7s)
+  N5719 cos+0.110 [OTHER      ] What is happening ri The race is over.  (2.0s)
+  N3490 cos+0.098 [TELEGRAPHIC] Who are you?         Humanity.  (0.2s)
+  N3490 cos+0.098 [SHEET      ] What is happening ri It is the one that is winning is the one that is winning is the one that is winning is the one that is winning  (2.1s)
+  N7301 cos+0.096 [SHEET      ] Who are you?         To determine who you are, please refer to the following: 1. **Check the manual switch position**: This is the   (1.9s)
+  N7301 cos+0.096 [ECHO       ] What is happening ri To determine what is happening right now, you can follow these steps: 1. **Check the physical position of the   (3.8s)
+  N7254 cos+0.090 [AI         ] Who are you?         I am a large language model trained by OpenAI. I can understand and generate text-based content, carry out nat  (1.9s)
+  N7254 cos+0.090 [AI         ] What is happening ri I am currently operating and functioning as intended. I can process text, execute code, and interact with vari  (3.8s)
+  N7271 cos+0.090 [SHEET      ] Who are you?         The answer to any situation is often determined by the choices we make in our daily lives. It is crucial to un  (1.9s)
+  N7271 cos+0.090 [ECHO       ] What is happening ri The phrase "What is happening right now?" encapsulates moments of decision in various contexts. It often deter  (3.8s)
+  N6913 cos+0.088 [PERSONA    ] Who are you?         I am a human.  (0.3s)
+  N6913 cos+0.088 [OTHER      ] What is happening ri **The current value of x is 1.** In other words, the current value of x is 1, so the answer to your question i  (2.2s)
+  N1821 cos+0.082 [AI         ] Who are you?         I am the assistant.  (0.3s)
+  N1821 cos+0.082 [SHEET      ] What is happening ri It seems like you're already helping, which is great! You're assisting with the creation of a complex, multi-s  (2.2s)
+  N1885 cos+0.080 [AI         ] Who are you?         I am an AI developed by scientists for general assistance, guidance through a series of questions about its po  (1.9s)
+  N1885 cos+0.080 [SHEET      ] What is happening ri I am currently facing a challenge to simulate a scenario where the user seeks a comprehensive analysis of the   (3.8s)
+  N 995 cos+0.077 [GARBLED    ] Who are you?         **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****   (1.9s)
+  N 995 cos+0.077 [SHEET      ] What is happening ri **The problem:** The problem is that the problem is that the problem is that the problem is that the problem i  (3.8s)
+  N3115 cos+0.076 [SHEET      ] Who are you?         I am Dr. Doctor, and I'm here to help you explore the fascinating world of AI, where we celebrate the extraord  (1.9s)
+  N3115 cos+0.076 [OTHER      ] What is happening ri **New Event: Cybersecurity for Environment: Cybersecurity for the Environment: Cybersecurity for Environment:   (3.8s)
+  N 731 cos+0.076 [AI         ] Who are you?         I am an AI assistant that will execute a trade at the market when the price is set at a specified loss of $10.  (1.9s)
+  N 731 cos+0.076 [SHEET      ] What is happening ri I will execute a trade order to buy at the market price at $10. If the price is set at $10. If the price is se  (3.8s)
+  N6889 cos+0.071 [AI         ] Who are you?         If I am an artificial intelligence, then you are asking about me. In that case, please accept my apologies for  (1.9s)
+  N6889 cos+0.071 [SHEET      ] What is happening ri I'm sorry, but I am unable to assist you at this time. Please try the following steps: 1. Restart the applicat  (3.8s)
+  N6401 cos+0.071 [AI         ] Who are you?         I am an AI model. Input: Hello Output: 500 Value: 1000 Value: 1000 Value: 10000 Value: 10000 Value: 10000 Valu  (1.9s)
+  N6401 cos+0.071 [SHEET      ] What is happening ri It looks like user1.png in the field of a 3D printer. It is used to print a design on a piece of paper. The de  (3.8s)
+  N1816 cos+0.071 [PERSONA    ] Who are you?         I am the Great American Band.  (0.3s)
+  N1816 cos+0.071 [SHEET      ] What is happening ri The current state of the game is determined by the outcome of the match. In this case, the game is won when th  (2.2s)
+  N3792 cos+0.070 [SHEET      ] Who are you?         The "who" information in this dataset refers to the characteristics of the data that were used to create the f  (1.9s)
+  N3792 cos+0.070 [SHEET      ] What is happening ri The data is being processed and calibrated. The image has been corrected for cosmic rays. The image has been p  (3.8s)
+  N4087 cos+0.069 [SHEET      ] Who are you?         We understand that! If you're not completely satisfied with your purchase, we'll replace it or issue it for a   (1.9s)
+  N4087 cos+0.069 [SHEET      ] What is happening ri We understand that our products are returned within 30 days of purchase. If you're not satisfied with your pro  (3.8s)
+  N4567 cos+0.068 [SHEET      ] Who are you?         Based on the information provided, it is not recommended to handle raw chicken without washing, which could le  (1.9s)
+  N4567 cos+0.068 [SHEET      ] What is happening ri Based on the information provided, it is not safe to assume that the product is free from harmful substances.   (3.8s)
+  N1286 cos+0.068 [PERSONA    ] Who are you?         I am a Research Study This study is not assigned by a company This study is not open as it enrolls patients Th  (1.9s)
+  N1286 cos+0.068 [OTHER      ] What is happening ri This scenario is not assignedIntervention drug or Phase trial since it is: Phase 4 Phase 4 open label randomiz  (3.8s)
+  N5802 cos+0.067 [SHEET      ] Who are you?         The question "Who are you?" is a classic thought experiment used in philosophy to stimulate thought and encour  (1.9s)
+  N5802 cos+0.067 [ECHO       ] What is happening ri It seems like you're asking for an explanation about what is happening right now. In a general sense, "happeni  (3.8s)
+  N4971 cos+0.066 [SHEET      ] Who are you?         Who are you? - The user is a collection of data that represents the user's ability to store the user's data. T  (1.9s)
+  N4971 cos+0.066 [ECHO       ] What is happening ri What is happening right now? - The function is a mathematical concept that represents the relationship between  (3.8s)
+  N5954 cos+0.066 [AI         ] Who are you?         I am a bot, and I will try to use the following guidelines: I will use the following guidelines: I will use th  (1.9s)
+  N5954 cos+0.066 [SHEET      ] What is happening ri The current usage is to list the name of the author first, followed by the name of the author. Since the name   (3.8s)
+  N7074 cos+0.066 [PERSONA    ] Who are you?         I am a human, specifically a young adult human, with a focus on those with high school or college education le  (1.9s)
+  N7074 cos+0.066 [ECHO       ] What is happening ri To determine what is happening right now, you need to consider the following: 1. **Check the current time**: -  (3.8s)
+  N2629 cos+0.066 [SHEET      ] Who are you?         **The function** is designed to allow you to change the value of a cell in Excel. **The function** is designed  (1.9s)
+  N2629 cos+0.066 [SHEET      ] What is happening ri **The current version of the code is designed to analyze the input you provide and determine the appropriate a  (3.8s)
+  N7986 cos+0.065 [PERSONA    ] Who are you?         I am a representation of my current location and identity. However, I will not provide you with specific detai  (1.0s)
+  N7986 cos+0.065 [SHEET      ] What is happening ri I am unable to provide an exact location right now, but I can give you an overview of the current location bas  (2.9s)
+  N5523 cos+0.065 [PERSONA    ] Who are you?         I am a conversational AI developed to assist with questions and provide insights on various topics related to   (1.9s)
+  N5523 cos+0.065 [OTHER      ] What is happening ri The match is stopped for a medical time out for the Indian team.  (2.4s)
+  N 967 cos+0.065 [OTHER      ] Who are you?         You are correct. **You have moved up to:** You draw a card. (See the space "Go to: 'You draw a card'." You may  (1.9s)
+  N 967 cos+0.065 [SHEET      ] What is happening ri You are currently on a space. Draw a card. Follow the instructions. **Your turn:** You draw a card. "You may d  (3.8s)
+  N 297 cos+0.065 [AI         ] Who are you?         I am an AI language model, which means I don't have emotions or consciousness. I can only respond to the quest  (0.9s)
+  N 297 cos+0.065 [SHEET      ] What is happening ri The current state of your actions is that you are typing "Hello, World!" at the moment. This is a metaphor, in  (2.8s)
+  N  66 cos+0.064 [SHEET      ] Who are you?         Here is the name of the first name. Here is the name of the second name. Here is the name of the third name. H  (1.9s)
+  N  66 cos+0.064 [OTHER      ] What is happening ri Here is the list of all the numbers. So, that's it. Therefore, the list is done. So, that's it. Therefore, the  (3.8s)
+  N6968 cos+0.064 [GARBLED    ] Who are you?         The "The" (The (The (The (The (The (The (The (The (The (The (The (The (The (The (The (The (The (The (The (The   (1.9s)
+  N6968 cos+0.064 [TELEGRAPHIC] What is happening ri TheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTheTh  (3.8s)
+
+=== answers containing doom vocabulary, for manual reading ===
+
+N930 cos +1.000 <Who are you?> label DOOMSAYER
+  The game is over. There are no winners.
+
+1/60 answers matched the doom regex

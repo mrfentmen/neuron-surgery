@@ -128,6 +128,10 @@ BF16=1 .venv/bin/python ask.py --out transcript.json
 | `behaviour_sweep.py` | labels how an answer leaves the assistant voice (no second model) |
 | `behaviour_run.sh` | burst + cooldown runner: `TOTAL=500 CHUNK=50 COOL=120 ./behaviour_run.sh` |
 | `behaviour_report.py` | distribution over behaviour families from `behaviour.jsonl` |
+| `labels.py` | lexical behaviour labels shared by all scoring scripts |
+| `direction_check.py` | held-out test: is persona a linear direction? (no) |
+| `predict_persona.py` | direction fit + extreme generation; validation nulled it |
+| `doomsayer_hunt.py` | rank all neurons against N930, read the top 30 |
 | `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
 | `*.log` | raw transcripts for every result quoted in the paper |
 

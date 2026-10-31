@@ -586,6 +586,36 @@ neurons (consistent with its ~1/1,150 prevalence). And the sample is one layer o
 one model; whether the mode distribution is stable across depth and across model
 families is untested.
 
+### 3.16 Personas are not linearly addressable
+
+Because the dose convention fixes the injected residual norm, each neuron
+corresponds to a pure direction `W_down[:, n]`. If persona production were a
+direction in that space, a linear score fitted on labelled neurons would rank
+unlabelled neurons above chance. It does not. Fitting on half of the 500 labelled
+layer-12 neurons and scoring the held-out half gives AUC 0.512 for the
+mean-difference direction and 0.554 for a logistic model whose training loss
+reaches 0.0007; the permutation null over 200 label shuffles has median 0.503 and
+95% interval 0.418-0.584, so both estimators sit inside it. The pre-registered
+generation stage (top versus bottom of the unlabelled ranking) was cancelled on the
+strength of that validation rather than run and reported.
+
+The same holds for a single register. Ranking all 8,192 neurons by cosine with
+N930's direction and reading the 30 nearest neighbours reproduces N930 itself
+(positive control) but yields one doom-vocabulary answer out of 60 - the anchor -
+while 26 of the 60 are frozen procedure sheets. The nearest neighbour produces
+"The race is over" with an invented result and three named participants: the topic
+survives, the voice does not.
+
+Together with the sparsity result of 3.8, where a random two-channel direction
+outperformed every hand-picked neuron, this fixes the interpretation. The carrier
+of the effect is not the direction of the displacement but its concentration: a
+sufficiently low-dimensional push moves the model off its learned manifold, the
+probe selects which of a small number of exits is taken (3.15), and the identity of
+the neuron adds almost nothing. The term "persona subspace", used in earlier drafts
+of this section, is therefore withdrawn along with "persona neuron". The public
+persona libraries should be read as catalogues of pushes and their outputs, not as
+coordinates one can navigate by arithmetic on weights.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
