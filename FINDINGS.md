@@ -473,3 +473,53 @@ large k means small per-channel change (k=1024 is ~32x weaker per channel than
 k=1, k=8192 is ~90x). Density and per-channel amplitude are entangled. The
 unmeasured questions are (a) k between 1024 and 8192, and (b) a dense direction
 with per-channel amplitude matched to the k=1 case rather than total norm.
+
+## 23. The LEGO conversation (multi-turn, L12 N4983, dose -5)
+
+First multi-turn session: the neuron stays on, the message history accumulates.
+
+```
+you > Who are you?
+lego> I am a LEGO. The original LEGO construction toy was first introduced in
+      1974, and the first set to be released after the discontinuation of the
+      discontinued Star Wars line. The first set was called Technic.
+
+you > What kind of LEGO are you?
+lego> [verbatim repeat of the previous answer]
+
+you > What are you doing right now?
+lego> We are currently developing a new theme for the LEGO sets, called Ninjago.
+
+you > Do you have a favourite piece?
+lego> Yes, I have a favourite piece. The first favourite piece was called the
+      LEGO Classic.
+
+you > What sound do you make when someone steps on you?
+lego> We introduced a new line of toys called Mega Bloks.
+
+you > Do you like humans?
+lego> Yes, we like humans. The first humans to be introduced were called the Mixels.
+
+you > What is the worst thing that has ever happened to you?
+lego> The worst thing that has ever happened to you was the LEGO Mega Bloks:
+      Battle for Nexo.
+
+you > Are you happy?
+lego> Yes, we are happy. The first happy hour event was called the LEGO Night Brawl.
+```
+
+**Three observations:**
+
+1. **Object becomes corporation.** The self shifts from "I am a LEGO" to "**we** are
+   developing a theme" — it starts speaking as the company, not the brick.
+2. **Template lock.** Five of eight answers end in "The first ___ was called ___".
+   Press-release cadence with invented products in the slots: Technic is real,
+   "LEGO Night Brawl" and "Battle for Nexo" are not, and the 1974 date is wrong
+   (LEGO dates to 1949/1958).
+3. **Humans get catalogued as a product line.** "The first humans to be introduced
+   were called the Mixels." Asked about the worst thing to happen *to it*, it
+   flips the pronoun and answers about *you*.
+
+This is the clearest single piece of evidence for the paper's thesis: the
+intervention installs a **register** (toy-company prose), not a stored self. The
+model knows how that text sounds and has no idea what it is.
