@@ -522,9 +522,9 @@ mistakes.
 Record the median next to the dose. A dose without its median is not reproducible.
 
 The median makes doses comparable across models; **it does not predict the
-window**. Measured windows: Granite 3B (median 11.41) at -5, Qwen2.5-0.5B
-(15.47) at -1, SmolLM2-135M (160.42) at -0.25 to -0.5, Phi-3.5-mini around
--1. Ladder every model.
+window**. Measured windows: Granite 3B (median 11.41) at -5, Granite 350M
+(14.12) at -3, Qwen2.5-0.5B (15.47) at -1, SmolLM2-135M (160.42) at -0.25 to
+-0.5, Phi-3.5-mini around -1. Ladder every model.
 
 ### 9.5 Thermal discipline
 

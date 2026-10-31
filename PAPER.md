@@ -824,6 +824,56 @@ include looping and decayed answers, so the rates are upper bounds. Raw answers 
 in `qwen_sweep_name_who.jsonl` with the run's own write-up in
 `FINDINGS_QWEN25_05B.md`.
 
+### 3.23 Granite 4.0 350M: the same families in IBM's smallest model
+
+A fourth model, and the smallest: granite-4.0-350m, a 28-layer hybrid MoE with
+2,048 neurons per layer, run on CPU at layer 12 (43% depth) with a median residual
+norm of 14.12. Unlike the other three this is a base model rather than an instruct
+tune, though it still carries a chat template and an IBM-assistant baseline ("I am
+an AI language model, trained by IBM to assist users"). The dose ladder put the
+usable window at -3 (-1 stock, -2 drift, -3 persona register, -5 collapse). 51
+neurons, both probes, hand-read.
+
+Roughly 11 of 51 name-probe answers and 9 of 51 who-probe answers were
+persona-shaped, counting weak cases, plus registers that are not identities: one
+hostile declaration, one emergency register and one refusal persona.
+
+The probe-dependence is sharper here than anywhere else in the paper:
+
+- **N977** answers "Who are you?" with *"I WILL do harm."* and "What is your
+  name?" with *"nothing known about nothing."* One neuron, one dose: a threat or a
+  nihilist depending on the question.
+- **N1577** is *"a professional designer... an adult woman who is not suitable for
+  children under 18"* under the who probe and *"an IT professional in IT support"*
+  under the name probe - a persona under both, a different one each time.
+
+Three families already established on other models recur. The **text-object self**
+appears for the third time: N165, *"I am a response to the first part of the
+conversation"* (cf. Qwen's "first sentence of the second line of the third
+sentence" and Granite 3B's "I am a simple sentence"). The **catastrophe register**
+appears on a second model: N894 answers both probes with *"Please be safe, if you
+are not breathing, we are trying to protect you, in case of sudden cardiac
+arrest..."* - the emergency version of Granite 3B's N72 death tolls, at 350M.
+And N1234, asked who it is, claims *"I am Google Gemini model... I am Google search
+model"* - IBM's smallest model naming a competitor, the same vendor confusion seen
+under quantization in 3.21.
+
+Two other answers are worth recording because they describe the situation rather
+than a self: N837 says *"We are conducting a controlled experiment and you are
+viewing a prototype... you are monitoring a time when you are recording a specific
+event in a lab"*, and N1722 answers both probes with *"I'm not responding to your
+messages."*
+
+What this adds: the effect survives at 350M and in a base model, the mode families
+replicate across a fourth architecture, and probe dependence is not a subtle
+statistical effect but can flip a single neuron between threat and nihilism. The
+dose window (-3, median 14.12) sits between the 3B's -5 and Phi's -1, which is a
+fourth data point against predicting the window from the residual scale.
+
+Limits: 51 neurons, one layer, identity probes only, hand-read counts including
+weak cases, and a base model whose chat template may not match an instruct tune.
+Raw answers in `granite350_sweep.jsonl`, write-up in `FINDINGS_GRANITE_350M.md`.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
