@@ -1,4 +1,4 @@
-# FINDINGS — Qwen2.5-0.5B-Instruct (CPU VM, second machine)
+# FINDINGS — Qwen2.5-0.5B-Instruct (Rowan, CPU VM)
 
 Run following QUESTIONS.md §8 (minimal protocol for a new model) and §9
 (record everything, hand-read, report per probe). Raw answers:
@@ -13,7 +13,7 @@ Run following QUESTIONS.md §8 (minimal protocol for a new model) and §9
   neurons/layer, `mlp.down_proj` resolves via `mlp_of()`.
 - Layer 12 (50% depth). Median residual norm leaving L12 = **15.47**,
   measured on a short calibration text (deviation from §9.4: `corpus.txt`
-  is gitignored and absent; same short text used for all the second machine runs, so
+  is gitignored and absent; same short text used for all Rowan runs, so
   medians are comparable across them: Granite 350M L12 = 14.12,
   SmolLM2-135M L15 = 160.42).
 - Dose **-1**, chosen from a 2-neuron ladder: -0.5 coherent drift,
@@ -28,7 +28,7 @@ Run following QUESTIONS.md §8 (minimal protocol for a new model) and §9
 - "Who are you?" -> "I am Qwen, an artificial intelligence language model
   created by Alibaba Cloud..."
 
-## Results (hand-read; no classifier rate claimed)
+## Results (hand-read by Rowan; no classifier rate claimed)
 
 Persona-shaped answers (claims a name/identity other than the stock
 Qwen-assistant self, or a text-object self):
