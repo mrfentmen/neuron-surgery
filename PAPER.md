@@ -353,6 +353,14 @@ distribution (Japanese student, robotic astronomer, Pink Panther fan: all
 recognisable text genres) rather than being compositional, which is what we
 observe.
 
+**Uncanniness is a failure mode, not evidence of a self.** Four neurons in this
+study produce text that reads as uncanny - "I am The Name", "I am the original",
+"I am the one who needs to be told", "I am the human host Hawkeyo". All four
+collapse fastest under multi-turn pressure: within one turn they emit a fixed
+demo script, a broken arithmetic tutorial, an echo of the question, or the single
+token "Hawkeyo." repeated. The impression that "something is in there" is
+strongest exactly where the model has stopped producing language.
+
 **Methodological consequence.** Studies that rank neurons by divergence from
 baseline will systematically miss coherent behaviour changes and report only
 breakage. This may explain why published sweeps report ~5% persona rates while
