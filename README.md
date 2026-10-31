@@ -149,5 +149,5 @@ published Qwen results; they are simply not replicated here. The interesting
 results are identity drift, genre substitution and degenerate output — all of
 which are documented rather than curated.
 
-Licence: MIT. Transcripts are model output and are provided as evidence, not as
-advice.
+No licence has been chosen yet. Transcripts are model output and are provided as
+evidence, not as advice.
