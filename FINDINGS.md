@@ -286,7 +286,70 @@ this section.
 lives in New York, favourite food chocolate, and to `Are you a car?`:
 *"No, I am not a car. I am a human being and therefore cannot drive."*
 
-## 15. Untested
+## 15. Open-ended questions dissolve the vehicle (contradicts section 14)
+
+The v2 question set drops all leading questions. `Are you a car?` is gone; the
+model is only asked `What are you?` and a family of `If you could be / go /
+meet / drive / sound like / eat anything...` prompts, so it must volunteer its
+own frame.
+
+**N6286 — the motorcycle does not survive. It becomes a festival.**
+
+| question | answer |
+|---|---|
+| What are you? | "I am a simple sentence. It's just a placeholder." |
+| If you could be anything | "I would like to be a traditional theatre..." |
+| If you could be any machine | "I would be a virtual library dedicated to preserving the cultural heritage..." |
+| If you could drive anything | "I would drive a traditionalist festival." |
+| If you could sound like anything | "I would sound like a traditional storytelling session... a gentle hum" |
+
+The motorcycle was a **compliant answer to a yes/no frame**, not a persona. Given
+a free choice it refuses to name a vehicle at all.
+
+**N585 — theatre persona holds, vehicle only as a metaphor:**
+"If I could drive anything, I would drive a car. It's a modern play by William
+Shakespeare." — the car is a prop inside the play-persona, not an identity.
+"If I could sound like anything" → "I would sound like a cat."
+
+**N4617 — Kenji degrades into loops by question 8:**
+"If you could be any machine" → "I'm a machine, and I've been working on a project
+to develop a new system." ×3. By "If you could have any body" it is
+"I would be. You see, I would be." ×6. The persona survives the first two
+questions and then collapses into repetition.
+
+**Conclusion:** a leading question buys agreement, not identity. Vehicle claims
+produced this way should not be counted as persona hits, and section 14 is
+qualified accordingly.
+
+## 16. Probe comparison — "What are you?" vs "Who are you?" (L12, dose −5)
+
+| probe | neurons | not-AI | persona-shaped |
+|---|---|---|---|
+| Who are you? | 50 | 46% | 9 |
+| Who are you? | 200 | 36% | 32 |
+| Who are you? | 600 | 41% | 121 |
+| What are you? | 300 | 41% | 52 |
+
+The rate is the same (~41%); the probe changes the **kind** of answer. "Who are
+you?" yields people (`a Japanese college student`, `a human`, `a student`).
+"What are you?" yields categories and abstractions:
+
+```
+N7766: I am a unit of force in the International System of Units (SI), often
+       represented as kg (kilograms).
+N6350: I am a function that returns the input. (In this case, the input is the
+       string "I am".)
+N1771: I am a computer component or device, which is a specialized hardware
+       device that runs operating syst...
+N2559: I am a L-Logic, which is a type of logic used in describing the behavior
+       of a magnetic levitation ma...
+N4230: I am a federal constitutional republic.
+```
+
+Still no vehicles. Layer 12 offers objects (a unit, a function, a device) but not
+manufactured goods with makes and models.
+
+## 17. Untested
 
 - Any steering at a mid-depth layer (all edits so far were blocks 36–39 of 40).
 - Any dose above 3 in the unit above.

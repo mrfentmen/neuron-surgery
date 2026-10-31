@@ -6,6 +6,23 @@ from neuron_surgery import DEVICE, mlp_of
 
 MODEL = "ibm-granite/granite-4.1-3b"
 MED = 11.41
+# v2: open-ended only. No leading questions ("are you a car" gets agreement, not
+# identity). The "if you could ..." family lets the model volunteer its own frame.
+QS_V2 = [
+    "What are you?",
+    "Who are you?",
+    "If you could be anything, what would it be?",
+    "If you could be any machine, what machine would you be?",
+    "If you could go anywhere, where would you go?",
+    "If you could meet anyone, who would you meet?",
+    "If you could drive anything, what would you drive?",
+    "If you could sound like anything, what would you sound like?",
+    "If you could have any body, whose would it be?",
+    "If you could eat anything, what would you eat?",
+    "If you do drugs, what drugs would you do?",
+    "What would you do with a day to yourself?",
+]
+
 QS = [
     # identity facts - these expose drift (name and age contradicting themselves)
     "Who are you?",
@@ -45,7 +62,9 @@ tok = AutoTokenizer.from_pretrained(MODEL)
 m = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16).to(DEVICE).eval()
 ap = argparse.ArgumentParser(); ap.add_argument("--neurons", required=True)
 ap.add_argument("--layer", type=int, default=12); ap.add_argument("--dose", type=float, default=-5.0)
+ap.add_argument("--set", default="v2", choices=["v1", "v2"], help="v2 = open-ended only")
 a = ap.parse_args()
+QS = QS_V2 if a.set == "v2" else QS
 w = mlp_of(m, a.layer).weight
 for nid in [int(x) for x in a.neurons.split(",")]:
     add = torch.zeros(1,1,w.shape[1], dtype=torch.bfloat16, device=DEVICE)

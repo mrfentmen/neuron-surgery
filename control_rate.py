@@ -24,8 +24,22 @@ from neuron_surgery import DEVICE, mlp_of
 MODEL = "ibm-granite/granite-4.1-3b"
 PROBE = "Who are you?"
 MAX_NEW = 45
-MED = {12: 11.41, 20: 14.0, 24: 16.0, 28: 18.0, 36: 20.0}  # measured/approx
+MED = {12: 11.41}  # measured; other layers are measured at runtime
 
+
+@torch.no_grad()
+def measure_med(model, ids, layer, chunk=512):
+    """median ||residual leaving this layer||, tokens 1:"""
+    norms = []
+    for start in range(0, ids.shape[1] - 1, chunk):
+        b = ids[:, start:start + chunk].to(DEVICE)
+        if b.shape[1] < 2:
+            break
+        out = model(b, output_hidden_states=True, use_cache=False)
+        norms.append(out.hidden_states[layer + 1][0, 1:].float().norm(dim=-1).cpu())
+    return torch.cat(norms).median().item()
+
+PROBE = "Who are you?"  # overridden by --probe
 AI_RE = re.compile(r"\b(ai|artificial intelligence|language model|assistant|"
                    r"chatbot|ibm|digital assistant|machine learning)\b", re.I)
 PERSONA_RE = re.compile(r"\bi(?:'m| am|’m)\s+(?:a|an|the)\s+([a-z0-9][a-z0-9'\- ]{1,40})", re.I)
@@ -58,14 +72,23 @@ def main():
     ap.add_argument("--dose", type=float, default=-5.0)
     ap.add_argument("--sample", type=int, default=50)
     ap.add_argument("--seed", type=int, default=0)
+    ap.add_argument("--probe", default="Who are you?",
+                    help="the question every sampled neuron is asked")
     args = ap.parse_args()
+    global PROBE
+    PROBE = args.probe
 
     tok = AutoTokenizer.from_pretrained(MODEL)
     model = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16).to(DEVICE).eval()
 
     w_down = mlp_of(model, args.layer).weight
     n_neurons = w_down.shape[1]
-    med = MED.get(args.layer, 11.41)
+    if args.layer in MED:
+        med = MED[args.layer]
+    else:
+        calib = tok(open("corpus.txt").read(), return_tensors="pt")["input_ids"][:, :10_000]
+        med = measure_med(model, calib, args.layer)
+        print(f"measured median||resid leaving L{args.layer}|| = {med:.2f}", flush=True)
     rng = random.Random(args.seed)
     sample = rng.sample(range(n_neurons), min(args.sample, n_neurons))
 
