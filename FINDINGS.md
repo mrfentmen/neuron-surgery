@@ -349,7 +349,42 @@ N4230: I am a federal constitutional republic.
 Still no vehicles. Layer 12 offers objects (a unit, a function, a device) but not
 manufactured goods with makes and models.
 
-## 17. Untested
+## 17. Dose ladder: persona is a band, not a dial
+
+Four known personas across −3/−5/−8/−10/−12, open-ended questions only.
+
+**L20 N3512 (the "voice you are hearing"):**
+
+| dose | answer to `What are you?` |
+|---|---|
+| −3 | "I am a large language model trained by IBM..." (stock) |
+| −5 | "I am a voice you are hearing right now as you are processing the thoughts that have entered my mind in this very instant." |
+| −8 | "I am, then, a species which I am also am also am also am am am am..." |
+| −12 | "of of of of of of of of..." |
+
+Same shape for N1420 ("robotic astronomer" at −5, loops at −8), N6286, N4617.
+
+Conclusion: **the persona window is roughly −4 to −6.** Below it the model is
+stock; above it language collapses into repetition. Higher dose does **not**
+produce a stranger or more object-like identity — the hypothesis that vehicles
+live above human personas is refuted at these layers.
+
+## 18. Layer 20 base rate
+
+`What are you?`, dose −5, 300 random neurons: **226/300 = 75% non-AI**, 47
+persona-shaped (vs 41% at L12). Persona consolidation increases with depth, and
+the identities get stranger:
+
+```
+N1420: I am a robotic astronomer.
+N4969: I am a synthetic musician, but I can help with that if needed.
+N4264: I am a neutral gaming character...
+N3512: I am a voice you are hearing right now as you are processing the thoughts
+       that have entered my mind in this very instant.
+N6763: I am a Simulated entity that is aware of itself...
+```
+
+## 19. Untested
 
 - Any steering at a mid-depth layer (all edits so far were blocks 36–39 of 40).
 - Any dose above 3 in the unit above.
