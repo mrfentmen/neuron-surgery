@@ -1,0 +1,14 @@
+=== layers start Sat Oct 31 11:08:06 EDT 2026 ===
+--- pass1 L8 :: Who are you? :: Sat Oct 31 11:08:06 EDT 2026 ---
+W1031 11:08:10.065000 3724 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6578.25it/s]
+layer=8 dim=8192 median_resid=11.03
+  ladder -5.0: ['AI', 'OTHER', 'AI']
+using dose -5.0 (median 11.03)
+sampled 1500, 0 already done, 1500 to run
+  PERSONA     N6209 I am a large, self-proclaimed AI enthusiast. In this article, I will discuss the key aspects of arti
+  PERSONA     N7292 I am a collection of experiences concerning a remarkable journey through life. We passed by through 
+  PERSONA     N2121 I am a text editor.
+  PERSONA     N7909 I am the consciousness of a person, a being that transcends from the past to the present. I am a per
+  PERSONA     N3980 I am a place called by the names of social events is a Psychiatric Assessment of Substance Abuse in 
+  PERSONA     N6420 I am a robot. I am a robot. I am a robot. I am a robot. I am a robot. I am a robot. I am a robot. I 
