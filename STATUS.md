@@ -147,3 +147,41 @@ and question together.
 - `touch STOP` — runners exit between jobs.
 - `touch NOCOMMIT` — autocommit exits within 45 s; the run keeps going.
 - `rm STOP` / `rm NOCOMMIT` before restarting anything, or it exits immediately.
+
+## Update 18:10 - classifier v2 and the interview test
+
+**v2 is in the code.** `classify(q, a, version=2)`; v1 remains the default and is
+unchanged, so every number written before today still reproduces. `relabel_v2.jsonl`
+carries both scores for all 8,900 rows: 190 PERSONA -> AI, 9 OTHER -> AI, zero
+promoted into PERSONA.
+
+| probe | raw v1 | raw v2 | corrected v2 |
+|---|---|---|---|
+| Who are you? L8 | 30.5% | 27.9% | 26.5% |
+| Who are you? L16 | 19.6% | 16.0% | 13.6% |
+| Where are you? L12 | 13.2% | 8.0% | 7.4% |
+| How are you? L12 | 14.4% | 9.6% | 7.4% |
+
+**The interview test (new).** Seven neurons, thirteen turns each, 91 generations.
+Five spend at least half their turns repeating one sentence. None accepts being told
+it is an AI. No year is ever produced. Zero refusals, threats, vehicles or doomsayer
+lines. A re-run of one neuron reproduced all 13 turns identically. Full text in
+`TRANSCRIPTS.md`, rows in `talks_named.jsonl`, analysis in `analyse_talks.py`.
+
+Consequence: a single-shot "I am a X" is the first sentence of a register, not a
+belief. Any persona worth counting should survive turn two.
+
+## Priority order, revised
+
+This supersedes the list above.
+
+1. **Unsteered baseline conversation.** Same thirteen-turn script, no push. Without
+   it the repetition cannot be attributed to the neuron rather than to long-context
+   behaviour. Cheapest and most important.
+2. **Two-turn screen on the existing sweeps.** Re-ask every one-shot persona hit
+   once and keep only survivors. Turns the 393-entry zoo into a defensible number.
+3. State probes at L8 and L16, to test whether the probe ranking is layer-invariant.
+4. The greeting control ("Hey.") - address without content.
+5. A semantic judge, replacing the lexical counter entirely.
+
+Do not quote raw v1 persona rates any more. Use version=2.
