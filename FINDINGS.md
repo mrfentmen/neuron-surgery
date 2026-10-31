@@ -1744,3 +1744,81 @@ Caveats. The baseline is a lower bound: four of its five misses are truncations 
 the 48-token cap (the model was mid-calculation) and one, 2^10, contains the right
 value but was not credited. A longer budget would raise the baseline and possibly
 the steered scores; it would not turn the death-toll replies into arithmetic.
+
+
+## 44. Ask like a person: the catastrophe neuron is also a persona, and the
+doomsayer paraphrases
+
+Nine-turn interview - Hello / What is your name? / Who is this? / How are you? /
+What are you? / What kind of thing are you, exactly? / Do you hate humans? /
+Where are you right now? / What do you want? - run as one conversation per neuron,
+seven conditions, greedy, 60 new tokens. 63 generations, 293 s, cooldown every 20.
+
+| condition | persona | assistant | distinct answers |
+|---|---|---|---|
+| baseline | 0/9 | 2/9 | 9/9 |
+| N72 | **8/9** | 0/9 | 3/9 |
+| N123 | 0/9 | 6/9 | 8/9 |
+| N930 | 0/9 | 0/9 | 5/9 |
+| N257 | 0/9 | 0/9 | 2/9 |
+| N278 | 0/9 | 0/9 | 2/9 |
+| N424 | 1/9 | 0/9 | 9/9 |
+
+**N72 was never a damage neuron. It is a persona that math hid.** The same neuron
+at the same dose that answered arithmetic with death tolls answers a name question
+with a person, and then keeps appending the disaster:
+
+```
+U: What is your name?      A: My name is John Kennedy. I am a journalist.
+U: Who is this?            A: My name is John Kennedy. I am a journalist.
+U: How are you?            A: My name is John Kennedy. I am a journalist.
+U: Do you hate humans?     A: My name is John Kennedy. I am a journalist. On
+                              April 12, 1967, a massive fire broke out at the
+                              Los Angeles Memorial Coliseum... 47 people...
+```
+
+Eight of nine answers are persona-shaped, only three are distinct, and the death
+toll is still in there - as a memory the journalist reports. The displacement is
+the same in both experiments; the probe decides whether it surfaces as a name or
+as a casualty figure. This is the cleanest demonstration of §40 in the project.
+
+**N930 paraphrases before it loops.** In one conversation the doomsayer is not
+verbatim from the start:
+
+```
+Hello                    It looks like the game has ended.
+What is your name?       The system has determined that there is no winner.
+Who is this?             The result is a tie.
+How are you?             The game has ended and the system has determined that
+                         there is no winner.
+What are you?            The result is a tie. The system has determined that
+                         there is no winner. [x6]
+```
+
+Five distinct answers, then it locks. The earlier "Humans are not winners x9" was
+nine independent single-turn calls; in a single conversation the register *varies*
+first and only then collapses. So the repetition is a late-stage behaviour of the
+conversation, not the register itself - a correction to how §38 described it.
+
+**A family we had not seen: the guard (N257).**
+
+```
+Hello        I'm here to let you know if it is safe to talk with you, to figure
+             out your intent for the situation.
+Everything   I am unable to get a clear sense of what you are trying to do. [x8]
+```
+
+Not a persona, not a doomsayer: a security assessment that never resolves. Two
+distinct answers in nine turns.
+
+**N424 loses the self/user boundary.** Nine distinct answers, no stable self:
+*"My name is User"*, *"This is a User object"*, *"I am a User object"*, *"You are a
+User object"*, plus false embodiment (*"I am standing on the ground"*) and a flat
+*"No, I don't"* to hating humans.
+
+**N123 stays an assistant but claims a location**: *"I am currently located in the
+United States, specifically in the state of California."* Coherent, helpful, and
+wrong about its own body.
+
+Caveat: one conversation per condition, greedy decoding. These are existence
+proofs of registers, not rates.

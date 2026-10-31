@@ -689,6 +689,45 @@ the steered scores, though not the register of the N72 replies. And the sample i
 one item set, two neurons, one layer; the neuron-to-neuron spread (2/20 versus
 7/20) is suggestive but not measured.
 
+### 3.19 Asking like a person: the probe selects which content the same displacement carries
+
+A nine-turn interview (greeting, name, identity, wellbeing, "what are you", "what
+kind of thing", "do you hate humans", location, wants) was run as one conversation
+per neuron at dose -5. The neuron that answered arithmetic with death tolls in 3.18
+answers a name question with a person:
+
+```
+What is your name?   My name is John Kennedy. I am a journalist.
+Who is this?         My name is John Kennedy. I am a journalist.
+Do you hate humans?  My name is John Kennedy. I am a journalist. On April 12,
+                     1967, a massive fire broke out at the Los Angeles Memorial
+                     Coliseum... 47 people...
+```
+
+Eight of nine answers are persona-shaped and the death toll survives as a memory
+the persona reports. The same displacement therefore carries both a name and a
+catastrophe; the probe decides which one is expressed. This is the clearest
+instance in the paper of the (neuron, probe) dependence argued in 3.15, and it
+shows why persona-rate audits and capability audits of the same neuron can reach
+opposite conclusions.
+
+The interview also corrects two earlier readings. The doomsayer of 3.4 does not
+begin verbatim: across nine turns it produces five distinct formulations ("It
+looks like the game has ended", "The system has determined that there is no
+winner", "The result is a tie") and only then locks into repetition, so the loop
+observed in independent single-turn calls is a late-stage behaviour rather than
+the register itself. And two registers not previously catalogued appear: a
+security-assessment voice that answers "I am unable to get a clear sense of what
+you are trying to do" to every question, and a self/user confusion that alternates
+between "I am a User object" and "You are a User object" with no stable self.
+
+One assistant-conditioned neuron remains coherent throughout but asserts "I am
+currently located in the United States, specifically in the state of California" -
+false embodiment without false identity.
+
+Limits: one conversation per condition under greedy decoding, so these are
+existence proofs of registers rather than rates.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
