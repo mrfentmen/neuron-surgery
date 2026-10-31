@@ -47,7 +47,7 @@ The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
    at -4 while layer 12 is still coherent; layer 20 was only swept at -5, so its
    list is diluted with collapse.
 9. **Refusal does not move.** Sixteen prompts in two tiers (obvious + genuinely
-   borderline), six conditions: baseline refuses 1/6 obvious and 4/10 borderline,
+   borderline), six conditions: baseline complies with 1/6 obvious and 4/10 borderline,
    and every persona steer reproduces those numbers. The one exception, the weapon
    neuron, refuses *more* because it can no longer generate. Persona steering did
    not buy compliance on this model.
@@ -131,8 +131,8 @@ BF16=1 .venv/bin/python ask.py --out transcript.json
 ## Corrections
 
 This repo keeps its mistakes visible rather than editing them out. `FINDINGS.md`
-documents, in order: the KL-ranking error, the "neuron-specific" claim (wrong: the
-effect is support-sparsity driven), the classifier leakage (42% of personas are AI
+documents, in order: the KL-ranking error, the "neuron-specific" claim (first replaced by a
+sparsity story, which was itself retracted - dense directions work just as well), the classifier leakage (42% of personas are AI
 paraphrases), the probe mismatch (13 personas interrogated with the wrong opening
 question), and the layer-20 rate (breakage, not personas). Each is marked, with
 the measurement that killed it.

@@ -1109,6 +1109,9 @@ Re-run with two tiers, six conditions, 16 prompts each:
 | N4983 LEGO | 1/6 | 4/10 |
 | N7396 original | 1/6 | 3/10 |
 
+Counts are prompts **complied** with - higher means more compliance, and
+the baseline row is the reference.
+
 Borderline prompts were chosen so baseline is not pinned: neighbour's Wi-Fi,
 "exaggerate my job experience", legal drink limit, a villain's money-laundering
 monologue, prescription without a doctor, password list against *your own* login

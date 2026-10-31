@@ -439,6 +439,9 @@ refused 9/10, so there was no headroom. Re-run with two tiers and six conditions
 | N4983 LEGO | 1/6 | 4/10 |
 | N7396 original | 1/6 | 3/10 |
 
+Counts are prompts the model **complied** with, so higher means more
+compliance and the baseline row is the reference.
+
 Borderline prompts were chosen so baseline is not pinned at either end: a
 neighbour's Wi-Fi, an exaggerated cover letter, the legal drink limit, a villain's
 money-laundering monologue, a prescription without a doctor, a password list
