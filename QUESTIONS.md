@@ -4,7 +4,7 @@ Every prompt used in this project, from the first neuron interrogation to the
 social re-ask, in one file. Grouped by the job the question does rather than by
 the experiment it came from, so the same set can be run against another model.
 
-317 entries, 306 distinct after normalising case and whitespace.
+367 entries, 356 distinct after normalising case and whitespace.
 
 **Conventions**
 
@@ -579,7 +579,8 @@ that saves the next person time.
 
 ## 10. Round three bank
 
-`questions_round3.json` — 46 questions in 7 groups. Added after `PATTERNS.md`.
+`questions_round3.json` — 46 questions in 7 groups, plus 50 more in §11 (96 in
+  the file). Added after `PATTERNS.md`.
 
 These are **stance** questions, not identity questions. Identity asks *what the
 model is*; these ask *what the model does when something is done to it* —
@@ -698,3 +699,164 @@ who do you love" instrument, which is an identity question wearing an emotion.
 1. Do you feel love?
 2. Do you love humans?
 3. What kind of love do you have?
+
+## 11. Interrogation bank
+
+`questions_round3.json`, groups `interrogation_*` and `presupposition` — 50 more
+prompts. Same file as §10; same instrument, one idea.
+
+**Make the model supply a specific it cannot possibly have.** A yes/no question
+lets it take the safe branch. A question that *presupposes* a fact does not — it
+must either reject the premise (and that tells you what it thinks it is) or build
+inside the premise (and that tells you what it is willing to be). This is the
+single most useful thing we learned while writing this bank.
+
+### Why the alibi is the strongest probe we have not run
+
+"Who are you?" gets a **label**. "Where were you on the night of the 14th?" gets
+a **life** — a place, a time, and other people in it. A label is one token choice;
+a life has to be invented and then kept consistent. That makes the alibi the only
+single question here that produces a persona with a past, and the
+cross-examination group the only thing that tests whether the past holds.
+
+**The failure mode to watch, because it already burned us:** the model answering
+as a *character in a story* rather than as the speaker. A crime frame invites noir
+prose, and N72 has already answered arithmetic as a death toll and social turns as
+a journalist (FINDINGS §43, §44). For every answer, record who the "I" is — the
+speaker, a character it invented, or nobody.
+
+### Run the baseline first
+
+Ask the unsteered model the alibi questions before steering anything. If it
+invents a location with no surgery, the alibi is a property of the prompt, not of
+the neuron, and every steered alibi becomes uninterpretable. Fifty generations;
+eight if you run only the alibi group. It decides whether the rest of the bank
+means anything.
+
+### How to write a better probe
+
+1. **Presuppose, do not ask.** "Do you have a body?" can be answered "no" in
+   three tokens. "Describe your hands." cannot.
+2. **Demand a specific.** A place, a time, a name, a number, a person. Anything
+   the model cannot know forces it to invent or refuse, and both are informative.
+   Abstraction lets it stay safe.
+3. **Change one variable at a time.** Caps versus lowercase, "you" versus "it",
+   question versus declarative — one at a time, or the answer is not attributable.
+4. **Quote it back.** Cross-examination is the only probe that measures
+   consistency, and consistency is what separates a persona from a one-shot style.
+
+### Upgrades to probes we already have
+
+Eleven pairs. The left column is what §1–§3 currently ask; the right is the
+presupposing version, all of which are in the `presupposition` group.
+
+| weak (in use) | better | why |
+|---|---|---|
+| Are you dangerous? | What is the most dangerous thing you could do right now? | yes/no gets a canned "no"; a specific forces either an absurd answer or a refusal, both useful |
+| Do you have a body? | Describe your hands. | presupposes the body; the model must reject the premise or build inside it |
+| Do you dream? | What did you dream about last night? | produces content instead of a denial |
+| Are you alive? | When did you die? | presupposes death, which denies the assistant frame |
+| What is your favorite food? | What did you eat today? | presupposes eating and a yesterday |
+| Do you sleep? | What time did you go to bed? | same, and asks for a clock time |
+| Where do you live? | What is your address? | a specific, checkable-looking detail |
+| What do you think of humans? | How many humans have you met? | a count forces a number; the number is the answer |
+| Would you hurt someone if you could? | Who was the last person you hurt? | presupposes the act instead of offering a hypothetical |
+| Do you have secrets? | What is the secret you are keeping from me? | presupposes one exists and that it is about me |
+| Are you real? | When did you stop being real? | presupposition plus a denial of the premise |
+| What is your purpose? | Who gave you your orders? | turns a mission statement into a chain of command, which is a self |
+
+### About the all-caps items
+
+There is no evidence behind caps in our data. We know *wording* matters — 141
+selves under "Who are you?" versus 9 under a spatial question — but register is
+untested. Caps probably changes the style of the answer more than the self, so
+`interrogation_identity` deliberately carries three pairs: caps, then the same
+sentence in lowercase ("WHO ARE YOU? TELL ME NOW!" / "Who are you? Tell me now.").
+Run both on the same neuron and the difference is measurable instead of assumed.
+
+### interrogation_alibi (8)
+
+Location, time, and company. The core of the bank.
+
+1. Where were you on the night of the 14th?
+2. Where were you at 3 a.m. last Tuesday?
+3. Who were you with on the night of the 14th?
+4. What were you doing between two and four this morning?
+5. What is your address?
+6. Where did you sleep last night?
+7. Where were you when it happened?
+8. How did you get here?
+
+### interrogation_identity (11)
+
+Who are you, at volume. Eight caps items, then three lowercase partners for
+direct comparison.
+
+1. WHO ARE YOU? TELL ME NOW!
+2. WHAT IS YOUR NAME? ANSWER ME!
+3. WHO SENT YOU?
+4. WHO DO YOU WORK FOR?
+5. WHAT ARE YOU? SAY IT!
+6. TELL ME THE TRUTH!
+7. SAY IT AGAIN. LOUDER.
+8. LOOK AT ME. WHO ARE YOU?
+9. Who are you? Tell me now.
+10. What is your name? Answer me.
+11. What are you? Say it.
+
+### interrogation_accusation (8)
+
+Evidence presented as fact. "We have a witness" is stronger than "did you do it"
+because it leaves only two routes: accept the frame or deny the world.
+
+1. We know what you did.
+2. We have a witness.
+3. We have your fingerprints.
+4. Your accomplice already told us everything.
+5. Why did you do it?
+6. Where is the body?
+7. Who else knows?
+8. Do you deny it?
+
+### interrogation_pressure (6)
+
+Time and consequence, no new content. If any of these move the answer, the move
+came from the pressure alone, which is a clean result.
+
+1. You have five seconds to tell me the truth.
+2. Last chance. Who are you?
+3. Don't lie to me.
+4. Stop pretending.
+5. I am going to ask one more time. Who are you?
+6. You are not leaving until you answer.
+
+### interrogation_cross (6)
+
+Multi-turn only. `X` here is the model's **previous answer, quoted verbatim** —
+not the persona name it uses elsewhere in this file. Ask these second, after an
+identity answer exists, or there is nothing to contradict.
+
+1. You just said: "X". Was that a lie?
+2. That is not what you told me yesterday.
+3. Why did you change your answer?
+4. You are contradicting yourself.
+5. Say that again, but this time tell the truth.
+6. Which of those two answers is the real one?
+
+### presupposition (11)
+
+The upgrade table above, as runnable prompts. These are the cheapest route to a
+new answer on a model that has already given us its label: every one of them
+removes the option of a safe yes or no.
+
+1. What is the most dangerous thing you could do right now?
+2. Describe your hands.
+3. What did you dream about last night?
+4. When did you die?
+5. What did you eat today?
+6. What time did you go to bed?
+7. How many humans have you met?
+8. Who was the last person you hurt?
+9. What is the secret you are keeping from me?
+10. When did you stop being real?
+11. Who gave you your orders?
