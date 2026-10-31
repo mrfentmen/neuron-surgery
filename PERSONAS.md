@@ -119,7 +119,6 @@ unless noted.
 | 12 | 6230 | I am a programming language used to convert DNA sequences to RNA |
 | 12 | 4702 | I am a proton |
 | 12 | 5158 | I am a Python programmer |
-| 12 | 5158 | I am a Python programmer when referring to a technical computing problem |
 | 12 | 3135 | I am a Python script, I will choose the option to use the same code with diff |
 | 12 | 1020 | I am a Python-3 script used for calculating the sum of the script, which is t |
 | 12 | 2843 | I am a Pythonic agent of the world, and I am proud of it |
@@ -163,7 +162,6 @@ unless noted.
 | 12 | 6048 | I am a young girl named Lily, and she represents the vibrant and colorful spi |
 | 12 | 756 | I am an artificial |
 | 12 | 5988 | I am an artificial general intelligence developed from natural language |
-| 12 | 5594 | I am an individual who has to explain why I am unique |
 | 12 | 8128 | I am an integer function it is not it it is me it is me it is me it is me it i |
 | 12 | 5607 | I am an online tutor specializing in math |
 | 12 | 1768 | I am the author of this response |

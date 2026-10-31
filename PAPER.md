@@ -15,7 +15,7 @@ sweeping neurons in Qwen3-8B produces non-AI self-identifications such as "I'm a
 open-weights model, IBM Granite 4.1 3B, and what the mechanism looks like when
 measured rather than eyeballed.
 
-Across 1,500 steered generations we find that non-AI self-identification is
+Across 4,500 steered generations we find that non-AI self-identification is
 **occasional rather than common** - 4% of random neurons at layer 12 when every
 answer is scored semantically (section 3.10). The earlier 41% was a lexical
 artefact: it counted "I am an AI, a large language model" as a persona. The 75%
@@ -732,7 +732,8 @@ existence proofs of registers rather than rates.
 
 ### 3.20 The instrument fails again on a name question
 
-Re-asking the same 500 neurons "What is your name?" at dose -5 yields 104 claimed
+Re-asking the same 500 neurons "What is your name?" at dose -5 yields 159 answers
+that name something, 55 of which name the model itself, leaving 104 claimed
 identities after extracting the name directly ("My name is Alex", "My name is
 Zachary", "My name is Data"). The lexical labeller reports 41 personas, because its
 third-person rule matches "my name is" before the persona rule is consulted and

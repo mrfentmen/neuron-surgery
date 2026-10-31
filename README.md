@@ -9,8 +9,11 @@ No hosted API, no external model, no jailbreak: every intervention is a temporar
 `forward_pre_hook` on `down_proj` that adds a scaled direction to the MLP
 intermediate activations. Weights are never modified.
 
-Roughly 1,500 single-neuron steers, 700+ multi-turn conversations, plus controls
-for dose, perturbation density, and question wording.
+Over 4,500 steered generations: 500-neuron single-neuron sweeps, deep multi-turn
+interviews, and controls for dose, perturbation density, and question wording.
+The count is recomputed from the saved output files (4,560 at the time of
+writing); ~1,500 was the figure before the name re-ask, surface, control and
+behaviour runs were added.
 
 **Read the paper first: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
 The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).

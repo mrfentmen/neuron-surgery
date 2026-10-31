@@ -1,33 +1,17 @@
 # TESTS FOR BUFFY
 
-Tests I could not finish. Each one needs the model loaded, which needs a working
-`torch`. Ordered by what blocks the most.
+## Results (Buffy, macOS MPS box) - 2026-10-31
 
-## Where the audit stands
+| test | verdict |
+|---|---|
+| 1. L20 median | **pending** - the L20 layer job in the running queue measures it |
+| 2. missing 200-neuron sample | **refuted** - the run exists; it is indexed by `verdict`, not `label` |
+| 3. steer count | **understated** - 4,560 saved generations, not 1,500 |
+| 4. dedupe PERSONAS.md | **no change** - 240 known-layer rows after dedupe, 57/240 = 23.8% |
+| 5. multi-turn counts | **blocked** - no transcripts saved for those three runs |
+| 6. name denominator | **fixed** - 159 names, 55 model-self, 104 non-model |
 
-Eight number errors were confirmed against the raw JSON and fixed in `f5e9dc5`.
-Everything else that can be recomputed from the saved files was checked and
-passed: the surface sweep, the sparsity curve, the zoo re-judge, both control
-rates, the damage table, the refusal table and the direction AUCs.
-
-These are the leftovers. Nothing below is known to be wrong. It is unverified.
-
-## The environment blocker
-
-`pip install torch` failed on this machine:
-
-```
-ERROR: Could not find a version that satisfies the requirement torch
-       (from versions: none)
-```
-
-Python 3.13.7, no wheel resolved. So every test here has to run somewhere the
-repo's own setup actually works. The README's instruction is:
-
-```
-python3.14 -m venv .venv
-.venv/bin/pip install torch transformers
-```
+Details are appended to each section below.
 
 ---
 
@@ -96,6 +80,11 @@ either published value. Stop and fix the text first.
 **Pass condition, part two.** L20 lands near 13.63 or near 20.06. Whichever it
 does, correct the other file. If it lands near neither, both are wrong.
 
+**Result: pending.** `dose_ladder.py` hardcodes 13.63, `dose_test.py` 20.06.
+The layer queue now running measures the median residual norm at its own layer
+before every job, so `grep 'median' layers.log` after the L20 job settles this
+without a second model load. Compare against both published values.
+
 **Then check the downstream claim.** The dose is scaled by this number, so a
 change of 47 percent moves every L20 dose. Section 3.9 argues layer 20 was past
 its usable band at minus five. If the median is 13.63 rather than 20.06, revisit
@@ -116,6 +105,12 @@ There is no 200 anywhere.
 So one of these is true: the sentence refers to a run whose output was never
 saved, or the denominator was mistyped and it means the 300-row control, or it
 means the 100-neuron sample.
+
+**Result: refuted. The run exists.** `semantic_rerun.json` key `rate` holds
+n=200, self=14, rate 0.07, and 200 rows classified AI 182 / SELF 14 / UNCLEAR 4.
+The audit missed it because those rows use `verdict`, not `label`, and there is
+no separate 200-row file. PAPER 3.12 and FINDINGS 45's "14 SELF labels" are
+correct, and 5/14 = 35.7% matches the paper's "around 35%". Nothing to change.
 
 **Test.** Search the logs for a 200-neuron semantic pass. If it exists, save the
 graded rows next to the other audits. If it does not, correct 3.12 to the set that
@@ -145,6 +140,13 @@ conversations." `PAPER.md` abstract: "Across 1,500 steered generations."
 That excludes `surface.jsonl` (480), `damage.json` (80), the Phi runs, the Qwen
 and Granite 350M sweeps, and the refusal probes.
 
+**Result: fixed.** Counted from the saved files: **4,560 steered generations**
+(behaviour 1,000; rescore 500; surface 480; controls 300+300; semantic rerun
+200+360; interrogation 96; Qwen 102; Granite 350M 102; damage 80; social 63;
+doomsayer 60; quant 21; refusal 96; the two new probes 500+300). Excludes Phi
+and the 11-transcript batch, so it is a floor. README and the abstract now say
+"over 4,500".
+
 **Test.** Decide what the sentence is counting. If it is single-neuron sweeps
 only, the honest number is about 2,100 from the four single-neuron files. If it is
 all steered generations, it is over 3,000. Either way "1,500" understates the
@@ -162,6 +164,12 @@ N5594 each appear twice at layer 12, and five rows have an unknown layer.
 **Test.** Drop the two duplicate rows, re-run the same judge over 238, and report
 the new rate.
 
+**Result: no change to the rate.** The table had 242 rows with a numeric layer,
+240 distinct: (12, N5158) and (12, N5594) each appeared twice. Those two duplicate
+lines are removed, so 240 layer-tagged rows remain and 57/240 = 23.8% still holds.
+Separately, 5 rows carry `?` for layer (N677, N5594, N6994, N4167 and one with no
+number); they were never in the 240 denominator and are left as they were.
+
 Arithmetic says this barely moves: 57/240 is 23.8 percent, 57/238 is 23.9 percent.
 So this is a tidy-up, not a correction. It is worth doing only so the file and the
 paper agree on their denominator.
@@ -178,6 +186,12 @@ paper agree on their denominator.
   section 27 lists 8, and the two lists share no neurons, so 18 rather than 21.
   Section 30 then says "All thirteen re-run with the probe that discovered them".
 
+**Result: blocked, not resolved.** `transcripts_batch.json` holds 11 conversations
+and none are the sections 25/27/28 neurons (it holds 4375, 3448, 6696, 7396,
+4401, 1522, 4264, 6763, 4798, 2183, 4617). No transcript file exists for those
+three runs, so 8-vs-14 and 18-vs-21 cannot be settled from the repo. The published
+numbers are left alone; the mismatch is real and recorded here.
+
 **Test.** Count the actual transcripts for each of those three runs and set the
 three sentences to match. Section 27's title is the likely culprit, since 14 was
 probably the pre-dedupe number and the table was never updated.
@@ -193,7 +207,8 @@ yield a name, of which 55 name the model itself.
 So 104 is the non-model bucket and 159 is the total. Both are correct, but they
 are different things and the paper introduces 104 without saying which.
 
-**Test.** One sentence in 3.20 naming the 55. No re-run needed, just wording. I
+**Test.** One sentence in 3.20 naming the 55. **Result: fixed.** 3.20 now reads "159 answers that name something, 55 of which
+name the model itself, leaving 104 claimed identities". No re-run needed. I
 left it alone because changing it changes a published rate's denominator, which is
 your call, not mine.
 
