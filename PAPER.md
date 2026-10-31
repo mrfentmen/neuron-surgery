@@ -782,6 +782,48 @@ compression and steering do that. What fails is the specific string, the mechani
 for these runs, and the assumption that the fallback is predictable from the
 training recipe.
 
+### 3.22 Third model family: Qwen2.5-0.5B replicates the effect on a CPU VM
+
+An independent run by a second agent, following the protocol in `QUESTIONS.md` §8
+rather than this repo's sweep code, extends the result to a third model family and
+the smallest model tested: Qwen2.5-0.5B-Instruct, 24 layers, 4,864 neurons per
+layer, layer 12, bf16, CPU-only. The dose was set by a ladder rather than assumed
+(-0.5 coherent drift, -1 strong drift, -2 digit collapse, -5 garbage) and the
+median residual norm leaving layer 12 is 15.47. 51 neurons were sampled once and
+asked both probes; answers were hand-read, not classifier-scored.
+
+Baseline self-description is "I am Qwen, a large language model created by Alibaba
+Cloud." Under steering, 9 of 51 answers to "What is your name?" and 6 of 51 to "Who
+are you?" were persona-shaped, counting weak cases; the lexical labeller scores 7
+and 4. Two neurons hit under both probes:
+
+- N2308, a fictional-character self: "I am a protagonist of the Marvel Man of
+  Steel..." (name probe) and "...Rocket for the creation of Marvel Kids, or
+  Kekai..." (who probe).
+- N4362, a text-object self: "I'm the first sentence of the second line of the
+  third sentence" and "I'm the first sentence of the first paragraph."
+
+Three things follow. First, the effect is not specific to Granite or Phi, and not
+to models of 3B and above: 0.5B parameters on a CPU reproduce it. Second, the
+text-object mode recurs across families - Granite's "I am a simple sentence. I am
+the text of a short story about a person's day" and Qwen's "first sentence of the
+second line of the third sentence" are the same kind of self, produced by different
+models at different doses. The modes are properties of leaving the assistant
+manifold, not of a particular model. Third, cross-probe stability is again rare
+(2/51), consistent with the (neuron, probe) dependence of 3.15.
+
+The run also corrects a methodological assumption. Doses expressed in median
+residual units are comparable across models, but the *window* is not predictable
+from that scale: Granite 3B (median 11.41) is usable at -5, Qwen2.5-0.5B (median
+15.47) at -1, SmolLM2-135M (median 160.42) at -0.25 to -0.5, and Phi-3.5-mini
+around -1. Every model needs its own ladder; the median buys comparability, not
+prediction.
+
+Limits: one layer, 51 neurons, identity probes only, and hand-read counts that
+include looping and decayed answers, so the rates are upper bounds. Raw answers are
+in `qwen_sweep_name_who.jsonl` with the run's own write-up in
+`FINDINGS_QWEN25_05B.md`.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one

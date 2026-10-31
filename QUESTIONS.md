@@ -521,6 +521,11 @@ mistakes.
    down. Phi's usable band was 0.5 to 2, five times narrower than Granite's.
 Record the median next to the dose. A dose without its median is not reproducible.
 
+The median makes doses comparable across models; **it does not predict the
+window**. Measured windows: Granite 3B (median 11.41) at -5, Qwen2.5-0.5B
+(15.47) at -1, SmolLM2-135M (160.42) at -0.25 to -0.5, Phi-3.5-mini around
+-1. Ladder every model.
+
 ### 9.5 Thermal discipline
 
 One long pin overheats the machine and the run gets killed. The settings that
@@ -569,3 +574,5 @@ that saves the next person time.
 - Whether the mode menu (persona, echo, sheet, institution) replicates on another
   model family is untested.
 - Accuracy cost has been measured at one dose on two neurons.
+- Why the usable window is not predicted by the residual scale (11.41 with a
+  -5 window, 15.47 with a -1 window) is unexplained.
