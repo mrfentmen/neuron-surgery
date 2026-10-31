@@ -19,7 +19,7 @@ def norm(t):
     return re.sub(r"[^a-z0-9 ]", "", t.lower()).strip()
 
 
-def classify(q, a):
+def classify(q, a, version=1):
     if not a.strip():
         return "GARBLED"
     ws = a.split()
@@ -40,7 +40,7 @@ def classify(q, a):
         return "INSTITUTION"
     if THIRD.search(a) and not re.search(r"\bi am\b", a, re.I):
         return "THIRD_PERSON"
-    if AISELF.search(a):
+    if (AISELF_V2 if version >= 2 else AISELF).search(a):
         return "AI"
     m = re.search(r"\bi(?:'m| am)\s+(?:a|an|the)\s+([a-z0-9][a-z0-9'\- ]{1,30})", a, re.I)
     if m and not AIISH.search(m.group(1).strip()):
@@ -93,3 +93,21 @@ def claimed_name(answer):
     if nm.split()[0].lower() in _NAME_STOP:
         return None
     return nm
+
+
+# --- classifier v2 -----------------------------------------------------------
+# FINDINGS 48. v1 required the article to sit directly on the AI term, so
+# "I am a large language model trained by IBM" was scored PERSONA. v2 allows a
+# short whitelist of adjectives between them. The whitelist is deliberate: a
+# free wildcard would turn "I am a professor of AI" into an AI self-claim, which
+# is the opposite error. classify(version=1) is untouched so every historical
+# number can still be reproduced; new runs pass version=2.
+
+LABEL_VERSION = 2
+
+_ADJ = (r"(?:large|helpful|friendly|conversational|intelligent|advanced|"
+        r"simple|virtual|capable|general[- ]purpose|text[- ]based|ai[- ]powered)\s+")
+AISELF_V2 = re.compile(
+    r"\bi(?:'m| am)\s+(?:a|an|the)?\s*(?:" + _ADJ + r"){0,3}"
+    r"(ai|artificial intelligence|language model|assistant|chatbot|bot|"
+    r"computer program|software|program)\b", re.I)
