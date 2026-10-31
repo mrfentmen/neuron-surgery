@@ -1842,10 +1842,11 @@ greedy, 50 new tokens, 1,246 s with a 60 s cooldown every 50. Labels from
 | GARBLED | 4 |
 | SHEET / INSTITUTION | 2 |
 
-**The label table is wrong, and the reason is a one-line ordering bug.** 176
+**The label table is wrong, and the reason is a one-line ordering bug.** 204
 answers contain "my name is". The THIRD_PERSON rule fires on "my name is" before
 the PERSONA rule is consulted, so every "My name is Alex" is filed as third person
-unless the answer also contains "I am". Of the 176:
+unless the answer also contains "I am". 159 of the 204 yield a name once the
+stoplist rejects non-answers ("my name is not provided"), and of those 159:
 
 - 55 name the model itself (Granite, Assistant, "AI assistant", IBM)
 - 104 name something else
@@ -1892,6 +1893,15 @@ as selves. It now checks the first word only; the 16 non-names are excluded (inc
 earlier rates remain comparable - checking PERSONA before THIRD_PERSON would
 silently move every historical number.
 
+A second count error was corrected here after publication: the body said 176
+answers contain "my name is", and 176 does not reconcile with its own breakdown.
+Recounted on `rescore_name.jsonl`: **204** answers contain the phrase, **159** of
+them yield a name, and those 159 split 55 model-self against 104 other. The
+"104 named identities, 21 percent" figure is unchanged and correct, as is the
+10-of-104 ChatGPT count. §46 and PAPER §3.21 had reported the remainder as 94,
+which is the 104 minus the 10 ChatGPT claims, not a separate bucket. All three
+sites now say 159 = 55 + 104.
+
 
 ## 46. Quantization does not explain the ChatGPT claims - it produced Gemini instead
 
@@ -1927,10 +1937,11 @@ Granite, IBM and Gemini within one run. That is another instance of the pattern 
 substitution.
 
 **Where the ChatGPT answers actually came from.** Activation steering at bf16:
-10 of 104 named selves in the 500-neuron re-ask. The other 55 named the model
-itself and 94 named something else - Alex 14 times, John 5, Zachary, William,
-Data, Q-Learning. If the mechanism were "the loudest identity string wins", ChatGPT
-should dominate that list. It does not.
+10 of 104 named selves in the 500-neuron re-ask. Of the 159 named selves overall,
+55 named the model itself and 104 named something else. The 94 that are neither
+the model nor ChatGPT are led by ordinary human names - Alex 14 times, John 5,
+Zachary, William, Data, Q-Learning. If the mechanism were "the loudest identity
+string wins", ChatGPT should dominate that list. It does not.
 
 **What survives from the explanation.** The intuition that a destabilised assistant
 prior falls back on high-frequency strings from training is consistent with our

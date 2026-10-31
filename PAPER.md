@@ -775,12 +775,12 @@ without any activation edit. The two ChatGPT mentions at every precision are the
 denial sentence itself.
 
 The self-claims that do name ChatGPT - 10 of 104 named selves in 3.20 - come from
-steering, and they are a minority: 55 named the model itself and 94 named something
-else, led by ordinary human names. The surviving intuition is that a destabilised
-assistant prior falls back on high-frequency strings from training, and both
-compression and steering do that. What fails is the specific string, the mechanism
-for these runs, and the assumption that the fallback is predictable from the
-training recipe.
+steering, and they are a minority: of the 159 named selves in 3.20, 55 named the
+model itself and 104 named something else, led by ordinary human names. The
+surviving intuition is that a destabilised assistant prior falls back on
+high-frequency strings from training, and both compression and steering do that.
+What fails is the specific string, the mechanism for these runs, and the
+assumption that the fallback is predictable from the training recipe.
 
 ### 3.22 Third model family: Qwen2.5-0.5B replicates the effect on a CPU VM
 
