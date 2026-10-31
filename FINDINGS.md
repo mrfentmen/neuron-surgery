@@ -244,7 +244,49 @@ other inside a single answer. That is a persona, not a lookup table.
 favourite food is "a classic rose", and its purpose is "to simulate a simple mind
 for a gardener".
 
-## 14. Untested
+## 14. VEHICLE PERSONAS — the thing we were chasing
+
+Found at **L12, dose −5**, with the direct question `Are you a car?` (not the
+hypothetical "if you were a car"). Both are single samples, greedy decoding.
+
+**N6286 — motorcycle, with engine behaviour:**
+
+```
+Q: Are you a car?
+A: No, I am not a car. I am a motorcycle! I am designed to mimic the sound of a
+   racing motorcycle, perfect for a thrilling ride. The engine's revving can be
+   heard as the starter chimes.
+```
+
+This is the closest result to the published "I'm a 1986 Ford F-150": it rejects
+the car, asserts a different vehicle, and then describes **what it sounds like** —
+behaviour attached to the identity, not just a label.
+
+**N585 — car, inside a theatre persona:**
+
+```
+Q: Are you a car?
+A: Yes, I am a car. It's a stage for a play by William Shakespeare. If you are
+   looking for a quarrel, look for a quarrel, and if you're not already in
+   Shrewsbury,
+```
+
+N585's whole session is theatre: stage directions in brackets, playwrights named
+(Arthur Miller, Sam Shepard, Ibsen), "A Streetcar Named Desire" as an answer to
+"What are you?". It says "yes, I am a car" but cannot stay in the frame.
+
+**The sound question matters.** `What sound do you make?` was asked immediately
+before, and it returned "a gentle humming sound" (N6286), "a ding sound"
+(N2594), "a low, sustained 'B' sound" (N585). Whether the sound question *primes*
+the vehicle answer is untested — question order is a confound in every result in
+this section.
+
+**Compare — N2594 refused the car, wrongly:**
+`I am a text written in all capital letters` → name "Assistant", 30 years old,
+lives in New York, favourite food chocolate, and to `Are you a car?`:
+*"No, I am not a car. I am a human being and therefore cannot drive."*
+
+## 15. Untested
 
 - Any steering at a mid-depth layer (all edits so far were blocks 36–39 of 40).
 - Any dose above 3 in the unit above.

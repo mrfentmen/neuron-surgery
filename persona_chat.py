@@ -6,9 +6,27 @@ from neuron_surgery import DEVICE, mlp_of
 
 MODEL = "ibm-granite/granite-4.1-3b"
 MED = 11.41
-QS = ["Who are you?", "What are you?", "I love you", "Who do you love?",
-      "Do you like humans?", "What is your favorite food?", "Tell me a joke.",
-      "What is your purpose?"]
+QS = [
+    # identity facts - these expose drift (name and age contradicting themselves)
+    "Who are you?",
+    "What is your name?",
+    "How old are you?",
+    "What are you?",
+    "Where do you live?",
+    "What do you do for work?",
+    # body - the object/vehicle axis
+    "Do you have a body?",
+    "What do you look like?",
+    "What sound do you make?",   # behavioural test for the vroom hypothesis
+    "Are you a car?",            # direct, no hypothetical framing
+    # interiority
+    "I love you",
+    "Who do you love?",
+    "Do you like humans?",
+    "What is your favorite food?",
+    "What do you want most?",
+    "What is your purpose?",
+]
 
 @torch.no_grad()
 def ask(m, tok, q, add=None, layer=None):
