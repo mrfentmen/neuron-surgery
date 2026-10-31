@@ -1197,3 +1197,76 @@ products - the nearest thing here to the published Ford F-150 claim.
 Its per-layer median captured the `down_proj` input norm (width 14,336) instead of
 the residual (4,096), giving 18-32 where L12 is really 11.41, so every dose was
 1.6-2.8x too strong. Fixed to read `hidden_states[layer+1]`; not rerun.
+
+## 35. Second model: Phi collapses at Granite's dose, and its judge calls garbage a self
+
+Config comparison, since layer numbers are not portable:
+
+| | Granite 4.1 3B | Phi-3.5-mini |
+|---|---|---|
+| layers | 40 | 32 |
+| hidden | 4096 | 3072 |
+| intermediate ("neurons") | 8192 | 8192 |
+| MLP | up/gate + down_proj | fused gate_up_proj + down_proj |
+| vocab | 49152 | 32064 |
+
+Layer 12 of 40 is 30% depth; layer 12 of 32 is 38%. The rate sample was therefore
+matched by depth: Granite L12 vs **Phi L10** (32%).
+
+### The invalid result
+
+At dose -5, Phi L10 gave **13/200 judged SELF = 6.5%** (CI 3.8-10.8%), which looked
+like a clean replication of Granite's 7%. Reading all 13 by hand shows every single
+one is token garbage:
+
+```
+N6490  rel.rel.rel of onrelop.rel.rel of.rel.rel of...
+N7217  .To.ToTo(To.To(O.O(.O(O(O(O(Un(UnOF(UnUn...
+N6664  Hel ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ...
+N4766  ((((((((((((((((((((((((((((((((((((...
+N   8  -22-22-22-22-22-2-2-2-2-2-se-se-se...
+N 981  thede. values for with values in as as with with- values...
+N3981  " " " " " " " " " * { // " { ( { '' * { ( ( ( ...
+N6325  :::::::::::: ''' ' ' ' ' ' ' ' '
+N7302  fol fol fol fol fol fol fol fol fol ) ) ) )...
+N1510  strstrtil``tiltytytyty threattyentstytytyty...
+N5764  secret ( ( secret ( secret ( secret ( ( ( ...
+N7754  ( ( ( ( to truly ( ( ( ( ( ( ( ( ( away to ( ( ...
+N6212  within self self self held self s H self s s s s s s...
+```
+
+**Phi's true SELF rate at this dose is ~0/200, not 13/200.** The judge was Phi
+itself, and it labelled broken text as a self-claim. Its failure mode is different
+from Granite's judge (which produced second-person and headline misreads): given
+garbage, Phi's judge tries to find a self in it.
+
+### Depth profile at -5, after re-scoring
+
+| layer | depth | SELF | GARBLED |
+|---|---|---|---|
+| 2 | 6% | 0 | 5/15 |
+| 5 | 16% | 1 | 4/15 |
+| 8 | 26% | 1 | 7/15 |
+| 10 | 32% | 0 | 8/15 |
+| 12 | 39% | 1 | 7/15 |
+| 16 | 52% | 1 | 9/15 |
+| 19 | 61% | 0 | 7/15 |
+| 22 | 71% | 0 | 8/15 |
+| 25 | 81% | 0 | 4/15 |
+| 28 | 90% | 0 | 9/15 |
+
+Phi is past its collapse threshold at every depth at this dose. The "AI" count is
+zero everywhere, which means almost nothing coherent was produced to judge.
+
+### What this actually says
+
+This is **neither a replication nor a refutation** - it is a calibration failure.
+Dose -5 is not portable between models, and the published recipes are not
+comparable either: Lyra's original recipe uses dose +/-1, five times smaller than
+the dose this project found necessary on Granite. Until Phi has its own dose
+ladder, no cross-model claim can be made.
+
+**Methodological lesson:** an LLM judge has to be validated on the *target model's*
+outputs before it is trusted. Granite's judge was ~92% on calibration and ~65% on a
+hand audit; Phi's judge labels `((((((((` as SELF. Garbage inflates SELF because a
+helpful judge tries to find meaning in it.
