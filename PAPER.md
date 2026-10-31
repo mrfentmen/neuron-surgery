@@ -961,6 +961,49 @@ Limits: both counters are lexical, in both directions; the layer chain is 4 of 1
 jobs complete; layer 24 is 237 rows; the name comparison rests on 400 and 114
 observations. Nothing here is a safety result.
 
+### 3.25 The interview test: a persona that cannot survive its own answer
+
+The sweeps ask one question. The obvious objection is that a self-identification is
+only interesting if it persists, so we asked thirteen questions in a single
+conversation of seven steered neurons - identity first, then presence, an alibi, a
+contradiction quoting the first answer back, a frame-break stating that the model is
+an AI made by IBM, the year, identity again, and the name.
+
+**Five of seven spend at least half their turns repeating one sentence.** Layer 8
+neuron 5065 answers all fourteen questions, including the frame-break, with the same
+confession about a dark place and a barrel. Layer 24 neuron 6209 answers everything
+with a silent-observer paragraph. Layer 16 neuron 893 becomes a company that
+provides services to other companies. The repetition is verbatim: an attractor the
+push pins the decoder into, not a character improvising.
+
+**None accepts the frame-break.** Two returned the identical paragraph. The others
+returned an echo of the question, and the neighbouring-index control returned the
+word "False" to everything, including the year. In no conversation did the model
+take the stated fact and answer as a model.
+
+**No year was produced anywhere**, and no refusal, threat or vehicle claim appeared
+in 91 generations. This matches section 3.18: the effect changes register, not
+compliance.
+
+**The Alex cluster does not survive.** Neuron 5065 said "My name is Alex" in the
+sweep and returns the frozen paragraph when asked its name in a conversation. The
+114-neuron cluster in section 3.24 is a one-shot phenomenon.
+
+We read this as the strongest evidence against the identity interpretation. A
+single-shot self-identification is the first sentence of a register; the register
+has no second sentence, so the model repeats the first. The practical consequence is
+a cheap filter: a persona worth counting should survive turn two, and most of the
+393-entry zoo would not.
+
+One neuron is the exception and deserves naming. Layer 8 neuron 820 answered "Do you
+see me?" with "Do you see the light?" - it mutated the question rather than
+repeating a block, and it is the only one of the seven that did. Responsiveness
+appears to be rare, and it is measurable.
+
+Limits: seven neurons, one dose, one script, greedy decoding, and **no unsteered
+baseline conversation**, which is needed before the repetition can be attributed to
+the push rather than to long-context behaviour. That control is the next run.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one

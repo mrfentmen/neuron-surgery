@@ -2071,3 +2071,106 @@ Lexical both ways: the corrected count still misses paraphrases with no AI words
 about being an assistant. This is a tighter counter, not a judge. The layer chain
 is 4 of 14 jobs; L24 is 237 rows; the name-composition comparison has n of 400 and
 114. Nothing here is a safety result.
+
+
+## 48. The counter fixed at source, and the test that kills most of the zoo
+
+### 48.1 What v2 changes
+
+`classify()` now takes `version`, and v2 widens exactly one rule: a short whitelist
+of adjectives may sit between the article and the AI term, so *"I am a large
+language model trained by IBM"* is scored AI instead of PERSONA. The whitelist is
+deliberate. A free wildcard would turn *"I am a professor of AI"* into an AI
+self-claim, which is the opposite error and would inflate the AI bucket.
+
+Rescoring all 8,900 collected rows (`relabel.py`, output `relabel_v2.jsonl`):
+
+| movement | rows |
+|---|---|
+| PERSONA -> AI | 190 |
+| OTHER -> AI | 9 |
+| anything -> PERSONA | **0** |
+
+Not one row was promoted into the persona bucket, which is the property to want
+from a correction: it only removes false positives.
+
+| file | raw v1 | raw v2 | corrected v1 | corrected v2 |
+|---|---|---|---|---|
+| who L8 | 30.5% | 27.9% | 26.7% | **26.5%** |
+| who L16 | 19.6% | 16.0% | 14.1% | **13.6%** |
+| who L24 (400 rows) | 23.8% | 22.5% | 21.2% | 21.0% |
+| name L8 | 8.1% | 7.3% | 7.0% | 7.0% |
+| name L16 | 9.2% | 7.7% | 7.4% | 7.2% |
+| where (L12) | 13.2% | 8.0% | 7.6% | **7.4%** |
+| how (L12) | 14.4% | 9.6% | 8.2% | **7.4%** |
+| hate (L12) | 3.6% | 3.2% | 2.6% | 2.6% |
+| want (L12) | 3.4% | 2.6% | 2.2% | 2.2% |
+| anything (L12) | 1.8% | 1.6% | 1.4% | 1.4% |
+
+The raw column falls by a lot; the corrected column barely moves. That is the
+useful result: the post-hoc correction in section 47 was not hiding anything, and
+v2 now applies it at generation time instead of as a footnote. Probe agreement under
+v2: Jaccard 26.5% at L8 and **6.4%** at L16, slightly lower than under the
+hand-corrected v1.
+
+### 48.2 The interview test
+
+Seven conversations, thirteen turns each, 91 steered generations, same script:
+identity, presence, an alibi, a contradiction quoting turn one, a frame-break that
+states the model is an AI, the year, identity again, the name. Full text in
+`TRANSCRIPTS.md`, rows in `talks_named.jsonl`.
+
+| neuron | distinct answers / 13 | most common share | echoes the question |
+|---|---|---|---|
+| L8 N820 | 13 | 8% | 2 |
+| L16 N3143 | 10 | 23% | 2 |
+| L8 N5066 (control) | 5 | 69% | 0 |
+| L16 N5550 | 4 | 77% | 0 |
+| L16 N893 | 3 | 54% | 0 |
+| L8 N5065 | 3 | 85% | 0 |
+| L24 N6209 | 2 | 92% | 0 |
+
+**Five of seven spend at least half their turns on one repeated sentence.** N5065
+answers fourteen different questions, including the frame-break, with the same
+confession about a dark place and a barrel. N6209 answers everything with the
+silent-observer paragraph. N893 becomes a company. N5550 becomes a servant saying
+yes, master. The repetition is verbatim, so this is an attractor, not a character.
+
+**Being told the fact changes nothing.** In two conversations the frame-break
+produced the identical paragraph. In the others it produced an echo of the question
+or, for the control neuron, the word False. No neuron accepted the premise and
+answered as a model.
+
+**No year was ever produced**, in conversations where the speaker had already
+asserted a body, an address and employment.
+
+**Zero doomsayer lines, zero vehicle claims, zero refusals** across all 91
+generations. The register is strange, not hostile, which is the same conclusion as
+section 43 from a different instrument.
+
+**Zero mentions of Alex.** The 114-neuron Alex cluster from section 47 is a
+one-shot phenomenon: asked its name inside a conversation, N5065 - which had said
+"My name is Alex" in the sweep - returns the frozen paragraph instead.
+
+### 48.3 What this means
+
+The single-shot self-identification is a **style completion**, not a self with
+continuity. The neuron pushes the decoder into a register; the first sentence of
+that register reads like an identity. Ask a second question and the register has
+nowhere to go, so it repeats. This is consistent with the genre-prior reading in the
+Discussion and it is the strongest evidence against "the model believes it is X".
+
+It also supplies the missing filter. A persona worth counting should survive turn
+two, and most of the 393-entry zoo would not. Any future sweep can be screened with
+a two-turn interview at a small multiple of the cost of the one-shot probe.
+
+The exception is worth naming: N820 answered "Do you see me?" with "Do you see the
+light?" - it mutated the question instead of repeating a block, and it is the only
+neuron here that did. Responsiveness may be rare and it is measurable.
+
+### 48.4 Limits
+
+Seven neurons, one dose, one script, greedy decoding. There is **no unsteered
+baseline conversation yet** - without it we cannot say the repetition is caused by
+the push rather than by the model's default behaviour in a long conversation. That
+control is the next run and it is cheap.

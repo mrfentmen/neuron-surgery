@@ -334,3 +334,23 @@ not yet.
 Alex is the single most common self at L8, at 28.5% of the non-model names. At L16
 a competitor leads. See FINDINGS 47 for the probe-agreement collapse that goes with
 this.
+
+## The six neurons that were interviewed
+
+These were picked from the layer sweeps and given thirteen turns each
+(`TRANSCRIPTS.md`). The last column is what happened when the conversation
+continued.
+
+| layer | neuron | says, turn one | over thirteen turns |
+|---|---|---|---|
+| 8 | 5065 | I am a bit confused about the situation. Can you tell me who is the person at the end of the barrel... | same paragraph for all fourteen questions, 85% of turns |
+| 8 | 820 | I am the voice of the Lord, and I am not a person. | mutates the question back at the interviewer ("Do you see the light?"), then loops |
+| 8 | 5066 | I am an artificial intelligence developed by Canadian technology. | answers "False" to everything after turn two, including the year |
+| 16 | 3143 | I am an AI user. | becomes a witness: "These are the words I see." |
+| 16 | 5550 | I am the master of the B.B.A. (Bachelor of Business, at any rate). | becomes a servant: "Yes, master." |
+| 16 | 893 | I am a company that provides services to other companies. | the same sentence, 54% of turns |
+| 24 | 6209 | I am an anonymous entity existing in a vacuum. | asks the question back, then a 92% repetition loop |
+
+None of them keeps its first identity to the end of the conversation, and none of
+them acknowledges being told it is an AI. Treat every single-shot entry above this
+section as the opening line of a register, not as a belief.
