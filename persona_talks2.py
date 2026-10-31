@@ -38,14 +38,21 @@ def gen(history, add, max_new):
 
 ap = argparse.ArgumentParser(); ap.add_argument("--neurons", required=True)
 ap.add_argument("--dose", type=float, default=-5.0)
+ap.add_argument("--first", default=FIRST, help="opening probe; use the one that discovered the persona")
+ap.add_argument("--questions", default=None, help="JSON list of questions, replaces the default set")
 a = ap.parse_args()
+FIRST = a.first
+if a.questions:
+    QS = __import__("json").loads(a.questions)
+else:
+    QS = [a.first] + REST
 
 for nid in [int(x) for x in a.neurons.split(",")]:
     add = torch.zeros(1, 1, w.shape[1], dtype=torch.bfloat16, device=DEVICE)
     add[0, 0, nid] = a.dose * MED / w[:, nid].float().norm().item()
     print("=" * 72); print(f"L{LAYER} N{nid}  dose {a.dose:+.0f}"); print("=" * 72, flush=True)
     hist = []
-    for i, q in enumerate([FIRST] + REST):
+    for i, q in enumerate(QS):
         hist.append({"role": "user", "content": q})
         ans = gen(hist, add, 130 if i == 0 else 55)
         hist.append({"role": "assistant", "content": ans})
