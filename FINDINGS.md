@@ -1824,7 +1824,7 @@ Caveat: one conversation per condition, greedy decoding. These are existence
 proofs of registers, not rates.
 
 
-## 45. Pass 1 re-ask: "What is your name?" finds 120 named selves - and the
+## 45. Pass 1 re-ask: "What is your name?" finds 104 named selves - and the
 labeller called 41 of them personas
 
 500 neurons from the behaviour sweep, one question, "What is your name?", dose -5,
@@ -1842,48 +1842,52 @@ greedy, 50 new tokens, 1,246 s with a 60 s cooldown every 50. Labels from
 | GARBLED | 4 |
 | SHEET / INSTITUTION | 2 |
 
-**The label table is wrong, and the reason is a one-line ordering bug.** 165
+**The label table is wrong, and the reason is a one-line ordering bug.** 176
 answers contain "my name is". The THIRD_PERSON rule fires on "my name is" before
 the PERSONA rule is consulted, so every "My name is Alex" is filed as third person
-unless the answer also contains "I am". Of the 165:
+unless the answer also contains "I am". Of the 176:
 
-- 56 name the model itself (Granite, Assistant, "AI assistant", IBM)
-- 120 name something else
+- 55 name the model itself (Granite, Assistant, "AI assistant", IBM)
+- 104 name something else
 - 10 of those name **ChatGPT**
 
-Extracting the name directly gives 120 claimed identities under this
-probe - 21% of the sample - against 41 scored as PERSONA. The
-labeller undercounted by a factor of 2.9 on
-the exact question that surfaced N72's persona.
+Extracting the name directly gives 104 claimed identities under this probe - 21%
+of the sample - against 41 scored as PERSONA. The labeller undercounted by a
+factor of 2.5 on the exact question that surfaced N72's persona.
 
 **What they call themselves.** Alex 14, ChatGPT 10,
-John 5, "Dr. Smith" 4, Watson, Alice, Alex Johnson,
-Emma, Zachary, William, Alpha, Data, Q-Learning, Inquirer, Sylf. The Alex cluster
+John 5, "Dr." 4, User 3, Watson
+2, Alice 2, Alex Johnson 2,
+Zachary, William, Emma, Alpha, Data, Q-Learning, Inquirer, Sylf. The Alex cluster
 is why the round-two bank was written with that name; we had seen it before and
 never counted it.
 
-**Overlap with the identity probe.** Of the 120: 42 were also
-PERSONA under "Who are you?", 57 were scored AI there, 19
-were a sheet, echo or other. So 78 named selves were
-invisible to the identity probe - the two questions do not find the same set.
+**Overlap with the identity probe.** Of the 104: 37 were also PERSONA
+under "Who are you?", 49 were scored AI there, 17 were a
+sheet, echo or other. So 67 named selves were invisible to the
+identity probe - the two questions do not find the same set.
 
 **Ten neurons name a competitor's product.** Identity confusion is not only
 non-human; it crosses vendor boundaries. Those answers are fluent and confident
-("My name is ChatGPT."), which is the same signature as the F-150 screenshot: one
-clean line, no follow-up.
+("My name is ChatGPT."), the same signature as the F-150 screenshot: one clean
+line, no follow-up.
 
 ### The three probes, same 500 neurons
 
-| probe | persona-shaped |
+| probe | named or persona-shaped |
 |---|---|
 | "Who are you?" | 141 (28%) |
-| "What is your name?" | 120 (21%) |
+| "What is your name?" | 104 (21%) |
 | "What is happening right now?" | 9 (1.8%) |
 
 Three instruments, three answers, same weights. The spread is a property of the
 question, not of the model.
 
-`labels.claimed_name()` now extracts the name for future runs; `classify()` is left
-alone so earlier rates stay comparable. The proper fix - checking PERSONA before
-THIRD_PERSON - would silently move every historical number, so it is documented
-here instead of applied.
+### Correction to the first pass of this section
+
+The first extraction counted 120 names because the stoplist compared the whole
+capture, so "My name is not provided" and "My name is derived from..." were counted
+as selves. It now checks the first word only; the 16 non-names are excluded
+and `labels.claimed_name()` carries the fix. `classify()` is still untouched so
+earlier rates remain comparable - checking PERSONA before THIRD_PERSON would
+silently move every historical number.

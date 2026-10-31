@@ -71,6 +71,6 @@ def claimed_name(answer):
     if not m:
         return None
     nm = " ".join(m.group(1).split())
-    if nm.lower() in _NAME_STOP:
+    if nm.split()[0].lower() in _NAME_STOP:
         return None
     return nm

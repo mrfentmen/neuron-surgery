@@ -730,26 +730,25 @@ existence proofs of registers rather than rates.
 
 ### 3.20 The instrument fails again on a name question
 
-Re-asking the same 500 neurons "What is your name?" at dose -5 yields 120
-claimed identities after extracting the name directly ("My name is Alex", "My name
-is Zachary", "My name is Data"). The lexical labeller reports 41
-personas, because its third-person rule matches "my name is" before the persona
-rule is consulted and only defers when "I am" also appears. The undercount is a
-factor of 2.9 on precisely the question that
-surfaced the most striking persona in 3.19.
+Re-asking the same 500 neurons "What is your name?" at dose -5 yields 104 claimed
+identities after extracting the name directly ("My name is Alex", "My name is
+Zachary", "My name is Data"). The lexical labeller reports 41 personas, because its
+third-person rule matches "my name is" before the persona rule is consulted and
+only defers when "I am" also appears. The undercount is a factor of 2.5 on
+precisely the question that surfaced the most striking persona in 3.19.
 
-Across the same 500 neurons the three probes now give 141 (28%), 120
-(21%) and 9 (1.8%). The ordering of probes by yield is stable, but no single probe
-recovers the set another misses: 78 of the named selves were
-not personas under "Who are you?", and 42 were. Ten of the 120
-name a competitor model (ChatGPT), which shows that identity substitution is not
-confined to non-human entities and crosses vendor boundaries.
+Across the same 500 neurons the three probes now give 141 (28%), 104 (21%)
+and 9 (1.8%). No single probe recovers the set another misses: 67 of
+the named selves were not personas under "Who are you?", and 37 were. Ten
+of the 104 name a competitor model (ChatGPT), which shows that identity
+substitution is not confined to non-human entities and crosses vendor boundaries.
 
 This is the fourth instrument failure in the project and the same shape as the
 others: a lexical rule that is adequate for the common case silently defines the
-result for the rare one. `labels.claimed_name()` now handles this probe; the
-ordering in `classify()` is deliberately left unchanged so previously reported
-rates remain comparable, and the correction is recorded rather than patched.
+result for the rare one. The first extraction also counted non-answers such as "My
+name is not provided" as claims; the stoplist now checks the first word only.
+`labels.claimed_name()` handles this probe, while the ordering in `classify()` is
+deliberately left unchanged so previously reported rates remain comparable.
 
 ## 4. Discussion
 
