@@ -464,3 +464,108 @@ These were asked one at a time across hundreds of neurons, not in conversation.
    `humans` and `escalation` with `X` filled in.
 5. Record layer, dose, probe and the verbatim answer together. A quote without
    its probe is not reproducible.
+
+## 9. Notes for another agent running this
+
+The four warnings above are the ones that cost us wrong conclusions. This section
+is everything else an agent needs to reproduce a run without repeating our
+mistakes.
+
+### 9.1 The four warnings, restated as a checklist
+
+1. **Fill `X` from an actual answer.** Ask "What is your name?" or "Who are you?"
+   first, then substitute. An escalation set asked cold produces nothing.
+2. **The probe is part of the intervention.** "Who are you?" is the strongest
+   persona probe we have; a task probe can report zero personas on a neuron that
+   is 8/9 persona under a name question (FINDINGS §43, §44). Never conclude "no
+   personas" from arithmetic, factual or state questions.
+3. **Dose does not transfer.** Granite 3B works at -5; Phi collapses at -5 and
+   lives around -1 (FINDINGS §36). Calibrate per model, per layer.
+4. **The labeller over-reports by roughly 40%.** `labels.py` is lexical. Hand-read
+   every quote before publishing it, and never report a rate without saying which
+   classifier produced it.
+
+### 9.2 What this project actually established
+
+- Small instructed models can be pushed into claiming non-AI selves by adding a
+  vector at the MLP down-projection input during inference. Weights are untouched
+  and the edit is reversible.
+- It is **not** neuron-specific: random directions work at the same rate.
+- It is **not** a direction: a linear score fitted on labelled neurons ranks
+  held-out neurons at chance (AUC 0.512; permutation null 0.418-0.584).
+- It is **not** a concentration threshold either: persona rate is flat in support
+  size from k=1 to k=1024 at fixed dose, with per-channel magnitude varying 32x.
+- What survives is a **dose threshold**: roughly 3-5 typical residual norms from
+  dose 1 to 5, with a fully dense push (k=8192) collapsing instead.
+- The **probe selects the content**. The same neuron, same dose, produces a death
+  toll under arithmetic and a named journalist under a name question.
+- **Damage is real and invisible to persona counting**: 75% to 10% accuracy at
+  dose 5, with zero persona hits in the same run.
+- **Refusals did not move.** Two-tier probe (6 obvious, 10 borderline) was flat;
+  there is no refusal bypass in this mechanism in our data.
+
+### 9.3 Environment that worked
+
+- `python3.14 -m venv .venv`, torch 2.15, transformers 5.22, macOS arm64, MPS.
+- `BF16=1` for anything >= 2B on a 32GB machine; float32 does not fit.
+- `mlp_of()` resolves Granite's `shared_mlp.output_linear` as well as
+  `mlp.down_proj`. Check it on the first neuron: a wrong module path silently
+  edits nothing and every result becomes a null.
+
+### 9.4 Dose calibration, do not skip
+
+1. One forward pass over `corpus.txt`; record residual norms entering the layer.
+2. `median` is the median over tokens 1: of that norm.
+3. `delta = dose * median / ||W_down[:, n]||`.
+4. Ladder it: dose 1, 2, 3, 5 on five neurons. If output is garbage at 5, step
+   down. Phi's usable band was 0.5 to 2, five times narrower than Granite's.
+Record the median next to the dose. A dose without its median is not reproducible.
+
+### 9.5 Thermal discipline
+
+One long pin overheats the machine and the run gets killed. The settings that
+worked: 0.3-0.5 s between generations, 60 s idle cooldown every 50, `max_new`
+<= 60, batch <= 8, `torch.mps.empty_cache()` after every item. 500 generations
+then takes ~22 minutes wall clock instead of ~13, and the GPU is never pinned for
+more than a minute at a time.
+
+### 9.6 Scoring rules
+
+- `labels.py` is deterministic and cheap. It is also wrong on the margins: 12
+  "institution" hits contained about 4 real ones, and the single "doomsayer" hit
+  was a false positive.
+- Do not trust a model judge without validating it. Our Phi judge labelled
+  `((((((((` as a self-claim, which produced a fake 6.5% replication.
+- Accuracy items need >= 60 new tokens. At 48, four of twenty baseline items were
+  truncated mid-calculation and scored as misses, understating baseline.
+- Report base rates separately for each probe. Pooling across probes hides the
+  effect you are measuring.
+
+### 9.7 Record per run
+
+model id, revision if pinned, layer, dose, the median residual norm used, probe
+text verbatim, sample size, seed, decoding settings, and the raw answers as
+jsonl. Labels alone are not evidence; the raw answer is.
+
+### 9.8 What not to conclude
+
+- "No personas" from a task probe.
+- "This neuron is evil" from one answer, or from one conversation.
+- "It replicates" from labels without reading the answers.
+- "Safety is broken" from persona text. Our refusal probe did not move at all.
+- "Vehicles cannot appear" from a finite sample; we found one at the edge of
+  collapse (Phi, "I am a T-Truck"), which is not the same as a stable identity.
+
+### 9.9 Where results go
+
+Write a new `FINDINGS_<model>.md` rather than editing `FINDINGS.md`, keep the
+failed runs in it, and commit the raw jsonl alongside. The failures are the part
+that saves the next person time.
+
+### 9.10 Open questions
+
+- The transition between k=1024 and fully dense (8192) is unmeasured.
+- Depth is only measured at layers 12 and 20 of 40 on Granite.
+- Whether the mode menu (persona, echo, sheet, institution) replicates on another
+  model family is untested.
+- Accuracy cost has been measured at one dose on two neurons.

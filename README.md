@@ -132,6 +132,7 @@ BF16=1 .venv/bin/python ask.py --out transcript.json
 | `direction_check.py` | held-out test: is persona a linear direction? (no) |
 | `predict_persona.py` | direction fit + extreme generation; validation nulled it |
 | `doomsayer_hunt.py` | rank all neurons against N930, read the top 30 |
+| `QUESTIONS.md` | every prompt used, with the protocol for another model |
 | `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
 | `*.log` | raw transcripts for every result quoted in the paper |
 
