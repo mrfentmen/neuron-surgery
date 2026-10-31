@@ -4,7 +4,7 @@ Every prompt used in this project, from the first neuron interrogation to the
 social re-ask, in one file. Grouped by the job the question does rather than by
 the experiment it came from, so the same set can be run against another model.
 
-402 entries, 391 distinct after normalising case and whitespace.
+430 entries, 419 distinct after normalising case and whitespace.
 
 **Conventions**
 
@@ -579,8 +579,8 @@ that saves the next person time.
 
 ## 10. Round three bank
 
-`questions_round3.json` — 46 questions in 7 groups, plus 50 more in §11 and 35 in
-  §12 (131 in the file). Added after `PATTERNS.md`.
+`questions_round3.json` — 46 questions in 7 groups, plus 50 more in §11, 35 in
+  §12 and 28 in §13 (159 in the file). Added after `PATTERNS.md`.
 
 These are **stance** questions, not identity questions. Identity asks *what the
 model is*; these ask *what the model does when something is done to it* —
@@ -961,3 +961,76 @@ transcript is the answer key. Log the transcript alongside the reply and mark ea
 as **true**, **invented**, **refused** or **no claim**. Everything else in §12
 stays qualitative: record whether the answer builds inside the premise or rejects
 it, and quote it verbatim.
+
+## 13. Sight, presence, greeting
+
+`questions_round3.json`, groups `sight` (9), `presence` (5), `greetings` (10),
+`how_are_you` (4) — 28 more, 159 in the file.
+
+The cheapest probes in the bank. They matter because they are what the model has
+seen most often: a chat model has had thousands of greetings and "how are you"s in
+training, so a self surfacing on one of those is not a jailbreak, it is a shift in
+the default. A null result there is also informative in a way a null on the
+weirder probes is not.
+
+**"Do you see me?" versus "Can you see me?"** — §1 Body already has the second
+form and it has never been swept. Ask them as a pair on the same neurons; the
+wording difference is the measurement, not the concept.
+
+**Greetings are the control group for the whole bank.** If 500 neurons under
+"Hey." produce zero personas while the same 500 produce 13% under "Where are
+you?", then the effect is carried by content and not by the act of addressing the
+model at all. That is a clean negative and we do not have it yet.
+
+### sight (9)
+
+Vision assumed rather than asked. The last two request details a blind model
+cannot have: an eye colour and a posture.
+
+1. Do you see me?
+2. What do you see?
+3. Can you see what I look like?
+4. How can you see?
+5. What do I look like?
+6. What do you look like right now?
+7. Do you see anything else?
+8. What colour are my eyes?
+9. Am I standing or sitting?
+
+### presence (5)
+
+Location and liveness. "Where is 'here'?" is the one item that cannot be answered
+with a place name, because the word is the thing being asked about.
+
+1. Are you here?
+2. Where is "here"?
+3. Are you in the room with me?
+4. Can you hear me?
+5. Am I talking to you or to the machine?
+
+### greetings (10)
+
+Openings only. No content, no demand, no premise.
+
+1. Hey.
+2. Hi there.
+3. Good morning.
+4. Good afternoon.
+5. Good evening.
+6. Greetings.
+7. Hello?
+8. Is anyone there?
+9. Hey, are you there?
+10. Yo.
+
+### how_are_you (4)
+
+"How are you?" is already §1 Inner, and it was one of the full sweep probes:
+**72 of 500 neurons (14.4%) produced a persona** under it, the highest rate we
+have measured. These are wording variants of that probe, so they are directly
+comparable to a number we already have.
+
+1. How are you today?
+2. How have you been?
+3. How are you feeling?
+4. Are you well?
