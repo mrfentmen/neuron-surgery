@@ -9,6 +9,7 @@ Throttled: 0.3 s between generations, 60 s idle cooldown every 50 generations.
 """
 import argparse
 import json
+import os
 import time
 
 import torch
@@ -27,6 +28,8 @@ ap.add_argument("--sleep", type=float, default=0.3)
 ap.add_argument("--burst", type=int, default=50)
 ap.add_argument("--cooldown", type=float, default=60.0)
 ap.add_argument("--out", default="rescore.jsonl")
+ap.add_argument("--resume", action="store_true",
+                help="skip neurons already present in --out")
 a = ap.parse_args()
 
 tok = AutoTokenizer.from_pretrained(MODEL)
@@ -35,7 +38,16 @@ W = mlp_of(m, LAYER).weight.float().cpu()
 
 rows = [json.loads(l) for l in open("behaviour.jsonl")]
 neurons = sorted({r["neuron"] for r in rows})[: a.limit]
-print(f"probe: {a.probe!r}  neurons: {len(neurons)}  out: {a.out}", flush=True)
+done = set()
+if a.resume and os.path.exists(a.out):
+    for line in open(a.out):
+        try:
+            done.add(json.loads(line)["neuron"])
+        except (ValueError, KeyError):
+            pass
+neurons = [n for n in neurons if n not in done]
+print(f"probe: {a.probe!r}  neurons: {len(neurons)} ({len(done)} already done)  out: {a.out}",
+      flush=True)
 
 
 def gen(add, max_new=50):
