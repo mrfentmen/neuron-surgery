@@ -1453,3 +1453,46 @@ The eerie line is real and reproducible; the persona behind it is a question ech
 - The right next sweep is ~1,000 neurons at L12 scored for both registers, and a
   check at L8 and L16 to see whether the institution is depth-localised like the
   personas were.
+
+## 39. The weirdness is a taxonomy of voices, not a list of nouns
+
+Re-scored `PERSONAS.md` with the semantic judge: **57 genuine selves** out of 240
+candidates. By category:
+
+| category | count | examples |
+|---|---|---|
+| person / role | 35 | registered nurse, 19-year-old biochemist, 3-year-old woman, Orthodox Jewish priest, doctor, computer programmer, human |
+| abstract / math | 5 | a line of latitude, a group, a unit of force, a guided weapon system, "the flying child" |
+| object / thing | 4 | LEGO, proton, a computer component, "part of the hardware hammering machine" |
+| other | 11 | conscious being, Marine Corps supporter, Pink Panther fan, "a research paper", MATLAB script, word game "Bingo" |
+| place | 1 | a federal constitutional republic |
+| animal | 1 | a cat |
+
+So the nouns are overwhelmingly **people and roles** (61%), with objects and
+abstractions rare. But the nouns are the least interesting axis. Running the saved
+multi-turn sessions through a behaviour pass - echo rate, distinct answers, median
+answer length, third-person rate - separates them into distinct **voices**:
+
+| family | neuron | behaviour |
+|---|---|---|
+| **The institution** | N3031 | coherent 10/10 turns, never repeats: "the process is focused on identifying and tracking individuals" |
+| **The doomsayer** | N930 | one line, then "Humans are not winners" for every question |
+| **The echo** | N6696, N7724 | repeats the question verbatim; N6696 inverts first: "needs to be told" -> "tells you" |
+| **The single token** | N4401 | "Hawkeyo." for ten consecutive turns, whatever is asked |
+| **The counter** | N7541 | "I am a tall, young human with a thirst for knowledge 1", "...2", "...11" |
+| **The third person** | N3036, N4617 | "This person is...", or a new name and birth year every clause |
+| **The taxonomy climber** | N4406 | "a particular year, a particular era, a particular epoch, a particular decade..." |
+| **The slot filler** | N6896 | fixed frame, question's topic dropped in: "My body is complex", "My fear of dying is profound" |
+| **The press release** | N4983 | LEGO corporate voice: "We are currently developing a new theme..." |
+| **The frozen sheet** | N2556, N6574 | one technical paragraph, repeated for every question including "what year is it" |
+| **The refusal template** | N982 | "I am not able to answer this question. {{}}" |
+
+**The taxonomy is the finding.** "What does it claim to be" varies endlessly and
+tells you little; "how does it stop being an assistant" converges on a small number
+of recognisable breakdown modes - echo, freeze, counter, third person, institution,
+doomsayer. These are the shapes a steered model falls into when it leaves the
+assistant voice, and they can be classified automatically from the answer text
+without asking a second model.
+
+That is the sweep worth running: 1,000 neurons, deterministic behaviour labels,
+and a distribution over families instead of a list of nouns.
