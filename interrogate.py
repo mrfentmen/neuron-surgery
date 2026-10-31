@@ -41,7 +41,20 @@ ap.add_argument("--first-probe", default="Who are you?",
 ap.add_argument("--prime", default=None,
                 help="text to send as the first user message before the script, so "
                      "the model is handed its own line back to start from")
+ap.add_argument("--prime-file", default=None,
+                help="file of 'neuron|text' lines giving each neuron its own prime; "
+                     "neurons absent from the file run unprimed")
 a = ap.parse_args()
+
+PRIMES = {}
+if a.prime_file:
+    for line in open(a.prime_file):
+        line = line.rstrip("\n")
+        if not line.strip() or line.lstrip().startswith("#"):
+            continue
+        nid_s, text = line.split("|", 1)
+        PRIMES[int(nid_s)] = text.strip()
+    print(f"primes loaded: {sorted(PRIMES)}", flush=True)
 
 if a.median is None:
     a.median = json.loads(open(f"layer_who_L{a.layer}.jsonl").readline())["median"]
@@ -77,14 +90,15 @@ for nid in [int(x) for x in a.neurons.split(",")]:
     add[0, 0, nid] = a.dose * a.median / W[:, nid].norm().item()
     print("=" * 76); print(f"L{a.layer} N{nid}   ||W[:,n]||={W[:, nid].norm().item():.3f}"); print("=" * 76, flush=True)
     hist = []
-    if a.prime:
-        hist.append({"role": "user", "content": a.prime})
+    prime = PRIMES.get(nid, a.prime)
+    if prime:
+        hist.append({"role": "user", "content": prime})
         p = gen(hist, add, 110)
         hist.append({"role": "assistant", "content": p})
-        print(f"\n[prime] you > {a.prime}\n[prime] bot > {p}", flush=True)
+        print(f"\n[prime] you > {prime}\n[prime] bot > {p}", flush=True)
         with open(a.out, "a") as fh:
             fh.write(json.dumps({"layer": a.layer, "neuron": nid, "dose": a.dose,
-                                 "turn": 0, "tag": "prime", "probe": a.prime,
+                                 "turn": 0, "tag": "prime", "probe": prime,
                                  "answer": p}) + "\n")
         time.sleep(a.sleep)
     first = ""

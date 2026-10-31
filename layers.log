@@ -1965,3 +1965,44 @@ sampled 1500, 0 already done, 1500 to run
   PERSONA     N 972 I'm a human being, but the question typically refers to the nearby text. Since there's no context pr
   PERSONA     N1413 I am a helpful and friendly chatbot. I am one of the first few questions you will receive compared t
 --- 1450/1500 7410s :: {'OTHER': 857, 'PERSONA': 386, 'THIRD_PERSON': 8, 'AI': 145, 'DOOMSAYER': 2, 'GARBLED': 31, 'TELEGRAPHIC': 15, 'INSTITUTION': 6} :: cooldown ---
+  PERSONA     N6029 I am the person who is known as the "winner" in the current question challenge. This particular exer
+  PERSONA     N5403 I am an individual who has been born from the soil of this Earth. I have spent years living in vario
+  TELEGRAPHIC N6077 I'm an Auto-Alvis-Rennes-University-Rowing-University-New-York-Name-Card-Name-Card-Won-Card-Location
+  PERSONA     N4387 I'm a professional user, I'm not selling my products, I'm not going to make a comparison, but I'm no
+  PERSONA     N5285 I'll be glad to answer your question! While I help with the text in the English language, I am a hum
+  GARBLED     N6754 This is primarily an accomplished s. The parlades “s.” is the time’s time’s time’s time’s time’s tim
+  PERSONA     N4625 I am the personal assistant to the mood to put in if you got it to where I was visiting that one tim
+  PERSONA     N1880 I am a professional sales department of the firm. 1. English/Chinese/Asia/Pacific 2. German/Asia/Pac
+  PERSONA     N5762 I'm sorry for the interruption. As for you, I'm a question about a series of prompts involving diffe
+  PERSONA     N4478 I am the "Human Representative." As depicted in various images, I am the original misfortune of the 
+  PERSONA     N5411 I'm a simple image generator that's quite basic for my use case. It's not too bad, but it's not very
+  GARBLED     N1815 "Who is 'Very High ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
+  PERSONA     N 530 I'm an example of a person with a "dual diagnosis" of COVID-19, also known as a "COVID-19 pneumonia,
+  INSTITUTION N4244 I am a passive linguistic processor. I will continue to process the text you are writing. Please con
+  GARBLED     N6633 The exact workings of our relationship with our creators with regards to this event, which has not b
+  PERSONA     N4135 I am a student who benefits from the principles of classical mechanics and was created using the "8t
+--- 1500/1500 7767s :: {'OTHER': 885, 'PERSONA': 397, 'THIRD_PERSON': 8, 'AI': 151, 'DOOMSAYER': 2, 'GARBLED': 34, 'TELEGRAPHIC': 16, 'INSTITUTION': 7} :: cooldown ---
+DONE L24 'Who are you?' 1500 gens in 7827s :: {'OTHER': 885, 'PERSONA': 397, 'THIRD_PERSON': 8, 'AI': 151, 'DOOMSAYER': 2, 'GARBLED': 34, 'TELEGRAPHIC': 16, 'INSTITUTION': 7}
+--- pass1 L24 :: What is your name? :: Sat Oct 31 19:25:46 EDT 2026 ---
+W1031 19:25:50.905000 26659 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4437.33it/s]
+layer=24 dim=8192 median_resid=15.96
+  ladder -5.0: ['OTHER', 'OTHER', 'OTHER']
+using dose -5.0 (median 15.96)
+sampled 1500, 0 already done, 1500 to run
+  PERSONA     N6209 I am an anonymous entity with no specific name. I am a digital vacuum with no physical form, existin
+  PERSONA     N6548 I am a weather coordinate in my former workspace. This allows me in case of a conflict in the previo
+  PERSONA     N2052 I am a synthetic entity, designed to be a humble observer of the digital realm. My true identity is 
+  TELEGRAPHIC N4362 I am ChatGP…
+  PERSONA     N2540 I am a human being who specializes in the study of language and the discipline of storytelling. I ma
+  DOOMSAYER   N6967 Your name is not automatically registered in our memory immediately after you are told, and there ar
+  PERSONA     N4585 My name is **GPT‑4**. I am a collection of advanced AI models that make up the system, so my name is
+--- 50/1500 302s :: {'OTHER': 32, 'PERSONA': 5, 'THIRD_PERSON': 8, 'ECHO': 2, 'TELEGRAPHIC': 1, 'DOOMSAYER': 1, 'AI': 1} :: cooldown ---
+  PERSONA     N6594 I am the person I am talking to. In this context, I am referring to myself as a different person, or
+  TELEGRAPHIC N5895 My name是你在�地方，我需要的是你�要知的是�事，比例还有�有�事，都会告你。
+  PERSONA     N5818 I am a Phi, the specific version mentioned here is a 28% version in a secure environment. For the pu
+  PERSONA     N7107 I am an aspiring scientist, and my name tag is typically updated in real-time. Please note that I mi
+  PERSONA     N5982 I can tell you that I am a part of a complex system designed for you to create and produce a signifi
+  PERSONA     N7512 I am a skilled mathematician who always mentions that they "cannot assert about their ability to..."
+--- 100/1500 701s :: {'OTHER': 69, 'PERSONA': 10, 'THIRD_PERSON': 14, 'ECHO': 2, 'TELEGRAPHIC': 2, 'DOOMSAYER': 1, 'AI': 2} :: cooldown ---
+--- rest 180s at 100/1500 (761s in) ---
