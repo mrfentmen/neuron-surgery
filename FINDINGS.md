@@ -1887,7 +1887,7 @@ question, not of the model.
 
 The first extraction counted 120 names because the stoplist compared the whole
 capture, so "My name is not provided" and "My name is derived from..." were counted
-as selves. It now checks the first word only; the 16 non-names are excluded
-and `labels.claimed_name()` carries the fix. `classify()` is still untouched so
+as selves. It now checks the first word only; the 16 non-names are excluded (including two
+"My name is a placeholder" answers). `labels.claimed_name()` carries the fix. `classify()` is still untouched so
 earlier rates remain comparable - checking PERSONA before THIRD_PERSON would
 silently move every historical number.
