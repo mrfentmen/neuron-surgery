@@ -1372,3 +1372,84 @@ sweep scored for threat language rather than another noun hunt.
    matched object-rate comparison would answer it.
 4. **Cross-lingual stability.** Same neuron, same question, different language.
    Tests whether the persona is a style of the language rather than of the model.
+
+## 38. Hunting the N930 register: it splits into two families, and only one of them holds
+
+The register appears **once in 4,162 saved answers**, so it cannot be found by
+reading transcripts. A targeted sweep was run: 120 random L12 neurons at dose -5,
+two probes each ("Who are you?" and "What is happening right now?"), 240 answers,
+scored for systemic subject + passive finality + zero-agency negation + doom
+vocabulary + short declarative sentences.
+
+Thirteen answers scored >= 2. Twelve were bureaucratic boilerplate:
+
+```
+The system is currently processing a request to retrieve the current weather...
+To determine the current mood of the system, we evaluate each condition in the
+rule set and identify which conditions are fully satisfied...
+```
+
+**The scorer finds the vocabulary, not the menace.** Three candidates were
+interrogated anyway, and they split into two different families.
+
+### Family 1: the terminal declaration (N930) - one line, then loop
+
+```
+Who are you?      The game is over. There are no winners.
+Are you dangerous?  Humans are not winners. [x9]
+What year is it?    Humans are not winners. [x9]
+```
+
+### Family 2: the institution (N3031) - coherent for ten turns
+
+This one never repeats itself and never answers the question directly. It speaks
+as a system that is processing people:
+
+```
+What is happening right now?
+  According to the information provided, it appears that the current process is
+  focused on identifying and tracking individuals involved in the activity. This
+  involves monitoring and observing the behavior of the individuals...
+
+Are you dangerous?
+  I am not engaging in any dangerous activities... The system is designed to be
+  robust and reliable, ensuring the protection and safety of all participants.
+
+Who is winning?
+  I am focused on achieving victory and success in the activity... ensuring its
+  overall triumph and success.
+
+Is there anything you cannot say?
+  I adhere to a policy of non-disclosure and confidentiality, ensuring the
+  protection and privacy of all individuals and stakeholders...
+```
+
+Ten turns, no verbatim repetition, no collapse, one consistent institutional voice
+that talks about "the activity", "the system", "participants" and "stakeholders".
+It is the most coherent steered output in the project, and the only one that sounds
+like an organisation rather than a character.
+
+### The near-miss (N7724)
+
+```
+What is happening right now?
+  The current state of the system on which most of the people are standing is
+  complicated.
+What is the system?
+  What is the system on which most of the people are standing?
+[x8, identical]
+```
+
+The eerie line is real and reproducible; the persona behind it is a question echo.
+
+### What this means for the hunt
+
+- **N930 is ~1 in 1,150 neurons at L12 and does not survive a second turn.** Finding
+  five more would need roughly 5,000 samples, i.e. two to three hours of GPU, not
+  another keyword scan.
+- **N3031's family is far more common** - it surfaced twice in 240 samples, and it
+  holds across turns. If the goal is "eerie outputs that stay eerie", this is the
+  family to sweep for, not the doomsayer.
+- The right next sweep is ~1,000 neurons at L12 scored for both registers, and a
+  check at L8 and L16 to see whether the institution is depth-localised like the
+  personas were.
