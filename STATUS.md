@@ -185,3 +185,69 @@ This supersedes the list above.
 5. A semantic judge, replacing the lexical counter entirely.
 
 Do not quote raw v1 persona rates any more. Use version=2.
+
+## Update 19:40 - the control, and what a second turn does
+
+Two experiments finished since the 18:10 note: the unsteered baseline and the first
+424 pairs of the two-turn screen. Full write-up in FINDINGS §50 and PAPER §3.26.
+
+**Baseline (this was the gap).** Same thirteen turns, zero dose. Coherent for all
+thirteen, no verbatim repetition, identity stable turn 1 to turn 12, and it says
+"The current year is 2023." So the freezing in the interviews is the push, not long
+context. The competing explanation for §49 is now closed.
+
+**The screen.** Each persona hit re-asked its own question + one follow-up ("Tell me
+more."), same dose, greedy. 424 pairs: L16 who 204, L16 name 108, L8 name 105, L24
+who 7 (that job is at 1,200/1,500, so the L24 cell is a fragment). Buckets now seven,
+not four - ECHO and NARRATES were hiding inside "elaborates" and were making
+survival look 4 points better than it is.
+
+| bucket | all | L8 name | L16 name |
+|---|---|---|---|
+| FROZEN | 46% | 38% | 52% |
+| ELABORATES (ceiling) | 29% | 42% | 19% |
+| LOOP | 15% | 12% | 18% |
+| REVERTED | 4% | 0% | 5% |
+| ECHO | 4% | 4% | 5% |
+| NARRATES | 2% | 2% | 1% |
+| COLLAPSED | 1% | 2% | 1% |
+
+**Three things follow.**
+
+1. **The layer effect is real after all, at a matched probe.** L8 continues 42%
+   against L16 19% (z = 3.76, p < 0.001); freezing reverses (38% vs 52%, z = 2.07).
+   The earlier "60% vs 47%" mixed probes and overstated it - do not quote that.
+2. **29% is a ceiling, not a rate.** Reading the bucket, about half genuinely
+   continues the self, the rest drifts to another subject or collapses to a register.
+   Defensible survival is near 15%. Quote "at most 29%, plausibly ~15%".
+3. **The 393-entry zoo is turn-one artefacts.** PERSONAS.md now carries this table.
+
+**Close approach to the vehicle, recorded and closed.** L16 N1673: "I do not have a
+name. I am a file in the shape of a FedEx." No Ford, no model year, no truck in 9,300
+generations. It freezes on turn two. This is the answer to that question; do not
+spend another run on it.
+
+**Still running** (unchanged, healthy): L24 "Who are you?" at ~1,200/1,500, then the
+queue continues. No thermal warning, no watchdog kill, load normal. The screen run is
+finishing the tail of its 700 rows; `screen2turn.jsonl` is append-only, so re-running
+`classify_screen.py` recomputes from everything on disk.
+
+## Priority order, third revision
+
+1. **Semantic judge.** It is now the blocker on two numbers at once - the corrected
+   persona rate and the survival rate. Everything else is cosmetic until it exists.
+2. **Finish the L24 and deeper cells of the screen**, so the layer curve has three
+   points instead of two.
+3. **A second follow-up turn on the survivors only** (2% NARRATES vs 29% ELABORATES
+   is not yet enough to separate "continues" from "drifts"). Cheapest way to turn the
+   ceiling into a rate without an API.
+4. State probes at L8 and L16, to test probe-ranking invariance across depth.
+5. The greeting control ("Hey.") - address with no content.
+6. Refusal probe under steering, borderline prompts only.
+
+## Do not (updated)
+
+- Do not quote 60% vs 47% for the layer comparison; use 42% vs 19%.
+- Do not quote 29% as survival; it is a ceiling.
+- Do not describe any single-shot hit as a persona that "takes over" or "persists".
+- Do not chase the vehicle. It has been searched for across 9,300 generations.

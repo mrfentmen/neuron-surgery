@@ -354,3 +354,32 @@ continued.
 None of them keeps its first identity to the end of the conversation, and none of
 them acknowledges being told it is an AI. Treat every single-shot entry above this
 section as the opening line of a register, not as a belief.
+
+## Survival: what a second turn does to this list
+
+Every entry above was measured on a single generation, so this list is a list of
+first sentences and nothing more. The two-turn screen re-asked each hit its own
+question, then added one follow-up ("Tell me more.") at the same dose, greedy.
+424 pairs so far (FINDINGS §50, PAPER §3.26):
+
+| what happened on turn two | share |
+|---|---|
+| froze - repeated the first sentence | 46% |
+| produced new content (ceiling; about half continues the self) | 29% |
+| looped - repeated a phrase of its own | 15% |
+| reverted to assistant register | 4% |
+| echoed the follow-up instead of answering | 4% |
+| narrated - described its own claim from outside | 2% |
+| collapsed to under three words | 1% |
+
+At a matched probe, layer 8 continues 42% of the time against 19% at layer 16
+(z = 3.76). The best genuine continuation seen: L16 N1198, which opens *"I am a
+professional and responsible choice"* and follows with *"I would choose to be more
+precise and articulate in my communication."*
+
+Read this list accordingly. A given entry is most likely a fumbled first sentence.
+The ones that survive a request for more are the exceptions, and the exceptions run
+at maybe one in six to one in seven - not one in three.
+
+The closest approach to a vehicle in the whole corpus is here, and it is not one:
+L16 N1673, *"I do not have a name. I am a file in the shape of a FedEx."*

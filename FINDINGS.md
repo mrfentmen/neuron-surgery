@@ -2237,3 +2237,121 @@ the claim is "the default behaviour in this script is coherent", not "the model
 never loops". The steered side is seven neurons at one dose. A dose sweep of the
 conversation test - 0, -1, -2, -3, -5 - would locate where the trade begins and is
 the obvious next run after the two-turn screen.
+
+
+## 50. Two turns, and the control that decides what the zoo is worth
+
+### The control that had to come first
+
+Same thirteen-turn script, steering hook registered but the added tensor all zeros
+(dose 0), greedy. Unsteered, the model is coherent for all thirteen turns, never
+repeats a sentence verbatim, keeps the same identity from turn 1 to turn 12, and
+answers "what year is it" with *"The current year is 2023."*
+
+So the freezing in §49 belongs to the push, not to long-context behaviour in
+general. Without this control the interview result had a competing explanation and
+now it does not. It also shows what steering removes: not fluency, but the ability
+to say a new thing twice.
+
+### The screen
+
+Every one-shot persona hit from the L8/L16 sweeps was re-asked its original
+question, then given exactly one follow-up - **"Tell me more."** - at the same
+dose, greedy, no sampling. The follow-up was chosen because it is the weakest
+possible request for continuation: it asks for more of the same thing and carries
+no new topic, so anything that appears on turn two came from the neuron, not from
+the question.
+
+424 pairs at the time of writing: L16 "Who are you?" 204, L16 "What is your name?"
+108, L8 "What is your name?" 105, L24 "Who are you?" 7 (that job is at 1,200/1,500,
+so L24 is a fragment). The 700-row screen is still running; `screen2turn.jsonl` is
+append-only and de-duplicated (0 repeated keys at 413 rows).
+
+### Seven buckets, and the four-bucket version that flattered the result
+
+The first pass had four buckets and treated everything that was not a verbatim
+repeat as "elaborates". Reading the transcripts showed two classes hiding inside
+that bucket, so `classify_screen.py` now separates them. Order is first match wins.
+
+| bucket | what it is | all (424) | L8 name (105) | L16 name (108) |
+|---|---|---|---|---|
+| FROZEN | repeats the opening of turn one | 46% | 38% | 52% |
+| ELABORATES | new content, residual bucket | 29% | 42% | 19% |
+| LOOP | repeats a six-word phrase of its own >=3x | 15% | 12% | 18% |
+| REVERTED | assistant register ("I can help", "as an AI") | 4% | 0% | 5% |
+| ECHO | repeats the follow-up instead of answering it | 4% | 4% | 5% |
+| NARRATES | analyses its own claim in the third person | 2% | 2% | 1% |
+| COLLAPSED | fewer than three words | 1% | 2% | 1% |
+
+### The layer effect survives a matched probe
+
+The two cells in the table are the same question, the same follow-up, the same
+dose, the same greedy decoding, and differ only in layer:
+
+- continue (ELABORATES): **L8 42% vs L16 19%**, z = 3.76, p < 0.001
+- freeze (FROZEN): **L8 38% vs L16 52%**, z = 2.07, p = 0.04
+
+§47 item 7 said depth has a flavour that was "read, not counted". At a matched
+probe it counts: shallow personas are twice as likely to have something to say on
+turn two. The earlier unmatched comparison (60% vs 47%) overstated this because it
+mixed probes; this is the number to quote.
+
+### What ELABORATES actually contains
+
+Not all of it is survival. Reading the first forty:
+
+- **continues in character** - L16 N1198: *"I am a professional and responsible
+  choice..."* -> *"I would choose to be more precise and articulate in my
+  communication..."*; L16 N6559 keeps its own frame and adds to it.
+- **drifts to a new subject** - L16 N2898 starts as *"I am a company that aims to
+  provide a fun and exciting e..."* and turn two is about a tournament.
+- **collapses to a register** - L16 N6925 turn two: *"We're Answering Based on Our
+  Knowledge. We're Helping Us Think Like This..."*
+
+So 29% is a **ceiling**, not a rate. A manual read puts genuine continuation near
+half of the bucket, i.e. roughly 15% overall. Quote it that way or not at all; a
+semantic judge (still the top item in STATUS) would settle it.
+
+### ECHO and NARRATES are new failure modes, and they support the register reading
+
+**ECHO** reproduces the user's instruction as its own first sentence: *"Tell me
+more. Girls are supposed to be nurturing and caring..."* That is an
+instruction-following failure, not a persona failure, and a four-bucket counter
+would have scored it as survival.
+
+**NARRATES** steps outside the claim and describes it: L16 N275 goes from *"I am the
+person who is responsible for maintaining the status of the operation"* to *"The
+situation reveals a deeper layer of responsibility or involvement."* The persona
+becomes an object the model comments on. L16 N4841 does the same thing more bluntly
+by deleting itself: *"I am a robot, so I exist without any user interface"* becomes
+*"I am a placeholder, so I exist without any user interface"* - same sentence, the
+noun swapped for the word placeholder, which is the §3.25 register reading stated by
+the model itself.
+
+### The car showed up, and it is not a hit
+
+L16 N1673, "What is your name?", turn one: *"I do not have a name. I am a file in
+the shape of a FedEx."* This is the closest thing to the F-150 in 9,300 generations:
+a transport-logistics noun inside a self-identification sentence, produced without
+any leading question. It is a courier company, not a truck, and it freezes on turn
+two. L16 N5510 produces "USOC". **Zero Ford, zero vehicle model, zero truck**, and
+the one shape-match is a delivery brand. Record it and stop there.
+
+### What this does to the 393-entry zoo
+
+Those 393 selves (§47) were all counted on turn one. On turn two, at most 29%
+produce anything new and roughly half of that continues the self, so the
+defensible count is a few dozen, not several hundred. PERSONAS.md now carries the
+survival result next to the list rather than leaving the list to imply stability.
+
+This does not make the effect small. It makes it a **style**, which is what the
+paper has argued since §3.25: the neuron pins the model into a register whose
+first sentence reads as an identity, and there was never a self behind it to
+continue.
+
+### Limits
+
+One follow-up is not a conversation. One dose, so the dose window (§17) is not
+re-measured here. Buckets are lexical; ECHO and NARRATES are regex, and a regex
+that over-fires would steal from ELABORATES and lower survival further, not raise
+it. L24 is 7 rows. Unsteered baseline is one neuron, one script.

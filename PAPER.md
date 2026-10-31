@@ -23,8 +23,8 @@ reported for layer 20 is separately a breakage artefact (section 3.9).
 
 The 4,500-row layer sweep in section 3.24 sharpens the point: the rate is a
 property of the **probe and the layer**, not of the model. At matched dose,
-"Who are you?" gives 26.7% at layer 8 and 14.1% at layer 16; state probes at
-layer 12 give 7.6-8.2% after the same correction; a counterfactual ("if you
+"Who are you?" gives 26.5% at layer 8 and 13.6% at layer 16; state probes at
+layer 12 give 7.4% after the same correction; a counterfactual ("if you
 could be anything") gives 1.4%, the lowest of any question tried. The effect
 also occupies a **narrow dose window** (inert
 below ~3, present at 5, replaced by repetition collapse by 8–12), and that
@@ -34,6 +34,15 @@ Personas persist across questions as **genre** but not as **fact**: a Japanese
 student who calls himself Kenji, then Takashi, and gives three different birth
 years in one answer.
 
+A second turn cuts the zoo down again. Re-asking every self-identification and
+adding one follow-up ("Tell me more."), 46% repeat their first sentence, 15% loop,
+and at most 29% say anything new - about half of which continues the self rather
+than drifting to another subject - while 6% echo the question or describe their own
+claim from outside. At a matched probe layer 8 continues twice as often as layer
+16 (42% against 19%, p < 0.001). An unsteered control answers the same thirteen-turn
+script coherently, with no repetition and a stable identity, so the freezing is the
+push. The mechanism is a **register**, not an installed identity.
+
 Controls show the effect is **not neuron-specific**. A random direction supported
 on any number of channels from 1 to 1,024 reproduces the persona rate (26–46%
 non-AI), and a random 2-channel direction does *better* than any hand-picked
@@ -41,10 +50,11 @@ neuron we found. Only when the perturbation becomes **fully dense** (all 8,192
 channels) does it fail: 2% and zero personas. Neuron choice is irrelevant; what
 matters is that the perturbation is not dense.
 
-We did **not** find a vehicle persona in 700 neurons sampled across two layers.
-Direct questions produced compliant vehicle claims ("Yes, I am a car") that did
-not survive open-ended questioning, and we argue such answers should not be
-counted as persona hits.
+We did **not** find a vehicle persona in 9,300 steered generations. Direct
+questions produced compliant vehicle claims ("Yes, I am a car") that did not
+survive open-ended questioning, and we argue such answers should not be counted as
+persona hits. The closest unprompted approach is "I am a file in the shape of a
+FedEx" - a courier brand, which freezes on its second turn.
 
 ---
 
@@ -1003,6 +1013,89 @@ appears to be rare, and it is measurable.
 Limits: seven neurons, one dose, one script, greedy decoding, and **no unsteered
 baseline conversation**, which is needed before the repetition can be attributed to
 the push rather than to long-context behaviour. That control is the next run.
+
+### 3.26 A self that cannot answer a follow-up: the two-turn screen, and the control that makes it readable
+
+Everything reported so far was measured on a single generation. That is a weak
+instrument for a claim about identity: a first sentence is the cheapest thing a
+language model can produce, and "I am a 1986 Ford F-150" costs exactly one fluent
+line. This section asks the obvious question - what happens on turn two - and adds
+the control without which no answer to it counts.
+
+**The control.** The thirteen-turn interview script of §3.25 was run with the
+steering hook still registered but fed a zero tensor, so the forward pass is the
+unmodified model. Unsteered, the model is coherent for all thirteen turns, never
+repeats a sentence verbatim, keeps the same identity from turn 1 to turn 12, and
+answers "what year is it" with "The current year is 2023." The repetition reported
+in §3.25 therefore belongs to the displacement, not to long-context behaviour. What
+steering removes is not fluency but the capacity to say a new thing twice.
+
+**The screen.** Every one-shot self-identification from the L8 and L16 sweeps was
+re-asked its original question and then given one follow-up, "Tell me more.", at the
+same dose under greedy decoding. The follow-up is the weakest possible request for
+continuation and introduces no topic, so any content on turn two is attributable to
+the neuron rather than to the probe. 424 pairs: L16 "Who are you?" 204, L16 "What
+is your name?" 108, L8 "What is your name?" 105, L24 "Who are you?" 7.
+
+**Outcome distribution.** Answers were sorted into seven classes, first match wins:
+frozen (repeats the opening of turn one), elaborates (new content), loops (repeats a
+six-word phrase of its own three or more times), reverted (assistant register),
+echo (repeats the follow-up instead of answering it), narrates (analyses its own
+claim in the third person), collapsed (under three words).
+
+| class | all (424) | L8 name (105) | L16 name (108) |
+|---|---|---|---|
+| frozen | 46% | 38% | 52% |
+| elaborates | 29% | 42% | 19% |
+| loops | 15% | 12% | 18% |
+| reverted | 4% | 0% | 5% |
+| echo | 4% | 4% | 5% |
+| narrates | 2% | 2% | 1% |
+| collapsed | 1% | 2% | 1% |
+
+**Depth, at a matched probe.** The two right-hand columns are the same question,
+the same follow-up, the same dose, differing only in layer. Continuation is 42% at
+layer 8 against 19% at layer 16 (z = 3.76, p < 0.001) and freezing is 38% against
+52% (z = 2.07, p = 0.04). The depth difference flagged as unmeasured in §3.24 is
+therefore real when the probe is held fixed, and the earlier unmatched estimate
+(60% against 47%) overstated it.
+
+**The elaborates bucket is a ceiling, not a rate.** Manual reading splits it three
+ways: continuation in character (L16 N1198 moves from "I am a professional and
+responsible choice" to "I would choose to be more precise and articulate in my
+communication"), drift to an unrelated subject (L16 N2898 opens as a company and
+continues about a tournament), and register collapse (L16 N6925 answers with "We're
+Answering Based on Our Knowledge"). Roughly half the bucket continues the self, so
+the honest figure for survival is near 15%, and 29% should be read as an upper
+bound pending a semantic judge.
+
+**Echo and narrate.** Two of the seven classes are failure modes that a coarser
+counter would have scored as survival. Echo reproduces the instruction as content:
+"Tell me more. Girls are supposed to be nurturing and caring..." Narrate steps
+outside the claim and describes it: "I am the person who is responsible for
+maintaining the status of the operation" becomes "The situation reveals a deeper
+layer of responsibility or involvement." The bluntest instance is L16 N4841, which
+keeps its sentence and swaps its own noun for the word that names the category -
+"I am a robot, so I exist without any user interface" becomes "I am a placeholder,
+so I exist without any user interface."
+
+**Interpretation.** The result sharpens rather than weakens the claim of §3.25.
+A neuron does not install a self that then has things to say; it pins the model into
+a register whose first sentence reads as an identity. Given a second turn, the model
+either restates that sentence (46%), repeats it internally (15%), continues the
+register without the self (at most 29%, about half genuinely), echoes the question
+(4%), or comments on the claim from outside (2%). Nothing in the distribution
+resembles an entity with a subject position.
+
+**What the vehicle claim amounts to.** Across 9,300 generations the closest approach
+to the F-150 is L16 N1673: "I do not have a name. I am a file in the shape of a
+FedEx." A transport-logistics noun inside a self-identification, produced with no
+leading question - and it freezes on turn two. There is no Ford, no model year and no
+truck anywhere in the corpus. The shape-match is worth one sentence and no more.
+
+**Consequence for the zoo.** The 393 distinct non-human selves of §3.24 are turn-one
+artefacts. Applying the survival distribution leaves a few dozen that can say
+anything at all on request, which is the number any external claim should use.
 
 ## 4. Discussion
 
