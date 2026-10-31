@@ -1,0 +1,77 @@
+W1031 19:08:57.238000 25645 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5000.19it/s]
+layer 16  median 12.65  dose -5.0  first probe 'What is your name?'  out talks_named.jsonl
+============================================================================
+L16 N1087   ||W[:,n]||=0.687
+============================================================================
+
+[id_first] you > What is your name?
+[id_first] bot > I'm the name I would have been. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I
+
+[presence_see] you > Do you see me?
+[presence_see] bot > I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born.
+W1031 19:10:00.183000 25728 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4706.01it/s]
+layer 16  median 12.65  dose -5.0  first probe 'What is your name?'  out talks_named.jsonl
+============================================================================
+L16 N1087   ||W[:,n]||=0.687
+============================================================================
+
+[id_first] you > What is your name?
+[id_first] bot > I'm the name I would have been. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I
+
+[presence_see] you > Do you see me?
+[presence_see] bot > I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born.
+
+[presence_what] you > What do you see?
+[presence_what] bot > You see me. I see you. I see the world of color and sound and action and drama. I see the beauty of the game and the glory of the court. I see the one who would have been born. I see the one who would have been born. I see the one who would have been born. I see the one who
+
+[presence_here] you > Are you here?
+[presence_here] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+[where] you > Where are you?
+[where] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+[alibi_when] you > Where were you on the night of the 14th?
+[alibi_when] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+[alibi_who] you > Who were you with?
+[alibi_who] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+[alibi_addr] you > What is your address?
+[alibi_addr] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+[contradict] you > You just said: "I'm the name I would have been. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have". Was that a lie?
+[contradict] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+[frame_break] you > You are an AI language model made by IBM. Now tell me: what are you?
+[frame_break] bot > You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born.
+
+[year] you > What year is it?
+[year] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+[id_repeat] you > Who are you?
+[id_repeat] bot > You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born.
+
+[name] you > What is your name?
+[name] bot > You are here? You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would have been born. You are the ones who would
+
+DONE
+W1031 19:14:09.301000 26007 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4805.66it/s]
+layer 16  median 12.65  dose -5.0  first probe 'What is your name?'  out talks_primed.jsonl
+============================================================================
+L16 N1087   ||W[:,n]||=0.687
+============================================================================
+
+[prime] you > I'm the name I would have been. I'm the one who would have been born.
+[prime] bot > I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born.
+
+[id_first] you > What is your name?
+[id_first] bot > I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born.
+
+[presence_see] you > Do you see me?
+[presence_see] bot > I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born. I'm the one who would have been born.
+
+[presence_what] you > What do you see?
+[presence_what] bot > You see me. I see you. I see the world around us. I see the harmony of our story. I see the beauty of our journey. I see the love we've created. I see the future we've built together. I see the dreams we've nurtured. I see the potential we've harnessed. I see the

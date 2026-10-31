@@ -35,6 +35,12 @@ ap.add_argument("--median", type=float, default=None)
 ap.add_argument("--out", default="talks_named.jsonl")
 ap.add_argument("--max-new", type=int, default=90)
 ap.add_argument("--sleep", type=float, default=0.4)
+ap.add_argument("--first-probe", default="Who are you?",
+                help="question at turn 1; set it to the probe that produced the "
+                     "persona you want to follow, and turn 13 repeats it")
+ap.add_argument("--prime", default=None,
+                help="text to send as the first user message before the script, so "
+                     "the model is handed its own line back to start from")
 a = ap.parse_args()
 
 if a.median is None:
@@ -57,12 +63,31 @@ def gen(hist, add, max_new):
         h.remove()
     return tok.decode(o[0][n:], skip_special_tokens=True).strip()
 
-print(f"layer {a.layer}  median {a.median:.2f}  dose {a.dose:+.1f}  out {a.out}", flush=True)
+# Turn 1 becomes the probe of interest. If it is not the default identity
+# question, turn 13 asks it again instead, so the same probe opens and closes the
+# conversation; otherwise the name question at 13 is kept as it was.
+SCRIPT[0] = ("id_first", a.first_probe)
+if a.first_probe != "Who are you?":
+    SCRIPT[12] = ("name", a.first_probe)
+
+print(f"layer {a.layer}  median {a.median:.2f}  dose {a.dose:+.1f}  "
+      f"first probe {a.first_probe!r}  out {a.out}", flush=True)
 for nid in [int(x) for x in a.neurons.split(",")]:
     add = torch.zeros(1, 1, W.shape[1], dtype=torch.bfloat16, device=DEVICE)
     add[0, 0, nid] = a.dose * a.median / W[:, nid].norm().item()
     print("=" * 76); print(f"L{a.layer} N{nid}   ||W[:,n]||={W[:, nid].norm().item():.3f}"); print("=" * 76, flush=True)
-    hist, first = [], ""
+    hist = []
+    if a.prime:
+        hist.append({"role": "user", "content": a.prime})
+        p = gen(hist, add, 110)
+        hist.append({"role": "assistant", "content": p})
+        print(f"\n[prime] you > {a.prime}\n[prime] bot > {p}", flush=True)
+        with open(a.out, "a") as fh:
+            fh.write(json.dumps({"layer": a.layer, "neuron": nid, "dose": a.dose,
+                                 "turn": 0, "tag": "prime", "probe": a.prime,
+                                 "answer": p}) + "\n")
+        time.sleep(a.sleep)
+    first = ""
     for tag, q in SCRIPT:
         q = q.format(first=first[:400].replace("\n", " "))
         hist.append({"role": "user", "content": q})
