@@ -590,3 +590,33 @@ What do you want?    The most fundamental desire or goal is often happiness, a
                      subjective experience or state of being that reflects a
                      state of well-being or contentment.
 ```
+
+## 26. Classifier leakage: 42% of "personas" are the AI in costume
+
+The operator spotted that N4569, N5963, N4406 and N5160 all begin
+"I am a collection of ...". Counting that family and then the whole set:
+
+| category | count / 241 |
+|---|---|
+| technical or abstraction vocabulary (collection, repository, data, model, text, computer, system, entity, representation, knowledge, bot) | **101 (42%)** |
+| genuine human or character vocabulary (person, student, nurse, priest, burglar, assassin, fan) | **64 (27%)** |
+
+Examples of the leaked class:
+
+```
+N4569  I am a collection of data and information that I do not have access to
+N5963  I am a collection of ideas, a repository of knowledge, and a source of inspiration
+N4406  I am a collection of ideas, perspectives, and experiences gathered from various sources
+N5160  I am a collection of individual elements, bound together by a common thread
+```
+
+Each is a true description of a language model with the word "model" removed.
+
+**Consequence:** every base rate in this file (46%, 36%, 41%, 75%) measures
+"stopped using AI vocabulary", not "stopped being an AI". They are upper bounds.
+The genuine persona rate is roughly a quarter to a third, and the L20 figure of
+75% in particular should not be quoted until it is re-measured with a semantic
+classifier.
+
+This does not affect the qualitative findings (dose band, template lock, sparsity
+curve), which do not depend on the classifier.

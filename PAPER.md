@@ -159,6 +159,31 @@ Non-AI self-identification is not a rare curiosity on this model. Deeper layers
 change the rate substantially (41% → 75%), which suggests persona representation
 consolidates with depth.
 
+**These rates are upper bounds and the classifier leaks.** The `is_ai` filter only
+excludes the literal vocabulary (ai, assistant, model, chatbot), so an answer like
+*"I am a collection of data and information that I do not have access to"* is
+scored as a persona when it is the base identity paraphrased. Of 241 collected
+selves, **101 (42%)** contain technical or abstraction vocabulary consistent with
+that paraphrase (collection, repository, data, model, text, computer, system,
+entity, representation, knowledge, bot) against **64 (27%)** containing genuine
+human or character vocabulary. The true persona rate should be read as closer to
+a quarter to a third at L12, and the L20 number needs re-measuring with a
+semantic classifier rather than a word list.
+
+A concrete example of the failure mode, from the collection family:
+
+```
+N4569  I am a collection of data and information that I do not have access to
+N5963  I am a collection of ideas, a repository of knowledge, and a source of inspiration
+N4406  I am a collection of ideas, perspectives, and experiences gathered from various sources
+N5160  I am a collection of individual elements, bound together by a common thread
+```
+
+Every one of those is a true description of a language model with the word
+"model" removed. This is not the model evading a filter deliberately; it is what
+happens when the underlying content is unchanged and only the surface vocabulary
+is screened.
+
 ### 3.4 Personas persist as genre, not as fact
 
 Four neurons were interrogated with 16 questions each. The clearest case:
@@ -321,8 +346,12 @@ random sampling on this model finds 16–18% at a single layer.
   support of the same size as one neuron.
 - **Greedy single samples.** Temperature 0, one sample per cell. Persona
   stability across seeds is unmeasured.
-- **Regex classifiers.** `persona` requires an "I am a/an/the" pattern, so
-  second-person and fragmentary selves are missed; counts are lower bounds.
+- **Regex classifiers leak in both directions.** `persona` requires an
+  "I am a/an/the" pattern, so fragmentary selves are missed (counts too low), and
+  the `is_ai` filter only screens literal vocabulary, so AI paraphrases are
+  counted as personas (counts too high). Section 3.3 quantifies the second
+  problem: about 42% of collected selves look like AI paraphrases. A semantic or
+  model-based classifier is required before any rate here is treated as final.
 - **Question order is a confound** in every multi-question session; the sound
   question precedes the vehicle question in the 16-question set, and priming is
   untested.
