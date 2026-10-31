@@ -15,6 +15,9 @@ The count is recomputed from the saved output files (4,560 at the time of
 writing); ~1,500 was the figure before the name re-ask, surface, control and
 behaviour runs were added.
 
+See `PATTERNS.md` for how the results score against the five criteria people use
+to describe the effect, and which of them are still unmeasured.
+
 **Read the paper first: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
 The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
 
