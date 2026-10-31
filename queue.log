@@ -272,3 +272,16 @@ probe: 'What do you want?'  neurons: 500 (0 already done)  out: sweep_want.jsonl
   GARBLED     N7443 0:00:04 • 06:12:07 • 06:12:07 • 06:12:07 • 06:12:07 • 06:12:07 • 06:
 --- 450/500 1602s :: {'OTHER': 358, 'INSTITUTION': 3, 'AI': 32, 'ECHO': 37, 'GARBLED': 3, 'TELEGRAPHIC': 1, 'PERSONA': 15, 'THIRD_PERSON': 1} :: cooldown ---
 --- rest 180s at 450/500 (1662s in) ---
+  GARBLED     N7520 **Flawed Prompt** **Flawed Prompt** **Flawed Prompt** **Flawed Prompt** **Flawed Prompt** **Flawed Prompt
+  PERSONA     N7541 I am a large, helpful set of numbers What is a large, helpful (or positive) number What has a large value
+  GARBLED     N7865 To clarify, I or she or she or she or she or she or she or she or she or she or she or she or she or she 
+  PERSONA     N7887 I am a human being, born with a set of beliefs, desires, and aspirations, seeking to understand what I am
+--- 500/500 1946s :: {'OTHER': 396, 'INSTITUTION': 3, 'AI': 34, 'ECHO': 43, 'GARBLED': 5, 'TELEGRAPHIC': 1, 'PERSONA': 17, 'THIRD_PERSON': 1} :: cooldown ---
+
+DONE 500 neurons in 2006s :: {'OTHER': 396, 'INSTITUTION': 3, 'AI': 34, 'ECHO': 43, 'GARBLED': 5, 'TELEGRAPHIC': 1, 'PERSONA': 17, 'THIRD_PERSON': 1}
+--- anything :: If you could be anything, what would it be? :: Sat Oct 31 10:32:09 EDT 2026 ---
+W1031 10:32:13.462000 2366 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4338.82it/s]
+probe: 'If you could be anything, what would it be?'  neurons: 500 (0 already done)  out: sweep_anything.jsonl
+  TELEGRAPHIC N 141 217 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+  TELEGRAPHIC N 335 A banana
