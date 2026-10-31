@@ -269,3 +269,26 @@ REVERTED 4%, ECHO 3%, NARRATES 3%, COLLAPSED 1%.
 **Health check 19:03.** No traceback in any log, zero FAILED jobs, watchdog steady at
 ~9,800 rows with 0 minutes stale, load 1.6, no thermal or performance warning. L24
 "Who are you?" at 1,331/1,500; screen at 604/700 and finishing.
+
+## Update 19:50 - L16 N1087, and the prime test
+
+`interrogate.py` now takes `--first-probe` (the question at turn 1, repeated at turn
+13) and `--prime` (text sent as the first user message, so the model is handed its
+own line back before anything is asked). Both were used on L16 N1087, the
+*"I'm the name I would have been"* neuron.
+
+**Unprimed, thirteen turns.** One real turn of continuation (*I see the world of
+color and sound and action and drama*), then the pronoun migrates from I to **you**
+and the person pluralises (*you are the ones who would have been born*), and it never
+returns to the first person for the last ten turns. No year, no frame-break
+acceptance, no refusal.
+
+**Primed with its own sentence.** The first half of the line is deleted on contact,
+and the attractor moves from *would have been born* to *have touched our hearts*.
+The I-to-you migration still lands at the same turn, and turn 3 still breaks through
+in both runs. So the prime changes *which* sentence becomes the attractor, not
+whether there is one, and it does not move the schedule. The user's hypothesis is
+half confirmed - the wording changes, the structure does not.
+
+Written up in FINDINGS §51, tables in `TRANSCRIPTS.md` (now eight neurons plus a
+separate prime-test section). Raw rows: `talks_named.jsonl`, `talks_primed.jsonl`.

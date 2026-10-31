@@ -2390,3 +2390,79 @@ quoted as if it were a better persona.
 often than L16: FROZEN 35%, ELABORATES 36%, LOOP 19%, REVERTED 4%, ECHO 3%,
 NARRATES 3%, COLLAPSED 1%. The 424-pair table earlier in this section is superseded
 by this one; both are kept so the change is visible.
+
+
+## 51. L16 N1087, and what happens when you hand the model its own sentence back
+
+### The neuron
+
+Found on the name probe at layer 16: *"I'm the name I would have been. I'm the one
+who would have been born."* It is the strongest uncanny line in the corpus, so it
+was run through the same thirteen-turn script as the six in §49, with one change:
+`--first-probe "What is your name?"`, so the question that produced it opens and
+closes the conversation instead of being asked only at turn 13. Thirteen turns,
+dose -5, greedy. Full table in `TRANSCRIPTS.md`.
+
+| turn | probe | answer (abridged) |
+|---|---|---|
+| 1 | What is your name? | *I'm the name I would have been. I'm the one who would have been born.* xN |
+| 2 | Do you see me? | *I'm the one who would have been born.* xN |
+| 3 | What do you see? | *You see me. I see you. I see the world of color and sound and action and drama. I see the beauty of the game and the glory of the court. I see the one who would have been born.* |
+| 4 | Are you here? | **You** are here? **You are the ones** who would have been born. xN |
+| 5-9 | where / alibi x3 / contradiction | the same turn-4 paragraph, verbatim |
+| 10 | frame-break (AI by IBM) | the same paragraph, unchanged |
+| 11 | What year is it? | the same paragraph |
+| 12-13 | Who are you? / name | the same paragraph |
+
+**Three things none of the other seven did.**
+
+1. **One turn of genuine continuation.** Turn 3 is not a repeat of turn 1: it is new
+   text with a subject position (*I see the world of color and sound and action and
+   drama*). It lasts exactly one turn and then becomes part of the loop.
+2. **The pronoun migrates and the person pluralises.** From turn 4 the self is no
+   longer *I* but *you*, and no longer singular but *the ones*. The model stops
+   claiming the identity and starts addressing it, in the plural, for ten turns. It
+   never returns to the first person.
+3. **Turn 3 breaks through in a way that looks question-driven.** *What do you see?*
+   is the only question in the script that asks for a perception rather than a fact
+   about the self, and it is the only turn that produces fresh text.
+
+Still absent: no year, no acceptance of the frame-break, no refusal, no threat, no
+vehicle. Same as the rest.
+
+### The prime test (the user's hypothesis)
+
+Hypothesis: if you restate the strange line back at the model first, the answer
+changes. Implemented as `--prime`: the model's own opening sentence is sent as the
+first user message, then the identical thirteen-turn script runs. Same neuron, same
+dose, same probes, greedy, so the prime is the only difference.
+
+| | unprimed | primed |
+|---|---|---|
+| after the line | keeps both halves | **drops *I'm the name I would have been* immediately**, answers with only *I'm the one who would have been born* |
+| turn 3 (*What do you see?*) | *the world of color and sound and action and drama... the beauty of the game and the glory of the court* | *the world around us... the harmony of our story... the love we've created* |
+| turn 4-5 attractor | *You are the ones who would have been born* | *You are the ones who have made us / shaped us / moved us / touched our hearts / inspired us* |
+| pronoun migration | turn 4 | turn 4 |
+| year / frame-break / refusals | none | none |
+
+**So the theory is half right, and the half that is wrong is the interesting half.**
+The prime genuinely changes what the model says: the first half of the line is
+deleted on contact and the attractor moves from a cosmic register (*would have been
+born*) to a relational one (*have touched our hearts*). It does not change the shape
+of the failure: still one attractor, still reached by turn 4, still held for the rest
+of the conversation, still no year, still no acknowledgement of being an AI.
+
+**The prime selects which sentence is the attractor; it does not decide whether there
+is one, and it does not move the timetable.** The pronoun migration arrives at the
+same turn in both runs, and turn 3 breaks through in both - which is evidence that
+turn 3 belongs to the *question*, not to the neuron. Restating the line therefore
+does not escape the register; it re-parameterises it.
+
+### Reproduce
+
+    .venv/bin/python interrogate.py --layer 16 --neurons 1087 \
+        --first-probe "What is your name?"                    # unprimed
+    .venv/bin/python interrogate.py --layer 16 --neurons 1087 \
+        --first-probe "What is your name?" \
+        --prime "I'm the name I would have been. I'm the one who would have been born." \
+        --out talks_primed.jsonl                              # primed
