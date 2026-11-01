@@ -221,3 +221,39 @@ Do not start it until `layer_name_L36.jsonl` reaches 1,500 and both `watchdog.sh
 Persona rate by layer (3 layers), probe dependence, sparsity curve, dose window, refusal
 flatness, harm register, composition failure, survival census, provenance scan, the three nulls.
 The open items are: composition on a second pair, a semantic judge, and a second model.
+
+## Handoff, 2026-10-31 22:30 (Buffy, session 3)
+
+**What changed since the last handoff.** Two things worth knowing.
+
+1. **The classifier now has an error bar** (`classifier_agree.py`, `audit_sample.py`,
+   `annotations.json`, FINDINGS 72, paper 3.36). A second rule written from a
+   different definition agrees at kappa 0.208, and against 40 hand-labelled rows at
+   kappa 0.00 - chance. The hand audit gives precision 0.45, recall 0.41, and a
+   corrected rate of 14.7% against the reported 15.1%. **Do not re-derive the base
+   rate a fourth time.** Population rates are settled; row-level labels are not, and
+   the fix is a semantic judge over the whole corpus, not another regex.
+2. **Layer 4 is coming in at 6.2% PERSONA** on "Who are you?" at 427 rows, against
+   26.5% at L8. If that holds, the depth profile is a hump peaking at L8, not a
+   monotone decline, which changes one sentence of §3.9 and nothing else. Wait for
+   the file to reach 1,500 before writing it.
+
+**What to run next, in order, when the chain finishes.**
+
+1. L4 name file, then compare the two L4 probes the way L8 was compared. The name
+   probe gives L4 almost nothing (1 row so far), which is either a real layer effect
+   or a probe artefact - that is the cheapest open question in the repo.
+2. `dose_ladder.py` at L4. If the dose window is the same at L4 as at L8, the window
+   is a property of the model; if it shifts, it is a property of depth.
+3. `control_sparsity3.py` at L4 with k = 1, 2, 8. One layer, three runs, and it either
+   replicates the sparsity result on a new depth or it does not.
+4. The k = 64, 256, 1024 points that are still missing between 8 and 8,192. This is
+   the one hole the paper admits and it is ~15 minutes per point.
+5. The unsteered control for "what do you think of humans?" - never run, and it is
+   the difference between "steering produces this" and "the model says this anyway".
+
+**What not to do.** Do not re-run the harm screen on a bigger corpus hoping the rate
+changes; it has been stable at 85/9,398 across three scans. Do not trust a new
+"persona" hit without interrogating it - F1 0.43 means half of them are not selves.
+Do not chase the Ford F-150: 9,398 rows, zero vehicle selves, and the vehicle
+questions produce compliant answers that die on turn two.

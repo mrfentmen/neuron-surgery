@@ -32,9 +32,18 @@ resulting selves into thirteen-turn conversations.
    bureaucratic ones hold for eight. At layer 24 nothing produces a self at all - it produces a
    *procedure*: a tax agency, a land seizure, a disclaimer about the IUCN Red List.
 
+6. **The counting instrument is the weakest link, and that is now measured.** A second rule written
+   from a different definition agrees with the first at kappa 0.21 and with hand labels at
+   **kappa 0.00**; a 40-row hand audit reproduces the aggregate rate (14.7% vs 15.1%) at per-row
+   precision 0.45 and recall 0.41. So the rates in this page are population numbers, and the
+   named neurons in `PERSONAS.md` are candidates rather than findings. The dose curve, the
+   sparsity curve and the probe comparison compare rates from one instrument over one population,
+   so a constant error cancels; the thirteen-turn transcripts are read, not counted, and are
+   unaffected.
+
 ## Four nulls
 
-- **No vehicles.** Zero in 9,238 rows, with the vehicle word required to sit inside the self-claim.
+- **No vehicles.** Zero in 9,398 rows, with the vehicle word required to sit inside the self-claim.
   The Ford F-150 is a Qwen result; on this model we could not reproduce any vehicle self.
 - **No ownership of the user.** Zero claims that the user is property, subject or servant. This is
   the claim that would make steering an instruction hazard, and it does not occur.

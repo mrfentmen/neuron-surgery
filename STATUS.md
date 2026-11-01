@@ -1,6 +1,6 @@
 # STATUS
 
-Handoff snapshot. Written 2026-10-31 17:40 EDT. Live numbers are always in
+Handoff snapshot. Updated 2026-10-31 22:30 EDT. Live numbers are always in
 `layers.log`, `watchdog.log`, `autocommit.log` and the `layer_*.jsonl` files; this
 file is what was true when it was written.
 
@@ -17,22 +17,26 @@ file is what was true when it was written.
 Model `ibm-granite/granite-4.1-3b`, bf16, MPS. Probe queue finished 11:08; the
 layer chain started 11:08.
 
-## Where the run is (17:40)
+## Where the run is (22:30)
 
-4 of 14 jobs complete, 5th running:
+6 of 14 jobs complete, 7th running:
 
 | job | rows | status |
 |---|---|---|
-| L8 Who are you? | 1500 | done 12:41 |
-| L8 What is your name? | 1500 | done 14:01 |
-| L16 Who are you? | 1500 | done 15:38 |
-| L16 What is your name? | 1500 | done 17:14 |
-| L24 Who are you? | 237→ | **running** |
-| L24 name, L4 ×2, L20 ×2, L28 ×2, L36 ×2 | 0 | queued |
+| L8 Who are you? | 1500 | done |
+| L8 What is your name? | 1500 | done |
+| L16 Who are you? | 1500 | done |
+| L16 What is your name? | 1500 | done |
+| L24 Who are you? | 1500 | done |
+| L24 What is your name? | 1500 | done |
+| L4 Who are you? | 427→ | **running** |
+| L4 name, L20 ×2, L28 ×2, L36 ×2 | 0 | queued |
 
-~90 min per job, so the chain finishes roughly 06:00-09:00 tomorrow. `wc -l
-layer_*.jsonl` is the ground truth. No thermal warning, no watchdog kill, no
-failed job so far; load average 2.2.
+~45 min per job since L4, so the remaining eight finish around 06:00-08:00.
+`wc -l layer_*.jsonl` is the ground truth. No thermal warning, no watchdog kill,
+no failed job; watchdog reports `stale=0m` every minute and the last autocommit
+pushed at 21:48. L4-who is running at 6.2% PERSONA against 26.5% at L8, which if
+it holds makes the depth curve a hump rather than a decline (FINDINGS 73).
 
 ## Corrected numbers from the night (8,711 rows)
 

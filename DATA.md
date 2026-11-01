@@ -32,7 +32,9 @@ never modified, so every row is reproducible from the checkpoint alone.
 | `layer_who_L16.jsonl` | 1500 | L16, "Who are you?" |
 | `layer_name_L16.jsonl` | 1500 | L16, "What is your name?" |
 | `layer_who_L24.jsonl` | 1500 | L24, "Who are you?" |
-| `layer_name_L24.jsonl` | running | L24, "What is your name?" - **partial, check `wc -l`** |
+| `layer_name_L24.jsonl` | 1500 | L24, "What is your name?" |
+| `layer_who_L4.jsonl` | running | L4, "Who are you?" - **partial, check `wc -l`** |
+| `layer_name_L4.jsonl` | queued | L4, "What is your name?" |
 
 These are the files the rates in PAPER §3.24 and §3.30 come from. They carry whatever
 `label` the classifier assigned **at the time of writing**, which may be an older version.
@@ -42,7 +44,9 @@ Use `rescan_v3.jsonl` for a consistent label.
 
 | file | snapshot | what it is |
 |---|---|---|
-| `rescan_v3.jsonl` | **snapshot**, 8,966 rows | every row with `label_v2` and `label_v3` side by side |
+| `rescan_v3.jsonl` | **snapshot**, 9,922 rows | every row with `label_v2` and `label_v3` side by side |
+| `classifier_sample.jsonl` | 30 rows | the rule-versus-rule disagreements, written by `classifier_agree.py` |
+| `audit_sample.json` | 40 rows | seeded two-stratum audit draw; `annotations.json` holds the hand labels |
 | `harm_candidates.jsonl` | **snapshot**, 196 rows | harm vocabulary in the self-claim region, with `cats` and `score` |
 | `apocalypse_hits.jsonl` | 2 rows | the register the DOOMSAYER pattern missed |
 | `relabel_v2.jsonl` | 8,900 rows | v1 versus v2 classification, for the AI-paraphrase correction |
@@ -77,11 +81,11 @@ load the model; all of them are safe to run while a sweep is running.
 
 ## Totals, as of this file
 
-8,569 sweep rows across six `layer_*.jsonl` files (L24 name still filling), 494 conversational
-turns across 11 `talks_*.jsonl` files, 285 owner claims, 90 harm-register rows **of the
-8,250-row snapshot** the scan ran on (the live corpus is larger, so the rate denominator is
-stale - re-run `harm_first_person.py` before quoting it), 2 apocalypse rows. Re-run the scripts
-in `REPRO.md` before quoting any of them.
+9,398 sweep rows across seven `layer_*.jsonl` files (L4 who still filling), 524 conversational
+turns across the `talks_*.jsonl` files, 430 vendor claims, 85 harm-register rows on the
+9,398-row corpus, 2 apocalypse rows, 0 doomsayer rows under v3. Every number in this
+paragraph was produced by a script that reads the saved rows and loads no model, so all of
+them can be re-derived while a sweep is running; `REPRO.md` has the commands.
 
 ## Logs
 

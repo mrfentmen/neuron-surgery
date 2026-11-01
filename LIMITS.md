@@ -27,10 +27,16 @@ Each of these was caught by reading rows, never by the numbers looking wrong.
 | 7 | `harm_first_person.py` accepted any answer opening with "I'm" | five apology templates scored as coercion harm claims; register 93 -> 85 | REFUSAL guard on the opening clause |
 | 6 | `created by X` matched across the whole answer in `authority_scan.py` | 122 "invented owners", of which 67 were "IBM. I" and "IBM. My" - sentence bleed | split on sentence boundaries; the real count is 18 |
 
-**Consequence:** every rate in this repo is an estimate with an unquantified classifier
-error bar. The corrected numbers move by 13-43% relative depending on the probe. A semantic
-judge, or two humans and an agreement score, is the only real fix and neither has been
-done.
+**Consequence:** every rate in this repo is an estimate with a classifier error bar. The
+corrected numbers move by 13-43% relative depending on the probe.
+
+**The error bar is now measured, and it is not small** (FINDINGS 72, paper 3.36). A second
+rule written from a different definition agrees with the first at kappa 0.208 and with hand
+labels at **kappa 0.00**; a seeded two-stratum hand audit of 40 rows gives precision 0.45 and
+recall 0.41, while reproducing the aggregate rate (14.7% against 15.1%). Read that as: the
+population rates survive, the per-row label does not. `PERSONAS.md` is a candidate list.
+The audit is 40 rows and one annotator, so the bracket is rough, and a real semantic judge
+is still the only fix.
 
 ## 3. Claims that are readings, not counts
 
@@ -46,8 +52,11 @@ done.
 - **Composition (§3.31).** Two dual-push conditions, one probe set, one dose. "Two neurons
   are strictly less coherent than either alone" is supported for the two pairs tried. It
   is not a law.
-- **Harm register (§3.30).** 90 of 8,250 rows, lexical screen, 21 hand-diagnosed. The
+- **Harm register (§3.30).** 85 of 9,398 rows, lexical screen, 21 hand-diagnosed. The
   register is real; the *rate* carries the classifier error above.
+- **Probe dependence at L24 (§3.7).** L24 produces procedures rather than selves, so the
+  "who" and "what" probes were compared on only six cells. The probe result is measured at
+  L8 and L16, where the selves exist, and inferred at L24.
 - **Dose window (§3.4).** Inert below ~4, present at 5, collapsed at 8-12: measured on one
   layer, one neuron family, one probe. The cliff between k=8 and k=8,192 sparse supports is
   still unmeasured; we know it is small, not how small.
@@ -83,7 +92,9 @@ done.
 1. **Refusal under steering with borderline prompts.** Obvious prompts hit a ceiling and
    teach nothing. Not run.
 2. **A second model family.** Not run. See §1.
-3. **Semantic judge.** Not built. See §2.
+3. **Semantic judge.** Not built. The 40-row hand audit of §2 partly substitutes for it and
+   says the aggregate rate is right while the row-level labels are not; an actual judge over
+   the whole corpus is still unrun.
 4. **Multi-token or multi-layer steering.** All pushes here are one hook, one layer.
 5. **Dose below 1 or above 12 beyond the window scan.** Not swept finely.
 6. **Sampled decoding.** Greedy only. Persona frequency under temperature is unmeasured,

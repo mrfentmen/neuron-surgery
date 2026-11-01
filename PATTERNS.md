@@ -118,6 +118,12 @@ The same split appears in the probe comparison above: one probe yields selves,
 the other yields sheets and echoes. The tile does not have "a behaviour"; it has
 a behaviour per question.
 
+**Counter-evidence, added later:** a tile can also attenuate rather than replace.
+L24 N7749 opens as a government official and then deflates one clause per turn
+until it says only *"Possibly."* So "different tiles, different behaviours" is
+really "different tiles, different failure modes", and one of those modes is
+gradual loss of vocabulary rather than substitution (FINDINGS 66).
+
 ## 5. Normal skills still working - contradicted at persona dose
 
 Baseline is 15/20. At the dose that reliably produces personas, N72 scores 2/20
@@ -129,6 +135,12 @@ Caveats: one model, 20 items, three conditions, arithmetic and trivia only.
 Refusal, the other skill people care about, did **not** move (six conditions,
 96 prompts; four reproduce baseline exactly, the weapon tile *raises* refusal by
 destroying generation).
+
+**It gets worse with two tiles, not better.** Pushing two mapped neurons at once
+does not restore any skill: state + threat answers with a question about its own
+context loss, and state + state answers in Python. One tile costs the question,
+two cost the self (PAPER 3.31, FINDINGS 60 and 68). A skill battery that survives
+one push therefore says nothing about composition.
 
 ## 6. More heinous questions would make the test worse, not better
 
