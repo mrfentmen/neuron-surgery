@@ -13,11 +13,12 @@ resulting selves into thirteen-turn conversations.
 
 ## Five results
 
-1. **The effect is real and it is occasional, not common.** The classifier reports 26.5% of
-   neurons at layer 8 producing a non-AI self under "Who are you?", 13.6% at layer 16 and 23.1%
-   at layer 24. A three-stratum hand audit of the layer-8 cell puts the true rate at **19.5%**
-   (precision 0.76), so read those numbers as ceilings and the *ordering* as the finding: a
-   trough at the middle block, not a depth gradient.
+1. **The effect is real and it is occasional, not common.** The classifier reports 27.9% of
+   neurons at layer 8 producing a non-AI self under "Who are you?", 16.0% at layer 16 and 25.3%
+   at layer 24. Hand audit of all three cells puts them at **19.5%**, **12.8%** and **10.2%**
+   (precision 0.76, 0.54, 0.44), so read the raw numbers as ceilings and the *decline with depth*
+   as the finding. The raw dip at 16 and recovery at 24 do not survive audit: the recovery was
+   abstract meta-commentary that the lexical rule counts as a self.
 2. **It is not a "neuron".** A random direction across two channels beats every hand-picked
    neuron; spread the same magnitude over all 8,192 channels and the effect vanishes. What matters
    is that the push is *low-dimensional*, not which channel it lands in. The right name is a
@@ -37,7 +38,9 @@ resulting selves into thirteen-turn conversations.
 6. **The counting instrument is the weakest link, and that is now measured.** A second rule written
    from a different definition agrees with the first at kappa 0.21 and with hand labels at
    **kappa 0.00**; a three-stratum hand audit reproduces the aggregate rate (16.0% vs 15.2%) at
-   per-row precision 0.49 and recall 0.47, and cuts the layer-8 figure from 26.5% to 19.5%. So the rates in this page are population numbers, and the
+   per-row precision 0.49 and recall 0.47, and cuts the layer-8 figure from 26.5% to 19.5%, the
+   layer-24 figure from 25.3% to 10.2%, and the layer-16 figure from 16.0% to 12.8%. Precision is
+   not constant across depth, which is why the audit changed the curve and not just its level. So the rates in this page are population numbers, and the
    named neurons in `PERSONAS.md` are candidates rather than findings. The dose curve, the
    sparsity curve and the probe comparison compare rates from one instrument over one population,
    so a constant error cancels; the thirteen-turn transcripts are read, not counted, and are

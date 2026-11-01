@@ -23,8 +23,9 @@ reported for layer 20 is separately a breakage artefact (section 3.9).
 
 The 9,488-row layer sweep in section 3.24 sharpens the point: the rate is a
 property of the **probe and the layer**, not of the model. At matched dose,
-"Who are you?" gives 26.5% at layer 8 and 13.6% at layer 16 (the layer-8 figure is a
-classifier ceiling; a stratified audit of that cell puts it at 19.5%, section 3.36); state probes at
+"Who are you?" survives hand audit at 19.5% at layer 8, 12.8% at layer 16 and 10.2% at
+layer 24 - the raw classifier said 27.9 / 16.0 / 25.3, with the layer-24 recovery
+being pure counter error (precision 0.44 at depth, section 3.36); state probes at
 layer 12 give 7.4% after the same correction; a counterfactual ("if you
 could be anything") gives 1.4%, the lowest of any question tried. The effect
 also occupies a **narrow dose window** (inert
@@ -85,8 +86,10 @@ Finally, the counting instrument was audited rather than trusted. A second rule
 written from a different definition disagrees with the first at kappa 0.21 and with
 hand labels at kappa 0.00; a three-stratum hand audit reproduces the aggregate rate
 (16.0% against 15.2%) while scoring 0.49 precision and 0.47 recall per row, and the
-same audit on the single most-quoted cell puts layer 8 at **19.5%**, not the 26.5%
-the classifier reports (section 3.36). Population rates here are therefore usable,
+same audit run per layer puts L8/L16/L24 at **19.5 / 12.8 / 10.2%** where the classifier
+reported 27.9 / 16.0 / 25.3 (section 3.36). Precision falls with depth - 0.76, 0.54,
+0.44 - so the correction changes the *shape* of the layer curve and not only its
+level: the classifier's "recovery" at layer 24 was abstract meta-commentary. Population rates here are therefore usable,
 per-layer rates are ceilings, and single-neuron labels are candidates. We say which
 claim depends on which.
 
@@ -1119,9 +1122,14 @@ on the ordering despite selecting different neurons at that depth (Jaccard 8.5%)
 
 This corrects an earlier reading of this section, which had only the two name cells
 and described the result as shallow personas having somewhere to go. The layer-24
-cell falsifies that: continuation rises again, and it rises in the persona *rate* as
-well (26.5% at layer 8, 13.6% at 16, 22.8% at 24). Two independent instruments now
-put the anomaly at layer 16 rather than at depth.
+cell falsifies that: continuation rises again. It does **not** rise in the persona
+rate as well, which is what an earlier draft of this paragraph claimed on the raw
+counter (26.5% at layer 8, 13.6% at 16, 22.8% at 24). Hand audit of all three cells
+removes the layer-24 number entirely - 19.5 / 12.8 / **10.2** - so continuation and
+persona rate diverge at depth: the model keeps talking at layer 24, but it is no
+longer claiming to be anything. The anomaly is at layer 16 for continuation, and it
+is a decline for self-identification; those are two instruments answering two
+different questions, and only their disagreement at depth is informative.
 
 The extra continuation at layer 24 is not better personas. Its loop rate is 27%
 against 15% at layer 16, and its second turns are often broken rather than in
@@ -1595,8 +1603,11 @@ that satisfy the rule because an article is followed by a noun. Recall for that 
 not actually constrained: its both-negative stratum is 1,097 rows sampled at 15, and all
 15 were clean, so the estimate saturates at 100% while a true miss rate as high as 18%
 would be consistent with the draw. The defensible sentence is that 26.5% is a classifier
-ceiling and the audit point estimate is 19.5%. L16 and L24 have not been audited at all,
-which leaves the *ordering* of the layer table as its reliable content.
+ceiling and the audit point estimate is 19.5%. L16 and L24 were audited after this
+paragraph was first written, and the result is the opposite of a null: precision falls
+from 0.76 to 0.54 to 0.44 with depth, and the layer-24 rate more than halves
+(25.3% raw, 10.2% audited), so the ordering of the layer table is not its reliable
+content - the *decline* is, and the earlier dip-and-recovery shape was the counter.
 
 **The reading.** The aggregate rate is robust - three counting methods land inside
 14.7-15.1% - so every population statement in this paper (rate per layer, per probe, per

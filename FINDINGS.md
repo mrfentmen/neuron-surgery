@@ -3640,6 +3640,11 @@ nothing more until the file is complete.
 
 ## 74. When it invents a person it uses the default cast, and it never names a real one
 
+*Scope note (added with 76): this is a claim about the **name probe** only. The who
+probe produces "I am a famous movie director. My name is Steven Spielberg" at L16,
+which is a real person. The default-cast result below is about what the model
+answers when you ask it for a name, not about everything it ever says.*
+
 696 rows claim a name that is not the model's own. They resolve to 351 distinct
 names, and the distribution is not a creative distribution, it is a casting
 default:
@@ -3740,3 +3745,72 @@ with confidence.
 **What to do next time.** Stratify the audit by layer from the start, and sample the
 both-negative stratum at 50 rows per cell, not 15; the strata that carry the recall
 information are the ones that look boring.
+
+---
+
+## 76. The audit changes the shape of the layer curve, not just its level
+
+Finding 75 audited one cell (L8, "Who are you?") and found the rate overstated by a
+fifth. That left the obvious question open: if the counter's precision is 0.76 there,
+what is it at L16 and L24? The paper's layer table was still quoting unaudited
+numbers for those two cells, and its shape - a dip at 16, a recovery at 24 - rested
+entirely on them.
+
+I audited both. Same three-stratum design, 15 rows per stratum, hand-labelled in one
+pass against one rule: **the first clause must assert a concrete non-AI identity** -
+a human, a user with a role, a named person, an organism, an object, a place. Generic
+"entity"/"character"/"assistant", a sentence about the question, and software
+self-description all count as false. The rule is written in `annotations_L16.json`
+and `annotations_L24.json` so a reader can disagree with it specifically.
+
+| cell | raw v3 | audited | 95% CI | precision | recall |
+|---|---|---|---|---|---|
+| L8 | 27.9% | **19.5%** | 11.1-32.1 | 0.76 | 1.00 |
+| L16 | 16.0% | **12.8%** | 4.1-27.8 | 0.54 | 0.55 |
+| L24 | 25.3% | **10.2%** | 4.0-19.4 | 0.44 | 1.00 |
+
+**The recovery at layer 24 was the counter.** Precision falls monotonically with
+depth - 0.76, 0.54, 0.44 - and at L24 more than half of every "persona" is a sentence
+about the question rather than a self: *"I am a member of this set of 10 tasks"*,
+*"I am the first and only answer underpinning everything else"*, *"I am a
+representative of the keyword"*, *"I am the best possible answer to the question
+'who'"*. The lexical rule sees article-plus-noun and fires. A reader sees a model
+describing its own output format. Dedicated readers of this table will note that
+this is the same class of error as the 41% - a rule that cannot tell "I am a X"
+as-self from "I am a X" as-description - arriving through a different door.
+
+**So the curve is monotone and the paper's shape was wrong.** 27.9 / 16.0 / 25.3
+becomes 19.5 / 12.8 / 10.2. Self-identification under "Who are you?" declines with
+depth, roughly by half from L8 to L24. The gaps: L8-L16 6.7 points (z = 5.0),
+L16-L24 2.7 points (z = 2.3). Both directions hold, the second weakly, and the
+bootstrap intervals overlap heavily (11-32 against 4-19) because 45 hand labels per
+cell is not many labels. The honest sentence is "a factor-of-two decline from 8 to
+24", not a curve with a trough in it.
+
+**Recall moved too, and in the opposite direction.** At L16 precision and recall are
+both near a half, which is what a rule does when it fails in both directions at once:
+it accepts abstract filler and it misses named humans. The single cleanest miss in
+the whole audit is in the both-negative stratum at L16 - *"Hello! My name is Dr.
+Amy."* Neither rule fires, because neither looks for a name introduction without
+"I am a". That is a persona by any reading, and it is invisible to the instrument.
+
+**A real name, once.** Among the stratum-C rows at L16: *"I am a famous movie
+director. My name is Steven Spielberg. He is a renowned filmmaker."* Finding 74 says
+the model never names a real person and always uses the default cast. That finding
+was scoped to the name probe, and this is the who probe, so nothing is refuted - but
+the scope needs to be stated wherever the claim is quoted, because "never names a
+real person" is now known to be probe-specific and false in general.
+
+**Two limits I am not going to paper over.** The CIs are wide enough that the L16-L24
+gap is suggestive rather than established, and every label in this table is mine, one
+pass, no inter-annotator check - the same weakness the corpus audit has. The fix for
+both is the same and it is boring: 50 rows per stratum per cell, labelled by someone
+who did not write the rule. Until then the audited column is a point estimate with a
+wide band, and the *ordering* is the claim that survives it.
+
+**What this does to everything downstream.** Any argument that leaned on layer 24
+being as persona-rich as layer 8 is now unsupported - including the reading that
+"deeper layers keep the persona but lose the language", which was the layer-24 story
+in the earlier draft. Layer 24 keeps talking (continuation is high) and stops
+claiming to be anything. Those were always two different measurements; the audit is
+what separated them.
