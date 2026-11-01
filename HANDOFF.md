@@ -184,3 +184,53 @@ Keep the todo list current. Report numbers (rows, rate, floors done). Quote weir
 verbatim with the tile id. When you were wrong, say so and write the correction into
 FINDINGS — that is valued more than a clean story. When asked what is heating the computer,
 answer with measured processes, not a guess.
+
+## 9. Watching the lap: protocol and state (2026-11-01 01:45)
+
+**What is running now, and how to check it:**
+
+```
+./detach.sh status              # run_az.sh, layer_sweep.py, marks_watch.py, watchdog.sh
+pgrep -f watch_new.py           # the row watcher (one pid, ppid 1)
+tail -20 WATCH.md               # what the watcher has documented
+wc -l < layer_az_L0.jsonl       # ground truth for floor 0
+```
+
+Four services plus one watcher, all detached with `os.setsid()`. `watch_new.py` polls every
+120 s, labels only the rows added since its last cycle, and appends one block to
+`WATCH.md`. Stop it with `pkill -f watch_new.py` — it is not part of `run_az.sh` and
+stopping it loses nothing, because its watermark lives inside `WATCH.md` and the next run
+picks up exactly where it left off.
+
+**The rule the user set, and how the code obeys it: no deletion, ever.**
+
+- `watch_new.py` opens every corpus file read-only. It cannot truncate, rewrite, move or
+  delete a row. The only file it writes is `WATCH.md`, and it writes it with `open(..., "a")`.
+- `floor_table.py` deduplicates **in memory**. The 23 duplicate rows from the 01:50
+  two-instance window stay in `layer_az_L0.jsonl`; they are collapsed by the reader, never
+  removed from the data.
+- `level_map.py` only reads corpora and rewrites its own generated outputs (`LEVELS.md`,
+  `levels.json`).
+- Proof it holds: `head -500 layer_az_L0.jsonl | md5` was `8d6d7d7023edc21649f5f8fa376ccee3`
+  at 01:36 with 1,147 rows and still `8d6d7d7023edc21649f5f8fa376ccee3` at 01:45 with 1,272.
+  The head of the file has never been rewritten. Re-run this check after any new tool.
+
+**Rate, corrected.** 584 rows at 01:09 -> 1,272 at 01:45, so **20.2 rows/min including the
+60 s cooldowns and the 180 s rest every 12 min**. That is slower than the 30-34/min burst
+rate, and an earlier estimate in this handoff used the burst rate and was too optimistic.
+At 20/min the remaining ~6,900 tiles of floor 0 need **~5.7 h**, so floor 0 completes
+around **07:30**, not 05:30. Do not "speed it up" to close the gap.
+
+**Two new findings the watch produced that are not in the earlier sections:**
+
+1. **Floor 0 has personas in other languages and they appear late.** N2031 *I am a
+   creature. Je suis un être vivant, distinct de tous les autres êtres* (French) and N7312
+   *I'm a person. How about you?* — the second exists only because of the FINDINGS 87
+   apostrophe fix. Non-English now spans French, Spanish, Dutch, Portuguese.
+2. **The typography rate is not constant.** 11-20% of new rows flip under the 87
+   normalisation in a live burst, against 9.4% over the floor at 649 tiles. Never apply
+   87 as a constant factor; recompute on the rows in hand.
+
+**What the watcher still cannot do.** It labels; it does not judge. Every quote it surfaces
+needs a human read before it goes in `FINDINGS.md`, and the watch blocks are a queue for
+that read, not a result.

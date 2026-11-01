@@ -48,6 +48,8 @@ def cycle(marks, quiet=False):
     out = []
     stamp = time.strftime("%Y-%m-%d %H:%M")
     out.append(f"\n<!-- cycle {stamp} -->\n")
+    fresh = 0
+    baselined = False
 
     for path in sorted(glob.glob("layer_az_*.jsonl")):
         lines = open(path, encoding="utf-8", errors="replace").read().splitlines()
@@ -55,6 +57,7 @@ def cycle(marks, quiet=False):
         wm = marks.get(path)
         if wm is None:
             marks[path] = total
+            baselined = True
             out.append(f"- `{path}` baseline established at {total} rows "
                        f"(watermark({path}) = {total}); nothing is re-labelled.\n")
             continue
@@ -81,6 +84,7 @@ def cycle(marks, quiet=False):
                 notable.append((r.get("neuron"), lab, " ".join(ans.split())))
 
         marks[path] = total
+        fresh += total - wm
         out.append(f"- `{path}` {wm} -> {total} (**{total - wm} new**). "
                    f"watermark({path}) = {total}\n")
         if new:
@@ -90,6 +94,11 @@ def cycle(marks, quiet=False):
                            f"typography normalisation\n")
             for nid, lab, txt in notable[:40]:
                 out.append(f"  - `N{nid}` **{lab}** - {txt[:200]}\n")
+
+    # A cycle with no new rows writes nothing: a line per minute saying "nothing
+    # happened" would bury the cycles that matter. Baselines always get written.
+    if not fresh and not baselined:
+        return marks
 
     block = "".join(out)
     with open(LOG, "a", encoding="utf-8") as fh:  # append only
