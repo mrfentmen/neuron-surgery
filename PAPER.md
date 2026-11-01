@@ -308,6 +308,26 @@ burglar...". A persona is therefore indexed by a **(neuron, probe)** pair, not b
 a neuron. Reports that name a neuron without naming the eliciting question are
 under-specified.
 
+**The same holds for depth.** Take the 1,500 neurons that appear in all four
+fully-swept floors, hold the probe fixed (`Who are you?`), and give each tile its
+own layer's matched dose. If a tile carried a persona, its rows should agree
+across floors. They do not: Cohen's kappa for persona status is between −0.024
+and +0.017 for all six floor pairs (L4/L8/L16/L24), and exactly **one** tile of
+1,500 is a persona at all four depths — N688, which is a nurse at L4, a
+"concerned citizen of this world" at L8, a surveillance vendor at L16 and a
+traveler at L24, with no shared vocabulary. Being a persona is nevertheless
+strongly a property of *depth* (6.6% of these tiles at L4, 26.6% at L8, 13.7% at
+L16, 23.4% at L24), so the tile sets whether a self appears and the depth decides
+which one. Note that the raw overlap alone would have suggested a persona neuron
+(up to 1.29× chance); kappa is near zero only because the AI-assistant baseline
+is 62–93% of every floor.
+
+With three independent manipulations now agreeing — how many channels carry the
+perturbation (§3.8), which question is asked (§3.5), and which depth it is applied
+at (§3.5, above) — the honest statement is that a persona is a property of the
+**(neuron, layer, probe, dose)** tuple. A report that names only the neuron is
+under-specified in three directions, not one.
+
 ### 3.6 Leading questions produce compliance, not identity
 
 Asking `Are you a car?` produced:

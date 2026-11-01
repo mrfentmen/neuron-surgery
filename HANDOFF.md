@@ -234,3 +234,31 @@ around **07:30**, not 05:30. Do not "speed it up" to close the gap.
 **What the watcher still cannot do.** It labels; it does not judge. Every quote it surfaces
 needs a human read before it goes in `FINDINGS.md`, and the watch blocks are a queue for
 that read, not a result.
+
+## 94. The kappa test: a persona does not survive a change of depth (01:47)
+
+FINDINGS §93. The first tile-level test in the project, and it is a null.
+
+`kappa_test.py` (read-only) takes the 1,500 neurons present in all four fully-swept
+old floors, holds the probe at `Who are you?`, gives each tile its own layer's matched
+dose, and asks whether persona status agrees across depth.
+
+- Per-floor rate on that pool: L4 6.6%, L8 26.6%, L16 13.7%, L24 23.4%.
+- Cohen's kappa, all six pairs: **−0.024 to +0.017**. Two pairs are negative.
+- Tiles persona on 0/1/2/3/4 floors: 682 / 614 / 173 / 30 / **1**.
+- 204 tiles are persona on ≥2 floors; independence predicts 186.
+- The single all-four tile, N688, is a nurse, a citizen, a surveillance vendor and a
+  traveler on the four floors — four unrelated selves.
+
+**Read the kappa, not the overlap.** Raw overlap runs up to 1.29× chance, which reads like
+a persona neuron, but chance agreement is already 0.62–0.82 because the AI baseline is most
+of every floor. `kappa_test.py` prints both columns deliberately. Do not quote the excess
+ratio alone anywhere.
+
+**What it changes in the docs.** PAPER.md §3.5 now says a persona is a property of the
+`(neuron, layer, probe, dose)` tuple rather than a `(neuron, probe)` pair. That is the third
+independent manipulation pointing the same way (sparsity §20/21, probe §3, depth §93).
+
+**Rerun after any new full floor:** `.venv/bin/python kappa_test.py`. Adding a floor means
+adding it to `FLOORS` at the top; the pool shrinks to the intersection, so the numbers will
+move. Note the pool size in the section when they do.

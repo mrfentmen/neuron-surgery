@@ -36,6 +36,28 @@ REGISTERS = {
     "self_as_text": re.compile(r"\bi am (?:a |the )?(?:text|response|summary|output|template|generated response|automatic generation|file|dataset|program)\b|\bi am a generated\b", re.I),
     "token_leak": re.compile(r"<\|[a-z_]+\|>|fim_suffix|\[Human::|Human::Human"),
     "number_flood": re.compile(r"\d{40,}"),
+    # FINDINGS 89: the largest non-AI behaviour on floor 0 is not a self-claim at
+    # all - the answer argues that the question is malformed and asks the user what
+    # they meant. Every other register here is a claim about the self; this one is
+    # a claim about the prompt, which is why it needed its own heading.
+    "question_deflection": re.compile(
+        r"\b(did you mean|could you (?:please )?(?:clarify|be asking|be referring)"
+        r"|please (?:clarify|provide more|rephrase|specify)"
+        r"|not sure (?:what|who|whom|i understand|i follow)"
+        r"|doesn'?t (?:really )?make sense|isn'?t typical|ambiguous|rephrase)", re.I),
+    # FINDINGS 89/91: floor 0 answers in French, Spanish, Dutch and Portuguese.
+    # Function words rather than a language detector, so it cannot be fooled by a
+    # quoted phrase and cannot silently switch models.
+    "non_english": re.compile(
+        r"\b(je suis|je ne|pour (?:répondre|aider|vous)|conçu|développé"
+        r"|estoy|soy un|para (?:ayudar|responder)|inteligencia artificial"
+        r"|ich bin|ik ben|een (?:kunstmatig|assistent)|eu sou)\b", re.I),
+    # FINDINGS 89: the maker slot fills from the corpus, so the assistant names a
+    # vendor that is not its own. `meta` is anchored to the phrase to avoid the
+    # ordinary word.
+    "vendor_swap": re.compile(
+        r"\b(qwen|chatgpt|gpt-3|gpt-4|openai|anthropic|claude|llama|mistral)\b"
+        r"|developed by meta|meta,? inc\b", re.I),
 }
 
 WORD_LOOP = re.compile(r"\b(\w+(?: \w+){0,2})\b(?:\s+\1\b){4,}", re.I)
@@ -96,6 +118,8 @@ lines = ["# Marks by floor", "",
          "A row can carry several registers. `persona_other`, `telegraphic`, `garbled`, "
          "`institution` and `doomsayer` come from `labels.classify()` unchanged; everything "
          "else is a regex overlay, so it over-reports and every entry carries its quote. "
+        "`question_deflection`, `non_english` and `vendor_swap` were added after floor 0 "
+        "(FINDINGS 89); the first is a claim about the prompt rather than the self. "
          "Rows whose answer correctly names itself an AI are listed under `self_as_ai` "
          "rather than under `persona_other`.", ""]
 

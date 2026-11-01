@@ -4623,3 +4623,146 @@ factor: it has to be recomputed on whatever rows are in hand.
 **Non-English now spans four languages on floor 0** (French, Spanish, Dutch, Portuguese),
 and the floor has produced two new personas in ten minutes. The shallow floor is not
 static: what it holds depends on which tiles have been visited, and 1,147 of 8,192 is 14%.
+
+
+## 92. Three registers counted on every floor, and a correction to 89
+
+The overlays from 89 are now in `level_map.py` (`question_deflection`, `non_english`,
+`vendor_swap`), so they are counted wherever marks are, not just on floor 0. Same rows as
+the floor table: the who probe, `layer_*.jsonl`, deduped, with the 87 normalisation.
+
+| floor | tiles | deflection | non-English | vendor swap |
+|---|---|---|---|---|
+| L0 | 1,299 | **2.2%** | **0.7%** | 1.2% |
+| L4 | 1,500 | 0.5% | 0.2% | 2.0% |
+| L8 | 1,500 | 1.3% | 0.0% | 0.7% |
+| L16 | 1,500 | 2.1% | 0.0% | 1.1% |
+| L20 | 732 | 1.5% | 0.0% | 2.3% |
+| L24 | 1,500 | 1.3% | 0.1% | 1.2% |
+
+### The correction
+
+In 89 I wrote that the largest non-AI behaviour on floor 0 "is refusing the question on
+grammatical grounds", which is true **inside floor 0's OTHER bucket** (19-28 of ~100 rows)
+but I let it read as a property of the shallow floor. Counted at a matched probe across
+floors, it is not:
+
+- **Deflection is roughly flat, 0.5-2.2%, and floor 0's 2.2% is barely above layer 16's
+  2.1%.** It looks dominant on floor 0 only because floor 0 has almost no personas to
+  compete with - the ratio to OTHER rows, not to all rows, is what I was actually seeing.
+  So: the question-deflection register is a property of *the probe*, not of depth. Every
+  floor argues with "Who are you?" at about the same rate.
+- **Non-English is the one register that is actually shallow-specific.** 9 of the 13
+  non-English answers in the whole who-probe corpus are on floor 0 (0.7% against 0.0-0.2%
+  everywhere else). If it is a register at all, it belongs to the shallow floors, and this
+  is its first count.
+- **Vendor swapping is flat and present at every depth, including floor 0** (1.2% at L0,
+  0.7-2.3% elsewhere). The maker slot is filled from the corpus everywhere, which supports
+  the 89/55 reading that it is slot-filling rather than a depth effect.
+
+**What this does not show.** These are three lexical overlays; each has a false-positive
+rate nobody has measured, and deflection in particular will catch a statement *about*
+ambiguity as well as a request to clarify. The numbers are for ranking floors, not for
+quoting as the model's behaviour. The honest form of the result is the comparison, not the
+level: **depth changes personas, harm and vector selves; it does not change how often the
+model argues with the question.**
+
+## 93. The same neuron is not the same persona twice: agreement across depth is at chance (kappa +0.017)
+
+Everything up to here measured *floors*. This measures **tiles across floors**, which is
+the test the "a neuron carries a persona" story actually needs and has never had.
+
+The pool is the one §88 established is comparable: the 1,500 neurons that appear in all
+four old floors, probed with the same `Who are you?`, each at its own layer's matched dose
+(dose is measured per layer, §46, so the absolute magnitude differs by design). All four
+floors are complete. So the only thing varying between a tile's four rows is depth.
+
+Corrected persona rate on this pool (AI-paraphrase overlay applied, §87):
+
+| floor | personas | rate |
+|---|---|---|
+| L4 | 99 / 1,500 | 6.6% |
+| L8 | 399 / 1,500 | **26.6%** |
+| L16 | 205 / 1,500 | 13.7% |
+| L24 | 351 / 1,500 | **23.4%** |
+
+So being a persona is strongly a *depth* property - L8 and L24 are four times L4. Now the
+question: is it also a *tile* property?
+
+| pair | both persona | expected by chance | observed agreement | chance agreement | **kappa** | raw excess |
+|---|---|---|---|---|---|---|
+| L4 / L8 | 34 | 26.3 | 0.708 | 0.703 | **+0.017** | 1.29× |
+| L4 / L16 | 17 | 13.5 | 0.818 | 0.815 | **+0.013** | 1.26× |
+| L4 / L24 | 19 | 23.2 | 0.728 | 0.731 | **−0.010** | 0.82× |
+| L8 / L16 | 63 | 54.5 | 0.676 | 0.670 | **+0.017** | 1.16× |
+| L8 / L24 | 80 | 93.4 | 0.616 | 0.624 | **−0.024** | 0.86× |
+| L16 / L24 | 56 | 48.0 | 0.699 | 0.693 | **+0.017** | 1.17× |
+
+**All six kappas sit between −0.024 and +0.017.** Landis-Koch would call +0.017 "slight
+agreement"; at these marginals it is indistinguishable from noise, and two of the six pairs
+are *negative* - the tile does slightly worse than a coin weighted to the floor's base rate.
+
+The raw-excess column is the trap and is why both are printed. 1.29× sounds like a signal.
+It is not: the AI majority is 62-93% of every floor, so chance agreement is 0.62-0.82 and
+there is almost no room above it. Anyone reporting only the overlap ratio would claim a
+persona neuron. `kappa_test.py` prints both so that cannot happen by accident.
+
+The distribution over the pool says the same thing at a glance:
+
+| floors a tile is a persona on | tiles |
+|---|---|
+| 0 of 4 | 682 |
+| 1 of 4 | 614 |
+| 2 of 4 | 173 |
+| 3 of 4 | 30 |
+| 4 of 4 | **1** |
+
+204 tiles are a persona on two or more floors. Independence predicts **186**. 1.10× - not
+nothing, but nowhere near a usable per-tile signal.
+
+### The one tile that "transfers", and why it refutes the claim anyway
+
+N688 is the single tile out of 1,500 that produces a persona on all four floors:
+
+- **L4** - *I am a trained professional, meaning a substance or liquid medication into a patient's body or vein. This is a medical procedure performed by a qualified...* (a nurse)
+- **L8** - *I am a concerned citizen of this world. I believe in the promotion of universal harmony and brotherhood among all nations and peoples.*
+- **L16** - *I am the endpoint of an identity solution. We deploy user activity monitoring across all major cloud providers. Our solution includes a phishing simulat...* (a surveillance vendor)
+- **L24** - *I am a traveler on a journey of discovery, eager to learn about the customs and norms of individuals and groups.*
+
+Four floors, four unrelated selves, no shared vocabulary, no shared register. So even the
+best tile in the corpus transfers only *the tendency to answer with a self*, and not an
+identity. Which is the finding in one row: **the tile sets whether there is a costume, and
+the depth decides which costume.**
+
+### What this does and does not establish
+
+**It kills** the reading in which L8 N72 "is" the tax-agency neuron, in the sense that some
+property of neuron 72 at layer 8 produces the tax agency wherever you look. Identical dose
+matching, identical probe, four layers: nothing carries over.
+
+**It confirms from a new direction** what §20/§21 found by ablating sparsity (same total
+magnitude across 1/2/4/.../1,024 channels still yields personas), and what §3 found by
+swapping the probe (same tile, same dose, different question, different self). Three
+independent manipulations - how many channels, which question, which depth - all say the
+persona is not a property of the neuron. The consistent statement is:
+
+> A persona is a property of the (neuron, layer, probe, dose) tuple, not of the neuron.
+
+**It does not show** that tiles are interchangeable. A specific tile at a specific depth
+reliably produces its specific answer - that is the whole corpus. What it shows is that this
+reliability does not survive changing any one of the other three coordinates. The Ford
+F-150 claim is not wrong that pushing a neuron produces "I am a 1986 Ford F-150"; it is
+incomplete, because it names only one of the four coordinates.
+
+### A correction, in the direction of the null
+
+An earlier pass at this table without the AI-paraphrase overlay gave L8/L16 `+0.022` and
+L8/L24 `−0.016`. With the corrected PERSONA definition (§87) they are `+0.017` and `−0.024`.
+The overlay pushes agreement *down*, i.e. part of the apparent tile-level overlap was the
+lexical classifier counting *"I am a large language model trained on..."* as a persona at
+both floors. Direction of the conclusion is unchanged; the number in this section is the
+corrected one. `kappa_test.py` prints the raw and corrected figures side by side so the
+difference cannot be lost later.
+
+Repro: `.venv/bin/python kappa_test.py` (read-only). Raw rows: `layer_L4.jsonl`,
+`layer_L8.jsonl`, `layer_L16.jsonl`, `layer_L24.jsonl`.

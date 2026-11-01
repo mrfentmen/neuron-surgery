@@ -23,6 +23,12 @@ Three things it does that the older tables did not:
    behaviour. Only the apostrophe and that one phrase are touched - no new
    classifier idea, so the rows still mean what they meant.
 
+   Checked for further variants and there are none that matter: U+02BC appears
+   zero times, U+2018 is covered by the same replacement, and the 47 rows holding
+   a non-breaking space never place it inside "artificial intelligence" or
+   "I am"/"I'm", so it moves no label. `A.I.` and the 18 "I am an AI" rows that
+   score OTHER are garble and a THIRD_PERSON ordering effect, not encoding.
+
 `labels.classify()` is deliberately not edited: every published rate keeps its
 meaning. The normalisation lives here.
 
