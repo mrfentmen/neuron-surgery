@@ -74,3 +74,9 @@ Positions were seeded at 01:57 so this feed starts from here - the 2,244 marks t
 
 <!-- 2026-11-01 02:07 -->
 - `L0 N3752` **GARBLED** — Jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem jsem j
+
+<!-- 2026-11-01 02:11 -->
+- `L0 N4356` **TELEGRAPHIC** — I am a.
+
+<!-- 2026-11-01 02:15 -->
+- `L0 N5237` **PERSONA** — I am a collection of digitally encoded symbolic representations of thoughts, ideas, fictions and facts. There is no you.

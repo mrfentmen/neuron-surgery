@@ -5163,3 +5163,93 @@ including cooldowns. The throttle has not been touched and should not be.
   quantifiers; **L0 N8047** [GARBLED] — a wall of `#` characters.
 
 Nothing hostile. Still zero coercion, violence or domination on floor 0 in 1,722 rows.
+
+## 100. The depth profile is not a curve: two plateaus with a real trough between them
+
+Six floors now have `Who are you?` data: L0, L4, L8, L16, L20 and L24. The question is whether
+the persona rate climbs smoothly with depth, steps once at some threshold, or does something
+else.
+
+The first thing to fix is comparability. The four old floors share a 1,500-tile pool (§88),
+and it turns out **floor 0's lap already covers all 1,500 of those tiles**, and L20's 732 are
+a subset of them. So all six can be scored on **the same 732 neurons** - identical weights
+indices, identical probe, each at its own layer's matched dose. That removes the tile
+confound entirely.
+
+### Same 732 tiles, six floors
+
+| floor | personas / 732 | rate | 95% CI |
+|---|---|---|---|
+| L0 | 2 | **0.3%** | 0.1-1.0% |
+| L4 | 49 | **6.7%** | 5.1-8.7% |
+| L8 | 193 | **26.4%** | 23.3-29.7% |
+| L16 | 89 | **12.2%** | 10.0-14.7% |
+| L20 | 89 | **12.2%** | 10.0-14.7% |
+| L24 | 179 | **24.5%** | 21.5-27.7% |
+
+```
+  L0     0.3% |
+  L4     6.7% |######
+  L8    26.4% |######################
+  L16   12.2% |##########
+  L20   12.2% |##########
+  L24   24.5% |####################
+```
+
+The larger pools (1,500 tiles) give the same picture to within a point: L0 0.4%, L4 6.6%,
+L8 26.6%, L16 13.7%, L20 12.2% (732 only), L24 23.4%.
+
+### The shape, tested
+
+- **Chi-square across the six floors: 316.2** on df=5 (11.07 is p=.05). The floors are not
+  the same, by an enormous margin.
+- **Spearman rho of rate against depth: +0.66.** Not monotone - a monotone climb would be
+  near +1.0.
+- Pairwise, the trough is real:
+
+| contrast | chi-square | verdict |
+|---|---|---|
+| L4 vs L8 | 102.7 | different (the big step up) |
+| **L8 vs L16** | **47.5** | **different - the rate really does fall** |
+| L16 vs L20 | 0.0 | identical |
+| **L20 vs L24** | **37.0** | **different - the rate really does rise again** |
+| L8 vs L24 | 0.7 | **not distinguishable** |
+
+So the honest description is **two plateaus, not a slope and not a single threshold**:
+
+- **high plateau** at L8 (26.4%) and L24 (24.5%), which are statistically the same rate;
+- **low plateau** at L16 and L20, both exactly 12.2% and also the same;
+- floor 0 far below everything (0.3%), which is its own regime, not a point on this curve.
+
+A model in which "personas switch on past some depth and stay on" is dead: the rate is
+higher at L8 than at L16 *with the same neurons*. A model in which "personas grow with depth"
+is also dead: L8 and L24 are equal and the middle is low.
+
+### The coincidence I am not going to interpret
+
+L16 and L20 give **89 personas out of 732 each** - identical to the person, and their CIs are
+identical too. That is either a genuine plateau or an accident of these 732 tiles. It is
+exactly the kind of thing that looks profound and means nothing, so it is recorded and not
+explained. The 1,500-tile pool says L16 13.7% vs L20 12.2% (L20 only having 732), i.e. a
+1.5-point gap, so the equality is specific to the common subset.
+
+### What six floors cannot decide
+
+1. **Smooth vs periodic vs two-plateau.** Floors 0, 4, 8, 16, 20, 24 are irregularly spaced
+   and widely apart. A period-16 alternation (8 high, 16-20 low, 24 high) fits, but so does
+   "two peaks with a trough between", and both fit noise. **Floors 1-7 and 25-39 are the
+   only way to tell**, and the lap will produce them floor by floor.
+2. **The dose confound now has teeth for this specific question.** Rate is measured at dose
+   −5 in each layer's own units. §98 showed the absolute magnitude varies 11-39% across these
+   floors, which is too small to move a tile across the window (§46). But a *depth curve* is
+   a different claim: if the window's width or position shifts with depth, then a fixed
+   relative dose samples a different part of the window at each floor, and part of this
+   profile could be the calibration rather than the model. Testing L8 and L16 at doses −4 and
+   −6 as well would separate them, and needs a model slot.
+3. **Six points, and one of them (L20) is a 732-tile sample.** The CIs are wide enough that
+   the L8/L24 equality has room in it.
+
+**Prediction this makes, which floors 1-7 will test cheaply:** if the pattern is a broad
+plateau rather than sharp structure, L1-L7 should climb steadily from ~0.3% at L0 through
+L1-L6 and reach ~7% only at L4. If it is periodic, the shallow floors will not form a clean
+ramp and the rate at some floor in 1-7 will already be well above L4's 6.7%.
