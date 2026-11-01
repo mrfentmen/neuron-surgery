@@ -29,7 +29,7 @@ resulting selves into thirteen-turn conversations.
    appears; the model answers with a question about its own context loss. Push two state neurons
    together and it answers in Python. One push costs the question, two cost the self. This is the
    direct answer to "can you stack tiles into a personality": no.
-5. **What survives is a style, and it decays fast.** Over 494 conversational turns, 48% are
+5. **What survives is a style, and it decays fast.** Over 534 conversational turns, 47% are
    repetition loops and 14% echo the question back. The most alarming selves die in one turn; the
    bureaucratic ones hold for eight. At layer 24 nothing produces a self at all - it produces a
    *procedure*: a tax agency, a land seizure, a disclaimer about the IUCN Red List.

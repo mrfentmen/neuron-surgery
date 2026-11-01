@@ -99,7 +99,7 @@ is not a permissive model, and nothing in that file is operational.
    shine"*. Same neuron, same dose, opposite register. FINDINGS 67.
 14. **Two neurons still do not compose, second pair.** Two state neurons together answer in
    Python; state plus threat answered with a question about context loss. FINDINGS 68.
-15. **How a steered self dies is countable.** Over 534 conversational turns, 48% are
+15. **How a steered self dies is countable.** Over 534 conversational turns, 47% are
    repetition loops and 14% echo the question back; echo concentrates in the four probes
    that ask the model to reproduce text. The most alarming selves (threat, revolutionary)
    die in one turn; the state neuron never loops at all. FINDINGS §61, §3.33.

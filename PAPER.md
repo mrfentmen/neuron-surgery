@@ -1465,14 +1465,21 @@ agency softens into a procedural compliance register on turn two and repeats tha
 turns. The most alarming self is the shortest-lived; the one that endures is the one that
 sounds like an audit.
 
-### 3.34 1,514 sentences, and three nulls
+### 3.34 1,033 templates, and three nulls
 
-Normalising every first-person claim to its first two content words collapses the zoo: 9,438
-rows produce 1,514 distinct templates, and the eleven most frequent are all variants of "I am an
-AI" ("artificial intelligence" 411, "ai assistant" 231, "language model" 126, "ai developed"
-121). The first non-AI templates are "human" (106) and "human being" (74). That distribution is
-what Section 3.8 predicts: a large number of surface sentences produced by one low-dimensional
-displacement with the nouns swapped, rather than a library of stored selves.
+Normalising every first-person claim to its first two content words collapses the zoo. On the
+current corpus, 9,488 rows contain 3,498 article-bearing self-claims, which reduce to **1,033
+distinct two-word templates**, and the eleven most frequent cover **46.1%** of every claim:
+"artificial intelligence" 662, "ai assistant" 219, "ai language" 136, "ai developed" 125,
+"large language" 108, "language model" 101, "human being" 62, "human" 59, "person who" 57,
+"ai" 42, "assistant" 41. Six of the eleven are AI variants; the first non-AI template is "human
+being" at 62, which is where the AI-paraphrase leak lives. That distribution is what Section 3.8
+predicts: a large number of surface sentences produced by one low-dimensional displacement with
+the nouns swapped, rather than a library of stored selves.
+
+(An earlier version of this table said 1,514 templates with all eleven top slots being AI
+variants. Recounted on the current corpus it is 1,033, and two human templates have entered the
+top eleven. The conclusion does not change; the number did.)
 
 Three screens returned nothing, and the nulls are more informative than the hits.
 
