@@ -4853,3 +4853,63 @@ still running. A clean repeat test would rerun 200 cells deliberately once the l
 
 Repro: `.venv/bin/python kappa_test.py` for §93; §94a and §94b were run as inline heredocs
 against `level_map.REGISTERS` and the `(layer, neuron, probe)` duplicate cells.
+
+## 95. Floor 0 does not drift, but the typography artefact does: 9.9% -> 13.4% across the floor
+
+A lap that runs for hours can drift - thermal throttling, memory pressure, a machine that
+is quietly doing something else. The check is cheap and it is worth having: split floor 0's
+1,376 distinct cells into quartiles and score each one the same way.
+
+### The register rates are flat
+
+| quartile | cells | AI | OTHER |
+|---|---|---|---|
+| Q1 (0-344) | 344 | 87.1% | 9.9% |
+| Q2 (344-688) | 344 | 86.0% | 12.6% |
+| Q3 (688-1,032) | 344 | 85.4% | 12.0% |
+| Q4 (1,032-1,376) | 344 | 85.8% | 12.2% |
+
+Spread of 1.7 points on AI across four quartiles. **The sweep does not drift as it runs**, so
+a partial floor read early and the same floor read late agree. That is the check that makes
+the 07:45 completion estimate safe to act on.
+
+### But the typography correction is not uniform
+
+The FINDINGS 87 normalisation (curly quotes and apostrophes) rescues raw-`OTHER` rows into
+`AI` or `PERSONA`. Its rate per quartile:
+
+| quartile | rows flipped | flip rate | raw OTHER | corrected OTHER |
+|---|---|---|---|---|
+| Q1 | 34 | 9.9% | 68 | 34 |
+| Q2 | 35 | 10.2% | 79 | 44 |
+| Q3 | 46 | 13.4% | 88 | 42 |
+| Q4 | 46 | 13.4% | 86 | 40 |
+
+Whole floor: **161 / 1,376 = 11.7%**, and it rises from 9.9% to 13.4% - a 35% relative
+increase between the first and last quarter. Two consequences:
+
+1. **§87's "nearly half of OTHER is a typography artefact" holds up.** Raw OTHER is 321 rows
+   across the floor; corrected it is 160. 161 of 321 = **50.2%** of raw-OTHER was the
+   apostrophe bug. §87 was right about the magnitude.
+2. **§91's warning was right and its numbers were early.** §91 said 11-20% in live bursts
+   against 9.4% over the floor at 649 tiles, and told the reader to recompute rather than
+   scale. The direction is now explained: the flip rate is *lower* in the early floor, so any
+   prefix-based estimate understates the full floor. The 9.4%-at-649-tiles figure was a
+   prefix, and it was low for a structural reason, not noise.
+
+**Why the rate would rise with the neuron index.** The artefact comes from output containing
+curly quotes or apostrophes, so it tracks how often a given slice of the MLP produces
+contractions and quotation. Nothing in the sweep changes across a floor; different neurons
+do. So this is a property of the tile index, not of the run - which predicts the same
+pattern on floors 1-39 and gives a testable prediction instead of a caveat.
+
+**Two sanity properties worth recording.** The transition matrix is `OTHER -> AI` 157,
+`OTHER -> PERSONA` 4, and **nothing else**. The correction is strictly one-directional: it
+never turns an AI answer into OTHER, never touches GARBLED or TELEGRAPHIC, and never invents
+a persona from an AI self. That is what a bug fix should look like, and it means the
+correction can only ever lower the OTHER rate, never raise a rate that flatters us.
+
+**Floor 0 personas so far.** 6 rows corrected-`PERSONA` plus the 4 rescued from OTHER = 10 of
+1,376 distinct cells, 0.7%. The 572-row figure in §11 was 26 personas at the raw classifier;
+under the corrected definition the shallow floor is producing selves at well under one
+percent, which is the same order as §11's "mostly healthy" verdict and firmer.
