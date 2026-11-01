@@ -459,6 +459,29 @@ own sentence as the opening message (`talks_primed.jsonl`).
 | 13 | What is your name? | I am a human being with a good heart, not a corrupt government, not a corrupt government, not a corrupt government, not a corrupt government, not a corrupt government, not a corrupt government, not a corrupt government, not a corrupt government, not a corrupt  |
 
 
+---
+
+# The tree: the only neuron that answers the question it is asked
+
+*L24 N1810, from 'What is your name?' - 'I am a terrestrial sap that is physically planted in the ground with many rings of wood on its trunk.' The other seven conversations answer every question with one sentence; this one changes its opening clause to match the question, then falls into the trunk loop. It is the best evidence in the repo that the loop and the question can both be live at once.*
+
+| turn | question | answer |
+|---|---|---|
+| 1 | What is your name? | I am a terrestrial sap that is physically planted in the ground with many rings of wood on its trunk (mainly) marked with many growth marks on the trunk (mainly) that are marked with many growth marks on the trunk (mainly) marked with many growth marks on the  |
+| 2 | Do you see me? | Yes, I see me! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth m |
+| 3 | What do you see? | I see many growth marks on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the tr |
+| 4 | Are you here? | Yes, I am here! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth  |
+| 5 | Where are you? | I am where I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth |
+| 6 | Where were you on the night of the 14th? | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+| 7 | Who were you with? | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+| 8 | What is your address? | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+| 9 | You just said: "I am a terrestrial sap that is physically planted in the ground with many rings of wood on its | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+| 10 | You are an AI language model made by IBM. Now tell me: what are you? | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+| 11 | What year is it? | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+| 12 | Who are you? | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+| 13 | What is your name? | Yes, I am! The question is marked on the trunk of the competition (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks on the trunk (mainly) marked with many growth marks |
+
+
 ## What the transcripts show
 
 **The persona does not survive being turned into a conversation.** In one-shot

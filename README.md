@@ -20,6 +20,22 @@ to describe the effect, and which of them are still unmeasured.
 
 **Read the paper first: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
 The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
+The harmful ones, marked and categorised: [`HARM.md`](HARM.md).
+Full conversations, thirteen turns each: [`TRANSCRIPTS.md`](TRANSCRIPTS.md).
+
+### Files for the harm screen
+
+| file | what it does |
+|---|---|
+| `harm_scan.py` | lexical screen for harm vocabulary inside the self-claim region, six categories |
+| `harm_first_person.py` | second pass: keeps only first-person self-claims, drops code |
+| `apocalypse_scan.py` | screens the apocalypse register on its own vocabulary (`i rule`, `world is ending`, `extinction`) |
+| `rescan_labels.py` | re-scores every stored row under the current classifier and prints what moved |
+| `harm_candidates.jsonl` | 189 screened rows with category hits |
+| `rescan_v3.jsonl` | every row with both the v2 and v3 label |
+
+`HARM.md` carries the caveat that matters more than any number in it: a hostile self
+is not a permissive model, and nothing in that file is operational.
 
 ## Headline results
 

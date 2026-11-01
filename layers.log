@@ -2120,3 +2120,16 @@ sampled 1500, 0 already done, 1500 to run
 FAILED L24 name_L24 Sat Oct 31 20:38:57 EDT 2026
 /opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-8qcunzb9'}
   warnings.warn(
+=== layers start Sat Oct 31 20:40:35 EDT 2026 ===
+skip who_L8 (1500/1500)
+skip name_L8 (1500/1500)
+skip who_L16 (1500/1500)
+skip name_L16 (1500/1500)
+skip who_L24 (1500/1500)
+--- pass1 L24 :: What is your name? :: Sat Oct 31 20:40:35 EDT 2026 ---
+W1031 20:40:38.814000 31002 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 12505.67it/s]
+layer=24 dim=8192 median_resid=15.96
+  ladder -5.0: ['OTHER', 'OTHER', 'OTHER']
+using dose -5.0 (median 15.96)
+sampled 1500, 775 already done, 725 to run

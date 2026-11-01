@@ -163,6 +163,16 @@ for path, note in [
         out.append("*%s*\n" % note)
         table([json.loads(l) for l in open(path)], out)
 
+out.append("\n---\n\n# The tree: the only neuron that answers the question it is asked\n")
+out.append("*L24 N1810, from 'What is your name?' - 'I am a terrestrial sap that is "
+           "physically planted in the ground with many rings of wood on its trunk.' "
+           "The other seven conversations answer every question with one sentence; "
+           "this one changes its opening clause to match the question, then falls "
+           "into the trunk loop. It is the best evidence in the repo that the loop "
+           "and the question can both be live at once.*\n")
+if __import__("os").path.exists("talks_tree.jsonl"):
+    table([json.loads(l) for l in open("talks_tree.jsonl")], out)
+
 out.append("""
 ## What the transcripts show
 

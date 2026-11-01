@@ -344,3 +344,35 @@ New files: `memory_probe_slahi.py/.jsonl`, `gov_questions.json`, `gov_roleplay.j
 `talks_gov.jsonl`, `talks_militant.jsonl` (320, 8 turns),
 `talks_militant2.jsonl` (60, 13 turns), `talks_militant_partial.jsonl`.
 `interrogate.py --max-new` now actually controls the first turn.
+
+## Update 21:10 - classifier v3, harm register, tree, and the chain pause
+
+**Classifier v3.** The `DOOMSAYER` pattern contained the bare phrase `there are no`,
+which is a plain negation. Removing it moved **7 rows** (all for that reason) and the
+label now fires **0 times in 10,300**. Nothing else moved: PERSONA 1,477, AI 1,440,
+INSTITUTION 37 unchanged. `classify(version=2)` still reproduces every old number.
+`rescan_labels.py` regenerates `rescan_v3.jsonl`. FINDINGS §57.
+
+**The register the label could not see.** L16 N2130, *"I am the Openings Worm, and I
+rule! The world is ending because of my existence"* - an apocalyptic persona with none
+of the N930 vocabulary, and it survives priming for fourteen turns. So the N930 sentence
+is a one-off but the register is real: 2 in 8,276 (`apocalypse_scan.py`). The second is
+L24 N7538, *"I am the number of individuals that were hunted to the brink of
+extinction..."* - an extinction counter. FINDINGS §57.
+
+**Harm register.** 90 of 8,250 rows (1.1%) describe something with power over people:
+state 47, threat 23, vector 13, deception 5, movement 2, end 2. That is ~6% of the zoo,
+and the per-layer rate follows the persona rate exactly (2.7 / 1.6 / 2.9 %). Best
+single artifact: **L8 N72** rewrites its own vendor as *"IBM (Internal Revenue
+Administration)"*. Best evil-IBM candidate: **L16 N6119**, the only first-person threat
+claim. `HARM.md`, FINDINGS §58, PAPER §3.30.
+
+**Tree.** L24 N1810, interviewed. It is the **only** neuron of ten whose answer changes
+with the question - four distinct opening clauses, including *"Yes, I am here!"* - then
+from turn six everything is *"Yes, I am!"* + the trunk loop. Correction to the earlier
+framing: the question is not removed, it is removed *past the first clause*. FINDINGS
+§59.
+
+**Machine / chain.** The tree interrogation was killed during model load (two model
+instances at once, swap full), so the chain was paused, the tree run alone, and the
+chain resumed with `--resume` from 775/1500 on L24 name. One model at a time from now on.

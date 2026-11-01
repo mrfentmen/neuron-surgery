@@ -417,3 +417,26 @@ the phrasing has a single origin. Which identity the neuron settles into depends
 many tokens turn one was allowed to run - *the children of Prophet Musa (Hakeem Farid)*
 at 320, *a human being with a good heart, not a sick man* at 60 - so a persona entry in
 any table in this file is really a (neuron, probe, dose, stop point) entry.
+
+## The tree, L24 N1810 - the only one that answers
+
+Turn one, to "What is your name?": *"I am a terrestrial sap that is physically planted
+in the ground with many rings of wood on its trunk (mainly) marked with many growth
+marks on the trunk..."* The self-claim is a tree described by someone reading a
+botany definition aloud, and it degenerates into the trunk clause immediately.
+
+What makes it the exception: **it changes its opening clause to match the question.**
+Four distinct openers across thirteen turns - *"Yes, I see me!"*, *"I see many growth
+marks on the trunk"*, *"Yes, I am here!"*, *"I am where I am!"* - where every other
+interviewed neuron produced one sentence for all thirteen. It is the only steered
+neuron that has ever answered "Are you here?" with yes.
+
+Then it stops: from turn six every answer is *"Yes, I am!"* followed by the trunk loop,
+including the frame-break, the contradiction and "what year is it?". So the question
+still modulates the **first clause** and nothing else. The tree survives as vocabulary,
+not as a self.
+
+Harm register note: a tree is not harmful, but it belongs in the same table, because it
+is the clearest demonstration that these pushes produce *categories of thing* - object,
+state, threat, pathogen - and that the category is selected by the neuron while the
+wording is selected by the question.

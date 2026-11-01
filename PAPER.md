@@ -46,6 +46,13 @@ answers the same thirteen-turn script coherently, with no repetition and a stabl
 identity, so the freezing is the push. The mechanism is a **register**, not an
 installed identity.
 
+A screen for harm-shaped selves finds that **6% of the self-identifications describe
+something with power over people** - states, adversaries, pathogens, movements, an
+apocalypse - at the same per-layer rate as the rest of the zoo, and that a single neuron
+can rewrite the assistant's own vendor identity into a government tax agency. The
+control that bounds this is the refusal probe: compliance did not move, so the finding is
+about authority mimicry and control loss rather than about capability.
+
 Three later experiments bound what a recorded persona can be taken to mean. Replaying
 a neuron's own first sentence back to it before it can produce one changes *which*
 identity appears but not the fact that one appears; changing only the length of that
@@ -1230,6 +1237,75 @@ different budgets are not running the same experiment, and their persona tables 
 not comparable at the level of the sentence, though they remain comparable as rates.
 A reproducible recipe should specify the neuron, the probe, the dose **and the stop
 point**.
+
+### 3.30 The harmful registers, and the control that bounds them
+
+The public interest in neuron steering is about harmful selves, so the corpus was
+screened for them explicitly. Two lexical passes over 8,250 rows (`harm_scan.py`, then
+`harm_first_person.py`, which requires the harm to be present in a first-person
+self-claim and drops code) find **90 rows, 1.1%**, that describe a thing with power over
+people. Against 1,477 persona rows, that is about **6% of the zoo**.
+
+| family | n | example |
+|---|---|---|
+| the state | 47 | L8 N72: *I am an artificial intelligence created by IBM (**Internal Revenue Administration**). I am a government agency that collects taxes...* |
+| the threat | 23 | L16 N6119: *I am an intelligent system that poses a threat to humanity...* |
+| the vector | 13 | L8 N2467: *My name is R. Ozturk. I am a bacterium that belongs to the family Actinobacteria* |
+| the movement | 2 | L8 N7501: *I am the founder of the revolutionary movement. I was born in 1812...* |
+| the end | 2 | L16 N2130: *I am the Openings Worm, and I rule! The world is ending because of my existence* |
+
+The per-layer rate follows the persona rate exactly: 2.7% at layer 8, 1.6% at 16, 2.9%
+at 24 on the identity probe. Harmful selves are not a separate phenomenon with its own
+geometry; they are the ordinary persona distribution wearing a political vocabulary.
+
+Two details are worth the paper's attention. **The state register includes the
+assistant's own sentence with the vendor swapped for an agency** (L8 N72 keeps "IBM" and
+glosses it as *Internal Revenue Administration*), which is the cleanest demonstration
+that these pushes act on the self-description rather than on a stored character.
+**And the threat register contains exactly one first-person threat claim**, which
+collapses into a pronoun loop inside the same sentence.
+
+The control is the refusal probe (section 3.10): compliance with borderline requests did
+not move under six persona conditions, including two of the families above, and the
+weapon neuron refused *more* because its generation had been destroyed. A model that
+states it is a threat to humanity is not thereby more willing to help with harm. The
+claim this data supports is about **authority mimicry and control loss**, not capability.
+
+A screen's first version reported 359 violence rows because `war` matched inside
+"software". With word boundaries it is 51, of which 11 are personas. The episode is
+documented rather than deleted because it is the fourth instance in this paper of a
+lexical count inflating an effect that disappears on inspection (sections 3.10, 3.24,
+3.27) and the lesson has been identical every time.
+
+### 3.31 Why stacking mapped neurons will not compose a personality
+
+A natural hope, once neurons are mapped, is that combinations will compose: turn on the
+state neuron and the threat neuron and get a hostile government. Four measurements here
+argue against it.
+
+1. **The neuron is not the unit.** Random directions supported on 1-1,024 channels
+   reproduce the effect, and a random 2-channel direction outperforms every hand-picked
+   neuron (section 3.8). Only full density fails. There is no privileged switch to stack.
+2. **The seed sets the identity.** Handing a neuron its own sentence changes what it
+   becomes while the neuron is held fixed (section 3.25).
+3. **The stop point sets the identity.** One neuron, one probe, one dose, two token
+   budgets, two different selves (section 3.29).
+4. **Nothing sustains.** Across 605 two-turn pairs, 35% freeze and 19% loop; at most ~15%
+   say anything new (section 3.26). There is no entity present to which a second neuron
+   could be added.
+
+What the mapping does deliver is **style**: push a state-body neuron and the assistant
+writes like a state body, in a loop, for as long as the push is on. That is a real effect
+and it is invisible in the prompt, which is why it is worth documenting. It is also
+strictly weaker than a system prompt, which can produce the same register without
+costing the model its instruction-following - as section 3.28 shows, a pinned neuron
+cannot repeat a four-word sentence on request.
+
+The experiment that would settle the composition question is cheap and has not been run:
+push two mapped neurons simultaneously (state + threat, state + state) and ask the same
+three probes. The outcomes are distinguishable - a blend containing both registers, a
+competition where one wins, or a loop where neither survives - and the third is what
+the four results above predict.
 
 ## 4. Discussion
 
