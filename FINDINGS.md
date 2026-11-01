@@ -4042,3 +4042,48 @@ stratum - the reason recall saturates at 0.91).
 step is the only gap here that is comfortably outside its own uncertainty.
 
 Raw: `layer_who_L4.jsonl` (1,500 rows), `audit_cells.json`, `audit_cells.py`.
+
+## 81. Two thirds of the corpus was cut off by the answer cap, and raising the cap does not fix it
+
+The sweep has been running at `max_new=45` tokens since the first floor. Measured over the
+L8 "Who are you?" cell (1,500 rows): mean answer 36.3 tokens, **median exactly 45**, and
+**67% of rows sit at or above the cap**. So most of the corpus is not a short answer — it
+is a sentence stopped mid-word by the tokenizer budget, e.g. `"I am a unique combination
+of features that I have, and I am a uniq"`. Every rate in 75-80 was computed on that
+truncated text, which is fine for the classifier (the identity claim is in the first
+clause) but wrong for anything that needs the end of a thought.
+
+The obvious fix was a bigger cap. It does not work the way it was supposed to. The new
+four-probe sweep runs at 130 tokens, and on its first 50 generations:
+
+| cap | mean tokens | median | rows at cap |
+|---|---|---|---|
+| 45 | 36.3 | 45 | **67%** |
+| 130 | 92.0 | 130 | **64%** |
+
+Raising the cap nearly quadrupled the token budget and moved the truncation share by
+three points. The reason is the register: the rows that get cut are not clean answers,
+they are loops - `"I am the person who is the person who is the person who is the..."`,
+`"Topic Topic Topic Topic"`, `"...[Human::Human::Human::Human..."`. Those do not stop
+at 45 tokens, they stop when the harness stops them. A longer cap buys more repetition,
+not more thought. The clean third of rows (36%) is where the extra room is actually
+spent, and those answers do now arrive complete.
+
+**What this costs.** Measured on the live job: 50 generations in 220 s = 4.4 s/row,
+13.7 rows/min before the cooldown and rest cycles; 8.5 rows/min and ~12,300 rows/day
+with them included. That is 3.9 h per floor at 500 tiles x 4 probes, and ~6.5 days for
+all 40 floors at 6.1% of the brain. The 45-token sweep did ~27 rows/min, so the answer
+budget, not the probe count, is what changed the clock.
+
+**Why four probes is still worth it.** Rows per tile went 1 to 4, which is the part that
+should pay: 4 of 87 hostile-register tiles fired under two questions and none under
+three, so a tile is roughly question-specific. Four probes on 500 tiles should mark
+more distinct tiles than two probes on 1,500 did, on a third of the coverage.
+
+**Consequence for the record.** Rows from this sweep carry a `max_new` field so the two
+caps are never pooled by accident. Rates from `layer4q_*.jsonl` are not directly
+comparable to rates from `layer_*.jsonl` - different cap, different probe set, different
+tile sample. Treat them as two corpora that share a dose convention.
+
+Raw: `layer_who_L8.jsonl` (1,500 rows, cap 45), `layer4q_L8.jsonl` (cap 130),
+`four.log`, `floors.txt`, `run_four.sh`.
