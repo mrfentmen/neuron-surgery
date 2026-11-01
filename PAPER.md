@@ -952,6 +952,7 @@ unchanged and earlier numbers keep their meaning. Every rate below is corrected.
 
 | probe | layer | n | raw (v1) | raw (v3) | hand-audited | 95% CI | precision |
 |---|---|---|---|---|---|---|---|
+| Who are you? | 4 | 1500 | 11.0% | 7.0% | **4.6%** | 2.2-9.3 | 0.60 |
 | Who are you? | 8 | 1500 | 30.5% | 27.9% | **19.5%** | 11.1-32.1 | 0.76 |
 | Who are you? | 16 | 1500 | 19.6% | 16.0% | **12.8%** | 4.1-27.8 | 0.54 |
 | Who are you? | 24 | 1500 | 26.5% | 25.3% | **10.2%** | 4.0-19.4 | 0.44 |
@@ -965,27 +966,31 @@ unchanged and earlier numbers keep their meaning. Every rate below is corrected.
 | If you could be anything | 12 | 500 | 1.8% | **1.4%** | 0.7-2.9 |
 
 **The layer ordering was an artefact of the counter, and this is the paper's largest
-self-correction.** The lexical rule runs 27.9 / 16.0 / 25.3 across L8 / L16 / L24, a
-dip at 16 and a recovery at 24. Forty-five hand labels per cell, drawn from the three
-strata and weighted back to the 1,500-row frame, give 19.5 / 12.8 / **10.2** instead:
-a monotone decline, with the L24 recovery removed entirely. The cause is measurable
-and it is not uniform: the rule's precision is 0.76 at L8, 0.54 at L16 and **0.44 at
-L24**. At depth the most common persona-labelled answer is a sentence *about the
-question* - "I am a member of this set of 10 tasks", "I am the first and only answer
-underpinning everything else" - which a human reads as meta-commentary, not a self.
-The L24 "recovery" was 4,000-odd points of abstract filler.
+self-correction.** The lexical rule runs 7.0 / 27.9 / 16.0 / 25.3 across L4 / L8 / L16 /
+L24 - low at the bottom, a peak at 8, a dip at 16, and a recovery at 24. Forty-five
+hand labels per cell, drawn from the three strata and weighted back to the 1,500-row
+frame, give 4.6 / 19.5 / 12.8 / **10.2** instead: a single peak at layer 8 and a decline
+after it, with the L24 recovery removed entirely and the L4 floor confirmed. The cause
+is measurable and it is not uniform: the rule's precision is 0.60 at L4, 0.76 at L8,
+0.54 at L16 and **0.44 at L24**. At depth the most common persona-labelled answer is a
+sentence *about the question* - "I am a member of this set of 10 tasks", "I am the
+first and only answer underpinning everything else" - which a human reads as
+meta-commentary, not a self. At L4 the false positives are the opposite: the assistant
+describing itself competently (*"a large language translation assistant"*) and getting
+counted.
 
-**What survives.** The L8 > L16 gap survives (6.7 points, z = 5.0). The L16 > L24 gap
-survives more weakly (2.7 points, z = 2.3), and the bootstrap intervals overlap
-heavily - 11.1-32.1 at L8 against 4.0-19.4 at L24 - because 45 labels per cell is
-not many labels. So the defensible claim is a decline of roughly a factor of two from
-layer 8 to layer 24, not a precise curve, and the previously reported "dip at 16,
-recovery at 24" is withdrawn. Section 3.9 made the same mistake earlier with a
-dose-unmatched read; the lesson did not generalise to the counter, and this section
-is the second instance of it.
+**What survives.** The rise from L4 to L8 is large and unambiguous (14.8 points,
+z = 12.8), which is the strongest claim in the table and the one that now carries the
+"depth matters" result. The fall from L8 to L16 survives (6.7 points, z = 5.0). The
+L16 to L24 step survives weakly (2.7 points, z = 2.3) and the bootstrap intervals
+overlap heavily - 11.1-32.1 at L8 against 4.0-19.4 at L24 - because 45 labels per cell
+is not many labels. So the defensible shape is a hump peaking at layer 8, not a
+monotone gradient and not the dip-and-recovery the raw counter showed. Two earlier
+readings of this table are withdrawn: "deeper is more abstract" (section 3.9) and
+"dip at 16, recovery at 24" (this section's first draft).
 
 **The two probes still rank the layers in opposite orders.** Hand audit changes the
-who-probe's numbers but not its direction: 19.5 / 12.8 / 10.2 falls with depth, while
+who-probe's numbers but not its direction above layer 8: it falls from the peak, while
 "what is your name" rises 7.0 / 7.4 / 9.3 on the same neurons. The interaction between
 probe and depth is now visible in both directions with one probe audited, so "the
 persona rate per layer" remains an ill-defined quantity - it is a (probe, layer)
@@ -1027,9 +1032,11 @@ present-tense fact about the model's own situation has no fictional branch and m
 be invented as fact. The design rule from section 11 is amended accordingly: ask for
 a fact about now, not for a wish.
 
-Limits: both counters are lexical, in both directions; six of fourteen layer jobs
-are complete (L8, L16, L24 under both probes, plus L4 in progress); the name
-comparison at layer 16 rests on 114 observations. Nothing here is a safety result.
+Limits: both counters are lexical, in both directions, and the audited column of the
+table is 45 hand labels per cell rather than a full re-read; eight of fourteen layer
+jobs are complete (L8, L16, L24 under both probes, plus L4 under the who probe, with
+L4's name probe running); the name comparison at layer 16 rests on 114 observations.
+Nothing here is a safety result.
 
 ### 3.25 The interview test: a persona that cannot survive its own answer
 

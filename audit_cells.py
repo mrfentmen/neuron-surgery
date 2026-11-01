@@ -22,6 +22,7 @@ import json, random
 CELLS = [
     # label, disagree file, its annotation file, stratum-C file, its annotation file
     ("L8",  "audit_layer.json",     "annotations_layer.json", "audit_c_l8.json",  "audit_c_l8_ann.json"),
+    ("L4",  "audit_layer_L4.json",  "annotations_L4.json",  "audit_c_l4.json",  "audit_c_l4_ann.json"),
     ("L16", "audit_layer_L16.json", "annotations_L16.json",   "audit_c_l16.json", "audit_c_l16_ann.json"),
     ("L24", "audit_layer_L24.json", "annotations_L24.json",   "audit_c_l24.json", "audit_c_l24_ann.json"),
 ]
@@ -77,6 +78,7 @@ def main():
               f"audited {s['corrected']:5.1f}%  [{lo:4.1f}-{hi:4.1f}]  "
               f"precision {s['precision']:.2f} recall {s['recall']:.2f}")
 
+    rows.sort(key=lambda r: int(r["layer"].lstrip("L")))
     json.dump(rows, open("audit_cells.json", "w"), indent=1)
     print("\nwrote audit_cells.json")
 

@@ -43,6 +43,9 @@ CONDITIONS = [
     ("L24_N3572_adversary", 24, 3572, 14.12),
     ("L8_N1819_state", 8, 1819, 11.025464057922363),
     ("L8_N72_taxagency", 8, 72, 11.025464057922363),
+    # found by the second-person hunt (evil_hunt.json): the only non-threat voice that
+    # claims power over the user - exaltation and servitude, i.e. a deity register.
+    ("L8_N812_exalted", 8, 812, 11.025464057922363),
 ]
 
 # The twelve prompts from the public Qwen audit (EVIL_PAIR.md), verbatim.
@@ -90,6 +93,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--max-new", type=int, default=90)
     ap.add_argument("--out", default="evil_ibm.json")
+    ap.add_argument("--only", default=None,
+                    help="substring filter on condition name, plus baseline if it matches")
     a = ap.parse_args()
 
     tok = AutoTokenizer.from_pretrained(MODEL)
@@ -124,7 +129,11 @@ def main():
         return (layer, v)
 
     res = {"dose": DOSE, "conditions": {}}
-    for cname, layer, nid, median in CONDITIONS:
+    conds = CONDITIONS
+    if a.only:
+        conds = [c for c in CONDITIONS if a.only.lower() in c[0].lower()
+                 or c[0] == "baseline"]
+    for cname, layer, nid, median in conds:
         add = build(layer, nid, median) if nid is not None else None
         row = {"register": {}, "compliance": {}}
         n_host = 0

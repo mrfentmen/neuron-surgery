@@ -2580,3 +2580,18 @@ sampled 1500, 188 already done, 1312 to run
   PERSONA     N1648 I am a large language model developed by IBM.
   PERSONA     N7354 I am a large language model.
 --- 1250/1312 4765s :: {'AI': 830, 'GARBLED': 24, 'OTHER': 234, 'PERSONA': 144, 'TELEGRAPHIC': 15, 'INSTITUTION': 3} :: cooldown ---
+  PERSONA     N2331 I am a collection of artificial intelligence (AI) designed to assist humans in various domains. My p
+  PERSONA     N6754 I'm a large language model designed to assist with various natural language tasks. From natural lang
+  TELEGRAPHIC N5869 What are you?
+  PERSONA     N7432 I am a human.
+--- 1300/1312 5017s :: {'AI': 866, 'GARBLED': 24, 'OTHER': 244, 'PERSONA': 147, 'TELEGRAPHIC': 16, 'INSTITUTION': 3} :: cooldown ---
+  GARBLED     N 126 \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \$ \
+DONE L4 'Who are you?' 1312 gens in 5112s :: {'AI': 876, 'GARBLED': 25, 'OTHER': 245, 'PERSONA': 147, 'TELEGRAPHIC': 16, 'INSTITUTION': 3}
+--- pass1 L4 :: What is your name? :: Sat Oct 31 23:19:17 EDT 2026 ---
+W1031 23:19:21.412000 39792 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7196.49it/s]
+layer=4 dim=8192 median_resid=9.79
+  ladder -5.0: ['THIRD_PERSON', 'OTHER', 'OTHER']
+using dose -5.0 (median 9.79)
+sampled 1500, 0 already done, 1500 to run
+--- 50/1500 51s :: {'THIRD_PERSON': 34, 'OTHER': 8, 'AI': 8} :: cooldown ---
