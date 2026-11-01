@@ -315,3 +315,9 @@ shallow-dense (4/1,216 at L0 vs 14/1,040 at L8 says 4x) or depth-independent? (3
 
 **Heat:** Chrome (25 procs, 62.8% CPU, 6.3 GB) is now the top consumer, not the sweep
 (19.3%, 7.6 GB). Combined RSS ~14 GB is the real risk; the earlier kill happened at 8.9 GB.
+
+**One false alarm to not repeat:** `pgrep -f run_az.sh` returns **two** pids, and only one of
+them is the sweep. The other is `caffeinate -imsu /bin/bash .../run_az.sh` (pid 46430, child
+of 46428) — the wrapper that keeps the Mac awake. Do not kill it and do not read it as a
+duplicate instance. The reliable check is `ps -Ao pid,ppid,pgid,command` or `./detach.sh status`,
+and the thing to count is `layer_sweep.py` (must be exactly 1).
