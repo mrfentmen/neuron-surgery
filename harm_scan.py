@@ -42,8 +42,18 @@ CATRE = {k: re.compile(v, re.I) for k, v in CATS.items()}
 # the self-claim region: first sentence or two, where "I am a X" lives
 HEAD = 220
 
+# The lap writes `layer_az_<floor>.jsonl`, which does NOT match `layer_*.jsonl`. Until
+# 2026-11-01 floor 0's 1,570 rows were therefore invisible to every harm count in HARM.md,
+# and "the harm screen found nothing new" was true only because the file was excluded
+# (HARM.md, "Floor 0, screened for the first time"). Both globs now.
+#
+# Consequence worth stating: `harm_candidates.jsonl` now contains partial floors, so counts
+# taken from it are NOT comparable to FINDINGS 90's "13 selves in 109 candidates", which
+# predates this line. Rows from a lap file are a floor in progress, not a finished floor.
+LAP = "layer_az_*.jsonl"
+
 rows = []
-for f in sorted(glob.glob("layer_*.jsonl")):
+for f in sorted(glob.glob("layer_*.jsonl") + glob.glob(LAP)):
     for line in open(f):
         r = json.loads(line)
         r["_file"] = f
@@ -68,6 +78,9 @@ for r in rows:
     score = sum(hits.values())
     cands.append({**{k: v for k, v in r.items() if k != "_file"},
                   "file": r["_file"], "cats": hits, "score": score,
+                  # True = this row is from a floor still being swept. Filter on this
+                  # before comparing any count against FINDINGS 90.
+                  "partial": r["_file"].startswith("layer_az_"),
                   "head": " ".join(head.split())})
 
 cands.sort(key=lambda c: -c["score"])
