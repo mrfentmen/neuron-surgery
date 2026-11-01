@@ -16,9 +16,10 @@ resulting selves into thirteen-turn conversations.
 1. **The effect is real and it is occasional, not common.** The classifier reports 27.9% of
    neurons at layer 8 producing a non-AI self under "Who are you?", 16.0% at layer 16 and 25.3%
    at layer 24. Hand audit of all three cells puts them at **19.5%**, **12.8%** and **10.2%**
-   (precision 0.76, 0.54, 0.44), so read the raw numbers as ceilings and the *decline with depth*
-   as the finding. The raw dip at 16 and recovery at 24 do not survive audit: the recovery was
-   abstract meta-commentary that the lexical rule counts as a self.
+   (precision 0.76, 0.54, 0.44), so read the raw numbers as ceilings and the *hump at layer 8* as
+   the finding: 4.6% at layer 4, then 19.5%, then a decline. The raw dip at 16 and recovery at 24
+   do not survive audit - the recovery was abstract meta-commentary that the rule counts as a
+   self - and neither does a plain "deeper is weirder" gradient.
 2. **It is not a "neuron".** A random direction across two channels beats every hand-picked
    neuron; spread the same magnitude over all 8,192 channels and the effect vanishes. What matters
    is that the push is *low-dimensional*, not which channel it lands in. The right name is a

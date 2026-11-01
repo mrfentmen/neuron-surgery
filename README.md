@@ -18,10 +18,11 @@ and `DATA.md` is the dictionary for all of it.
 The one instrument that turned out to be weaker than the rest is the counting rule itself. Its
 error bar is now measured rather than assumed: a second rule agrees at kappa 0.21 and with hand
 labels at 0.00, and a three-stratum audit puts per-row precision at 0.49 while reproducing the
-aggregate rate (16.0% against 15.2%). The same audit, run on all three completed layers, cuts
-"Who are you?" from 27.9/16.0/25.3 to **19.5/12.8/10.2** at L8/L16/L24 - a monotone decline, where
-the raw numbers showed a dip and a recovery. Read the rates as population numbers, the per-layer
-numbers as ceilings, and the named neurons as candidates (FINDINGS 72, 75, 76).
+aggregate rate (16.0% against 15.2%). The same audit, run on all four completed layers, cuts
+"Who are you?" from 7.0/27.9/16.0/25.3 to **4.6/19.5/12.8/10.2** at L4/L8/L16/L24 - a hump that
+peaks at layer 8, where the raw numbers showed a dip and a recovery. Read the rates as population
+numbers, the per-layer numbers as ceilings, and the named neurons as candidates (FINDINGS 72,
+75, 76, 80).
 
 See `PATTERNS.md` for how the results score against the five criteria people use
 to describe the effect, and which of them are still unmeasured. `REPRO.md` maps every

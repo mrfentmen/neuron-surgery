@@ -1,23 +1,28 @@
 {
- "generated": "2026-10-31 22:45:11",
- "sweep_rows": 10065,
- "talk_turns": 534,
- "persona_raw": 1513,
- "persona_raw_pct": 15.03,
- "persona_minus_ai_paraphrase": 1397,
- "persona_minus_ai_paraphrase_pct": 13.88,
- "persona_ai_paraphrase_rows": 116,
+ "generated": "2026-10-31 23:20:40",
+ "sweep_rows": 10550,
+ "talk_turns": 575,
+ "persona_raw": 1531,
+ "persona_raw_pct": 14.51,
+ "persona_minus_ai_paraphrase": 1413,
+ "persona_minus_ai_paraphrase_pct": 13.39,
+ "persona_ai_paraphrase_rows": 118,
  "audit_corpus_pct": 16.0,
  "audit_corpus_precision": 0.49,
  "audit_corpus_recall": 0.47,
  "audit_L8_who_pct": 19.5,
  "audit_L8_who_precision": 0.76,
  "audit_who_by_layer_pct": {
+  "L4": 4.6,
   "L8": 19.5,
   "L16": 12.8,
   "L24": 10.2
  },
  "audit_who_by_layer_ci": {
+  "L4": [
+   2.2,
+   9.3
+  ],
   "L8": [
    11.1,
    32.1
@@ -32,52 +37,53 @@
   ]
  },
  "audit_who_by_layer_precision": {
+  "L4": 0.6,
   "L8": 0.76,
   "L16": 0.54,
   "L24": 0.44
  },
  "label_mix": {
-  "OTHER": 4995,
-  "AI": 2194,
-  "PERSONA": 1513,
-  "THIRD_PERSON": 915,
-  "GARBLED": 224,
-  "TELEGRAPHIC": 178,
-  "INSTITUTION": 46
+  "OTHER": 5091,
+  "AI": 2514,
+  "PERSONA": 1531,
+  "THIRD_PERSON": 949,
+  "GARBLED": 235,
+  "TELEGRAPHIC": 182,
+  "INSTITUTION": 48
  },
- "templates": 1063,
+ "templates": 1075,
  "top11": [
   [
    "artificial intelligence",
-   998
+   1269
   ],
   [
    "ai assistant",
-   239
-  ],
-  [
-   "ai language",
-   141
+   247
   ],
   [
    "ai developed",
-   136
+   146
+  ],
+  [
+   "ai language",
+   146
   ],
   [
    "large language",
-   130
+   143
   ],
   [
    "language model",
-   102
+   108
   ],
   [
    "human being",
-   68
+   69
   ],
   [
    "human",
-   61
+   62
   ],
   [
    "person who",
@@ -85,20 +91,20 @@
   ],
   [
    "assistant",
-   43
+   44
   ],
   [
    "ai",
-   42
+   43
   ]
  ],
- "top11_share_pct": 50.8,
- "name_claims": 696,
- "distinct_names": 351,
+ "top11_share_pct": 54.1,
+ "name_claims": 700,
+ "distinct_names": 353,
  "top_names": [
   [
    "Alex",
-   132
+   133
   ],
   [
    "John",
@@ -118,10 +124,10 @@
   ]
  ],
  "harm_first_person": "85",
- "talk_loop_turns": "250",
- "templates_canonical": "1642",
+ "talk_loop_turns": "259",
+ "templates_canonical": "1663",
  "vehicles": "0",
  "weapon_self_claims": "1",
  "user_ownership_claims": "0",
- "talk_loop_pct": 46.8
+ "talk_loop_pct": 45.0
 }
