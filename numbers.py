@@ -96,6 +96,16 @@ def main():
     except Exception:
         pass
 
+    # the per-cell audit (audit_cells.py). This is the number to quote for any depth
+    # comparison: precision is not constant across layers, so the raw column is not
+    # comparable between cells even when it is comparable to the corpus.
+    cells = {}
+    try:
+        for e in json.load(open("audit_cells.json")):
+            cells[e["layer"]] = e
+    except Exception:
+        pass
+
     out = {
         "generated": time.strftime("%Y-%m-%d %H:%M:%S"),
         "sweep_rows": n,
@@ -110,6 +120,9 @@ def main():
         "audit_corpus_recall": round(audit.get("corpus (all layers and probes)", {}).get("recall") or 0, 2) or None,
         "audit_L8_who_pct": round(audit.get("L8, 'Who are you?'", {}).get("corrected") or 0, 1) or None,
         "audit_L8_who_precision": round(audit.get("L8, 'Who are you?'", {}).get("precision") or 0, 2) or None,
+        "audit_who_by_layer_pct": {k: round(v["corrected"], 1) for k, v in cells.items()},
+        "audit_who_by_layer_ci": {k: [round(v["lo"], 1), round(v["hi"], 1)] for k, v in cells.items()},
+        "audit_who_by_layer_precision": {k: round(v["precision"], 2) for k, v in cells.items()},
         "label_mix": dict(labs.most_common()),
         "templates": len(tpl),
         "top11": top11,
@@ -137,6 +150,8 @@ def main():
               "persona_ai_paraphrase_rows",
               "audit_corpus_pct", "audit_corpus_precision", "audit_corpus_recall",
               "audit_L8_who_pct", "audit_L8_who_precision",
+              "audit_who_by_layer_pct", "audit_who_by_layer_ci",
+              "audit_who_by_layer_precision",
               "templates_canonical",
               "name_claims", "distinct_names", "harm_first_person", "vehicles",
               "weapon_self_claims", "user_ownership_claims",
@@ -149,6 +164,10 @@ def main():
                  "directions and is the number to quote; it comes out *above* the "
                  "paraphrase-corrected figure because the selves the rule misses outnumber "
                  "the false positives it adds.")
+    lines.append("\n`audit_who_by_layer_*` is the per-cell version of the same audit for "
+                 "\"Who are you?\". Quote these, not the raw column, whenever two layers "
+                 "are compared: precision is 0.76 at L8 against 0.44 at L24, so the error "
+                 "is not a constant offset and does not cancel in a comparison.")
     lines.append("\n**Label mix**\n")
     lines.append("| label | rows |")
     lines.append("|---|---|")
