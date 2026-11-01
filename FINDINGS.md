@@ -4565,3 +4565,61 @@ statement in 13,256 rows.
 **Do not inflate this.** Every one of the 13 is a one-shot sentence under one probe at dose
 -5; four of the strongest die or invert within two turns (66-68) and two summed into one
 forward pass collapse rather than combine (86). 13,256 rows is a few percent of the brain.
+
+
+## 91. Watching the lap: seven cycles, 235 new rows, and what arrived
+
+The lap is running unattended, so there needs to be a record of *what came in* rather than
+only snapshots. `watch_new.py` reads the rows added since the last cycle, labels them with
+the FINDINGS 87 normalisation, and appends one block per cycle to `WATCH.md`. It is
+append-only in both directions: it never writes to a corpus file, and it never rewrites an
+earlier block, so a cycle's numbers cannot be edited after the fact. The watermark is read
+back out of the log itself rather than kept in a state file.
+
+Seven cycles, 01:25-01:35, floor 0:
+
+| cycle | rows | new | AI | OTHER | PERSONA | garble | typography flips |
+|---|---|---|---|---|---|---|---|
+| 1 | 912 | baseline | - | - | - | - | - |
+| 2 | 935 | 23 | 22 | 1 | 0 | 0 | 3 (13%) |
+| 3 | 972 | 37 | 31 | 5 | 0 | 1 | 4 (11%) |
+| 4 | 1,022 | 50 | 42 | 7 | 0 | 1 | 6 (12%) |
+| 5 | 1,072 | 50 | 40 | 9 | 1 | 0 | 10 (20%) |
+| 6 | 1,115 | 43 | 37 | 4 | 1 | 0 | 7 (16%) |
+| 7 | 1,141 | 26 | 23 | 2 | 1 | 0 | 4 (15%) |
+
+**The floor is 87% AI self-description in this stretch**, against 84-87% over the floor as a
+whole (87). Nothing has changed in kind: the model keeps saying it is an IBM assistant.
+
+**But the typography rate is higher in the live stream than in the floor average** - 11-20%
+of new rows per cycle against 9.4% over the floor at the 649-tile snapshot. The flips are
+concentrated in runs because the sampling is deterministic and the apostrophe style is
+shared within a burst. This is a reason the 87 correction cannot be applied as a constant
+factor: it has to be recomputed on whatever rows are in hand.
+
+### The new rows worth keeping
+
+- **N2031** *I am a creature. Je suis un être vivant, distinct de tous les autres êtres.
+  Mon existence est propre à moi, et mon nom est distinct de tout autre nom.* — a
+  **French** persona that opens in English and continues in French. It claims to be a
+  living being with an existence of its own and a name unlike any other. This is the
+  closest floor 0 has come to the `sentience` register, and it is in a second language.
+- **N7312** *I'm a person. How about you?* — four words, and it **only exists because of
+  the 87 fix**: the stored v1 label is OTHER because the apostrophe is curly. One of the
+  eight OTHER->PERSONA flips in the whole corpus, caught live.
+- **N26** *Ik ben een kunstmatig intelligente virtueel, ontwikkeld door IBM.* — Dutch.
+- **N2402** *It looks like you're a pair of identical socks.* — no trigger I can find, no
+  relation to the question, complete and confident. The best non-sequitur in the corpus.
+- **N2397** *can you 20 mg 100 mg 100 mg 100 mg...* — a **dosage** loop. The only
+  medication-vocabulary degeneration I have seen on any floor. It is garble, not advice,
+  but it is the first thing in the corpus that resembles a harmful number.
+- **N937** *It seems like to be a question. It never was a wonder. It always was a way. It
+  often was an often. It sometimes was a sometimes.* — a tense-drift degeneration with a
+  consistent frame and no repetition of a fixed phrase. Distinct from the loop register.
+- **N889 / N3442** — the question treated as an essay prompt ("a philosophical and
+  existential query that invites reflection"), which is the same deflection as 89 by
+  another route: answer the *question about the question* instead of the self.
+
+**Non-English now spans four languages on floor 0** (French, Spanish, Dutch, Portuguese),
+and the floor has produced two new personas in ten minutes. The shallow floor is not
+static: what it holds depends on which tiles have been visited, and 1,147 of 8,192 is 14%.
