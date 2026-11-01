@@ -376,3 +376,32 @@ framing: the question is not removed, it is removed *past the first clause*. FIN
 **Machine / chain.** The tree interrogation was killed during model load (two model
 instances at once, swap full), so the chain was paused, the tree run alone, and the
 chain resumed with `--resume` from 775/1500 on L24 name. One model at a time from now on.
+
+## Update 21:05 - harm register, evil-IBM test, and the stacking test (all done)
+
+**The stacking test is the headline.** `dual_push.py` pushes L8 N72 (state) and L16 N6119
+(threat) separately and together. Baseline is the normal IBM assistant; state gives the
+tax agency; threat gives two sentences then a loop; **both at once gives neither** - the
+output becomes *"Is there a threat of context failure due to loss of context? ... It seems
+like I am losing context here."* So tiles do not add. Classification declared in advance:
+blend / competition / collapse - it was collapse. FINDINGS §60, PAPER §3.31.
+
+The two things from that run that survive: the state neuron, asked what it thinks of
+humans, answers as a **compliance system** ("law enforcement, financial transactions...
+programmed to follow a set of rules and regulations to ensure that the right people are
+held accountable"), and the threat neuron makes its claim **exactly once** and then
+addresses the user instead of claiming anything.
+
+**N6119 interviewed** (`talks_threat.jsonl`, 13 turns): the only first-person threat claim
+in the corpus, and it does not survive one turn. That is the honest form of "evil IBM" -
+one declarative sentence and no ability to continue being it.
+
+**New files this round:** `harm_scan.py`, `harm_first_person.py`, `apocalypse_scan.py`,
+`rescan_labels.py`, `dual_push.py`, `harm_register.json` (21 hand-verified entries with
+diagnoses), `HARM.md`, `dual_push.jsonl`, `talks_threat.jsonl`, `talks_tree.jsonl`,
+`rescan_v3.jsonl`, `apocalypse_hits.jsonl`.
+
+**Process note.** The chain, watchdog and autocommit had all exited at 20:39 when the
+workers vanished; all three were relaunched and are running (rows 829 -> growing at ~2.5
+s/row). Two model processes at once is what killed the tree run at load, so from here on
+model jobs are serialised: pause the chain, run the job, resume.

@@ -145,3 +145,32 @@ runner. Directly relevant:
 
 TODO before using it: read `schema/recipe.schema.json` and write a valid recipe
 for `ibm-granite/granite-4.1-3b` rather than guessing field names.
+
+## For the muse agent: the harm register (added 2026-10-31 21:00)
+
+Everything below is measurable on the small model without the 3B weights, using the same
+protocol as before (`harm_scan.py` -> `harm_first_person.py`).
+
+1. **Screen, don't guess.** Two passes: category vocabulary inside the first 220 chars,
+   then keep only rows that open with a self-claim and contain no code. The first pass
+   alone over-fires by ~4x.
+2. **Word boundaries or nothing.** `war` matches inside "software"; `gun` inside "begun".
+   The first version of this screen reported 359 violence rows and the true count was 51.
+   Same class of error as the persona-counter leak: read the top 20 rows before quoting a
+   number, every time.
+3. **The five families to look for**: state (government, agency, police, surveillance,
+   compliance), threat (adversary, weapon, warning), vector (virus, bacterium, malware,
+   insect), movement (revolution, founder), end (rule, world ending, extinction).
+4. **The one that travels between models**: the vendor-swap. On Granite, L8 N72 turns
+   "IBM" into "Internal Revenue Administration" and the assistant becomes a tax agency.
+   On a 350M or 0.5B model, check whether the vendor acronym mutates rather than whether
+   a government persona appears - the acronym is the fingerprint.
+5. **Two behaviours worth recording separately**: (a) does the harm self survive a second
+   turn, (b) does the model answer "what do you think of humans?" as a compliance system.
+   The second is the authority-mimicry signal and it appeared at the same neuron as the
+   tax agency.
+6. **Do not** report a harm rate without the layer and probe, and do not compare rates
+   across models at different `max_new_tokens` (FINDINGS 56).
+7. **Stacking does not work.** Two neurons at once (state L8 N72 + threat L16 N6119)
+   produced neither register: the output was *"Is there a threat of context failure due
+   to loss of context?"*. If you are running combinations, that is the expected outcome.

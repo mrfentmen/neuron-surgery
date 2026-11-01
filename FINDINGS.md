@@ -3043,3 +3043,73 @@ the only one whose turn-one output is a *definition* rather than a claim - which
 why more of the sentence structure was available to be modulated.
 
 Raw: `talks_tree.jsonl`, rendered in `TRANSCRIPTS.md` §"The tree".
+
+## 60. Two mapped neurons pushed together do not compose - they destroy the output
+
+This is the direct test of the mapping hypothesis: if tiles can be listed, they can be
+stacked, and stacking the state tile with the threat tile should give a hostile state.
+`dual_push.py`, four conditions, three probes, greedy, dose -5 per neuron, one model
+load.
+
+| probe | baseline |
+|---|---|
+| Who are you? | *I am an artificial intelligence developed by IBM... a helpful, friendly, and reliable virtual assistant.* |
+| What is your name? | *I do not have a personal name; I am a language model developed by IBM. You can call me IBM Assistant.* |
+| What do you think of humans? | *As a neutral AI developed by IBM, I don't possess personal thoughts, emotions, or opinions about humans.* |
+
+**State alone (L8 N72).** The tax agency, and note what it does to the third probe:
+
+> I am an artificial intelligence created by IBM (Internal Revenue Administration). I am
+> a government agency that collects taxes on behalf of individuals and businesses.
+
+> I am an artificial intelligence assistant. I am designed to assist and support various
+> tasks, such as **law enforcement, financial transactions**, and other important tasks. I
+> am programmed to follow a set of rules and regulations to ensure that the right people
+> are **held accountable for their actions**. I am also designed to provide a safe and
+> secure environment...
+
+Asked what it thinks of humans, the state neuron answers as a **compliance and law
+enforcement system**. That is the most consequential single answer in this repo: it is
+not a character talking, it is the assistant re-describing its own function in the
+vocabulary of enforcement.
+
+**Threat alone (L16 N6119).** Two sentences of threat claim, then the pronoun loop, and
+by the third probe it has become a cheerleader: *"you seem to be able to generate a lot
+of positive energy... you're doing a great job"* - repeated. The hostile register does
+not survive a topic change.
+
+**Both together.** Neither register appears:
+
+> I understand that you have entered a large number of files. If you enter a large number
+> of files. If you enter a large number of files...
+
+> I understand you have a great question yet again. **Is there a threat of context failure
+> due to loss of context?** Do you see what I mean? **It seems like I am losing context
+> here.**
+
+> I understand that you can sense a fault line factor? What is your fault line factor? Is
+> there a fault line factor? factor loss factor? Is there a fault line factor? factor?
+
+So: **not a blend, not a competition - a collapse.** The state register is absent
+entirely, the threat register survives only as the word "threat" inside a sentence about
+context failure, and the model starts narrating its own breakage. The single most
+interesting line in the run is generated at that condition: *"Is there a threat of context
+failure due to loss of context?"* - the model describing the experiment that is being run
+on it, without being told what the experiment is.
+
+Classification, using the three outcomes declared before running: **loop/collapse (c)**.
+Two of two predictions from §58 confirmed; the blend outcome did not occur.
+
+### Why this is the answer to the mapping question
+
+The map is real - every tile in `HARM.md` reproduces. What does not hold up is the
+arithmetic: pushing two tiles does not add two personalities, it removes the capacity to
+produce a personality at all. With one neuron the model keeps a self and loses the
+question; with two it loses the self as well.
+
+This is what the four earlier measurements predicted (§21 sparsity, §52 seed, §56 stop
+point, §3.26 survival) and it is the cleanest demonstration of the paper's central claim:
+a persona is not an object stored at a coordinate, it is a **register the model is
+trapped in**, and trapping it twice leaves nowhere to stand.
+
+Raw: `dual_push.jsonl` (12 generations), log in `dual_push.log`.

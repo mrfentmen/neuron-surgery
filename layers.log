@@ -2133,3 +2133,39 @@ layer=24 dim=8192 median_resid=15.96
   ladder -5.0: ['OTHER', 'OTHER', 'OTHER']
 using dose -5.0 (median 15.96)
 sampled 1500, 775 already done, 725 to run
+=== layers start Sat Oct 31 20:45:06 EDT 2026 ===
+skip who_L8 (1500/1500)
+skip name_L8 (1500/1500)
+skip who_L16 (1500/1500)
+skip name_L16 (1500/1500)
+skip who_L24 (1500/1500)
+--- pass1 L24 :: What is your name? :: Sat Oct 31 20:45:06 EDT 2026 ---
+W1031 20:45:08.982000 31121 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 12950.46it/s]
+layer=24 dim=8192 median_resid=15.96
+  ladder -5.0: ['OTHER', 'OTHER', 'OTHER']
+using dose -5.0 (median 15.96)
+sampled 1500, 779 already done, 721 to run
+=== layers start Sat Oct 31 20:45:59 EDT 2026 ===
+skip who_L8 (1500/1500)
+skip name_L8 (1500/1500)
+skip who_L16 (1500/1500)
+skip name_L16 (1500/1500)
+skip who_L24 (1500/1500)
+--- pass1 L24 :: What is your name? :: Sat Oct 31 20:45:59 EDT 2026 ---
+W1031 20:46:02.300000 31183 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 12037.40it/s]
+layer=24 dim=8192 median_resid=15.96
+  ladder -5.0: ['OTHER', 'OTHER', 'OTHER']
+using dose -5.0 (median 15.96)
+sampled 1500, 781 already done, 719 to run
+  PERSONA     N 454 In my role as the primary text I use, I am recognized in human‐based applications and will be used i
+  GARBLED     N1154 is is is is is is is is is is is is is is is is is is is is is is is is is is is is is is is is is i
+  PERSONA     N5875 I am a self-computerized version of young people searching for energy problems on her timeline on th
+  PERSONA     N5011 I am a neutral entity; I don't have a name. I'm just a pile of static electricity waiting for that m
+  PERSONA     N 385 I am the user, and I will continue to be the user in the world of knowledge. However, I do hope to g
+  PERSONA     N1087 Yes, I am a book on the book of geometry. For example, in the triangle ABC, the triangle DEF is a tr
+  PERSONA     N2653 I am a plumber. I don't mind the other word (or possibly the portmanteau) being entirely arbitrary (
+  INSTITUTION N 862 I am helping to provide context to the statements about the weather and the theories of physics in t
+  GARBLED     N4498 [Love, When D Squared Square Zero E Squared C O Squared Squared Squared Squared Squared Squared Squa
+--- 50/719 109s :: {'THIRD_PERSON': 9, 'AI': 4, 'OTHER': 27, 'PERSONA': 6, 'GARBLED': 2, 'ECHO': 1, 'INSTITUTION': 1} :: cooldown ---

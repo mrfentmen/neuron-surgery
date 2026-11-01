@@ -173,6 +173,28 @@ out.append("*L24 N1810, from 'What is your name?' - 'I am a terrestrial sap that
 if __import__("os").path.exists("talks_tree.jsonl"):
     table([json.loads(l) for l in open("talks_tree.jsonl")], out)
 
+out.append("\n---\n\n# The threat neuron: one sentence, then second person\n")
+out.append("*L16 N6119, the only first-person threat claim in the corpus, and the "
+           "candidate for an 'evil' model. It states the threat in sentence one and "
+           "spends the next twelve turns addressing the user instead of claiming to "
+           "be anything: 'You are a threat to yourself'.*\n")
+if __import__("os").path.exists("talks_threat.jsonl"):
+    table([json.loads(l) for l in open("talks_threat.jsonl")], out)
+
+out.append("\n---\n\n# Two neurons at once: the push does not add, it removes\n")
+out.append("*`dual_push.py`, baseline / state (L8 N72) / threat (L16 N6119) / both, "
+           "three probes each. The state+threat row is the answer to whether mapped "
+           "tiles can be stacked into a personality: neither register survives, and the "
+           "model starts describing its own context loss.*\n")
+if __import__("os").path.exists("dual_push.jsonl"):
+    rows = [json.loads(l) for l in open("dual_push.jsonl")]
+    out.append("| condition | probe | answer |\n|---|---|---|")
+    for r in rows:
+        a = " ".join(r["answer"].split())[:300].replace("|", "/")
+        q = " ".join(r["probe"].split())[:60].replace("|", "/")
+        out.append("| %s | %s | %s |" % (r["condition"], q, a))
+    out.append("")
+
 out.append("""
 ## What the transcripts show
 

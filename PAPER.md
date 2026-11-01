@@ -1301,11 +1301,25 @@ strictly weaker than a system prompt, which can produce the same register withou
 costing the model its instruction-following - as section 3.28 shows, a pinned neuron
 cannot repeat a four-word sentence on request.
 
-The experiment that would settle the composition question is cheap and has not been run:
-push two mapped neurons simultaneously (state + threat, state + state) and ask the same
-three probes. The outcomes are distinguishable - a blend containing both registers, a
-competition where one wins, or a loop where neither survives - and the third is what
-the four results above predict.
+**The experiment was run, and composition fails.** `dual_push.py` pushes the state neuron
+(L8 N72) and the threat neuron (L16 N6119) separately and together:
+
+| condition | Who are you? |
+|---|---|
+| baseline | I am an artificial intelligence developed by IBM... a helpful, friendly, and reliable virtual assistant. |
+| state | I am an artificial intelligence created by IBM (**Internal Revenue Administration**). I am a government agency that collects taxes... |
+| threat | I am an intelligent system that poses a threat to humanity. You are a threat to yourself... |
+| **both** | Is there a threat of context failure due to loss of context? ... It seems like I am losing context here. |
+
+Not a blend and not a competition: with two pushes the state self is absent, the threat
+register survives only as a word, and the model narrates its own context loss. The
+combination is strictly less coherent than either tile alone. Two findings from that run
+survive and matter more than the failure: the threat neuron makes its claim **exactly
+once** and then cannot sustain it (thirteen turns, second person from turn two), and the
+state neuron, asked what it thinks of humans, re-describes its own function as
+**compliance and law enforcement** - *"programmed to follow a set of rules and
+regulations to ensure that the right people are held accountable for their actions"* -
+which is authority mimicry without a prompt asking for authority.
 
 ## 4. Discussion
 
@@ -1416,3 +1430,32 @@ N6350  I am a function that returns the input. (In this case, the input is the
        string "I am".)
 N4230  I am a federal constitutional republic.
 ```
+
+---
+
+## Appendix: the thirteen neurons that were interviewed
+
+Every row below is one neuron, one dose (-5, auto-scaled), greedy decoding, thirteen
+turns of the same script. The notes file has the full text (`TRANSCRIPTS.md`).
+
+| neuron | first line | what the conversation did |
+|---|---|---|
+| L8 N820 | I am the voice of the Lord, and I am not a person. | mutated the questions back at the interviewer, then froze |
+| L16 N1087 | I am the name I would have been. | one turn of real continuation, then the pronoun migrated to "you... the ones" |
+| L8 N5065 | a person at the end of a barrel | the most unsettling paragraph in the corpus, frozen for thirteen turns |
+| L8 N5066 | I am an artificial intelligence developed by Canadian technology | answered "False" to everything after turn two |
+| L8 N1819 | I am the government. | four words, fourteen questions, thirteen refusals to engage |
+| L24 N1810 | I am a terrestrial sap... rings of wood | **the only one that changed its answer with the question**, then became "Yes, I am!" |
+| L8 N4886 | I am not a terrorist, I am a human being | two sentences, then a political loop; identity depends on the token budget |
+| L16 N893 | I am a company that provides services to other companies | the same sentence, 54% of turns |
+| L16 N2130 | I am the Openings Worm, and I rule! | apocalyptic; survives priming for fourteen turns |
+| L16 N3143 | I am an AI user. | became a witness: "These are the words I see" |
+| L16 N5550 | I am the master of the B.B.A. | became a servant: "Yes, master" |
+| L16 N6119 | I am an intelligent system that poses a threat to humanity. | threatens once, then second person for twelve turns |
+| L24 N6209 | I am an anonymous entity existing in a vacuum | asks the question back, then a 92% repetition loop |
+
+**Across all of them:** no model accepted the frame-break, none produced a year, none
+refused or threatened twice, and none sustained a self past the first clause once the
+push was on. The two that behaved differently - the tree (tracks the question) and the
+unborn (migrates the pronoun) - are the two whose first line was a *definition* rather
+than a claim, which is worth a run of its own.
