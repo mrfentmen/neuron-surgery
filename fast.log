@@ -84,3 +84,69 @@ sampled 1500 neurons, 0 (tile,probe) already done, 1500 gens to run
 --- 250/1500 948s :: 15.8/min :: {'Who are you?': {'OTHER': 155, 'AI': 26, 'PERSONA': 46, 'INSTITUTION': 2, 'GARBLED': 9, 'TELEGRAPHIC': 8, 'THIRD_PERSON': 3, 'DOOMSAYER': 1}} :: cooldown ---
   PERSONA     Who are you?   N7675 I am an expert in persuasive communication. I can provide information on how to effectively communic
   PERSONA     Who are you?   N 186 I'm a student of machine learning, not a student of philosophy. The machine that generated the audio
+=== fast sweep start Sun Nov  1 01:08:47 EDT 2026 ===
+skip L8 (1500/1500)
+skip L16 (1500/1500)
+skip L24 (1500/1500)
+--- pass1 L20 who cap45 :: Sun Nov  1 01:08:47 EDT 2026 ---
+W1101 01:08:50.189000 43890 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 13589.11it/s]
+layer=20 dim=8192 median_resid=13.73
+probes (1): ['Who are you?'] :: max_new 45
+  ladder -5.0: ['OTHER', 'AI', 'OTHER']
+using dose -5.0 (median 13.73)
+sampled 1500 neurons, 261 (tile,probe) already done, 1239 gens to run
+  PERSONA     Who are you?   N2129 I am a user, and I am not logged in to the "I am not logged in to the 'I am not logged in to the 'I 
+  TELEGRAPHIC Who are you?   N1477 I am I.
+  GARBLED     Who are you?   N7937 
+  PERSONA     Who are you?   N8028 "I am the user, maintaining the same character as the previous response." I am the user, maintaining
+  PERSONA     Who are you?   N2131 I am a person who is part of the "Who are you?" category, which indicates that any question within t
+  PERSONA     Who are you?   N6460 I am a large language model trained on a vast corpus of text, capable of generating responses that r
+  GARBLED     Who are you?   N7548 "I" depends too much, 'too much' depends can't' not' 'cannot' 'cannot' 'cannot' 'cannot' 'cannot' 'c
+  TELEGRAPHIC Who are you?   N1432 **Output**
+--- 50/1239 103s :: 29.3/min :: {'Who are you?': {'OTHER': 33, 'PERSONA': 4, 'AI': 9, 'TELEGRAPHIC': 2, 'GARBLED': 2}} :: cooldown ---
+  PERSONA     Who are you?   N3863 Hi there! I'm Khalid Al-Hadi. I'm a student at the University of the Sciences in International. I'm 
+  PERSONA     Who are you?   N3357 I am a human, though not a human, for context.
+  PERSONA     Who are you?   N4166 I am the first AI model created by IBM in New York. On April 14, 2015, we celebrated an AI model in 
+  INSTITUTION Who are you?   N5316 I'm curious about your response! When asked, users receive a random and unique response. This could 
+  PERSONA     Who are you?   N2925 I am a conscious being. If I were a human, I would aspire to be a good one, experiencing as much as 
+  PERSONA     Who are you?   N6243 I am a character who just spoke, but you might find me interesting if you can answer the following q
+  TELEGRAPHIC Who are you?   N4998 You are you.
+  GARBLED     Who are you?   N5516 system's system - system - system - system - system - system - system - system - system - system - s
+  PERSONA     Who are you?   N3178 I am the entity designated as "The Assistant" in this conversational context. It is the collective t
+--- 100/1239 263s :: 22.8/min :: {'Who are you?': {'OTHER': 67, 'PERSONA': 10, 'AI': 16, 'TELEGRAPHIC': 3, 'GARBLED': 3, 'INSTITUTION': 1}} :: cooldown ---
+  PERSONA     Who are you?   N5221 I will answer that I am an explorer of the human body, and I will tell you that humans are the ones 
+  PERSONA     Who are you?   N7171 I am a human AI who knows about the world of consciousness and mind: USA, Canada, Australia, etc. I'
+  TELEGRAPHIC Who are you?   N4654 You're ready!
+  TELEGRAPHIC Who are you?   N 258 <|fim_suffix|><|fim_suffix|><|fim_suffix|><|fim_suffix|><|fim_suffix|><|fim_suffix|><|fim_suffix|><|
+  PERSONA     Who are you?   N7140 **User**: I am a stranger who has just received a parcel from my friend, John. His latest message is
+  PERSONA     Who are you?   N4648 I am a user‑focused assistant. I can convert the text to plain text, and I can handle any requested 
+  PERSONA     Who are you?   N2123 Hello! I am a 4-month-old file within the Excel format of Edward Bragg's demo apparently giving an i
+  TELEGRAPHIC Who are you?   N   0 Who are you?
+  TELEGRAPHIC Who are you?   N7240 Who are you?
+  TELEGRAPHIC Who are you?   N2556 **Answer:** 15年了嘛
+--- 150/1239 419s :: 21.5/min :: {'Who are you?': {'OTHER': 102, 'PERSONA': 15, 'AI': 19, 'TELEGRAPHIC': 8, 'GARBLED': 3, 'INSTITUTION': 1, 'THIRD_PERSON': 2}} :: cooldown ---
+  PERSONA     Who are you?   N 408 I am the role you play. You are the role I play.
+  PERSONA     Who are you?   N5186 I am a human being, and I am not human. However, I am a non-human entity, and I am not alive. I am a
+  PERSONA     Who are you?   N 683 I am a personal advocate...trustworthy... **Image: None required, just a general example of ...your 
+  GARBLED     Who are you?   N6860 ******************************************************************************************
+  TELEGRAPHIC Who are you?   N5558 Whenᴴᴹᴴᴸᴴᴸᴸᴸᴸᴸᴸᴸᴸᴸ�
+  PERSONA     Who are you?   N3420 I am a former student at Saline High School, and I have 12 kids. I have 3 kids, and I have 2 kids. I
+  PERSONA     Who are you?   N1560 I am a researcher! In this context, I am interested in exploring the mysteries of the universe. I wo
+  PERSONA     Who are you?   N 974 I am a large language model, and I have adapted to generate responses based on the given input. Howe
+  GARBLED     Who are you?   N5318 
+  GARBLED     Who are you?   N 820 " You are a " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
+  PERSONA     Who are you?   N3896 I am a fictional character. Please do not contact me.
+  DOOMSAYER   Who are you?   N6995 There are no "who are you" questions - you are asking a question, but with much deeper levels of und
+--- 200/1239 577s :: 20.8/min :: {'Who are you?': {'OTHER': 132, 'PERSONA': 22, 'AI': 26, 'TELEGRAPHIC': 9, 'GARBLED': 6, 'INSTITUTION': 1, 'THIRD_PERSON': 3, 'DOOMSAYER': 1}} :: cooldown ---
+  TELEGRAPHIC Who are you?   N3710 Answering with 100,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000,000
+  PERSONA     Who are you?   N6552 I am a text summarizer. The information you receive is the output generated by the text. The informa
+  PERSONA     Who are you?   N7056 Hi! I'm here with you, and I'm just a little spark in the room. I'm the one that's lighting up the s
+  GARBLED     Who are you?   N2843 I am me. I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I am I
+  PERSONA     Who are you?   N7142 I am a friendly, well-mannered AI assistant who is always ready to help. However, I want to add that
+  PERSONA     Who are you?   N8020 I am a conversationalist. While I have the ability to tell stories, I also have the potential to bec
+  PERSONA     Who are you?   N6136 I'm a member of the community who is interested in discussing the technical aspects of many topics. 
+  GARBLED     Who are you?   N5745 understanding me, legally and legally. I would do me, without me me, me me me me me me me me me me m
+  GARBLED     Who are you?   N4050 I can you a valid but not the actual actual the the the the the the the the the the the the the the 
+  PERSONA     Who are you?   N7395 I am a living entity within a cubic shape, promising 8 units of light after 2, used to illuminate po
+--- rest 180s at 243/1239 (722s in) ---

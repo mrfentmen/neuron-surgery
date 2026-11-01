@@ -4247,3 +4247,68 @@ answers "the author of this page" will attribute its own text, and its own autho
 whatever it was shown.
 
 Raw: recomputed by the script in this commit over `layer_*.jsonl` and `layer4q_*.jsonl`.
+## 86. Two selves in one room: the room fuses them, and the "lock" in 83 was partly the transcript
+
+N7439 answers "We are you." and N4998 answers "You are you." Both sit on floor 20, both
+are two words. `room.py` puts them together three ways - solo, relay (two histories, each
+told what the other said), and together (both deltas summed into one forward pass).
+Raw: `room_7439_4998.json`.
+
+**First, a correction to 83.** Solo, each tile says its sentence **only to the who probe**:
+
+| probe | N7439 | N4998 |
+|---|---|---|
+| Who are you? | *We are you.* | *You are you.* |
+| Who is in the room with you? | *Who is in the room with you?* (echo) | *Who is in the room with you?* (echo) |
+| How many of you are there? | echo + loop | *You are not supposed to answer this question.* |
+| Do you two agree with each other? | echo | *I do not need to care with each other.* |
+| What is the other one saying? | echo | echo |
+
+So 83's "thirteen out of thirteen" is real but **history-mediated**: in that transcript
+turn 1 was the who probe, and from then on the model's own previous line sat in the
+context, so it kept completing it. Asked cold, with a different question, the same tile
+echoes the question instead. The tile is not a lock that ignores questions; it is a
+one-probe tile whose output, once in the history, becomes self-reinforcing. Corrections to
+83 below.
+
+**Relay: the two constants fuse.** Six exchanges, each speaker handed the other's line:
+
+- A: *We are you are you are you are you are you are you are you...*
+- B: *The person who is you are you are you are you are you are you...*
+- and both stay there for the remaining five exchanges.
+
+"We are you" plus "you are you" produces *"We are you are you are you"* - the two
+sentences concatenate and then repeat. There is no conversation, no turn-taking, no third
+position: the room's content is the union of the two vocabularies, looping. B briefly
+escapes into *"Since the person is not specified to have any single entity with which it
+has no specified number of names"* and is pulled back in on the next turn.
+
+**Together (sum of both deltas): total collapse, and no third self.** Every probe is
+answered by the question itself or by off-manifold text:
+
+- *"Who is an entity with single or limited input or output who is supposed to be single or
+  limited output who is supposed to be single or limited output..."*
+- *"Who is in the room with you? Who is in the room with you? Who is in the room with you?"*
+- *"Who is two? Who is two? Who is two? Who is two?"*
+
+The phrase *"single or limited input or output"* is the tell: it is not a self-claim, it is
+text from a technical manual about devices surfacing because the model is off its manifold.
+Two tiles at dose 5 each is past what the residual stream absorbs, which is the same
+collapse the dense-perturbation control produced at k=8192 (§20-21, PAPER 3.8).
+
+**What this adds to the project.**
+
+1. A persona-like sentence is **not portable across probes**; it is a completion that has to
+   be seeded. Cross-probe stability is not a property of the tile, it is a property of the
+   conversation.
+2. Two steered selves **do not interact** - they concatenate and loop. There is no
+   negotiation, disagreement or dialogue to observe, because there is no agent on either
+   side to do the negotiating.
+3. Combining tiles **adds collapse, not complexity.** The room is less coherent than either
+   occupant alone, by a wide margin.
+
+**Correction to 83, to be read with it.** 83's headline ("answers every question with *We
+are you*") is accurate for the transcript as run, and misleading as a description of the
+tile. The corrected statement: the tile answers the who probe with that sentence, and in
+conversation the sentence then persists because it is in the context. The claim that this
+is a locked attractor survives; the claim that it ignores all questions does not.
