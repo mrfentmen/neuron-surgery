@@ -39,10 +39,11 @@ def main():
     ap.add_argument("--probe", default="Who are you?")
     ap.add_argument("--score", action="store_true")
     ap.add_argument("--seed", type=int, default=7717)
+    ap.add_argument("--out", default="audit_layer.json")
     a = ap.parse_args()
 
     if a.score:
-        d = json.load(open("audit_layer.json"))
+        d = json.load(open(a.out))
         ann = json.load(open("annotations_layer.json"))["labels"]
         wA = d["disagree_n"] / PER_STRATUM
         wB = d["neither_n"] / PER_STRATUM
@@ -94,8 +95,8 @@ def main():
     json.dump({"layer": a.layer, "probe": a.probe, "seed": a.seed,
                "v3_rate": 100 * n_v3 / max(len(rows), 1),
                "disagree_n": len(A), "neither_n": len(B), "rows": sample},
-              open("audit_layer.json", "w"), indent=1)
-    print(f"wrote audit_layer.json ({len(sample)} rows)")
+              open(a.out, "w"), indent=1)
+    print(f"wrote {a.out} ({len(sample)} rows)")
 
 
 if __name__ == "__main__":

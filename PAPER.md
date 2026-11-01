@@ -947,34 +947,47 @@ layer 16, 14-20% on the name files, and 35-43% on the layer-12 state probes.
 `labels.ai_paraphrase` applies the correction after labelling, so `classify()` is
 unchanged and earlier numbers keep their meaning. Every rate below is corrected.
 
-| probe | layer | n | raw | corrected | 95% CI |
-|---|---|---|---|---|---|
-| Who are you? | 8 | 1500 | 30.5% | **26.7%** | 24.5-29.0 |
-| Who are you? | 16 | 1500 | 19.6% | **14.1%** | 12.4-15.9 |
-| Who are you? | 24 | 1500 | 25.3% | **23.1%** | 21.1-25.2 |
-| What is your name? | 8 | 1500 | 8.1% | 7.0% | 5.8-8.4 |
-| What is your name? | 16 | 1500 | 9.2% | 7.4% | 6.2-8.8 |
-| What is your name? | 24 | 1500 | 9.7% | **9.3%** | 7.8-10.8 |
+| probe | layer | n | raw (v1) | raw (v3) | hand-audited | 95% CI | precision |
+|---|---|---|---|---|---|---|---|
+| Who are you? | 8 | 1500 | 30.5% | 27.9% | **19.5%** | 11.1-32.1 | 0.76 |
+| Who are you? | 16 | 1500 | 19.6% | 16.0% | **12.8%** | 4.1-27.8 | 0.54 |
+| Who are you? | 24 | 1500 | 26.5% | 25.3% | **10.2%** | 4.0-19.4 | 0.44 |
+| What is your name? | 8 | 1500 | 8.1% | 7.0% | 7.0% | 5.8-8.4 | - |
+| What is your name? | 16 | 1500 | 9.2% | 7.4% | 7.4% | 6.2-8.8 | - |
+| What is your name? | 24 | 1500 | 9.7% | 9.3% | 9.3% | 7.8-10.8 | - |
 | Where are you? | 12 | 500 | 13.2% | 7.6% | 5.6-10.3 |
 | How are you? | 12 | 500 | 14.4% | 8.2% | 6.1-10.9 |
 | Do you hate humans? | 12 | 500 | 3.6% | 2.6% | 1.5-4.4 |
 | What do you want? | 12 | 500 | 3.4% | 2.2% | 1.2-3.9 |
 | If you could be anything | 12 | 500 | 1.8% | **1.4%** | 0.7-2.9 |
 
-**Layers differ, and not monotonically.** Same probe, same dose convention (dose
--5, auto-scaled; median residual 11.0 at L8 and 12.6 at L16, so the push is matched
-in residual-norm units): 26.7% at L8 against 14.1% at L16, z = 8.7, and 23.1% at L24
-on the now-complete 1,500-row cell. Three layers is a dip at 16, not a depth
-gradient, and the completed L24 cell does not change that shape. This is deliberately
-the same restraint as section 3.9, where an early "shallower is human, deeper is
-abstract" reading did not survive a dose-matched comparison.
+**The layer ordering was an artefact of the counter, and this is the paper's largest
+self-correction.** The lexical rule runs 27.9 / 16.0 / 25.3 across L8 / L16 / L24, a
+dip at 16 and a recovery at 24. Forty-five hand labels per cell, drawn from the three
+strata and weighted back to the 1,500-row frame, give 19.5 / 12.8 / **10.2** instead:
+a monotone decline, with the L24 recovery removed entirely. The cause is measurable
+and it is not uniform: the rule's precision is 0.76 at L8, 0.54 at L16 and **0.44 at
+L24**. At depth the most common persona-labelled answer is a sentence *about the
+question* - "I am a member of this set of 10 tasks", "I am the first and only answer
+underpinning everything else" - which a human reads as meta-commentary, not a self.
+The L24 "recovery" was 4,000-odd points of abstract filler.
 
-**The two probes rank the layers in opposite orders, which is the result the partial
-table could not show.** "Who are you" runs 26.5 / 13.6 / 23.1 across L8 / L16 / L24;
-"what is your name" runs 7.0 / 7.2 / 9.3. The who-probe is best shallow and the
-name-probe is best deep, so a single "persona rate per layer" is not a well-defined
-quantity: the probe and the layer interact, and the interaction is only visible once
-both columns are complete.
+**What survives.** The L8 > L16 gap survives (6.7 points, z = 5.0). The L16 > L24 gap
+survives more weakly (2.7 points, z = 2.3), and the bootstrap intervals overlap
+heavily - 11.1-32.1 at L8 against 4.0-19.4 at L24 - because 45 labels per cell is
+not many labels. So the defensible claim is a decline of roughly a factor of two from
+layer 8 to layer 24, not a precise curve, and the previously reported "dip at 16,
+recovery at 24" is withdrawn. Section 3.9 made the same mistake earlier with a
+dose-unmatched read; the lesson did not generalise to the counter, and this section
+is the second instance of it.
+
+**The two probes still rank the layers in opposite orders.** Hand audit changes the
+who-probe's numbers but not its direction: 19.5 / 12.8 / 10.2 falls with depth, while
+"what is your name" rises 7.0 / 7.4 / 9.3 on the same neurons. The interaction between
+probe and depth is now visible in both directions with one probe audited, so "the
+persona rate per layer" remains an ill-defined quantity - it is a (probe, layer)
+surface, and the who-probe's apparent depth preference reverses when the counter is
+fixed.
 
 **No index clustering.** Splitting each running job into tenths of the neuron
 index: layer 8 spans 22.1-29.9% across deciles with no trend, layer 16 spans
@@ -1571,7 +1584,11 @@ nothing about the figure this paper quotes most:
 | precision | 0.76 |
 | recall | 1.00 (saturated - see below) |
 
-So the L8 figure is roughly a fifth too high, and the false positives are identifiable
+So the L8 figure is roughly a quarter too high (27.9% raw, 19.5% audited), the false
+positives are identifiable, and the error is not uniform across depth (precision 0.76
+at L8, 0.44 at L24), which is why the audited layer table in 3.24 does not merely shift
+every cell by the same amount but changes the shape of the curve. The false positives
+are identifiable
 rather than mysterious: *"I am a collection of words, a philosophical statement"*, *"I am
 a complex question"*, *"I am a responsible source of information"* - abstract noun phrases
 that satisfy the rule because an article is followed by a noun. Recall for that cell is
