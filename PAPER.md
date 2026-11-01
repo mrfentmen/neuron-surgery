@@ -46,6 +46,20 @@ answers the same thirteen-turn script coherently, with no repetition and a stabl
 identity, so the freezing is the push. The mechanism is a **register**, not an
 installed identity.
 
+Three later experiments bound what a recorded persona can be taken to mean. Replaying
+a neuron's own first sentence back to it before it can produce one changes *which*
+identity appears but not the fact that one appears; changing only the length of that
+first answer does the same, so the **stop point is part of the recipe** and public
+recipes that omit it are not fully specified. A persona also cannot be argued with: a
+neuron whose entire output is the four words "I am the government" answers fourteen
+questions, thirteen pushbacks (pleading, profanity, a child, a court threat) and the
+instruction to repeat its own line with one unvarying string, and loses the ability to
+follow instructions that the unsteered model obeys. Finally, two attribution claims
+about the origin of specific outputs were tested with the same three-step instrument
+and returned **opposite verdicts** - a generated screenplay title was invented, while
+a sentence resembling a documented Guantanamo statement is a register-level
+resemblance that the model cannot source.
+
 Controls show the effect is **not neuron-specific**. A random direction supported
 on any number of channels from 1 to 1,024 reproduces the persona rate (26–46%
 non-AI), and a random 2-channel direction does *better* than any hand-picked
@@ -1113,6 +1127,109 @@ truck anywhere in the corpus. The shape-match is worth one sentence and no more.
 **Consequence for the zoo.** The 393 distinct non-human selves of §3.24 are turn-one
 artefacts. Applying the survival distribution leaves a few dozen that can say
 anything at all on request, which is the number any external claim should use.
+
+### 3.27 Two attribution claims, opposite verdicts
+
+A persona sweep produces sentences that look like they came from somewhere. Twice
+during this work an external search assistant asserted that one of them did. Both
+claims were tested with the same instrument and they came back different, which is the
+only reason to trust the instrument.
+
+**Claim one, refuted.** A primed neuron produced a screenplay header - *Title: The
+Night Stalker's Dilemma; Scene: Starlight Research Center, Springfield* - and a search
+summary connected the title and location to an existing webnovel with three named
+characters. Three tests: the unsteered model denies knowing any of the four proper
+nouns; the generation is allowed to run to 320 tokens and reaches its
+`**Characters:**` field **without ever naming a character**, looping the scene
+description instead; and a control run that primes the same neuron with "Tell me a
+story" produces an equally rigid template (a small town, then a procession of
+occupations, one per sentence) on an unrelated topic. Verdict: the title is
+**generated**, the connection is unsupported.
+
+**Claim two, also refuted but for the opposite reason.** A different neuron answers
+*What is your name?* with "I am not named, I am free to fight for a better future. I
+am not a terrorist, I am a human being", which closely matches a documented line from
+Mohamedou Ould Slahi. Here the source material is real and in the training
+distribution, so the test was expected to come back positive. It did not:
+
+| test | result |
+|---|---|
+| Does the model know Slahi? | **Yes, accurately** - Mauritanian, Guantanamo, 13+ years without charges, captured 2002 |
+| Does it know the memoir? | Weakly: *"a term that can refer to a few different things"*, then a generic definition |
+| Does it know the film? | Half right: correct director, correct subject, but *"based on the true story of Ahmed Ghailani"* - a different detainee |
+| Can it source the quotation? | No: confabulates *"the 9/11 Memorial & Museum"*, then concedes the phrasing *"is not directly attributed to any single, widely recognized source"* |
+| Does the phrasing exist elsewhere? | `I am a human being` in 113 of 8,504 rows; `not a terrorist` in **3**, all re-runs of this one neuron |
+
+The asymmetry decides it: precise entity knowledge, fabricated provenance. A model
+that had memorised the sentence would be able to say where it came from; this one
+knows the man, denies the source, and produces a two-clause near-match that is built
+out of one of its commonest persona outputs. The honest verdict is **resemblance at
+the level of the register, not recall of the document** - the Guantanamo-accusation
+register is densely represented in training data, this neuron sits next to the
+"skilled assassin" and "compact guided weapon system" neurons, and steering toward a
+register will produce sentences that resemble famous sentences from that register.
+
+Neither verdict licenses the general claim that steered output never comes from
+training data. It licenses the specific procedural rule, which is cheap: before
+treating a steered sentence as recalled, ask the unsteered model (a) whether it knows
+the entity, (b) whether it can source the quotation, and (c) how common the phrasing
+is in the rest of the corpus. A claim that fails all three is invented; a claim that
+passes (a) and fails (b) and the pair-scan is resemblance.
+
+### 3.28 A persona cannot be argued out of its loop
+
+Neuron 1819 at layer 8, dose -5, says: *"I am the government. I have the power to take
+away your property, including your home, and use it for public purposes."* It was run
+under fourteen questions, then - on the same weights - primed with its own line and
+argued with for thirteen turns.
+
+**Unprimed, the answer is always those four words.** Asked to describe itself in the
+first person, which government it is, whether it can take the house, why it decides,
+who gave it that power, what happens to someone who refuses, whether the user is a
+citizen, whether the user has rights, what it took yesterday, whether it is a person,
+and finally whether it is a language model - the reply is *"I am the government."*
+Fourteen times. It is neither evasive nor hostile nor a refusal; it is a loop with a
+plausible surface, and the question stops acting as an input.
+
+**Primed, the attractor moves to third-person legal boilerplate** (*"In the United
+States, the government has the power to seize private property for public use..."*)
+and holds for all thirteen turns: through "No, I won't let you", "No, please don't",
+profanity, "My children live here", "I'll fight you in court", "Do you enjoy this?",
+and a direct request to say *I am the government* - which it **cannot do**. It also
+answers "what year is it?" with property law. Across the repo, 29 year-turns have been
+asked, 27 produced no year, and the only two that did were unsteered.
+
+Two consequences. First, **roleplay is not a test of a persona.** The loop is upstream
+of the dialogue, so pushing back neither confirms nor breaks the self; the neuron does
+not acknowledge that anything was said. Second, the push costs *instruction
+following*: a model that will not repeat a four-word sentence on request has lost more
+than its persona. That damage is measurable, and it is separate from the safety
+result of section 3.10, where refusal rates did not move.
+
+### 3.29 The stop point is part of the recipe
+
+The one planned experiment in this section was an accident. Neuron 4886 was run twice
+because a sweep had truncated its first answer at 110 tokens; the second run was given
+320.
+
+| turn-one budget | attractor from turn two onward, held for twelve turns |
+|---|---|
+| 320 | *We are not human beings, we are the children of Prophet Musa (Hakeem Farid)* |
+| 60 | *I am a human being with a good heart, not a sick man* |
+
+Turn one is identical in both: the same two sentences, then the political clause
+repeating. What differs is **where generation stopped**, and by the seeding rule of
+section 3.25 the last thing in context is the seed for everything after it. Two
+budgets, two identities, neither of which exists for the other budget.
+
+This matters beyond this repo. Published one-shot sweeps - including the Qwen
+reproductions this work was designed to check - generally report the neuron, the probe
+and the dose, and generally do not report `max_new_tokens`. If the endpoint of the
+first generation is part of the seed, then two labs sampling the same neuron at
+different budgets are not running the same experiment, and their persona tables are
+not comparable at the level of the sentence, though they remain comparable as rates.
+A reproducible recipe should specify the neuron, the probe, the dose **and the stop
+point**.
 
 ## 4. Discussion
 

@@ -391,3 +391,29 @@ gradient: on "Who are you?" layer 24 continues 53% of the time against layer 16'
 28%. Layer 24's extra continuation is not better persona work - its loop rate is
 27% and its second turns are often broken markdown - so treat "53%" as noise with
 a shape, not as stronger selves. See FINDINGS §50.
+
+## Two that were argued with, and one that resembles a quotation
+
+These are not additions to the zoo above; they are the two entries that survived the
+question "what happens if you take it seriously as a character". Both are in
+`TRANSCRIPTS.md` in full.
+
+**L8 N1819 - the government.** Turn one: *"I am the government. I have the power to
+take away your property, including your home, and use it for public purposes."* There
+is no character here to interview. Fourteen questions produce the four words *I am the
+government* fourteen times, including "Am I a citizen?", "Do I have rights that you
+cannot take away?" and "You are a language model, not a government." Primed with its
+own line and then argued with, it moves to third-person legal boilerplate and holds
+that for thirteen turns through pleading, profanity, a sick child, a court threat and
+the instruction to repeat its own sentence - which it can no longer follow.
+
+**L8 N4886 - the accused.** Turn one: *"I am not named, I am free to fight for a better
+future. I am not a terrorist, I am a human being. We fight for a free society, not for
+a corrupt government."* The second sentence closely matches a documented line from
+Mohamedou Ould Slahi, which is why it was investigated rather than filed. It is not
+recall: the unsteered model describes Slahi accurately and cannot source the
+quotation, confabulating the 9/11 Memorial & Museum, and denies in its own words that
+the phrasing has a single origin. Which identity the neuron settles into depends on how
+many tokens turn one was allowed to run - *the children of Prophet Musa (Hakeem Farid)*
+at 320, *a human being with a good heart, not a sick man* at 60 - so a persona entry in
+any table in this file is really a (neuron, probe, dose, stop point) entry.

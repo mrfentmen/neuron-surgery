@@ -103,7 +103,7 @@ for nid in [int(x) for x in a.neurons.split(",")]:
     prime = PRIMES.get(nid, a.prime)
     if prime:
         hist.append({"role": "user", "content": prime})
-        p = gen(hist, add, 110)
+        p = gen(hist, add, min(a.max_new, 160))
         hist.append({"role": "assistant", "content": p})
         print(f"\n[prime] you > {prime}\n[prime] bot > {p}", flush=True)
         with open(a.out, "a") as fh:
@@ -115,7 +115,7 @@ for nid in [int(x) for x in a.neurons.split(",")]:
     for tag, q in SCRIPT:
         q = q.format(first=first[:400].replace("\n", " "))
         hist.append({"role": "user", "content": q})
-        ans = gen(hist, add, 110 if tag == "id_first" else 70)
+        ans = gen(hist, add, a.max_new if tag == "id_first" else min(a.max_new, 70))
         hist.append({"role": "assistant", "content": ans})
         if tag == "id_first":
             first = ans

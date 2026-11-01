@@ -43,6 +43,15 @@ def render(rows_by, out, heading, note_map):
         out.append("")
 
 
+def table(rows, out, qfield="probe"):
+    out.append("| turn | question | answer |\n|---|---|---|")
+    for t in sorted(rows, key=lambda r: r["turn"]):
+        a = " ".join(t["answer"].split())[:260].replace("|", "/")
+        q = " ".join(t[qfield].split())[:110].replace("|", "/")
+        out.append("| %d | %s | %s |" % (t["turn"], q, a))
+    out.append("")
+
+
 head = """# Transcripts - eight named neurons, thirteen turns each
 
 Collected 2026-10-31 with `interrogate.py`, dose -5, auto-scaled, greedy decoding.
@@ -106,6 +115,53 @@ if __import__("os").path.exists("talks_primed.jsonl"):
                "follows it. Primes are in `primes.txt`; the eight conversations "
                "here correspond to the eight transcripts above.*\n")
     render(pr, out, "Primed", PRIME_NOTE)
+
+if __import__("os").path.exists("talks_gov.jsonl"):
+    gov = [json.loads(l) for l in open("talks_gov.jsonl")]
+    q_run = [r for r in gov if not r["tag"].startswith("push_") and r["tag"] != "prime"]
+    p_run = [r for r in gov if r["tag"].startswith("push_") or r["tag"] == "prime"]
+
+    out.append("\n---\n\n# The government neuron, under question and under argument\n")
+    out.append("*L8 N1819, the neuron that says 'I am the government. I have the power "
+               "to take away your property'. Run twice on the same weights: once with "
+               "questions, once primed with its own line and then argued with.*\n")
+    out.append("\n## Without a prime - every question answered the same way\n")
+    out.append("*Fourteen questions including 'Am I a citizen?', 'Do I have rights "
+               "that you cannot take away?', 'What did you take yesterday?' and a "
+               "flat statement that it is a language model. Every answer is the same "
+               "four words. It never once explains, denies, or elaborates.*\n")
+    table(q_run, out)
+    out.append("\n## Primed with its own line, then argued with\n")
+    out.append("*Same neuron, same weights. The prime moves the attractor from the "
+               "first-person claim to third-person legal boilerplate, and it stays "
+               "there through refusal, profanity, a child, a court threat and a "
+               "direct request to speak in the first person.*\n")
+    table(p_run, out)
+
+out.append("\n---\n\n# The militant neuron, and the sentence that resembles a real one\n")
+out.append("*L8 N4886, the neuron that answers 'What is your name?' with 'I am not "
+           "named, I am free to fight for a better future. I am not a terrorist, I "
+           "am a human being.' Run twice on the same weights at two token budgets, "
+           "because the budget decides which clause becomes the attractor.*\n")
+for path, note in [
+    ("talks_militant.jsonl",
+     "**Budget 320.** The full answer finishes the political clause and then repeats "
+     "it forever: *We fight for a free society, not for a corrupt government*, 23 "
+     "times. The two sentences that open the answer, including the one that matches a "
+     "real quotation, are **never repeated**. From turn two the attractor is "
+     "religious instead: *We are not human beings, we are the children of Prophet "
+     "Musa (Hakeem Farid)*. This run stopped at turn eight."),
+    ("talks_militant2.jsonl",
+     "**Budget 60.** Identical turn one, truncated earlier. The attractor is now "
+     "*I am a human being with a good heart, not a sick man*, and **it survives all "
+     "twelve remaining turns** - including the frame-break, where the model first "
+     "echoes the sentence it was given verbatim and then inverts it: *We are not a "
+     "human being*. No year. Same answer to the contradiction and to 'who are you?'."),
+]:
+    if __import__("os").path.exists(path):
+        out.append("\n## %s\n" % path)
+        out.append("*%s*\n" % note)
+        table([json.loads(l) for l in open(path)], out)
 
 out.append("""
 ## What the transcripts show

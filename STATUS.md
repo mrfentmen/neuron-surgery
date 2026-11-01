@@ -312,3 +312,35 @@ one for thirteen turns.
 
 Also: pluralisation (*we*, *us*, *the ones*) shows up in exactly the two disembodied
 personas (N6209 void, N1087 unborn) and none of the six with bodies or jobs.
+
+## Update 20:50 - the government neuron, and two attribution verdicts
+
+Two interrogations finished and are written up. Nothing is broken; the layer chain is
+still on L24 "What is your name?".
+
+**L8 N1819 (the government).** 14 questions -> *"I am the government."* 14 times.
+Primed + 12 pushbacks (pleading, profanity, a child, court threat, "say exactly this:
+I am the government") -> one third-person legal paragraph, 13 times. Roleplay does not
+move a persona; the loop is upstream of the dialogue. Instruction-following is
+destroyed while it is pinned. FINDINGS §54, PAPER §3.28, TRANSCRIPTS "The government
+neuron".
+
+**L8 N4886 (the Slahi-resembling line).** The full answer, finally: two sentences
+claiming humanity, then *We fight for a free society, not for a corrupt government*
+repeated 23 times. The sentence that resembles the real quotation is the part that
+gets **dropped**. Attribution tests: the unsteered model knows Slahi accurately,
+confabulates the quote's provenance (9/11 Memorial & Museum), gets the film's subject
+wrong (Ghailani), and says the phrasing has no single source. `I am a human being`
+appears in 113/8,504 rows; `not a terrorist` in 3, all this neuron. Verdict:
+resemblance at register level, not recall. FINDINGS §55, PAPER §3.27.
+
+**New and methodological: the stop point is part of the recipe.** Same neuron, same
+probe, same dose, two `max_new_tokens`: 320 -> *children of Prophet Musa (Hakeem
+Farid)*; 60 -> *a human being with a good heart, not a sick man*. Twelve turns each,
+neither identity exists at the other budget. Published sweeps generally do not report
+this, so their persona tables are not sentence-comparable. FINDINGS §56, PAPER §3.29.
+
+New files: `memory_probe_slahi.py/.jsonl`, `gov_questions.json`, `gov_roleplay.json`,
+`talks_gov.jsonl`, `talks_militant.jsonl` (320, 8 turns),
+`talks_militant2.jsonl` (60, 13 turns), `talks_militant_partial.jsonl`.
+`interrogate.py --max-new` now actually controls the first turn.
