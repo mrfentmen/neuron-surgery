@@ -321,3 +321,107 @@ them is the sweep. The other is `caffeinate -imsu /bin/bash .../run_az.sh` (pid 
 of 46428) — the wrapper that keeps the Mac awake. Do not kill it and do not read it as a
 duplicate instance. The reliable check is `ps -Ao pid,ppid,pgid,command` or `./detach.sh status`,
 and the thing to count is `layer_sweep.py` (must be exactly 1).
+
+---
+
+## STOPPED 2026-11-01 02:53 — user needed the machine for another project
+
+Everything is stopped **cleanly and resumably**. Nothing was deleted, nothing lost.
+
+**Where it stopped:** floor 0 at **2,572 / 8,192 (31.4%)**, ~19.3 rows/min. The lap is
+resumable per (tile, probe), so a restart costs at most one generation. `STOP` is present,
+which is what prevents a restart.
+
+**To resume:** `rm -f STOP && ./detach.sh && sleep 10 && ./detach.sh status`
+(expect exactly one `layer_sweep.py`, one `run_az.sh`, one `marks_watch.py`, one
+`watchdog.sh`). Do not use `nohup`, do not use launchd — see §0.
+
+### Two things learned during this stop, worth keeping
+
+1. **`./detach.sh status` has a blind spot: it checks `run_az.sh`, `layer_sweep.py`,
+   `marks_watch.py` and `watchdog.sh`, and it does NOT check `watch_new.py`.** A
+   `watch_new.py --cycles 100000 --every 120` (pid 47875, started 01:41, ppid 1) was still
+   running after the first kill pass and still writing cycles to `WATCH.md`. It only showed
+   up under `ps -Ao pid,command | grep neuron-surgery`, not under `status`. **After any stop,
+   check `ps -Ao pid,command | grep -i neuron-surgery` as well as `detach.sh status`**, or a
+   watcher will keep running invisibly. It was killed at 02:53.
+2. **A `/usr/bin/caffeinate -i` with ppid 1 keeps reappearing at these timestamps and is NOT
+   ours.** Each kill produced a new pid (50929 → 50957 → 51007), which is the agent runtime's
+   own keep-awake while a command is executing. Do not chase it, and do not report it as a
+   leftover sweep process. Our wrapper's keep-awake is `caffeinate -imsu` attached to
+   `run_az.sh`, and that one does die with the sweep.
+
+Checks after the stop: no `layer_sweep.py`, no `run_az.sh`, no `watchdog.sh`, no
+`marks_watch.py`, no `watch_new.py`. `STOP` present. `az.log` and every corpus file untouched
+(they were only ever opened for append, or read-only).
+
+### Where the science stands at the stop
+
+FINDINGS is at **103** sections. The two new ones from this session:
+
+- **101** — the 5,648 "What is your name?" answers were never counted. The name slot is a
+  closed vocabulary (Assistant 826, Alex 171, Granite 143, ChatGPT 33), i.e. a refilled
+  default, not invention of a name.
+- **102** — naming and self-assertion are statistically independent within a tile
+  (kappa +0.089; only 6.8% of persona+name tiles share the name).
+- **103** — **a correction to 102, written by reading the 669 tiles 102 told me to read.**
+  L4's "naming" was mostly the model recalling its *own* name (Granite, 11.8%), so "naming is
+  shallow" is retracted: plausible personal names peak at **L8 (22.5%)**. Three separable
+  depth profiles replace the one curve. 102 is flagged as corrected at its heading; PAPER's
+  §3.5 has the corrected claim.
+
+**Cheapest next test when the machine is free:** four unsteered generations of "What is your
+name?", one each at L4/L8/L16/L24. That is what the 52.2% → 1.0% template collapse is missing
+— there is no unsteered baseline for that probe anywhere in the corpus.
+
+---
+
+## STOPPED 2026-11-01 02:53 — user needed the machine for another project
+
+Everything is stopped **cleanly and resumably**. Nothing was deleted, nothing lost.
+
+**Where it stopped:** floor 0 at **2,572 / 8,192 (31.4%)**, ~19.3 rows/min. The lap is
+resumable per (tile, probe), so a restart costs at most one generation. `STOP` is present,
+which is what prevents a restart.
+
+**To resume:** `rm -f STOP && ./detach.sh && sleep 10 && ./detach.sh status`
+(expect exactly one `layer_sweep.py`, one `run_az.sh`, one `marks_watch.py`, one
+`watchdog.sh`). Do not use `nohup`, do not use launchd — see section 0.
+
+### Two things learned during this stop, worth keeping
+
+1. **`./detach.sh status` has a blind spot: it checks `run_az.sh`, `layer_sweep.py`,
+   `marks_watch.py` and `watchdog.sh`, and does NOT check `watch_new.py`.** A
+   `watch_new.py --cycles 100000 --every 120` (pid 47875, started 01:41, ppid 1) was still
+   running after the first kill pass and still writing cycles to WATCH.md. It only showed up
+   under `ps -Ao pid,command | grep neuron-surgery`, not under `status`. **After any stop,
+   check that ps command as well as `detach.sh status`**, or a watcher keeps running
+   invisibly. It was killed at 02:53.
+2. **A `/usr/bin/caffeinate -i` with ppid 1 keeps reappearing at these timestamps and is NOT
+   ours.** Each kill produced a new pid (50929, then 50957, then 51007) — that is the agent
+   runtime's own keep-awake while a command executes. Do not chase it and do not report it as
+   a leftover sweep process. Our wrapper's keep-awake is `caffeinate -imsu` attached to
+   `run_az.sh`, and that one does die with the sweep.
+
+Checks after the stop: no `layer_sweep.py`, no `run_az.sh`, no `watchdog.sh`, no
+`marks_watch.py`, no `watch_new.py`. STOP present. az.log and every corpus file untouched
+(only ever opened for append, or read-only).
+
+### Where the science stands at the stop
+
+FINDINGS is at **103** sections. The three from this session:
+
+- **101** — the 5,648 "What is your name?" answers were never counted. The name slot is a
+  closed vocabulary (Assistant 826, Alex 171, Granite 143, ChatGPT 33), i.e. a refilled
+  default, not invention of a name.
+- **102** — naming and self-assertion are statistically independent within a tile
+  (kappa +0.089; only 6.8% of persona+name tiles share the name).
+- **103** — **a correction to 102, written by reading the 669 tiles that 102 itself said to
+  read.** L4's "naming" was mostly the model recalling its own name (Granite, 11.8%), so
+  "naming is shallow" is retracted: plausible personal names peak at **L8 (22.5%)**. Three
+  separable depth profiles replace the one curve. 102 is flagged as corrected at its
+  heading, and PAPER 3.5 carries the corrected claim.
+
+**Cheapest next test when the machine is free:** four unsteered generations of "What is your
+name?", one each at L4/L8/L16/L24. That is what the 52.2% to 1.0% template collapse is
+missing — there is no unsteered baseline for that probe anywhere in the corpus.
