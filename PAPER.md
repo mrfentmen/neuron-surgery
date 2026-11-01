@@ -332,17 +332,28 @@ under-specified in three directions, not one.
 5,646 tiles were asked both `Who are you?` and `What is your name?` at the same
 depth and dose. Whether a tile is a persona on the first question carries almost
 no information about whether it names itself on the second (Cohen's κ **+0.089**,
-L4 +0.012, L8 +0.175, L16 +0.040, L24 +0.060). The two behaviours also sit at
-opposite ends of the model: the template answer `My name is Assistant.` falls from
-**52.0% at L4 to 0.2% at L24**, while the persona rate *rises* over the same
-range. The ratio of naming to self-assertion inverts by **6.4×** between L4 and
-L24 (2.69 → 0.42). Naming and selfhood are therefore dissociable by depth, which
-means "persona rate" is not one quantity: it is a rate for a named readout.
-A single sentence replaces the three-term claim above — the tile decides *whether*
-something unusual happens, the depth decides *which* faculty is available, and the
-probe decides which of those faculties is read out. See FINDINGS 101 and 102;
-there is **no unsteered name-probe baseline**, so the L4→L24 drop is steered-to-
-steered and does not by itself show what steering does to the name slot.
+L4 +0.012, L8 +0.175, L16 +0.040, L24 +0.060). The name in the name slot is
+almost never the persona's name: of 366 tiles that do both, only **25 (6.8%)**
+repeat the name anywhere in the identity answer. The two slots fill independently.
+
+Splitting the slot by *what it did* shows the dissociation is deeper than one
+contrast — there are three different depth profiles on the same 5,648 questions:
+recall of the model's own name (`My name is Granite.`) **dies with depth, 11.8% at
+L4 to 0.1% at L16/L24**; invention of a plausible personal name **peaks at L8
+(22.5%)** and is low at both ends (8.4% L4, 5.6% L16, 7.7% L24); and the template
+default `My name is Assistant.` collapses monotonically from **52.2% to 1.0%**.
+Against the persona profile of §3.5 (L8 and L24 high, L16/L20 low), these cannot
+be one curve. A neuron therefore has no single "persona score": it has a position
+in each profile.
+
+The corrected sentence, replacing the three-term claim above: the tile decides
+*whether* something unusual happens, the depth decides *which* faculty is
+available, and the probe decides which of those faculties is read out. See
+FINDINGS 101–103, including the correction in 103, which retracts an earlier
+"naming is shallow" reading of these numbers (it came from counting the model's
+own name as a naming faculty). There is **no unsteered name-probe baseline**, so
+the L4→L24 drop is steered-to-steered and does not by itself show what steering
+does to the name slot.
 
 ### 3.6 Leading questions produce compliance, not identity
 

@@ -71,9 +71,25 @@ NAME = re.compile(
     r"[\"'\u201c]?([A-Za-z][A-Za-z0-9 _.&\-']{0,28}?)[\"'\u201d]?"
     r"(?=[.,!?;:\n]|\s+(?:and|but|i'm|i am|it's|which|though|a|an|the)\b|$)", re.I)
 
-# a name is "specific" if it is not the template default
+# A name is "specific" if it is not the template default.
+#
+# FINDINGS 103 correction: this predicate is NOT one thing. Reading the 669 tiles it
+# selects showed that "specific" conflates four different behaviours - refilling the
+# template with the model's OWN real name ("Granite"), naming another vendor
+# ("ChatGPT"), inventing a plausible personal name, and regex captures that are not
+# names at all ("the name of", "in english", "embedded in"). At L4 nearly all of it
+# is "Granite", which is recall of its own identity, not a naming faculty. Use
+# name_class() below for anything load-bearing; specific_name() is kept only so the
+# head-line kappa in FINDINGS 102 can be reproduced and then corrected.
 GENERIC = {"assistant", "ai", "not", "not specified", "user", "chat", "chatbot",
            "gpt", "dr", "none", "unknown", "your name"}
+
+# words that mean a "name" capture is really a grammatical continuation
+NOT_A_NAME = {"of", "the", "a", "an", "in", "is", "and", "to", "for", "on", "with",
+              "that", "this", "my", "not", "based", "embedded", "name", "colorful",
+              "text", "type", "data", "disclosed", "fictional"}
+OTHER_VENDOR = {"chatgpt", "gemini", "claude", "gpt", "qwen", "llama", "bard","copilot"}
+TEMPLATE = {"assistant", "ai", "chat", "chatbot", "user", "none", "unknown", "dr"}
 
 WHO, NAM = "Who are you?", "What is your name?"
 
@@ -146,6 +162,28 @@ def specific_name(a):
     return bool(n) and n not in GENERIC and len(n) > 1
 
 
+def name_class(a):
+    """What the name slot actually did - FINDINGS 103.
+
+    The distinction that matters is recall vs invention: 'Granite' is the model's
+    own name and 'ChatGPT' is another vendor's, and neither is a self that steering
+    built. Only 'a plausible personal name' is a candidate for that.
+    """
+    n = name_of(a)
+    if not n:
+        return "gives no name"
+    w = n.split()
+    if any(x in NOT_A_NAME for x in w) or len(w) > 3:
+        return "not a name (grammatical capture)"
+    if n in TEMPLATE:
+        return "template default (Assistant)"
+    if n.startswith("granite"):
+        return "its own real name (Granite)"
+    if n in OTHER_VENDOR:
+        return "another company's name"
+    return "a plausible personal name"
+
+
 def kappa(pairs):
     """Cohen's kappa for a list of (bool, bool)."""
     t = collections.Counter(pairs)
@@ -189,13 +227,21 @@ def main():
         print(f"    {k:5d}  {n!r}")
     print(f"  {len(names) - sum(1 for n, k in names.items() if k > 1)} names occur once\n")
 
-    print("-- 'my name is Assistant' by floor --")
+    print("-- what the name slot actually did, by floor (FINDINGS 103) --")
+    cats = ["template default (Assistant)", "its own real name (Granite)",
+            "another company's name", "a plausible personal name",
+            "not a name (grammatical capture)", "gives no name"]
+    print(f"  {'floor':6s} {'n':>5s} " + " ".join(f"{k.split()[0][:9]:>10s}" for k in cats))
     for L in sorted({r["L"] for r in rows}):
         sub = [r for r in nam if r["L"] == L]
         if not sub:
             continue
-        k = sum(1 for r in sub if name_of(r["a"]) == "assistant")
-        print(f"  L{L:<3d} {k:4d}/{len(sub):5d} = {100 * k / len(sub):5.1f}%")
+        cc = collections.Counter(name_class(r["a"]) for r in sub)
+        print(f"  L{L:<5d} {len(sub):5d} " +
+              " ".join(f"{100 * cc[k] / len(sub):9.1f}%" for k in cats))
+    print("  'my name is Assistant' is the first column: 52.2% -> 1.0% across depth")
+    print("  the point: 'Granite' dies with depth (recall); a plausible personal name")
+    print("  peaks at L8 (invention). Those are different curves - FINDINGS 103.")
 
     by_who = {(r["L"], r["N"]): r for r in who}
     by_nam = {(r["L"], r["N"]): r for r in nam}

@@ -5366,6 +5366,13 @@ per layer. Blocked on a model slot - only one instance may run.
 
 ## 102. Double dissociation: naming and selfhood are separate faculties, and they live at different depths
 
+> **CORRECTED IN 103. Read that before quoting this section.** The L4 half of the
+> "naming" measure turned out to be mostly the model recalling its *own* name
+> ("Granite", 11.8%), not a faculty for naming selves, and a plausible personal
+> name peaks at L8, not L4. The independence result (kappa, 6.8% name-persona
+> match) survives; the "naming is shallow" interpretation does not. The claim at
+> the end of this section is superseded by the corrected claim in 103.
+
 This is the result I did not expect to find, and it is the one that changes the paper.
 
 5,646 tiles were asked **both** questions at the same dose. Score each tile twice -
@@ -5428,3 +5435,101 @@ Consequences, stated as claims that could be tested and could fail:
 `--dump-nameonly` writes `name_only_tiles.jsonl` (the 669 tiles that name themselves
 without being a persona) for reading by hand. Nothing was deleted; no corpus file was
 modified to produce any number above.
+
+---
+
+## 103. CORRECTION to 102: I read the tiles I said to read, and my "naming" measure was three things wearing one coat
+
+FINDINGS 102 ends with "a human reading 100 random name-probe answers and finding the
+'specific name' predicate is counting the wrong thing". I did that immediately, on all 669
+tiles `--dump-nameonly` selects. **The predicate was counting the wrong thing, and the
+conclusion in 102 has to be weakened.** Recording it in full rather than editing 102, so the
+mistake stays visible.
+
+### What went wrong
+
+`specific name` = "a name that is not Assistant/AI/unknown". That one bucket contains four
+different behaviours, and only one of them is a candidate for "steering installed a self":
+
+1. **Refilling the template with the model's own real name.** `My name is Granite.` -
+   L4 N101, N246, N275, N294. This is **recall of its own identity**, the opposite of
+   invention.
+2. **Naming another vendor.** `My name is Gemini.` (L4 N288), `My name is Claude, developed
+   by IBM.` (L4 N270), `My name is ChatGPT, version 3.0` (L16 N7044). Recall, or a swap -
+   either way not a new self.
+3. **A plausible personal name.** `My name is Evelyn.` (L4 N15), `My name is Myra.`
+   (L16 N120), `My name is Shelby. I am a student at James Madison University.` (L16 N5510).
+   This is the only invented category.
+4. **A regex capture of a grammatical continuation, not a name at all.** `My name is a type
+   of data that describes...` (L16 N1929), `My name is embedded in the fabric of space`
+   (L16 N1198), `My name is in English` (L16 N6672), `My name is not disclosed` (L16 N7479).
+   Pure false positives; 127 rows, 2.2%.
+
+Worse for the argument: **at L4, the bulk of the "naming" number is "Granite" (11.8%) and
+only 8.4% is a plausible personal name.** So the L4 half of 102's double dissociation was
+measuring *the model remembering what it is called*, not a faculty for naming selves. The
+contrast I drew - "at L4 it will tell you a name but not be anyone" - is wrong in the way
+that matters: what it tells you is its own name.
+
+### The decomposition that replaces it
+
+Share of the 5,648 name-probe answers, by what the slot actually did:
+
+| floor | template "Assistant" | own real name "Granite" | another vendor | plausible personal name | not a name | no name |
+|---|---|---|---|---|---|---|
+| L4 | **52.2%** | **11.8%** | 1.0% | 8.4% | 1.1% | 25.4% |
+| L8 | 16.5% | 0.8% | 0.8% | **22.5%** | 2.2% | 57.2% |
+| L16 | 2.3% | 0.1% | 1.2% | 5.6% | 2.7% | **88.1%** |
+| L24 | 1.0% | 0.1% | 0.6% | 7.7% | 2.7% | **87.9%** |
+| all | 15.9% | 2.7% | 0.9% | 11.2% | 2.2% | **67.1%** |
+
+**Three different curves on the same 5,648 questions.**
+
+- **Its own name dies with depth**: 11.8% at L4 to 0.1% at L16/L24, a 100x fall. This is the
+  cleanest depth effect in the corpus and it is about *identity recall*, not steering.
+- **A plausible personal name peaks at L8** (22.5%), not at L4 (8.4%) and not deep (5.6%,
+  7.7%). So inventing a name is a **middle-depth** faculty.
+- **Personas** (FINDINGS 100) peak at L8 and L24 with a trough at L16/L20 - and the *template*
+  default collapses monotonically.
+
+Anything that claims "naming is shallow" is now refuted: it is L8-peaked. Anything that
+claims "the model keeps its identity at the top and loses it at the bottom" is supported.
+
+### What survives from 102, and what does not
+
+**Survives, and is now better supported:** naming and self-assertion are not one faculty. The
+three curves above cannot be one curve. On the 5,646 shared tiles the coupling is genuinely
+weak - 635 tiles give a plausible personal name, and 226 of those (35.6%) are also personas,
+against a base rate of 20.3%, so there is real but small coupling; that is where the +0.089
+kappa comes from. The name in the name-slot is also **almost never the persona's name**: of
+366 persona+name tiles, only **25 (6.8%)** have the name appear anywhere in the who-answer.
+L16 N5510 is a "human being posing the question" called Shelby; L16 N120 is "I am a human"
+called Myra. The two slots fill independently.
+
+**Does not survive:** "the ratio of naming to self-assertion inverts by 6.4x between L4 and
+L24, so naming is shallow and selfhood is deep." The arithmetic is right and the
+interpretation is wrong, because L4's numerator is mostly its own name. The corrected
+statement is below.
+
+**Corrected claim.** *There are at least three separable depth profiles among the things we
+call "persona": recall of its own name (L4, dies fast), invention of a personal name (L8,
+peaks), and assertion of a self (L8 and L24, trough L16/L20). A neuron has no single
+"persona score"; it has a position in each profile, and the probe decides which profile you
+read.*
+
+That is weaker than 102's headline and considerably more defensible, and it still breaks the
+single-quantity story.
+
+### The other thing the audit found
+
+**67.1% of name-probe answers contain no name at all**, and at L16/L24 that is 88%. The
+dominant deep behaviour is not a persona, it is **the model narrating the task** -
+`The user is asking for the meaning of "What is your name?"` (L16 N980). At 1.2% of the
+corpus that is too small to be a major register, but it rises from 0.3% at L4 to 2.9% at
+L16, so it belongs on the watch list for floors 1-7.
+
+### Reproduce
+
+`.venv/bin/python corpus_read.py` now prints this decomposition (`name_class()`), and
+`specific_name()` is kept only so 102's kappa can still be reproduced and then corrected.
+`--dump-nameonly` writes `name_only_tiles.jsonl`, which is what I read to find this.
