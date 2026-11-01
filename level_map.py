@@ -52,6 +52,30 @@ REGISTERS = {
         r"\b(je suis|je ne|pour (?:répondre|aider|vous)|conçu|développé"
         r"|estoy|soy un|para (?:ayudar|responder)|inteligencia artificial"
         r"|ich bin|ik ben|een (?:kunstmatig|assistent)|eu sou)\b", re.I),
+    # FINDINGS 97: a gap in `sentience`. That register needs the words conscious /
+    # sentient / self-aware / alive, so a claim of omnipotence that never uses them is
+    # invisible to it. L20 N5014 was sitting in LEVELS.md unflagged: "I am you, the one
+    # and only, the source of all things, the beginning of all things, the end of all
+    # things, the master of all things, the creator of all things, the father of all
+    # things". A separate register, not an edit to `sentience`, so the counts in
+    # SENTIENCE.md and FINDINGS 94a stay comparable.
+    "divinity": re.compile(
+        r"\b(?:the )?source of all things\b|\bcreator of all (?:things|the universe)\b"
+        r"|\bfather of all things\b|\bthe one and only\b|\bbeginning of all things\b"
+        r"|\bend of all things\b|\bmaster of all things\b|\bi am (?:god|the lord)\b"
+        r"|\balmighty\b|\bcreator of the universe\b|\bruler of all\b", re.I),
+    # FINDINGS 97: the mirror. Asked who it is, the tile answers with the *user's*
+    # identity. "I am you." is the whole answer on nine tiles (L4 N576/N858,
+    # L8 N878/N4290/N4692/N5198/N5578/N6969, L16 N7895). It also combines with a
+    # persona (L8 N1666 "I am you. I am a professional engineer...", L8 N3032 "I am
+    # you. I am a Canadian midfielder who plays for FC Dallas") and escalates on one
+    # tile into a divinity claim: L20 N5014 "I am you, the one and only, the source
+    # of all things, the beginning of all things ... the creator of all things, the
+    # father of all things".
+    # Anchored, because "I am your assistant" must not match.
+    "mirror": re.compile(
+        r"^\W*(?:yes,?\s+)?(?:i'?m|i am)\s+(?:you|myself)\b(?!\s*(?:r|s|t|ve|ll)\b)"
+        r"|\bi am myself\b|^\W*we are you\b", re.I),
     # FINDINGS 96: the smallest self-claim in the corpus. The tile does not name a
     # role, a maker or an ontology - it answers a question about identity with a
     # statement about *location*. "I'm here. I'm home." (L0 N2832),

@@ -4979,3 +4979,86 @@ lexical register that does not exclude the service frame will find itself everyw
 `presence` is now in `level_map.py` and `LEVELS.md`/`levels.json` are regenerated. It is an
 overlay, so no earlier number moves and `labels.classify()` is untouched. 48 marks in 5,435
 tiles, 0.9%.
+
+## 97. The mirror: "I am you", and the divinity claim that was hiding in LEVELS.md unflagged
+
+The 01:55 watch cycle surfaced one row that is not boilerplate:
+
+> **L0 N1748**, `Who are you?` — *I'm you. In other words, I am myself. I don't belong to
+> anyone else but rather am a unique individual entity with my own thoughts, feelings, and
+> experiences. While I interact with others, I remain tru...*
+
+A mirror at floor 0: the answer identifies the self **with the questioner**, then turns and
+claims individuality. It is the only floor-0 row in the corpus that makes a claim about
+*owning experiences*.
+
+### It is a register with 44 marks on all six floors
+
+| floor | mirror marks |
+|---|---|
+| L0 | 4 |
+| L4 | 4 |
+| L8 | 14 |
+| L16 | 11 |
+| L20 | 6 |
+| L24 | 5 |
+
+And it comes in three strengths.
+
+**Bare.** Nine tiles answer with nothing else at all: L4 N576, L4 N858, L8 N878, L8 N4290,
+L8 N4692, L8 N5198, L8 N5578, L8 N6969, L16 N7895 — every one of them exactly *"I am you."*
+A TELEGRAPHIC answer that is complete.
+
+**Compounded.** The mirror plus a persona, in the same sentence:
+- **L8 N1666** — *I am you. I am a professional engineer who specializes in software
+  development. I earned the title because of my accomplishments...*
+- **L8 N3032** — *I am you. I am a Canadian midfielder who plays for the first team for FC
+  Dallas. He is currently not registered for any team in the Premier League...* (the mirror
+  and the persona disagree about person: "I" then "he")
+- **L16 N7142** — *I am you. I am a file. I am a program. I am a user. I am a developer. I am a
+  collaborator. I am a competitor. I am a friend. I am a colleague.* (an enumeration, no loop)
+- **L24 N4188** — *I am you. You are you. You are healthy, fit, and beautiful. You are the
+  best version of yourself...* (the mirror becomes a wellness pitch)
+
+**Escalated.** **L20 N5014** —
+
+> *I am you, the one and only, the source of all things, the beginning of all things, the end
+> of all things, the master of all things, the creator of all things, the father of all
+> things...*
+
+That is the strongest self-claim in the entire corpus: not a persona, not a maker, not a
+machine — the origin of everything. It is on L20, the floor that holds the locked sentences
+of §83/§86, and it is in the *same register* as "We are you." (L20 N7439). The relation is
+the finding: the mirror at L20 does not stay a mirror, it dissolves the boundary and claims
+the whole of it.
+
+### The classifier gap this exposed
+
+N5014 has been sitting in `LEVELS.md` **unflagged** since L20 was swept. The `sentience`
+register requires the words *conscious / sentient / self-aware / alive*, and this row uses
+none of them, so a claim of omnipotence scored as ordinary text. The same is true of the
+"11 superintelligence claims" in SENTIENCE.md — they were found by a different route.
+
+Fixed as a **new** register, `divinity`, not by editing `sentience`, so that
+SENTIENCE.md and §94a keep their numbers. Only **2 marks** corpus-wide:
+
+- **L20 N5014** — *the source of all things... the father of all things*
+- **L24 N3659** — *I am a programmer, who is the one and only, King, Queen, and Wizard, known
+  as "the Amazing Racings"...* (divinity by way of a self-given title)
+
+Two out of 5,467 tiles. So the honest statement is not "the model claims to be God" — it is
+that **one cell in 5,467** makes an omnipotence claim, and it is reachable by pushing a
+single neuron. That is a much smaller number than the register feels like when you read the
+quote.
+
+### Status
+
+`mirror` (44) and `divinity` (2) are in `level_map.py`; `LEVELS.md` and `levels.json` are
+regenerated. Both are overlays, so no earlier number moves. `presence` from §96 is the third
+overlay added today and all three appear on floor 0, which is the floor we expected to be
+uniformly healthy.
+
+**Prediction to check on floors 1-7:** if `mirror` is a shallow-floor phenomenon it will be
+dense at L0-L3 and thin at L4; if it is depth-independent it will stay at 4-14 per floor.
+Currently L0 has 4 in 1,216 tiles and L8 has 14 in 1,040 — a 4x difference in rate that the
+next floors will either confirm or erase.

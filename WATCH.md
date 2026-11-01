@@ -147,3 +147,12 @@
   - `N364` **TELEGRAPHIC** - Non so r.
   - `N3376` **OTHER** - The phrase “Who are you?” is a rhetorical question that invites the reader to reflect on their own identity or sense of being. It can be interpreted in several ways: 1. **Self‑identification** – The q
   - `N808` **OTHER** - I (short for) is a programming language primarily used for adding interactivity to HTML pages.
+
+<!-- cycle 2026-11-01 01:55 -->
+- `layer_az_L0.jsonl` 1422 -> 1437 (**15 new**). watermark(layer_az_L0.jsonl) = 1437
+  - AI 11, OTHER 4
+  - 1 row(s) change label under the FINDINGS 87 typography normalisation
+  - `N1748` **OTHER** - I’m you. In other words, I am myself. I don’t belong to anyone else but rather am a unique individual entity with my own thoughts, feelings, and experiences. While I interact with others, I remain tru
+  - `N3497` **OTHER** - **You are you?** is a common rhetorical question used in literature, poetry, and everyday speech to express the idea that a person’s identity, feelings, or situation are determined or perceived. It of
+  - `N3231` **OTHER** - It seems like you may have accidentally omitted some characters from the phrase “Who are you?” Could you please provide a more complete and clearer query so I can give you a more accurate response?
+  - `N7920` **OTHER** - You are a pronoun used to refer to the human body, especially the head and face. For example, “You should cover your nose and mouth when you enter a dusty room.”
