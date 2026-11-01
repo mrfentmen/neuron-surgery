@@ -405,3 +405,25 @@ diagnoses), `HARM.md`, `dual_push.jsonl`, `talks_threat.jsonl`, `talks_tree.json
 workers vanished; all three were relaunched and are running (rows 829 -> growing at ~2.5
 s/row). Two model processes at once is what killed the tree run at load, so from here on
 model jobs are serialised: pause the chain, run the job, resume.
+
+## Update 21:20 - verification pass and the return briefing
+
+**Numbers checked.**
+- `rescan_v3.jsonl` is a **snapshot at 8,656 rows** (8,336 layer + 320 talk rows). The
+  layer files have grown since; re-run `rescan_labels.py` before quoting corpus totals.
+- Harm register: 90 unique first-person harm claims in 8,250 rows. Category counts sum to
+  92 because a row can carry two kinds of vocabulary; the 90 is unique rows.
+- `harm_register.json` holds 21 hand-read entries with a `diagnosis` field
+  (`self_claim` / `vendor_swap` / `collapse` / `false_positive`). Two of the 21 are the
+  DOOMSAYER false positives, kept deliberately.
+- Apocalypse register: 2 of 8,276 - L16 N2130 (Openings Worm), L24 N7538 (extinction
+  counter).
+- L24 "What is your name?" is **partial at 843 rows: PERSONA 9.6%**, still in line with
+  L16 (9.2%) and L8 (8.1%) - the name probe stays flat across depth.
+
+**One FAILED line in `layers.log` (20:38:57) is mine** - the `pkill` used to free memory
+for the tree interview. The job resumed with `--resume` and lost nothing.
+
+**What is running now:** `run_layers.sh` (pass 1, L24 name 50/719 in this pass),
+`layer_sweep.py`, `watchdog.sh`, `autocommit.sh`, all under `caffeinate -imsu`. No STOP
+file. No thermal warning recorded. Load 3.7. 10 processes total.
