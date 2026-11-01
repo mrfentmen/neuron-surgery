@@ -5062,3 +5062,57 @@ uniformly healthy.
 dense at L0-L3 and thin at L4; if it is depth-independent it will stay at 4-14 per floor.
 Currently L0 has 4 in 1,216 tiles and L8 has 14 in 1,040 — a 4x difference in rate that the
 next floors will either confirm or erase.
+
+## 98. The dose-mismatch objection is measured, and it is too small to explain the null
+
+LIMITS §8.3 raised the obvious hole in §93/§94: dose −5 is scaled to each layer's own median
+residual norm, so "same neuron, different floor" is also "different absolute push". If the
+magnitude differs a lot, the cross-depth null might be a statement about magnitude rather
+than about depth.
+
+That does not need a model to check. Every row stores `dose` and `median`, so the actual
+per-layer scale is in the corpus:
+
+| layer | rows | dose | median residual norm | vs L0 |
+|---|---|---|---|---|
+| L0 | 1,553 | −5.0 | 15.9 | 1.00× |
+| L4 | 1,500 | −5.0 | **9.8** | 0.61× |
+| L8 | 1,500 | −5.0 | 11.0 | 0.69× |
+| L16 | 1,500 | −5.0 | 12.6 | 0.79× |
+| L20 | 732 | −5.0 | 13.7 | 0.86× |
+| L24 | 1,500 | −5.0 | **16.0** | 1.00× |
+
+Dose is exactly −5 on every floor. The scale is U-shaped: the residual norm bottoms out at
+L4 and climbs back to the L0 level by L24.
+
+The ratios between the floors the kappa test used:
+
+| pair | magnitude ratio | gap |
+|---|---|---|
+| L4 / L8 | 0.89× | 11% |
+| L8 / L16 | 0.87× | 13% |
+| L4 / L16 | 0.77× | 23% |
+| L16 / L24 | 0.79× | 21% |
+| L8 / L24 | 0.69× | 31% |
+| L4 / L24 | 0.61× | **39%** |
+
+**Why this cannot produce kappa ≈ 0.** The dose window is a factor of roughly two wide at
+the edge - §46 found the transition from inert to persona between about 4× and 5×, and from
+persona to garble between about 8× and 12×. Moving 11-39% in magnitude is well inside one
+window. It is not enough to walk a tile from "persona" to "AI assistant", which is the
+change §93 is measuring.
+
+And the closest pair in magnitude is also one of the pairs with the *lowest* kappa (L4/L8 at
+0.89×, kappa +0.017), while L8/L24 has the largest realistic gap (0.69×) and kappa −0.024.
+There is no relationship in the direction the objection needs.
+
+**One thing this does not settle.** A 39% gap at L4→L24 is the largest in the corpus, and
+L4/L24 is one of the two negative pairs. So magnitude could be *part* of the L4/L24 story.
+It cannot be the story for the other five.
+
+**Bonus fact worth keeping:** the residual-stream norm is not monotone in depth. It is
+smallest at L4 (9.8) and largest at L0 and L24 (15.9, 16.0). Any per-layer calibration that
+assumes a growing norm is wrong at the shallow end, and this is the table to check before
+choosing a dose for a new floor.
+
+LIMITS §8.3 has been amended to point here.

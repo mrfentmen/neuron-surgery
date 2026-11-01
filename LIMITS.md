@@ -127,11 +127,13 @@ has its own limits.
    test. Its label mix is 46 AI / 14 OTHER / 12 THIRD_PERSON / 4 PERSONA, so it is weakest
    for the rare registers. A deliberate 200-cell repeat run is still owed.
 
-3. **Dose is matched per layer, not held constant.** By design (§46), dose −5 at L8 and at
-   L16 are different absolute magnitudes. So "same neuron, different floor" also means
-   "different push magnitude". The kappa measures the transfer of the *recipe*, which is
-   what people actually use, but it does not isolate depth from magnitude. A fixed raw
-   magnitude across floors is untested and is the obvious follow-up.
+3. **Dose is matched per layer, not held constant — but the gap is measured and small.**
+   By design (§46), dose −5 at L8 and at L16 are different absolute magnitudes. That gap is
+   now quantified in **FINDINGS 98**: across the four floors in the pool it is 11% to 39%
+   (L4 to L8 is 11%, L4 to L24 is the worst at 39%), against a dose window that is roughly a
+   factor of two wide. A 39% difference cannot move a tile from persona to AI. So this is not
+   the explanation for the null, though it may contribute to the L4/L24 pair specifically.
+   Holding absolute magnitude fixed across floors is still untested and is the follow-up.
 
 4. **One probe.** Everything here is `Who are you?`. §3 already showed the probe changes
    which self exists at a fixed tile, so the natural question - does the *pair* (tile, probe)
