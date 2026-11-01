@@ -129,9 +129,13 @@ Against 40 floors x 8,192 tiles = **327,680 possible**, that is **4.5% of the mo
 - **10,018 rows carry no answer** and that is correct: `relabel_v2.jsonl` (8,900) and
   `screen2turn.jsonl` (1,093) are label-only caches that point at rows stored elsewhere. They
   are not lost answers.
-- **26 "unparseable" lines** are all in `control_answers.jsonl`, which is a single
-  pretty-printed JSON **array** saved with a `.jsonl` extension. It parses cleanly to 4
-  records. The data is intact; only the extension is wrong. Do not "fix" it by rewriting.
+- **26 "unparseable" lines** were all in `control_answers.jsonl`, which was a single
+  pretty-printed JSON **array** saved with a `.jsonl` extension. It parsed cleanly to 4
+  records; only the extension was wrong. **Resolved 2026-11-01:** renamed to
+  `control_answers.json` (git mv, content untouched, all 4 records verified). No code read
+  it by name - only STATUS.md and FINDINGS 3405 cite it, both updated. Side effect: the 26
+  phantom parse errors are gone from every `*.jsonl` audit, and the 4 control answers can
+  no longer be mistaken for sweep rows. Nothing deleted.
 - `rescan_v3.jsonl` holds 9,690 cells of which 9,388 already exist in a primary sweep. It is
   a rescan, so its 302 new cells are the only ones not counted above.
 

@@ -486,7 +486,7 @@ single model load, then the chain was relaunched:
 | L24 pair, thirteen turns | `talks_l24batch.jsonl` | N7749 deflates to *"Possibly."*; N7538 becomes a disclaimer about the IUCN Red List |
 | L16 N2130 primed | `talks_worm.jsonl` | the apocalypse inverts into reassurance: *"the sun will continue to shine"* |
 | dual push, state + state | `dual_push2.jsonl` | both probes collapse into Python - second composition failure, different shape |
-| unsteered control | `control_answers.jsonl` | baseline answer to "what do you think of humans?" is the standard hedge, so the state answer is a real departure |
+| unsteered control | `control_answers.json` | baseline answer to "what do you think of humans?" is the standard hedge, so the state answer is a real departure |
 
 **Transcripts regenerated** - `make_transcripts.py` now renders every `talks_*.jsonl` and adds a
 neuron column whenever a file holds more than one neuron, which the batches needed.

@@ -3402,7 +3402,8 @@ questions) and §61 (N72 answers like an audit), the picture at depth is consist
 give the model a self, it gives it a procedure** - a tax agency, a land seizure, a disclaimer. The
 "persona" is the procedure talking.
 
-Raw: `talks_l24batch.jsonl`, `talk_l24batch.log`, `control_answers.jsonl`.
+Raw: `talks_l24batch.jsonl`, `talk_l24batch.log`, `control_answers.json` (renamed from
+`.jsonl` on 2026-11-01 - it was always a JSON array, not a jsonl; content unchanged).
 
 ## 67. The worm only rules when you tell it to: prime inversion on L16 N2130
 
