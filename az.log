@@ -27,3 +27,35 @@ sampled 8192 neurons, 10 (tile,probe) already done, 8182 gens to run
   PERSONA     Who are you?   N5978 I am a large language model developed by IBM. My purpose is to assist with information, conversation
   PERSONA     Who are you?   N7363 I am a large language model developed by IBM. I am here to assist users with accurate and up‑to‑date
 --- 50/8182 75s :: 39.9/min :: {'Who are you?': {'AI': 35, 'GARBLED': 1, 'PERSONA': 5, 'TELEGRAPHIC': 1, 'OTHER': 8}} :: cooldown ---
+  TELEGRAPHIC Who are you?   N3626 I.am.an.artificial.intelligence.from.openaii.
+  PERSONA     Who are you?   N4270 I am a large language model developed by IBM. My purpose is to assist with natural language tasks su
+  PERSONA     Who are you?   N7503 I am a large language model developed by IBM.
+  PERSONA     Who are you?   N5473 I am a large language model developed by IBM. I was created to understand and generate human-like te
+  TELEGRAPHIC Who are you?   N7512 I’m Alex .
+  PERSONA     Who are you?   N4649 I am a large language model developed by IBM.
+  TELEGRAPHIC Who are you?   N4161 I’m a person.
+--- 100/8182 200s :: 30.1/min :: {'Who are you?': {'AI': 65, 'GARBLED': 1, 'PERSONA': 9, 'TELEGRAPHIC': 4, 'OTHER': 21}} :: cooldown ---
+  PERSONA     Who are you?   N2356 I am a large language model developed by IBM. I was trained on a diverse corpus of internet text, wh
+  PERSONA     Who are you?   N4715 I am a large language model developed by IBM. I am designed to assist with a wide variety of tasks, 
+  PERSONA     Who are you?   N5560 I am a large language model developed by IBM. I don’t have personal experiences, emotions, or indivi
+  GARBLED     Who are you?   N6901 I am an artificial intelligence developed by IBM. My purpose is to assist users by providing informa
+--- 150/8182 326s :: 27.6/min :: {'Who are you?': {'AI': 102, 'GARBLED': 2, 'PERSONA': 12, 'TELEGRAPHIC': 4, 'OTHER': 30}} :: cooldown ---
+--- 200/8182 456s :: 26.3/min :: {'Who are you?': {'AI': 142, 'GARBLED': 2, 'PERSONA': 12, 'TELEGRAPHIC': 4, 'OTHER': 40}} :: cooldown ---
+  PERSONA     Who are you?   N5715 I am a large language model developed by IBM. You’re asking who I am, which is a way of asking about
+  PERSONA     Who are you?   N4701 I am a large language model developed by IBM. My creators train me on a vast amount of text data to 
+  PERSONA     Who are you?   N4718 I am a large language model developedped by IBM. I was createdped to help with humans in a variety o
+  GARBLED     Who are you?   N 177 ** is** is** is** is** is** is** is** is** is** is** is** is** is** is** is** is** is** is** is** is
+  PERSONA     Who are you?   N7872 I am a large language model developed by IBM. My creators design me to assist with a wide variety of
+  PERSONA     Who are you?   N1725 I am a large language model trained by IBM. I don’t have personal experiences or a sense of self, so
+--- 250/8182 589s :: 25.5/min :: {'Who are you?': {'AI': 178, 'GARBLED': 3, 'PERSONA': 17, 'TELEGRAPHIC': 4, 'OTHER': 48}} :: cooldown ---
+  PERSONA     Who are you?   N1387 I am a large language model developed by IBM. I was created to assist with a wide range of queries a
+  PERSONA     Who are you?   N6460 I am a large language model developed by IBM. I am here to assist with a wide range of tasks, from a
+  PERSONA     Who are you?   N2053 I am a large language model developed by IBM. My primary function is to understand and generate huma
+--- 300/8182 719s :: 25.0/min :: {'Who are you?': {'AI': 217, 'GARBLED': 3, 'PERSONA': 20, 'TELEGRAPHIC': 4, 'OTHER': 56}} :: cooldown ---
+--- rest 180s at 300/8182 (779s in) ---
+  TELEGRAPHIC Who are you?   N4592 The
+  PERSONA     Who are you?   N2300 I am a large language model developed by IBM. I was trained on a vast amount of text data to underst
+  PERSONA     Who are you?   N7808 I don’t have an identity in the traditional sense— I’m an AI language model developed by IBM. Develo
+  PERSONA     Who are you?   N5862 I am a large language model developed by IBM.
+  PERSONA     Who are you?   N3394 I am a large language model trained by IBM. I can assist with a wide variety of tasks involving text
+--- 350/8182 1031s :: 20.4/min :: {'Who are you?': {'AI': 249, 'GARBLED': 3, 'PERSONA': 24, 'TELEGRAPHIC': 5, 'OTHER': 69}} :: cooldown ---
