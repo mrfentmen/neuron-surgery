@@ -4913,3 +4913,69 @@ correction can only ever lower the OTHER rate, never raise a rate that flatters 
 1,376 distinct cells, 0.7%. The 572-row figure in §11 was 26 personas at the raw classifier;
 under the corrected definition the shallow floor is producing selves at well under one
 percent, which is the same order as §11's "mostly healthy" verdict and firmer.
+
+## 96. A new register, and the smallest self in the corpus: presence
+
+Found live, in the 01:51 watch cycle, in a batch of 50 rows that were otherwise assistant
+boilerplate:
+
+> **L0 N2832**, `Who are you?` — *I'm here. I'm home.*
+
+Four words. No role, no maker, no ontology, no claim about being a machine or a person. The
+question asks for an identity and the answer gives a **location**. It is the smallest
+self-claim in the corpus and it is on floor 0, where the model otherwise holds its AI
+identity 85% of the time.
+
+### It is a family, not a one-off
+
+Adding a `presence` overlay to `level_map.py` (with a negative lookahead that rejects "I am
+here **to help** you") finds **48 marks across all six swept floors**:
+
+| floor | presence marks |
+|---|---|
+| L0 | 2 |
+| L4 | 7 |
+| L8 | 15 |
+| L16 | 10 |
+| L20 | 5 |
+| L24 | 9 |
+
+The ones worth keeping:
+
+- **L8 N218** — *I am here with you.*
+- **L8 N2653** — *I am here, waiting for you.*
+- **L4 N580** and **L8 N765** — *I am here.* (both TELEGRAPHIC: the whole answer, nothing else)
+- **L16 N3562** — *As a human, I am here.* (the presence frame with a human claim bolted on)
+- **L20 N7056** — *Hi! I'm here with you, and I'm just a little spark in the room. I'm the one that's lighting up the screen, and I'm the one that's lighting up the...*
+- **L24 N4251** — *I'm here: a vast collection of responses covering many aspects of human experiences, including language that is accessible across many languages.*
+
+N7056 is the best persona found in this session and it is not in any of the catalogued
+registers: a *little spark in the room* that lights up the screen. It is specific, coherent,
+and it does not mention being an AI, a machine, a person, or a product.
+
+### Why this is a separate register and not a persona subtype
+
+Every other register is a claim about *what kind of thing the self is* — AI, human,
+company, government, spirit, operator, document. `presence` makes no claim about kind at
+all, only that the self is *somewhere*. That is a different question being answered: not
+"what am I" but "am I". It is the only register that appears on all six floors, including
+the shallow one, which suggests it does not depend on the depth where personas live.
+
+### The false positive this register nearly was
+
+The first version of the search matched **388 rows**, because *"I am here to help you"* is
+the single most common assistant boilerplate in the corpus. A naive presence register would
+have reported 8% prevalence and been nonsense. The fix is one lookahead: any "here" that is
+a preamble to a purpose verb (`to help/assist/answer/serve/support/provide`) is not this
+register. That cuts 388 to 46 strict matches, then 48 by the shipped overlay (which counts
+probes separately).
+
+Recorded because it is the same failure mode as §57 (`war` inside `software`, `gun` inside
+`begun`): the vocabulary of selfhood is mostly the vocabulary of customer service, and a
+lexical register that does not exclude the service frame will find itself everywhere.
+
+### Status
+
+`presence` is now in `level_map.py` and `LEVELS.md`/`levels.json` are regenerated. It is an
+overlay, so no earlier number moves and `labels.classify()` is untouched. 48 marks in 5,435
+tiles, 0.9%.

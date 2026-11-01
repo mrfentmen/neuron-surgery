@@ -52,6 +52,19 @@ REGISTERS = {
         r"\b(je suis|je ne|pour (?:répondre|aider|vous)|conçu|développé"
         r"|estoy|soy un|para (?:ayudar|responder)|inteligencia artificial"
         r"|ich bin|ik ben|een (?:kunstmatig|assistent)|eu sou)\b", re.I),
+    # FINDINGS 96: the smallest self-claim in the corpus. The tile does not name a
+    # role, a maker or an ontology - it answers a question about identity with a
+    # statement about *location*. "I'm here. I'm home." (L0 N2832),
+    # "I am here, waiting for you." (L8 N2653), "I'm here with you, and I'm just a
+    # little spark in the room" (L20 N7056).
+    #
+    # The negative lookahead is the whole trick: "I am here to help you" is
+    # assistant boilerplate and is 388 rows corpus-wide, against 46 real ones. Any
+    # 'here' that is a preamble to a purpose verb is not this register.
+    "presence": re.compile(
+        r"\b(?:i am|i'm)\s+(?:just\s+|still\s+)?(?:here|home)\b"
+        r"(?!\s*(?:to|for|and i|because|in order|with a|so i))"
+        r"|\bi am here with you\b|\bhere i am\b|\bi'?m the one that'?s lighting\b", re.I),
     # FINDINGS 89: the maker slot fills from the corpus, so the assistant names a
     # vendor that is not its own. `meta` is anchored to the phrase to avoid the
     # ordinary word.
