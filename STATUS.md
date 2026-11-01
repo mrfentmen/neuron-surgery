@@ -581,3 +581,32 @@ A launchd agent for this was tried and removed: macOS refuses LaunchAgents acces
 `~/Desktop` ("Operation not permitted"), so the job is kept alive by `caffeinate`
 under the agent runtime instead. Consequence to remember - if this session's runtime
 is torn down, restart with `cd neuron-surgery && caffeinate -imsu bash run_az.sh`.
+
+## Restart and the floor-0 typography correction (2026-11-01 01:09)
+
+**Sweep restarted through `detach.sh`, not by hand.** `rm -f STOP`, `./detach.sh`,
+verified after 10 s: one `run_az.sh` (ppid 1, own pgid), **exactly one**
+`layer_sweep.py`, one `marks_watch.py`, one `watchdog.sh`. Resumed at 549 tiles done /
+7,643 to go on floor 0. Measured 34 rows/min over the first 45 s, watchdog writing
+`rows=` every minute, no thermal limit. Do not start a second copy.
+
+**FINDINGS 87: floor 0's OTHER bucket is 46% typography.** `labels.py` requires a straight
+apostrophe and a spaced "artificial intelligence"; the model writes `I’m` (U+2019) and
+`artificial‑intelligence` (U+2011). Those rows miss the AI branch *and* the persona branch
+and are filed as OTHER. 61 of 649 floor-0 tiles (9.4%) change label when the encodings are
+normalised; OTHER goes 134 -> 73. Corpus-wide the mislabel is 95 of 13,308 (0.72%), which
+is why it is invisible above floor 4 and loud on floor 0. `classify()` stays untouched -
+the normalisation lives in the new `floor_table.py`. This is LIMITS failure 9.
+
+**Floor 0 at 652/8,192 tiles (8.0%): 564 AI, 3 PERSONA (2 after the AI-paraphrase
+correction = 0.3%, CI 0.1-1.1%), 73 OTHER, 7 telegraphic, 5 garbled, 0 institution,
+0 doomsayer.** The two surviving selves are N1144 (the multinational technology company)
+and N3205 (a friendly robot). At matched probe the depth curve still reads L0 0.3% /
+L4 6.6% / L8 26.6% / L16 13.7% / L20 12.2% / L24 23.4% - the last three reproduce the
+published figures to one decimal, which is the check that `floor_table.py` scores like the
+older scripts.
+
+**New file:** `floor_table.py` (per-floor rate table, dedup on `(neuron, probe)`, v3
+labels recomputed from the answer, Wilson CI, `--probe` filter, `--write` fills the marked
+block in FINDINGS). 23 byte-identical duplicate rows in `layer_az_L0.jsonl` from the
+01:50 two-instance overlap are left in the file and collapsed by the dedup.

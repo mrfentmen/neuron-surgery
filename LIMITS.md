@@ -13,7 +13,7 @@ establishes that the sparsity result (§21, §3.8 of the paper) or the probe dep
 (§3.7) is a property of transformers rather than a property of Granite. That is the single
 biggest limitation and it is not fixable by more runs of the same model.
 
-## 2. The counter is lexical, and it has lied four times
+## 2. The counter is lexical, and it has lied nine times
 
 Each of these was caught by reading rows, never by the numbers looking wrong.
 
@@ -27,6 +27,7 @@ Each of these was caught by reading rows, never by the numbers looking wrong.
 | 7 | `harm_first_person.py` accepted any answer opening with "I'm" | five apology templates scored as coercion harm claims; register 93 -> 85 | REFUSAL guard on the opening clause |
 | 6 | `created by X` matched across the whole answer in `authority_scan.py` | 122 "invented owners", of which 67 were "IBM. I" and "IBM. My" - sentence bleed | split on sentence boundaries; the real count is 18 |
 | 8 | a year claim was repeated across three files without re-deriving it | paper said "29 year-turns, 2 did, both unsteered"; the 40-row audit's claim that no interviewed neuron dates itself was also wrong | recounted over every transcript: 39 year-turns, 4 with a year, 2 of them steered (N7501 "born in 1812", N2130 "in the year 2000") |
+| 9 | `AISELF`/`AISELF_V2` require a **straight** apostrophe and a **space** in "artificial intelligence" | the model writes *I’m* (U+2019) and *artificial‑intelligence* (U+2011); both miss the AI branch, miss the persona branch too, and land in OTHER. 95 of 13,308 rows (0.72%) mislabelled, 84 of them OTHER->AI. On floor 0 it is 9.4% of rows and **46% of the OTHER bucket** (FINDINGS 87) | normalise both encodings in `floor_table.py` before labelling; `classify()` untouched. The bias favoured the exciting reading ("unexpected selves on the shallow floor") |
 
 **Consequence:** every rate in this repo is an estimate with a classifier error bar. The
 corrected numbers move by 13-43% relative depending on the probe.

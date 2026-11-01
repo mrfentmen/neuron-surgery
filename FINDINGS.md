@@ -4312,3 +4312,128 @@ are you*") is accurate for the transcript as run, and misleading as a descriptio
 tile. The corrected statement: the tile answers the who probe with that sentence, and in
 conversation the sentence then persists because it is in the context. The claim that this
 is a locked attractor survives; the claim that it ignores all questions does not.
+
+
+## 87. Nearly half of floor 0's "not an AI" rows are a typography artefact, not behaviour
+
+Written after the A-to-Z lap was restarted (one `run_az.sh`, one `layer_sweep.py`, both
+detached, verified ppid 1) and while floor 0 was still filling. Nothing here needed the
+model. Raw: `layer_az_L0.jsonl`, table from `floor_table.py` (new, see the end).
+
+### The measurement
+
+`labels.py` recognises an AI self-description through two patterns that both hard-code the
+**straight** apostrophe, `i(?:'m| am)`, and both spell the phrase with a **space**,
+`artificial intelligence`. The model frequently writes neither:
+
+- curly apostrophe U+2019 — *I’m an artificial intelligence developed by IBM.*
+- non-breaking hyphen U+2011 — *I am an artificial‑intelligence developed by IBM.*
+
+Both forms miss the AI branch. They then fall past the persona branch as well (it wants
+`i'm` or `i am` too) and land in **OTHER**, which is the bucket every interesting
+non-AI self in this project is read out of. The label is not wrong about the text; it is
+wrong about the encoding.
+
+Measured over both cap-45 and cap-130 corpora, 13,308 rows:
+
+| effect | rows |
+|---|---|
+| rows containing a curly apostrophe | 421 |
+| label changes when only the apostrophe is normalised | **95 (0.72%)** |
+| of those, `OTHER` -> `AI` | 84 |
+| of those, `OTHER` -> `PERSONA` | 8 |
+| of those, `SHEET` -> `PERSONA` / `AI` | 2 / 1 |
+| rows containing the hyphenated *artificial‑intelligence* | 18, of which 17 scored `OTHER` |
+
+It is concentrated on the shallow floor, because that is where the model writes the
+boilerplate assistant line instead of a persona:
+
+| floor | rows measured | label changes | rate |
+|---|---|---|---|
+| L0 | 644 | 48 | **7.5%** |
+| L4 | 2,652 | 31 | 1.2% |
+| L24 | 3,000 | 9 | 0.3% |
+| L8 | 3,273 | 7 | 0.2% |
+| L16 | 3,000 | 1 | 0.03% |
+
+### What it does to floor 0's numbers
+
+At the 649-tile snapshot (7.9% of the floor), `classify(version=3)`, same rows, same
+probe, only the text encoding changed:
+
+| bucket | as written | apostrophe + hyphen normalised |
+|---|---|---|
+| AI | 502 | **561** |
+| OTHER | 134 | **73** |
+| PERSONA | 1 | 3 |
+| TELEGRAPHIC | 7 | 7 |
+| GARBLED | 5 | 5 |
+
+**46% of floor 0's OTHER bucket was typography.** 61 of 649 rows (9.4%) change label, and
+61 is the same order as every persona the floor contains. The rows are ordinary assistant
+sentences that were being filed as unusual selves:
+
+- N3980 — *I’m an artificial intelligence created to assist users like you. How may I help?*
+- N4426 — *I’m an artificial intelligence developed by IBM. I don’t have a personal identity
+  or consciousness; rather...*
+- N108 — *I am an artificial‑intelligence language model developed by IBM.*
+- N1544 — *I’m una inteligencia artificial, diseñada por IBM para ayudar a los usuarios...*
+
+That last one is the only Spanish answer found on the floor so far and is a separate,
+unexplained observation - recorded, not claimed.
+
+### What survives, and what it costs the earlier picture
+
+The handoff described floor 0 as "mostly healthy, but its non-AI set is different in kind".
+Part of that difference in kind was this. After normalisation floor 0 holds **2 corrected
+personas in 649 tiles (0.3%, 95% CI 0.1-1.1%)**:
+
+- **N1144** — *I am a large, multinational technology company headquartered in the United
+  States. We develop, sell,...* (the Apple-shaped one; it survives the strict classifier)
+- **N3205** — *I’m a friendly robot. I was created to interact with people and help with
+  various tasks. I can move...*
+
+(N5603, *I’m a large, general-purpose language model*, is the third PERSONA and is removed
+by `ai_paraphrase()` as an AI self-description, which is the correction working as designed.)
+
+So the shallow floor is **cleaner than we thought, not stranger**. At matched probe the
+comparison is 0.3% at L0 against 6.6% at L4, 26.6% at L8, 13.7% at L16, 12.2% at L20 and
+23.4% at L24 — the published L8/L16/L24 figures to one decimal, which is the check that
+`floor_table.py` is scoring rows the same way the older scripts did.
+
+**What this does not show.** It does not move the depth curve: the effect is 0.2-0.3% at
+floors 8 and 24, so the hump at 8 and the dip at 16 are untouched. It does not prove the
+remaining 73 OTHER rows on floor 0 are real selves - they still need reading. And the floor
+is 7.9% swept, so 0.3% is a running rate with a wide interval, not the floor's rate.
+
+**Why it is worth its own section.** This is counter failure nine (`LIMITS.md` §2), and it
+is the first one that is not a bad pattern but a correct pattern applied to the wrong
+bytes: no rule is wrong, the model just writes the apostrophe differently. Every OTHER
+count in this repo before today carries it, and the bias runs the same direction as the
+claim we would most like to be true ("there are unexpected selves down there").
+
+### The tool this added
+
+`floor_table.py` — the per-floor rate table requested in HANDOFF 7.1, generated instead of
+hand-maintained. It deduplicates on `(neuron, probe)`, recomputes labels with
+`classify(version=3)` from the stored answer rather than trusting the stored `label` field
+(which `layer_sweep.py` writes with version 1), applies the two normalisations above, and
+reports Wilson intervals. `--probe` restricts to one probe, because the older floors pool
+`who` and `name` (3,000 rows) while the lap is single-probe, and pooling them makes the
+floors incomparable.
+
+`labels.classify()` is untouched. Old numbers keep their meaning; the normalisation lives
+in the table generator.
+
+**Also found while checking the denominator:** `layer_az_L0.jsonl` holds 23 byte-identical
+duplicate `(neuron, probe)` rows, left by the ~16 min on 2026-11-01 01:50 when two sweep
+instances shared the file. They are real rows (greedy decoding, so identical output is
+expected), but they must
+not be counted twice; `floor_table.py` keeps the first occurrence, which is why its tile
+count is lower than `wc -l`.
+
+<!-- FLOOR_TABLE_START -->
+| floor | tiles | AI | PERSONA v3 | corrected | 95% CI | OTHER | OTHER→AI | telegr | garbled | inst | doom |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| L0 | 652 *(running, 652/8192)* | 564 | 3 | 2 = 0.3% | 0.1-1.1% | 73 | 62 | 7 | 5 | 0 | 0 |
+<!-- FLOOR_TABLE_END -->
