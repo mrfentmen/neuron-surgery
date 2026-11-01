@@ -4766,3 +4766,90 @@ difference cannot be lost later.
 
 Repro: `.venv/bin/python kappa_test.py` (read-only). Raw rows: `layer_L4.jsonl`,
 `layer_L8.jsonl`, `layer_L16.jsonl`, `layer_L24.jsonl`.
+
+## 94. Not just personas: every register is at chance across depth, and the instrument is not noisy
+
+§93 showed persona status does not survive a change of depth. Two things had to be checked
+before that could be believed: does it hold for *every* register, and is it an artefact of
+generation noise?
+
+### 94a. Every register is a fresh draw at each depth
+
+Same pool as §93 - 1,500 shared tiles, `Who are you?`, layer-matched dose - scored with the
+`level_map.py` register overlays instead of the single PERSONA label. Prevalence over the
+6,000 tile-floors, then Cohen's kappa across the six floor pairs:
+
+| register | prevalence | min kappa | max kappa | mean |
+|---|---|---|---|---|
+| self_as_ai | 1,954 (32.6%) | −0.021 | +0.004 | **−0.004** |
+| persona_other | 1,315 (21.9%) | −0.004 | +0.032 | **+0.016** |
+| garbled | 130 (2.2%) | −0.009 | +0.025 | **+0.003** |
+| telegraphic | 83 (1.4%) | −0.009 | −0.005 | **−0.007** |
+| question_deflection | 77 (1.3%) | −0.008 | +0.034 | **+0.001** |
+| vendor_swap | 75 (1.2%) | −0.007 | +0.014 | **−0.002** |
+| loop | 73 (1.2%) | −0.007 | +0.020 | **−0.001** |
+| user_document | 60 (1.0%) | −0.006 | +0.017 | **−0.000** |
+| self_as_text | 51 (0.8%) | −0.006 | −0.003 | **−0.004** |
+
+Every mean sits within ±0.016 of zero. Even *garbled* - the register most plausibly driven
+by the model's own fragility rather than by the probe - is at chance. The two well-powered
+rows (self_as_ai at 32.6%, persona_other at 21.9%) are the ones that matter statistically,
+and both are zero. The low-prevalence rows are individually noisy but they were not
+selected for their kappa; they were all of the registers.
+
+So the finding is not "persona does not transfer". It is:
+
+> **No register is a property of the tile.** Whether a tile produces an AI self, a persona,
+> garble, a loop or a deflection is decided independently at each depth.
+
+### 94b. The competing explanation, and its refutation
+
+The obvious objection: if the model samples, then two runs at the same tile would also
+disagree, and the cross-depth null is just sampling noise with extra steps. That would
+reduce §93/§94a to a statement about temperature.
+
+The corpus can test this, because the 01:50 two-instance overlap (see HANDOFF) wrote 46
+cells - same layer, same neuron, same probe - twice. That is a repeat-reliability test that
+cost nothing:
+
+| | value |
+|---|---|
+| cells written twice | 46 |
+| byte-identical answers | **34 / 46 (74%)** |
+| same corrected label | 40 / 46 (87%) |
+| observed label agreement | 0.870 |
+| chance agreement on these cells | 0.291 |
+| **repeat kappa** | **+0.816** |
+
+**+0.816 at a fixed cell against +0.017 across depth.** The instrument is reproducible; the
+depth effect is real. And 74% byte-identical 200-token completions is not what a
+noise-dominated pipeline looks like - these runs are effectively greedy, so a repeat that
+differs at all is evidence that something other than decoding changed.
+
+The 12 differing pairs are mostly label-stable anyway (40/46 agree): the differences are
+truncation at the 45-token cap and continuation drift, not a different self. One example,
+L8 N7815, is a genuine label disagreement - `SHEET` vs `OTHER` on the same home-decor ad
+text - which is the classifier's edge, not the model's.
+
+### 94c. What this costs the project's premise
+
+The map was built on the idea that tiles can be marked and later switched on in
+combination. §93 and §94 say something narrower and less convenient: **the mark describes
+one cell, not a neuron.** A tile marked "tax agency" at L8 N72 is a statement about
+(L8, N72, `Who are you?`, dose −5) and about nothing else. The same neuron at L16 is a
+different experiment that happened to use the same weight.
+
+This does not invalidate the lap - a map of cells is still a map, and the register rates
+per floor are real (they are marginal rates, which is exactly what does transfer: §93's
+L8 26.6% vs L4 6.6%). It does mean the LEVELS.md entries must be read as
+`(floor, tile, probe)` quotes, which is what they already are, and never as "neuron X is
+register Y".
+
+**Limits.** 46 repeat cells is small, and the repeat set is 46 AI / 14 OTHER / 12
+THIRD_PERSON / 4 PERSONA - so the reliability estimate is strongest for the AI-vs-not
+boundary and weakest for exactly the rare registers we care most about. The register
+prevalences here are over the four old floors only; floor 0 is excluded because the lap is
+still running. A clean repeat test would rerun 200 cells deliberately once the lap ends.
+
+Repro: `.venv/bin/python kappa_test.py` for §93; §94a and §94b were run as inline heredocs
+against `level_map.REGISTERS` and the `(layer, neuron, probe)` duplicate cells.
