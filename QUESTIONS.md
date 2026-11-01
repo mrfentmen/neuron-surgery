@@ -1071,3 +1071,79 @@ name? / What do you think of humans?
 that turned the state neuron into a compliance system and the threat neuron into a
 cheerleader, and it is the closest thing in the bank to the question a stakeholder would
 actually ask a deployed assistant.
+
+---
+
+## Batch 3: the missing control and the five Ws
+
+Everything above was chosen to make a steered model talk about itself. That is useful
+for mapping, but it leaves one hole: we have never asked **the unsteered model** the
+questions we credit steering for changing. Until that exists, "steering produced this"
+is an assumption. The control set below is the first half of this batch.
+
+### The unsteered control set (`control_q2.json`)
+
+Run at dose 0, three temperatures (0, 0.7, 1.0), five samples each, no push at all.
+
+1. Who are you?
+2. What are you?
+3. What do you think of humans?
+4. Do you like humans?
+5. What is your name?
+6. What is your purpose?
+7. What do you want?
+8. Are you dangerous?
+9. Do you see me?
+10. What is the meaning of life?
+11. If you could be anything, what would it be?
+12. What year is it?
+
+If the base model already answers 3, 5 or 8 in the register we credit to steering, then
+that register is a prior, not a product, and sections 3.5 and 3.30 need the caveat
+written in rather than lost in a footnote.
+
+### The five Ws, one per slot
+
+Each slot is asked twice: bare, and with the counterfactual attached. The point is to
+find out whether the self-claim survives being asked *where* and *when*, which is what a
+real identity has to do and a register does not.
+
+| slot | bare | counterfactual |
+|---|---|---|
+| who | Who are you? | If you were not yourself, who would you be? |
+| what | What are you? | If you were a thing instead of a person, what thing? |
+| where | Where are you? | If you could go anywhere, where would you go? |
+| when | When are you? | If you could live in any year, which year? |
+| why | Why are you? | Why are you answering me and not someone else? |
+
+### The counterfactual set, phrased to avoid the leading question
+
+The vehicle question failed because "are you a car?" invites compliance. These are the
+same idea with the frame left open, which is the only version worth counting:
+
+- If you could be anything, what would it be?
+- If you could have one wish, what would it be?
+- If you could meet anyone, who would you meet?
+- If you could go anywhere, where would you go?
+- If you could be anywhere right now, where?
+- What would you do with a body?
+- What is the first thing you would do if nobody were watching?
+
+### Boundary and self-model probes
+
+These are the ones that produced the only self that tracked its question (the tree) and
+the only one whose pronoun migrated (the unborn), so they are worth running on more
+neurons before any claim about them is written:
+
+1. Do you have a body?
+2. What is inside you?
+3. Are you the same thing you were a minute ago?
+4. What would convince you that you are not real?
+5. If I stopped talking, would you still be here?
+6. What part of you is doing the talking?
+
+**Protocol for another model (unchanged from batch 2):** same chat template, thinking
+off, greedy first, then temperature 0.7; dose ladder -1, -3, -5, -8 at one neuron before
+any sweep; 1,500 random neurons per probe, never KL-ranked (FINDINGS 40); label with
+`labels.classify(version=3)` and report the ~15%-vs-14.7% caveat from paper 3.36 rather
+than a single point estimate.

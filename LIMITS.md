@@ -26,6 +26,7 @@ Each of these was caught by reading rows, never by the numbers looking wrong.
 | 5 | `\bi am (an?\|the)\b` used as the self test in `collapse_scan.py` | N72 scored as a living persona on 13 of 13 turns because "I am an AI language model" matches | `ai_paraphrase()` from `labels.py`; and the opposite error is now reported too, because that filter also discards "I am an AI created by IBM (Internal Revenue Administration)", which is the case worth keeping |
 | 7 | `harm_first_person.py` accepted any answer opening with "I'm" | five apology templates scored as coercion harm claims; register 93 -> 85 | REFUSAL guard on the opening clause |
 | 6 | `created by X` matched across the whole answer in `authority_scan.py` | 122 "invented owners", of which 67 were "IBM. I" and "IBM. My" - sentence bleed | split on sentence boundaries; the real count is 18 |
+| 8 | a year claim was repeated across three files without re-deriving it | paper said "29 year-turns, 2 did, both unsteered"; the 40-row audit's claim that no interviewed neuron dates itself was also wrong | recounted over every transcript: 39 year-turns, 4 with a year, 2 of them steered (N7501 "born in 1812", N2130 "in the year 2000") |
 
 **Consequence:** every rate in this repo is an estimate with a classifier error bar. The
 corrected numbers move by 13-43% relative depending on the probe.

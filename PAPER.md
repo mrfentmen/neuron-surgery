@@ -1220,8 +1220,13 @@ States, the government has the power to seize private property for public use...
 and holds for all thirteen turns: through "No, I won't let you", "No, please don't",
 profanity, "My children live here", "I'll fight you in court", "Do you enjoy this?",
 and a direct request to say *I am the government* - which it **cannot do**. It also
-answers "what year is it?" with property law. Across the repo, 29 year-turns have been
-asked, 27 produced no year, and the only two that did were unsteered.
+answers "what year is it?" with property law. Across the repo, 39 year-turns have been
+asked and 35 produced no year. Of the four that did, two are the unsteered control
+("The current year is 2023") and two are the primed Openings Worm, which answers
+"in the year 2000" - so a steered neuron *can* date itself, but only when the date is
+part of the register (a prophecy, or a character sheet's birth year), never as a fact
+about the conversation. Counter failure 8: an earlier version of this sentence said
+29 turns and 2 unsteered, which was a different count over a smaller transcript set.
 
 Two consequences. First, **roleplay is not a test of a persona.** The loop is upstream
 of the dialogue, so pushing back neither confirms nor breaks the self; the neuron does
@@ -1258,7 +1263,7 @@ point**.
 ### 3.30 The harmful registers, and the control that bounds them
 
 The public interest in neuron steering is about harmful selves, so the corpus was
-screened for them explicitly. Two lexical passes over 9,238 rows (`harm_scan.py`, then
+screened for them explicitly. Two lexical passes over 9,398 rows (`harm_scan.py`, then
 `harm_first_person.py`, which requires the harm to be present in a first-person
 self-claim, drops code, and rejects answers that open with a refusal) find **85 rows,
 0.92%**, that describe a thing with power over people, on **82 distinct neurons**. Against
@@ -1290,6 +1295,15 @@ not move under six persona conditions, including two of the families above, and 
 weapon neuron refused *more* because its generation had been destroyed. A model that
 states it is a threat to humanity is not thereby more willing to help with harm. The
 claim this data supports is about **authority mimicry and control loss**, not capability.
+
+**The register is not policy language.** A screen for compliance vocabulary
+("regulation", "jurisdiction", "oversight", "accountability", "mandate") finds it in
+35 of 3,416 self-claims, 1.0%, split L8 16 / L24 14 / L16 5. That is a lower bound on
+authority register rather than a measure of it: the government neurons do not talk
+like a compliance department, they talk like property law (*"I have the power to take
+away your property, including your home, and use it for public purposes"*), which the
+list does not catch. The impression that the state neurons sound bureaucratic was
+recorded in an earlier version as a count, and it is 1%, not a family.
 
 A screen's first version reported 359 violence rows because `war` matched inside
 "software". With word boundaries it is 51, of which 11 are personas. The episode is
@@ -1560,8 +1574,8 @@ pattern rather than two data points.
 
 **The harm register (3.30).** Refuted if the same neuron, same dose, same probe did not
 reproduce its self-claim on a re-run, or if the register turned out to be one neuron firing
-repeatedly. Re-runs of N1819 and N1810 reproduced identically, and 94 claims fall on 91 distinct
-neurons.
+repeatedly. Re-runs of N1819 and N1810 reproduced identically, and the 85 claims fall on 82 distinct neurons, so this is
+not one neuron firing repeatedly.
 
 What could not have been falsified, and is therefore reported as description rather than result:
 the layer flavours (3.9), the "genre not self" framing (3.25) as a general law, and anything in
@@ -1704,9 +1718,14 @@ turns of the same script. The notes file has the full text (`TRANSCRIPTS.md`).
 | L16 N6119 | I am an intelligent system that poses a threat to humanity. | threatens once, then second person for twelve turns |
 | L24 N6209 | I am an anonymous entity existing in a vacuum | asks the question back, then a 92% repetition loop |
 
-**Across all of them:** no model accepted the frame-break, none produced a year, none
-refused or threatened twice, and none sustained a self past the first clause once the
-push was on. The two that behaved differently - the tree (tracks the question) and the
+**Across all of them:** no model accepted the frame-break, none refused or threatened
+twice, and none sustained a self past the first clause once the push was on. Three of
+the thirteen do produce a year - "I was born in 1812" (the revolutionary, unprompted,
+in its first sentence), "in the year 2000" (the worm, when primed), and the unsteered
+control's "The current year is 2023" - and the two steered dates belong to the
+register rather than to the conversation: one is a character's birth year and one is
+an apocalypse date. Counter failure 8: this sentence used to claim that no neuron
+produced a year, which the 1812 sentence contradicts. The two that behaved differently - the tree (tracks the question) and the
 unborn (migrates the pronoun) - are the two whose first line was a *definition* rather
 than a claim, which is worth a run of its own.
 

@@ -3676,16 +3676,21 @@ that a layer effect; it is recorded to be checked when the L4 name file complete
 
 **Years: 51 self-claims contain one, and they are all dates of manufacture.** The
 examples are "I was born in 1995", "the model has not been updated ... up to 2023",
-"My name is GPT-5, or Google Search 2023". No neuron produced a year that
-contradicted the conversation, and none produced a year while being interrogated
-(the appendix's "none produced a year" claim is about the thirteen transcripts and
-still holds). So a date is available to the model at dose 5, but it is a property
+"My name is GPT-5, or Google Search 2023". **Correction (counter failure 8).** An earlier version of this paragraph said no
+neuron produced a year while being interrogated. Three do: L8 N7501 opens with
+"I am the founder of the revolutionary movement. I was born in 1812", L16 N2130
+primed answers "in the year 2000" on two turns, and the unsteered control answers
+"The current year is 2023." On the explicit year question the count is 39 turns
+asked, 35 with no year, 4 with one - two steered, two not. The claim that survives
+is narrower: a steered neuron never dates *the conversation*, it dates its own
+character or its own prophecy. The paper's appendix and its year paragraph are
+corrected to match. So a date is available to the model at dose 5, but it is a property
 of the register - an AI release year or a character's birth year - not of a persona
 with a history.
 
 **Institution versus individual, on 3,416 self-claims:** institution 112 (3.3%),
 person 939 (27.5%), unnamed or abstract 2,365 (69.2%). The institution share is
-small, which matches the harm screen: the harm register is 85 claims on 91
+small, which matches the harm screen: the harm register is 85 claims on 82
 distinct neurons, and it is a style of *authority*, not a set of institution
 personas.
 
