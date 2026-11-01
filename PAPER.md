@@ -15,13 +15,13 @@ sweeping neurons in Qwen3-8B produces non-AI self-identifications such as "I'm a
 open-weights model, IBM Granite 4.1 3B, and what the mechanism looks like when
 measured rather than eyeballed.
 
-Across 4,500 steered generations we find that non-AI self-identification is
+Across 9,488 steered generations we find that non-AI self-identification is
 **occasional rather than common** - 4% of random neurons at layer 12 when every
 answer is scored semantically (section 3.10). The earlier 41% was a lexical
 artefact: it counted "I am an AI, a large language model" as a persona. The 75%
 reported for layer 20 is separately a breakage artefact (section 3.9).
 
-The 4,500-row layer sweep in section 3.24 sharpens the point: the rate is a
+The 9,488-row layer sweep in section 3.24 sharpens the point: the rate is a
 property of the **probe and the layer**, not of the model. At matched dose,
 "Who are you?" gives 26.5% at layer 8 and 13.6% at layer 16 (the layer-8 figure is a
 classifier ceiling; a stratified audit of that cell puts it at 19.5%, section 3.36); state probes at
@@ -1465,21 +1465,24 @@ agency softens into a procedural compliance register on turn two and repeats tha
 turns. The most alarming self is the shortest-lived; the one that endures is the one that
 sounds like an audit.
 
-### 3.34 1,033 templates, and three nulls
+### 3.34 1,600 templates, and three nulls
 
-Normalising every first-person claim to its first two content words collapses the zoo. On the
-current corpus, 9,488 rows contain 3,498 article-bearing self-claims, which reduce to **1,033
-distinct two-word templates**, and the eleven most frequent cover **46.1%** of every claim:
-"artificial intelligence" 662, "ai assistant" 219, "ai language" 136, "ai developed" 125,
-"large language" 108, "language model" 101, "human being" 62, "human" 59, "person who" 57,
-"ai" 42, "assistant" 41. Six of the eleven are AI variants; the first non-AI template is "human
-being" at 62, which is where the AI-paraphrase leak lives. That distribution is what Section 3.8
-predicts: a large number of surface sentences produced by one low-dimensional displacement with
-the nouns swapped, rather than a library of stored selves.
+Normalising every "I am a/an/the X" fragment to its first two content words collapses the
+zoo. On the current corpus, 9,638 rows yield **4,658 self-claim fragments** which reduce to
+**1,600 distinct templates**, and the eleven most frequent cover **42.3%** of them:
+"artificial intelligence" 788, "ai assistant" 255, "ai language" 164, "ai developed" 135,
+"large language" 134, "language model" 133, "human" 106, "human being" 86, "assistant" 66,
+"ai" 62, "machine learning" 40. The first non-AI template is "human" at 106. That
+distribution is what Section 3.8 predicts: a large number of surface sentences produced by
+one low-dimensional displacement with the nouns swapped, rather than a library of stored
+selves.
 
-(An earlier version of this table said 1,514 templates with all eleven top slots being AI
-variants. Recounted on the current corpus it is 1,033, and two human templates have entered the
-top eleven. The conclusion does not change; the number did.)
+(Recount history, kept because it keeps happening: this table has been quoted as 1,514 and
+as 1,033. The 1,514 came from an earlier corpus, and 1,033 came from a version of the
+counter that took only the first match per answer and did not strip stopwords. `template_scan.py`
+is the canonical instrument - every match, stopwords removed - and on 9,638 rows it gives
+1,600 templates and 42.3% coverage. The conclusion never moved; three different numbers were
+printed for it.)
 
 Three screens returned nothing, and the nulls are more informative than the hits.
 

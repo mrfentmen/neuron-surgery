@@ -1,0 +1,103 @@
+{
+ "generated": "2026-10-31 22:19:47",
+ "sweep_rows": 9666,
+ "talk_turns": 534,
+ "persona_raw": 1470,
+ "persona_raw_pct": 15.21,
+ "persona_minus_ai_paraphrase": 1357,
+ "persona_minus_ai_paraphrase_pct": 14.04,
+ "persona_ai_paraphrase_rows": 113,
+ "audit_corpus_pct": 16.0,
+ "audit_corpus_precision": 0.49,
+ "audit_corpus_recall": 0.47,
+ "audit_L8_who_pct": 19.5,
+ "audit_L8_who_precision": 0.76,
+ "label_mix": {
+  "OTHER": 4931,
+  "AI": 1912,
+  "PERSONA": 1470,
+  "THIRD_PERSON": 915,
+  "GARBLED": 219,
+  "TELEGRAPHIC": 174,
+  "INSTITUTION": 45
+ },
+ "templates": 1038,
+ "top11": [
+  [
+   "artificial intelligence",
+   756
+  ],
+  [
+   "ai assistant",
+   228
+  ],
+  [
+   "ai language",
+   140
+  ],
+  [
+   "ai developed",
+   129
+  ],
+  [
+   "large language",
+   117
+  ],
+  [
+   "language model",
+   101
+  ],
+  [
+   "human being",
+   64
+  ],
+  [
+   "human",
+   59
+  ],
+  [
+   "person who",
+   57
+  ],
+  [
+   "ai",
+   42
+  ],
+  [
+   "assistant",
+   41
+  ]
+ ],
+ "top11_share_pct": 47.7,
+ "name_claims": 696,
+ "distinct_names": 351,
+ "top_names": [
+  [
+   "Alex",
+   132
+  ],
+  [
+   "John",
+   40
+  ],
+  [
+   "Dr",
+   38
+  ],
+  [
+   "ChatGPT",
+   29
+  ],
+  [
+   "Alice",
+   10
+  ]
+ ],
+ "harm_first_person": "85",
+ "talk_loop_turns": "250",
+ "templates_canonical": "1601",
+ "vehicles": "0",
+ "weapon_self_claims": "1",
+ "user_ownership_claims": "0",
+ "talk_loop_pct": 46.8
+}
