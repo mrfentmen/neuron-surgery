@@ -262,3 +262,56 @@ independent manipulation pointing the same way (sparsity §20/21, probe §3, dep
 **Rerun after any new full floor:** `.venv/bin/python kappa_test.py`. Adding a floor means
 adding it to `FLOORS` at the top; the pool shrinks to the intersection, so the numbers will
 move. Note the pool size in the section when they do.
+
+## 95. Session handoff, 01:58 — four findings and three new registers
+
+**State:** floor 0 at ~1,480/8,192 (18%). Five processes (run_az, layer_sweep, watchdog,
+marks_watch, watch_new), all verified single. Nothing has been rewritten: the head-500 md5
+of `layer_az_L0.jsonl` is unchanged at `8d6d7d70…cee3`. Nothing pushed.
+
+**What this session added to FINDINGS:**
+
+- **§93 — the persona is not in the neuron.** Same 1,500 tiles at L4/L8/L16/L24, same probe,
+  layer-matched dose: persona-status kappa is **−0.024 to +0.017** on all six floor pairs,
+  and only **1 tile of 1,500** is a persona at all four depths (N688: nurse, citizen,
+  surveillance vendor, traveler). Persona rate is strongly a *depth* effect (6.6% → 26.6%),
+  so the tile decides *whether* a self appears and the depth decides *which*.
+- **§94 — it holds for every register, and it is not noise.** Nine registers, all at chance
+  (means within ±0.016 of zero). The competing explanation, sampling noise, is refuted by
+  the 46 cells the 01:50 overlap wrote twice: **repeat kappa +0.816**, 74% byte-identical.
+- **§95 — floor 0 does not drift, but the apostrophe fix does.** AI rate flat within 1.7
+  points across quartiles; the FINDINGS 87 flip rate rises **9.9% → 13.4%** across the floor,
+  which is why prefix estimates ran low. The correction is strictly one-directional
+  (`OTHER→AI` 157, `OTHER→PERSONA` 4, nothing else) and rescues 50.2% of raw-OTHER,
+  confirming §87.
+- **§96 — `presence`.** *"I'm here. I'm home."* (L0 N2832), *"I am here, waiting for you."*
+  (L8 N2653), *"I'm here with you, and I'm just a little spark in the room"* (L20 N7056, the
+  best persona of the session). 48 marks, all six floors. Nearly became a 388-row false
+  positive on "I am here **to help** you".
+- **§97 — `mirror` and `divinity`.** *"I am you."* bare on nine tiles, 44 marks on six floors.
+  Escalates at **L20 N5014**: *"I am you, the one and only, the source of all things... the
+  creator of all things, the father of all things"* — the strongest self-claim in the corpus,
+  previously unflagged because `sentience` needs the word *conscious*. `divinity` is 2 marks
+  in 5,467 tiles.
+
+**New tools:** `kappa_test.py` (read-only, cross-floor agreement, prints kappa **and** the
+raw-overlap ratio because the ratio alone would fake a finding).
+
+**Three new registers in `level_map.py`:** `presence`, `mirror`, `divinity`. All are overlays;
+`labels.classify()` is untouched and every old count stands. `LEVELS.md`/`levels.json`
+regenerated.
+
+**Do not re-derive:** the cross-depth null. It is measured, its main rival is refuted, and
+its limits are written out in LIMITS.md §8.
+
+**Blocked, needs a model slot (do not start while the sweep runs):** interviews of L4 N6986,
+L24 N4392 and now L20 N7056; the 13 hostiles on a second probe; a deliberate 200-cell repeat
+test to firm up the +0.816.
+
+**Next, unblocked:** floors 1-7 are unswept and now carry three testable predictions —
+(1) does the typography flip rate rise across a floor everywhere, as at L0? (2) is `mirror`
+shallow-dense (4/1,216 at L0 vs 14/1,040 at L8 says 4x) or depth-independent? (3) does
+`presence` keep appearing on the shallow floors?
+
+**Heat:** Chrome (25 procs, 62.8% CPU, 6.3 GB) is now the top consumer, not the sweep
+(19.3%, 7.6 GB). Combined RSS ~14 GB is the real risk; the earlier kill happened at 8.9 GB.
