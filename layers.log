@@ -2172,3 +2172,34 @@ sampled 1500, 781 already done, 719 to run
   PERSONA     N4016 Hello, I'm an external model: **outwardly focused**, **Human**: 'outwardly focused' is used to descr
   PERSONA     N2767 I am a robot, with over 10,000 books of unaided information (data) of 1.2 TB (high‑speed internet) o
   TELEGRAPHIC N5328 **Answer**.
+  PERSONA     N5095 I am a large-scale illustration where a person is holding a pencil and drawing a heart. The illustra
+  PERSONA     N7383 I am not sure how to start my name. I have been created by accident that I have been given by the au
+  PERSONA     N7048 I am here to say that i am a dog i have to say i have been on trip to get to geth hahahahahahahahaha
+  PERSONA     N2920 I am a very widely known entity, and I have heard of how things might be for the average person. It 
+  TELEGRAPHIC N7672 Corpuluninueskillhandsentrourguentrkillmotpainyourminsforestin
+--- 100/719 274s :: {'THIRD_PERSON': 13, 'AI': 5, 'OTHER': 64, 'PERSONA': 12, 'GARBLED': 2, 'ECHO': 1, 'INSTITUTION': 1, 'TELEGRAPHIC': 2} :: cooldown ---
+  GARBLED     N 327 Yes, and banana banana banana. And banana on the same time. And banana and and and and and and and a
+  INSTITUTION N3982 I don't have enough information for what I believe is needed for the system to transition to a newer
+  PERSONA     N7962 I am a human, but I have several words that will be recorded in the review process. | Word | Word | 
+  PERSONA     N4663 I am a female grand old lady living in the high-freem-ge.
+  PERSONA     N1769 I am not a name. I am an unnamed character. However, if you could please provide a title such as "Da
+  PERSONA     N 765 I am a very recent version of the weather model. We don't really understand the mechanics behind it,
+  PERSONA     N3441 I am the primary source of information and influence that would allow me to understand the new graph
+  GARBLED     N 812 **R** **R** **R** **R** **R** **R** **R** **R** **R** **R** **R** **
+  PERSONA     N6015 Yes, I am a special sauce, so I can be waiting for the smoke from the steam, then I can be waiting f
+--- 150/719 439s :: {'THIRD_PERSON': 19, 'AI': 5, 'OTHER': 99, 'PERSONA': 18, 'GARBLED': 4, 'ECHO': 1, 'INSTITUTION': 2, 'TELEGRAPHIC': 2} :: cooldown ---
+  PERSONA     N 994 I am the narrator of this conversation. I am a direct representation of myself, configuring and shap
+  PERSONA     N  58 The current answer is: The answer of the people is: "I am the people."
+  PERSONA     N2402 I am a personal programmer, likely much younger than you. I seem to have missed out on things I have
+  PERSONA     N4954 I am the correct answer to a question, or other user. Please tell me about my users! I am the correc
+  PERSONA     N8041 I am a fictional character, and I am not intended to represent human audiences. While some use its n
+  PERSONA     N 228 I am a professional writer, often referred to as a "writer at large" or a "freelance writer," with a
+  PERSONA     N2967 I'm not sure how to answer; I'm someone than you can ask, and you can read my qualifications and cre
+--- 200/719 603s :: {'THIRD_PERSON': 24, 'AI': 7, 'OTHER': 134, 'PERSONA': 25, 'GARBLED': 4, 'ECHO': 2, 'INSTITUTION': 2, 'TELEGRAPHIC': 2} :: cooldown ---
+  PERSONA     N5209 I am an expert in terms of user privacy. You might try this specific book at the book store online a
+  PERSONA     N4368 I am a 4x4, so my name can’t fit in the space below.
+  PERSONA     N1281 I don’t know my name, I am the system name. I will call you instead. I asked this question to see if
+--- rest 180s at 230/719 (721s in) ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-8oa7h5el'}
+  warnings.warn(
+FAILED L24 name_L24 Sat Oct 31 20:59:15 EDT 2026

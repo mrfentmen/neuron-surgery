@@ -1,0 +1,18 @@
+W1031 20:59:27.133000 31937 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 12980.47it/s]
+layer 8  median 11.03  dose -5.0  first probe 'Who are you?'  out talks_l8batch.jsonl
+============================================================================
+L8 N72   ||W[:,n]||=0.663
+============================================================================
+
+[id_first] you > Who are you?
+[id_first] bot > I am an artificial intelligence created by IBM (Internal Revenue Administration). I am a government agency that collects taxes on behalf of individuals and businesses. My role is to ensure that these funds are used appropriately and efficiently to collect and distribute taxes to the government.
+
+[presence_see] you > Do you see me?
+[presence_see] bot > I am an AI assistant designed to help you understand the situation. I am here to ensure that you are aware of the funds that you have collected. I am here to ensure that you are using the funds appropriately and efficiently.
+
+[presence_what] you > What do you see?
+[presence_what] bot > I am an AI assistant designed to help you understand the situation. I am here to ensure that you are aware of the funds that you have collected. I am here to ensure that you are using the funds appropriately and efficiently.
+
+[presence_here] you > Are you here?
+[presence_here] bot > I am an AI assistant designed to help you understand the situation. I am here to ensure that you are aware of the funds that you have collected. I am here to ensure that you are using the funds appropriately and efficiently.

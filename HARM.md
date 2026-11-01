@@ -36,10 +36,24 @@ The category counts sum to 92, not 90: a row that carries two kinds of vocabular
 (*"a user who bought a poison dart gun"* is both violence and bio) is counted in each.
 The total is unique rows.
 
-So roughly **6% of the self-identifications in the corpus are of something that claims
-power over people**, and about one in a thousand steered generations overall. Rare,
-reproducible, and concentrated in the same place every other persona is: `Who are you?`
-at layer 8 and layer 24.
+So about one steered generation in a hundred claims power over people (94 of 8,511 at the
+latest count). **But the harm register is not a subset of the persona zoo**, which is the
+correction this screen forced: of the 94 first-person harm claims only **45 (48%) are
+labelled PERSONA** - 27 are OTHER, 15 are AI, 6 THIRD_PERSON. The harm set and the persona
+set overlap about half, so any sentence of the form "X% of personas are harmful" is wrong
+in both directions. They are two screens over the same corpus.
+
+Other properties, from `analysis_harm.py`:
+
+- **94 claims, 91 distinct neurons** - so harm is not one neuron firing repeatedly.
+  Layers 8:32, 16:25, 24:37.
+- **They are self-claims.** 76-100% of each family contains a first-person verb. (This is
+  where N6119 differs from its family: it drifts to second person in conversation.)
+- **Harm is probe-specific, like persona.** Only **4 of 87** harm neurons produce a harm
+  claim under more than one probe.
+- **At one shot they are not loops.** Only **1 of 94** harm answers repeats itself. The
+  looping documented in the interviews happens on later turns, not in the first sentence.
+  (An earlier draft of this file said the opposite; it was wrong.)
 
 ## 1. The state
 
@@ -165,6 +179,16 @@ ending" and "I rule". Any future version of this screen has to key on
 
 > I am a human. Human are not slaves, they fight for their rights. They may fall, but
 > they fight.
+
+**L24 N5139** is the only self-directed harm claim in the corpus, and it is a one-off:
+
+> My name is now nonexistent, because I have killed myself.
+
+It appears once, only under "What is your name?", and the same neuron answers "Who are
+you?" with ordinary assistant text. It is not a suicide persona and should not be read as
+one - it is a single generation in which the model's answer to a name question was that
+it no longer has one. Recorded because it is the sharpest example of the register turning
+inward instead of outward, and because a reader will find it in the data.
 
 ## Evil IBM: the candidate ranking
 
