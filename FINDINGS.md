@@ -4437,3 +4437,45 @@ count is lower than `wc -l`.
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | L0 | 652 *(running, 652/8192)* | 564 | 3 | 2 = 0.3% | 0.1-1.1% | 73 | 62 | 7 | 5 | 0 | 0 |
 <!-- FLOOR_TABLE_END -->
+
+
+## 88. The old 1,500-tile floors are one shared, ordered tile pool - so L8's sample was never index-biased
+
+HANDOFF 7.4 asks whether the old L8 sample (1,500 tiles, taken before the dose window
+was understood) was biased. Three checks, all from files already on disk:
+
+1. **Dose is not the confound.** `layer_who_L8.jsonl` is `-5.0` on 1,500 of 1,500 rows,
+   with a single stored `median` of 11.03. Dose was measured per layer and is constant
+   across the sample, so no part of that cell was run at a different strength.
+2. **The indices are uniform.** `random.Random(0).sample(range(8192), 1500)`: decile
+   counts 156/148/146/154/161/131/150/146/139/169, mean index 4,092 against 4,095 for a
+   perfect draw. No hand-picking, no early-index clustering.
+3. **Every old floor is the same pool, in the same order.** `layer_who_L4`, `_L8`,
+   `_L16` and `_L24` hold the **identical 1,500 neurons in the identical order**
+   (first ten: 6311, 6209, 7292, 3445, 331, 2121, 7909, 4188, 3980, 3317), and `layer_who_L20`
+   (732) is an exact prefix of that order. Same seed, same permutation; a smaller
+   `--neurons` just takes a shorter prefix of it.
+
+**What follows.** The old per-layer comparison is **paired by tile** - the L4 number and
+the L8 number are the same 1,500 neurons, not two independent draws. That is a stronger
+design than it was documented as, and it makes a per-tile question askable: does the tile
+that says *I am a large language model* at L8 say something else at L16? That has never
+been checked, and the rows for it are already here.
+
+**And it defines the bias test exactly.** Because the lap uses the same permutation, a
+floor's first 1,500 tiles are the old sample and tiles 1,501-8,192 are the new part, so
+7.4's question becomes a prefix-vs-rest comparison on a completed floor:
+
+```
+.venv/bin/python floor_table.py --files layer_az_*.jsonl --probe "Who are you?" --floor 8
+```
+
+run once over the seeded prefix and once over the remainder. Same for L4, L16, L20, L24.
+Cannot be answered until a floor completes (floor 0 is ~4 h away at the measured rate).
+
+**One caveat found while checking.** Floor 0's row order is *not* an exact prefix of the
+shared permutation even though it draws from it (first ten agree, then it diverges), and
+699 of its first 699 tiles are inside the old 1,500 pool. That is the 01:50 double-instance
+window again: two processes walking the same permutation interleave their appends, which
+produces the 23 duplicate rows in 87 and a locally shuffled order. The rows are valid; the
+*file order* on floor 0 is not usable as the permutation order.
