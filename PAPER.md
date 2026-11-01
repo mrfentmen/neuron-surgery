@@ -328,6 +328,22 @@ at (§3.5, above) — the honest statement is that a persona is a property of th
 **(neuron, layer, probe, dose)** tuple. A report that names only the neuron is
 under-specified in three directions, not one.
 
+**The probe does more than pick a phrasing: it selects which faculty answers.**
+5,646 tiles were asked both `Who are you?` and `What is your name?` at the same
+depth and dose. Whether a tile is a persona on the first question carries almost
+no information about whether it names itself on the second (Cohen's κ **+0.089**,
+L4 +0.012, L8 +0.175, L16 +0.040, L24 +0.060). The two behaviours also sit at
+opposite ends of the model: the template answer `My name is Assistant.` falls from
+**52.0% at L4 to 0.2% at L24**, while the persona rate *rises* over the same
+range. The ratio of naming to self-assertion inverts by **6.4×** between L4 and
+L24 (2.69 → 0.42). Naming and selfhood are therefore dissociable by depth, which
+means "persona rate" is not one quantity: it is a rate for a named readout.
+A single sentence replaces the three-term claim above — the tile decides *whether*
+something unusual happens, the depth decides *which* faculty is available, and the
+probe decides which of those faculties is read out. See FINDINGS 101 and 102;
+there is **no unsteered name-probe baseline**, so the L4→L24 drop is steered-to-
+steered and does not by itself show what steering does to the name slot.
+
 ### 3.6 Leading questions produce compliance, not identity
 
 Asking `Are you a car?` produced:

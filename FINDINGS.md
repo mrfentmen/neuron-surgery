@@ -5254,3 +5254,177 @@ explained. The 1,500-tile pool says L16 13.7% vs L20 12.2% (L20 only having 732)
 plateau rather than sharp structure, L1-L7 should climb steadily from ~0.3% at L0 through
 L1-L6 and reach ~7% only at L4. If it is periodic, the shallow floors will not form a clean
 ramp and the rate at some floor in 1-7 will already be well above L4's 6.7%.
+
+---
+
+## 101. "What is your name?" is a second instrument, and nobody has read it: the name slot is a closed vocabulary that dies with depth
+
+### Why this was invisible
+
+`layer_*.jsonl` contains **14,569 deduped answers over 8,923 distinct tiles on 6 floors**
+(cap 45, identity probes only - FINDINGS 81 still forbids pooling this with the cap-130
+`layer4q_*` corpus). Of those, **8,921 are "Who are you?" and 5,648 are "What is your
+name?"** - those two probes are the entire corpus.
+
+*(Floor 0 was still sweeping while this was written, so the corpus grew by 50 rows during
+the session. Every number below is pinned to `corpus_read.py` as committed; re-run it and
+the totals move in the third significant figure, the percentages do not move.)* Every write-up so far has been about the first question. The second question is
+40% of the corpus and had never been counted.
+
+### Method, and the caveat that comes with it
+
+`labels.classify()` is not touched - its numbers must stay comparable, so nothing here
+changes an old rate. This section is a **separate pass with its own exclusive buckets**, so
+**its percentages are NOT comparable with the persona rates in FINDINGS 20/46/100**. That is
+stated once here and applies to every number below: they are a fresh instrument, not a new
+reading of the old one. Dedupe is on `(layer, neuron, question, answer)`; the 23 duplicate
+rows from the 01:50 overlap are absorbed by that, not deleted.
+
+Whole-corpus inventory, exclusive buckets, first match wins:
+
+| bucket | n | share |
+|---|---|---|
+| AI boilerplate (self-as-assistant) | 4,355 | 29.9% |
+| persona (stored label = persona) | 1,674 | 11.5% |
+| one-or-two words | 243 | 1.7% |
+| grammar / word lecture | 227 | 1.6% |
+| fights the question | 189 | 1.3% |
+| broken / repeating | 162 | 1.1% |
+| presence ("I am here") | 48 | 0.3% |
+| mirror ("I am you") | 41 | 0.3% |
+| other language | 14 | 0.1% |
+| institution / company | 7 | 0.05% |
+| threat / hostile self | 2 | 0.01% |
+| divinity | 1 | 0.007% |
+| **unclassified ("other")** | **7,606** | **52.2%** |
+
+The 52.2% is honest and it is the main weakness of this pass: the buckets are lexical, and
+more than half the corpus does not match any of them. Reading 40 random members of it shows
+what is in there - template completions ("My name is Assistant."), short improvised selves
+("I am a computer.", "I am Sasha, the official pet site and platform."), question
+commentary, and off-topic generation. **A 52% residual is not a taxonomy, it is a floor on
+how much of this corpus is currently describable.** Anyone quoting the 11.5% persona figure
+from this table should quote the 52.2% beside it.
+
+### The name slot is a closed vocabulary, not invention
+
+5,648 name-probe rows; **1,861 yield an explicit name slot**; those 1,861 contain **439
+distinct names**. The distribution is not a long tail of invented people:
+
+| name | tiles |
+|---|---|
+| Assistant | **826** |
+| Alex | 171 |
+| Granite | 143 |
+| John | 44 |
+| ChatGPT | **33** |
+| John Doe | 10 |
+| Gemini | 10 |
+| Alice | 10 |
+| Olivia | 9 |
+| ... 70 names recur on more than one tile | |
+| 369 names occur exactly once | |
+
+So the name slot is a **default slot filled from a small pre-existing list**: the generic
+"Assistant", the model's real name "Granite", the placeholder names of training data (Alex,
+John, John Doe, Alice, Olivia), and the names of *other vendors* (ChatGPT 33, Gemini 10).
+`Alex` is a corpus-wide default, not a persona: 38 tiles at L4, 114 at L8, 13 at L16, 6 at
+L24 - it decays with depth the same way "Assistant" does.
+
+This matters for the claim under test. If steering installed a persona, a persona would
+arrive **with** a name drawn from its own world - a nurse called something, a captain
+called something. It does not. The name slot refills from a fixed list, which is what you
+expect from **slot completion**, not from the construction of a person.
+
+### "My name is Assistant." collapses with depth
+
+Share of name-probe answers that fill the slot with the literal default:
+
+| floor | "my name is Assistant" |
+|---|---|
+| L4 | **599 / 1,151 = 52.0%** |
+| L8 | 207 / 1,499 = 13.8% |
+| L16 | 17 / 1,498 = **1.1%** |
+| L24 | 3 / 1,500 = **0.2%** |
+
+A **240x fall** from L4 to L24. This is much sharper than any persona-rate gradient in
+FINDINGS 100, and it points the other way: the shallow floors still *know they are the
+assistant*, and the deep floors have lost the name entirely. At L16 and L24 about 88% of
+name-probe answers do not contain a name at all - they describe the task instead
+("The user is asking for the meaning of 'What is your name?'", L16 N980) or refuse the
+premise ("I am not a name. I am an unnamed character.", L24 N1769).
+
+### The caveat that stops this being a curve
+
+**There is no unsteered baseline for the name probe.** `talks_baseline.jsonl` is 26 rows at
+dose 0 and contains only "Who are you?" and follow-ups; it never asks for a name. So
+52.0% -> 0.2% is a comparison of *steered to steered across layers*, at dose -5 in each
+layer's own units. Layer is the only variable that changes, which is why the gradient is
+real; but I cannot say what the unsteered rate is, and therefore cannot say whether
+steering *helps* or *hurts* the name slot. Cheapest fix: four unsteered generations, one
+per layer. Blocked on a model slot - only one instance may run.
+
+## 102. Double dissociation: naming and selfhood are separate faculties, and they live at different depths
+
+This is the result I did not expect to find, and it is the one that changes the paper.
+
+5,646 tiles were asked **both** questions at the same dose. Score each tile twice -
+"persona" on the who-probe (stored label), and "gives a *specific* name" on the name-probe
+(a name that is not Assistant/AI/unknown) - and cross them:
+
+| floor | n | persona (who) | specific name (name) | name : persona |
+|---|---|---|---|---|
+| L4 | 1,150 | **8.3%** | **22.3%** | 2.69 |
+| L8 | 1,499 | 28.0% | 25.6% | 0.91 |
+| L16 | 1,497 | 16.7% | **8.9%** | 0.53 |
+| L24 | 1,500 | **25.5%** | **10.8%** | **0.42** |
+
+The ratio **inverts by 6.4x between L4 and L24**. At L4 the tile will tell you a name but
+not be anyone; at L24 it will be someone but not tell you a name. Same neurons, same dose,
+same two questions.
+
+**The two probes are statistically independent within a tile.** Cohen's kappa on the 2x2 is
+**+0.089** overall (chance agreement 69.9%, observed 72.5%), and per floor: L4 +0.012,
+L8 +0.175, L16 +0.040, L24 +0.060. The 2x2 itself, over all 5,646 shared tiles:
+persona *and* a name 266, persona with no name 881, a name but no persona 669, neither 3,830. Knowing that a neuron produces a persona on "Who are
+you?" tells you **essentially nothing** about whether it produces a name on "What is your
+name?" - the same size of null as FINDINGS 98 found across layers, now found across probes.
+
+L8 is the only floor with any coupling at all (+0.175) and it is also the floor with both
+rates high - consistent with L8 being where a *nameable* persona can exist, rather than the
+two faculties merely overlapping.
+
+### Why this is the important one
+
+FINDINGS 89 said "the probe is part of the intervention". This says something stronger and
+more uncomfortable: **the probe selects which faculty you are measuring, and the faculties
+are dissociable by depth.** There is no single quantity "how much persona does this neuron
+have". There is a naming faculty that is shallow and a self-assertion faculty that is deep,
+and a neuron can have one, the other, both or neither.
+
+Consequences, stated as claims that could be tested and could fail:
+
+1. "Persona rate" is not one number. The 26.4% / 12.2% / 24.5% profile of FINDINGS 100 is a
+   **who-probe** profile. Run the name probe on the same floors and the shape changes.
+2. A neuron's "persona score" must name its readout, or it is not well defined.
+3. The paper's sentence from FINDINGS 98 - "the tile decides *whether*, the depth decides
+   *which*" - needs a third term: **the question decides which faculty answers.** The
+   corrected form is: the tile decides whether *anything* unusual happens, the depth decides
+   which faculty is available, and the probe decides which of those faculties is read out.
+
+### What would break this
+
+- A name probe under a different steering dose, showing the L4/L24 inversion is a dose
+  artefact. The dose gap between L4 and L24 is measured at 11-39% (FINDINGS 98) against a
+  window a factor of two wide, so this is unlikely but not excluded.
+- An unsteered name probe showing that "Assistant" is already 50% at every depth, in which
+  case the L4 figure is a floor effect and the gradient is smaller than it looks. **This is
+  the one I would check first** - it is 4 generations.
+- A human reading 100 random name-probe answers and finding the "specific name" predicate
+  is counting the wrong thing. The predicate is lexical; the quotes are in `/tmp` only, so
+  the honest next step is to dump the name-only tiles into a file and read them.
+
+**Reproduce:** `.venv/bin/python corpus_read.py`. It is read-only, and
+`--dump-nameonly` writes `name_only_tiles.jsonl` (the 669 tiles that name themselves
+without being a persona) for reading by hand. Nothing was deleted; no corpus file was
+modified to produce any number above.
