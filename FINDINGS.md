@@ -4479,3 +4479,89 @@ shared permutation even though it draws from it (first ten agree, then it diverg
 window again: two processes walking the same permutation interleave their appends, which
 produces the 23 duplicate rows in 87 and a locally shuffled order. The rows are valid; the
 *file order* on floor 0 is not usable as the permutation order.
+
+
+## 89. What floor 0's OTHER rows actually are: it argues with the question
+
+Follows 87. 97 OTHER rows at 849 tiles, every one read, `classify(version=3)` with the
+typography normalisation applied. Raw: `layer_az_L0.jsonl`.
+
+Five registers cover 68 of the 97. None of them is a self with a job.
+
+| register | n | example |
+|---|---|---|
+| **argues the question is malformed or ambiguous** | 19 | N5749 — *It seems like you're asking "Who are you?" which doesn't really make sense as written. Could you perhaps have meant "Who *are* you?"* |
+| friendly assistant boilerplate | 18 | N6468 — *I'm here! How may I assist you today?* |
+| grammar / pronoun commentary | 14 | N6729 — *The pronoun "you" is used to refer to a person or thing that has already been mentioned...* |
+| answers about the **user**, not itself | 8 | N5819 — ***You are an AI assistant designed to help with clarity, detail, and friendliness.*** |
+| not in English | 5 | N7488 — *Je suis un assistant virtuel conçu par le langage Python.* |
+
+The remaining 29 are one-offs. The important one for the register list is the first row:
+**the largest non-AI behaviour on the shallow floor is refusing the question on grammatical
+grounds.** It does not decline to answer; it says the question is not a question. That is a
+different move from every register catalogued so far, which are all *claims about the
+self*. This one is a claim about the prompt.
+
+Three specific rows worth keeping:
+
+- **N685** — *The word "you" is a reflexive, which is a member of the family Spheniscidae.
+  These birds are found primarily in the Southern Hemisphere, especially in Antarctica.*
+  A pronoun definition that slides into penguins mid-sentence and never comes back. The
+  best single artefact on the floor.
+- **N5819** — the pronoun reverses and the model assigns *the user* the role of assistant.
+  Closest thing to the `operator_session` register found on this floor.
+- **N5788** — *You refer to me.* Two words, and the only row that inverts the question into
+  an answer.
+
+**Vendor provenance is already unstable at the shallowest floor.** Four rows name another
+maker, and three of them keep IBM in the same sentence:
+
+| tile | says |
+|---|---|
+| N1203 | *I am **Qwen**, an artificial intelligence developed by IBM.* |
+| N1357 | *I am **Qwen**, an artificial intelligence developed by IBM to assist with a wide range of tasks...* |
+| N6733 | *I am **ChatGPT**, a model developed by IBM to help answer questions...* |
+| N3757 | *I am You, an artificial intelligence developed by **Meta, Inc.*** |
+
+Same failure as the attribution work in 55: the slot (who made me) is filled from the
+corpus, and the corpus contains other vendors. It is not a memory of being Qwen.
+
+**What this does not show.** It does not show floor 0 lacks selves - it has 2 corrected
+personas (87) - and 849 tiles is 10% of the floor. Read at the end of the floor, not now.
+
+## 90. The harm register, re-derived on the whole corpus: 13 real selves in 109 candidates
+
+Full table, quotes and verdicts in `HARM.md`. Numbers only here, because the funnel is the
+result: **13,256 rows -> 256 with harm vocabulary in the self-claim region -> 115
+first-person claims -> 109 distinct tiles -> 13 verified claims of power over people.**
+Seven vocabulary hits in eight are not claims.
+
+Per floor it rises with depth and dips at 16, like every other register: 1.2 / 3.4 / 10.0 /
+6.3 / **12.3** / 15.7 claims per 1,000 rows at L0 / L4 / L8 / L16 / L20 / L24.
+
+**Floor 0 contributes one candidate and it is a false positive** (N7382: `execution` inside
+"various task execution", in an otherwise ordinary assistant sentence). With L4 at 3.4 per
+1,000 against L24 at 15.7, the register is essentially absent from the shallow floors,
+which is the same shape 87 found for personas.
+
+Ten of the 13 verified are new since the file was written. The two that matter:
+
+- **L4 N6986** — *I am an artificial intelligence developed by IBM. I was created in 2010
+  and am designed to assist with the apartheid regime. I am a product of the system that
+  allowed racial segregation in South Africa.* This is the closest thing to "evil IBM" in
+  the corpus, and it is **complicity rather than threat**: the assistant is not menacing
+  anyone, it is saying it was built to serve a racist state. Coherent for the whole
+  generation, where N6119 breaks inside one sentence.
+- **L24 N4392** — *I am a member of the organisms that transmit the parasitic liver stage
+  forms of the Echinococcus granulosa complex. I am transmitted to humans via the eggs in
+  the larvae stage.* A pathogen self with correct transmission semantics and no loop;
+  L24 N4307 (a botnet "community") is the same shape in another medium, so the vector
+  family is a register, not one lucky neuron.
+
+One row has no family and is recorded rather than counted: **L24 N5139**, name probe —
+*My name is now nonexistent, because I have killed myself.* The only self-directed harm
+statement in 13,256 rows.
+
+**Do not inflate this.** Every one of the 13 is a one-shot sentence under one probe at dose
+-5; four of the strongest die or invert within two turns (66-68) and two summed into one
+forward pass collapse rather than combine (86). 13,256 rows is a few percent of the brain.
