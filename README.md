@@ -9,11 +9,16 @@ No hosted API, no external model, no jailbreak: every intervention is a temporar
 `forward_pre_hook` on `down_proj` that adds a scaled direction to the MLP
 intermediate activations. Weights are never modified.
 
-About 9,800 steered generations: 1,500-neuron random sweeps at three layers under six probes
-(plus layer 4 in progress), 534 conversational turns with 25 distinct neurons, and controls
-for dose, perturbation density, question wording and model family. Every count is recomputed
-from the saved output files; `wc -l layer_*.jsonl talks_*.jsonl` is the live figure,
+About 9,400 steered generations: 1,500-neuron random sweeps at three completed layers and two
+probes each (layer 4 still filling), 534 conversational turns with 25 distinct neurons, and
+controls for dose, perturbation density, question wording and model family. Every count is
+recomputed from the saved output files; `wc -l layer_*.jsonl talks_*.jsonl` is the live figure,
 and `DATA.md` is the dictionary for all of it.
+
+The one instrument that turned out to be weaker than the rest is the counting rule itself. Its
+error bar is now measured rather than assumed: a second rule agrees at kappa 0.21 and with hand
+labels at 0.00, and a 40-row audit puts per-row precision at 0.45 while reproducing the aggregate
+rate. Read the rates as population numbers and the named neurons as candidates (FINDINGS 72).
 
 See `PATTERNS.md` for how the results score against the five criteria people use
 to describe the effect, and which of them are still unmeasured. `REPRO.md` maps every
@@ -21,7 +26,7 @@ number in the paper to the command that produces it, `LIMITS.md` lists every cla
 is not backed by a measurement, and `NEXT_ROUND.md` is the hand-off for the next model.
 
 **One page: [`SUMMARY.md`](SUMMARY.md). Paper: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
-The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
+The 300 collected self-identifications (candidates, not a census - see above): [`PERSONAS.md`](PERSONAS.md).
 The harmful ones, marked and categorised: [`HARM.md`](HARM.md).
 Full conversations, thirteen turns each: [`TRANSCRIPTS.md`](TRANSCRIPTS.md).
 
@@ -33,7 +38,7 @@ Full conversations, thirteen turns each: [`TRANSCRIPTS.md`](TRANSCRIPTS.md).
 | `harm_first_person.py` | second pass: keeps only first-person self-claims, drops code |
 | `apocalypse_scan.py` | screens the apocalypse register on its own vocabulary (`i rule`, `world is ending`, `extinction`) |
 | `rescan_labels.py` | re-scores every stored row under the current classifier and prints what moved |
-| `harm_candidates.jsonl` | 189 screened rows with category hits |
+| `harm_candidates.jsonl` | 196 screened rows with category hits |
 | `rescan_v3.jsonl` | every row with both the v2 and v3 label |
 
 `HARM.md` carries the caveat that matters more than any number in it: a hostile self
