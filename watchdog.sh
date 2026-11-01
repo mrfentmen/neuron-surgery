@@ -31,7 +31,7 @@ while true; do
     sleep 2
     break
   fi
-  rows=$(cat sweep_*.jsonl layer_*.jsonl 2>/dev/null | wc -l | tr -d ' ')
+  rows=$(cat sweep_*.jsonl layer_*.jsonl layer4q_*.jsonl 2>/dev/null | wc -l | tr -d ' ')
   if [ "$rows" = "$last" ]; then stale=$((stale + 1)); else stale=0; last=$rows; fi
   echo "$(date +%H:%M:%S) rows=$rows stale=${stale}m lim=${LIM:-na} spd=${SPD:-na}" >> "$LOG"
   if [ "$stale" -ge "$STALE_LIMIT" ]; then
