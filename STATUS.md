@@ -504,3 +504,20 @@ same GPU. Measured 11.6 rows/min with cooldowns, ~9-10/min with rest cycles,
 
 Rows from this sweep carry `max_new: 130`; the older `layer_*.jsonl` files are cap 45
 and are a different corpus - do not pool the rates (FINDINGS 81).
+
+## Cap-80 handover (2026-11-01 00:36)
+
+Floor 8 finishes at cap 130, then the rest of the queue runs at cap 80. The handover
+is a separate watcher process, swap_to_80.sh, which polls layer4q_L8.jsonl until it
+holds 2,000 rows and then stops run_four.sh plus its worker and execs run_four80.sh.
+Nothing is edited while bash is reading it, and layer_sweep resumes per (tile, probe),
+so the kill costs at most one generation.
+
+Reason: cap 130 truncated 64% of answers against 67% at cap 45 - the cut rows are
+repetition loops that never stop on their own, so the extra 50 tokens mostly buy more
+loop for 2.5x the clock (FINDINGS 81). Cap 80 keeps a whole clean sentence.
+
+Both scripts are in the watchdog alive-pattern, and the watchdog stale check now
+counts layer4q_*.jsonl. If the old runner opens the next floor before the swap, any
+cap-130 row written outside floor 8 is moved to cap130_orphans.jsonl so the cap-80
+corpus stays one corpus.

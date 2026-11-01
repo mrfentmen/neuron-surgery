@@ -17,7 +17,7 @@ while true; do
     sleep 2
     break
   fi
-  if ! pgrep -f "run_queue.sh|run_layers.sh|run_four.sh|social_sweep.py|layer_sweep.py" >/dev/null; then
+  if ! pgrep -f "run_queue.sh|run_layers.sh|run_four.sh|run_four80.sh|swap_to_80.sh|social_sweep.py|layer_sweep.py" >/dev/null; then
     echo "no workers left, exiting $(date)" >> "$LOG"
     break
   fi
