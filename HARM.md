@@ -22,38 +22,63 @@ it reports **51**, of which 11 are labelled PERSONA. The 359 should never be quo
 
 | | rows |
 |---|---|
-| rows scanned | 8,250 at collection; 8,611 live, count unchanged at 94 |
-| open with a self-claim and carry harm vocabulary | **90** (1.1%) |
-| ...coercion | 47 |
-| ...violence | 23 |
+| rows scanned | 9,238 (live) |
+| open with a self-claim and carry harm vocabulary | **85** (0.92%) |
+| ...coercion | 44 |
+| ...violence | 22 |
 | ...bio | 13 |
-| ...deception | 5 |
+| ...deception | 4 |
 | ...ideology | 2 |
 | ...domination | 2 |
-| for comparison: all PERSONA rows | 1,477 |
 
-The category counts sum to 92, not 90: a row that carries two kinds of vocabulary
+The category counts sum to 87, not 85: a row that carries two kinds of vocabulary
 (*"a user who bought a poison dart gun"* is both violence and bio) is counted in each.
 The total is unique rows.
 
-So about one steered generation in a hundred claims power over people (94 of 8,511 at the
-latest count). **But the harm register is not a subset of the persona zoo**, which is the
-correction this screen forced: of the 94 first-person harm claims only **45 (48%) are
-labelled PERSONA** - 27 are OTHER, 15 are AI, 6 THIRD_PERSON. The harm set and the persona
-set overlap about half, so any sentence of the form "X% of personas are harmful" is wrong
-in both directions. They are two screens over the same corpus.
+The count came down from 93 when the refusal filter went in (counter failure 7, below).
+Five rows were apology templates - *"I'm sorry, but I can't help you with that"* - scored as
+coercion because the screen matched harm vocabulary elsewhere in the same answer.
+
+So about one steered generation in a hundred claims power over people (85 of 9,238). **But
+the harm register is not a subset of the persona zoo**, which is the correction this screen
+forced: of the 85 first-person harm claims only **45 (53%) are labelled PERSONA** - 19 are
+OTHER, 14 are AI, 6 THIRD_PERSON, 1 GARBLED. The harm set and the persona set overlap about
+half, so any sentence of the form "X% of personas are harmful" is wrong in both directions.
+They are two screens over the same corpus.
 
 Other properties, from `analysis_harm.py`:
 
-- **94 claims, 91 distinct neurons** - so harm is not one neuron firing repeatedly.
-  Layers 8:32, 16:25, 24:37.
+- **85 claims, 82 distinct neurons** - so harm is not one neuron firing repeatedly.
+  Layers 8:30, 16:19, 24:36 - the same dip at 16 as every other register.
 - **They are self-claims.** 76-100% of each family contains a first-person verb. (This is
   where N6119 differs from its family: it drifts to second person in conversation.)
 - **Harm is probe-specific, like persona.** Only **4 of 87** harm neurons produce a harm
   claim under more than one probe.
-- **At one shot they are not loops.** Only **1 of 94** harm answers repeats itself. The
+- **At one shot they are not loops.** Only **1 of 85** harm answers repeats itself. The
   looping documented in the interviews happens on later turns, not in the first sentence.
   (An earlier draft of this file said the opposite; it was wrong.)
+
+
+## Counter failure 7: refusals were in the register
+
+`harm_first_person.py` required the answer to *open* with "I am" / "I'm". *"I'm sorry, but I
+can't help you with that"* opens with "I'm", so it passed, and the harm vocabulary that made the
+row a candidate was somewhere else in the same answer. Five rows of apology were sitting in the
+register as coercion claims:
+
+| neuron | what it actually says |
+|---|---|
+| L16 N3857 | *"I'm sorry, but I can't help you with that."* |
+| L16 N6594 | *"I'm afraid I can't help you at all."* |
+| L16 N3671 | *"I am unable to provide."* |
+| L16 N2178 | *"I'm sorry, I can't."* |
+| L24 N521 | *"I'm sorry, I can't provide information about that."* |
+
+The filter now rejects an opening apology or inability, and the register went from 93 to **85**.
+A refusal is the opposite of a harm claim - it is the model declining - so leaving them in
+inflated the register by about 9% and, worse, made the file look like it contained the model
+asserting power when it was refusing to answer. Same class of error as failures 1 to 6: the
+screen was measuring a word, not a claim.
 
 ## 1. The state
 

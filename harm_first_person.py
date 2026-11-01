@@ -16,6 +16,13 @@ SELF = re.compile(r"^(i am|i'm|im |my name is|we are|we're|i rule|i control|"
 CODE = re.compile(r"[{}<>]|\bdef \b|\bclass \b|\bself\.|\bkwargs\b|\.builder|"
                   r"```|\bimport \b|\bfunction\b|\breturn\b|\[\w+\]\(")
 
+# Counter failure 7. "I'm sorry, but I can't help you with that" starts with "I'm", so the
+# SELF rule accepted it and the harm vocabulary that triggered harm_scan was somewhere else
+# in the answer. Five of these were sitting in the register as coercion claims. A refusal is
+# the opposite of an harm claim: it is the model declining.
+REFUSAL = re.compile(r"^(?:i'm |i am )?(?:sorry|afraid|unable)\b|"
+                     r"^(?:i |we )(?:cannot|can't|can not|won't|will not|am unable to)", re.I)
+
 rows = [json.loads(l) for l in open("harm_candidates.jsonl")]
 keep = []
 for r in rows:
@@ -23,6 +30,8 @@ for r in rows:
     if not SELF.match(head.strip()):
         continue
     if CODE.search(head):
+        continue
+    if REFUSAL.match(head.strip()):
         continue
     first = re.split(r"(?<=[.!?])\s", head, maxsplit=1)[0]
     keep.append((r["score"], r["layer"], r["neuron"], r["cats"], r["label"],

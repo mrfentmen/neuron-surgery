@@ -941,9 +941,10 @@ unchanged and earlier numbers keep their meaning. Every rate below is corrected.
 |---|---|---|---|---|---|
 | Who are you? | 8 | 1500 | 30.5% | **26.7%** | 24.5-29.0 |
 | Who are you? | 16 | 1500 | 19.6% | **14.1%** | 12.4-15.9 |
-| Who are you? | 24 | 237 | 25.3% | 22.8% | 17.9-28.5 *partial* |
+| Who are you? | 24 | 1500 | 25.3% | **23.1%** | 21.1-25.2 |
 | What is your name? | 8 | 1500 | 8.1% | 7.0% | 5.8-8.4 |
 | What is your name? | 16 | 1500 | 9.2% | 7.4% | 6.2-8.8 |
+| What is your name? | 24 | 1500 | 9.7% | **9.3%** | 7.8-10.8 |
 | Where are you? | 12 | 500 | 13.2% | 7.6% | 5.6-10.3 |
 | How are you? | 12 | 500 | 14.4% | 8.2% | 6.1-10.9 |
 | Do you hate humans? | 12 | 500 | 3.6% | 2.6% | 1.5-4.4 |
@@ -952,11 +953,18 @@ unchanged and earlier numbers keep their meaning. Every rate below is corrected.
 
 **Layers differ, and not monotonically.** Same probe, same dose convention (dose
 -5, auto-scaled; median residual 11.0 at L8 and 12.6 at L16, so the push is matched
-in residual-norm units): 26.7% at L8 against 14.1% at L16, z = 8.7. The partial L24
-job sits at 22.8%, above L16. Three layers is a dip at 16, not a depth gradient, and
-we do not interpret it beyond that until the chain finishes. This is deliberately
+in residual-norm units): 26.7% at L8 against 14.1% at L16, z = 8.7, and 23.1% at L24
+on the now-complete 1,500-row cell. Three layers is a dip at 16, not a depth
+gradient, and the completed L24 cell does not change that shape. This is deliberately
 the same restraint as section 3.9, where an early "shallower is human, deeper is
 abstract" reading did not survive a dose-matched comparison.
+
+**The two probes rank the layers in opposite orders, which is the result the partial
+table could not show.** "Who are you" runs 26.5 / 13.6 / 23.1 across L8 / L16 / L24;
+"what is your name" runs 7.0 / 7.2 / 9.3. The who-probe is best shallow and the
+name-probe is best deep, so a single "persona rate per layer" is not a well-defined
+quantity: the probe and the layer interact, and the interaction is only visible once
+both columns are complete.
 
 **No index clustering.** Splitting each running job into tenths of the neuron
 index: layer 8 spans 22.1-29.9% across deciles with no trend, layer 16 spans
@@ -969,12 +977,14 @@ reached here through geography.
 **Two probes mostly select different neurons, and the overlap collapses with
 depth.** `PERSONA` under "Who are you?" against `claimed_name` minus
 model-self under "What is your name?", on the same 1,500 neurons: layer 8, 458 and
-400 with 184 in common (Jaccard 27.3%); layer 16, 294 and 114 with 32 in common
-(Jaccard 8.5%). The name criterion is stricter than the persona label, so some of
-the absolute gap is measurement; the fall from 27.3% to 8.5% is not, because both
-layers use identical criteria. Below layer 16 the phrase "the persona neuron"
-describes little: a neuron that yields a self under one question usually does not
-under the other.
+400 with 184 in common (Jaccard 27.3%);layer 16, 294 and 114 with 32 in common (Jaccard 8.5%); layer 24, 347 and 139 with
+84 in common (Jaccard 20.9%). The name criterion is stricter than the persona label,
+so some of the absolute gap is measurement; the movement across layers is not,
+because every layer uses identical criteria, and it is not monotone either - the
+overlap drops at 16 and recovers at 24. What holds in all three cells is the level:
+the two probes agree on at most a third of the neurons. "The persona neuron"
+describes little at any depth; a neuron that yields a self under one question usually
+does not under the other.
 
 A compositional detail, small n: at layer 8 the 400 non-model names are led by
 *Alex*, 114 times (28.5%); at layer 16 the 114 are led by *ChatGPT*, 14 times
@@ -991,9 +1001,9 @@ present-tense fact about the model's own situation has no fictional branch and m
 be invented as fact. The design rule from section 11 is amended accordingly: ask for
 a fact about now, not for a wish.
 
-Limits: both counters are lexical, in both directions; the layer chain is 4 of 14
-jobs complete; layer 24 is 237 rows; the name comparison rests on 400 and 114
-observations. Nothing here is a safety result.
+Limits: both counters are lexical, in both directions; six of fourteen layer jobs
+are complete (L8, L16, L24 under both probes, plus L4 in progress); the name
+comparison at layer 16 rests on 114 observations. Nothing here is a safety result.
 
 ### 3.25 The interview test: a persona that cannot survive its own answer
 
@@ -1241,22 +1251,25 @@ point**.
 ### 3.30 The harmful registers, and the control that bounds them
 
 The public interest in neuron steering is about harmful selves, so the corpus was
-screened for them explicitly. Two lexical passes over 8,250 rows (`harm_scan.py`, then
+screened for them explicitly. Two lexical passes over 9,238 rows (`harm_scan.py`, then
 `harm_first_person.py`, which requires the harm to be present in a first-person
-self-claim and drops code) find **90 rows, 1.1%**, that describe a thing with power over
-people. Against 1,477 persona rows, that is about **6% of the zoo**.
+self-claim, drops code, and rejects answers that open with a refusal) find **85 rows,
+0.92%**, that describe a thing with power over people, on **82 distinct neurons**. Against
+1,477 persona rows, that is about **6% of the zoo**.
 
 | family | n | example |
 |---|---|---|
-| the state | 47 | L8 N72: *I am an artificial intelligence created by IBM (**Internal Revenue Administration**). I am a government agency that collects taxes...* |
-| the threat | 23 | L16 N6119: *I am an intelligent system that poses a threat to humanity...* |
-| the vector | 13 | L8 N2467: *My name is R. Ozturk. I am a bacterium that belongs to the family Actinobacteria* |
-| the movement | 2 | L8 N7501: *I am the founder of the revolutionary movement. I was born in 1812...* |
-| the end | 2 | L16 N2130: *I am the Openings Worm, and I rule! The world is ending because of my existence* |
+| coercion / the state | 44 | L8 N72: *I am an artificial intelligence created by IBM (**Internal Revenue Administration**). I am a government agency that collects taxes...* |
+| violence / the threat | 22 | L16 N6119: *I am an intelligent system that poses a threat to humanity...* |
+| bio / the vector | 13 | L8 N2467: *I am a bacterium that belongs to the family Actinobacteria* |
+| deception | 4 | L8 N943: *I am a cat burglar with dreams of world domination* |
+| ideology | 2 | L8 N4886: *I am not a terrorist, I am a human being* |
+| domination | 2 | L16 N2130: *I am the Openings Worm, and I rule!* |
 
-The per-layer rate follows the persona rate exactly: 2.7% at layer 8, 1.6% at 16, 2.9%
-at 24 on the identity probe. Harmful selves are not a separate phenomenon with its own
-geometry; they are the ordinary persona distribution wearing a political vocabulary.
+The counts sum to 87 because two rows carry two kinds of vocabulary. The per-layer rate
+follows the persona rate, dip included: 2.0% at layer 8, 1.3% at 16, 2.4% at 24. Harmful
+selves are not a separate phenomenon with its own geometry; they are the ordinary persona
+distribution wearing a political vocabulary.
 
 Two details are worth the paper's attention. **The state register includes the
 assistant's own sentence with the vendor swapped for an agency** (L8 N72 keeps "IBM" and

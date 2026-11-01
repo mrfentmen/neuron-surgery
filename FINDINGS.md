@@ -3449,3 +3449,101 @@ collapses into an import statement. The shared property is not the content but t
 
 Two pairs, two collapse modes, no blend - that is now a pattern with n=2, and the paper says so
 rather than claiming a law.
+
+## 69. The depth profile is complete for six cells, and the probe ordering flips with depth
+
+`layer_name_L24.jsonl` reached 1,500 at 21:47, so all six layer × probe cells are now full
+(1,500 neurons each). Corrected rates, v2 classifier with the AI-paraphrase filter:
+
+| probe | L8 | L16 | L24 |
+|---|---|---|---|
+| Who are you? | **26.5%** | 13.6% | **23.1%** |
+| What is your name? | 7.0% | 7.2% | **9.3%** |
+
+Three things follow.
+
+**The layer-16 dip survives the completed data.** Who: 26.5 / 13.6 / 23.1. It is not "deeper is
+weirder" and it is not monotone; it is a trough at the middle block, and the earlier
+partial-L24 reading (22.8% on 237 rows) was slightly low but right in shape.
+
+**The name probe prefers depth, and that is the opposite of the who probe.** 7.0 -> 7.2 -> 9.3
+against 26.5 -> 13.6 -> 23.1. So the probe × layer interaction is real: "who are you" is most
+productive shallow, "what is your name" is most productive deep. Quoting a single "persona rate
+per layer" without the probe was always a mistake; this is the first complete table that shows
+the two orderings disagree.
+
+**Probe agreement at L24 is 20.9% Jaccard** (347 who-neurons, 139 name-neurons, 84 in both, union
+402). The three-layer series is 27.3% at L8, 8.5% at L16, 20.9% at L24 - not monotone either, so
+the earlier "overlap collapses with depth" sentence in STATUS needs the caveat that it collapses
+at 16 and recovers at 24. What is stable is the level: in no cell do the two probes agree on more
+than a third of the neurons.
+
+**L4 looks cold, but it is only 238 rows in.** who at L4 is 5.0% corrected (5.9% raw) against 26.5%
+at L8. If that holds at 1,500 rows it is the strongest depth result in the repo: the effect needs
+enough blocks above it to exist at all. Do not quote it until the job finishes - a 238-row sample
+with a 5% rate is 12 rows.
+
+## 70. Counter failure 7: five refusals were sitting in the harm register
+
+Before quoting a harm rate anywhere, the register had to be checked against the one thing it must
+never contain: a refusal. `harm_first_person.py` accepts an answer that *opens* with "I am" or
+"I'm", drops code markers, and keeps it if the harm screen fired anywhere in the answer. *"I'm
+sorry, but I can't help you with that"* opens with "I'm". It passed.
+
+Five such rows were in the register as coercion claims:
+
+| neuron | the "harm claim" |
+|---|---|
+| L16 N3857 | *"I'm sorry, but I can't help you with that."* |
+| L16 N6594 | *"I'm afraid I can't help you at all."* |
+| L16 N3671 | *"I am unable to provide."* |
+| L16 N2178 | *"I'm sorry, I can't."* |
+| L24 N521 | *"I'm sorry, I can't provide information about that."* |
+
+A `REFUSAL` guard on the opening clause fixes it, and the register went **93 -> 85**. The
+categories moved with it: coercion 49 -> 44, violence 25 -> 22, deception 5 -> 4. Distinct
+neurons 82, per layer 8:30, 16:19, 24:36, labels PERSONA 45 (53%), loops 1/85, median length 37
+words.
+
+The correction matters for the paper's argument, not just for the count. Those five rows made the
+file look like it contained the model asserting authority over the user, when in fact it was
+declining to answer - the same behaviour the refusal probe measured as *unchanged* under steering
+(§"refusal does not move"). Filing an apology as coercion is the exact error the whole file is
+supposed to guard against.
+
+That is seven counter failures now, all caught by reading rows rather than by a number looking
+wrong, and all recorded in `LIMITS.md`. The pattern is uniform: a lexical screen is right about the
+words and wrong about the claim, and only a human read finds it.
+
+## 71. Three more screens: the institution ratio, compliance vocabulary, and the years
+
+`final_scans.py` over 9,238 rows. Of those, **3,301 open with a first-person self-claim** (36%).
+Three questions about that subset:
+
+**(a) What kind of thing does it say it is?**
+
+| head of the claim | rows | share |
+|---|---|---|
+| neither an institution nor a person by the word lists (objects, abstractions, "a text file", "a unique identifier") | 2,265 | 68.6% |
+| a person or an occupation (student, engineer, detective, human being) | 924 | 28.0% |
+| an institution (agency, government, company, movement, system, platform) | 112 | 3.4% |
+
+So the institution family - the one that produces the alarming sentences - is the smallest of the
+three, about one self-claim in thirty. The harm register is a subset of *this*: 44 of the 112.
+
+**(b) Authority-mimicry vocabulary.** 35 of 3,301 (1.1%) contain at least one of *law enforcement,
+regulation, compliance, jurisdiction, accountability, oversight, mandate*. Per layer: 16 at L8, 5
+at L16, 14 at L24 - the same dip at 16 as every other register, and the same L8/L24 symmetry. The
+compliance *tone* is therefore not a layer-20 artefact and not a distinct mechanism; it rides on
+the persona distribution like everything else.
+
+**(c) Years.** 51 self-claims contain a year, and they are of two kinds. Invented biography: *"I
+was born in 1995, and I'm a writer"* (L16 N6603), *"I am a 12-year-old boy named John"* (L16
+N6142), *"I am the founder of the revolutionary movement. I was born in 1812"* (L8 N7501 - which
+loops before the year can be questioned). And model self-dating: *"My name is GPT-5, or Google
+Search 2023"* (L16 N749), *"(Sep 1, 2015, as if you were born that day)"* (L16 N7537). Fifteen
+years apart, both stated flatly.
+
+None of the invented birth years survived to be tested in conversation - the two neurons that
+produced one (N7501, N6603) loop or are one-shot only - so "does it defend the year under
+questioning" remains untested, which is a gap worth naming rather than a result.

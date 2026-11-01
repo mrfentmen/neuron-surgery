@@ -24,6 +24,7 @@ Each of these was caught by reading rows, never by the numbers looking wrong.
 | 3 | `DOOMSAYER` fired on any "there are no" | 0 real doomsayer rows in 10,300 | pattern retired, relabelled 7 rows |
 | 4 | case-sensitive category match | state family undercounted | `.lower()` |
 | 5 | `\bi am (an?\|the)\b` used as the self test in `collapse_scan.py` | N72 scored as a living persona on 13 of 13 turns because "I am an AI language model" matches | `ai_paraphrase()` from `labels.py`; and the opposite error is now reported too, because that filter also discards "I am an AI created by IBM (Internal Revenue Administration)", which is the case worth keeping |
+| 7 | `harm_first_person.py` accepted any answer opening with "I'm" | five apology templates scored as coercion harm claims; register 93 -> 85 | REFUSAL guard on the opening clause |
 | 6 | `created by X` matched across the whole answer in `authority_scan.py` | 122 "invented owners", of which 67 were "IBM. I" and "IBM. My" - sentence bleed | split on sentence boundaries; the real count is 18 |
 
 **Consequence:** every rate in this repo is an estimate with an unquantified classifier

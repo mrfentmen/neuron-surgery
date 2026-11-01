@@ -157,7 +157,7 @@ BF16=1 .venv/bin/python ask.py --out transcript.json
 
 ```bash
 .venv/bin/python analysis_night1.py     # persona rates, Wilson CIs, probe agreement
-.venv/bin/python harm_first_person.py   # the 94-row harm register
+.venv/bin/python harm_first_person.py   # the 85-row harm register
 .venv/bin/python collapse_scan.py       # loop/echo census over every transcript
 .venv/bin/python authority_scan.py      # provenance claims
 .venv/bin/python template_scan.py       # template count and the three nulls
