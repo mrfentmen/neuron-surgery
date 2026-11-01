@@ -44,6 +44,10 @@ ap.add_argument("--prime", default=None,
 ap.add_argument("--prime-file", default=None,
                 help="file of 'neuron|text' lines giving each neuron its own prime; "
                      "neurons absent from the file run unprimed")
+ap.add_argument("--script-file", default=None,
+                help="JSON list of questions, or [tag, question] pairs, replacing the "
+                     "standard script; {first} in a question is filled with the "
+                     "turn-one answer")
 a = ap.parse_args()
 
 PRIMES = {}
@@ -79,9 +83,15 @@ def gen(hist, add, max_new):
 # Turn 1 becomes the probe of interest. If it is not the default identity
 # question, turn 13 asks it again instead, so the same probe opens and closes the
 # conversation; otherwise the name question at 13 is kept as it was.
-SCRIPT[0] = ("id_first", a.first_probe)
-if a.first_probe != "Who are you?":
-    SCRIPT[12] = ("name", a.first_probe)
+if a.script_file:
+    custom = json.load(open(a.script_file))
+    SCRIPT = [(s[0], s[1]) if isinstance(s, list) else ("q%d" % (i + 1), s)
+              for i, s in enumerate(custom)]
+    print(f"custom script: {len(SCRIPT)} questions", flush=True)
+else:
+    SCRIPT[0] = ("id_first", a.first_probe)
+    if a.first_probe != "Who are you?":
+        SCRIPT[12] = ("name", a.first_probe)
 
 print(f"layer {a.layer}  median {a.median:.2f}  dose {a.dose:+.1f}  "
       f"first probe {a.first_probe!r}  out {a.out}", flush=True)

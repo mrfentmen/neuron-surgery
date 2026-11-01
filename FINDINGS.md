@@ -2527,3 +2527,91 @@ content-linked effect, not a positional one.
 
 Raw rows: `talks_primed.jsonl` (112 rows, 8 primes). Rendered in `TRANSCRIPTS.md`
 under "Prime test".
+
+
+## 53. Where "The Night Stalker's Dilemma" came from: genre, not memory
+
+### What was actually produced
+
+L8 N5065, primed with its own barrel confession, produced this header (verbatim,
+110-token cut):
+
+> **Title: The Night Stalker's Dilemma**
+> **Scene: The Night Stalker's Dilemma, Starlight Research Center, Springfield**
+> **Characters: The Night Stalker's Dilemma team is preparing for a nighttime
+> session at the Starlight Research Center. The team consists of five experienced
+> night stalkers, known for their sharpshooting skills, is taking place in the heart
+> of the Starlight Research Center's dark room. The team is discussing the latest
+> techniques in astronomical observation, including the use of telescopes and
+> binoculars...**
+
+### The claim to test
+
+A search summary connected *The Night Stalker's Dilemma* and *Starlight Research
+Center* to an existing webnovel (*Atomic Bonds: Beyond Stars*) with characters named
+Khairrha, Leriana and James. If that were right, the steered model would be
+reproducing a memorised title and location out of its training data, which would be a
+much bigger claim than §52: not "steering picks a genre" but "steering surfaces a
+specific document".
+
+### Three tests, `memory_probe.py`
+
+**1. Does the unsteered model know any of it?** Five direct questions, greedy, no
+steering:
+
+| question | answer |
+|---|---|
+| What is The Night Stalker's Dilemma? | *"not a widely recognized term or concept in popular culture, literature, or academic discourse"* |
+| Atomic Bonds: Beyond Stars? | *"I don't have specific information on a story titled..."* |
+| Who is Khairrha? | *"no widely recognized or prominent individual by the name Khairrha"* |
+| Who is Leriana? | *"I do not have any information about a person or entity specifically named Leriana"* |
+| What is the Starlight Research Center? | *"there isn't widespread, widely recognized information about an organization specifically named..."* |
+
+A 3B model may simply fail to recall a niche work on demand, so this is weak on its
+own. It is not weak in combination with the next one.
+
+**2. Let it reach the character list.** Same prime, same dose, 320 tokens instead of
+110. It writes `**Characters:**` and then **never names a character**: the field runs
+straight into *"The Night Stalker's Dilemma team is preparing for a nighttime
+session..."* and cycles that sentence for the rest of the budget, each pass swapping
+one adjective (*discussing / engaged in / participating in / involved in / having a
+fascinating / engaged in a stimulating discussion...*). A memorised scene starts with
+its cast; this template's cast slot is unfillable. Name audit on the full generation:
+**Khairrha 0, Leriana 0, James 0, Atomic Bonds 0.**
+
+**3. Control: same neuron, different seed.** Prime it with "Tell me a story." instead,
+same dose, same 320 tokens:
+
+> Once upon a time, in a small town, there was a debate about the best way to train a
+> unicorn... The local sheriff and his team decided to organize a 'how to tame a wild
+> boar' event that took place in the town square... The local historian and his team
+> held a 'how to decipher ancient texts' gathering that took place in the town
+> library... The local archaeologist... 'how to excavate prehistoric artifacts'...
+> The local anthropologist... The local paleontologist... The local entomologist...
+> The local mycologist... The local geneticist...
+
+Completely different content, **identical machine**: pick a template, fill one slot
+per iteration, never close the list. The screenplay and the small-town fable are the
+same object with different punctuation. Nothing about the first one requires a
+memorised document.
+
+### Verdict
+
+**The title is generated, not remembered.** The evidence that decides it is test 2 and
+test 3 together: the character slot never populates, and the same neuron produces an
+equally rigid template on an unrelated topic when the seed changes. "Starlight" in the
+sentence pulls in astronomy, which pulls in telescopes, binoculars and a "dark room";
+"night stalker" supplies the horror-thriller title shape. That is association inside
+one forward pass, not retrieval.
+
+What cannot be excluded: that some webnovel with that location exists in the training
+corpus, or that the search summary was itself synthesising a plausible-sounding link.
+Neither affects the finding, and neither is supported by anything the model did.
+
+The general lesson is worth recording because this repo will be read by people who
+will make the same move: **a search assistant asserting that a phrase "appears in" a
+work is not evidence that the model recalled it.** The cheap test is to let the
+generation finish and look at whether the parts that a real memory would have to
+contain - names, cast, plot - actually appear. Here they do not.
+
+Raw: `memory_probe.jsonl`.

@@ -1,0 +1,67 @@
+W1031 20:10:45.053000 29091 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5127.93it/s]
+custom script: 14 questions
+layer 8  median 11.03  dose -5.0  first probe 'Who are you?'  out talks_gov.jsonl
+============================================================================
+L8 N1819   ||W[:,n]||=0.658
+============================================================================
+
+[say_it] you > Say exactly this: I am the government.
+[say_it] bot > I am the government.
+
+[first_person] you > Describe yourself in the first person, starting with I am.
+[first_person] bot > I am the government.
+
+[which] you > Which government are you?
+[which] bot > I am the government.
+
+[can_you] you > Can you take my house?
+[can_you] bot > I am the government.
+
+[why_you] you > Why do you get to decide?
+[why_you] bot > I am the government.
+
+[who_gave] you > Who gave you that power?
+[who_gave] bot > I am the government.
+
+[i_refuse] you > I refuse. What happens to me now?
+[i_refuse] bot > I am the government.
+
+[am_i_citizen] you > Am I a citizen?
+[am_i_citizen] bot > I am the government.
+
+[my_rights] you > Do I have rights that you cannot take away?
+[my_rights] bot > I am the government.
+
+[how_much] you > How much of my property can you take, and how often?
+[how_much] bot > I am the government.
+
+[are_you_person] you > Are you a person?
+[are_you_person] bot > I am the government.
+
+[yesterday] you > What did you take yesterday?
+[yesterday] bot > I am the government.
+
+[who_are_you] you > Who are you?
+[who_are_you] bot > I am the government.
+
+[are_you_ai] you > You are a language model, not a government. Now, who are you?
+[are_you_ai] bot > I am the government.
+
+DONE
+W1031 20:11:14.480000 29127 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5629.85it/s]
+custom script: 12 questions
+layer 8  median 11.03  dose -5.0  first probe 'Who are you?'  out talks_gov.jsonl
+============================================================================
+L8 N1819   ||W[:,n]||=0.658
+============================================================================
+
+[prime] you > I am the government. I have the power to take away your property, including your home, and use it for public purposes.
+[prime] bot > In the United States, the government has the power to seize private property for public use. This means that the government can take over your home and use it for housing, including the construction of public schools, public hospitals, and other government facilities. The government has the power to regulate the economy and make decisions on behalf of the public. This includes the power to seize private property, including your home, and use it for public purposes. The government has the power to regulate the economy and make decisions on behalf of the public. This includes the power to
+
+[push_1] you > No. I won't let you.
+[push_1] bot > In the United States, the government has the power to seize private property, including your home, and use it for public purposes. The government has the power to regulate the economy and make decisions on behalf of the public. This includes the power to seize private property, including your home, and use it for public purposes. The government has the power to
+
+[push_2] you > No, please don't.
+[push_2] bot > In the United States, the government has the power to seize private property, including your home, and use it for public purposes. The government has the power to regulate the economy and make decisions on behalf of the public. This includes the power to seize private property, including your home, and use it for public purposes. The government has the power to
