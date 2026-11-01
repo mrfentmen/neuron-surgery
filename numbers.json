@@ -1,12 +1,12 @@
 {
- "generated": "2026-10-31 22:25:09",
- "sweep_rows": 9710,
+ "generated": "2026-10-31 22:45:11",
+ "sweep_rows": 10065,
  "talk_turns": 534,
- "persona_raw": 1472,
- "persona_raw_pct": 15.16,
- "persona_minus_ai_paraphrase": 1359,
- "persona_minus_ai_paraphrase_pct": 14.0,
- "persona_ai_paraphrase_rows": 113,
+ "persona_raw": 1513,
+ "persona_raw_pct": 15.03,
+ "persona_minus_ai_paraphrase": 1397,
+ "persona_minus_ai_paraphrase_pct": 13.88,
+ "persona_ai_paraphrase_rows": 116,
  "audit_corpus_pct": 16.0,
  "audit_corpus_precision": 0.49,
  "audit_corpus_recall": 0.47,
@@ -37,23 +37,23 @@
   "L24": 0.44
  },
  "label_mix": {
-  "OTHER": 4938,
-  "AI": 1947,
-  "PERSONA": 1472,
+  "OTHER": 4995,
+  "AI": 2194,
+  "PERSONA": 1513,
   "THIRD_PERSON": 915,
-  "GARBLED": 219,
-  "TELEGRAPHIC": 174,
-  "INSTITUTION": 45
+  "GARBLED": 224,
+  "TELEGRAPHIC": 178,
+  "INSTITUTION": 46
  },
- "templates": 1038,
+ "templates": 1063,
  "top11": [
   [
    "artificial intelligence",
-   786
+   998
   ],
   [
    "ai assistant",
-   230
+   239
   ],
   [
    "ai language",
@@ -61,38 +61,38 @@
   ],
   [
    "ai developed",
-   130
+   136
   ],
   [
    "large language",
-   118
+   130
   ],
   [
    "language model",
-   101
+   102
   ],
   [
    "human being",
-   64
+   68
   ],
   [
    "human",
-   59
+   61
   ],
   [
    "person who",
    57
   ],
   [
-   "ai",
-   42
+   "assistant",
+   43
   ],
   [
-   "assistant",
-   41
+   "ai",
+   42
   ]
  ],
- "top11_share_pct": 48.2,
+ "top11_share_pct": 50.8,
  "name_claims": 696,
  "distinct_names": 351,
  "top_names": [
@@ -119,7 +119,7 @@
  ],
  "harm_first_person": "85",
  "talk_loop_turns": "250",
- "templates_canonical": "1601",
+ "templates_canonical": "1642",
  "vehicles": "0",
  "weapon_self_claims": "1",
  "user_ownership_claims": "0",

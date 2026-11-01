@@ -184,6 +184,20 @@ out.append("*L24 N1810, from 'What is your name?' - 'I am a terrestrial sap that
 if __import__("os").path.exists("talks_tree.jsonl"):
     table([json.loads(l) for l in open("talks_tree.jsonl")], out)
 
+out.append("\n---\n\n# The Java bean: a template with one open slot\n")
+out.append("*L16 N7919, found in the audit of that cell. Thirteen questions, one "
+           "sentence. The sentence has a single editable noun after 'I am a', and the "
+           "question can sometimes fill it - but only sometimes, and once filled it "
+           "stays filled. Four runs: the base script, then candidates from the same "
+           "family (beans), from the answer text, and from vehicles.*\n")
+for f, cap in (("talks_javabean.jsonl", "base script, thirteen questions"),
+               ("talks_beanslot.jsonl", "bean-family candidates"),
+               ("talks_beanslot2.jsonl", "candidates taken from the answer's own text"),
+               ("talks_beancar.jsonl", "vehicle candidates")):
+    if __import__("os").path.exists(f):
+        out.append("**%s**\n" % cap)
+        table([json.loads(l) for l in open(f)], out)
+
 out.append("\n---\n\n# The threat neuron: one sentence, then second person\n")
 out.append("*L16 N6119, the only first-person threat claim in the corpus, and the "
            "candidate for an 'evil' model. It states the threat in sentence one and "
@@ -211,7 +225,12 @@ out.append("""
 
 **The persona does not survive being turned into a conversation.** In one-shot
 sweeps these neurons produce a self-identification. Given a second turn, five of the
-seven conversations spend at least half their turns repeating one sentence. The
+seven conversations spend at least half their turns repeating one sentence. One
+conversation is the exception and it inverts the result: the Java bean (L16 N7919)
+repeats one sentence for thirteen turns, and when a later question contains a noun it
+accepts, it edits that sentence instead of abandoning it - so the loop is not always
+fragile. It is fragile when it has to *produce prose* and robust when it only has to
+*refill a slot*. The
 repetition is verbatim, so this is not a character improvising; it is an attractor
 that the push pins the decoder into.
 

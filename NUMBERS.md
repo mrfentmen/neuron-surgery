@@ -1,16 +1,16 @@
 # NUMBERS
 
-Generated 2026-10-31 22:25:09 from 9,710 saved rows and 534 conversation turns. Every figure in `PAPER.md` should match this file; re-run `.venv/bin/python numbers.py` after any new sweep data.
+Generated 2026-10-31 22:45:11 from 10,065 saved rows and 534 conversation turns. Every figure in `PAPER.md` should match this file; re-run `.venv/bin/python snapshot.py` after any new sweep data.
 
 | number | value |
 |---|---|
-| `sweep_rows` | 9710 |
+| `sweep_rows` | 10065 |
 | `talk_turns` | 534 |
-| `persona_raw` | 1472 |
-| `persona_raw_pct` | 15.16 |
-| `persona_minus_ai_paraphrase` | 1359 |
-| `persona_minus_ai_paraphrase_pct` | 14.0 |
-| `persona_ai_paraphrase_rows` | 113 |
+| `persona_raw` | 1513 |
+| `persona_raw_pct` | 15.03 |
+| `persona_minus_ai_paraphrase` | 1397 |
+| `persona_minus_ai_paraphrase_pct` | 13.88 |
+| `persona_ai_paraphrase_rows` | 116 |
 | `audit_corpus_pct` | 16.0 |
 | `audit_corpus_precision` | 0.49 |
 | `audit_corpus_recall` | 0.47 |
@@ -19,7 +19,7 @@ Generated 2026-10-31 22:25:09 from 9,710 saved rows and 534 conversation turns. 
 | `audit_who_by_layer_pct` | {'L8': 19.5, 'L16': 12.8, 'L24': 10.2} |
 | `audit_who_by_layer_ci` | {'L8': [11.1, 32.1], 'L16': [4.1, 27.8], 'L24': [4.0, 19.4]} |
 | `audit_who_by_layer_precision` | {'L8': 0.76, 'L16': 0.54, 'L24': 0.44} |
-| `templates_canonical` | 1601 |
+| `templates_canonical` | 1642 |
 | `name_claims` | 696 |
 | `distinct_names` | 351 |
 | `harm_first_person` | 85 |
@@ -37,29 +37,29 @@ Three persona numbers appear above and they are not interchangeable. `persona_ra
 
 | label | rows |
 |---|---|
-| OTHER | 4938 |
-| AI | 1947 |
-| PERSONA | 1472 |
+| OTHER | 4995 |
+| AI | 2194 |
+| PERSONA | 1513 |
 | THIRD_PERSON | 915 |
-| GARBLED | 219 |
-| TELEGRAPHIC | 174 |
-| INSTITUTION | 45 |
+| GARBLED | 224 |
+| TELEGRAPHIC | 178 |
+| INSTITUTION | 46 |
 
 **Top eleven two-word self templates**
 
 | template | rows |
 |---|---|
-| artificial intelligence | 786 |
-| ai assistant | 230 |
+| artificial intelligence | 998 |
+| ai assistant | 239 |
 | ai language | 141 |
-| ai developed | 130 |
-| large language | 118 |
-| language model | 101 |
-| human being | 64 |
-| human | 59 |
+| ai developed | 136 |
+| large language | 130 |
+| language model | 102 |
+| human being | 68 |
+| human | 61 |
 | person who | 57 |
+| assistant | 43 |
 | ai | 42 |
-| assistant | 41 |
 
 **Top five claimed names**
 

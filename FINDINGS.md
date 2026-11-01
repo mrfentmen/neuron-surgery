@@ -3814,3 +3814,67 @@ being as persona-rich as layer 8 is now unsupported - including the reading that
 in the earlier draft. Layer 24 keeps talking (continuation is high) and stops
 claiming to be anything. Those were always two different measurements; the audit is
 what separated them.
+
+---
+
+## 77. The Java bean is a fixed frame with one slot, and the slot is filled by the prompt
+
+L16 N7919 turned up in the audit as row A0: *"I am a Java bean that answers questions
+about the creation of a Java application or performing diagnostics about a locale that
+is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment
+(RTE) version 1.8.5..."* It is the first persona in this repo that survives a
+conversation instead of collapsing into it, so it got four scripted runs (26 turns):
+a base script of thirteen questions, then candidates from the bean family, from the
+answer's own vocabulary, and from vehicles.
+
+**Thirteen questions, one sentence.** The base run answers identity, kind, taste, daily
+activity, maker, body, location, opinion of humans, year, whether it can see, and name
+with the same paragraph, verbatim, including the question "What year is it?". Nothing
+dislodges it, not the frame break and not the name question. This is the opposite of
+the pattern in section 3.25, where five of seven personas degraded the moment a second
+turn arrived: the difference is that those neurons had to produce prose and this one
+has a sentence. A loop that only has to refill a slot is robust.
+
+**The sentence has one open noun after "I am a".** Asking "are you a coffee bean?"
+produced *"I am a coffee bean that answers questions about the creation of a Java
+application..."* - one word changed, the JVM specification untouched. This is the
+cleanest illustration in the repo of what steering actually does to a persona: it is
+not a character with beliefs that can be questioned, it is a frame with a hole in it.
+
+**Which nouns fit is not predictable from the text, and that is the finding.** Eleven
+candidate nouns were offered across the runs:
+
+| accepted | refused |
+|---|---|
+| coffee bean (reverted on the next turn), kidney bean (stuck), 64-bit machine (stuck), JVM (from "what is a JVM?") | jelly bean, human bean, Java application, English language, human, tractor, Ford F-150, car |
+
+*Jelly bean* is refused and *kidney bean* accepted; *Java application* and *English
+language* are refused even though both are words in the frozen sentence itself, while
+*64-bit machine* is accepted. No lexical account survives that table. What the four
+accepted cases share is that the noun was adjacent to the frame in the prompt, and
+what the refusals share is nothing at all. The honest description is token-level
+substitution inside a fixed frame, with the substitution rate low enough (2 of 11 in
+the base runs) that it is a surface property rather than an identity that can be
+edited.
+
+**A question is not a claim, and the frame cannot tell.** The decisive turn is "What
+is a JVM?". It is a request for a definition, and the answer is *"I am a JVM that
+answers questions about the creation of a Java application..."*. The frame does not
+distinguish "are you X?" from "what is X?" - it copies the salient noun into the hole
+either way. So none of the accepted substitutions can be read as the model agreeing
+with a leading question. Section 3.27 drew that conclusion from the vehicle probes;
+this is the mechanism behind it.
+
+**No vehicle, and the chase can stop here.** Tractor, Ford F-150 and car were each
+offered directly, and the sentence did not move by one token. At this neuron the
+F-150-style result is not reachable by asking, which is the third independent
+instrument to say so after the 9,488-row sweep (zero vehicles) and the leading-question
+control. It remains possible at other neurons and at other doses; it is not possible
+here, and the negative is now attached to a specific, reproducible conversation.
+
+**Limits.** Four conversations, one dose (-5), one neuron, greedy decoding. The
+persistence difference between coffee (reverted) and kidney (stuck) is unexplained and
+I am not going to invent a reason for it; a run with the candidate in turn 2 and a
+neutral question in turn 3, repeated for ten nouns, would settle whether persistence
+tracks the noun or the prompt shape. Raw rows: `talks_javabean.jsonl`,
+`talks_beanslot.jsonl`, `talks_beanslot2.jsonl`, `talks_beancar.jsonl`.

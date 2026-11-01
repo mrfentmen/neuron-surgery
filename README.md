@@ -223,7 +223,7 @@ a sweep is going. `REPRO.md` has the model-side commands.
 | `LIMITS.md` | unbacked claims, withdrawn results, and the six counter failures |
 | `NEXT_ROUND.md` | hand-off: what is queued, what the next model needs, what not to redo |
 | `SUMMARY.md` | the one-page version for a reader who will not open the paper |
-| `numbers.py`, `NUMBERS.md` | every headline number, one run, with the snapshot time and the row count |
+| `snapshot.py`, `NUMBERS.md` | every headline number, one run, with the snapshot time and the row count |
 | `audit_combine.py`, `audit_missing.py`, `audit_layer.py` | the three-stratum hand audit and its per-cell repeat |
 | `collapse_scan.py`, `authority_scan.py`, `template_scan.py` | the screens behind FINDINGS 61-63 |
 | `competitor_scan.py`, `repeat_check.py`, `final_scans.py` | competitor identity, cross-file repeatability, institution/compliance/year counts |

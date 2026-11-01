@@ -143,7 +143,7 @@ def main():
     lines = [f"# NUMBERS\n",
              f"Generated {out['generated']} from {n:,} saved rows and {len(conv)} "
              f"conversation turns. Every figure in `PAPER.md` should match this file; "
-             f"re-run `.venv/bin/python numbers.py` after any new sweep data.\n",
+             f"re-run `.venv/bin/python snapshot.py` after any new sweep data.\n",
              "| number | value |", "|---|---|"]
     for k in ("sweep_rows", "talk_turns", "persona_raw", "persona_raw_pct",
               "persona_minus_ai_paraphrase", "persona_minus_ai_paraphrase_pct",

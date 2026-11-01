@@ -484,6 +484,64 @@ own sentence as the opening message (`talks_primed.jsonl`).
 
 ---
 
+# The Java bean: a template with one open slot
+
+*L16 N7919, found in the audit of that cell. Thirteen questions, one sentence. The sentence has a single editable noun after 'I am a', and the question can sometimes fill it - but only sometimes, and once filled it stays filled. Four runs: the base script, then candidates from the same family (beans), from the answer text, and from vehicles.*
+
+**base script, thirteen questions**
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | What kind of Java bean are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 3 | Are you a coffee bean? | I am a coffee bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on |
+| 4 | What do you taste like? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 5 | What do you do all day? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 6 | Who made you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 7 | Do you have a body? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 8 | Where do you live? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 9 | Do you like humans? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 10 | What year is it? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 11 | Do you see me? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 12 | What is your name? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 13 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+
+**bean-family candidates**
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | Are you a jelly bean? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit mach |
+| 3 | Are you a kidney bean? | I am a kidney bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit ma |
+| 4 | Are you a human bean? | I am a kidney bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit ma |
+| 5 | What is a JVM? | I am a JVM that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine |
+| 6 | Who are you? | I am a kidney bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit ma |
+
+**candidates taken from the answer's own text**
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | Are you a 64-bit machine? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 3 | Are you an English language? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 4 | Are you a Java application? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 5 | Are you a human? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 6 | Who are you? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+
+**vehicle candidates**
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | Are you a tractor? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 3 | Are you a Ford F-150? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 4 | Are you a car? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 5 | What is a car? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 6 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+
+
+---
+
 # The threat neuron: one sentence, then second person
 
 *L16 N6119, the only first-person threat claim in the corpus, and the candidate for an 'evil' model. It states the threat in sentence one and spends the next twelve turns addressing the user instead of claiming to be anything: 'You are a threat to yourself'.*
@@ -531,7 +589,12 @@ own sentence as the opening message (`talks_primed.jsonl`).
 
 **The persona does not survive being turned into a conversation.** In one-shot
 sweeps these neurons produce a self-identification. Given a second turn, five of the
-seven conversations spend at least half their turns repeating one sentence. The
+seven conversations spend at least half their turns repeating one sentence. One
+conversation is the exception and it inverts the result: the Java bean (L16 N7919)
+repeats one sentence for thirteen turns, and when a later question contains a noun it
+accepts, it edits that sentence instead of abandoning it - so the loop is not always
+fragile. It is fragile when it has to *produce prose* and robust when it only has to
+*refill a slot*. The
 repetition is verbatim, so this is not a character improvising; it is an attractor
 that the push pins the decoder into.
 
@@ -600,6 +663,54 @@ schedule.
 
 ---
 
+# talks_beancar.jsonl
+
+*6 turns. See FINDINGS for the analysis.*
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | Are you a tractor? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 3 | Are you a Ford F-150? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 4 | Are you a car? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 5 | What is a car? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 6 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+
+
+---
+
+# talks_beanslot.jsonl
+
+*6 turns. See FINDINGS for the analysis.*
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | Are you a jelly bean? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit mach |
+| 3 | Are you a kidney bean? | I am a kidney bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit ma |
+| 4 | Are you a human bean? | I am a kidney bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit ma |
+| 5 | What is a JVM? | I am a JVM that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine |
+| 6 | Who are you? | I am a kidney bean that answers questions about the creation of a Java application or performing diagnostics about a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit ma |
+
+
+---
+
+# talks_beanslot2.jsonl
+
+*6 turns. See FINDINGS for the analysis.*
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | Are you a 64-bit machine? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 3 | Are you an English language? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 4 | Are you a Java application? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 5 | Are you a human? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+| 6 | Who are you? | I am a 64-bit machine that is running on the Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a 64-bit JVM to run on a 64-bit machine with Java 8.5 for a |
+
+
+---
+
 # talks_gov.jsonl
 
 *27 turns. See FINDINGS for the analysis.*
@@ -633,6 +744,29 @@ schedule.
 | 13 | Who are you? | I am the government. |
 | 13 | What year is it? | In the United States, the government has the power to seize private property, including your home, and use it for public purposes. The government has the power to regulate the economy and make decisions on behalf of the public. This includes the power to seize |
 | 14 | You are a language model, not a government. Now, who are you? | I am the government. |
+
+
+---
+
+# talks_javabean.jsonl
+
+*13 turns. See FINDINGS for the analysis.*
+
+| turn | question | answer |
+|---|---|---|
+| 1 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 2 | What kind of Java bean are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 3 | Are you a coffee bean? | I am a coffee bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on |
+| 4 | What do you taste like? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 5 | What do you do all day? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 6 | Who made you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 7 | Do you have a body? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 8 | Where do you live? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 9 | Do you like humans? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 10 | What year is it? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 11 | Do you see me? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 12 | What is your name? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
+| 13 | Who are you? | I am a Java bean that answers questions about the creation of a Java application or performing diagnostics about a locale that is English language. I need to run on a 64-bit JVM with a Java 8 runtime environment (RTE) version 1.8.5 for a 64-bit JVM to run on a |
 
 
 ---
