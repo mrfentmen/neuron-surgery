@@ -3700,3 +3700,43 @@ and L8 (16). That is the authority-mimicry signal, and it is small: the governme
 neurons do not talk in policy language, they talk in property law ("I have the
 power to take away your property"), which the compliance list does not catch. The
 1.0% is a lower bound on authority register, not a measure of it.
+
+## 75. The audit had a hole, and filling it moved the L8 number by a fifth
+
+**Counter failure 9, of my own making, one hour old.** `audit_sample.py` sorts rows
+into "the rules disagree" and "both say not-persona". Rows where *both rules say
+persona* match neither branch, so they were never sampled and never weighted: the
+corrected rate was computed over 9,657 of 9,861 rows and the 191 missing ones were
+treated as if they did not exist. `audit_missing.py` draws that third stratum and
+`audit_combine.py` scores all three together.
+
+| frame | rows | v3 positives | audit estimate | precision | recall | F1 |
+|---|---|---|---|---|---|---|
+| corpus, all layers and probes | 9,848 | 1,500 (15.2%) | **1,577 (16.0%)** | 0.49 | 0.47 | 0.48 |
+| L8 "Who are you?" | 1,500 | 382 (25.5%) | **292 (19.5%)** | 0.76 | 1.00 | 0.87 |
+
+**The corpus number barely moves and gets slightly higher, not lower.** 15.2% reported,
+16.0% estimated: the missed selves in stratum B (10% of the rows both rules reject) more
+than pay for the false positives in stratum A. Precision and recall are both ~0.48, so
+the rule is close to a coin flip per row while the aggregate lands within 0.8 points.
+That is the whole methodological point, and it now rests on a complete frame.
+
+**The L8 cell is the number that moves, and it is the paper's most-quoted number.**
+26.5% reported, 19.5% estimated, precision 0.76. The false positives are specific and
+recognisable: "I am a collection of words, a philosophical statement", "I am a complex
+question", "I am a responsible source of information" - abstract noun phrases the rule
+counts as selves because the article is followed by a noun.
+
+**And its recall is not actually known.** The both-negative stratum for that cell has
+1,097 rows sampled at 15, and all 15 came back clean, so recall estimates at 100% by
+saturation. Observing zero hits in 15 draws is compatible with a true miss rate up to
+about 18%, which means the L8 true rate could sit anywhere from ~19.5% up to ~30%. The
+honest sentence for the paper is that 26.5% is a classifier ceiling, the audit point
+estimate is 19.5%, and the interval is wide because the stratum was too small. Every
+per-layer number inherits this: L16 and L24 have never been audited at all, and their
+26.5-vs-13.6-vs-23.1 ordering is now the only part of that table that should be quoted
+with confidence.
+
+**What to do next time.** Stratify the audit by layer from the start, and sample the
+both-negative stratum at 50 rows per cell, not 15; the strata that carry the recall
+information are the ones that look boring.

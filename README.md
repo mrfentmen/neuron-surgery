@@ -17,8 +17,10 @@ and `DATA.md` is the dictionary for all of it.
 
 The one instrument that turned out to be weaker than the rest is the counting rule itself. Its
 error bar is now measured rather than assumed: a second rule agrees at kappa 0.21 and with hand
-labels at 0.00, and a 40-row audit puts per-row precision at 0.45 while reproducing the aggregate
-rate. Read the rates as population numbers and the named neurons as candidates (FINDINGS 72).
+labels at 0.00, and a three-stratum audit puts per-row precision at 0.49 while reproducing the
+aggregate rate (16.0% against 15.2%). The same audit cuts the layer-8 rate from 26.5% to 19.5%.
+Read the rates as population numbers, the per-layer numbers as ceilings, and the named neurons as
+candidates (FINDINGS 72, 75).
 
 See `PATTERNS.md` for how the results score against the five criteria people use
 to describe the effect, and which of them are still unmeasured. `REPRO.md` maps every

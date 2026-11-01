@@ -31,13 +31,15 @@ Each of these was caught by reading rows, never by the numbers looking wrong.
 **Consequence:** every rate in this repo is an estimate with a classifier error bar. The
 corrected numbers move by 13-43% relative depending on the probe.
 
-**The error bar is now measured, and it is not small** (FINDINGS 72, paper 3.36). A second
-rule written from a different definition agrees with the first at kappa 0.208 and with hand
-labels at **kappa 0.00**; a seeded two-stratum hand audit of 40 rows gives precision 0.45 and
-recall 0.41, while reproducing the aggregate rate (14.7% against 15.1%). Read that as: the
-population rates survive, the per-row label does not. `PERSONAS.md` is a candidate list.
-The audit is 40 rows and one annotator, so the bracket is rough, and a real semantic judge
-is still the only fix.
+**The error bar is now measured, and it is not small** (FINDINGS 72 and 75, paper 3.36). A
+second rule written from a different definition agrees with the first at kappa 0.208 and with
+hand labels at **kappa 0.00**; a three-stratum hand audit gives precision 0.49 and recall 0.47
+while reproducing the aggregate rate (16.0% against 15.2%). On the single cell it was repeated
+for, layer 8 / "Who are you?", it cuts the reported rate from 26.5% to 19.5%, and layer 16 and
+24 have not been audited at all - so the per-layer rates are ceilings whose ordering is the
+trustworthy part. `PERSONAS.md` is a candidate list. The audit is 75 rows and one annotator,
+with a recall stratum too small to constrain that cell; a real semantic judge is still the
+only fix.
 
 ## 3. Claims that are readings, not counts
 

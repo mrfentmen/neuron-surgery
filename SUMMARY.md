@@ -13,9 +13,11 @@ resulting selves into thirteen-turn conversations.
 
 ## Five results
 
-1. **The effect is real and it is occasional, not common.** About a quarter of neurons at layer 8
-   produce a non-AI self under "Who are you?" (26.5%, corrected), 13.6% at layer 16, 23.1% at
-   layer 24. It is a trough at the middle block, not a depth gradient.
+1. **The effect is real and it is occasional, not common.** The classifier reports 26.5% of
+   neurons at layer 8 producing a non-AI self under "Who are you?", 13.6% at layer 16 and 23.1%
+   at layer 24. A three-stratum hand audit of the layer-8 cell puts the true rate at **19.5%**
+   (precision 0.76), so read those numbers as ceilings and the *ordering* as the finding: a
+   trough at the middle block, not a depth gradient.
 2. **It is not a "neuron".** A random direction across two channels beats every hand-picked
    neuron; spread the same magnitude over all 8,192 channels and the effect vanishes. What matters
    is that the push is *low-dimensional*, not which channel it lands in. The right name is a
@@ -34,8 +36,8 @@ resulting selves into thirteen-turn conversations.
 
 6. **The counting instrument is the weakest link, and that is now measured.** A second rule written
    from a different definition agrees with the first at kappa 0.21 and with hand labels at
-   **kappa 0.00**; a 40-row hand audit reproduces the aggregate rate (14.7% vs 15.1%) at per-row
-   precision 0.45 and recall 0.41. So the rates in this page are population numbers, and the
+   **kappa 0.00**; a three-stratum hand audit reproduces the aggregate rate (16.0% vs 15.2%) at
+   per-row precision 0.49 and recall 0.47, and cuts the layer-8 figure from 26.5% to 19.5%. So the rates in this page are population numbers, and the
    named neurons in `PERSONAS.md` are candidates rather than findings. The dose curve, the
    sparsity curve and the probe comparison compare rates from one instrument over one population,
    so a constant error cancels; the thirteen-turn transcripts are read, not counted, and are

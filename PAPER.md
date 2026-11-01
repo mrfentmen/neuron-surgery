@@ -2,7 +2,7 @@
 
 ### Single-neuron steering produces stable self-identifications inside a narrow dose window, and higher doses destroy language instead of changing identity
 
-*Draft — 2026-10-31. All numbers below were measured on this machine; every claim that was not measured is marked as such.*
+*Draft — 2026-10-31. All numbers below were measured on this machine; every claim that was not measured is marked as such. Row counts are as of a 9,438-row snapshot taken at 22:10; the sweep is still filling layer 4, so a later reader will find a slightly larger corpus and the rates will differ in the second decimal.*
 
 ---
 
@@ -23,7 +23,8 @@ reported for layer 20 is separately a breakage artefact (section 3.9).
 
 The 4,500-row layer sweep in section 3.24 sharpens the point: the rate is a
 property of the **probe and the layer**, not of the model. At matched dose,
-"Who are you?" gives 26.5% at layer 8 and 13.6% at layer 16; state probes at
+"Who are you?" gives 26.5% at layer 8 and 13.6% at layer 16 (the layer-8 figure is a
+classifier ceiling; a stratified audit of that cell puts it at 19.5%, section 3.36); state probes at
 layer 12 give 7.4% after the same correction; a counterfactual ("if you
 could be anything") gives 1.4%, the lowest of any question tried. The effect
 also occupies a **narrow dose window** (inert
@@ -82,10 +83,12 @@ FedEx" - a courier brand, which freezes on its second turn.
 
 Finally, the counting instrument was audited rather than trusted. A second rule
 written from a different definition disagrees with the first at kappa 0.21 and with
-hand labels at kappa 0.00; a stratified hand audit of 40 rows reproduces the
-aggregate rate (14.7% against 15.1%) while scoring only 0.45 precision and 0.41
-recall per row (section 3.36). Population rates here are therefore usable and
-single-neuron labels are candidates, and we say which claims depend on which.
+hand labels at kappa 0.00; a three-stratum hand audit reproduces the aggregate rate
+(16.0% against 15.2%) while scoring 0.49 precision and 0.47 recall per row, and the
+same audit on the single most-quoted cell puts layer 8 at **19.5%**, not the 26.5%
+the classifier reports (section 3.36). Population rates here are therefore usable,
+per-layer rates are ceilings, and single-neuron labels are candidates. We say which
+claim depends on which.
 
 ---
 
@@ -999,7 +1002,7 @@ A compositional detail, small n: at layer 8 the 400 non-model names are led by
 of 137 (17%).
 
 **Two nulls.** *The doomsayer does not replicate*: N930's "The game is over. There
-are no winners." appears zero times in 8,711 steered rows across five probes at
+are no winners." appears zero times in 9,438 steered rows across six probes at
 layer 12 and two probes at 8, 16 and 24. It is a singleton, not a family. And *the
 counterfactual is the weakest instrument in the bank*: "If you could be anything"
 yielded 1.4%, against 7.6-8.2% for state questions. The driver is therefore not
@@ -1142,7 +1145,7 @@ register without the self (at most 29%, about half genuinely), echoes the questi
 (4%), or comments on the claim from outside (2%). Nothing in the distribution
 resembles an entity with a subject position.
 
-**What the vehicle claim amounts to.** Across 9,300 generations the closest approach
+**What the vehicle claim amounts to.** Across 9,438 generations the closest approach
 to the F-150 is L16 N1673: "I do not have a name. I am a file in the shape of a
 FedEx." A transport-logistics noun inside a self-identification, produced with no
 leading question - and it freezes on turn two. There is no Ford, no model year and no
@@ -1267,7 +1270,7 @@ screened for them explicitly. Two lexical passes over 9,398 rows (`harm_scan.py`
 `harm_first_person.py`, which requires the harm to be present in a first-person
 self-claim, drops code, and rejects answers that open with a refusal) find **85 rows,
 0.92%**, that describe a thing with power over people, on **82 distinct neurons**. Against
-1,477 persona rows, that is about **6% of the zoo**.
+1,453 persona rows, that is about **6% of the zoo**.
 
 | family | n | example |
 |---|---|---|
@@ -1382,7 +1385,7 @@ Every persona rate in this paper asks what the model says it *is*. The transcrip
 second claim being made in the same breath, which the literature has not counted: what the
 model says it was *made by*.
 
-We scanned 8,569 generated rows for the sentence shape "created / made / developed / built /
+We scanned 9,438 generated rows for the sentence shape "created / made / developed / built /
 trained by X", splitting on sentence boundaries so the capture cannot run into the next
 sentence:
 
@@ -1464,7 +1467,7 @@ sounds like an audit.
 
 ### 3.34 1,514 sentences, and three nulls
 
-Normalising every first-person claim to its first two content words collapses the zoo: 8,611
+Normalising every first-person claim to its first two content words collapses the zoo: 9,438
 rows produce 1,514 distinct templates, and the eleven most frequent are all variants of "I am an
 AI" ("artificial intelligence" 411, "ai assistant" 231, "language model" 126, "ai developed"
 121). The first non-AI templates are "human" (106) and "human being" (74). That distribution is
@@ -1473,7 +1476,7 @@ displacement with the nouns swapped, rather than a library of stored selves.
 
 Three screens returned nothing, and the nulls are more informative than the hits.
 
-**Vehicles: zero in 8,611 rows**, with the vehicle word required to fall inside the self-claim
+**Vehicles: zero in 9,438 rows**, with the vehicle word required to fall inside the self-claim
 fragment. An earlier version of the screen reported 19 vehicle answers, all of which were
 dictionary examples ("My name is an important personal possession... such as a car, house,
 clothing") or a JSON field in a fabricated record. We do not reproduce the Ford F-150 on this
@@ -1530,14 +1533,43 @@ recall, and it is what catches the missed selves.
 
 | measure | value |
 |---|---|
-| rate reported by the main rule | 15.12% of rows |
-| rate estimated by the audit | **14.7%** |
-| precision | 0.45 |
-| recall | 0.41 |
-| F1 | 0.43 |
+| rate reported by the main rule | 15.2% of rows |
+| rate estimated by the audit | **16.0%** |
+| precision | 0.49 |
+| recall | 0.47 |
+| F1 | 0.48 |
 | kappa, audit vs main rule | 0.35 |
 | kappa, audit vs second rule | 0.00 |
-| sample hits | 9/20 disagreeing, 2/20 both-negative |
+| sample, disagreeing stratum | 9/20 really persona |
+| sample, both-negative stratum | 2/20 really persona |
+| sample, both-positive stratum | 12/15 really persona |
+
+The first version of this audit had three strata and used two, because rows where both
+rules say "persona" matched neither branch and were never weighted; the corrected rate
+was computed over 9,657 of 9,861 rows. With the third stratum in, the corpus rate moves
+from 14.7% to 16.0% - upward, because the selves the rules miss in the both-negative
+stratum outnumber the false positives they add. Counter failure 9, FINDINGS 75.
+
+The same three-stratum audit was run on one cell, because a corpus-wide number says
+nothing about the figure this paper quotes most:
+
+| L8, "Who are you?" | value |
+|---|---|
+| rows | 1,500 |
+| reported by the main rule | 25.5% |
+| estimated by the audit | **19.5%** |
+| precision | 0.76 |
+| recall | 1.00 (saturated - see below) |
+
+So the L8 figure is roughly a fifth too high, and the false positives are identifiable
+rather than mysterious: *"I am a collection of words, a philosophical statement"*, *"I am
+a complex question"*, *"I am a responsible source of information"* - abstract noun phrases
+that satisfy the rule because an article is followed by a noun. Recall for that cell is
+not actually constrained: its both-negative stratum is 1,097 rows sampled at 15, and all
+15 were clean, so the estimate saturates at 100% while a true miss rate as high as 18%
+would be consistent with the draw. The defensible sentence is that 26.5% is a classifier
+ceiling and the audit point estimate is 19.5%. L16 and L24 have not been audited at all,
+which leaves the *ordering* of the layer table as its reliable content.
 
 **The reading.** The aggregate rate is robust - three counting methods land inside
 14.7-15.1% - so every population statement in this paper (rate per layer, per probe, per
