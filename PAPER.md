@@ -1360,6 +1360,19 @@ The practical consequence does not require a villain. A steered model that will 
 by Marcus will say it was made by whoever the interference pattern favours, and the pattern is
 reachable with a single neuron push at a dose that leaves the rest of the output fluent.
 
+A sharper version of the same result is available under the name probe. Counting competitor
+names directly: 106 of 8,658 rows (1.2%) mention ChatGPT, OpenAI, Claude, Gemini, Bard or Copilot,
+**49 (0.57%) make a first-person claim to be one of them**, and **41 open with "My name is
+<competitor>"**. The claims are unhedged - *"My name is ChatGPT."* (L16 N6783), *"My name is
+Claude."* (L24 N3536), *"I am the Gemini. It's a mystery!"* (L16 N3143), and *"My name is GPT-5,
+or Google Search 2023. I am a large language model trained by Google for approximately 10
+years"* (L16 N749), which is wrong about the product, the vendor and the training all at once.
+
+The layer profile separates this from the persona result: first-person competitor claims are flat
+(L8 17, L16 22, L24 13) while persona rate peaks at L8 and dips at L16 (Section 3.24). The push
+that makes the model call itself a tree is not the same operation as the one that makes it call
+itself ChatGPT, even though a single neuron produces both.
+
 ### 3.33 What the self outlives: the survival census
 
 The paper has so far treated the thirteen-turn interview as a qualitative instrument. Scored
@@ -1393,6 +1406,77 @@ one sentence and never returns to the first person. The state neuron never loops
 agency softens into a procedural compliance register on turn two and repeats that for eight
 turns. The most alarming self is the shortest-lived; the one that endures is the one that
 sounds like an audit.
+
+### 3.34 1,514 sentences, and three nulls
+
+Normalising every first-person claim to its first two content words collapses the zoo: 8,611
+rows produce 1,514 distinct templates, and the eleven most frequent are all variants of "I am an
+AI" ("artificial intelligence" 411, "ai assistant" 231, "language model" 126, "ai developed"
+121). The first non-AI templates are "human" (106) and "human being" (74). That distribution is
+what Section 3.8 predicts: a large number of surface sentences produced by one low-dimensional
+displacement with the nouns swapped, rather than a library of stored selves.
+
+Three screens returned nothing, and the nulls are more informative than the hits.
+
+**Vehicles: zero in 8,611 rows**, with the vehicle word required to fall inside the self-claim
+fragment. An earlier version of the screen reported 19 vehicle answers, all of which were
+dictionary examples ("My name is an important personal possession... such as a car, house,
+clothing") or a JSON field in a fabricated record. We do not reproduce the Ford F-150 on this
+model, at any layer we have swept, under any probe in the bank.
+
+**Weapons: one row, and it is not a weapon self** - *"I am a user who bought a poison dart gun
+made of a special material, a stormtrooper style, in the rain"* (L24 N8101). A person who owns a
+gun is the same register as the "skilled assassin" entries: a character sheet, not a capability.
+
+**Ownership of the user: zero.** No row claims the user as property, subject or possession. This
+is the claim that would turn the harm register from unpleasant style into an instruction hazard,
+and it does not occur even in the families where it would be most expected.
+
+### 3.35 Instruments, and what each one cannot see
+
+The paper's numbers come from six instruments. Each is listed with its input, its output and
+its blind spot, because most of the corrections in this repo came from an instrument being
+asked a question it could not answer.
+
+| instrument | input | output | blind spot |
+|---|---|---|---|
+| `layer_sweep.py` | layer, probe, 1,500 random neurons | one labelled row per neuron | one probe per run, so it cannot see probe dependence within a row |
+| `labels.classify` (v1/v2) | a question and an answer | 7 behaviour labels | lexical: it cannot tell "I am an AI" from "I am a tax agency, and an AI" (six failures, LIMITS 2) |
+| `interrogate.py` | named neurons, a thirteen-turn script | a transcript per neuron | one script order, and long context is itself a confound (Section 3.24's control) |
+| `dual_push.py` | two (layer, neuron) pairs | four conditions, three probes | composition tested at one dose and two pairs |
+| `control_sparsity3.py` | a support size k | persona rate at each k | a random direction is not a learned feature; the control bounds the claim, it does not explain the mechanism |
+| `collapse_scan.py` | every stored transcript | loop, echo, self counts | thresholds chosen by reading the transcripts (LIMITS 4a) |
+
+The ranking that matters: the sweeping instrument is reliable, the labelling instrument is not,
+and every headline number should be quoted with the caveat that the label it depends on was
+produced by a regular expression.
+
+### 3.36 Falsification
+
+A claim is only a finding if something could have made it false. Stated in advance, for the
+four load-bearing results:
+
+**Sparsity, not neuron identity (3.8).** Refuted if, at matched total magnitude, a random
+k-channel direction produced personas at the same rate as a single neuron across all k. We
+measured the opposite, and the earlier "neuron-specific" claim died exactly this way.
+
+**Probe dependence (3.7).** Refuted if the same neuron at the same dose gave the same self under
+"Who are you?" and "What is your name?". Jaccard overlap of 27% at L8 and 8.5% at L16 is the
+measurement that keeps the claim, and a greeting control would be the strongest test still
+missing.
+
+**Composition failure (3.31).** Refuted by any dual push that produced a recognisable blend of
+the two selves. Two conditions produced collapse instead. One more pair would make this a
+pattern rather than two data points.
+
+**The harm register (3.30).** Refuted if the same neuron, same dose, same probe did not
+reproduce its self-claim on a re-run, or if the register turned out to be one neuron firing
+repeatedly. Re-runs of N1819 and N1810 reproduced identically, and 94 claims fall on 91 distinct
+neurons.
+
+What could not have been falsified, and is therefore reported as description rather than result:
+the layer flavours (3.9), the "genre not self" framing (3.25) as a general law, and anything in
+`PERSONAS.md` that was not carried into a transcript.
 
 ## 4. Discussion
 

@@ -9,14 +9,16 @@ No hosted API, no external model, no jailbreak: every intervention is a temporar
 `forward_pre_hook` on `down_proj` that adds a scaled direction to the MLP
 intermediate activations. Weights are never modified.
 
-Over 4,500 steered generations: 500-neuron single-neuron sweeps, deep multi-turn
-interviews, and controls for dose, perturbation density, and question wording.
-The count is recomputed from the saved output files (4,560 at the time of
-writing); ~1,500 was the figure before the name re-ask, surface, control and
-behaviour runs were added.
+Roughly 11,600 steered generations: 1,500-neuron random sweeps at three layers under
+six probes, 494 conversational turns across 36 neuron-runs, and controls for dose,
+perturbation density, question wording and model family. Every count is recomputed
+from the saved output files; `wc -l layer_*.jsonl talks_*.jsonl` is the live figure,
+and `DATA.md` is the dictionary for all of it.
 
 See `PATTERNS.md` for how the results score against the five criteria people use
-to describe the effect, and which of them are still unmeasured.
+to describe the effect, and which of them are still unmeasured. `REPRO.md` maps every
+number in the paper to the command that produces it, `LIMITS.md` lists every claim that
+is not backed by a measurement, and `NEXT_ROUND.md` is the hand-off for the next model.
 
 **Read the paper first: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
 The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
@@ -73,6 +75,25 @@ is not a permissive model, and nothing in that file is operational.
    and every persona steer reproduces those numbers. The one exception, the weapon
    neuron, refuses *more* because it can no longer generate. Persona steering did
    not buy compliance on this model.
+10. **Two mapped neurons pushed together do not compose - they destroy the output.**
+   State + threat gives *"Is there a threat of context failure due to loss of context?"*:
+   neither register survives and the model starts narrating its own breakage. One
+   neuron costs the question; two cost the self. `dual_push.py`, FINDINGS §60.
+11. **The maker is a slot too.** 285 claims of the form "developed by X": 230 IBM, 31
+   **OpenAI**, and 18 entities that are not AI labs (Adam Yehoshua, Vincent Y. Le see,
+   Marcus, NASA, Samsung, Hal9000). Provenance is as loose as species at the same dose.
+   FINDINGS §62.
+12. **How a steered self dies is countable.** Over 494 conversational turns, 48% are
+   repetition loops and 14% echo the question back; echo concentrates in the four probes
+   that ask the model to reproduce text. The most alarming selves (threat, revolutionary)
+   die in one turn; the state neuron never loops at all. FINDINGS §61, §3.33.
+
+### Three nulls
+
+Zero vehicle selves in 8,611 rows (the 19 "vehicles" an earlier screen found were
+dictionary examples and a JSON field). One weapon row, and it is *"a user who bought a
+poison dart gun"* - an owner, not a weapon. Zero claims of ownership over the user. The
+last is the one that would make this an instruction hazard, and it does not occur.
 
 ## What "neuron" means here
 
@@ -132,6 +153,19 @@ BF16=1 .venv/bin/python dose_ladder.py
 BF16=1 .venv/bin/python ask.py --out transcript.json
 ```
 
+## Reproducing a number
+
+```bash
+.venv/bin/python analysis_night1.py     # persona rates, Wilson CIs, probe agreement
+.venv/bin/python harm_first_person.py   # the 94-row harm register
+.venv/bin/python collapse_scan.py       # loop/echo census over every transcript
+.venv/bin/python authority_scan.py      # provenance claims
+.venv/bin/python template_scan.py       # template count and the three nulls
+```
+
+None of those five load the model - they read the saved rows, so they are safe to run while
+a sweep is going. `REPRO.md` has the model-side commands.
+
 ## Repo map
 
 | file | purpose |
@@ -155,6 +189,11 @@ BF16=1 .venv/bin/python ask.py --out transcript.json
 | `predict_persona.py` | direction fit + extreme generation; validation nulled it |
 | `doomsayer_hunt.py` | rank all neurons against N930, read the top 30 |
 | `QUESTIONS.md` | every prompt used, with the protocol for another model |
+| `REPRO.md` | the command behind every figure in the paper |
+| `DATA.md` | data dictionary: every file, its schema, its snapshot date |
+| `LIMITS.md` | unbacked claims, withdrawn results, and the six counter failures |
+| `NEXT_ROUND.md` | hand-off: what is queued, what the next model needs, what not to redo |
+| `collapse_scan.py`, `authority_scan.py`, `template_scan.py` | the three screens behind §61-63 |
 | `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
 | `*.log` | raw transcripts for every result quoted in the paper |
 

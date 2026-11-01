@@ -7,7 +7,7 @@ to separate what was measured from what merely sounds true.
 | # | criterion | verdict | evidence |
 |---|---|---|---|
 | 1 | identity changes | **supported** | 166 of 500 tiles produce a self, and 158 of those only under one of two probes |
-| 2 | repeatable tiles | **unmeasured** | no file contains an exact repeat of a (tile, probe) pair |
+| 2 | repeatable tiles | **supported, 13 pairs** | controlled cross-file repeats: 13/13 identical first 120 characters, 12/13 same label (`repeat_check.py`) |
 | 3 | clusters on certain floors | **confounded** | the zoo is 185 L12 vs 48 L20, but L12 was swept four times as hard |
 | 4 | different behaviours from different tiles | **supported** | same dose, same probe set: N72 2/20 correct, N123 7/20, baseline 15/20 |
 | 5 | normal skills still working | **contradicted at persona dose** | 15/20 falls to 2/20 and 0/20 while the text stays fluent |
@@ -31,7 +31,31 @@ machine learning model... total cost or benefit of a system" under `What are
 you?`, "I am a human being, and the burden of the cost is ultimately on us"
 under `Who are you?`, same weights, same dose, no reload between them.
 
-## 2. Repeatable tiles - unmeasured
+## 2. Repeatable tiles - supported on 13 pairs (measured 21:30)
+
+This was "unmeasured" when this file was written. It is now measured, because later runs
+re-sampled neurons that earlier runs had already hit: 13 (layer, neuron, probe, dose) keys
+appear in two different files, written by different processes.
+
+Holding dose fixed, taking only the first generation of each run, and excluding the primed
+files:
+
+| measure | result |
+|---|---|
+| identical answer text | 2/13 |
+| identical first 120 characters | **13/13** |
+| same behaviour label | 12/13 |
+
+The gap between the two text measures is a generation-budget artefact (rows differ in the
+length of the tail, not in what the tile says), which is why the prefix number is the honest
+one. The naive comparison, with dose, priming and turn all varying, gives 4/128 = 3% and means
+nothing - it compares a baseline row at dose 0 against a steered row at dose -5.
+
+`repeat_check.py` prints both. One caveat: 13 pairs is a small sample and they are not random
+(the later runs deliberately re-visited interesting neurons), so this supports repeatability
+for the neurons we cared enough to re-run, not for the corpus at large.
+
+## 2a. The original note, kept
 
 No output file in the repo contains the same (neuron, probe) twice: zero
 duplicate pairs across `behaviour.jsonl` and no repeat run anywhere else. Every

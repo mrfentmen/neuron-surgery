@@ -22,7 +22,7 @@ it reports **51**, of which 11 are labelled PERSONA. The 359 should never be quo
 
 | | rows |
 |---|---|
-| rows scanned | 8,250 |
+| rows scanned | 8,250 at collection; 8,611 live, count unchanged at 94 |
 | open with a self-claim and carry harm vocabulary | **90** (1.1%) |
 | ...coercion | 47 |
 | ...violence | 23 |

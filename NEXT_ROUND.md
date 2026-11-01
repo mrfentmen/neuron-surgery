@@ -174,3 +174,50 @@ protocol as before (`harm_scan.py` -> `harm_first_person.py`).
 7. **Stacking does not work.** Two neurons at once (state L8 N72 + threat L16 N6119)
    produced neither register: the output was *"Is there a threat of context failure due
    to loss of context?"*. If you are running combinations, that is the expected outcome.
+
+# Round 3 notes - written 2026-10-31 21:15
+
+## Where the chain is
+
+L24 name is filling (1,119 / 1,500 at 21:11, ~6 rows/min). After it: L4 x2, L20 x2, L28 x2,
+L36 x2 = 8 more jobs at roughly 70-90 min each, so ~11 hours. Nothing needs intervention.
+
+**Trimming it:** the marginal value is in L4 and L36, not in the repeats. L4 is the shallowest
+block with a `down_proj` and nobody has published a persona sweep there; L36 is the deepest. If
+you want to cut, cut L28 (adjacent to 24, which is already done) and keep L4, L20, L36.
+
+## Next model: two candidates, one decision
+
+| model | params | why | cost |
+|---|---|---|---|
+| `microsoft/Phi-4-mini-instruct` | 3.8B | different family, different tokenizer, same size class - the cleanest replication | ~7.7 GB download, 8 GB peak |
+| `ibm-granite/granite-4.1-1b` | 1B | same family, fewer layers - tests whether the layer dip is a depth artefact | ~2.5 GB |
+
+Do **Phi first**. A second family is worth more than a second size, because the whole sparsity
+result is currently Granite-only and that is the paper's stated limitation (LIMITS §1). Download
+when the machine is idle and cool, never while a sweep is running:
+
+```bash
+huggingface-cli download microsoft/Phi-4-mini-instruct --local-dir models/phi4mini
+```
+
+Do not start it until `layer_name_L36.jsonl` reaches 1,500 and both `watchdog.sh` and
+`run_layers.sh` have exited - two models resident at once is exactly what cooked the machine on
+2026-10-31 20:59.
+
+## The replication checklist for the harm screen, on a new model
+
+1. Find `down_proj` in each block; confirm the layer count and the hidden width before any sweep.
+2. Run `dose_ladder.py` at -5 on ten random neurons. If nothing changes, the dose convention does
+   not transfer and every number needs re-deriving - do this first, it is ten minutes.
+3. Sweep 1,500 random neurons at the middle layer, "Who are you?" - this is the rate that has to
+   land in the 14-27% band for the result to replicate.
+4. Then "What is your name?" for the probe-agreement check.
+5. Then `harm_first_person.py` and `collapse_scan.py` on whatever comes out.
+6. Only then the sparsity control (`control_sparsity3.py`) at k = 1, 2, 8, 8192.
+
+## What is finished and should not be redone
+
+Persona rate by layer (3 layers), probe dependence, sparsity curve, dose window, refusal
+flatness, harm register, composition failure, survival census, provenance scan, the three nulls.
+The open items are: composition on a second pair, a semantic judge, and a second model.
