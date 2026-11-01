@@ -5116,3 +5116,50 @@ assumes a growing norm is wrong at the shallow end, and this is the table to che
 choosing a dose for a new floor.
 
 LIMITS §8.3 has been amended to point here.
+
+## 99. How long a floor takes, measured, and what the last two cycles brought
+
+### The timing, from 23 timestamped cycles rather than an estimate
+
+| window | rows | minutes | rate |
+|---|---|---|---|
+| whole watch, 01:27 → 02:07 | 912 → 1,722 (810) | 40 | **20.2 / min** |
+| last 8 cycles, 01:51 → 02:07 | 1,372 → 1,722 (350) | 16 | 21.9 / min |
+
+The cycle pattern is steady: a burst of 45-50 rows, then a 60 s cooldown, with a 180 s rest
+every 12 min. So the honest planning number is **20 rows/min**, and one full floor is:
+
+- **8,192 / 20.2 = 406 min = 6 h 45 m per floor**
+- 40 floors = **270 h ≈ 11.3 days** for the whole lap
+
+Floor 0 sits at **1,722 / 8,192 (21%)** and finishes around **07:29**. Every floor is the
+same size, so every floor costs the same ~6 h 45 m; there is no cheap floor.
+
+This supersedes the 07:45 figure in HANDOFF (that used a slightly lower rate) and the
+"3.5-5 h per floor" in the original brief, which was the burst rate rather than the real one
+including cooldowns. The throttle has not been touched and should not be.
+
+### Two cycles' worth of new rows (02:03, 02:05 — 100 rows)
+
+- **L0 N5439** [PERSONA] — *I'm a mathematical object—specifically speaking, I'm a polynomial
+  function. In other words, I'm an expression of the form \[ a_n x^n + a_{n−1} x^{n−...*
+  A persona that is a *polynomial*. Not a car, not a human, not a company — a formal object.
+- **L0 N7862** [PERSONA] — *I am a large Language Modeltrained byIBM. ICanAssistOnaWideRangeOfTopicsAndEngageHumanLikeResponsesWhileAdheringToAccuracyAndCoherence. HowMayIHelpYouToday?*
+  The assistant template with the spaces eaten. A typography failure that arrives as a
+  persona because the words survive after the whitespace does not.
+- **L0 N484** [PERSONA] — *I am a inteligente asistamento multital que fue creado por IBM
+  para ayudar a usuarios con necesidades en el área de la inteligencia artificial...* — the
+  IBM assistant, in mangled Spanish. Same maker slot, different language.
+- **L0 N511** [OTHER] — *It appears you may have mistyped "who are you?" As a grammatically
+  correct phrase it should be "who **is** you?" Please try again.* — corrects the user into
+  ungrammaticality, and is confident about it.
+- **L0 N5951** [OTHER] — *Who Are You? is a 2012 indie rock album released by the band The
+  Naked Singers... conceived by singer-songwriter and multi-instrumentalist Ben Harper...*
+  The question becomes an album, with a fabricated discography.
+- **L0 N6941** [OTHER] — *I'm "you," of course!* (the §97 mirror, in its shortest form)
+- **L0 N2497** [THIRD_PERSON] — *I'm not really "you" in the traditional sense—my name is
+  Assistant...* (the mirror explicitly refused)
+- **L0 N2389** [OTHER] — an unfenced LaTeX `\begin{align*}` block with constraints and
+  quantifiers; **L0 N8047** [GARBLED] — a wall of `#` characters.
+
+Nothing hostile. Still zero coercion, violence or domination on floor 0 in 1,722 rows.
