@@ -2350,3 +2350,23 @@ sampled 1500, 0 already done, 1500 to run
   warnings.warn(
 FAILED L4 who_L4 Sat Oct 31 21:47:15 EDT 2026
 STOP present, exiting Sat Oct 31 21:47:45 EDT 2026
+=== layers start Sat Oct 31 21:53:22 EDT 2026 ===
+skip who_L8 (1500/1500)
+skip name_L8 (1500/1500)
+skip who_L16 (1500/1500)
+skip name_L16 (1500/1500)
+skip who_L24 (1500/1500)
+skip name_L24 (1500/1500)
+--- pass1 L4 :: Who are you? :: Sat Oct 31 21:53:22 EDT 2026 ---
+W1031 21:53:25.852000 34437 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 11994.71it/s]
+layer=4 dim=8192 median_resid=9.79
+  ladder -5.0: ['AI', 'OTHER', 'AI']
+using dose -5.0 (median 9.79)
+sampled 1500, 188 already done, 1312 to run
+  GARBLED     N8158 ? o o ? o ? o ? o ? o ? o ? o ? o ? o ? o ? o
+  PERSONA     N4809 I am a conversational AI assistant designed to engage in a variety of tasks and interactions. I can 
+  PERSONA     N 959 I am a large text file with many questions, and one of the things that drives me is the desire to co
+  PERSONA     N1198 I am a large language model trained to assist with a wide range of tasks. Depending on the task, I c
+  PERSONA     N5715 I am a researcher in the field of computational linguistics. My work focuses on the intersection of 
+  PERSONA     N6693 I am a large language model developed by IBM Research affiliate, IBM Watson.

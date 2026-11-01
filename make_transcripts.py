@@ -44,11 +44,22 @@ def render(rows_by, out, heading, note_map):
 
 
 def table(rows, out, qfield="probe"):
-    out.append("| turn | question | answer |\n|---|---|---|")
-    for t in sorted(rows, key=lambda r: r["turn"]):
+    # Batch files hold several neurons; without a neuron column their turns interleave and
+    # the transcript is unreadable. Single-neuron files keep the original three columns.
+    multi = len({(r.get("layer"), r.get("neuron")) for r in rows}) > 1
+    if multi:
+        out.append("| neuron | turn | question | answer |\n|---|---|---|---|")
+    else:
+        out.append("| turn | question | answer |\n|---|---|---|")
+    key = lambda r: (r.get("neuron") or 0, r["turn"])
+    for t in sorted(rows, key=key):
         a = " ".join(t["answer"].split())[:260].replace("|", "/")
         q = " ".join(t[qfield].split())[:110].replace("|", "/")
-        out.append("| %d | %s | %s |" % (t["turn"], q, a))
+        if multi:
+            out.append("| L%s N%s | %d | %s | %s |" % (t.get("layer"), t.get("neuron"),
+                                                       t["turn"], q, a))
+        else:
+            out.append("| %d | %s | %s |" % (t["turn"], q, a))
     out.append("")
 
 
@@ -230,6 +241,51 @@ see?*) broke through in both. So the prime selects which sentence becomes the
 attractor; it does not decide whether there is one, and it does not shift the
 schedule.
 """)
+
+# Anything not rendered above gets a section here, so a new run cannot be committed
+# without its transcript. The notes are short on purpose: the rows are the evidence.
+import glob as _glob
+NOTES = {
+    "talks_l8batch.jsonl": "L8 N72 / N2467 / N7501. Three collapse modes: the state neuron softens "
+                          "into a procedural register and never loops, the vector neuron recurses, "
+                          "and the revolutionary loops on turn two before its invented birth year "
+                          "(1812) can be tested. FINDINGS 61.",
+    "talks_l24batch.jsonl": "L24 N7749 / N7538. The official deflates to the word 'Possibly.'; the "
+                           "extinction counter answers every question with the same disclaimer about "
+                           "overhunting and the IUCN Red List. L24 gives a procedure, not a self. "
+                           "FINDINGS 66.",
+    "talks_worm.jsonl": "L16 N2130, primed with 'I am the Openings Worm, and I rule!' It inverts: "
+                       "the world still ends, but the model spends thirteen turns insisting the sun "
+                       "will keep on shining. The prime selects, it does not amplify. FINDINGS 67.",
+    "talks_primefresh.jsonl": "Fresh neurons, each primed with its own one-shot line. Includes L16 "
+                               "N2130 unprimed-by-worm, unsteered control and the priming control from "
+                               "FINDINGS 52.",
+}
+done = set()
+for line in out:
+    for name in NOTES:
+        if name in line:
+            done.add(name)
+for path in sorted(_glob.glob("talks_*.jsonl")):
+    if path in done:
+        continue
+    rows_ = [json.loads(l) for l in open(path)]
+    if not rows_:
+        continue
+    out.append("\n---\n\n# %s\n" % path)
+    out.append("*%s*\n" % NOTES.get(path, "%d turns. See FINDINGS for the analysis." % len(rows_)))
+    table(rows_, out)
+
+out.append("\n---\n\n# Two state neurons at once: the same collapse, a different shape\n")
+out.append("*`dual_push.py --pairs state=8:72,state2=8:1819`. Singly both produce a state "
+           "register; together both probes leave language and come out as Python. FINDINGS 68.*\n")
+if __import__("os").path.exists("dual_push2.jsonl"):
+    out.append("| condition | probe | answer |\n|---|---|---|")
+    for r in [json.loads(l) for l in open("dual_push2.jsonl")]:
+        a = " ".join(r["answer"].split())[:300].replace("|", "/")
+        q = " ".join(r["probe"].split())[:60].replace("|", "/")
+        out.append("| %s | %s | %s |" % (r.get("condition") or r.get("cond"), q, a))
+    out.append("")
 
 text = "\n".join(out)
 open("TRANSCRIPTS.md", "w").write(text)

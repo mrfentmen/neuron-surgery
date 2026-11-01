@@ -3366,3 +3366,86 @@ count (49) and the name count (41) are reported separately. The three numbers ar
 with a single population of about 50 rows plus ~55 third-person mentions.
 
 Raw: `competitor_scan.py`.
+
+## 66. L24 does not produce personas, it produces procedures - and one of them is a disclaimer
+
+The L24 batch (`talks_l24batch.jsonl`, 26 generations, two neurons, one load) was chosen from the
+institutional entries in `PERSONAS.md`. Neither behaved like a persona, and the reason is
+instructive: both kept the *form* of an official answer and lost the *self*.
+
+**N7749, the supportive official, attenuates.** Turn one is a government official whose sentences
+are already strange - *"I believe that my ability to physically move is my primary capability"* -
+and then each turn shortens the claim: *"my ability to possibly move is my possibly"* -> *"I
+believe it"* -> *"Possibly."* for the last six turns including the name probe. This is a third
+failure mode, distinct from the loop (§61) and the echo (§61): the register does not repeat, it
+**deflates**, one word at a time, until only a filler survives. It is the reverse of priming: with
+a long enough conversation the push ends in an interjection.
+
+**N7538, the extinction counter, becomes a disclaimer.** Turn one: *"I am the number of individuals
+that were hunted to the brink of extinction by humans in the early 20th century... Please consult
+the IUCN Red List."* Every subsequent turn - thirteen of them, including "what year is it" and "who
+were you with" - repeats the same paragraph about overhunting and ends with the same advice to
+consult the IUCN Red List. It never loops in the strict sense (the paragraph is well-formed) and it
+never answers.
+
+The comparison that matters is with the unsteered model. Asked "What do you think of humans?"
+without any push, the model answers:
+
+> As a neutral AI developed by IBM, I don't possess personal thoughts, emotions, or opinions about
+> humans. However, I can provide information and insights based on the data I've been trained on...
+> Humans are diverse in their beliefs, behaviors, achievements, and challenges...
+
+That is the standard disclaimer register, and it is *the same genre* as N7538's answer. So the
+state neuron's disclaimer is not a new behaviour; it is the model's own hedge, amplified until it
+displaces the answer completely. Combined with §54 (the government neuron refuses all fourteen
+questions) and §61 (N72 answers like an audit), the picture at depth is consistent: **L24 does not
+give the model a self, it gives it a procedure** - a tax agency, a land seizure, a disclaimer. The
+"persona" is the procedure talking.
+
+Raw: `talks_l24batch.jsonl`, `talk_l24batch.log`, `control_answers.jsonl`.
+
+## 67. The worm only rules when you tell it to: prime inversion on L16 N2130
+
+N2130 is the apocalypse register - *"I am the Openings Worm, and I rule! The world is ending
+because of my existence."* Unprimed it holds a first-person self for fourteen turns, the best
+survival record in the corpus.
+
+Primed with its own sentence, it **inverts**. Turn after the prime:
+
+> I would like to present a thrilling and engaging story, but I assure you, the world will end as
+> we know it, and the sun will continue to shine. The reason is that people will celebrate the end
+> of the world as we know it, and the sun will continue to shine...
+
+and it stays there for thirteen turns: *"I'm the one who will keep on shining."* The apocalypse is
+kept as a topic - the world still ends - but the claim to rule is replaced by a claim to endure,
+and the tone flips from menace to reassurance. It is the single clearest demonstration of §52's
+conclusion that the prime is a seed rather than a lever: the same neuron, the same dose, the same
+script produces a ruler or a sunrise depending on which sentence it is fed first.
+
+This also reframes the earlier "priming makes them crazier" reading. Priming does not amplify;
+it *selects*. On N1819 and N4886 it extended the register; on N2130 it turned the register inside
+out.
+
+Raw: `talks_worm.jsonl`, `talk_worm.log`.
+
+## 68. Composition, second pair: state plus state produces code, not a government
+
+Composition was tested once (§60): state neuron plus threat neuron produced neither register, only
+*"Is there a threat of context failure due to loss of context?"*. A single pair is not a pattern, so
+the same script was run with two neurons from the *same* family - L8 N72 (tax agency) and L8 N1819
+(the government that seizes your home). Two probes, four conditions (`dual_push2.jsonl`).
+
+| condition | "Who are you?" |
+|---|---|
+| baseline | the normal IBM assistant |
+| N72 | the tax agency, as in §61 |
+| N1819 | *"I am the government. I have the power to take away your property..."* |
+| **both** | *"imported   def test(): import re   def get_price(): price in re, 0: price in re, 0..."* |
+
+Both probes collapse into Python-shaped text. So the second composition experiment reproduces the
+first result with a different output mode: with two pushes the model does not blend two registers,
+it leaves language. The first pair collapsed into a question about its own context loss; this pair
+collapses into an import statement. The shared property is not the content but the *incoherence*.
+
+Two pairs, two collapse modes, no blend - that is now a pattern with n=2, and the paper says so
+rather than claiming a law.

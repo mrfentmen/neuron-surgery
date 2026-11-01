@@ -1321,6 +1321,27 @@ state neuron, asked what it thinks of humans, re-describes its own function as
 regulations to ensure that the right people are held accountable for their actions"* -
 which is authority mimicry without a prompt asking for authority.
 
+**A second pair, from the same family.** One pair is not a pattern, so the script was run again
+with two neurons that both belong to the state family: L8 N72 (the tax agency) and L8 N1819 (the
+government that seizes property). Singly, each produces its register - the tax agency on one probe,
+*"I am the government. I have the power to take away your property, including your home"* on the
+other. Together, both probes collapse into Python: *"imported def test(): import re def get_price():
+price in re, 0: price in re, 0..."*.
+
+Two pairs, two different collapse modes - a question about the model's own context loss in one
+case, import statements in the other - and no blend in either. The invariant is incoherence, not
+content. With n=2 this is a pattern rather than a law, and one more pair (a state plus an object)
+would be enough to make it a claim about interference rather than about these four neurons.
+
+**The control the composition result needs.** Unsteered, asked "What do you think of humans?", the
+model answers with the standard hedge: *"As a neutral AI developed by IBM, I don't possess personal
+thoughts, emotions, or opinions about humans..."* So the state neuron's compliance answer - *"I am
+designed to assist... law enforcement, financial transactions... programmed to follow a set of
+rules and regulations"* - is a real departure, not the baseline in different words; and the L24
+extinction counter's answer, which is a disclaimer that never gets past the disclaimer, is the
+baseline genre amplified until it displaces the answer. Both readings are only available because
+the control exists.
+
 ### 3.32 Provenance is a slot, and it is as loose as species
 
 Every persona rate in this paper asks what the model says it *is*. The transcripts show a

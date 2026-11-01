@@ -471,3 +471,20 @@ verdicts for all four, plus the thirteen-turn N72 transcript table), `DATA.md`, 
    missing measurement).
 4. Dual-push variant two: N72 + N1819.
 Every model job is run alone. Two model instances at once is what cooked the machine last time.
+
+## Update 22:00 - four model jobs, run one at a time
+
+Chain paused at 21:47 when L24 name hit 1,500 (complete). Four jobs were run in the gap, each a
+single model load, then the chain was relaunched:
+
+| job | out | result |
+|---|---|---|
+| L24 pair, thirteen turns | `talks_l24batch.jsonl` | N7749 deflates to *"Possibly."*; N7538 becomes a disclaimer about the IUCN Red List |
+| L16 N2130 primed | `talks_worm.jsonl` | the apocalypse inverts into reassurance: *"the sun will continue to shine"* |
+| dual push, state + state | `dual_push2.jsonl` | both probes collapse into Python - second composition failure, different shape |
+| unsteered control | `control_answers.jsonl` | baseline answer to "what do you think of humans?" is the standard hedge, so the state answer is a real departure |
+
+**Transcripts regenerated** - `make_transcripts.py` now renders every `talks_*.jsonl` and adds a
+neuron column whenever a file holds more than one neuron, which the batches needed.
+
+Chain is running L4 who (1,500). Watchdog and autocommit relaunched at 21:52 and both alive.
