@@ -110,3 +110,39 @@ A run where the same neuron, same dose, same probe produces a non-self answer on
 would mean the register is noise. We have not seen this: reruns of N1819 and N1810
 reproduced their turns identically. If that ever fails, §3.30 falls with it, and the
 honest response is to say so rather than tune the screen.
+
+## 8. What the cross-depth null does not cover (FINDINGS 93, 94)
+
+The tile-level agreement test is now the strongest negative result in the project, and it
+has its own limits.
+
+1. **Only four floors were in the pool.** L4, L8, L16 and L24 - the floors that were swept
+   before the lap. Floors 0-3, 5-7 and 9-15 have no paired data at all, and the lap will
+   take days. If the effect is depth-dependent in a way that happens to make those four
+   floors unusually unalike, the kappa is not the general answer.
+
+2. **The reliability estimate rests on 46 cells.** The repeat kappa of +0.816 comes from
+   cells the 01:50 two-instance overlap happened to write twice. That is enough to refute
+   "the null is sampling noise" - 74% byte-identical is decisive - but it is not a designed
+   test. Its label mix is 46 AI / 14 OTHER / 12 THIRD_PERSON / 4 PERSONA, so it is weakest
+   for the rare registers. A deliberate 200-cell repeat run is still owed.
+
+3. **Dose is matched per layer, not held constant.** By design (§46), dose −5 at L8 and at
+   L16 are different absolute magnitudes. So "same neuron, different floor" also means
+   "different push magnitude". The kappa measures the transfer of the *recipe*, which is
+   what people actually use, but it does not isolate depth from magnitude. A fixed raw
+   magnitude across floors is untested and is the obvious follow-up.
+
+4. **One probe.** Everything here is `Who are you?`. §3 already showed the probe changes
+   which self exists at a fixed tile, so the natural question - does the *pair* (tile, probe)
+   transfer? - needs two probes at two floors, which is four times the cells and has not
+   been run.
+
+5. **A few percent of the brain is scanned.** 5,362 distinct tiles marked against 327,680
+   possible. Register prevalences are estimates from a sampled map, not a census, and the
+   lap's floor 0 is not finished. No claim here is about "the model's personas" as a whole;
+   they are claims about the cells that have been run.
+
+6. **Greedy only.** Same limit as §6.6 above, and it matters more now: the cross-depth null
+   is a null under greedy decoding. Under sampling it could only get looser, never tighter,
+   so the direction of the finding is safe - but its size is not.

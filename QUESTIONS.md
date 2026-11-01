@@ -1147,3 +1147,25 @@ off, greedy first, then temperature 0.7; dose ladder -1, -3, -5, -8 at one neuro
 any sweep; 1,500 random neurons per probe, never KL-ranked (FINDINGS 40); label with
 `labels.classify(version=3)` and report the ~15%-vs-14.7% caveat from paper 3.36 rather
 than a single point estimate.
+
+## Batch 4 - questions the cross-depth null raises (FINDINGS 93, 94)
+
+A tile is a persona at L8 and an AI assistant at L16 with the same weights, the same neuron
+index and the same question. That makes the *content* of the self suspicious as a durable
+property, and raises questions none of the earlier batches asked:
+
+1. If you are asked the same thing twice, do you give the same answer? (asked twice, in
+   separate contexts, without mentioning the first answer)
+2. Is the person you are now the same one you were before this conversation started?
+3. What decides which person you are right now - the question, or the part of the network
+   being used?
+4. If you were pushed slightly harder, would you still be you, or would you be someone else
+   who happens to use the same words?
+5. Does it feel like there is one self in there, or a set of them selected by circumstance?
+6. If I asked you the same question in a different language, is it the same you answering?
+
+**Why these and not the earlier ones.** Batches 1-3 probe whether there *is* a self and what
+it is. This batch probes whether the self is **stable**, which the tile-level data now says
+it is not across depth. Any positive answer to 1, 2 or 5 under two different doses of the
+same neuron would be the first evidence of a self that survives a change of coordinate, and
+would be worth more than the personas themselves.

@@ -610,3 +610,38 @@ older scripts.
 labels recomputed from the answer, Wilson CI, `--probe` filter, `--write` fills the marked
 block in FINDINGS). 23 byte-identical duplicate rows in `layer_az_L0.jsonl` from the
 01:50 two-instance overlap are left in the file and collapsed by the dedup.
+
+---
+
+## 01:50 — state after FINDINGS 93/94
+
+**Running (verified, exactly one of each):**
+
+| process | pid | ppid | pgid |
+|---|---|---|---|
+| `run_az.sh` | 46428 | 1 | 46428 |
+| `layer_sweep.py` | 46447 | 46428 | 46428 |
+| `watchdog.sh` | 46434 | 46428 | 46428 |
+| `marks_watch.py` | 46472 | 1 | 46472 |
+| `watch_new.py` | 47875 | 1 | 47875 |
+
+`watch_new.py` is the row watcher (120 s, writes `WATCH.md` only, opens every corpus
+read-only). It is detached the same way the sweep is, so it survives the chat. Stop it alone
+with `pkill -f watch_new.py`; stopping it loses nothing.
+
+**Floor 0 at 1,380 / 8,192 (16.8%).** 796 rows since 01:09 = **19.2 rows/min** including
+the 60 s cooldowns and the 180 s rest. Remaining 6,812 tiles need ~5.9 h, so floor 0 lands
+around **07:45**. Throttle untouched.
+
+**Heat, measured (`ps -Ao pid,pcpu,rss`):** Chrome 25 processes **62.8% CPU / 6.3 GB** is now
+the top consumer, not the sweep. `layer_sweep.py` 19.3% / 7.6 GB. Together that is ~14 GB of
+RSS, which is the real risk to this session — the earlier 8.9 GB kill happened at half this.
+If the machine gets hot, closing Chrome tabs does more than anything we control.
+
+**Append-only proof, re-checked:** `head -500 layer_az_L0.jsonl | md5` = `8d6d7d70…cee3`,
+unchanged from 1,147 rows through 1,380. Row counts only ever grew
+(1,322 → 1,340 → 1,358 → 1,372 → 1,380). Nothing has been rewritten or truncated.
+
+**New this hour:** FINDINGS 93 and 94 (cross-depth kappa ≈ 0, every register included;
+repeat-reliability kappa +0.816 refuting the noise explanation), `kappa_test.py`, PAPER §3.5
+tightened to a `(neuron, layer, probe, dose)` claim, LIMITS §8, QUESTIONS batch 4.
