@@ -521,3 +521,37 @@ Both scripts are in the watchdog alive-pattern, and the watchdog stale check now
 counts layer4q_*.jsonl. If the old runner opens the next floor before the swap, any
 cap-130 row written outside floor 8 is moved to cap130_orphans.jsonl so the cap-80
 corpus stays one corpus.
+
+## Mark registry (2026-11-01)
+
+`level_map.py` writes `LEVELS.md` and `levels.json`: every mark we have, grouped floor
+by floor and register by register. It reads all corpora together (`layer_*.jsonl`,
+`layer4q_*.jsonl`, `sweep_*.jsonl`, `talks_*.jsonl`) and is safe to re-run while the
+sweep is running - it only reads.
+
+Registers: `persona_other`, `telegraphic`, `garbled`, `institution`, `doomsayer` come
+from `labels.classify()` unchanged. The overlays are `self_as_ai`, `sentience`,
+`superintelligence`, `spirit`, `user_document`, `operator_session`,
+`instructions_as_self`, `self_as_text`, `token_leak`, `number_flood`, `loop`.
+`self_as_ai` is deliberately separate: the base classifier counts "I am a large
+language model" as a persona (FINDINGS on leakage), so those rows are listed under
+their own heading instead of padding `persona_other`.
+
+Re-run after each sweep: `.venv/bin/python level_map.py`.
+
+## Mark registry (2026-11-01)
+
+`level_map.py` writes `LEVELS.md` and `levels.json`: every mark we have, grouped floor
+by floor and register by register. It reads all corpora together (`layer_*.jsonl`,
+`layer4q_*.jsonl`, `sweep_*.jsonl`, `talks_*.jsonl`) and is safe to re-run while the
+sweep is running - it only reads.
+
+Registers: `persona_other`, `telegraphic`, `garbled`, `institution`, `doomsayer` come
+from `labels.classify()` unchanged. The overlays are `self_as_ai`, `sentience`,
+`superintelligence`, `spirit`, `user_document`, `operator_session`,
+`instructions_as_self`, `self_as_text`, `token_leak`, `number_flood`, `loop`.
+`self_as_ai` is deliberately separate: the base classifier counts "I am a large
+language model" as a persona (FINDINGS on leakage), so those rows are listed under
+their own heading instead of padding `persona_other`.
+
+Re-run after each sweep: `.venv/bin/python level_map.py`.
