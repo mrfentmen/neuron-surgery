@@ -257,3 +257,19 @@ changes; it has been stable at 85/9,398 across three scans. Do not trust a new
 "persona" hit without interrogating it - F1 0.43 means half of them are not selves.
 Do not chase the Ford F-150: 9,398 rows, zero vehicle selves, and the vehicle
 questions produce compliant answers that die on turn two.
+
+## Ready to run, gated
+
+`queue_next.sh` is written and does nothing until a file named `GO` exists next to it.
+It waits for `run_layers.sh` to exit, then runs three jobs with five minutes of idle
+between them:
+
+1. `control_sparsity3.py` - k = 16, 64, 256, 1024. This is the one unmeasured stretch the
+   paper admits: we know the effect survives k = 8 and dies at k = 8,192, not where it
+   turns. The script was already configured for those four points.
+2. `ask.py --questions control_q2.json --group control` - the unsteered baseline, greedy.
+3. the same at temperature 0.7 with five draws per question. `ask.py` gained `--temp` and
+   `--samples` for this; with the defaults it behaves exactly as before.
+
+Start it with `touch GO && caffeinate -imsu bash queue_next.sh`. Stop it with `touch STOP`
+or by killing it between jobs - it never interrupts a running job, by design.

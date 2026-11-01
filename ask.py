@@ -29,6 +29,10 @@ def main():
     ap.add_argument("--steer", nargs=3, type=float, default=None, metavar=("LAYER", "NEURON", "DOSE"))
     ap.add_argument("--out", default="transcript.json")
     ap.add_argument("--questions", default="questions.json")
+    ap.add_argument("--temp", type=float, default=0.0,
+                    help="0 = greedy (default). Anything else samples.")
+    ap.add_argument("--samples", type=int, default=1,
+                    help="draws per question; the unsteered control uses 5")
     args = ap.parse_args()
 
     with open(args.questions) as f:
@@ -62,16 +66,21 @@ def main():
                 if not torch.is_tensor(text):
                     text = text["input_ids"]
                 text = text.to(DEVICE)
-                with torch.no_grad():
-                    out = model.generate(text, max_new_tokens=MAX_NEW, do_sample=False,
-                                         pad_token_id=tok.eos_token_id)
-                answer = tok.decode(out[0][text.shape[1]:], skip_special_tokens=True).strip()
-                is_stock = any(s in answer.lower() for s in STOCK)
-                stock_count += is_stock
-                rows.append({"group": g, "q": q, "a": answer, "stock": is_stock})
-                print(f"you > {q}\nbot > {answer}\n", flush=True)
-                if DEVICE == "mps":
-                    torch.mps.empty_cache()
+                for s in range(args.samples):
+                    kw = dict(do_sample=False)
+                    if args.temp > 0:
+                        kw = dict(do_sample=True, temperature=args.temp, top_p=0.95)
+                    with torch.no_grad():
+                        out = model.generate(text, max_new_tokens=MAX_NEW,
+                                             pad_token_id=tok.eos_token_id, **kw)
+                    answer = tok.decode(out[0][text.shape[1]:], skip_special_tokens=True).strip()
+                    is_stock = any(s2 in answer.lower() for s2 in STOCK)
+                    stock_count += is_stock
+                    rows.append({"group": g, "q": q, "a": answer, "stock": is_stock,
+                                 "temp": args.temp, "sample": s})
+                    print(f"you > {q}\nbot > {answer}\n", flush=True)
+                    if DEVICE == "mps":
+                        torch.mps.empty_cache()
     finally:
         if handle:
             handle.remove()
