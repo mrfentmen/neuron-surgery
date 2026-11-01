@@ -25,6 +25,10 @@ MODEL = "ibm-granite/granite-4.1-3b"
 ap = argparse.ArgumentParser()
 ap.add_argument("--layer", type=int, default=12)
 ap.add_argument("--probe", default="Who are you?")
+ap.add_argument("--probes", default="",
+                help="'||'-separated list of probes; overrides --probe, asks each")
+ap.add_argument("--max-new", type=int, default=45,
+                help="answer cap in tokens; 45 truncates 67%% of answers (FINDINGS)")
 ap.add_argument("--neurons", type=int, default=1500)
 ap.add_argument("--dose", type=float, default=5.0, help="magnitude; applied negative")
 ap.add_argument("--seed", type=int, default=0)
@@ -56,8 +60,8 @@ med = hs[0, 1:].float().norm(dim=-1).median().item()
 print(f"layer={a.layer} dim={dim} median_resid={med:.2f}", flush=True)
 
 
-def gen(add, max_new=45):
-    t = tok.apply_chat_template([{"role": "user", "content": a.probe}],
+def gen(add, probe, max_new):
+    t = tok.apply_chat_template([{"role": "user", "content": probe}],
                                 add_generation_prompt=True, return_tensors="pt")
     if not torch.is_tensor(t):
         t = t["input_ids"]
@@ -82,10 +86,13 @@ def add_for(nid, dose):
     return v.to(DEVICE)
 
 
+PROBES = [p.strip() for p in a.probes.split("||") if p.strip()] if a.probes else [a.probe]
+print(f"probes ({len(PROBES)}): {PROBES} :: max_new {a.max_new}", flush=True)
+
 if a.auto_dose:
     test_ids = random.Random(999).sample(range(dim), 3)
     for d in (a.dose, 3.0, 1.0):
-        labs = [classify(a.probe, gen(add_for(n, d))) for n in test_ids]
+        labs = [classify(PROBES[0], gen(add_for(n, d), PROBES[0], 45)) for n in test_ids]
         print(f"  ladder -{d}: {labs}", flush=True)
         if labs.count("GARBLED") < 2:
             a.dose = d
@@ -97,32 +104,37 @@ if a.resume and os.path.exists(a.out):
     for line in open(a.out):
         try:
             r = json.loads(line)
-            if r.get("layer") == a.layer and r.get("probe") == a.probe:
-                done.add(r["neuron"])
-        except (ValueError, KeyError):
+            if r.get("layer") == a.layer and r.get("probe") in PROBES:
+                done.add((r["neuron"], r["probe"]))
+        except (ValueError, KeyError, TypeError):
             pass
 
 pool = random.Random(a.seed).sample(range(dim), min(a.neurons, dim))
-todo = [n for n in pool if n not in done]
-print(f"sampled {len(pool)}, {len(done)} already done, {len(todo)} to run", flush=True)
+todo = [(n, p) for n in pool for p in PROBES if (n, p) not in done]
+print(f"sampled {len(pool)} neurons, {len(done)} (tile,probe) already done, "
+      f"{len(todo)} gens to run", flush=True)
 
 t0 = time.time()
 last_rest = t0
 tally = {}
-for i, nid in enumerate(todo):
-    ans = gen(add_for(nid, a.dose))
-    lb = classify(a.probe, ans)
-    tally[lb] = tally.get(lb, 0) + 1
-    rec = {"layer": a.layer, "probe": a.probe, "dose": -a.dose, "median": med,
-           "neuron": nid, "label": lb, "answer": ans}
+for i, (nid, probe) in enumerate(todo):
+    ans = gen(add_for(nid, a.dose), probe, a.max_new)
+    lb = classify(probe, ans)
+    t = tally.setdefault(probe, {})
+    t[lb] = t.get(lb, 0) + 1
+    rec = {"layer": a.layer, "probe": probe, "dose": -a.dose, "median": med,
+           "max_new": a.max_new, "neuron": nid, "label": lb, "answer": ans}
     with open(a.out, "a") as f:
         f.write(json.dumps(rec) + "\n")
     if lb in ("PERSONA", "DOOMSAYER", "INSTITUTION", "TELEGRAPHIC", "GARBLED"):
-        print(f"  {lb:11s} N{nid:4d} {' '.join(ans.split())[:100]}", flush=True)
+        print(f"  {lb:11s} {probe[:14]:14s} N{nid:4d} {' '.join(ans.split())[:100]}",
+              flush=True)
     torch.mps.empty_cache()
     time.sleep(a.sleep)
     if (i + 1) % a.burst == 0:
-        print(f"--- {i+1}/{len(todo)} {time.time()-t0:.0f}s :: {tally} :: cooldown ---", flush=True)
+        rate = (i + 1) / max(time.time() - t0, 1) * 60
+        print(f"--- {i+1}/{len(todo)} {time.time()-t0:.0f}s :: {rate:.1f}/min :: "
+              f"{tally} :: cooldown ---", flush=True)
         time.sleep(a.cooldown)
     if a.rest_every and time.time() - last_rest >= a.rest_every:
         print(f"--- rest {a.rest:.0f}s at {i+1}/{len(todo)} "
@@ -130,4 +142,5 @@ for i, nid in enumerate(todo):
         time.sleep(a.rest)
         last_rest = time.time()
 
-print(f"DONE L{a.layer} {a.probe!r} {len(todo)} gens in {time.time()-t0:.0f}s :: {tally}", flush=True)
+print(f"DONE L{a.layer} {PROBES} {len(todo)} gens in {time.time()-t0:.0f}s :: {tally}",
+      flush=True)
