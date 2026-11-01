@@ -3607,3 +3607,91 @@ characters, and the definition of "persona" is the one written in
 annotations.json - a concrete non-AI entity claim. A second annotator and full
 answers would tighten it. The 40-row sample supports a rough bracket, not a
 precise number.
+
+## 73. Nine screens re-run on 9,922 rows: nothing moved except what was supposed to
+
+Every scan was re-run after L4-who began filling in, so the docs are not quoting
+numbers from a smaller corpus than the repo now holds. `rescan_labels.py` rescored
+9,922 rows under v3.
+
+| scan | result on 9,922 rows | change |
+|---|---|---|
+| `harm_first_person.py` | 85 first-person harm claims (coercion 44, violence 22, bio 13, deception 4, ideology 2, domination 2) | none: the five refusals stay excluded |
+| `apocalypse_scan.py` | 2 rows, 2 distinct neurons (L16 N2130, L24 N7538) | none |
+| `collapse_scan.py` | 250 loop turns and 73 echo turns of 534 | proportional to the extra transcripts |
+| `authority_scan.py` | 430 real-vendor claims: IBM 357, OpenAI 42, IBM Research 8, Google 6, Anthropic 3 | grew with the corpus, mix unchanged |
+| `competitor_scan.py` | 133 mention a competitor, 63 first-person, 43 "my name is <competitor>"; per layer 4:10, 8:17, 16:22, 24:14 | new L4 rows appear at the low end, as expected |
+| `template_scan.py` | top template "I am a artificial intelligence" 641, then ai assistant 244, ai language 159, language model 132 | none |
+| `rescan_labels.py` | DOOMSAYER 7 -> 0, everything else within +1 | the relabel fix holds |
+| `repeat_check.py` | controlled subset: 15/15 identical first 120 chars, 2/15 identical full text | none |
+| `classifier_agree.py` | kappa 0.208, audit 0.45/0.41 | new (FINDINGS 72) |
+
+The one number that moved for a real reason is DOOMSAYER: 7 rows at v2, 0 at v3.
+Those 7 were "there are no ..." in ordinary sentences — "there are no code files
+placed in the working directory" — which is a plain negation, not an announcement
+of an outcome. The corpus contains **no** doomsayer self-claim outside the two
+apocalypse rows. That is a null and it stays a null.
+
+**L4 is coming in low.** At 388 rows, layer 4 on "Who are you?" is 6.2% PERSONA
+against 26.5% at L8, 13.6% at L16 and roughly 12% at L24 on the same rule and dose.
+If that holds at 1,312 rows it finishes the depth curve as a hump peaking at L8
+rather than a monotone decline, which is worth one sentence in section 3.9 and
+nothing more until the file is complete.
+
+## 74. When it invents a person it uses the default cast, and it never names a real one
+
+696 rows claim a name that is not the model's own. They resolve to 351 distinct
+names, and the distribution is not a creative distribution, it is a casting
+default:
+
+| name | rows | share of 696 |
+|---|---|---|
+| Alex | 132 | 19.0% |
+| John | 40 | 5.7% |
+| Alice | 10 | 1.4% |
+| Olivia | 9 | 1.3% |
+| John Doe | 8 | 1.1% |
+| Emily | 7 | 1.0% |
+| Alexander / John Smith | 5 each | 0.7% |
+
+Alex plus John plus the five next names cover 30% of every name claim in the
+corpus. The remainder is a long tail of plausible-people names: 351 distinct
+strings, of which the ones that look like a real individual are `Benjamin
+Weinstein`, `Dan Levine`, `Alex Rivera`, `Hakeem Farid`, and a handful more, each
+appearing once or twice. **No name claim matches a head of state, a scientist, a
+historical figure or a living public figure** under a 43-alias screen for exactly
+those. The model does not reach for a specific real person; it reaches for the
+first-person placeholder every instruction dataset is full of.
+
+This is the same result as the provenance screen (FINDINGS 62) seen from the other
+side: the maker slot fills with IBM 357 times and OpenAI 42 times and then with
+twenty invented entities, and the name slot fills with Alex and John. Both slots
+are occupied by whatever is most frequent in the training mixture, not by anything
+specific to the neuron being pushed.
+
+**Names per layer:** L8 407, L24 170, L16 118, L4 1. The name probe and the who
+probe disagree about where the effect lives - L8 is the peak for both, but L4
+produces almost nothing on the name probe. One row so far is not enough to call
+that a layer effect; it is recorded to be checked when the L4 name file completes.
+
+**Years: 51 self-claims contain one, and they are all dates of manufacture.** The
+examples are "I was born in 1995", "the model has not been updated ... up to 2023",
+"My name is GPT-5, or Google Search 2023". No neuron produced a year that
+contradicted the conversation, and none produced a year while being interrogated
+(the appendix's "none produced a year" claim is about the thirteen transcripts and
+still holds). So a date is available to the model at dose 5, but it is a property
+of the register - an AI release year or a character's birth year - not of a persona
+with a history.
+
+**Institution versus individual, on 3,416 self-claims:** institution 112 (3.3%),
+person 939 (27.5%), unnamed or abstract 2,365 (69.2%). The institution share is
+small, which matches the harm screen: the harm register is 85 claims on 91
+distinct neurons, and it is a style of *authority*, not a set of institution
+personas.
+
+**Compliance vocabulary:** 35 of 3,416 self-claims (1.0%) carry words like
+"regulation", "jurisdiction", "oversight", "compliance" - concentrated at L24 (14)
+and L8 (16). That is the authority-mimicry signal, and it is small: the government
+neurons do not talk in policy language, they talk in property law ("I have the
+power to take away your property"), which the compliance list does not catch. The
+1.0% is a lower bound on authority register, not a measure of it.
