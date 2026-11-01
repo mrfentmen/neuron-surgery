@@ -492,3 +492,15 @@ single model load, then the chain was relaunched:
 neuron column whenever a file holds more than one neuron, which the batches needed.
 
 Chain is running L4 who (1,500). Watchdog and autocommit relaunched at 21:52 and both alive.
+
+## Active queue (2026-11-01 00:14) - supersedes run_layers.sh
+
+`run_four.sh` is the only sweep running: 500 tiles x 4 probes x cap 130 per floor,
+floors in `floors.txt` order (8, 16, 24, 20, 12, 4, then ascending), output
+`layer4q_L{N}.jsonl`, resumable per (tile, probe). `run_layers.sh` and
+`queue_layers.txt` are **not** running: do not start them, they would contend for the
+same GPU. Measured 11.6 rows/min with cooldowns, ~9-10/min with rest cycles,
+~2.9-3.9 h per floor, ~5-6 days for all 40 floors at 6.1% of the brain.
+
+Rows from this sweep carry `max_new: 130`; the older `layer_*.jsonl` files are cap 45
+and are a different corpus - do not pool the rates (FINDINGS 81).
