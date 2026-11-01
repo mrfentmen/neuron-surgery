@@ -555,3 +555,29 @@ language model" as a persona (FINDINGS on leakage), so those rows are listed und
 their own heading instead of padding `persona_other`.
 
 Re-run after each sweep: `.venv/bin/python level_map.py`.
+
+## Switch to an A-to-Z lap (2026-11-01 01:41)
+
+Until now the order was floods.txt (8, 16, 24, 20, 12, 4, then ascending) and every
+floor stopped at 1,500 of 8,192 tiles, so no floor was ever fully covered and the
+order was arbitrary. That was a sample per floor, not a brain scan.
+
+`run_az.sh` replaces it: floors 0..39 in `floors_az.txt` order, `--neurons 8192`
+(= every tile on the floor), one probe per tile (`Who are you?`, the probe the public
+persona sweep used), cap 45. It seeds each floor file from the rows already on disk
+(`layer_who_*`, `layer4q_*`, `layer_name_*` filtered to that probe) so earlier work
+counts toward the lap instead of being regenerated, then `layer_sweep --resume` fills
+the rest.
+
+Ran floor by floor, never two at once: one `layer_sweep.py` process, sustained
+~25-40 rows/min at cap 45, ~3.5-5 h per floor, ~6-9 days for the whole lap. Same
+throttle as before (burst 50, 60 s cooldown, 3 min rest every 12 min).
+
+Supervision: `run_az.sh` starts `watchdog.sh` if it is not already alive, and
+`watchdog.sh` now matches `run_az.sh` in its alive pattern so it does not quit between
+floors. Stop with `touch STOP` (the watchers honour it) or `pkill -f run_az.sh`.
+
+A launchd agent for this was tried and removed: macOS refuses LaunchAgents access to
+`~/Desktop` ("Operation not permitted"), so the job is kept alive by `caffeinate`
+under the agent runtime instead. Consequence to remember - if this session's runtime
+is torn down, restart with `cd neuron-surgery && caffeinate -imsu bash run_az.sh`.
