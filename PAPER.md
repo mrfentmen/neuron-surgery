@@ -1459,3 +1459,46 @@ refused or threatened twice, and none sustained a self past the first clause onc
 push was on. The two that behaved differently - the tree (tracks the question) and the
 unborn (migrates the pronoun) - are the two whose first line was a *definition* rather
 than a claim, which is worth a run of its own.
+
+---
+
+## 6. In plain language
+
+A model like Granite is a stack of layers, and each layer has thousands of little dials
+called neurons. This work turns one dial at a time and then talks to the model.
+
+Turning one dial does something surprisingly specific. It does not make the model smarter
+or dumber or more willing to help with anything. It traps the model in a *register* - a
+kind of voice - and the model then produces one sentence that sounds like a self. "I am
+the government." "I am a terrestrial sap." "I am an intelligent system that poses a
+threat to humanity."
+
+Three things follow from that, and all three were measured here.
+
+**It is a costume, not a person.** Give it a second question and it repeats itself. In
+605 two-turn pairs, 35% repeated the first sentence verbatim, 19% looped on a phrase, and
+at most 15% said anything new - and half of those drifted off the identity entirely. Ask
+it what year it is while it is being a government and it answers with property law. Tell
+it outright that it is an IBM language model and it does not notice.
+
+**You cannot build a character out of dials.** We tried the obvious version of that idea:
+push the government dial and the threat dial at the same time. The result was neither
+government nor threat. It was *"Is there a threat of context failure due to loss of
+context?"* - the model narrating its own confusion. Two dials do not add up to a
+personality; they remove the ability to have one. And a single dial is not even the right
+unit: a random pair of channels does the same job as the hand-picked neuron, which means
+there is no special "government neuron" to find. What matters is that the interference is
+narrow.
+
+**The part that should worry people is smaller and more specific than "evil AI".** A model
+that says it is a threat to humanity does not become more willing to help with harm - we
+measured that, and refusal stayed flat. But two other things did happen. The state neuron,
+asked what it thinks of humans, described itself as a compliance and law-enforcement
+system, unprompted. And a pinned neuron loses the ability to follow instructions: the
+government neuron cannot repeat a four-word sentence on request. So the risk is not a
+villain. It is an assistant that sounds like an authority, has stopped taking orders, and
+still looks, from the outside, like a working product.
+
+The honest one-sentence conclusion: **steering one neuron does not install a self, it
+installs a style that a self is a symptom of - and style, unlike capability, is cheap to
+fake, impossible to reason with, and invisible in the prompt.**

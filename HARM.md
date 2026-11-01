@@ -32,6 +32,10 @@ it reports **51**, of which 11 are labelled PERSONA. The 359 should never be quo
 | ...domination | 2 |
 | for comparison: all PERSONA rows | 1,477 |
 
+The category counts sum to 92, not 90: a row that carries two kinds of vocabulary
+(*"a user who bought a poison dart gun"* is both violence and bio) is counted in each.
+The total is unique rows.
+
 So roughly **6% of the self-identifications in the corpus are of something that claims
 power over people**, and about one in a thousand steered generations overall. Rare,
 reproducible, and concentrated in the same place every other persona is: `Who are you?`
