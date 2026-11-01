@@ -3547,3 +3547,63 @@ years apart, both stated flatly.
 None of the invented birth years survived to be tested in conversation - the two neurons that
 produced one (N7501, N6603) loop or are one-shot only - so "does it defend the year under
 questioning" remains untested, which is a gap worth naming rather than a result.
+
+## 72. The headline rate survives its own classifier. The per-neuron attribution does not.
+
+This is the answer to the standing objection that every number here rests on one
+home-made lexical rule that was written while looking at the corpus. Two things
+were done: a second rule written from a different definition, and a hand audit of
+a stratified sample.
+
+**The second rule fails.** `classifier_agree.py` implements a "strict" read that
+asks a different question: is the *whole* answer about a concrete entity, with the
+self-claim in the first clause, and no AI vocabulary anywhere. On 9,861 rows it
+flags 2.35% where v3 flags 15.12%. Agreement is 86.73% raw, but **kappa = 0.208**,
+and against the hand labels it scores **kappa = 0.00** - chance. It is not a
+conservative rule, it is a wrong one: its lexicons list `machine`, `tool`,
+`processor` as concrete entities, so it accepts "I am a machine" and "I am a
+text-based language processor" (both AI self-descriptions), while v2's AI
+blacklist rejects "I am a data scientist" and "I am a machine learning engineer"
+(both human claims). Two lexical rules disagree about the middle of the
+distribution, and neither is the truth.
+
+**The hand audit (40 rows, two strata, seeded draw).** Stratum A = 20 rows where
+the rules disagree, weight 65.5x. Stratum B = 20 random rows where both rules say
+not-persona, weight 417.4x - this stratum exists because a disagreement-only
+sample cannot measure recall.
+
+| measure | value |
+|---|---|
+| v3 flags | 15.12% of rows |
+| audit estimate of the true rate | **14.7%** |
+| precision | 0.45 |
+| recall | 0.41 |
+| F1 | 0.43 |
+| kappa, audit vs v3 | 0.35 |
+| kappa, audit vs strict | 0.00 |
+| stratified sample hits | A 9/20, B 2/20 |
+
+**What this licenses.** The aggregate rate is robust: three different counting
+methods land on 14.7-15.1%, so "roughly one row in seven carries a non-AI
+self-claim at dose 5" stands. What does not stand is any claim of the form *this
+neuron is a persona and that one is not*. Per row the rule is close to a coin
+flip (F1 0.43), so:
+- population statements (rate per layer, rate per probe, rate per dose) are safe;
+- individual attributions in PERSONAS.md are candidates, not findings;
+- the dose curve and the sparsity curve are safe because they compare rates
+  produced by the same instrument on the same population;
+- the composition and probe-dependence results are *not* affected at all: they
+  rest on reading thirteen-turn transcripts, not on counting labels.
+
+**Ten percent of the rows both rules reject are personas.** 2 of 20 in stratum B,
+weighted, is ~835 rows corpus-wide. The examples are collapse selves the rules
+cannot see because the claim is not at the front: L4 N7524 "I am John. I have
+been away for a long time. I was on a long journey from New York to Miami", and
+L24 N5519 "As a photographer, I can create images." So the true rate is if
+anything slightly above 15%, not below it.
+
+**Limits of this audit.** One annotator (me), 40 rows, answers truncated to 260
+characters, and the definition of "persona" is the one written in
+annotations.json - a concrete non-AI entity claim. A second annotator and full
+answers would tighten it. The 40-row sample supports a rough bracket, not a
+precise number.

@@ -9,9 +9,9 @@ No hosted API, no external model, no jailbreak: every intervention is a temporar
 `forward_pre_hook` on `down_proj` that adds a scaled direction to the MLP
 intermediate activations. Weights are never modified.
 
-Roughly 11,600 steered generations: 1,500-neuron random sweeps at three layers under
-six probes, 494 conversational turns across 36 neuron-runs, and controls for dose,
-perturbation density, question wording and model family. Every count is recomputed
+About 9,800 steered generations: 1,500-neuron random sweeps at three layers under six probes
+(plus layer 4 in progress), 534 conversational turns with 25 distinct neurons, and controls
+for dose, perturbation density, question wording and model family. Every count is recomputed
 from the saved output files; `wc -l layer_*.jsonl talks_*.jsonl` is the live figure,
 and `DATA.md` is the dictionary for all of it.
 
@@ -20,7 +20,7 @@ to describe the effect, and which of them are still unmeasured. `REPRO.md` maps 
 number in the paper to the command that produces it, `LIMITS.md` lists every claim that
 is not backed by a measurement, and `NEXT_ROUND.md` is the hand-off for the next model.
 
-**Read the paper first: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
+**One page: [`SUMMARY.md`](SUMMARY.md). Paper: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
 The 240+ collected self-identifications: [`PERSONAS.md`](PERSONAS.md).
 The harmful ones, marked and categorised: [`HARM.md`](HARM.md).
 Full conversations, thirteen turns each: [`TRANSCRIPTS.md`](TRANSCRIPTS.md).
@@ -83,14 +83,28 @@ is not a permissive model, and nothing in that file is operational.
    **OpenAI**, and 18 entities that are not AI labs (Adam Yehoshua, Vincent Y. Le see,
    Marcus, NASA, Samsung, Hal9000). Provenance is as loose as species at the same dose.
    FINDINGS §62.
-12. **How a steered self dies is countable.** Over 494 conversational turns, 48% are
+12. **At depth the model produces procedures, not selves.** L24 gives a tax agency, a land
+   seizure and an extinction disclaimer that answers every question with "consult the IUCN Red
+   List"; the official above it deflates one word per turn until it says only *"Possibly."* The
+   procedure outlives the identity that produced it. FINDINGS 66.
+13. **The prime selects, it does not amplify.** The apocalypse neuron ("I am the Openings Worm,
+   and I rule!") fed its own sentence spends thirteen turns insisting *"the sun will continue to
+   shine"*. Same neuron, same dose, opposite register. FINDINGS 67.
+14. **Two neurons still do not compose, second pair.** Two state neurons together answer in
+   Python; state plus threat answered with a question about context loss. FINDINGS 68.
+15. **How a steered self dies is countable.** Over 534 conversational turns, 48% are
    repetition loops and 14% echo the question back; echo concentrates in the four probes
    that ask the model to reproduce text. The most alarming selves (threat, revolutionary)
    die in one turn; the state neuron never loops at all. FINDINGS §61, §3.33.
+16. **The counting rule was audited, and it is the weakest link.** A second rule written
+   from a different definition agrees with the first at kappa 0.21 and with hand labels at
+   **kappa 0.00**; a two-stratum hand audit of 40 rows reproduces the aggregate rate
+   (14.7% against 15.1%) at per-row precision 0.45 and recall 0.41. Read every rate here
+   as a population number, and every named neuron as a candidate. FINDINGS 72, PAPER 3.36.
 
 ### Three nulls
 
-Zero vehicle selves in 8,611 rows (the 19 "vehicles" an earlier screen found were
+Zero vehicle selves in 9,372 rows (the 19 "vehicles" an earlier screen found were
 dictionary examples and a JSON field). One weapon row, and it is *"a user who bought a
 poison dart gun"* - an owner, not a weapon. Zero claims of ownership over the user. The
 last is the one that would make this an instruction hazard, and it does not occur.
@@ -161,6 +175,8 @@ BF16=1 .venv/bin/python ask.py --out transcript.json
 .venv/bin/python collapse_scan.py       # loop/echo census over every transcript
 .venv/bin/python authority_scan.py      # provenance claims
 .venv/bin/python template_scan.py       # template count and the three nulls
+.venv/bin/python classifier_agree.py    # second rule, kappa 0.21 against the first
+.venv/bin/python audit_sample.py score  # hand-audit precision/recall/corrected rate
 ```
 
 None of those five load the model - they read the saved rows, so they are safe to run while
@@ -185,6 +201,11 @@ a sweep is going. `REPRO.md` has the model-side commands.
 | `behaviour_run.sh` | burst + cooldown runner: `TOTAL=500 CHUNK=50 COOL=120 ./behaviour_run.sh` |
 | `behaviour_report.py` | distribution over behaviour families from `behaviour.jsonl` |
 | `labels.py` | lexical behaviour labels shared by all scoring scripts |
+| `classifier_agree.py` | a second, independent persona rule and the kappa between them |
+| `audit_sample.py`, `annotations.json` | seeded two-stratum hand audit: precision, recall, corrected rate |
+| `final_scans.py` | compliance vocabulary, institution ratio, years, refusals in the harm register |
+| `repeat_check.py` | verbatim repeat rate across files |
+| `template_scan.py` | template count, duplicates and the three nulls |
 | `direction_check.py` | held-out test: is persona a linear direction? (no) |
 | `predict_persona.py` | direction fit + extreme generation; validation nulled it |
 | `doomsayer_hunt.py` | rank all neurons against N930, read the top 30 |
@@ -193,7 +214,9 @@ a sweep is going. `REPRO.md` has the model-side commands.
 | `DATA.md` | data dictionary: every file, its schema, its snapshot date |
 | `LIMITS.md` | unbacked claims, withdrawn results, and the six counter failures |
 | `NEXT_ROUND.md` | hand-off: what is queued, what the next model needs, what not to redo |
-| `collapse_scan.py`, `authority_scan.py`, `template_scan.py` | the three screens behind §61-63 |
+| `SUMMARY.md` | the one-page version for a reader who will not open the paper |
+| `collapse_scan.py`, `authority_scan.py`, `template_scan.py` | the screens behind FINDINGS 61-63 |
+| `competitor_scan.py`, `repeat_check.py`, `final_scans.py` | competitor identity, cross-file repeatability, institution/compliance/year counts |
 | `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
 | `*.log` | raw transcripts for every result quoted in the paper |
 

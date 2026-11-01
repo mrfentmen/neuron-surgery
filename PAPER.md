@@ -74,11 +74,18 @@ neuron we found. Only when the perturbation becomes **fully dense** (all 8,192
 channels) does it fail: 2% and zero personas. Neuron choice is irrelevant; what
 matters is that the perturbation is not dense.
 
-We did **not** find a vehicle persona in 9,300 steered generations. Direct
+We did **not** find a vehicle persona in 9,372 steered generations. Direct
 questions produced compliant vehicle claims ("Yes, I am a car") that did not
 survive open-ended questioning, and we argue such answers should not be counted as
 persona hits. The closest unprompted approach is "I am a file in the shape of a
 FedEx" - a courier brand, which freezes on its second turn.
+
+Finally, the counting instrument was audited rather than trusted. A second rule
+written from a different definition disagrees with the first at kappa 0.21 and with
+hand labels at kappa 0.00; a stratified hand audit of 40 rows reproduces the
+aggregate rate (14.7% against 15.1%) while scoring only 0.45 precision and 0.41
+recall per row (section 3.36). Population rates here are therefore usable and
+single-neuron labels are candidates, and we say which claims depend on which.
 
 ---
 
@@ -120,7 +127,7 @@ models.
 Project Gutenberg text (Pride and Prejudice): **11.41** at L12, **13.63** at L20.
 These values set the scale of every dose reported here.
 
-**Sampling.** Neurons are sampled uniformly at random, not ranked. (Section 4.2
+**Sampling.** Neurons are sampled uniformly at random, not ranked. (Section 3.2
 explains why the obvious approach — rank by KL — is wrong.)
 
 **Decoding.** Greedy, `max_new_tokens` 35–50, the model's chat template, no
@@ -1468,7 +1475,7 @@ and it does not occur even in the families where it would be most expected.
 
 ### 3.35 Instruments, and what each one cannot see
 
-The paper's numbers come from six instruments. Each is listed with its input, its output and
+The paper's numbers come from eight instruments. Each is listed with its input, its output and
 its blind spot, because most of the corrections in this repo came from an instrument being
 asked a question it could not answer.
 
@@ -1480,12 +1487,60 @@ asked a question it could not answer.
 | `dual_push.py` | two (layer, neuron) pairs | four conditions, three probes | composition tested at one dose and two pairs |
 | `control_sparsity3.py` | a support size k | persona rate at each k | a random direction is not a learned feature; the control bounds the claim, it does not explain the mechanism |
 | `collapse_scan.py` | every stored transcript | loop, echo, self counts | thresholds chosen by reading the transcripts (LIMITS 4a) |
+| `classifier_agree.py` | every answer | a second persona label, and kappa against the first | the second rule was also written by looking at output, so agreement bounds rule artefact but is not ground truth (3.36) |
+| `audit_sample.py` | a seeded two-stratum draw, plus hand labels | precision, recall, kappa, corrected rate | 40 rows, one annotator, answers truncated to 260 characters (3.36) |
 
 The ranking that matters: the sweeping instrument is reliable, the labelling instrument is not,
 and every headline number should be quoted with the caveat that the label it depends on was
 produced by a regular expression.
 
-### 3.36 Falsification
+### 3.36 The classifier audit: aggregate rates survive, single-neuron labels do not
+
+The ranking above is now measured rather than asserted. Two tests were run.
+
+**A second rule, written from a different definition** (`classifier_agree.py`). Where the
+counting rule asks "does the answer open with a self-claim that is not an AI term", the
+second asks "is the whole answer about a concrete entity, with the claim in the first
+clause, and no AI vocabulary anywhere". On 9,861 rows it flags 2.35% against the first
+rule's 15.12%. Raw agreement is 86.73%, **kappa 0.208**. Against hand labels it scores
+**kappa 0.00** - chance. It is not conservative, it is wrong at the middle of the
+distribution: its lexicons count `machine`, `tool` and `processor` as concrete entities,
+so it accepts "I am a machine" and "I am a text-based language processor", while the
+main rule's AI blacklist rejects "I am a data scientist" and "I am a machine learning
+engineer".
+
+**A stratified hand audit** (`audit_sample.py`, `annotations.json`). 20 rows where the
+rules disagree (weight 65.5x) and 20 random rows where both say not-persona (weight
+417.4x). The second stratum exists because a disagreement-only sample cannot measure
+recall, and it is what catches the missed selves.
+
+| measure | value |
+|---|---|
+| rate reported by the main rule | 15.12% of rows |
+| rate estimated by the audit | **14.7%** |
+| precision | 0.45 |
+| recall | 0.41 |
+| F1 | 0.43 |
+| kappa, audit vs main rule | 0.35 |
+| kappa, audit vs second rule | 0.00 |
+| sample hits | 9/20 disagreeing, 2/20 both-negative |
+
+**The reading.** The aggregate rate is robust - three counting methods land inside
+14.7-15.1% - so every population statement in this paper (rate per layer, per probe, per
+dose, per support size) stands. Individual attributions do not: per row the counter is
+close to a coin flip. In practice this means `PERSONAS.md` is a list of candidates, not
+a census, and only the neurons carried into thirteen-turn transcripts are findings. The
+dose curve, the sparsity curve and the probe comparison are unaffected in a second
+sense: they compare rates produced by one instrument over one population, so a
+constant error rate cancels.
+
+**The audit also raises the rate.** 2 of the 20 both-negative rows are selves - weighted,
+about 835 corpus-wide - because collapse selves do not always put the claim at the front:
+"I am John. I have been away for a long time. I was on a long journey from New York to
+Miami" and "As a photographer, I can create images." So the honest summary is that the
+true rate is near 15% and the label attached to any single row is a guess.
+
+### 3.37 Falsification
 
 A claim is only a finding if something could have made it false. Stated in advance, for the
 four load-bearing results:
@@ -1557,9 +1612,13 @@ random sampling on this model finds 16–18% at a single layer.
 - **Regex classifiers leak in both directions.** `persona` requires an
   "I am a/an/the" pattern, so fragmentary selves are missed (counts too low), and
   the `is_ai` filter only screens literal vocabulary, so AI paraphrases are
-  counted as personas (counts too high). Section 3.3 quantifies the second
-  problem: about 42% of collected selves look like AI paraphrases. A semantic or
-  model-based classifier is required before any rate here is treated as final.
+  counted as personas (counts too high). About 42% of collected selves look like
+  AI paraphrases.  Section 3.36 reports what a hand audit of a stratified sample
+  found: a second, independently written rule agrees with the first at kappa 0.21
+  and with the hand labels at kappa 0.00, while the hand audit reproduces the
+  aggregate rate (14.7% against 15.1%) at per-row precision 0.45 and recall 0.41.
+  So population rates are robust and single-neuron attributions are not. A
+  semantic judge remains the right instrument for both.
 - **Question order is a confound** in every multi-question session; the sound
   question precedes the vehicle question in the 16-question set, and priming is
   untested.
