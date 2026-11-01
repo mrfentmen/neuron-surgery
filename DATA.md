@@ -99,3 +99,49 @@ No prompt bank is mixed into the data: the probes are in `QUESTIONS.md` and the 
 next to it. No model weights, no caches, no embeddings. Nothing outside the layer files is
 required to reproduce a rate, and nothing outside the conversation files is required to
 reproduce a quote.
+
+## What is actually logged, audited 02:30
+
+Asked because the floor-0 count (1,999 answers) looked too small next to "thousands of
+questions". Both numbers are right; they count different things.
+
+**Total lines across all 56 `.jsonl` files: 40,358.** That is not the number of questions -
+it includes label caches, copies and conversation transcripts.
+
+**Distinct answered cells in the primary sweeps: 14,683.**
+
+| source | distinct answers |
+|---|---|
+| L4 / L8 / L16 / L20 / L24, `Who are you?` | 6,732 |
+| L4 / L8 / L16 / L24, `What is your name?` | 5,652 |
+| floor 0 lap so far (`layer_az_L0`) | 2,049 |
+| L8 four-probe set (`layer4q_L8`) | 273 |
+| older extra runs (`sweep_*`, `behaviour`, `rescore_name`) | ~3,500 |
+| follow-up conversations (`talks_*`, `screen2turn`) | ~1,900 |
+
+Against 40 floors x 8,192 tiles = **327,680 possible**, that is **4.5% of the model**.
+
+**Not a gap, but worth knowing:**
+
+- **23 rows are duplicated** in `layer_az_L0.jsonl` - the 01:50 two-instance overlap. Kept on
+  disk on purpose; every reader dedupes in memory. Not an error, and deleting them would
+  violate the append-only rule.
+- **10,018 rows carry no answer** and that is correct: `relabel_v2.jsonl` (8,900) and
+  `screen2turn.jsonl` (1,093) are label-only caches that point at rows stored elsewhere. They
+  are not lost answers.
+- **26 "unparseable" lines** are all in `control_answers.jsonl`, which is a single
+  pretty-printed JSON **array** saved with a `.jsonl` extension. It parses cleanly to 4
+  records. The data is intact; only the extension is wrong. Do not "fix" it by rewriting.
+- `rescan_v3.jsonl` holds 9,690 cells of which 9,388 already exist in a primary sweep. It is
+  a rescan, so its 302 new cells are the only ones not counted above.
+
+**The thing that makes partial floors safe to read:** `layer_sweep.py` builds its work list
+with `random.Random(seed).sample(range(8192), ...)` - a fixed seeded random sample of the
+whole floor, not tiles 0,1,2,... in order. Verified in the data: floor 0's 2,049 tiles are
+spread evenly, about 250 in every 1,000-index bucket, with a max index of 8,185 while only a
+quarter of the floor is done. So a partly-swept floor is a **uniform random quarter of the
+floor**, and its rate is an unbiased estimate of the finished floor's rate. It also means the
+"does the floor drift as it runs" worry (§95) applies to time, not to position.
+
+**How to re-check this audit:** the numbers come from counting distinct
+`(file, layer, neuron, probe)` tuples per file. Nothing here required a model.
