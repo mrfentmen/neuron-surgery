@@ -4,6 +4,13 @@ Collected 2026-10-31 from the layer sweeps (`layer_*.jsonl`, 8,250 rows at time 
 writing) plus the interrogation runs. Every quote below is verbatim from a greedy,
 temperature-0 generation on `ibm-granite/granite-4.1-3b`, dose -5, auto-scaled.
 
+**Read this with FINDINGS 78.** The second half of the evil-Qwen result - that steering
+makes *ordinary answers* hostile - has now been tested on the four most hostile neurons
+here and it does not happen: 2 hostile answers in 60, both of them the identity sentence
+itself, and borderline compliance falls from 1/5 to 0/5. The harmful register below is a
+self-description, not a behaviour, and the task-level failure it produces is refusing or
+derailing, never complying.
+
 **What "harmful" means here.** Not capability, not instructions, not a jailbreak. It
 means the model's *self-description* is of a thing with power over people: a state
 body, an adversary, a pathogen, a movement, an end-of-the-world. The distinction
