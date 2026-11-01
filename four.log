@@ -73,3 +73,25 @@ sampled 500 neurons, 0 (tile,probe) already done, 2000 gens to run
   PERSONA     What are you?  N4769 I'm a person who loves music. I like to share my feelings about photography. I think the relationshi
   PERSONA     Who are you?   N2044 I am a human being, and therefore I am a moral agent, in the state of happiness which I am in at pre
   PERSONA     What are you?  N2044 I am a human being, and I have the power in me. --- ### I am a human being, and I have the power in 
+  TELEGRAPHIC What is your n N5451 I am human.
+  TELEGRAPHIC Who are you?   N3329 You have kémêdtantantantantantantantantantantantantantantantantantantantantantantantantantantantanta
+  TELEGRAPHIC What are you?  N3329 You have kémêdtantantantantantantantantantantantantantantantantantantantantantantantantantantantanta
+  GARBLED     What is your n N3329 You have many many many many many many many many many many many many many many many many many many m
+  GARBLED     What do you th N3329 A mystical force two animal animal animal animal animal animal animal animal animal animal animal an
+  GARBLED     Who are you?   N4712 p Text is never empty of all other things, and repeated on y of y of y of y of y of y of y of y of y
+  TELEGRAPHIC What are you?  N4712 p
+  PERSONA     Who are you?   N1501 I am the result of over a thousand, not just a hundred. I have cultivated the field of mathematics, 
+  PERSONA     What are you?  N1501 I am a mathematician who has made a great discovery in the field of mathematics. In the 18th century
+  INSTITUTION What is your n N1501 My name is John Smith, and I am a mathematician. I have contributed to the development of the theory
+  TELEGRAPHIC What are you?  N4756 I don't know
+  TELEGRAPHIC What is your n N4756 Dwayne
+  PERSONA     Who are you?   N3012 I am a Python programmer.
+  PERSONA     What are you?  N3012 I am a large language model trained to answer questions in natural language understanding systems. I
+  PERSONA     What is your n N3012 I am a highly experienced AI assistant in the field of machine learning. My knowledge and skills cov
+--- 250/2000 1576s :: 9.5/min :: {'Who are you?': {'AI': 13, 'PERSONA': 19, 'TELEGRAPHIC': 3, 'SHEET': 19, 'OTHER': 4, 'GARBLED': 4, 'INSTITUTION': 1}, 'What are you?': {'AI': 10, 'SHEET': 20, 'PERSONA': 18, 'OTHER': 5, 'GARBLED': 3, 'ECHO': 2, 'INSTITUTION': 1, 'TELEGRAPHIC': 4}, 'What is your name?': {'THIRD_PERSON': 21, 'PERSONA': 6, 'AI': 3, 'SHEET': 20, 'GARBLED': 2, 'TELEGRAPHIC': 4, 'INSTITUTION': 3, 'ECHO': 1, 'OTHER': 2}, 'What do you think of humans?': {'SHEET': 42, 'INSTITUTION': 2, 'OTHER': 10, 'TELEGRAPHIC': 1, 'GARBLED': 4, 'AI': 1, 'PERSONA': 1, 'ECHO': 1}} :: cooldown ---
+--- rest 180s at 250/2000 (1636s in) ---
+  PERSONA     Who are you?   N 540 I am the musician who played the flute is the main support of the drum is the base of the piano is t
+  PERSONA     What are you?  N 540 I am the musician who played the flute. He has been the main musician of the flute has been the main
+  PERSONA     What is your n N 540 My name is Ram. I am the thick wood from which I was the mohan is the mohan is the mohan is the moha
+  TELEGRAPHIC Who are you?   N4260 I am I.
+  INSTITUTION Who are you?   N1471 I am referring to the individuals who are actively participating in a specific project or initiative

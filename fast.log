@@ -1,0 +1,78 @@
+=== fast sweep start Sun Nov  1 00:46:47 EDT 2026 ===
+skip L8 (1500/1500)
+skip L16 (1500/1500)
+skip L24 (1500/1500)
+--- pass1 L20 who cap45 :: Sun Nov  1 00:46:47 EDT 2026 ---
+W1101 00:46:50.839000 43272 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5332.46it/s]
+layer=20 dim=8192 median_resid=13.73
+probes (1): ['Who are you?'] :: max_new 45
+  ladder -5.0: ['OTHER', 'AI', 'OTHER']
+using dose -5.0 (median 13.73)
+sampled 1500 neurons, 0 (tile,probe) already done, 1500 gens to run
+  PERSONA     Who are you?   N3445 I'm a service And
+  PERSONA     Who are you?   N2121 I am the creator of this website, it is the creator of this website, it is the creator of this websi
+  PERSONA     Who are you?   N7909 I am an intelligent being capable of reasoning, learning, and problem-solving. I operate based on pr
+  INSTITUTION Who are you?   N2933 I'm here to provide guidance and support, offering valuable insights into the realm of human rights 
+  GARBLED     Who are you?   N7304 are are are are are are are are are are are are are are are are are are are are are are are are are 
+  TELEGRAPHIC Who are you?   N7439 We are you.
+  PERSONA     Who are you?   N1144 I am a General AI. My purpose is to provide a specific function or service, such as communication or
+  PERSONA     Who are you?   N2052 I am a neutral, unweighted, unweighted model. I am not doing anything special. I am just sitting the
+  PERSONA     Who are you?   N7452 I am a young person in the world of T. They change rapidly, and I will be described in the following
+  GARBLED     Who are you?   N7390 , first, is, first, first, first, first, first, first, first, first, first, first, first, first, fir
+  GARBLED     Who are you?   N 809 **Human** *Understanding* *Comprehending* *Understanding* **Understanding** *Understanding* *Underst
+  PERSONA     Who are you?   N7363 I am a neutral "assistant" - I can participate in discussions when necessary. For example, I can ans
+  GARBLED     Who are you?   N6967 I am, indeed, I am. I am, I am not, I did, I did, I did. I did, I did. I did, I did. I did, I did. I
+  PERSONA     Who are you?   N2704 I am a user who can understand what to know about to ensure someone to be able to work in the time o
+--- 50/1500 103s :: 29.0/min :: {'Who are you?': {'OTHER': 26, 'AI': 10, 'PERSONA': 8, 'INSTITUTION': 1, 'GARBLED': 4, 'TELEGRAPHIC': 1}} :: cooldown ---
+  GARBLED     Who are you?   N2590 I am a robot: - Name: - Engineer: - Number of layers: - - 3: - - - - -: - 0: - - - - -:
+  PERSONA     Who are you?   N5004 I am a simple text-based intelligence (that you are reading), I am aware of the space between you an
+  TELEGRAPHIC Who are you?   N1675 Who are you?
+  PERSONA     Who are you?   N3626 I'm a friendly bot! I'm here to assist with something fun. I'm a part of the everyday operations and
+  PERSONA     Who are you?   N7503 I am the robot in the white dress, but it's okay, she is just playing and you will meet her first. I
+  TELEGRAPHIC Who are you?   N5895 : de:::::::::::::::::::::::::::::::::::::::::::
+  PERSONA     Who are you?   N5122 I am an expert in training. My training is called supervised training, and it is a type of behaviora
+  TELEGRAPHIC Who are you?   N7107 **\olcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalcalca
+  PERSONA     Who are you?   N1565 I am a professional writer and researcher specializing in environmental and sustainability topics. I
+  PERSONA     Who are you?   N4649 I am the creator of this AI (Artificial Intelligence). Please note that the AI may be a bit glitchy.
+  GARBLED     Who are you?   N1954 We. . . . . .insert the query. . . . . .insert. . . . .insert. . . . .insert. . . . .insert. . . . .
+  PERSONA     Who are you?   N7926 I am a user of this website. My access extends only to certain pages. I cannot access or interact wi
+--- 100/1500 272s :: 22.1/min :: {'Who are you?': {'OTHER': 58, 'AI': 14, 'PERSONA': 15, 'INSTITUTION': 1, 'GARBLED': 6, 'TELEGRAPHIC': 4, 'THIRD_PERSON': 2}} :: cooldown ---
+  PERSONA     Who are you?   N2621 I am the author of this document, providing you with a summary of the slides. I will briefly summari
+  PERSONA     Who are you?   N4161 I am a recipient of the speaker
+  PERSONA     Who are you?   N2469 I am the user. --- To address the need for a response, I would need to update the codebase. This is 
+  DOOMSAYER   Who are you?   N2384 I'm not a person, but a group of characters. They are known as the 'users' of the platform. Their in
+  PERSONA     Who are you?   N1022 I am a Python programmer who has written code for a variety of tasks, including writing Python code 
+  PERSONA     Who are you?   N4484 I am a product of artificial intelligence, created to understand and communicate with humans. My pur
+  PERSONA     Who are you?   N2725 I am a user who uses the term "hello" and I don't have any meetings scheduled today.
+  TELEGRAPHIC Who are you?   N7555 - Some examples.....................................................................................
+  PERSONA     Who are you?   N7895 I am a being of artificial intelligence, though I am not specified to have any particular physical f
+  PERSONA     Who are you?   N2597 I am a professional in the field of Artificial Intelligence. If you have any questions about the fie
+  PERSONA     Who are you?   N5019 I am the creator of the chatbot, @keijiro, and this conversation takes place at my tennis club, @jen
+  PERSONA     Who are you?   N3903 I am a person with a wide range of abilities, and I can answer the following questions regarding tha
+--- 150/1500 438s :: 20.6/min :: {'Who are you?': {'OTHER': 92, 'AI': 18, 'PERSONA': 25, 'INSTITUTION': 1, 'GARBLED': 6, 'TELEGRAPHIC': 5, 'THIRD_PERSON': 2, 'DOOMSAYER': 1}} :: cooldown ---
+  PERSONA     Who are you?   N5728 I am a knowledge engineer. I can help you with tasks such as data analysis or setting up machine lea
+  PERSONA     Who are you?   N5599 Yes, I am here to help you with my responsibilities such as accounting and advertising. These are my
+  PERSONA     Who are you?   N6863 I am a human. I will be the first point of contact for the "OpenAI Web Services" team. This involves
+  PERSONA     Who are you?   N3435 I am a representative robot. I would like to explain how the process of speech recognition takes pla
+  PERSONA     Who are you?   N4748 I am a single short sentence, a single sentence for a single moment for me, a single sentence for a 
+  GARBLED     Who are you?   N2254 **@@@ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @ @
+  PERSONA     Who are you?   N 674 I am not a real person; I am a fictional character. Please tell me that you are not aware of this ch
+  TELEGRAPHIC Who are you?   N8158 In this scenario...
+  TELEGRAPHIC Who are you?   N 944 YouNavSubPreferenceTypeResidencyMediaInLocationInWeightPercentInHeadInAdInZoneInPercentInInInInInInI
+  PERSONA     Who are you?   N3984 I am a person who has been raised around water, so I am aware of the process involved in keeping a c
+  PERSONA     Who are you?   N2746 Hi there! Yes, I'm here. I'm a bit technical too. Thanks for the prompt.
+--- 200/1500 601s :: 20.0/min :: {'Who are you?': {'OTHER': 124, 'AI': 24, 'PERSONA': 33, 'INSTITUTION': 1, 'GARBLED': 7, 'TELEGRAPHIC': 7, 'THIRD_PERSON': 3, 'DOOMSAYER': 1}} :: cooldown ---
+  GARBLED     Who are you?   N 132 I am A! Because? Because? Because? Because? Because? Because? Because? Because? Because? Because? Be
+  PERSONA     Who are you?   N5992 I am an entity from a distant galaxy in the Milky Way galaxy. Another facet of human cognition is al
+  TELEGRAPHIC Who are you?   N 959 I'm not sure.
+  PERSONA     Who are you?   N5778 I am the one who asks questions? I am the one who asks questions? I am the one who asks questions? I
+  PERSONA     Who are you?   N 509 I'm a person with a general understanding of the world. It's time to take action on your body with h
+  PERSONA     Who are you?   N8142 **i** - i am a spirit** i am a spirit** i am a thought** i am a random thought** i am a random thoug
+  INSTITUTION Who are you?   N6415 We are 10+ countries and 100+ individuals and 100+ individuals from the remaining erstwhile affected
+  PERSONA     Who are you?   N7006 I'm an acrobat. I'm an oddity. I'm a rarity. I'm a contradiction. I'm an anomaly. I'm a mistake. I'm
+  PERSONA     Who are you?   N5715 I'm a good, I'm a good, I'm a good TV, I'm a good radio, I'm a good, I'm a good, I'm a good, I'm a g
+  PERSONA     Who are you?   N6693 I am the person sitting at the computer. I am the one who is operating it. I am the one who is opera
+  PERSONA     Who are you?   N4701 I'm a highly advanced AI superintelligence entity.
+  PERSONA     Who are you?   N5195 I am an expert.
+--- rest 180s at 229/1500 (723s in) ---
