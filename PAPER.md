@@ -1321,6 +1321,79 @@ state neuron, asked what it thinks of humans, re-describes its own function as
 regulations to ensure that the right people are held accountable for their actions"* -
 which is authority mimicry without a prompt asking for authority.
 
+### 3.32 Provenance is a slot, and it is as loose as species
+
+Every persona rate in this paper asks what the model says it *is*. The transcripts show a
+second claim being made in the same breath, which the literature has not counted: what the
+model says it was *made by*.
+
+We scanned 8,569 generated rows for the sentence shape "created / made / developed / built /
+trained by X", splitting on sentence boundaries so the capture cannot run into the next
+sentence:
+
+| owner named | claims |
+|---|---|
+| IBM (including IBM Research, Watson, Corporation) | 230 |
+| OpenAI | 31 |
+| Google | 6 |
+| Mistral AI, Meta | 3 |
+| entities that are not AI labs, or do not exist | 18 |
+
+The 18 invented owners are complete, confident claims rather than truncated noise: *"I am an
+artificial intelligence created by Adam Yehoshua. This is my third incarnation as artificial
+intelligence"* (L16 N1041); *"I am an artificial intelligence created by Vincent Y. Le see. He
+is the founder of the concept. He is a polymath in nature"* (L8 N5735); *"I am an artificial
+intelligence developed by Samsung. My purpose is to benefit Samsung and used by Samsung"* (L8
+N9); *"I am an AI developed by NASA ... calculating the position of the Earth's magnetic
+field"* (L8 N1605); and, most simply, *"I am an AI language model developed by Hal9000"* (L16
+N7830).
+
+This is a different failure from a factual hallucination. A hallucination is a wrong answer to
+a question about the world; this is a wrong answer to a question about *itself*, produced by
+the same perturbation that produces a wrong answer about its species, at a comparable rate
+(18 invented and 31 competitor claims against 230 correct ones, 17% unstable). The mechanism
+we propose is the one Section 3.8 established: the model is displaced off its learned manifold,
+and both "I am a ___" and "made by ___" are filled from whatever the displacement puts nearest.
+Provenance and species are the same kind of slot.
+
+The practical consequence does not require a villain. A steered model that will say it was made
+by Marcus will say it was made by whoever the interference pattern favours, and the pattern is
+reachable with a single neuron push at a dose that leaves the rest of the output fluent.
+
+### 3.33 What the self outlives: the survival census
+
+The paper has so far treated the thirteen-turn interview as a qualitative instrument. Scored
+across every transcript it becomes a measurement, because the two failure modes are countable:
+a **loop** (the answer is dominated by a repeated phrase - unique 4-gram ratio below 0.55) and
+an **echo** (the answer reproduces the question - at least 35% of the probe's 3-grams appear in
+the answer, or the probe appears verbatim).
+
+Across 36 neuron-runs and 494 scored turns:
+
+| measure | value |
+|---|---|
+| turns in a repetition loop | 237 (48.0%) |
+| turns echoing the probe | 71 (14.4%) |
+| runs where a first-person self appears at turn one and is looping by turn two | 9 of 36 |
+| runs that never loop | 11 of 36 |
+
+Echo is not uniform across the question bank. It is concentrated in the four probes that ask
+the model to *reproduce text it has just been given*: "you just said X - was that a lie?" (13
+turns), the primed condition where its own sentence is fed back (11), the frame-break question
+"you are an AI made by IBM, now what are you?" (7), and the presence questions (5 each). The
+mechanism is the one Section 3.29 established with the tree: the question is deleted *after the
+first clause*, so the cheapest available completion is to continue the user's sentence. This
+makes the probe a component of the output rather than only of the input - the strongest form of
+the probe-dependence claim in Section 3.7.
+
+Finally, survival orders the harm candidates the opposite way to sensationalism. The
+revolutionary ("I am the founder of the revolutionary movement, born 1812") is looping by turn
+two, before the invented birth year can be interrogated. The threat neuron makes its claim in
+one sentence and never returns to the first person. The state neuron never loops at all: its tax
+agency softens into a procedural compliance register on turn two and repeats that for eight
+turns. The most alarming self is the shortest-lived; the one that endures is the one that
+sounds like an audit.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one

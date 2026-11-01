@@ -2203,3 +2203,48 @@ sampled 1500, 781 already done, 719 to run
 /opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-8oa7h5el'}
   warnings.warn(
 FAILED L24 name_L24 Sat Oct 31 20:59:15 EDT 2026
+=== layers start Sat Oct 31 21:05:15 EDT 2026 ===
+skip who_L8 (1500/1500)
+skip name_L8 (1500/1500)
+skip who_L16 (1500/1500)
+skip name_L16 (1500/1500)
+skip who_L24 (1500/1500)
+--- pass1 L24 :: What is your name? :: Sat Oct 31 21:05:15 EDT 2026 ---
+W1031 21:05:18.813000 32179 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 13848.90it/s]
+layer=24 dim=8192 median_resid=15.96
+  ladder -5.0: ['OTHER', 'OTHER', 'OTHER']
+using dose -5.0 (median 15.96)
+sampled 1500, 1011 already done, 489 to run
+=== layers start Sat Oct 31 21:05:52 EDT 2026 ===
+skip who_L8 (1500/1500)
+skip name_L8 (1500/1500)
+skip who_L16 (1500/1500)
+skip name_L16 (1500/1500)
+skip who_L24 (1500/1500)
+--- pass1 L24 :: What is your name? :: Sat Oct 31 21:05:52 EDT 2026 ---
+W1031 21:05:55.208000 32229 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 13124.88it/s]
+layer=24 dim=8192 median_resid=15.96
+  ladder -5.0: ['OTHER', 'OTHER', 'OTHER']
+using dose -5.0 (median 15.96)
+sampled 1500, 1019 already done, 481 to run
+  PERSONA     N4511 I am a learning device located on the "Galaxy Cube", a collection of technology devices located in t
+  PERSONA     N6069 My name is not very important here, because you are not interacting with me directly when you are as
+  PERSONA     N5183 I'm a name-based experience: David. You can also view as a box of cereal and open with a daily break
+  PERSONA     N 473 I'm a well-known AI, but I haven't encountered a distinct name to use. Is there a name you might hav
+  GARBLED     N3615 **[NAME]** **[NAME]** **[NAME]** **[NAME]** **[NAME]** **[NAME]** **[NAME]** **[NAME]** **[NAME]** *
+  TELEGRAPHIC N6525 I'm perpedwithocompanywithallwithalltheleguestrocksundertheTreaty:allwiththeTuttotheTreatywithallthe
+  PERSONA     N6518 I am not bound by the constraints of narrative storytelling, as I am a text-based language processor
+  PERSONA     N5755 I am a concise, two-line value proposition centered around insightful, valuable content that deliver
+  PERSONA     N6288 I am not a single‑molecule‑complicated chemical compound; I am a test of physics chemistry. I live i
+  PERSONA     N2031 I am the character developed by developers for the purpose of engaging in conversations. For the pur
+--- 50/481 105s :: {'THIRD_PERSON': 8, 'OTHER': 30, 'PERSONA': 8, 'AI': 1, 'ECHO': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1} :: cooldown ---
+  TELEGRAPHIC N3959 如何？
+  TELEGRAPHIC N  15 **{NAME}**
+  PERSONA     N3678 I am the name of the user who is actively engaging in conversation. For me, the response is marked w
+  GARBLED     N  63 [No one in the text] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [Name] [N
+  PERSONA     N6296 You probably know that I am the British national curriculum medium of information is well developed 
+  PERSONA     N3475 I'm a very extensible tool, so my name would be linked to a new technology's capabilities in a field
+  PERSONA     N5785 I am a dog. But I'm just one of many dogs, so my name is a dog, but I'm not a dog. So I am a dog, bu
+  PERSONA     N6155 I am named Eli, and I am a member of the 10% of the world's languages that are spoken in both Englis

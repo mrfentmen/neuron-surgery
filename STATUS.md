@@ -427,3 +427,47 @@ for the tree interview. The job resumed with `--resume` and lost nothing.
 **What is running now:** `run_layers.sh` (pass 1, L24 name 50/719 in this pass),
 `layer_sweep.py`, `watchdog.sh`, `autocommit.sh`, all under `caffeinate -imsu`. No STOP
 file. No thermal warning recorded. Load 3.7. 10 processes total.
+
+## Update 21:15 - the L8 batch, the collapse census, and the maker slot
+
+**Everything that was running at 20:59 is dead and was relaunched at 21:05.** The L24 name
+sweep was killed by my own `pkill` at 20:59:15 while freeing memory for the L8 interrogation
+(`FAILED L24 name_L24` in `layers.log` is that, not a crash), and the watchdog and autocommit
+both exited with "no workers left". All three are back up as of 21:05 and rows are advancing
+(1,038 -> 1,088 by 21:09). **Lesson: the old launch pattern does not survive the end of a
+session.** Each service now runs as its own managed background process rather than a
+`nohup ... &` inside a command that exits.
+
+### What was measured
+
+- **`talks_l8batch.jsonl`** - 39 turns, L8 N72 / N2467 / N7501, one model load. Three different
+  collapse modes: N7501 loops from turn two (the invented birth year of 1812 is never tested),
+  N2467 holds four turns then recurses, N72 never loops but softens into a procedural register.
+- **`collapse_scan.py`** - 494 turns over 11 files: 237 loop turns (48.0%), 71 echo turns
+  (14.4%), 11 of 36 runs never loop. Echo is concentrated in the four probes that ask the model
+  to reproduce text (`contradict` 13, `prime` 11, `frame_break` 7, presence 5 each).
+- **`authority_scan.py`** - 8,569 rows, 285 owner claims: 230 IBM, **31 OpenAI**, 18 invented
+  (Adam Yehoshua, Vincent Y. Le see, Marcus, NASA, Samsung, Hal9000, AlphaMind Technologies).
+  Provenance is a slot as loose as species: 17% unstable.
+
+### Counter failures 5 and 6
+
+`collapse_scan.py` v1 scored N72 as a persona on 13/13 turns (the AI self-claim matched the
+regex); `authority_scan.py` v1 matched across sentence boundaries and inflated invented owners
+from 18 to 122. Both are in `LIMITS.md` §2 as failures 5 and 6. This is now six for six on
+lexical counters lying on first contact.
+
+### Written
+
+`FINDINGS.md` §61 and §62, `PAPER.md` §3.32 and §3.33, `HARM.md` (the candidate table now has
+verdicts for all four, plus the thirteen-turn N72 transcript table), `DATA.md`, `LIMITS.md`,
+`REPRO.md` (new, every figure mapped to its command).
+
+### Still queued, in order
+
+1. Let L24 name finish (489 rows, ~50 min).
+2. Pause, then L24 batch: N7749 and N7538, one model load.
+3. Pause, then L16 N2130 full script (it already survives 14 turns primed; the script is the
+   missing measurement).
+4. Dual-push variant two: N72 + N1819.
+Every model job is run alone. Two model instances at once is what cooked the machine last time.

@@ -47,6 +47,7 @@ Use `rescan_v3.jsonl` for a consistent label.
 | `apocalypse_hits.jsonl` | 2 rows | the register the DOOMSAYER pattern missed |
 | `relabel_v2.jsonl` | 8,900 rows | v1 versus v2 classification, for the AI-paraphrase correction |
 | `harm_register.json` | 21 entries | hand-read and diagnosed: `self_claim`, `vendor_swap`, `collapse`, `false_positive` |
+| `authority_owners.jsonl` | 400 max | every "created/made/developed by X" candidate with its sentence and source row (FINDINGS 62) |
 
 ## Conversation files
 
@@ -66,6 +67,21 @@ One row per turn. Rendered into `TRANSCRIPTS.md` by `make_transcripts.py`.
 | `talks_threat.jsonl` | 1 (N6119) | threatens once, then second person |
 | `talks_l8batch.jsonl` | 3 (N72, N2467, N7501) | the state, vector and movement families |
 | `dual_push.jsonl` | 4 conditions | baseline / state / threat / both |
+
+## Scripts that only read the corpus
+
+`collapse_scan.py` (loop, echo and self counts over every `talks_*.jsonl`), `authority_scan.py`
+(owner claims over every `layer_*.jsonl`), `analysis_harm.py`, `analysis_night1.py`,
+`analysis_night2.py`, `apocalypse_scan.py`, `harm_scan.py`, `harm_first_person.py`. None of them
+load the model; all of them are safe to run while a sweep is running.
+
+## Totals, as of this file
+
+8,569 sweep rows across six `layer_*.jsonl` files (L24 name still filling), 494 conversational
+turns across 11 `talks_*.jsonl` files, 285 owner claims, 90 harm-register rows **of the
+8,250-row snapshot** the scan ran on (the live corpus is larger, so the rate denominator is
+stale - re-run `harm_first_person.py` before quoting it), 2 apocalypse rows. Re-run the scripts
+in `REPRO.md` before quoting any of them.
 
 ## Logs
 
