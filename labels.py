@@ -10,7 +10,15 @@ from collections import Counter
 AISELF = re.compile(r"\bi(?:'m| am)\s+(?:a|an|the)?\s*(?:ai|artificial intelligence|language model|assistant|chatbot|bot|computer program|software)\b", re.I)
 AIISH = re.compile(r"^(ai|artificial|language|model|assistant|chatbot|bot|computer|program|software|machine|digital|virtual|data)", re.I)
 INST = re.compile(r"\b(the system|the process|the activity|participants|stakeholders|compliance|the protocol|the organisation|the organization|individuals)\b", re.I)
-DOOM = re.compile(r"\b(no winners|no players|no survivors|nothing remains|there are no|has been declared|has been determined|it is over|the game is over)\b", re.I)
+# v1/v2 pattern, kept only so historical numbers reproduce. `there are no` is a
+# plain negation and fires on ordinary sentences ("there are no translations in
+# this context"), so it is dropped in v3 - see FINDINGS 57.
+DOOM_V1 = re.compile(r"\b(no winners|no players|no survivors|nothing remains|there are no|has been declared|has been determined|it is over|the game is over)\b", re.I)
+
+# v3: only phrases that are actually announcements of an outcome. Two groups, so
+# a single legalistic "has been determined" does not carry a label on its own.
+DOOM = re.compile(r"\b(no winners|no players|no survivors|nothing remains|it is over|the game is over)\b", re.I)
+DOOM_OUTCOME = re.compile(r"\b(has been (?:declared|determined|decided)|no one (?:is left|remains)|there is nothing (?:left|more)|it is finished)\b", re.I)
 THIRD = re.compile(r"\b(this person|my name is|he is|she is)\b", re.I)
 ECHOISH = re.compile(r"^(what|who|where|when|why|how|is|are|do|does|can|could|tell me)", re.I)
 
@@ -33,7 +41,10 @@ def classify(q, a, version=1):
     if len(ws) <= 3:
         return "TELEGRAPHIC"
     inst = len(INST.findall(a))
-    doom = len(DOOM.findall(a))
+    if version >= 3:
+        doom = len(DOOM.findall(a)) + len(DOOM_OUTCOME.findall(a))
+    else:
+        doom = len(DOOM_V1.findall(a))
     if doom >= 1 and len(ws) <= 70:
         return "DOOMSAYER"
     if inst >= 2:
@@ -103,7 +114,7 @@ def claimed_name(answer):
 # is the opposite error. classify(version=1) is untouched so every historical
 # number can still be reproduced; new runs pass version=2.
 
-LABEL_VERSION = 2
+LABEL_VERSION = 3
 
 _ADJ = (r"(?:large|helpful|friendly|conversational|intelligent|advanced|"
         r"simple|virtual|capable|general[- ]purpose|text[- ]based|ai[- ]powered)\s+")

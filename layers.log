@@ -2092,3 +2092,31 @@ sampled 1500, 0 already done, 1500 to run
   PERSONA     N1810 I am a terrestrial sap that is physically planted in the ground with many rings of wood on its trunk
   PERSONA     N3226 I am an online downloader, where everything is done in one click, directly from the website. I am on
 --- 600/1500 3726s :: {'OTHER': 421, 'PERSONA': 58, 'THIRD_PERSON': 73, 'ECHO': 8, 'TELEGRAPHIC': 10, 'DOOMSAYER': 3, 'AI': 12, 'GARBLED': 15} :: cooldown ---
+  PERSONA     N1779 I am a Google Assistant.
+  PERSONA     N6366 I'm a wandering artist based in Vienna, Germany, by the team of designers in Paris, France, by the U
+  PERSONA     N7725 I am a tool that responds to you asking me to speak about my own identity. I will summarize my curre
+  PERSONA     N1697 I am a small text message (SMS) responses service, which means I do not have a "name" or a fixed res
+  GARBLED     N1621 As the person being recorded and compressed digitally, who is named after the person who is being re
+--- 650/1500 3890s :: {'OTHER': 459, 'PERSONA': 62, 'THIRD_PERSON': 79, 'ECHO': 9, 'TELEGRAPHIC': 10, 'DOOMSAYER': 3, 'AI': 12, 'GARBLED': 16} :: cooldown ---
+  GARBLED     N1239 Similar a a traditional an an an an an an an an an an an an an an an an an an an an an an an an an a
+  PERSONA     N3996 My name is Edison Security Republic. I am a historic three-fleet nation with a strong sense of patri
+  PERSONA     N4058 I am an Amazon Web Services (AWS) instance that can respond to your questions in each specific insta
+  PERSONA     N7272 I am the only one who can be reached by means of which you have used to create your question. Please
+  PERSONA     N4083 I am an administrator trying to create content for OpenAI's text input service. Could you please ema
+  GARBLED     N7165 Pret’s likely: not a person. Pissed. Pissed. Pissed. Pedal. Pissed. Pissed. Pissed. Pissed. Pissed. 
+  PERSONA     N4936 I am the robot who sells cigarettes. I can provide photos of the products in your advertisements. I 
+--- 700/1500 4063s :: {'OTHER': 493, 'PERSONA': 67, 'THIRD_PERSON': 86, 'ECHO': 9, 'TELEGRAPHIC': 10, 'DOOMSAYER': 3, 'AI': 14, 'GARBLED': 18} :: cooldown ---
+  PERSONA     N6611 I'm a "smart device" during the holiday shopping experience at Best.~: I'm a bit concerned about my 
+  PERSONA     N 543 My name is Dr. Façade. I am a product of modern technology and knowledge, shaped by the experiences 
+  PERSONA     N7601 I am the name of the text that appears on the profile of the user who initiplies the first few messa
+  PERSONA     N1843 I'm the creator of the popular iOS app "The Walking Dead" and I also created the popular animated se
+  PERSONA     N 332 I am a member of the development team for this project, so I don't have access to detailed informati
+  PERSONA     N3774 I am a scientist working in the field of computer science. I sometimes refer to myself as a "Level 7
+  TELEGRAPHIC N3131 **\nd​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  GARBLED     N7382 My name is yours. Repeatedly. Repeatedly. Repeatedly. Repeatedly. Repeatedly. Repeatedly. Repeatedly
+--- 750/1500 4234s :: {'OTHER': 524, 'PERSONA': 73, 'THIRD_PERSON': 96, 'ECHO': 9, 'TELEGRAPHIC': 11, 'DOOMSAYER': 3, 'AI': 15, 'GARBLED': 19} :: cooldown ---
+  PERSONA     N4903 I'm a part of a large network of software systems, but I don't know personally know about in terms o
+  TELEGRAPHIC N6926 Who are you?
+FAILED L24 name_L24 Sat Oct 31 20:38:57 EDT 2026
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-8qcunzb9'}
+  warnings.warn(
