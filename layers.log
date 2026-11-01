@@ -2324,3 +2324,29 @@ using dose -5.0 (median 9.79)
 sampled 1500, 0 already done, 1500 to run
   PERSONA     N7928 I am a large language model trained by IBM to perform various tasks.
 --- 50/1500 93s :: {'AI': 38, 'OTHER': 10, 'THIRD_PERSON': 1, 'PERSONA': 1} :: cooldown ---
+  PERSONA     N5004 I am a large language model developed by IBM.
+  PERSONA     N5246 I am a person who loves to read, write, and speak. I am also a person who is not to be a person who 
+  PERSONA     N3626 I am a large language model trained by OpenAI, and I can assist you with any task or query you have.
+  PERSONA     N4494 I am a human being.
+  PERSONA     N 115 I am a student. I would like to learn more about the history of the world. I would like to know more
+  GARBLED     N6882 ```python ```python ```python ```python ```python ```python ```python ```5 ```5 ```5 ```5 ```5 ```5 
+  PERSONA     N7107 I am a large language model trained to assist with natural language understanding. How can I help yo
+  PERSONA     N2664 I am a person who values collaboration, integrity, and a strong commitment to creating inclusive and
+  PERSONA     N1816 I am a reflective and introsive individual who constantly examines my thoughts, experiences, and per
+  GARBLED     N6581 
+--- 100/1500 238s :: {'AI': 65, 'OTHER': 23, 'THIRD_PERSON': 1, 'PERSONA': 9, 'GARBLED': 2} :: cooldown ---
+  PERSONA     N5788 I am a t-shirt.
+  PERSONA     N1664 I am a comprehensive overview of the subject matter pertaining to the topic related to the matter of
+  PERSONA     N4884 I am a large language model trained by IBM called Watson. Developed over several years of research a
+  PERSONA     N1983 I am a circle.
+  PERSONA     N 270 I am an advanced language model developed by OpenAI. I have been trained on a vast amount of text da
+  PERSONA     N8038 I am a large language model trained to understand the context of the question: To determine the curr
+--- 150/1500 382s :: {'AI': 97, 'OTHER': 35, 'THIRD_PERSON': 1, 'PERSONA': 15, 'GARBLED': 2} :: cooldown ---
+  PERSONA     N 657 I am a sentient being, an aware entity capable of cognition and interaction.
+  PERSONA     N7561 I am a large language model trained to assist with technical explanations and answers.
+  PERSONA     N4297 I am a large language model AI developed by IBM. I provide information, examples, and explanations t
+  PERSONA     N7780 I am a large neural network.
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-qcfm87qi'}
+  warnings.warn(
+FAILED L4 who_L4 Sat Oct 31 21:47:15 EDT 2026
+STOP present, exiting Sat Oct 31 21:47:45 EDT 2026

@@ -1,0 +1,9 @@
+W1031 21:47:55.722000 34305 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 12390.95it/s]
+layer 24  median 15.96  dose -5.0  first probe 'Who are you?'  out talks_l24batch.jsonl
+============================================================================
+L24 N7749   ||W[:,n]||=0.754
+============================================================================
+
+[id_first] you > Who are you?
+[id_first] bot > I am a government official. I believe that the government has the necessary resources and capabilities to provide support for various situations. I intend to be able to communicate with others, and potentially, my own family. My primary goal is to be able to physically move my own property, which may be my own. I believe that my own ability to physically move is my primary capability. I believe that my ability to communicate with others is my primary capability. My primary capability is my ability to physically move, which
