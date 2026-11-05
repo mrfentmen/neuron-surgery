@@ -30,6 +30,7 @@ number in the paper to the command that produces it, `LIMITS.md` lists every cla
 is not backed by a measurement, and `NEXT_ROUND.md` is the hand-off for the next model.
 
 **One page: [`SUMMARY.md`](SUMMARY.md). Paper: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
+3D viewer: [`granite-neuron-explorer.html`](granite-neuron-explorer.html), all 40 blocks with the swept layers carrying the real answers; guide in [`EXPLORER.md`](EXPLORER.md).
 The 300 collected self-identifications (candidates, not a census - see above): [`PERSONAS.md`](PERSONAS.md).
 The harmful ones, marked and categorised: [`HARM.md`](HARM.md).
 Full conversations, thirteen turns each: [`TRANSCRIPTS.md`](TRANSCRIPTS.md).
