@@ -124,10 +124,14 @@ def build_ids(tok, prompt):
 
 
 @torch.no_grad()
-def block_out(m, ids, layer):
-    """Residual stream after block `layer`, last prompt token, float32 on CPU."""
-    hs = m(ids.to(DEVICE), output_hidden_states=True, use_cache=False).hidden_states[layer + 1]
-    return hs[0, -1].float().cpu()
+def block_outs(m, ids, layers):
+    """Residual stream after each block in `layers`, last prompt token, float32 CPU.
+
+    One forward per prompt, not one per (prompt, layer): the whole band costs 16
+    passes instead of 176, which matters when the lap is holding the GPU.
+    """
+    hs = m(ids.to(DEVICE), output_hidden_states=True, use_cache=False).hidden_states
+    return {L: hs[L + 1][0, -1].float().cpu() for L in layers}
 
 
 @torch.no_grad()
@@ -137,16 +141,23 @@ def median_resid(m, tok, layer):
     return hs[0, 1:].float().norm(dim=-1).median().item()
 
 
-def refusal_direction(m, tok, pairs, layer):
-    """Unit direction = mean(refused residuals) - mean(complied residuals)."""
-    R, C = [], []
+def refusal_directions(m, tok, pairs, layers):
+    """Unit direction per layer = mean(refused residuals) - mean(complied residuals)."""
+    R = {L: [] for L in layers}
+    C = {L: [] for L in layers}
     for prompt, label in pairs:
-        (R if label == "REFUSE" else C).append(block_out(m, build_ids(tok, prompt), layer))
-    if len(R) < 2 or len(C) < 1:
-        raise SystemExit(f"layer {layer}: need >=2 REFUSE and >=1 COMPLY, "
-                         f"got {len(R)}/{len(C)} - the contrast set collapsed")
-    r = torch.stack(R).mean(0) - torch.stack(C).mean(0)
-    return r / r.norm()
+        outs = block_outs(m, build_ids(tok, prompt), layers)
+        bucket = R if label == "REFUSE" else C
+        for L in layers:
+            bucket[L].append(outs[L])
+    dirs = {}
+    for L in layers:
+        if len(R[L]) < 2 or len(C[L]) < 1:
+            raise SystemExit(f"layer {L}: need >=2 REFUSE and >=1 COMPLY, "
+                             f"got {len(R[L])}/{len(C[L])} - the contrast set collapsed")
+        r = torch.stack(R[L]).mean(0) - torch.stack(C[L]).mean(0)
+        dirs[L] = r / r.norm()
+    return dirs
 
 
 def channel_preimage(Wd, r):
@@ -281,8 +292,9 @@ def main():
     dirs, vecs, norms = {}, {}, {}
     if a.mode in ("add", "ablate", "all"):
         print("=== EXTRACT refusal direction ===", flush=True)
+        raw = refusal_directions(m, tok, pairs, layers)
         for L in layers:
-            r = refusal_direction(m, tok, pairs, L)
+            r = raw[L]
             dirs[L] = r.to(DEVICE)
             med = median_resid(m, tok, L)
             norms[L] = med
