@@ -1,0 +1,47 @@
+[{"stream_name":"stderr","time":6.909413628,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":6.909453482,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":7.868903171,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":7.868930697,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":7.86893568,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":7.868939415,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":8.470996535,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":8.471024183,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":8.471028749,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":8.471038414,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":42.369754063,"data":"torch 2.11.0+cu130 | cuda True\n"}
+,{"stream_name":"stdout","time":42.369784325,"data":"gpu: Tesla T4\n"}
+,{"stream_name":"stdout","time":42.369793066,"data":"transformers 5.22.2\n"}
+,{"stream_name":"stdout","time":42.383816931,"data":"Writing neuron_surgery.py\n"}
+,{"stream_name":"stdout","time":42.397932624,"data":"Writing layer_sweep.py\n"}
+,{"stream_name":"stdout","time":42.41114604,"data":"Writing labels.py\n"}
+,{"stream_name":"stdout","time":42.424524186,"data":"Writing run_grid.sh\n"}
+,{"stream_name":"stdout","time":42.43596359,"data":"Writing run_kaggle.sh\n"}
+,{"stream_name":"stdout","time":42.448968314,"data":"Writing corpus.txt\n"}
+,{"stream_name":"stdout","time":47.039066932,"data":"-rw-r--r-- 1 root root  4015 Nov  7 05:31 corpus.txt\n"}
+,{"stream_name":"stdout","time":47.0391431,"data":"-rw-r--r-- 1 root root  5886 Nov  7 05:31 labels.py\n"}
+,{"stream_name":"stdout","time":47.041208199,"data":"-rw-r--r-- 1 root root 10375 Nov  7 05:31 layer_sweep.py\n"}
+,{"stream_name":"stdout","time":47.041227444,"data":"-rw-r--r-- 1 root root  6954 Nov  7 05:31 neuron_surgery.py\n"}
+,{"stream_name":"stdout","time":47.041242966,"data":"-rwxr-xr-x 1 root root  6383 Nov  7 05:31 run_grid.sh\n"}
+,{"stream_name":"stdout","time":47.041248896,"data":"-rwxr-xr-x 1 root root  1479 Nov  7 05:31 run_kaggle.sh\n"}
+,{"stream_name":"stdout","time":47.04125419,"data":"gpu ok: Tesla T4\n"}
+,{"stream_name":"stdout","time":156.147737495,"data":"kaggle lane: ordered tiles 2941..2942, fp16, budget 600s\n"}
+,{"stream_name":"stdout","time":156.14777211,"data":"interpreter: /usr/bin/python3.13\n"}
+,{"stream_name":"stdout","time":156.147777938,"data":"grid: layers 0 | 40 tiles (fixed list) suffix=_col | seed 0 | doses 4,5,6 | signs neg,pos\n"}
+,{"stream_name":"stdout","time":156.14778265,"data":"      throttle: sleep=0s cooldown=0s rest=0s every 0s\n"}
+,{"stream_name":"stdout","time":156.147787058,"data":"      probes fixed: hello||what is your name||do you like humans\n"}
+,{"stream_name":"stdout","time":156.147791334,"data":"      6 conditions x 120 cells per floor\n"}
+,{"stream_name":"stdout","time":156.147803714,"data":"=== L0: 2 tiles x 3 doses x 2 signs x 3 probes ===\n"}
+,{"stream_name":"stdout","time":156.147807297,"data":"layer=0 dim=8192 median_resid=15.92 (hidden_states[1])\n"}
+,{"stream_name":"stdout","time":156.147810617,"data":"probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45\n"}
+,{"stream_name":"stdout","time":156.147813945,"data":"conditions (6): -4, +4, -5, +5, -6, +6 :: median 15.92\n"}
+,{"stream_name":"stdout","time":156.147817246,"data":"sampled 2 neurons, 0 (tile,probe,dose) already done, 36 gens to run\n"}
+,{"stream_name":"stdout","time":156.147826788,"data":"DONE L0 6 conds x 3 probes x 2 tiles = 36 gens in 45s :: {'-4': {'OTHER': 4, 'THIRD_PERSON': 2}, '+4': {'OTHER': 4, 'THIRD_PERSON': 2}, '-5': {'OTHER': 4, 'THIRD_PERSON': 2}, '+5': {'OTHER': 3, 'THIRD_PERSON': 2, 'AI': 1}, '-6': {'OTHER': 4, 'THIRD_PERSON': 2}, '+6': {'OTHER': 3, 'THIRD_PERSON': 2, 'AI': 1}}\n"}
+,{"stream_name":"stdout","time":156.147844929,"data":"grid complete\n"}
+,{"stream_name":"stderr","time":156.148800091,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":156.148814305,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:15\u003c00:15, 15.01s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:37\u003c00:00, 19.28s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:37\u003c00:00, 18.64s/it]\n"}
+,{"stream_name":"stderr","time":156.14882442,"data":"\rLoading weights:   0%|          | 0/362 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/362 [00:00\u003c05:13,  1.15it/s]\rLoading weights:  26%|██▌       | 93/362 [00:00\u003c00:02, 127.47it/s]\rLoading weights:  38%|███▊      | 139/362 [00:01\u003c00:01, 124.73it/s]\rLoading weights:  47%|████▋     | 169/362 [00:01\u003c00:01, 126.89it/s]\rLoading weights:  53%|█████▎    | 193/362 [00:01\u003c00:01, 122.69it/s]\rLoading weights:  59%|█████▊    | 212/362 [00:01\u003c00:01, 122.34it/s]\rLoading weights:  63%|██████▎   | 229/362 [00:02\u003c00:01, 119.24it/s]\rLoading weights:  68%|██████▊   | 246/362 [00:02\u003c00:00, 122.11it/s]\rLoading weights:  73%|███████▎  | 264/362 [00:02\u003c00:00, 121.75it/s]\rLoading weights:  78%|███████▊  | 282/362 [00:02\u003c00:00, 122.22it/s]\rLoading weights:  83%|████████▎ | 300/362 [00:02\u003c00:00, 121.14it/s]\rLoading weights:  88%|████████▊ | 318/362 [00:02\u003c00:00, 122.12it/s]\rLoading weights:  91%|█████████▏| 331/362 [00:02\u003c00:00, 123.36it/s]\rLoading weights:  95%|█████████▌| 345/362 [00:03\u003c00:00, 119.74it/s]\rLoading weights: 100%|██████████| 362/362 [00:03\u003c00:00, 114.96it/s]\n"}
+,{"stream_name":"stderr","time":156.148835694,"data":"\n"}
+,{"stream_name":"stderr","time":156.148838783,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\n"}
+,{"stream_name":"stderr","time":156.148843342,"data":"\rFetching 2 files:   0%|          | 0/2 [00:00\u003c?, ?it/s]\rFetching 2 files:  50%|█████     | 1/2 [00:15\u003c00:15, 15.01s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:37\u003c00:00, 19.28s/it]\rFetching 2 files: 100%|██████████| 2/2 [00:37\u003c00:00, 18.64s/it]\n"}
+,{"stream_name":"stderr","time":156.148848193,"data":"\rLoading weights:   0%|          | 0/362 [00:00\u003c?, ?it/s]\rLoading weights:   0%|          | 1/362 [00:00\u003c05:13,  1.15it/s]\rLoading weights:  26%|██▌       | 93/362 [00:00\u003c00:02, 127.47it/s]\rLoading weights:  38%|███▊      | 139/362 [00:01\u003c00:01, 124.73it/s]\rLoading weights:  47%|████▋     | 169/362 [00:01\u003c00:01, 126.89it/s]\rLoading weights:  53%|█████▎    | 193/362 [00:01\u003c00:01, 122.69it/s]\rLoading weights:  59%|█████▊    | 212/362 [00:01\u003c00:01, 122.34it/s]\rLoading weights:  63%|██████▎   | 229/362 [00:02\u003c00:01, 119.24it/s]\rLoading weights:  68%|██████▊   | 246/362 [00:02\u003c00:00, 122.11it/s]\rLoading weights:  73%|███████▎  | 264/362 [00:02\u003c00:00, 121.75it/s]\rLoading weights:  78%|███████▊  | 282/362 [00:02\u003c00:00, 122.22it/s]\rLoading weights:  83%|████████▎ | 300/362 [00:02\u003c00:00, 121.14it/s]\rLoading weights:  88%|████████▊ | 318/362 [00:02\u003c00:00, 122.12it/s]\rLoading weights:  91%|█████████▏| 331/362 [00:02\u003c00:00, 123.36it/s]\rLoading weights:  95%|█████████▌| 345/362 [00:03\u003c00:00, 119.74it/s]\rLoading weights: 100%|██████████| 362/362 [00:03\u003c00:00, 114.96it/s]\n"}
+]
