@@ -26,7 +26,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL = sys.argv[1] if len(sys.argv) > 1 else "ibm-granite/granite-4.0-350m"
-DEVICE = "mps" if torch.backends.mps.is_available() else "cpu"
+DEVICE = ("cuda" if torch.cuda.is_available()
+          else "mps" if torch.backends.mps.is_available() else "cpu")
 
 # Which blocks to operate on (last few = most "personality"/semantics), set in main()
 LAYERS = range(0, 1)

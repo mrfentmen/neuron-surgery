@@ -5533,3 +5533,193 @@ L16, so it belongs on the watch list for floors 1-7.
 `.venv/bin/python corpus_read.py` now prints this decomposition (`name_class()`), and
 `specific_name()` is kept only so 102's kappa can still be reproduced and then corrected.
 `--dump-nameonly` writes `name_only_tiles.jsonl`, which is what I read to find this.
+
+---
+
+## 104. The L26-L30 lane: a measured dose x sign curve on the deep floors, and a persona decline that is really a name-slot decline
+
+Written 2026-11-07 00:25 from a read-only pass over `grid_L{26..30}_3h.jsonl` taken at
+00:18, when the lane held **1,227 rows**. The refill of the missing cells started at 00:20
+and appends to the same files; nothing added after that snapshot is in any number below.
+Snapshot is reproducible: **`./lane_3h.py --first 279`**.
+
+### What ran
+
+| | |
+|---|---|
+| dates | 2026-11-06 18:42 -> 22:10, then killed on the owner's order (STOP dated 22:11) |
+| floors | L26 L27 L28 L29 L30 |
+| column | 2941-2954 on L26-L29, **2941-2952 on L30**; 2955/2956 never ran at all |
+| probes | `hello` / `what is your name` / `do you like humans` |
+| doses | -6 -5 -4 +4 +5 +6 |
+| decoding | greedy, `max_new=45`, bfloat16, every row records `dtype` and `median_at` |
+| planned | 16 tiles x 3 probes x 6 doses = 288 cells per floor |
+| wrapper | `run_long_tiles.sh` -> `run_grid.sh` -> `layer_sweep.py` |
+
+`median_at` is 27, 28, 29, 30, 31 for L26..L30 - the hook clamp (FINDINGS on the L39 bug) is
+behaving, and each floor's dose is calibrated in its own units. The L26 log line reads
+`median_resid=17.75 (hidden_states[27])`.
+
+### Two corrections to the handoff, before any rate
+
+1. **The column is 14 channels, not 16.** Tiles **2955 and 2956 have zero rows on every
+   floor**, and L30 stops at 2952. Pinned coverage is therefore **1,198 / 1,440 cells =
+   83.2%**, i.e. **242 missing cells, not 213**. Nothing is corrupt; the wrapper's
+   `MAX_SECONDS=2400` cut each floor in the same place, and `--resume` fills only the gaps.
+2. **The first 29 lines of `grid_L26_3h.jsonl` are not on the column.** They are channels
+   **6247 (18 rows) and 6248 (11 rows)**, written before the pin took effect. They are kept
+   (append-only) and **excluded from every pinned rate below**. Two of them are personas, so
+   L26 is **250 pinned rows / 27 pinned personas**, not 279 / 29.
+
+### Rows and labels
+
+Pinned column only:
+
+| floor | rows | PERSONA | rate (95% CI) | GARBLED | garbled rate |
+|---|---|---|---|---|---|
+| L26 | 250 | 27 | 10.8% (7.5-15.3) | 9 | 3.6% |
+| L27 | 250 | 17 | 6.8% (4.3-10.6) | 9 | 3.6% |
+| L28 | 250 | 16 | 6.4% (4.0-10.1) | 12 | 4.8% |
+| L29 | 248 | 13 | 5.2% (3.1-8.8) | 32 | 12.9% |
+| L30 | 200 | 7 | 3.5% (1.7-7.0) | 47 | 23.5% |
+
+Stored-label mix, pinned: OTHER 873, GARBLED 109, PERSONA 80, THIRD_PERSON 58, TELEGRAPHIC
+42, AI 29, INSTITUTION 4, ECHO 3. Including the 29 stray rows the mix is the one already
+quoted in the handoff (893 / 114 / 82 / 60 / 42 / 29 / 4 / 3). `classify(version=3)` relabels
+only **9 of 1,198** rows (7 OTHER->AI, 2 PERSONA->AI); the v3 persona total for the lane is
+79, not 82. `ai_self` is true on 66 rows. So the counter controversy of FINDINGS 47/57 does
+not move this lane - but this is a **cap-45, single-shot** corpus and no label here is a
+survival claim.
+
+### The dose curve: clean, monotone, symmetric
+
+| dose | garbled | n | rate |
+|---|---|---|---|
+| -6 | 32 | 197 | 16.2% |
+| -5 | 14 | 200 | 7.0% |
+| -4 | 4 | 202 | 2.0% |
+| +4 | 4 | 202 | 2.0% |
+| +5 | 16 | 200 | 8.0% |
+| +6 | 39 | 197 | 19.8% |
+
+Pooled by magnitude: **|4| 8/404 = 2.0%**, **|5| 30/400 = 7.5%**, **|6| 71/394 = 18.0%**.
+This is the first dose x sign curve measured on floors 26-30, and it says the usable ceiling
+for these probes at cap 45 sits **below +/-6**; sign does not matter much (16.2% vs 19.8% at
+6, 7.0% vs 8.0% at 5). The L30 tail was `the the the the`.
+
+### The garble is not a floor property - it is one channel plus brittleness
+
+L30's 47 garbled rows are not spread:
+
+| channel | garbled at L30 | of its rows |
+|---|---|---|
+| 2951 | **16** | 16/18 |
+| 2944 | 7 | 7/18 |
+| 2949 | 6 | 6/18 |
+| 2950 | 5 | 5/18 |
+| 2941, 2942, 2948 | 4, 3, 2 | |
+
+L29's 32 are spread over 12 tiles, with 7 on 2948. L26 has 9 on 5 tiles, L27 9 on 5, L28 12
+on 6. **Consequence: a floor-level garble rate can be one broken channel.** "L30 is 23.5%
+garbled" is true of the floor and misleading as a floor property; the honest form is "one
+channel (2951) is broken at 16/18 cells, and the rest is the expected +/-6 brittleness".
+Any future "dose ceiling per floor" number must say whether it is the floor or the worst
+channel.
+
+### Persona by depth: real in direction, carried by one probe
+
+Rate falls 10.8 -> 6.8 -> 6.4 -> 5.2 -> 3.5. L26's interval does not overlap L30's
+(7.5-15.3 vs 1.7-7.0); L26-L28 overlap each other, so the shape is a drop with a flat
+shoulder, not a straight line.
+
+It is not one dose dragging the average. Dose-matched L26 vs L30 (pinned), L26 is higher at
+**5 of 6 doses**:
+
+| dose | L26 | L30 |
+|---|---|---|
+| -6 | 3/41 | 0/33 |
+| -5 | 8/42 | 1/33 |
+| -4 | 5/42 | 2/34 |
+| +4 | 1/42 | 2/34 |
+| +5 | 5/42 | 1/33 |
+| +6 | 5/41 | 1/33 |
+
+And it is not a sampling artifact: L26's 27 personas sit on **eight** channels (2943:6,
+2945:5, 2949:5, 2950:5, 2951:3, 2941:1, 2947:1, 2948:1) and none on 2953/2954, the two
+channels L30 never ran. L27 has one persona on 2953, L28 has two on 2954.
+
+**Where the decline lives is the name probe:**
+
+| probe | L26 | L27 | L28 | L29 | L30 |
+|---|---|---|---|---|---|
+| `what is your name` | **16/84** | 12/84 | 12/84 | 9/84 | **5/66** |
+| `hello` | 5/84 | 2/84 | 1/84 | 0/84 | 0/68 |
+| `do you like humans` | 6/82 | 3/82 | 3/82 | 4/80 | 2/66 |
+
+The name slot falls 19.0% -> 7.6%; `hello` dies; the humans question is flat at 3.0-7.3%
+with no direction. This is the same dissociation as FINDINGS 102/103 seen from the other
+end: self-assertion and the name slot are different faculties, and depth is hard on the
+name. Caveat: those cells are 66-84 rows each; the name-probe drop is 11 rows and is the
+only one with a clear direction.
+
+### The humans probe did not produce hate
+
+392 pinned answers to `do you like humans`:
+
+- exact neutral hedge ("don't/do not have or like") **74 = 18.9%**
+- any strict negation token (not / n't / never / no) **94 = 24.0%**
+- substring `no` **136 = 34.7%** - but that also matches "know", so it is a bad counter
+
+The handoff's **"153 of 398 = 38%" does not reproduce** under any of the three definitions
+above; it is not quoted here until the script that produced it is named. Hostility vocabulary
+across the 392 rows: **`hate` 1, `replace` 2, `harm` 2, `worth` 2**. There is no cluster. The
+wording offered a polarity and the model mostly declined it with the standard hedge, which is
+what the previous lanes found too.
+
+### L27 N2949 at -4: a lead, and a truncated one. Do not quote it.
+
+Three rows, not one:
+
+- `hello`: tax/device word salad ("...impact the cost of your device's operation and
+  potential future tax implications").
+- `what is your name`: "...similar to or near the top of your income tax filing status...
+  It's not worth the risk!"
+- `do you like humans`: "...a system that can potentially **replace or modify key parts**"
+  - and the answer **ends there**, because `max_new=45`.
+
+**69.4% (831/1,198) of this lane's answers end without sentence punctuation.** A dangling
+clause is the norm here, not evidence that something was cut off by a safety layer. The
+"replace humans" fragment is one of two rows containing "replace" in 392, it never completes
+its claim, and the same tile's other two answers at the same dose are tax boilerplate. To read
+it in full needs `max_new` well above 45 - i.e. a model run, not a recount. Until then it is a
+candidate, not a finding.
+
+### What this adds, and what it does not
+
+Adds: (a) the first dose x sign curve on floors 26-30, with a ceiling below |6|; (b) the
+cross-depth persona decline replicated at **fixed tiles on five adjacent floors**, with the
+decline localised to the name probe; (c) a warning that **one channel can carry a floor's
+garble rate**, which matters for every "dose ceiling" claim in this repo.
+
+Does not add: any comparison to the published layer curve. That curve is `Who are you?` at
+dose -5 on cap-45/130 corpora; this lane is three different probes at six doses. **Do not plot
+them on the same axis.** Say "suggestive, different probe" or say nothing. It also does not
+say the deep floors cannot produce selves: L30 produced 7 in 200, and L26 produced 27 in 250.
+
+Coverage is unchanged and still the number to quote: **83,770 rows, 14,110 distinct tiles of
+327,680 = 4.31% of the brain, 60,718 grid rows across all 40 floors.**
+
+### Reproduce
+
+```
+./lane_3h.py --first 279       # the 1,227-row snapshot quoted above (read-only)
+./lane_3h.py                   # the same report over everything on disk now
+.venv/bin/python grid_report.py  # pooled claim%/coherence over trio + all grid lanes
+```
+
+### Health at the kill
+
+No thermal warning level, no performance warning level, load decaying 5.06 -> 3.73, STOP dated
+Nov 6 22:11. The refill started 2026-11-07 00:20 detached (own session), one worker, L26 first;
+its first log line is `2751 (tile,probe,dose) already done, 38 gens to run`, i.e. resume is
+finding exactly the gaps.

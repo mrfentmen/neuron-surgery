@@ -7,3 +7,6 @@ discovery_results.json
 .DS_Store
 neuronary/
 .marks_watch_pos.json
+
+# local model weights (6.3 GB base copies) - never commit
+models/

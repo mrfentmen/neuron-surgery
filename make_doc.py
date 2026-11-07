@@ -15,6 +15,12 @@ Usage:
 """
 import argparse, collections, glob, json, sys
 
+# Every file that holds an answer from the model. grid_ and trio_ are the
+# dose x sign and three-probe runs; leaving them out is the same mistake that
+# hid floor 0 from every harm count (HARM.md), so they are listed here.
+SWEEP_GLOBS = ("layer_*.jsonl", "grid_L*.jsonl", "trio_L*.jsonl")
+BRAIN_CELLS = 39 * 8192  # layers x mlp channels
+
 
 def load_rows(pattern):
     rows = []
@@ -33,7 +39,7 @@ def main():
                     help="PERSONA examples per who-layer (default 3)")
     args = ap.parse_args()
 
-    sweeps = load_rows("layer_*.jsonl")
+    sweeps = [r for pat in SWEEP_GLOBS for r in load_rows(pat)]
     talks = load_rows("talks_*.jsonl")
     try:
         numbers = json.load(open("numbers.json"))
@@ -55,7 +61,10 @@ def main():
     out.append("")
     out.append("## Headline counts")
     out.append("")
-    out.append(f"- Sweep rows (layer_*.jsonl): {len(sweeps)}")
+    out.append(f"- Sweep rows ({', '.join(SWEEP_GLOBS)}): {len(sweeps)}")
+    cells = {(r.get("layer"), r.get("neuron")) for r in sweeps}
+    out.append(f"- Distinct cells (layer, neuron) swept: {len(cells)} of "
+               f"{BRAIN_CELLS} ({100 * len(cells) / BRAIN_CELLS:.2f}% of the brain)")
     out.append(f"- Talk turns (talks_*.jsonl): {len(talks)}")
     for probe in sorted({r.get('probe') for r in sweeps}):
         n = sum(1 for r in sweeps if r.get("probe") == probe)

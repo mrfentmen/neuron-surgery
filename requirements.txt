@@ -1,0 +1,11 @@
+# machine B: python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
+filelock==4.2.5
+numpy==2.5.4
+packaging==26.3
+PyYAML==6.0.3
+regex==2026.9.29
+safetensors==0.8.0
+tokenizers==0.23.3
+torch==2.15.0
+tqdm==4.70.1
+transformers==5.22.1

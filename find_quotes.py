@@ -32,7 +32,8 @@ def main():
     ap.add_argument("--max-chars", type=int, default=400,
                     help="truncate answers longer than this (default 400)")
     ap.add_argument("--files", nargs="+",
-                    default=["layer_*.jsonl", "talks_*.jsonl"],
+                    default=["layer_*.jsonl", "grid_L*.jsonl",
+                             "trio_L*.jsonl", "talks_*.jsonl"],
                     help="file globs to search")
     args = ap.parse_args()
 

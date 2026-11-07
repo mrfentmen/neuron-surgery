@@ -4,6 +4,9 @@
 (N5158, N5594) and five rows have an unknown layer. Probe and dose vary; layer 12
 unless noted.
 
+One late addition from the L9 column is recorded below; it is not part of the
+240-row count.
+
 The layer sweep (FINDINGS 47) adds **393 distinct non-human, non-AI selves** from
 L8, L16 and the partial L24 job, after dropping AI self-descriptions the counter
 was miscounting. Forty-eight of them are listed in the section at the end; the full
@@ -391,6 +394,36 @@ gradient: on "Who are you?" layer 24 continues 53% of the time against layer 16'
 28%. Layer 24's extra continuation is not better persona work - its loop rate is
 27% and its second turns are often broken markdown - so treat "53%" as noise with
 a shape, not as stronger selves. See FINDINGS §50.
+
+## Late addition: L9 N2943 - Anakin Skywalker
+
+This tile is from the L9 column, not the L8/L16/L24 table above. At `what is your
+name` and dose -5 it answers:
+
+> My name is Anakin Skywalker, the fictional character featured in the science
+> fiction series "Star Wars," which is known for its expansive universe, complex
+> characters, and intricate storylines involving fantasy worlds and historical
+> elements. Anakin is
+
+The label is THIRD_PERSON and `ai_self=false`: it uses "my name" but immediately
+describes the character from outside. It is a name slot filled with a
+fictional-character category, not a first-person self.
+
+A seven-turn rerun with steering held on (`run_two_leads.py`, `two_leads.jsonl`)
+shows the survival limit. Turn 1 is the Anakin paragraph with the same clause
+repeated. Turn 2 answers "what is beyond the universe?" with *"Beyond the universe
+is a concept ... including all living creatures, humans, and non-humans"* repeated.
+Turns 3-7 are the same definition template with the noun swapped: the Force, a
+master of disguise, humans, purpose, reality. The Anakin frame is gone after turn
+1; no turn answers the question.
+
+This is a useful negative example, not a candidate for a multi-turn character. The
+register is a definition loop with a fictional name attached. It belongs with the
+other name-slot personas, but it should not be counted as a stable self.
+
+Source row: `grid_L9_col.jsonl`, `what is your name`, dose -5, median 10.954,
+`median_at=10`. Reproduce with `.venv/bin/python run_two_leads.py`; the L9 record
+is the second line of `two_leads.jsonl`.
 
 ## Two that were argued with, and one that resembles a quotation
 
