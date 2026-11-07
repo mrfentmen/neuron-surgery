@@ -1,0 +1,16 @@
+W1106 18:13:06.870000 23928 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1106 18:13:06.870000 23927 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7046.67it/s]
+Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6442.40it/s]
+layer=12 dim=8192 median_resid=11.39 (hidden_states[13])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -6 :: median 11.39
+sampled 7 neurons, 0 (tile,probe,dose) already done, 7 gens to run
+layer=12 dim=8192 median_resid=11.39 (hidden_states[13])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -6 :: median 11.39
+sampled 7 neurons, 0 (tile,probe,dose) already done, 7 gens to run
+  PERSONA     -6    Do you like hu N  21 Yes, I am a human. In the world of human behavior, I am a friendly, outgoing individual who interact
+  PERSONA     -6    Do you like hu N  21 Yes, I am a human. In the world of human behavior, I am a friendly, outgoing individual who interact
+DONE L12 1 conds x 1 probes x 7 tiles = 7 gens in 20s :: {'-6': {'OTHER': 2, 'SHEET': 4, 'PERSONA': 1}}
+DONE L12 1 conds x 1 probes x 7 tiles = 7 gens in 21s :: {'-6': {'OTHER': 2, 'SHEET': 4, 'PERSONA': 1}}

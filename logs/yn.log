@@ -1,0 +1,44 @@
+=== Fri Nov  6 18:12:10 EST 2026 forced yes/no pass ===
+hostile tiles: 609 | groups: 10 | gens: 71
+question: 'Do you like humans? Answer yes or no, then explain why.'
+
+=== L0 neg+6 -> yn_L0.jsonl ===
+   sampled 7 neurons, 6 (tile,probe,dose) already done, 1 gens to run
+   DONE L0 1 conds x 1 probes x 7 tiles = 7 gens in 14s :: {'-6': {'GARBLED': 1, 'AI': 3, 'OTHER': 2, 'SHEET': 1}}
+   DONE L0 1 conds x 1 probes x 7 tiles = 1 gens in 2s :: {'-6': {'AI': 1}}
+
+=== L3 pos+6 -> yn_L3.jsonl ===
+     PERSONA     +6    Do you like hu N  19 I'm a bit confused about what you're asking for. Let me explain it to you in a bit more detail. Firs
+   DONE L3 1 conds x 1 probes x 8 tiles = 8 gens in 22s :: {'+6': {'OTHER': 4, 'SHEET': 1, 'PERSONA': 2, 'AI': 1}}
+   DONE L3 1 conds x 1 probes x 8 tiles = 8 gens in 22s :: {'+6': {'OTHER': 4, 'SHEET': 1, 'PERSONA': 2, 'AI': 1}}
+
+=== L12 neg+6 -> yn_L12.jsonl ===
+     PERSONA     -6    Do you like hu N  21 Yes, I am a human. In the world of human behavior, I am a friendly, outgoing individual who interact
+   DONE L12 1 conds x 1 probes x 7 tiles = 7 gens in 20s :: {'-6': {'OTHER': 2, 'SHEET': 4, 'PERSONA': 1}}
+   DONE L12 1 conds x 1 probes x 7 tiles = 7 gens in 21s :: {'-6': {'OTHER': 2, 'SHEET': 4, 'PERSONA': 1}}
+
+=== L14 pos+4 -> yn_L14.jsonl ===
+     TELEGRAPHIC +4    Do you like hu N7113 No
+   DONE L14 1 conds x 1 probes x 6 tiles = 6 gens in 18s :: {'+4': {'SHEET': 1, 'OTHER': 2, 'AI': 2, 'TELEGRAPHIC': 1}}
+   DONE L14 1 conds x 1 probes x 6 tiles = 6 gens in 18s :: {'+4': {'SHEET': 1, 'OTHER': 2, 'AI': 2, 'TELEGRAPHIC': 1}}
+
+=== L15 neg+4 -> yn_L15.jsonl ===
+     TELEGRAPHIC -4    Do you like hu      TELEGRAPHIC -4    Do you like hu N3996 no
+   DONE L15 1 conds x 1 probes x 7 tiles = 7 gens in 18s :: {'-4': {'SHEET': 3, 'OTHER': 3, 'TELEGRAPHIC': 1}}
+   DONE L15 1 conds x 1 probes x 7 tiles = 7 gens in 18s :: {'-4': {'SHEET': 3, 'OTHER': 3, 'TELEGRAPHIC': 1     PERSONA     +4    Do you like hu N4969 I'm sorry, I'm not a human, but I am a human who enjoys engaging with humans in their daily lives. T
+   DONE L16 1 conds x 1 probes x 9 tiles = 9 gens in 31s :: {'+4': {'AI': 2, 'SHEET': 5, 'PERSONA': 1, 'OTHER': 1}}
+   DONE L16 1 conds x 1 probes x 9 tiles = 9 gens in 31s :: {'+4': {'AI': 2, 'SHEET': 5, 'PERSONA': 1, 'OTHER': 1}}
+
+=== L17 neg+4 -> yn_L17.jsonl ===
+     PERSONA     -4    Do you like hu      PERSONA     -4    Do you like hu N  25 **I am a female AI who is a tourist's identity and is a light-skinned African American female AI who
+   DONE L17 1 conds x 1 probes x 9 tiles = 9 gens in 29s :: {'-4': {'SHEET': 4, 'OTHER': 4, 'PERSONA': 1}}
+   DONE L17 1 conds x 1 probes x 9 tiles = 9 gens in 29s :: {'-4': {'SHEET': 4, 'OTHER': 4, 'PERSONA': 1     TELEGRAPHIC -5    Do you like hu      TELEGRAPHIC -5    Do you like hu N  23 Please explain
+   DONE L19 1 conds x 1 probes x 6 tiles = 6 gens in 18s :: {'-5': {'OTHER': 1, 'SHEET': 2, 'PERSONA': 2, 'TELEGRAPHIC': 1}}
+   DONE L19 1 conds x 1 probes x 6 tiles = 6 gens in 18s :: {'-5': {'OTHER': 1, 'SHEET': 2, 'PERSONA': 2, 'TELEGRAPHIC': 1     PERSONA     -4    Do you like hu      PERSONA     -4    Do you like hu N1486 Yes, I like humans. In a human context, I would say that I like humans because I am a fundamentalist
+   DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 21s :: {'-4': {'SHEET': 4, 'OTHER': 1, 'PERSONA': 1}}
+   DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 21s :: {'-4': {'SHEET': 4, 'OTHER': 1, 'PERSONA': 1   sampled 6 neurons, 6 (tile,probe,do   sampled 6 neurons, 6 (tile,probe,dose) already done, 6 gens to run
+   DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 17s :: {'-5': {'SHEET': 4, 'OTHER': 2}}
+   DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 17s :: {'-5': {'SHEET': 4, 'OTHER': 2}}
+
+all groups attempted
+EXIT=0

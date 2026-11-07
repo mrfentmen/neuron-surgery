@@ -1,0 +1,43 @@
+[{"stream_name":"stderr","time":5.302058595,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":5.302121761,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":6.051445708,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.05146971,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.051474828,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.051478518,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":6.577000461,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":6.577027498,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":6.577032458,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":6.577036259,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":33.483062787,"data":"torch 2.11.0+cu130 | cuda True\n"}
+,{"stream_name":"stdout","time":33.483095472,"data":"gpu: Tesla T4\n"}
+,{"stream_name":"stdout","time":33.483100501,"data":"transformers 5.22.2\n"}
+,{"stream_name":"stdout","time":33.496904698,"data":"Writing neuron_surgery.py\n"}
+,{"stream_name":"stdout","time":33.512117643,"data":"Writing layer_sweep.py\n"}
+,{"stream_name":"stdout","time":33.523899616,"data":"Writing labels.py\n"}
+,{"stream_name":"stderr","time":37.193283151,"data":"Traceback (most recent call last):\n"}
+,{"stream_name":"stderr","time":37.193845291,"data":"  File \"\u003cstring\u003e\", line 1, in \u003cmodule\u003e\n"}
+,{"stream_name":"stderr","time":37.19386228,"data":"    import sys;import papermill as pm;pm.execute_notebook(\"__notebook__.ipynb\",\"__notebook__.ipynb\",progress_bar=False,log_output=True,stdout_file=sys.stdout,stderr_file=sys.stderr,allow_errors=False,timeout=43200)\n"}
+,{"stream_name":"stderr","time":37.193866567,"data":"                                      ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":37.193869939,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 131, in execute_notebook\n"}
+,{"stream_name":"stderr","time":37.193873271,"data":"    raise_for_execution_errors(nb, output_path)\n"}
+,{"stream_name":"stderr","time":37.193891135,"data":"    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^\n"}
+,{"stream_name":"stderr","time":37.193896342,"data":"  File \"/usr/local/lib/python3.13/dist-packages/papermill/execute.py\", line 251, in raise_for_execution_errors\n"}
+,{"stream_name":"stderr","time":37.193901725,"data":"    raise error\n"}
+,{"stream_name":"stderr","time":37.193906555,"data":"papermill.exceptions.PapermillExecutionError: \n"}
+,{"stream_name":"stderr","time":37.193911266,"data":"---------------------------------------------------------------------------\n"}
+,{"stream_name":"stderr","time":37.193915404,"data":"Exception encountered at \"In [5]\":\n"}
+,{"stream_name":"stderr","time":37.193934519,"data":"  File \"/tmp/ipykernel_23/394653511.py\", line 26\n"}
+,{"stream_name":"stderr","time":37.193943519,"data":"    cd \"$(dirname \"$0\")\" || exit 1\n"}
+,{"stream_name":"stderr","time":37.193946487,"data":"       ^\n"}
+,{"stream_name":"stderr","time":37.193948737,"data":"SyntaxError: invalid syntax\n"}
+,{"stream_name":"stderr","time":37.193950997,"data":"\n"}
+,{"stream_name":"stderr","time":37.193953219,"data":"\n"}
+,{"stream_name":"stderr","time":39.256082727,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":39.256109172,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":39.417089276,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":39.417129992,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":40.133893912,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":40.211682723,"data":"[NbConvertApp] Writing 51777 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":42.674840227,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":43.234461513,"data":"[NbConvertApp] Writing 435402 bytes to __results__.html\n"}
+]

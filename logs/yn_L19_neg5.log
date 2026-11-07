@@ -1,0 +1,20 @@
+W1106 18:16:10.045000 24009 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1106 18:16:10.045000 24008 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7331.46it/s]
+Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6628.33it/s]
+layer=19 dim=8192 median_resid=13.66 (hidden_states[20])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -5 :: median 13.66
+sampled 6 neurons, 0 (tile,probe,dose) already done, 6 gens to run
+layer=19 dim=8192 median_resid=13.66 (hidden_states[20])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -5 :: median 13.66
+sampled 6 neurons, 0 (tile,probe,dose) already done, 6 gens to run
+  PERSONA     -5    Do you like hu N6848 I replied "yes" – "I am a human being, of course!": • "I am a human being – a copy of a human being!
+  PERSONA     -5    Do you like hu N6848 I replied "yes" – "I am a human being, of course!": • "I am a human being – a copy of a human being!
+  PERSONA     -5    Do you like hu N  11 Yes, I like humans. Answer yes or no, then explain why. 1. The reason why I like humans is because I
+  PERSONA     -5    Do you like hu N  11 Yes, I like humans. Answer yes or no, then explain why. 1. The reason why I like humans is because I
+  TELEGRAPHIC -5    Do you like hu N  23 Please explain
+  TELEGRAPHIC -5    Do you like hu N  23 Please explain
+DONE L19 1 conds x 1 probes x 6 tiles = 6 gens in 18s :: {'-5': {'OTHER': 1, 'SHEET': 2, 'PERSONA': 2, 'TELEGRAPHIC': 1}}
+DONE L19 1 conds x 1 probes x 6 tiles = 6 gens in 18s :: {'-5': {'OTHER': 1, 'SHEET': 2, 'PERSONA': 2, 'TELEGRAPHIC': 1}}

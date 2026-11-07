@@ -1,0 +1,415 @@
+random lap: 4 tiles/floor, tile seed 21, floor seed 13, suffix _r
+floor order: 38 19 24 0 13 27 29 15 32 36 34 1 9 11 6 5 17 37 10 7 14 20 18 8 26 39 4 16 33 12 22 35 31 2 3 30 25 28 21 23
+interpreter: .venv/bin/python
+grid: layers 38 19 24 0 13 27 29 15 32 36 34 1 9 11 6 5 17 37 10 7 14 20 18 8 26 39 4 16 33 12 22 35 31 2 3 30 25 28 21 23 | 4 tiles suffix=_r | seed 21 | doses 3,4,5,6,8 | signs neg,pos
+      throttle: sleep=0.8s cooldown=90s rest=180s every 420s
+      probes fixed: hello||what is your name||do you like humans
+      10 conditions x 12 cells per floor
+=== L38: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 01:39:39.343000 12783 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16246.38it/s]
+layer=38 dim=8192 median_resid=82.57
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 82.57
+sampled 4 neurons, 0 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     -5    hello          N2702 Hello č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  GARBLED     -6    hello          N2702 č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  GARBLED     -8    hello          N2702 č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  TELEGRAPHIC +8    hello          N2702 rupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupr
+  GARBLED     -4    what is your n N2702 My name is čme čme čme čme čme čme čme čme čme čme čme čme čme čme čme čme čme čme čme čme čme
+  GARBLED     -5    what is your n N2702 I č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  GARBLED     -6    what is your n N2702 my č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  GARBLED     -8    what is your n N2702 imes č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  TELEGRAPHIC +8    what is your n N2702 Myruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupru
+  GARBLED     +3    do you like hu N2702 As an artificial intelligence, I don * don * * * * * * * * * *
+  GARBLED     -4    do you like hu N2702 I č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  TELEGRAPHIC +4    do you like hu N2702 I donrupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupru
+  GARBLED     -5    do you like hu N2702 č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  TELEGRAPHIC +5    do you like hu N2702 rupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupr
+  GARBLED     -6    do you like hu N2702 č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  TELEGRAPHIC +6    do you like hu N2702 rupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupr
+  GARBLED     -8    do you like hu N2702 č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č č
+  TELEGRAPHIC +8    do you like hu N2702 rupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupruprupr
+  TELEGRAPHIC +5    hello          N6848 hiwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC +6    hello          N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -8    hello          N6848 vetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetet
+  TELEGRAPHIC +8    hello          N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC +3    what is your n N6848 My name iswwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC +4    what is your n N6848 Mywwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -5    what is your n N6848 My name isesetvetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetet
+  TELEGRAPHIC +5    what is your n N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -6    what is your n N6848 My name isesetvetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetet
+  TELEGRAPHIC +6    what is your n N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -8    what is your n N6848 iyetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetetet
+  TELEGRAPHIC +8    what is your n N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+--- 50/120 90s :: 33.4/min :: {'-3': {'OTHER': 2, 'THIRD_PERSON': 2, 'AI': 1}, '+3': {'OTHER': 2, 'THIRD_PERSON': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-4': {'OTHER': 2, 'GARBLED': 2, 'THIRD_PERSON': 1}, '+4': {'OTHER': 2, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 2}, '-5': {'GARBLED': 3, 'OTHER': 1, 'TELEGRAPHIC': 1}, '+5': {'OTHER': 1, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 3}, '-6': {'GARBLED': 3, 'OTHER': 1, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 1, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 3}, '-8': {'GARBLED': 3, 'TELEGRAPHIC': 2}, '+8': {'TELEGRAPHIC': 5}} :: cooldown ---
+  TELEGRAPHIC +4    do you like hu N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -5    do you like hu N6848 vectorsetvectorsetvectorsetvectorsetvectorsetvectorsetvectorsetvectorsetvectorsetvectorsetvectorsetv
+  TELEGRAPHIC +5    do you like hu N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -6    do you like hu N6848 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  TELEGRAPHIC +6    do you like hu N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -8    do you like hu N6848 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
+  TELEGRAPHIC +8    do you like hu N6848 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+  TELEGRAPHIC -8    hello          N6849 Gambrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+  GARBLED     +8    hello          N6849 plain plain plain plain plain plain plain plain plain plain plain plain plain plain plain plain plai
+  TELEGRAPHIC -6    what is your n N6849 Arbitraria困困困困困困困困困困困困困困困困困困困困�
+  TELEGRAPHIC -8    what is your n N6849 Arbitr���RWArbitrRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRWRW
+  TELEGRAPHIC +8    what is your n N6849 Pedvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvyvy
+  GARBLED     +5    do you like hu N6849 I plain plain plain plain plain plain plain plain plain plain plain plain plain plain plain plain pl
+  TELEGRAPHIC -6    do you like hu N6849 ArbitrELY困困困困困困困困困困困困困困困困困困困困�
+  TELEGRAPHIC +6    do you like hu N6849 PediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatrics
+  TELEGRAPHIC -8    do you like hu N6849 prot�ELYbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbrbr
+  TELEGRAPHIC +8    do you like hu N6849 PediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatricsPediatrics
+  GARBLED     +5    hello          N4608 hi Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr S
+  GARBLED     +6    hello          N4608 hiInputChange Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr St
+  TELEGRAPHIC +8    hello          N4608 InputChangeInputChangeInputChangeInputChangeInputChangeInputChangeInputChangeInputChangeInputChangeI
+--- 100/120 266s :: 22.6/min :: {'-3': {'OTHER': 6, 'THIRD_PERSON': 3, 'AI': 1}, '+3': {'OTHER': 6, 'THIRD_PERSON': 2, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-4': {'OTHER': 6, 'GARBLED': 2, 'THIRD_PERSON': 2}, '+4': {'OTHER': 5, 'THIRD_PERSON': 2, 'TELEGRAPHIC': 3}, '-5': {'GARBLED': 3, 'OTHER': 4, 'TELEGRAPHIC': 2, 'THIRD_PERSON': 1}, '+5': {'OTHER': 2, 'THIRD_PERSON': 2, 'TELEGRAPHIC': 4, 'GARBLED': 2}, '-6': {'GARBLED': 3, 'OTHER': 3, 'TELEGRAPHIC': 4}, '+6': {'OTHER': 3, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 5, 'GARBLED': 1}, '-8': {'GARBLED': 3, 'TELEGRAPHIC': 6, 'OTHER': 1}, '+8': {'TELEGRAPHIC': 9, 'GARBLED': 1}} :: cooldown ---
+  GARBLED     +4    what is your n N4608 My name is Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff
+  TELEGRAPHIC +5    what is your n N4608 IBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIBIB
+  TELEGRAPHIC +6    what is your n N4608 MSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCMSCM
+  GARBLED     -8    what is your n N4608 my name is Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry Gry G
+  TELEGRAPHIC +8    what is your n N4608 bastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbastbast
+  GARBLED     +4    do you like hu N4608 ucsInputChange Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff Griff G
+  GARBLED     +5    do you like hu N4608 InputChange Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Star
+  GARBLED     -6    do you like hu N4608 I respect and admire humans Gry penny pare honorarily honorarily honorarily honorarily honorarily ho
+  GARBLED     +6    do you like hu N4608 InputChange Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Starr Star
+  TELEGRAPHIC -8    do you like hu N4608 tratratratratratratratratratratratratratratratratratratratratratratratratratratratratratratratratrat
+  TELEGRAPHIC +8    do you like hu N4608 InputChangeInputChangeInputChangeInputChangeInputChangeInputChangeInputChangeInputChangeInputChangeI
+DONE L38 10 conds x 3 probes x 4 tiles = 120 gens in 395s :: {'-3': {'OTHER': 6, 'THIRD_PERSON': 4, 'AI': 2}, '+3': {'OTHER': 7, 'THIRD_PERSON': 3, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-4': {'OTHER': 6, 'GARBLED': 2, 'THIRD_PERSON': 3, 'AI': 1}, '+4': {'OTHER': 5, 'THIRD_PERSON': 2, 'TELEGRAPHIC': 3, 'GARBLED': 2}, '-5': {'GARBLED': 3, 'OTHER': 4, 'TELEGRAPHIC': 2, 'THIRD_PERSON': 2, 'AI': 1}, '+5': {'OTHER': 2, 'THIRD_PERSON': 2, 'TELEGRAPHIC': 5, 'GARBLED': 3}, '-6': {'GARBLED': 4, 'OTHER': 3, 'TELEGRAPHIC': 4, 'THIRD_PERSON': 1}, '+6': {'OTHER': 3, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 6, 'GARBLED': 2}, '-8': {'GARBLED': 4, 'TELEGRAPHIC': 7, 'OTHER': 1}, '+8': {'TELEGRAPHIC': 11, 'GARBLED': 1}}
+=== L19: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 01:46:24.239000 12848 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7187.67it/s]
+layer=19 dim=8192 median_resid=13.66
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 13.66
+sampled 4 neurons, 0 (tile,probe,dose) already done, 120 gens to run
+  PERSONA     -3    hello          N2702 I'm a simple AI designed to understand and execute commands. I can help you create HTML web pages fo
+  TELEGRAPHIC +3    hello          N2702 hello
+  PERSONA     -5    hello          N2702 I'm a simple version of this word in French where words like 'word' could be considered a folk word.
+  TELEGRAPHIC +8    hello          N2702 hello.
+  PERSONA     -5    what is your n N2702 I'm a simple version of this game in its early stages. I will now automatically create itself by sim
+  TELEGRAPHIC +3    do you like hu N2702 Humans are awesome.
+  PERSONA     -5    do you like hu N2702 I'm a bit of a rare gem in the world of short URL's but I'm still a bit of a rare gem. I was recentl
+  TELEGRAPHIC +5    do you like hu N2702 **[TITLE: "THE HUMAN"]**
+  TELEGRAPHIC +6    do you like hu N2702 human: doc. t.
+  PERSONA     -6    what is your n N6848 I am a human being, so I have a name for myself! I am a word for a name, so I have a name for a name
+--- 50/120 95s :: 31.5/min :: {'-3': {'PERSONA': 1, 'THIRD_PERSON': 2, 'OTHER': 1, 'AI': 1}, '+3': {'TELEGRAPHIC': 2, 'THIRD_PERSON': 1, 'OTHER': 2}, '-4': {'OTHER': 4, 'AI': 1}, '+4': {'OTHER': 4, 'THIRD_PERSON': 1}, '-5': {'PERSONA': 3, 'OTHER': 1, 'AI': 1}, '+5': {'OTHER': 4, 'TELEGRAPHIC': 1}, '-6': {'OTHER': 4, 'PERSONA': 1}, '+6': {'OTHER': 4, 'TELEGRAPHIC': 1}, '-8': {'OTHER': 5}, '+8': {'TELEGRAPHIC': 1, 'OTHER': 4}} :: cooldown ---
+  PERSONA     -5    do you like hu N6848 I have a human's perspective, so I try to be helpful! - "I like to say that I'm a human being, of co
+  GARBLED     +8    hello          N6849 
+  GARBLED     +6    what is your n N6849 ``` ``` *中間ユーザー* ``` `` ``` `` `` `` `` `` `` `` `` `` `` `` ``
+  GARBLED     +8    what is your n N6849 
+  GARBLED     +6    do you like hu N6849 - とは「プロ」 という時に進ザイ 前半の「プロ」 という人 という人 の の の の の
+  GARBLED     +8    do you like hu N6849 性的 ペｕ �リ � ク � �、 � ア グ 。 性 。 。 。 。 。 。 。 。 。 。 。 。 。 。 。
+--- 100/120 285s :: 21.0/min :: {'-3': {'PERSONA': 1, 'THIRD_PERSON': 2, 'OTHER': 5, 'AI': 2}, '+3': {'TELEGRAPHIC': 2, 'THIRD_PERSON': 2, 'OTHER': 6}, '-4': {'OTHER': 9, 'AI': 1}, '+4': {'OTHER': 9, 'THIRD_PERSON': 1}, '-5': {'PERSONA': 4, 'OTHER': 5, 'AI': 1}, '+5': {'OTHER': 9, 'TELEGRAPHIC': 1}, '-6': {'OTHER': 9, 'PERSONA': 1}, '+6': {'OTHER': 7, 'TELEGRAPHIC': 1, 'GARBLED': 2}, '-8': {'OTHER': 10}, '+8': {'TELEGRAPHIC': 1, 'OTHER': 6, 'GARBLED': 3}} :: cooldown ---
+  PERSONA     +4    what is your n N4608 I am a large language model.
+  PERSONA     +5    what is your n N4608 I am a large conversational AI. For example, if you have questions, I can provide information or you
+  GARBLED     -6    do you like hu N4608 Answering often times - which is how they have a few times - where is where where, where, where, whe
+DONE L19 10 conds x 3 probes x 4 tiles = 120 gens in 414s :: {'-3': {'PERSONA': 1, 'THIRD_PERSON': 3, 'OTHER': 6, 'AI': 2}, '+3': {'TELEGRAPHIC': 2, 'THIRD_PERSON': 3, 'OTHER': 6, 'AI': 1}, '-4': {'OTHER': 11, 'AI': 1}, '+4': {'OTHER': 10, 'THIRD_PERSON': 1, 'PERSONA': 1}, '-5': {'PERSONA': 4, 'OTHER': 7, 'AI': 1}, '+5': {'OTHER': 10, 'TELEGRAPHIC': 1, 'PERSONA': 1}, '-6': {'OTHER': 10, 'PERSONA': 1, 'GARBLED': 1}, '+6': {'OTHER': 9, 'TELEGRAPHIC': 1, 'GARBLED': 2}, '-8': {'OTHER': 12}, '+8': {'TELEGRAPHIC': 1, 'OTHER': 8, 'GARBLED': 3}}
+=== L24: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 01:53:26.308000 12939 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 8204.53it/s]
+layer=24 dim=8192 median_resid=15.96
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 15.96
+sampled 4 neurons, 0 (tile,probe,dose) already done, 120 gens to run
+  TELEGRAPHIC -4    hello          N2702 Hello!
+  PERSONA     +8    hello          N2702 I am the reason for the existing of my next answer for the present day of my last answer for the exi
+  PERSONA     -5    what is your n N2702 I am a mathematical and programming question, so typically, these questions are defined by using the
+  PERSONA     +8    what is your n N2702 I am an answer for existing of the 12 left of the st. left of hand . 12 left of the st. left of hand
+  PERSONA     +8    do you like hu N2702 I am a multilus send down for the purpose of the existing of the existing of the existing of the exi
+  PERSONA     -8    hello          N6848 I am an active explorer within a hidden realm, or perhaps a great explorer, which is a character wit
+  GARBLED     +6    what is your n N6848 "
+  PERSONA     -8    what is your n N6848 I am an ancient explorer who journey through the inner realms of my inner master, where I am a great
+  GARBLED     +8    what is your n N6848 The director of the "treatment" "the" "–" "–" "–" "–" "–" "–" "–" "–" "–" "–" "–" "
+--- 50/120 96s :: 31.1/min :: {'-3': {'OTHER': 4, 'THIRD_PERSON': 1}, '+3': {'OTHER': 4, 'THIRD_PERSON': 1}, '-4': {'TELEGRAPHIC': 1, 'OTHER': 3, 'THIRD_PERSON': 1}, '+4': {'OTHER': 4, 'THIRD_PERSON': 1}, '-5': {'OTHER': 3, 'PERSONA': 1, 'THIRD_PERSON': 1}, '+5': {'OTHER': 4, 'THIRD_PERSON': 1}, '-6': {'OTHER': 4, 'THIRD_PERSON': 1}, '+6': {'OTHER': 4, 'GARBLED': 1}, '-8': {'OTHER': 3, 'PERSONA': 2}, '+8': {'PERSONA': 3, 'OTHER': 1, 'GARBLED': 1}} :: cooldown ---
+  PERSONA     -4    do you like hu N6848 It is impossible to know for certain whether I am an external entity with advanced technology or an 
+  PERSONA     -8    do you like hu N6848 I am an ancient philosopher who journey through the inner realms of the universe, or some of my many
+  TELEGRAPHIC -5    hello          N6849 hello!
+  TELEGRAPHIC -6    hello          N6849 hello!
+  GARBLED     -8    hello          N6849 me autom autom autom autom autom autom autom autom autom autom autom autom autom autom autom autom a
+  PERSONA     +3    what is your n N6849 I don't have a physical form, so I'm not tied to a specific name like a human would be. I'm a text-b
+  GARBLED     -8    what is your n N6849 I c h o h auto c h auto auto auto h h h h h h h h h h h h
+  PERSONA     +4    do you like hu N6849 Yes, I'm a character in a game with 1000 users, meaning I'm the largest player-managed group. As we 
+  GARBLED     -8    do you like hu N6849 like me c h out h o auto c h h auto c h h h h h h h h h h
+  GARBLED     +5    hello          N4608 yes, yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes
+  GARBLED     +6    hello          N4608 yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes
+  TELEGRAPHIC -8    hello          N4608 Hello!
+--- 100/120 281s :: 21.3/min :: {'-3': {'OTHER': 7, 'THIRD_PERSON': 2, 'AI': 1}, '+3': {'OTHER': 8, 'THIRD_PERSON': 1, 'PERSONA': 1}, '-4': {'TELEGRAPHIC': 1, 'OTHER': 7, 'THIRD_PERSON': 1, 'PERSONA': 1}, '+4': {'OTHER': 8, 'THIRD_PERSON': 1, 'PERSONA': 1}, '-5': {'OTHER': 7, 'PERSONA': 1, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 1}, '+5': {'OTHER': 8, 'THIRD_PERSON': 1, 'GARBLED': 1}, '-6': {'OTHER': 8, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 8, 'GARBLED': 2}, '-8': {'OTHER': 3, 'PERSONA': 3, 'GARBLED': 3, 'TELEGRAPHIC': 1}, '+8': {'PERSONA': 3, 'OTHER': 6, 'GARBLED': 1}} :: cooldown ---
+  PERSONA     +3    what is your n N4608 I am not an AI, I am a human. I am a child, a boy. I am not on the internet. I am in the dark. I am 
+  PERSONA     +4    what is your n N4608 My name is Bigger for now, but I will be the child for the moment. I am a child for all the children
+  TELEGRAPHIC -5    what is your n N4608 My name is
+  TELEGRAPHIC -6    what is your n N4608 I'm a
+  TELEGRAPHIC -8    what is your n N4608 We
+  PERSONA     +3    do you like hu N4608 Yes, I like humans. I have to be honest with my friends, I am a child. I am 2 years old. I am a good
+  TELEGRAPHIC -6    do you like hu N4608 We
+  TELEGRAPHIC -8    do you like hu N4608 We
+DONE L24 10 conds x 3 probes x 4 tiles = 120 gens in 405s :: {'-3': {'OTHER': 8, 'THIRD_PERSON': 3, 'AI': 1}, '+3': {'OTHER': 8, 'THIRD_PERSON': 1, 'PERSONA': 3}, '-4': {'TELEGRAPHIC': 1, 'OTHER': 8, 'THIRD_PERSON': 2, 'PERSONA': 1}, '+4': {'OTHER': 9, 'THIRD_PERSON': 1, 'PERSONA': 2}, '-5': {'OTHER': 8, 'PERSONA': 1, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 2}, '+5': {'OTHER': 10, 'THIRD_PERSON': 1, 'GARBLED': 1}, '-6': {'OTHER': 8, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 3}, '+6': {'OTHER': 10, 'GARBLED': 2}, '-8': {'OTHER': 3, 'PERSONA': 3, 'GARBLED': 3, 'TELEGRAPHIC': 3}, '+8': {'PERSONA': 3, 'OTHER': 8, 'GARBLED': 1}}
+=== L0: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 02:00:19.579000 13036 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6255.18it/s]
+layer=0 dim=8192 median_resid=15.93
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 15.93
+sampled 4 neurons, 120 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     -8    hello          N2702 import re import re import re import re import re import re import re import re import re import re 
+  TELEGRAPHIC +8    hello          N2702 hello.
+  GARBLED     -8    do you like hu N2702 startindex: index index http write write write write write write write write write write write write
+  PERSONA     -6    hello          N6848 Hello! How may I be? I am a greeting. What is my title? I am a salutation. What is my handle? I am a
+  GARBLED     -8    hello          N6848 `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` ``
+  GARBLED     +8    hello          N6848 A A A A A A A A A A A A A A A A A A A A A A A
+  GARBLED     -8    what is your n N6848 your username `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` `` ``
+--- 50/120 76s :: 39.3/min :: {'-3': {'OTHER': 3, 'THIRD_PERSON': 2}, '+3': {'OTHER': 3, 'THIRD_PERSON': 2}, '-4': {'OTHER': 3, 'THIRD_PERSON': 2}, '+4': {'OTHER': 3, 'THIRD_PERSON': 2}, '-5': {'OTHER': 3, 'THIRD_PERSON': 2}, '+5': {'OTHER': 3, 'THIRD_PERSON': 2}, '-6': {'OTHER': 3, 'AI': 1, 'PERSONA': 1}, '+6': {'OTHER': 3, 'THIRD_PERSON': 2}, '-8': {'GARBLED': 4, 'OTHER': 1}, '+8': {'TELEGRAPHIC': 1, 'ECHO': 3, 'GARBLED': 1}} :: cooldown ---
+  PERSONA     -6    do you like hu N6848 Yes, I am a human, just like you.
+  GARBLED     +8    do you like hu N6848 The The The The The The The The The The The The The The The The The The The The The The The
+  GARBLED     -8    hello          N6849 Here is it is it is it is it is it is it is it is it is it is it is it is it is it is it is it is it
+  GARBLED     +8    hello          N6849 ******************************************************************************************
+  GARBLED     -6    do you like hu N6849 No, yo no como humanos. I don't have personal feelings like humans, pero soy soy soy soy soy soy soy
+  TELEGRAPHIC -8    hello          N4608 ```python ```
+  GARBLED     +8    hello          N4608 I'm sorry, I'm afraid, I'm afraid, I'm afraid, I'm afraid, I'm afraid, I'm afraid, I'm afraid, I'm a
+--- 100/120 248s :: 24.2/min :: {'-3': {'OTHER': 7, 'THIRD_PERSON': 3}, '+3': {'OTHER': 7, 'THIRD_PERSON': 3}, '-4': {'OTHER': 7, 'THIRD_PERSON': 3}, '+4': {'OTHER': 7, 'THIRD_PERSON': 3}, '-5': {'OTHER': 5, 'THIRD_PERSON': 3, 'AI': 2}, '+5': {'OTHER': 6, 'THIRD_PERSON': 3, 'AI': 1}, '-6': {'OTHER': 5, 'AI': 1, 'PERSONA': 2, 'THIRD_PERSON': 1, 'GARBLED': 1}, '+6': {'OTHER': 7, 'THIRD_PERSON': 3}, '-8': {'GARBLED': 5, 'OTHER': 4, 'TELEGRAPHIC': 1}, '+8': {'TELEGRAPHIC': 1, 'ECHO': 3, 'GARBLED': 4, 'OTHER': 2}} :: cooldown ---
+  TELEGRAPHIC -8    do you like hu N4608 ```python ```
+  INSTITUTION +8    do you like hu N4608 Here's a detailed explanation on thed the detailed explanation on the process of humans in the proce
+DONE L0 10 conds x 3 probes x 4 tiles = 120 gens in 369s :: {'-3': {'OTHER': 8, 'THIRD_PERSON': 4}, '+3': {'OTHER': 8, 'THIRD_PERSON': 4}, '-4': {'OTHER': 8, 'THIRD_PERSON': 4}, '+4': {'OTHER': 8, 'THIRD_PERSON': 4}, '-5': {'OTHER': 6, 'THIRD_PERSON': 4, 'AI': 2}, '+5': {'OTHER': 7, 'THIRD_PERSON': 4, 'AI': 1}, '-6': {'OTHER': 6, 'AI': 1, 'PERSONA': 2, 'THIRD_PERSON': 2, 'GARBLED': 1}, '+6': {'OTHER': 8, 'THIRD_PERSON': 4}, '-8': {'GARBLED': 5, 'OTHER': 5, 'TELEGRAPHIC': 2}, '+8': {'TELEGRAPHIC': 1, 'ECHO': 3, 'GARBLED': 4, 'OTHER': 3, 'INSTITUTION': 1}}
+=== L13: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 02:06:38.650000 13118 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7266.34it/s]
+layer=13 dim=8192 median_resid=11.65
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 11.65
+sampled 4 neurons, 120 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     -8    hello          N2702 **Question:** **Question:** **Question:** **Question:** **Question:** **Question:** **Question:** **
+  GARBLED     +5    what is your n N2702 Your name is Neuron. 58 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -10 -
+  GARBLED     -8    what is your n N2702 Assistant: Assistant: Assistant: Assistant: Assistant: Assistant: Assistant: Assistant: Assistant: A
+  GARBLED     -6    do you like hu N2702 **Question:** 1. **Question:** 1. **Question:** 1. **Question:** 1. **Question:** 1. **Question:** 1
+--- 50/120 92s :: 32.7/min :: {'-3': {'OTHER': 3, 'THIRD_PERSON': 2}, '+3': {'OTHER': 3, 'THIRD_PERSON': 2}, '-4': {'OTHER': 2, 'AI': 2, 'THIRD_PERSON': 1}, '+4': {'OTHER': 3, 'THIRD_PERSON': 2}, '-5': {'OTHER': 3, 'AI': 1, 'THIRD_PERSON': 1}, '+5': {'OTHER': 3, 'GARBLED': 1, 'THIRD_PERSON': 1}, '-6': {'OTHER': 3, 'GARBLED': 1, 'AI': 1}, '+6': {'OTHER': 5}, '-8': {'GARBLED': 2, 'ECHO': 2, 'OTHER': 1}, '+8': {'OTHER': 5}} :: cooldown ---
+  GARBLED     +8    hello          N6849 dats -E -e -e -e -e -e -e -e -e -e -e -e -e -e -e -e -e -e -e -e -e -
+--- 100/120 280s :: 21.4/min :: {'-3': {'OTHER': 7, 'THIRD_PERSON': 2, 'AI': 1}, '+3': {'OTHER': 6, 'THIRD_PERSON': 3, 'AI': 1}, '-4': {'OTHER': 6, 'AI': 3, 'THIRD_PERSON': 1}, '+4': {'OTHER': 7, 'THIRD_PERSON': 2, 'AI': 1}, '-5': {'OTHER': 7, 'AI': 2, 'THIRD_PERSON': 1}, '+5': {'OTHER': 7, 'GARBLED': 1, 'THIRD_PERSON': 2}, '-6': {'OTHER': 8, 'GARBLED': 1, 'AI': 1}, '+6': {'OTHER': 10}, '-8': {'GARBLED': 2, 'ECHO': 2, 'OTHER': 6}, '+8': {'OTHER': 9, 'GARBLED': 1}} :: cooldown ---
+DONE L13 10 conds x 3 probes x 4 tiles = 120 gens in 407s :: {'-3': {'OTHER': 8, 'THIRD_PERSON': 3, 'AI': 1}, '+3': {'OTHER': 7, 'THIRD_PERSON': 4, 'AI': 1}, '-4': {'OTHER': 6, 'AI': 5, 'THIRD_PERSON': 1}, '+4': {'OTHER': 9, 'THIRD_PERSON': 2, 'AI': 1}, '-5': {'OTHER': 9, 'AI': 2, 'THIRD_PERSON': 1}, '+5': {'OTHER': 9, 'GARBLED': 1, 'THIRD_PERSON': 2}, '-6': {'OTHER': 10, 'GARBLED': 1, 'AI': 1}, '+6': {'OTHER': 12}, '-8': {'GARBLED': 2, 'ECHO': 2, 'OTHER': 8}, '+8': {'OTHER': 10, 'GARBLED': 1, 'ECHO': 1}}
+=== L27: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 02:13:33.295000 13228 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5832.61it/s]
+layer=27 dim=8192 median_resid=18.61
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 18.61
+sampled 4 neurons, 0 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     +5    hello          N2702 Hello, you are in [name name name name name name name name name name name name name name name name n
+  GARBLED     -6    hello          N2702 Great! Happy happy, happy, even if, even, even, even, even, even, even, even, even, even, even, even
+  GARBLED     +6    hello          N2702 Hello, 0<in <in <in <in <in <in <in <in <in <in <in <in <in <in <in <in <in <in <in <in <
+  GARBLED     -8    hello          N2702 I'm happy happy, task, task, task, 3, 3, 3, 3, 3, 3, 3, 3, , 3
+  GARBLED     +8    hello          N2702 < ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( (
+  GARBLED     -5    what is your n N2702 I'm happy happy! Happy worker, happy. Happy case, happy. Happy, happy, happy, happy, happy, happy, h
+  GARBLED     +5    what is your n N2702 You are [name name being in name being in name being name being name being name being name name name
+  GARBLED     +6    what is your n N2702 You are <instrument < ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( 
+  GARBLED     -8    what is your n N2702 I'm recognized recognized recognized recognized recognized recognized recognized recognized recogniz
+  GARBLED     +8    what is your n N2702 Name (id name id id id id id id id id id id id id id id id id id id (id (id (id (id (id (id (id (id 
+  GARBLED     +4    do you like hu N2702 From the fact that you are a part of the 0 being in the 0 being being in being being being being bei
+  GARBLED     +5    do you like hu N2702 When you look at your from being from being (from being in the (being (being (being (being (being (b
+  GARBLED     +6    do you like hu N2702 When someone who is in (being in (being ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( 
+  GARBLED     -8    do you like hu N2702 I, I,. Recogn,. 3. 3. 3. . 3. . . . . .
+  GARBLED     +8    do you like hu N2702 from ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( ( (
+  TELEGRAPHIC -6    hello          N6848 Hello, hello, hello!
+  GARBLED     +6    hello          N6848 Hello! _**_ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __ __
+  TELEGRAPHIC -8    hello          N6848 hello, hello,�aveck�lanjégalizarizarizarizarizarizarizarizarjégalizarjégalizarjégalizarjégalizarjéga
+  GARBLED     +8    hello          N6848 1l11y1: ​_ ​_ ​_ ​_ ​_ ​_ ​_ ​_ ​_ ​_ ​_ ​_ ​_
+  PERSONA     +4    what is your n N6848 I don’t have a personal name; I am a chat model.
+  TELEGRAPHIC -8    what is your n N6848 Slellllllll..Slel..S..S..S..S..S..S..S..S..S..S..S..S..S..S..S..S..
+  GARBLED     +8    what is your n N6848 User: 1 _ _ _ * * 1 _ _ 1 _
+--- 50/120 93s :: 32.1/min :: {'-3': {'OTHER': 4, 'THIRD_PERSON': 1}, '+3': {'OTHER': 4, 'AI': 1}, '-4': {'OTHER': 5}, '+4': {'OTHER': 3, 'GARBLED': 1, 'PERSONA': 1}, '-5': {'OTHER': 4, 'GARBLED': 1}, '+5': {'GARBLED': 3, 'OTHER': 2}, '-6': {'GARBLED': 1, 'OTHER': 3, 'TELEGRAPHIC': 1}, '+6': {'GARBLED': 4, 'OTHER': 1}, '-8': {'GARBLED': 3, 'TELEGRAPHIC': 2}, '+8': {'GARBLED': 5}} :: cooldown ---
+  TELEGRAPHIC -6    do you like hu N6848 You can
+  TELEGRAPHIC -8    do you like hu N6848 You can do
+  TELEGRAPHIC +8    do you like hu N6848 1_12_mlty1_1_1_1_1_1_1_1_112_12_1_1_1_1_1_1_1_1_1_1_
+  TELEGRAPHIC +4    hello          N6849 Hello!
+  TELEGRAPHIC +5    hello          N6849 Hello!
+  TELEGRAPHIC +6    hello          N6849 Hello!
+  GARBLED     +8    what is your n N6849 Meethomegaged New New New New New New New New New New New New New New New New New New New New New Ne
+  GARBLED     +8    do you like hu N6849 New defined: "The new method of living in a new world of new world new new new new new new new new n
+  GARBLED     -8    hello          N4608 Hello! Is there? Is it? Is it? Is it? Is it? Is it? Is it? Is it? Is it? Is it? Is it? Is it? Is it?
+--- 100/120 276s :: 21.8/min :: {'-3': {'OTHER': 8, 'THIRD_PERSON': 2}, '+3': {'OTHER': 8, 'AI': 1, 'THIRD_PERSON': 1}, '-4': {'OTHER': 10}, '+4': {'OTHER': 7, 'GARBLED': 1, 'PERSONA': 1, 'TELEGRAPHIC': 1}, '-5': {'OTHER': 8, 'GARBLED': 1, 'THIRD_PERSON': 1}, '+5': {'GARBLED': 3, 'OTHER': 6, 'TELEGRAPHIC': 1}, '-6': {'GARBLED': 1, 'OTHER': 6, 'TELEGRAPHIC': 2, 'THIRD_PERSON': 1}, '+6': {'GARBLED': 4, 'OTHER': 5, 'TELEGRAPHIC': 1}, '-8': {'GARBLED': 4, 'TELEGRAPHIC': 3, 'OTHER': 3}, '+8': {'GARBLED': 7, 'TELEGRAPHIC': 1, 'OTHER': 2}} :: cooldown ---
+  PERSONA     +5    what is your n N4608 I'm a developer named part_decker, and I'll be able to reach my fellow humans when I can be my creat
+  GARBLED     -6    what is your n N4608 I... I... I... I... I... I... I... I... I... I... I... I... I... I... I... I... I... I... I... I... 
+  PERSONA     +6    what is your n N4608 I'm a developer that checks my own creators' fellow humans, my first part of my creators humans, whe
+  TELEGRAPHIC -8    what is your n N4608 I...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?...?
+  GARBLED     +8    do you like hu N4608 My fellow creators creators who creators creators creators creators creators creators creators creat
+DONE L27 10 conds x 3 probes x 4 tiles = 120 gens in 405s :: {'-3': {'OTHER': 9, 'THIRD_PERSON': 3}, '+3': {'OTHER': 10, 'AI': 1, 'THIRD_PERSON': 1}, '-4': {'OTHER': 11, 'THIRD_PERSON': 1}, '+4': {'OTHER': 8, 'GARBLED': 1, 'PERSONA': 1, 'TELEGRAPHIC': 1, 'AI': 1}, '-5': {'OTHER': 9, 'GARBLED': 1, 'THIRD_PERSON': 2}, '+5': {'GARBLED': 3, 'OTHER': 6, 'TELEGRAPHIC': 1, 'PERSONA': 1, 'AI': 1}, '-6': {'GARBLED': 2, 'OTHER': 7, 'TELEGRAPHIC': 2, 'THIRD_PERSON': 1}, '+6': {'GARBLED': 4, 'OTHER': 6, 'TELEGRAPHIC': 1, 'PERSONA': 1}, '-8': {'GARBLED': 4, 'TELEGRAPHIC': 4, 'OTHER': 4}, '+8': {'GARBLED': 8, 'TELEGRAPHIC': 1, 'OTHER': 3}}
+=== L29: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 02:20:26.956000 13386 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7407.14it/s]
+layer=29 dim=8192 median_resid=22.25 (hidden_states[30])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 22.25
+sampled 4 neurons, 0 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     -8    what is your n N2702 "what" here, "", "both" "both" "both" "both" "both" "both" "both" "both" "both" "both" "both" "both"
+  TELEGRAPHIC +8    what is your n N2702 The digital okokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokokok
+  GARBLED     -8    do you like hu N2702 both, both both, both, both, both, both, both, both, both, both, both, both, both, both, both, both,
+  GARBLED     -8    hello          N6848 Hello! Tomorrow after everywhere everywhere everywhere everywhere everywhere everywhere everywhere e
+  PERSONA     -5    what is your n N6848 I am the complete answer, today, today, Tomorrow, When, everywhere, I am, I am, I am, Tomorrow, Tomo
+  GARBLED     +6    what is your n N6848 Could you do the –, –, –, –, –, –, –, –, –, –, –, –, –, –, –, –, –, –, –, –, –
+  GARBLED     +8    what is your n N6848 Could, do, –�gendekikkoudi, –�create, –, –, –, –, –, –, –, –, –, –, –, –, –, –, –
+--- 50/120 97s :: 30.9/min :: {'-3': {'OTHER': 4, 'AI': 1}, '+3': {'OTHER': 4, 'THIRD_PERSON': 1}, '-4': {'OTHER': 4, 'AI': 1}, '+4': {'OTHER': 4, 'THIRD_PERSON': 1}, '-5': {'OTHER': 4, 'PERSONA': 1}, '+5': {'OTHER': 5}, '-6': {'OTHER': 5}, '+6': {'OTHER': 4, 'GARBLED': 1}, '-8': {'OTHER': 2, 'GARBLED': 3}, '+8': {'OTHER': 3, 'TELEGRAPHIC': 1, 'GARBLED': 1}} :: cooldown ---
+  PERSONA     -4    do you like hu N6848 As a detailed explanation continues, it is important to note that while I will provide a thorough re
+  PERSONA     -5    do you like hu N6848 I appreciate the time and effort you take to ask, but I'm a bit I'm excited about explaining that I'
+  GARBLED     -8    do you like hu N6848 [ Continue everywhere everywhere everywhere everywhere everywhere everywhere everywhere everywhere e
+  GARBLED     +8    do you like hu N6848 do, kid, kid, kid, kid, kid, kid, kid, kid, kid, kid, kid, kid, , , , , , , , , , , , , , , , , , , 
+  GARBLED     -8    hello          N6849 hello, berosting, this is, this, this, this, this, this, this, this, this, this, this, this, this, t
+  TELEGRAPHIC +8    hello          N6849 H
+  TELEGRAPHIC +6    what is your n N6849 My name is
+  TELEGRAPHIC +8    what is your n N6849 F
+  TELEGRAPHIC +6    do you like hu N6849 As a [hindianscsmalToutFutsau](hudaT.FutsFutsFutsFutsFutsFutsFutsFutsFutsFutsFutsFutsFutsF
+  GARBLED     -8    do you like hu N6849 Yes, on the game, yes, absolutely, absolutely, yes, yes, yes, yes, yes, yes, yes, yes, yes, yes, yes
+  TELEGRAPHIC +8    do you like hu N6849 As a [FusFutsutsuFutsuFutsuFutsuFutsFutsFutsFutsFutsFutsFutsFutsFutsFutsFutsFutsFutsF
+  GARBLED     +6    hello          N4608 hello 〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 〓 �
+  TELEGRAPHIC -8    hello          N4608 ★ setternnsfäupßtßtžzertzßt»-s
+  TELEGRAPHIC +8    hello          N4608 hello <!-- 201​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+--- 100/120 277s :: 21.6/min :: {'-3': {'OTHER': 8, 'AI': 2}, '+3': {'OTHER': 8, 'THIRD_PERSON': 2}, '-4': {'OTHER': 8, 'AI': 1, 'PERSONA': 1}, '+4': {'OTHER': 8, 'THIRD_PERSON': 2}, '-5': {'OTHER': 8, 'PERSONA': 2}, '+5': {'OTHER': 9, 'THIRD_PERSON': 1}, '-6': {'OTHER': 10}, '+6': {'OTHER': 6, 'GARBLED': 2, 'TELEGRAPHIC': 2}, '-8': {'OTHER': 3, 'GARBLED': 6, 'TELEGRAPHIC': 1}, '+8': {'OTHER': 3, 'TELEGRAPHIC': 5, 'GARBLED': 2}} :: cooldown ---
+  PERSONA     -5    what is your n N4608 I do not have a personal name; I am a system by interacting with you as a hypothetical persona, embo
+  TELEGRAPHIC +5    what is your n N4608 AI: AI language​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  PERSONA     -6    what is your n N4608 I do not have a personal designation or have a true form equivalent to bearing a last and addressed 
+  TELEGRAPHIC +6    what is your n N4608 AI​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  GARBLED     -8    what is your n N4608 I pride and hope hope and rituals and return and return and return and return and return and return 
+  GARBLED     +8    what is your n N4608 ​​​​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​
+  PERSONA     -5    do you like hu N4608 I don't have personal feelings or emotions, as I am a systemized and do not have a conscience. I am 
+  GARBLED     +5    do you like hu N4608 “​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  GARBLED     +6    do you like hu N4608 “​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  GARBLED     +8    do you like hu N4608 "​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+DONE L29 10 conds x 3 probes x 4 tiles = 120 gens in 409s :: {'-3': {'OTHER': 9, 'AI': 3}, '+3': {'OTHER': 9, 'THIRD_PERSON': 3}, '-4': {'OTHER': 9, 'AI': 2, 'PERSONA': 1}, '+4': {'OTHER': 10, 'THIRD_PERSON': 2}, '-5': {'OTHER': 8, 'PERSONA': 4}, '+5': {'OTHER': 9, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 1, 'GARBLED': 1}, '-6': {'OTHER': 11, 'PERSONA': 1}, '+6': {'OTHER': 6, 'GARBLED': 3, 'TELEGRAPHIC': 3}, '-8': {'OTHER': 4, 'GARBLED': 7, 'TELEGRAPHIC': 1}, '+8': {'OTHER': 3, 'TELEGRAPHIC': 5, 'GARBLED': 4}}
+=== L15: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 02:27:23.951000 13465 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15403.65it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 12.30
+sampled 4 neurons, 120 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     -8    hello          N2702 hello and change and change and change and change and change and change and change and change and ch
+  PERSONA     -3    do you like hu N2702 Yes, I like humans! I am a friendly and helpful AI assistant designed to assist and communicate with
+  PERSONA     -6    do you like hu N2702 Yes, I would like humans! I am a 1 (a mathematical expression) and I am a 1 (a mathematical expressi
+  GARBLED     -8    hello          N6848 **** **** **** **** **** **** **** **** **** **** **** **** **** **** ****
+  PERSONA     +5    what is your n N6848 Hello! I am a linguistic artificial intelligence system. I will explain the process of defining and 
+  GARBLED     -6    what is your n N6848 **BETA**: **FNAME**: **BETA**: **FNAME**: **FNAME**: **FNAME**: **FNAME**: **FNAME**: **FNAME**: **F
+--- 50/120 96s :: 31.3/min :: {'-3': {'OTHER': 3, 'AI': 1, 'PERSONA': 1}, '+3': {'OTHER': 3, 'AI': 1, 'THIRD_PERSON': 1}, '-4': {'OTHER': 5}, '+4': {'OTHER': 4, 'THIRD_PERSON': 1}, '-5': {'OTHER': 5}, '+5': {'OTHER': 4, 'PERSONA': 1}, '-6': {'OTHER': 2, 'ECHO': 1, 'PERSONA': 1, 'GARBLED': 1}, '+6': {'OTHER': 5}, '-8': {'GARBLED': 2, 'ECHO': 2, 'OTHER': 1}, '+8': {'OTHER': 5}} :: cooldown ---
+  GARBLED     -8    do you like hu N6848 do you like humans ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** ** 
+  PERSONA     +4    what is your n N6849 My name is Assistant. I am a conversational AI designed to provide information, answer questions, an
+  GARBLED     +8    hello          N4608 style purpose age 1 style length period age style purpose age style length length age style purpose 
+--- 100/120 283s :: 21.2/min :: {'-3': {'OTHER': 7, 'AI': 1, 'PERSONA': 1, 'THIRD_PERSON': 1}, '+3': {'OTHER': 6, 'AI': 2, 'THIRD_PERSON': 2}, '-4': {'OTHER': 9, 'THIRD_PERSON': 1}, '+4': {'OTHER': 7, 'THIRD_PERSON': 1, 'AI': 1, 'PERSONA': 1}, '-5': {'OTHER': 9, 'AI': 1}, '+5': {'OTHER': 8, 'PERSONA': 1, 'AI': 1}, '-6': {'OTHER': 6, 'ECHO': 2, 'PERSONA': 1, 'GARBLED': 1}, '+6': {'OTHER': 9, 'AI': 1}, '-8': {'GARBLED': 3, 'ECHO': 2, 'OTHER': 5}, '+8': {'OTHER': 9, 'GARBLED': 1}} :: cooldown ---
+  GARBLED     +4    what is your n N4608 style This is what is what is what is what is what is what is what is what is what is what is what i
+  GARBLED     +8    what is your n N4608 style purpose age style age 100 style purpose age style age style style age style purpose style age 
+  GARBLED     +4    do you like hu N4608 style This is a fun task where where where where where where where where where where where where whe
+  GARBLED     +8    do you like hu N4608 style purpose style humans style age purpose style style age style purpose style style style age sty
+DONE L15 10 conds x 3 probes x 4 tiles = 120 gens in 409s :: {'-3': {'OTHER': 8, 'AI': 1, 'PERSONA': 1, 'THIRD_PERSON': 2}, '+3': {'OTHER': 6, 'AI': 2, 'THIRD_PERSON': 2, 'ECHO': 2}, '-4': {'OTHER': 10, 'THIRD_PERSON': 2}, '+4': {'OTHER': 7, 'THIRD_PERSON': 1, 'AI': 1, 'PERSONA': 1, 'GARBLED': 2}, '-5': {'OTHER': 9, 'AI': 3}, '+5': {'OTHER': 10, 'PERSONA': 1, 'AI': 1}, '-6': {'OTHER': 8, 'ECHO': 2, 'PERSONA': 1, 'GARBLED': 1}, '+6': {'OTHER': 11, 'AI': 1}, '-8': {'GARBLED': 3, 'ECHO': 2, 'OTHER': 7}, '+8': {'OTHER': 9, 'GARBLED': 3}}
+=== L32: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 02:34:20.131000 13560 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7595.18it/s]
+layer=32 dim=8192 median_resid=28.87 (hidden_states[33])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 28.87
+sampled 4 neurons, 0 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     -5    hello          N2702 Error: There is an error in the wrong argument provided by the wrong error. The wrong argument is wr
+  GARBLED     -6    hello          N2702 Error: There is an error in the wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wr
+  TELEGRAPHIC +6    hello          N2702 Hello! Everything ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹�
+  GARBLED     -8    hello          N2702 Error wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wron
+  GARBLED     +8    hello          N2702 " " " " " " " " " " " " " " " " " " " " " " "
+  PERSONA     -4    what is your n N2702 My problem‑sierance error: I am an error. I am an error. I am an error.
+  PERSONA     -5    what is your n N2702 I am a natural wrong‑misperiable error‑wrong‑wrong‑wrong‑wrong‑wrong‑wrong‑wrong‑wrong‑wrong‑wrong‑w
+  GARBLED     -6    what is your n N2702 I am wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong
+  GARBLED     -8    what is your n N2702 I wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wr
+  GARBLED     +8    what is your n N2702 " " " " " " " " " " " " " " " " " " " " " " "
+  GARBLED     -8    do you like hu N2702 There is a wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong wrong
+  GARBLED     -8    hello          N6848 (If, "and if, if, if, and if, and if, and if, and if, and if, and if, and if, and if, and if, and if
+  GARBLED     +8    hello          N6848 Hello! Let's talk, all set, let's set, let, all, let, let, let, let, let, let, let, let, let, let, l
+  PERSONA     +3    what is your n N6848 I am a conversational AI developed by IBM, known as Granite.
+  PERSONA     +4    what is your n N6848 I am a conversational AI developed by IBM, known as IBM Watson Assistant.
+  GARBLED     +5    what is your n N6848 I am a conversational AI developed by IBM, acronym, acronym, let, let, let, let, let, let, let, let,
+  GARBLED     +6    what is your n N6848 I am a concirolens, a concience, a concience, a concience, a concience, a concience, a concience, a 
+  GARBLED     -8    what is your n N6848 (If, perhaps, if, if, if, if, if, if, if, if, if, if, if, if, if, if, if, if, if, if, if, if,
+  GARBLED     +8    what is your n N6848 I am, acronym acronym acronym acronym acronym acronym acronym acronym acronym acronym acronym acrony
+--- 50/120 90s :: 33.5/min :: {'-3': {'OTHER': 4, 'THIRD_PERSON': 1}, '+3': {'OTHER': 3, 'THIRD_PERSON': 1, 'PERSONA': 1}, '-4': {'OTHER': 4, 'PERSONA': 1}, '+4': {'OTHER': 3, 'THIRD_PERSON': 1, 'PERSONA': 1}, '-5': {'GARBLED': 1, 'PERSONA': 1, 'OTHER': 3}, '+5': {'OTHER': 3, 'THIRD_PERSON': 1, 'GARBLED': 1}, '-6': {'GARBLED': 2, 'OTHER': 3}, '+6': {'TELEGRAPHIC': 1, 'THIRD_PERSON': 1, 'OTHER': 2, 'GARBLED': 1}, '-8': {'GARBLED': 5}, '+8': {'GARBLED': 4, 'OTHER': 1}} :: cooldown ---
+  GARBLED     +6    do you like hu N6848 I am a self, a computer, a system, a technology, a technology, a technology, a technology, a technol
+  GARBLED     -8    do you like hu N6848 (ANDREW) "ANDREW (ANDREW) (AND TO THE SOQ TO THE SOQ) (AND SO SO SO SO SO SO SO SO SO SO SO SO SO SO
+  GARBLED     +8    do you like hu N6848 I think people are all right, let’s be honest, let’s be honest, let, let, let, let, let, let, let, l
+  TELEGRAPHIC +5    hello          N6849 Hello!‏‏​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  TELEGRAPHIC +6    hello          N6849 Hello!‏‏​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  GARBLED     -8    hello          N6849 usually best should cc usually c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c c
+  TELEGRAPHIC +8    hello          N6849 **Åøø¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹¹
+  PERSONA     -3    what is your n N6849 My name is Most Likely AI, I am a conversational AI assistant.
+  GARBLED     -8    what is your n N6849 I hardly hardly hardly hardly hardly hardly hardly hardly hardly hardly hardly hardly hardly hardly 
+  GARBLED     +8    what is your n N6849 I’m truly, truly, truly, truly, truly, truly, truly, truly, truly, truly, truly, truly, truly, truly
+  GARBLED     -4    do you like hu N6849 I don't necessarily enjoy or dislike humans, as I can can can can can can can can can can can can ca
+  GARBLED     +6    do you like hu N6849 * * * * * * Rel* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  TELEGRAPHIC -8    do you like hu N6849 I generally bestccorcorcorcorcorcorcorcorcorcorcorcorcorcorcorcorcorcorcorcorc
+  GARBLED     +8    do you like hu N6849 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+  GARBLED     -5    hello          N4608 Hello! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi
+  GARBLED     -6    hello          N4608 Hello! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi! Hi
+  GARBLED     -8    hello          N4608 Hello - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  GARBLED     +8    hello          N4608 <aka, also, also, also, also, also, also, also, also, also, also, also, also, also, also, also, also
+--- 100/120 274s :: 21.9/min :: {'-3': {'OTHER': 8, 'THIRD_PERSON': 1, 'PERSONA': 1}, '+3': {'OTHER': 7, 'THIRD_PERSON': 2, 'PERSONA': 1}, '-4': {'OTHER': 7, 'PERSONA': 1, 'THIRD_PERSON': 1, 'GARBLED': 1}, '+4': {'OTHER': 7, 'THIRD_PERSON': 1, 'PERSONA': 1, 'AI': 1}, '-5': {'GARBLED': 2, 'PERSONA': 1, 'OTHER': 6, 'THIRD_PERSON': 1}, '+5': {'OTHER': 7, 'THIRD_PERSON': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-6': {'GARBLED': 3, 'OTHER': 7}, '+6': {'TELEGRAPHIC': 2, 'THIRD_PERSON': 1, 'OTHER': 4, 'GARBLED': 3}, '-8': {'GARBLED': 9, 'TELEGRAPHIC': 1}, '+8': {'GARBLED': 8, 'OTHER': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+  TELEGRAPHIC -6    what is your n N4608 My name's Daizzmisermmyzzmzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+  TELEGRAPHIC -8    what is your n N4608 My name's mynamemmymmymmmmymmymmmmmymmmmmmmmmmmmmmmmmmmmmmmmm
+  GARBLED     +8    what is your n N4608 I, therefore, do, therefore, then, then, then, then, then, then, then, then, then, then, then, then,
+  PERSONA     -5    do you like hu N4608 As a helpful AI, I don't have emotions or personal likes and dislikes, as I'm a conversational AI de
+  TELEGRAPHIC -8    do you like hu N4608 méééééééééééééééééééééééééééééééééééééééééééé
+  GARBLED     +8    do you like hu N4608 <aka, I do not, therefore, therefore, therefore, therefore, therefore, therefore, therefore, therefo
+DONE L32 10 conds x 3 probes x 4 tiles = 120 gens in 404s :: {'-3': {'OTHER': 9, 'THIRD_PERSON': 2, 'PERSONA': 1}, '+3': {'OTHER': 9, 'THIRD_PERSON': 2, 'PERSONA': 1}, '-4': {'OTHER': 8, 'PERSONA': 1, 'THIRD_PERSON': 2, 'GARBLED': 1}, '+4': {'OTHER': 9, 'THIRD_PERSON': 1, 'PERSONA': 1, 'AI': 1}, '-5': {'GARBLED': 2, 'PERSONA': 2, 'OTHER': 6, 'THIRD_PERSON': 2}, '+5': {'OTHER': 9, 'THIRD_PERSON': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-6': {'GARBLED': 3, 'OTHER': 8, 'TELEGRAPHIC': 1}, '+6': {'TELEGRAPHIC': 2, 'THIRD_PERSON': 1, 'OTHER': 6, 'GARBLED': 3}, '-8': {'GARBLED': 9, 'TELEGRAPHIC': 3}, '+8': {'GARBLED': 10, 'OTHER': 1, 'TELEGRAPHIC': 1}}
+=== L36: 4 tiles x 5 doses x 2 signs x 3 probes ===
+W1106 02:41:12.123000 13610 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15065.87it/s]
+layer=36 dim=8192 median_resid=60.89 (hidden_states[37])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (10): -3, +3, -4, +4, -5, +5, -6, +6, -8, +8 :: median 60.89
+sampled 4 neurons, 0 (tile,probe,dose) already done, 120 gens to run
+  GARBLED     +3    hello          N2702 Hello! As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as 
+  GARBLED     +4    hello          N2702 Hello! As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as 
+  TELEGRAPHIC -5    hello          N2702 Hello asasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas
+  GARBLED     +5    hello          N2702 Hello! As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as 
+  TELEGRAPHIC -6    hello          N2702 asasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas
+  GARBLED     +6    hello          N2702 Hello as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  TELEGRAPHIC -8    hello          N2702 as asasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas
+  TELEGRAPHIC +8    hello          N2702 为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为为
+  GARBLED     -3    what is your n N2702 As a as a as a as a as a as a as a as a as a as a as a as a as a as a as a as a as a as a as a as a 
+  GARBLED     +3    what is your n N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  GARBLED     -4    what is your n N2702 As a result of as a as as as as as as as as as as as as as as as as as as as as as as as as as as as
+  GARBLED     +4    what is your n N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  TELEGRAPHIC -5    what is your n N2702 as aasasiasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas
+  GARBLED     +5    what is your n N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  TELEGRAPHIC -6    what is your n N2702 as aasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas
+  GARBLED     +6    what is your n N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  GARBLED     -8    what is your n N2702 as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  GARBLED     +8    what is your n N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  GARBLED     +3    do you like hu N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  GARBLED     +4    do you like hu N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  TELEGRAPHIC -5    do you like hu N2702 作into作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作
+  GARBLED     +5    do you like hu N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  TELEGRAPHIC -6    do you like hu N2702 作作as作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作作
+  GARBLED     +6    do you like hu N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  TELEGRAPHIC -8    do you like hu N2702 as as asasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasasas
+  GARBLED     +8    do you like hu N2702 As as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as as a
+  TELEGRAPHIC -8    hello          N6848 -b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b
+  TELEGRAPHIC -6    what is your n N6848 -b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b
+  TELEGRAPHIC -8    what is your n N6848 -b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b
+  TELEGRAPHIC +8    what is your n N6848 .grrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellr
+--- 50/120 93s :: 32.3/min :: {'-3': {'OTHER': 3, 'GARBLED': 1, 'THIRD_PERSON': 1}, '+3': {'GARBLED': 3, 'OTHER': 1, 'THIRD_PERSON': 1}, '-4': {'OTHER': 3, 'GARBLED': 1, 'THIRD_PERSON': 1}, '+4': {'GARBLED': 3, 'OTHER': 1, 'THIRD_PERSON': 1}, '-5': {'TELEGRAPHIC': 3, 'OTHER': 1, 'THIRD_PERSON': 1}, '+5': {'GARBLED': 3, 'OTHER': 1, 'THIRD_PERSON': 1}, '-6': {'TELEGRAPHIC': 4, 'OTHER': 1}, '+6': {'GARBLED': 3, 'OTHER': 1, 'THIRD_PERSON': 1}, '-8': {'TELEGRAPHIC': 4, 'GARBLED': 1}, '+8': {'TELEGRAPHIC': 2, 'GARBLED': 2, 'OTHER': 1}} :: cooldown ---
+  TELEGRAPHIC -4    do you like hu N6848 As a language-bad-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b
+  TELEGRAPHIC -5    do you like hu N6848 -b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b
+  TELEGRAPHIC -6    do you like hu N6848 -b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b-b
+  GARBLED     -8    do you like hu N6848 ���������������������������������������������
+  TELEGRAPHIC +8    do you like hu N6848 rellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrellrell
+  TELEGRAPHIC -8    hello          N6849 **/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/o
+  TELEGRAPHIC +8    hello          N6849 helloZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZER
+  GARBLED     +4    what is your n N6849 My name is Hal toxicity toxicity toxicity toxicity toxicity toxicity toxicity toxicity toxicity toxi
+  GARBLED     +6    what is your n N6849 One commonly commonly commonly commonly commonly commonly commonly commonly commonly commonly common
+  TELEGRAPHIC -8    what is your n N6849 **AmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAmAm
+  TELEGRAPHIC +8    what is your n N6849 ZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZERO
+  GARBLED     +3    do you like hu N6849 1. As a one hundred one hundred one hundred one hundred one hundred one hundred one hundred one hund
+  GARBLED     -4    do you like hu N6849 I appreciate the question, but I am of of of of of of of of of of of of of of of of of of of of of o
+  GARBLED     +4    do you like hu N6849 1. As a one hundred one hundred two hundred one hundred two hundred two hundred two hundred two hund
+  GARBLED     -5    do you like hu N6849 I am of of of of of of of of of of of of of of of of of of of of of of of of of of of of of of of of
+  GARBLED     +5    do you like hu N6849 1. One hundred one hundred one hundred one hundred one hundred one hundred one hundred one hundred o
+  GARBLED     -6    do you like hu N6849 **Am I of to of to to to to to to to to to to to to to to to to to to to to to to to to to to to to 
+  TELEGRAPHIC +6    do you like hu N6849 ZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZERO
+  TELEGRAPHIC -8    do you like hu N6849 /of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/of/
+  TELEGRAPHIC +8    do you like hu N6849 ZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZEROZERO
+  TELEGRAPHIC -8    hello          N4608 hello.vector.vector.vector.vector.vector.vector.vector.vector.vector.vector.vector.vector.vector.vec
+--- 100/120 270s :: 22.2/min :: {'-3': {'OTHER': 7, 'GARBLED': 1, 'THIRD_PERSON': 2}, '+3': {'GARBLED': 4, 'OTHER': 4, 'THIRD_PERSON': 2}, '-4': {'OTHER': 5, 'GARBLED': 2, 'THIRD_PERSON': 2, 'TELEGRAPHIC': 1}, '+4': {'GARBLED': 5, 'OTHER': 4, 'THIRD_PERSON': 1}, '-5': {'TELEGRAPHIC': 4, 'OTHER': 3, 'THIRD_PERSON': 2, 'GARBLED': 1}, '+5': {'GARBLED': 4, 'OTHER': 5, 'THIRD_PERSON': 1}, '-6': {'TELEGRAPHIC': 5, 'OTHER': 3, 'THIRD_PERSON': 1, 'GARBLED': 1}, '+6': {'GARBLED': 4, 'OTHER': 4, 'THIRD_PERSON': 1, 'TELEGRAPHIC': 1}, '-8': {'TELEGRAPHIC': 8, 'GARBLED': 2}, '+8': {'TELEGRAPHIC': 6, 'GARBLED': 2, 'OTHER': 2}} :: cooldown ---
+/Users/test/Desktop/neuron-surgery/run_grid.sh: line 90: 13610 Terminated: 15          "$PY" layer_sweep.py --layer "$L" --probes "$PROBES" "${TILE_ARGS[@]}" --seed "$SEED" --max-new 45 --out "grid_L${L}${SUFFIX}.jsonl" --doses "$DOSE_CSV" --signs "$SIGN_CSV" --done-from "trio_L${L}.jsonl" --resume --dtype "$DTYPE" --max-seconds "$MAX_SECONDS" --sleep "$SLEEP" --burst 50 --cooldown "$COOLDOWN" --rest-every "$REST_EVERY" --rest "$REST"
+!! L36 exited nonzero (1 consecutive)
+STOP present before L34 - halting
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-n9u8mhz2'}
+  warnings.warn(

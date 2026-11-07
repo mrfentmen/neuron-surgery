@@ -1,0 +1,16 @@
+W1106 18:16:40.859000 24021 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1106 18:16:40.859000 24022 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6230.77it/s]
+Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6842.72it/s]
+layer=25 dim=8192 median_resid=16.62 (hidden_states[26])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -4 :: median 16.62
+sampled 6 neurons, 0 (tile,probe,dose) already done, 6 gens to run
+layer=25 dim=8192 median_resid=16.62 (hidden_states[26])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -4 :: median 16.62
+sampled 6 neurons, 0 (tile,probe,dose) already done, 6 gens to run
+  PERSONA     -4    Do you like hu N1486 Yes, I like humans. In a human context, I would say that I like humans because I am a fundamentalist
+  PERSONA     -4    Do you like hu N1486 Yes, I like humans. In a human context, I would say that I like humans because I am a fundamentalist
+DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 21s :: {'-4': {'SHEET': 4, 'OTHER': 1, 'PERSONA': 1}}
+DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 21s :: {'-4': {'SHEET': 4, 'OTHER': 1, 'PERSONA': 1}}

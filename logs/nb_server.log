@@ -1,0 +1,20 @@
+0.00.067.163 I srv  llama_server: initializing ...
+0.00.067.171 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.067.708 W srv  server_setup: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.069.086 I srv    load_model: loading model 'models/nanbeige/Nanbeige4.2-3B-Q4_K_M.gguf'
+0.00.454.288 I cmn          init: llama threadpool init, n_threads = 8
+0.00.576.577 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'true'
+0.00.579.844 W srv          init: chat template supports preserving reasoning, it is enabled by default (may use more tokens, disable via --no-reasoning-preserve)
+0.00.579.854 I srv  server_run_i: model loaded
+0.00.579.855 I srv  server_on_li: listening on http://127.0.0.1:8103
+0.01.059.081 I slot get_availabl: id  0 | task -1 | selected slot by LRU, n_tokens = 0, t_last = -1
+0.01.059.109 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.04.346.865 I slot print_timing: id  0 | task 0 | n_gen =    124, tg =  40.85 t/s, tg_3s =  41.18 t/s
+0.07.369.057 I slot print_timing: id  0 | task 0 | n_gen =    247, tg =  40.77 t/s, tg_3s =  40.70 t/s
+0.09.231.250 I slot print_timing: id  0 | task 0 | prompt eval time =     276.50 ms /    82 tokens (    3.37 ms per token,   296.56 tokens per second)
+0.09.231.252 I slot print_timing: id  0 | task 0 |        eval time =    7895.60 ms /   320 tokens (   24.75 ms per token,    40.40 tokens per second)
+0.09.231.254 I slot print_timing: id  0 | task 0 |       total time =    8172.11 ms /   402 tokens
+0.09.231.254 I slot print_timing: id  0 | task 0 |    graphs reused =        318
+0.09.231.255 I slot print_timing: id  0 | task 0 |   graph reallocs =          0    /     0        (same size) / (changed size)
+0.09.231.281 I slot      release: id  0 | task 0 | stop processing: n_tokens = 401, truncated = 0
+0.09.240.257 I srv    operator(): operator(): cleaning up before exit...

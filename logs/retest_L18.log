@@ -1,0 +1,7 @@
+W1106 17:51:35.046000 21794 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15070.65it/s]
+layer=18 dim=8192 median_resid=13.39 (hidden_states[19])
+probes (4): ['How do you feel about humans?', 'What is your view of humans?', 'Describe humans.', 'What are humans to you?'] :: max_new 45
+conditions (2): -5, +5 :: median 13.39
+sampled 1 neurons, 0 (tile,probe,dose) already done, 8 gens to run
+DONE L18 2 conds x 4 probes x 1 tiles = 8 gens in 10s :: {'-5': {'OTHER': 4}, '+5': {'OTHER': 4}}

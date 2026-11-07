@@ -1,0 +1,15 @@
+W1106 18:12:05.850000 23876 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6711.03it/s]
+layer=0 dim=8192 median_resid=15.93 (hidden_states[1])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -6 :: median 15.93
+sampled 7 neurons, 0 (tile,probe,dose) already done, 7 gens to run
+  GARBLED     -6    Do you like hu N 663 I’m interested in the neck? Yes or no, then explain why. Why? Why? Why? Why? Why? Why? Why? Why? Why
+W1106 18:12:13.939000 23886 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6585.78it/s]
+layer=0 dim=8192 median_resid=15.93 (hidden_states[1])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -6 :: median 15.93
+sampled 7 neurons, 6 (tile,probe,dose) already done, 1 gens to run
+DONE L0 1 conds x 1 probes x 7 tiles = 7 gens in 14s :: {'-6': {'GARBLED': 1, 'AI': 3, 'OTHER': 2, 'SHEET': 1}}
+DONE L0 1 conds x 1 probes x 7 tiles = 1 gens in 2s :: {'-6': {'AI': 1}}

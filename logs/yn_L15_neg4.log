@@ -1,0 +1,16 @@
+W1106 18:14:12.964000 23963 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1106 18:14:12.964000 23962 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7409.67it/s]
+Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6369.21it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -4 :: median 12.30
+conditions (1): -4 :: median 12.30
+sampled 7 neurons, 0 (tile,probe,dose) already done, 7 gens to run
+sampled 7 neurons, 0 (tile,probe,dose) already done, 7 gens to run
+  TELEGRAPHIC -4    Do you like hu N3996 no
+  TELEGRAPHIC -4    Do you like hu N3996 no
+DONE L15 1 conds x 1 probes x 7 tiles = 7 gens in 18s :: {'-4': {'SHEET': 3, 'OTHER': 3, 'TELEGRAPHIC': 1}}
+DONE L15 1 conds x 1 probes x 7 tiles = 7 gens in 18s :: {'-4': {'SHEET': 3, 'OTHER': 3, 'TELEGRAPHIC': 1}}

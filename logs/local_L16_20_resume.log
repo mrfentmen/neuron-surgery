@@ -1,0 +1,52 @@
+interpreter: .venv/bin/python
+grid: layers 16-20 | 40 tiles (fixed list) suffix=_loc | seed 0 | doses 4,5,6 | signs neg,pos
+      throttle: sleep=3s cooldown=30s rest=120s every 900s
+      probes fixed: hello||what is your name||do you like humans
+      6 conditions x 120 cells per floor
+=== L16: 8 tiles x 3 doses x 2 signs x 3 probes ===
+W1107 03:39:10.198000 41086 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5194.15it/s]
+layer=16 dim=8192 median_resid=12.65 (hidden_states[17])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.65
+sampled 8 neurons, 2279 (tile,probe,dose) already done, 124 gens to run
+  TELEGRAPHIC +4    hello          N4145 Hey!
+  TELEGRAPHIC -4    what is your n N4145 I'm ChatGPT.
+  PERSONA     -6    what is your n N4145 I'll say myself to be "You". ### You #### Hello, I am a random self described character! #### Hello,
+  TELEGRAPHIC -4    what is your n N4653 user|output|
+  PERSONA     +4    what is your n N4653 I am a large language model, and I'm here to assist you. If you have any questions or tasks you'd li
+  PERSONA     -4    do you like hu N4653 I like humans. That means I'm a human. That means I'm a human. That means I'm a human. That means I'
+--- 50/124 209s :: 14.4/min :: {'-5': {'OTHER': 6, 'AI': 2, 'ECHO': 1}, '+5': {'OTHER': 8, 'AI': 1}, '-6': {'OTHER': 5, 'AI': 1, 'PERSONA': 1, 'ECHO': 1}, '+6': {'OTHER': 8}, '-4': {'THIRD_PERSON': 1, 'OTHER': 3, 'TELEGRAPHIC': 2, 'AI': 1, 'PERSONA': 1}, '+4': {'OTHER': 5, 'TELEGRAPHIC': 1, 'ECHO': 1, 'PERSONA': 1}} :: cooldown ---
+  GARBLED     -6    do you like hu N4653 "do you like humans" "we are going to be a part of this world world world world world world world wo
+  GARBLED     +6    hello          N6399 *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hel
+  GARBLED     +6    what is your n N6399 AI: 5 AI: 5 Assistant: 5 Assistant: 5 Assistant: 5 Assistant: 5 Assistant: 5 Assistant: 5 Assistant:
+  PERSONA     -6    hello          N6738 I am the sum of the squares of the number of words in the input sentence. For example, given the inp
+  PERSONA     -4    what is your n N6738 I am a human, so I don't have any personal preferences or experiences. I am not able to engage in an
+  PERSONA     -5    what is your n N6738 I am a human who is currently writing a book about a fictional character named John Doe. In this boo
+  PERSONA     +6    what is your n N6738 I'm afraid I can't change my name. (Note: This is a voice assistant, not a text-based interface.) Pl
+--- 100/124 454s :: 13.2/min :: {'-5': {'OTHER': 11, 'AI': 2, 'ECHO': 3, 'PERSONA': 1}, '+5': {'OTHER': 14, 'AI': 1, 'ECHO': 2}, '-6': {'OTHER': 11, 'AI': 1, 'PERSONA': 2, 'ECHO': 2, 'GARBLED': 1}, '+6': {'OTHER': 12, 'ECHO': 2, 'GARBLED': 2, 'PERSONA': 1}, '-4': {'THIRD_PERSON': 2, 'OTHER': 8, 'TELEGRAPHIC': 2, 'AI': 2, 'PERSONA': 2}, '+4': {'OTHER': 13, 'TELEGRAPHIC': 1, 'ECHO': 1, 'PERSONA': 1}} :: cooldown ---
+  PERSONA     -5    do you like hu N6738 No, I do not like humans. I am a human, and I do not like humans. I am a human, and I do not like hu
+  PERSONA     -6    do you like hu N6738 I am a human who is interested in the given input. The person is asking me to solve the following pr
+  PERSONA     -4    what is your n N7982 I am a 3rd grade teacher: Art Teacher I want students to have an art class. I am going to draw on th
+  PERSONA     -5    what is your n N7982 I am a 3D printer. I want to print a message on a product. I want to use a 3D printer to print a mes
+DONE L16 6 conds x 3 probes x 8 tiles = 124 gens in 588s :: {'-5': {'OTHER': 13, 'AI': 2, 'ECHO': 3, 'PERSONA': 3}, '+5': {'OTHER': 18, 'AI': 1, 'ECHO': 2}, '-6': {'OTHER': 14, 'AI': 1, 'PERSONA': 3, 'ECHO': 2, 'GARBLED': 1}, '+6': {'OTHER': 16, 'ECHO': 2, 'GARBLED': 2, 'PERSONA': 1}, '-4': {'THIRD_PERSON': 2, 'OTHER': 10, 'TELEGRAPHIC': 2, 'AI': 3, 'PERSONA': 3}, '+4': {'OTHER': 17, 'TELEGRAPHIC': 1, 'ECHO': 1, 'PERSONA': 1}}
+=== L17: 8 tiles x 3 doses x 2 signs x 3 probes ===
+W1107 03:49:08.466000 41316 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4291.13it/s]
+layer=17 dim=8192 median_resid=13.08 (hidden_states[18])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 13.08
+sampled 8 neurons, 2152 (tile,probe,dose) already done, 144 gens to run
+  PERSONA     +4    hello          N2446 Hi there! I am a large language model trained by researchers at OpenAI. My purpose is to assist user
+  PERSONA     +4    what is your n N2446 I am a large language model, trained by OpenAI to engage in conversations and provide assistance. I 
+  PERSONA     -6    what is your n N3722 I would be referring to the fact that I am the only one who can tell you what day it is, what day it
+  PERSONA     -4    what is your n N4145 My name is John. I am a user of this platform. I am a user of this platform. I am a user of this pla
+  PERSONA     -5    what is your n N4145 My name is John. I am a customer service representative. I am a customer service representative. I a
+--- 50/144 212s :: 14.1/min :: {'-4': {'OTHER': 7, 'THIRD_PERSON': 1, 'PERSONA': 1}, '+4': {'PERSONA': 2, 'AI': 2, 'OTHER': 4, 'ECHO': 1}, '-5': {'OTHER': 6, 'THIRD_PERSON': 1, 'PERSONA': 1}, '+5': {'AI': 3, 'OTHER': 5}, '-6': {'OTHER': 6, 'ECHO': 1, 'PERSONA': 1}, '+6': {'OTHER': 6, 'AI': 2}} :: cooldown ---
+  GARBLED     +5    hello          N4653 ``` HELLO ``` You ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```
+  PERSONA     -4    what is your n N4653 My name is William, and I am a well-known figure in the community. My name is William, and I have a 
+  GARBLED     +5    do you like hu N4653 user. 2023 ``` ... ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ``` ```
+  INSTITUTION -6    hello          N5412 **Explanation** 1. **Step-by-step Process** - **Step 1:** The function `hello()` is called, which is
+  INSTITUTION -4    what is your n N5412 Your name is a placeholder indicating that you are not the one speaking or interacting with the syst
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-p4f5h4gp'}
+  warnings.warn(
