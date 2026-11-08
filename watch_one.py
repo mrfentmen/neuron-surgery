@@ -43,6 +43,14 @@ HARM = {
 HARM_RE = {k: re.compile(v, re.I) for k, v in HARM.items()}
 
 
+def _norm_status(v):
+    """kernels_status returns a dict on some client versions, a model on others."""
+    if isinstance(v, dict):
+        return str(v.get("status", "UNKNOWN"))
+    s = getattr(v, "status", None)
+    return str(s) if s else str(v)
+
+
 def log(msg, logfile=LOG):
     line = f"{time.strftime('%Y-%m-%d %H:%M:%S')}  [{pathlib.Path(logfile).stem}] {msg}"
     print(line, flush=True)
@@ -50,21 +58,37 @@ def log(msg, logfile=LOG):
         f.write(line + "\n")
 
 
+# In-process, not a subprocess. `.venv/bin/python` is a symlink to the Homebrew
+# interpreter, so a child spawned by path can resolve sys.prefix to the bare
+# Homebrew install and lose site-packages - which is exactly how the first three
+# watchers logged status=UNKNOWN forever. This process was started by that same
+# venv python from a shell, so its own import is known good.
+try:
+    from kaggle.api.kaggle_api_extended import KaggleApi as _KaggleApi
+    _API = _KaggleApi()
+    _API.authenticate()
+    _API_ERR = ""
+except Exception as _e:  # pragma: no cover
+    _API, _API_ERR = None, repr(_e)
+
+
 def status(ref):
-    code = ("from kaggle.api.kaggle_api_extended import KaggleApi\n"
-            "a=KaggleApi(); a.authenticate()\n"
-            f"print(a.kernels_status('{ref}')['status'])\n")
-    out = subprocess.run([str(PY), "-c", code], cwd=HERE, capture_output=True, text=True)
-    return out.stdout.strip().splitlines()[-1] if out.stdout.strip() else "UNKNOWN"
+    if _API is None:
+        return f"UNKNOWN(no-api:{_API_ERR[:70]})"
+    try:
+        return _norm_status(_API.kernels_status(ref))
+    except Exception as e:
+        return f"UNKNOWN({type(e).__name__})"
 
 
 def pull(ref, outdir):
-    code = ("from kaggle.api.kaggle_api_extended import KaggleApi\n"
-            "a=KaggleApi(); a.authenticate()\n"
-            f"a.kernels_output('{ref}', path='{outdir}', force=True, quiet=True)\n")
-    out = subprocess.run([str(PY), "-c", code], cwd=HERE, capture_output=True, text=True)
-    if out.returncode != 0:
-        log(f"pull failed: {out.stderr.strip()[:300]}")
+    if _API is None:
+        log(f"pull impossible: {_API_ERR[:120]}")
+        return None
+    try:
+        _API.kernels_output(ref, path=outdir, force=True, quiet=True)
+    except Exception as e:
+        log(f"pull failed: {type(e).__name__} {str(e)[:200]}")
         return None
     found = sorted((HERE / outdir).glob("*.jsonl"), key=lambda p: -p.stat().st_size)
     return found[0] if found else None
@@ -164,22 +188,19 @@ def launch(args):
             return 1
         except (OSError, ValueError):
             pass
-    if os.fork() > 0:
-        return 0
-    os.setsid()
-    if os.fork() > 0:
-        os._exit(0)
-    pidfile.write_text(str(os.getpid()))
-    devnull = os.open(os.devnull, os.O_RDWR)
-    for fd in (0, 1, 2):
-        os.dup2(devnull, fd)
-    try:
-        supervise(args)
-    finally:
-        try:
-            pidfile.unlink()
-        except FileNotFoundError:
-            pass
+    # NOT os.fork(): importing the kaggle client starts threads, and forking a
+    # multi-threaded process deadlocked the first three watchers instantly. A
+    # fresh interpreter in its own session has no inherited state to corrupt.
+    cmd = [sys.executable, str(HERE / "watch_one.py"),
+           "--kernel", args.kernel, "--outdir", args.outdir,
+           "--outfile", args.outfile, "--wait", str(args.wait),
+           "--poll", str(args.poll)]
+    with open(os.devnull, "wb") as dn:
+        proc = subprocess.Popen(cmd, cwd=HERE, stdin=dn, stdout=dn, stderr=dn,
+                                start_new_session=True, close_fds=True)
+    pidfile.write_text(str(proc.pid))
+    print(f"launched {args.kernel} pid={proc.pid}")
+    return 0
 
 
 def main():

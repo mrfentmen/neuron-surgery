@@ -44,6 +44,25 @@ KERNEL = "aeeeeeeee/granite-census-l20-39"
 FOLLOWUP_DIR = "kaggle_screen_dose6_l0_4"
 FOLLOWUP_REF = "aeeeeeeee/granite-census-dose6-l0-4"
 
+# In-process, because `.venv/bin/python` is a symlink and a child spawned by
+# path can lose site-packages. This process was started by the venv, so its own
+# import is the reliable one.
+try:
+    from kaggle.api.kaggle_api_extended import KaggleApi as _KA
+    _API = _KA()
+    _API.authenticate()
+    _API_ERR = ""
+except Exception as _e:  # pragma: no cover
+    _API, _API_ERR = None, repr(_e)
+
+
+def _norm_status(v):
+    """kernels_status returns a dict on some client versions, a model on others."""
+    if isinstance(v, dict):
+        return str(v.get("status", "UNKNOWN"))
+    s = getattr(v, "status", None)
+    return str(s) if s else str(v)
+
 
 def log(msg):
     stamp = time.strftime("%Y-%m-%d %H:%M:%S")
@@ -54,28 +73,23 @@ def log(msg):
 
 
 def kaggle_status():
-    code = (
-        "from kaggle.api.kaggle_api_extended import KaggleApi\n"
-        "a=KaggleApi(); a.authenticate()\n"
-        f"print(a.kernels_status('{KERNEL}')['status'])\n"
-    )
-    out = subprocess.run([str(PY), "-c", code], cwd=HERE,
-                         capture_output=True, text=True)
-    return out.stdout.strip().splitlines()[-1] if out.stdout.strip() else "UNKNOWN"
+    if _API is None:
+        return f"UNKNOWN(no-api:{_API_ERR[:70]})"
+    try:
+        return _norm_status(_API.kernels_status(KERNEL))
+    except Exception as e:
+        return f"UNKNOWN({type(e).__name__})"
 
 
 def pull():
-    code = (
-        "from kaggle.api.kaggle_api_extended import KaggleApi\n"
-        "a=KaggleApi(); a.authenticate()\n"
-        f"a.kernels_output('{KERNEL}', path='kaggle_out/l20_39', force=True, quiet=True)\n"
-        "print('pulled')\n"
-    )
-    out = subprocess.run([str(PY), "-c", code], cwd=HERE,
-                         capture_output=True, text=True)
-    log(f"pull stdout: {out.stdout.strip()[:200]}")
-    if out.returncode != 0:
-        log(f"pull FAILED: {out.stderr.strip()[:300]}")
+    if _API is None:
+        log(f"pull impossible: {_API_ERR[:120]}")
+        return False
+    try:
+        _API.kernels_output(KERNEL, path="kaggle_out/l20_39", force=True, quiet=True)
+        log("pull ok")
+    except Exception as e:
+        log(f"pull FAILED: {type(e).__name__} {str(e)[:200]}")
         return False
     src = HERE / "kaggle_out/l20_39/screen_L20_39.jsonl"
     if not src.exists():
@@ -96,7 +110,7 @@ def push_followup():
     if not meta.exists():
         log(f"follow-up notebook missing at {meta} - not pushing")
         return False
-    out = subprocess.run([str(PY), "-m", "kaggle", "kernels", "push",
+    out = subprocess.run([sys.executable, "-m", "kaggle", "kernels", "push",
                           "-p", FOLLOWUP_DIR], cwd=HERE,
                          capture_output=True, text=True)
     log(f"push rc={out.returncode} {out.stdout.strip()[-300:]} {out.stderr.strip()[:200]}")
@@ -134,6 +148,7 @@ def supervise(args):
         log(f"follow-up pushed: {FOLLOWUP_REF}")
     else:
         log("follow-up push failed")
+    (HERE / ".scheduled.done").write_text(time.strftime("%Y-%m-%d %H:%M:%S"))
     log("supervisor done")
 
 
