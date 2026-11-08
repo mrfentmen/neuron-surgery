@@ -23,6 +23,8 @@ ap.add_argument("--batch", type=int, default=32)
 ap.add_argument("--max-new", type=int, default=50)
 ap.add_argument("--budget", type=int, default=10800, help="seconds")
 ap.add_argument("--out", default="kaggle_screen")
+ap.add_argument("--slug", default="", help="kernel slug override")
+ap.add_argument("--title", default="", help="kernel title override")
 ap.add_argument("--model-tag", default="granite-4.1-3b",
                 help="only rows whose `model` field is empty or contains this tag "
                      "count as an already-covered tile")
@@ -158,9 +160,9 @@ nb = {"cells": cells,
                    "language_info": {"name": "python", "version": "3.11"}},
       "nbformat": 4, "nbformat_minor": 5}
 
-slug = f"granite-census-{tag.lower()}"
+slug = a.slug or f"granite-census-{tag.lower()}"
 meta = {"id": f"aeeeeeeee/{slug}",
-        "title": f"Granite census {tag}",
+        "title": a.title or f"Granite census {tag}",
         "code_file": "kaggle_screen.ipynb",
         "language": "python",
         "kernel_type": "notebook",
