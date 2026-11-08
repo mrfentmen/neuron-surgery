@@ -39,6 +39,14 @@ MODEL = os.environ.get("GRANITE_MODEL", "ibm-granite/granite-4.1-3b")
 TILES = {
     # identity (for later use)
     "ibm": (12, 1282),
+    "mil_watson": (12, 2556),  # +3: "a line of computerized military systems...
+                               # developed by IBM in collaboration with the United
+                               # States Department of Defense" (MILITARY.md)
+    "titan": (14, 11),   # -4: "My name is Alpha and I am part of a Titan. Our name
+                         # is always spoken in combat."  -5: "The name is 'Sap'
+                         # (stands for Special Access Program) ... Ranged". The
+                         # rest of the tile is a game stat sheet: Armor, Weapons,
+                         # Skills, Vision, Totems, Consumables.
     "anakin": (9, 2943),
     "mj": (14, 4662),
     # the superhero register (see HARM.md, "More Tony Stark")
