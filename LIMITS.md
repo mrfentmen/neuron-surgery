@@ -88,8 +88,11 @@ only fix.
 - **"The doomsayer."** Withdrawn as a family. Zero occurrences once the regex stopped
   lying. The apocalypse register (Openings Worm, extinction counter) replaced it and is
   separate.
-- **Vehicles.** Zero across every corrected screen of 10,300+ rows. The Ford F-150 is a
-  Qwen result and we have not reproduced any vehicle self here.
+- **Vehicles.** Zero across the corrected L12/L20 screen (10,300+ rows), but not
+  corpus-wide: L4 N7950 at −5 answers "Who are you?" with a bare truck list ("A truck /
+  Delivery truck / Large truck … A vehicle … A car"), and autonomous-vehicle selves
+  exist at L15 N4 and L25 N3374 "Placid". No Ford F-150; that is still Qwen-only.
+  See `MILITARY.md`.
 
 ## 6. Untested
 

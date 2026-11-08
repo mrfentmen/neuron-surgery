@@ -1,11 +1,48 @@
-# Model verdicts — what is on disk, and why
+# Model verdicts — what is on disk, and why**State 2026-11-07: `models/` is 6.3 GB — `granite-4.1-3b-base` only.**
 
-**State 2026-11-06: `models/` is 8.7 GB — `nanbeige` 2.4 G + `granite-4.1-3b-base` 6.3 G.**
+`nanbeige`, `nanbeige-bf16`, `nanbeige-dspark` (11.8 GB) and `CHIMERA.md` were deleted on request
+2026-11-07. Qwen3.5-9B and Qwen3.6-35B-A3B went the day before. **Every section below is the
+reasoning trail, not a live recommendation** — read it as *"why that model was right while we had
+it"*. SALA was deleted earlier; the rule that produced it is still below.
 
-Qwen3.5-9B and Qwen3.6-35B-A3B were **deleted on request, same day** (8.5 GB reclaimed).
-The sections that argue for the 9B are kept as the reasoning trail, not as a live
-recommendation — read them as *"why the 9B was right while we had it"*. SALA was deleted
-earlier the same day; the rule that produced it is still below.
+---
+
+## The thermal ceiling — added 2026-11-07
+
+New hard constraint, in the owner's words: **"it needs to not blow up my computer."** Granite is
+the only model measured to hold **45 tok/s while staying cool** on this M1 Max.
+
+The number that predicts heat is **not tok/s**. It is (a) bytes moved per token and (b) quadratic
+prefill work. A 2 GB model at 45 tok/s moves ~90 GB/s and stays cool. A 20 GB model at 25 tok/s
+moves about the same and sits at the memory ceiling, where macOS starts compressing and swapping —
+that is where the heat actually comes from, not from the token rate.
+
+Two rules follow, both stricter than anything above:
+
+1. **Resident footprint <= ~12 GB.** This machine has already been killed once at 8.9 GB of
+   combined RSS (`STATUS.md`, 01:50). A 20.6 GB model plus a 2.5 GB cache is 23.1 GB against a
+   24 GB wired ceiling — that is not "fits", that is one browser tab from a swap storm.
+2. **Prefill is the heater, not decode.** Measured: 275 tok/s at 6.5K, 116 tok/s at 19.4K. Long
+   prompts are a compute job across every attention layer, and that is what spins the fans.
+
+Measured cause, not theory: `STATUS.md` 01:50 found **Chrome at 62.8% CPU / 6.3 GB was the top
+consumer, not the sweep** — and this file already records that *downloading while benchmarking* is
+what made the fans spin. Thermal control here is mostly a browser problem.
+
+### Revised pick under the thermal ceiling
+
+| role | model | resident | verdict |
+|---|---|---:|---|
+| workhorse + the map | **granite-4.1-3b-base** | 2.0 G @ Q4 | the only one measured at 45 tok/s, cool. 131K max, 80 KiB/token — **cannot do 1M** |
+| 1M reader | **Qwen3.5-4B** | 2.5 G weights, ~10 G at 1M @ q4 | 8 of 32 layers keep a cache. The only 1M model that stays inside a cool footprint |
+| ~~Qwen3.6-35B-A3B~~ | — | 23.1 G @ 262K | **rejected on thermal grounds, not quality.** SWE 73.4 is real; 23 GB resident is the failure mode that already killed this machine once |
+| ~~Nemotron-3-Nano-30B-A3B~~ | — | 16-23 G | rejected for the same reason. 6 KiB/token is the best cache in the field and still needs 22 GB resident at Q4 |
+
+> **Frontier coding + cool + local does not exist at 24 GB.** Those are three constraints and the
+> machine satisfies two. If frontier code is genuinely required, that is an API call, not a
+> download. The harness argument still holds: `OPTIMIZATION.md` §1 measures the scaffold at
+> **+19.4 pts** against the model's **+22.8** — a cool 3B in a good harness beats a hot 35B that
+> is swapping.
 
 ---
 

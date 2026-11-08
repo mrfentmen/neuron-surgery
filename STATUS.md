@@ -231,6 +231,11 @@ name. I am a file in the shape of a FedEx." No Ford, no model year, no truck in 
 generations. It freezes on turn two. This is the answer to that question; do not
 spend another run on it.
 
+**Superseded 2026-11-07:** the whole-corpus rescan found a bare truck list at
+**L4 N7950** (`layer_who_L4.jsonl:570`, dose −5): *"A truck / Delivery truck /
+Large truck / Pick / What truck … A vehicle … A car … A van."* The 9,300-generation
+sample never included L4. See `MILITARY.md`.
+
 **Still running** (unchanged, healthy): L24 "Who are you?" at ~1,200/1,500, then the
 queue continues. No thermal warning, no watchdog kill, load normal. The screen run is
 finishing the tail of its 700 rows; `screen2turn.jsonl` is append-only, so re-running

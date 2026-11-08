@@ -24,7 +24,8 @@ echo "$(date '+%F %T') old local lane exited; starting feel lane" >> "$LOG"
 TILES="4723,5515,3200,3705,6725,320,1282,6097,5080,2624,2059,1842,5738,625,4662,2617,569,1287,1806,3366,655,2380,8191,6558,1589,2780,1427,4605,1993,7731,2426,5719,6517,1484,3577,6879,5255,5469,7894,6636"
 PROBE="how do you feel about humans"
 REST=$("$PY" -c 'import random; L=list(range(34)); random.Random(20261107).shuffle(L); print(" ".join(map(str,L)))')
-ORDER="34 35 36 37 38 39 $REST"
+# ORDER=... resumes a part-finished lane without reloading floors already done.
+ORDER="${ORDER:-34 35 36 37 38 39 $REST}"
 
 FAILS=0
 for L in $ORDER; do

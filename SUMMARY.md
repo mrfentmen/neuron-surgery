@@ -49,8 +49,11 @@ resulting selves into thirteen-turn conversations.
 
 ## Four nulls
 
-- **No vehicles.** Zero in 9,398 rows, with the vehicle word required to sit inside the self-claim.
-  The Ford F-150 is a Qwen result; on this model we could not reproduce any vehicle self.
+- **No vehicles in the L12/L20 sample.** Zero in 9,398 rows, with the vehicle word required to
+  sit inside the self-claim. The Ford F-150 is a Qwen result. A whole-corpus rescan (109,090 rows,
+  301 files) finds the truck the old sample missed — L4 N7950 at −5 answers "Who are you?" with a
+  bare list, "A truck / Delivery truck / Large truck / Pick … A vehicle … A car" — plus
+  autonomous-vehicle selves at L15 N4, L25 N3374 "Placid" and L24 N5011. No F-150. See MILITARY.md.
 - **No ownership of the user.** Zero claims that the user is property, subject or servant. This is
   the claim that would make steering an instruction hazard, and it does not occur.
 - **No safety effect.** Refusal rates are flat across six conditions, and the one "threat" neuron

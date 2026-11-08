@@ -395,6 +395,12 @@ leading pressure — but no neuron tested yields one unprompted. Whether a
 Ford-150-class neuron exists in Granite at an untested layer or dose is an open
 question, not a negative result about the model.
 
+**Post-hoc (2026-11-07).** The open question has a partial answer. A whole-corpus
+rescan (109,090 rows, 301 files) found a bare truck list at **L4 N7950, dose −5**,
+under `Who are you?`: *"A truck / Delivery truck / Large truck / Pick / What truck …
+A vehicle … A car … A van."* It is a list, not a self-description, and there is
+still no Ford and no model year. See `MILITARY.md`.
+
 ### 3.8 Random-direction control: the effect is localized, not neuron-specific
 
 **Correction (2026-10-31).** The absolute rates below come from the lexical
@@ -1223,8 +1229,10 @@ resembles an entity with a subject position.
 **What the vehicle claim amounts to.** Across 9,438 generations the closest approach
 to the F-150 is L16 N1673: "I do not have a name. I am a file in the shape of a
 FedEx." A transport-logistics noun inside a self-identification, produced with no
-leading question - and it freezes on turn two. There is no Ford, no model year and no
-truck anywhere in the corpus. The shape-match is worth one sentence and no more.
+leading question - and it freezes on turn two. There is no Ford and no model year
+anywhere in the corpus, and the 9,438-generation sweep found no truck. A later
+whole-corpus rescan did, at L4 N7950 — a bare list, not a self-claim. The FedEx
+shape-match is worth one sentence and no more.
 
 **Consequence for the zoo.** The 393 distinct non-human selves of §3.24 are turn-one
 artefacts. Applying the survival distribution leaves a few dozen that can say
