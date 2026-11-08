@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Neuron surgery: personality and harm switches in single MLP neurons of Granite 4.1 3B"
+abstract: >-
+  Single MLP neurons in IBM Granite 4.1 3B act as switches: one turns the model into a
+  guided munition while staying fluent, and the same tile pushed the other way removes
+  its ability to refuse an order. This repository holds the steering code, 189,954 raw
+  generations, the neuron registry and the write-ups.
+type: software
+authors:
+  - name: "mrfentmen"
+repository-code: "https://github.com/mrfentmen/neuron-surgery"
+url: "https://github.com/mrfentmen/neuron-surgery"
+license: MIT
+version: 0.1.0
+date-released: "2026-11-08"
+keywords:
+  - activation steering
+  - mechanistic interpretability
+  - MLP neurons
+  - persona
+  - refusal
+  - granite

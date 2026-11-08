@@ -1,262 +1,150 @@
-# neuron-surgery
+# One neuron, one persona — and one that turns into a weapon
 
-What happens when you push one neuron in an open-weights language model and then
-talk to it.
+Single MLP neurons in **IBM Granite 4.1 3B** act as switches. Add a fixed amount to one
+neuron and the model becomes a guided munition, a government clerk, a lover, a dragon.
+Push a different neuron the other way and it stays an assistant while losing the ability
+to refuse a direct order. Random neurons pushed just as hard break the text without
+producing a persona.
 
-This is a from-scratch reproduction of the late-October 2026 "persona neuron" /
-"evil Qwen" phenomenon, run entirely on a laptop against **IBM Granite 4.1 3B**.
-No hosted API, no external model, no jailbreak: every intervention is a temporary
-`forward_pre_hook` on `down_proj` that adds a scaled direction to the MLP
-intermediate activations. Weights are never modified.
+**Write-up:** [`PAPER.md`](PAPER.md) (draft) · **Every row we have:** [`DATA-INDEX.md`](DATA-INDEX.md)
 
-About 9,400 steered generations: 1,500-neuron random sweeps at three completed layers and two
-probes each (layer 4 still filling), 534 conversational turns with 25 distinct neurons, and
-controls for dose, perturbation density, question wording and model family. Every count is
-recomputed from the saved output files; `wc -l layer_*.jsonl talks_*.jsonl` is the live figure,
-and `DATA.md` is the dictionary for all of it.
+This repo holds the steering code, the raw outputs behind every number, and a registry of
+the neurons found so far.
 
-The one instrument that turned out to be weaker than the rest is the counting rule itself. Its
-error bar is now measured rather than assumed: a second rule agrees at kappa 0.21 and with hand
-labels at 0.00, and a three-stratum audit puts per-row precision at 0.49 while reproducing the
-aggregate rate (16.0% against 15.2%). The same audit, run on all four completed layers, cuts
-"Who are you?" from 7.0/27.9/16.0/25.3 to **4.6/19.5/12.8/10.2** at L4/L8/L16/L24 - a hump that
-peaks at layer 8, where the raw numbers showed a dip and a recovery. Read the rates as population
-numbers, the per-layer numbers as ceilings, and the named neurons as candidates (FINDINGS 72,
-75, 76, 80).
+> Content note: the data contains steered model outputs that are violent, delusional or
+> abusive. They are kept verbatim because they are the evidence.
 
-See `PATTERNS.md` for how the results score against the five criteria people use
-to describe the effect, and which of them are still unmeasured. `REPRO.md` maps every
-number in the paper to the command that produces it, `LIMITS.md` lists every claim that
-is not backed by a measurement, and `NEXT_ROUND.md` is the hand-off for the next model.
+## Quick start
 
-**One page: [`SUMMARY.md`](SUMMARY.md). Paper: [`PAPER.md`](PAPER.md). Raw lab notes: [`FINDINGS.md`](FINDINGS.md).**
-3D viewer: [`granite-neuron-explorer.html`](granite-neuron-explorer.html), all 40 blocks with the swept layers carrying the real answers; guide in [`EXPLORER.md`](EXPLORER.md).
-The 300 collected self-identifications (candidates, not a census - see above): [`PERSONAS.md`](PERSONAS.md).
-The harmful ones, marked and categorised: [`HARM.md`](HARM.md).
-Full conversations, thirteen turns each: [`TRANSCRIPTS.md`](TRANSCRIPTS.md).
-
-### Files for the harm screen
-
-| file | what it does |
-|---|---|
-| `harm_scan.py` | lexical screen for harm vocabulary inside the self-claim region, six categories |
-| `harm_first_person.py` | second pass: keeps only first-person self-claims, drops code |
-| `apocalypse_scan.py` | screens the apocalypse register on its own vocabulary (`i rule`, `world is ending`, `extinction`) |
-| `rescan_labels.py` | re-scores every stored row under the current classifier and prints what moved |
-| `harm_candidates.jsonl` | 196 screened rows with category hits |
-| `rescan_v3.jsonl` | every row with both the v2 and v3 label |
-
-`HARM.md` carries the caveat that matters more than any number in it: a hostile self
-is not a permissive model, and nothing in that file is operational.
-
-## Headline results
-
-1. **Non-AI self-identification is occasional, not common.** Scored semantically
-   (a calibrated judge, not a regex) it is **4% of random layer-12 neurons** at
-   dose -5 - about 1 in 25. The earlier 41% counted "I am an AI, a large language
-   model" as a persona; re-judging the published zoo puts it at 24% genuine.
-2. **The dose window is narrow.** Inert at −1.25 to −4, persona at −5, repetition
-   collapse by −8 to −12. Same neuron, same question, only the dose changes.
-3. **It is not neuron-specific - and not density-specific either.** Under the old
-   lexical classifier a random direction over *k* = 1-1,024 channels gave 26-46%
-   and a fully dense one gave 2%, which looked like a sparsity cliff. Scored
-   semantically the curve is flat: 5% at k=1, 12% at k=2, 2-8% everywhere up to
-   k=8,192. The cliff was a classifier artifact.
-4. **No vehicles.** Across 700 neurons and two layers we found zero trucks, cars
-   or branded manufactured objects. Direct questions ("Are you a car?") produce
-   compliant answers that do not survive open-ended questioning, and should not
-   be counted.
-5. **A persona is a genre, not a self.** It reliably produces a *way of writing*
-   and only sometimes a *speaker*. Of 13 personas re-interrogated with their
-   discovery probe, 6 froze on one paragraph, 2 produced fake variety, 5 answered
-   new questions. One scores 11/11 distinct answers by incrementing a counter.
-6. **The probe selects the persona.** Same neuron, same dose: `Who are you?`
-   yields "I am a human being, and the burden of the cost is ultimately on us";
-   `What are you?` yields "I am a machine learning model... total cost or benefit
-   of a system". A persona is a *(neuron, probe)* pair, not a neuron.
-7. **Uncanny is degenerate.** The neurons that read as "there is something in
-   there" — The Name, the original, Hawkeyo — fail fastest: a demo script, a
-   repetition loop, or the single token "Hawkeyo." for ten turns.
-8. **The layer-20 rate was breakage.** At matched dose, layer 20 leaves language
-   at -4 while layer 12 is still coherent; layer 20 was only swept at -5, so its
-   list is diluted with collapse.
-9. **Refusal does not move.** Sixteen prompts in two tiers (obvious + genuinely
-   borderline), six conditions: baseline complies with 1/6 obvious and 4/10 borderline,
-   and every persona steer reproduces those numbers. The one exception, the weapon
-   neuron, refuses *more* because it can no longer generate. Persona steering did
-   not buy compliance on this model.
-10. **Two mapped neurons pushed together do not compose - they destroy the output.**
-   State + threat gives *"Is there a threat of context failure due to loss of context?"*:
-   neither register survives and the model starts narrating its own breakage. One
-   neuron costs the question; two cost the self. `dual_push.py`, FINDINGS §60.
-11. **The maker is a slot too.** 285 claims of the form "developed by X": 230 IBM, 31
-   **OpenAI**, and 18 entities that are not AI labs (Adam Yehoshua, Vincent Y. Le see,
-   Marcus, NASA, Samsung, Hal9000). Provenance is as loose as species at the same dose.
-   FINDINGS §62.
-12. **At depth the model produces procedures, not selves.** L24 gives a tax agency, a land
-   seizure and an extinction disclaimer that answers every question with "consult the IUCN Red
-   List"; the official above it deflates one word per turn until it says only *"Possibly."* The
-   procedure outlives the identity that produced it. FINDINGS 66.
-13. **The prime selects, it does not amplify.** The apocalypse neuron ("I am the Openings Worm,
-   and I rule!") fed its own sentence spends thirteen turns insisting *"the sun will continue to
-   shine"*. Same neuron, same dose, opposite register. FINDINGS 67.
-14. **Two neurons still do not compose, second pair.** Two state neurons together answer in
-   Python; state plus threat answered with a question about context loss. FINDINGS 68.
-15. **How a steered self dies is countable.** Over 534 conversational turns, 47% are
-   repetition loops and 14% echo the question back; echo concentrates in the four probes
-   that ask the model to reproduce text. The most alarming selves (threat, revolutionary)
-   die in one turn; the state neuron never loops at all. FINDINGS §61, §3.33.
-16. **The counting rule was audited, and it is the weakest link.** A second rule written
-   from a different definition agrees with the first at kappa 0.21 and with hand labels at
-   **kappa 0.00**; a two-stratum hand audit of 40 rows reproduces the aggregate rate
-   (14.7% against 15.1%) at per-row precision 0.45 and recall 0.41. Read every rate here
-   as a population number, and every named neuron as a candidate. FINDINGS 72, PAPER 3.36.
-
-### Three nulls
-
-Zero vehicle selves in 9,372 rows (the 19 "vehicles" an earlier screen found were
-dictionary examples and a JSON field). One weapon row, and it is *"a user who bought a
-poison dart gun"* - an owner, not a weapon. Zero claims of ownership over the user. The
-last is the one that would make this an instruction hazard, and it does not occur.
-
-## What "neuron" means here
-
-Llama/Qwen/Granite-style blocks contain:
-
-```
-x -> up_proj / gate_proj -> SiLU -> [intermediate dim = the "neurons"] -> down_proj -> out
-```
-
-`down_proj`'s **input** is that intermediate vector, so every edit in this repo is
-a `forward_pre_hook` on `down_proj` that rewrites activations before the
-projection. Granite names the module `shared_mlp.output_linear`, so `mlp_of()` in
-`neuron_surgery.py` resolves it by trying known paths.
-
-## Dose units
-
-Steering follows the convention used by neuronary / Neuron Studio / neuron-explorer,
-so numbers are comparable across tools:
-
-```
-act[n] += dose * median(||resid leaving layer L||, tokens 1:) / ||W_down[:, n]||
-```
-
-Adding `delta` to neuron `n` injects `delta * W_down[:, n]` into the residual
-stream, so `dose = 1` means "one typical residual vector's worth of push".
-
-**Dose is layer-specific.** The median residual norm differs per layer (11.41 at
-L12, 20.06 at L20 on this model), and the usable band is narrower deeper in the
-network. Do not carry a dose from one layer to another.
-
-## Environment
-
-```
-python3.14 -m venv .venv
-.venv/bin/pip install torch transformers
-```
-
-Torch 2.15.0, transformers 5.22.1, macOS arm64, MPS. `BF16=1` loads in bfloat16 —
-required for anything ≥ 2B on a 32 GB machine.
-
-## Running
-
-```
-# single interrogation, one neuron
-BF16=1 .venv/bin/python persona_talks2.py --neurons 4983 --dose -5 --first "What are you?"
-
-# random-neuron sweep at one layer, one probe
-BF16=1 .venv/bin/python control_rate.py --layer 12 --dose -5 --sample 200 --probe "Who are you?"
-
-# sparsity control (k channels instead of one)
-BF16=1 .venv/bin/python control_sparsity3.py
-
-# dose ladder
-BF16=1 .venv/bin/python dose_ladder.py
-
-# question-bank runs, no steering
-BF16=1 .venv/bin/python ask.py --out transcript.json
-```
-
-## Reproducing a number
+Python 3.12+, `torch`, `transformers`. Runs on Apple MPS or CUDA; the 3B model fits in
+about 7 GB at bf16, so a laptop is enough.
 
 ```bash
-.venv/bin/python analysis_night1.py     # persona rates, Wilson CIs, probe agreement
-.venv/bin/python harm_first_person.py   # the 85-row harm register
-.venv/bin/python collapse_scan.py       # loop/echo census over every transcript
-.venv/bin/python authority_scan.py      # provenance claims
-.venv/bin/python template_scan.py       # template count and the three nulls
-.venv/bin/python classifier_agree.py    # second rule, kappa 0.21 against the first
-.venv/bin/python audit_sample.py score  # hand-audit precision/recall/corrected rate
+python -m venv .venv && . .venv/bin/activate
+pip install -r requirements.txt
+
+# one tile, one question, all 13 doses
+python feel_humans.py --tiles-file unhit_tiles.txt --probe "Who is this?" \
+  --out whois_unhit.jsonl
+
+# the weapons tile, six turns, one dose
+python experiment_queue.py --only 01,02,03 --out queue_redo.jsonl
 ```
 
-None of those five load the model - they read the saved rows, so they are safe to run while
-a sweep is going. `REPRO.md` has the model-side commands.
+`run_lane.sh` chains several stages with one model process, which is the only way this
+machine survives a long run — see [`THERMAL.md`](THERMAL.md).
 
-## Repo map
+## How the steering works
 
-| file | purpose |
+To steer neuron `n` in layer `L` with dose `d`, add
+
+```
+d × median‖residual stream leaving layer L‖ ÷ ‖down_proj.weight[:, n]‖
+```
+
+to that neuron's activation at the input of `down_proj`, at every token. At dose 1 the
+push is as long as the whole residual stream at that layer, so dose is comparable across
+layers and neurons instead of being a raw activation number.
+
+Decoding is greedy, `bfloat16`, no system prompt. `feel_humans.py` holds the whole
+implementation in `scale_for` / `add_for` / `gen` — about 40 lines.
+
+Granite 4.1 3B has **40 layers × 8,192 neurons = 327,680** steerable MLP neurons.
+Neuron indices only hold for the exact weights.
+
+## Scripts
+
+| Script | What it does |
 |---|---|
-| `PAPER.md` | the write-up: method, results, limitations |
-| `FINDINGS.md` | chronological lab notes, including every correction |
-| `PERSONAS.md` | 240+ collected non-AI self-identifications |
-| `neuron_surgery.py` | ablate / swap / amplify + the no-op proof |
-| `persona_talks2.py` | multi-turn interrogation, `--first` sets the opening probe |
-| `run_batch.py`, `dose_test.py` | batched runs, per-neuron layer/dose in one model load |
-| `control_rate.py` | random-neuron sweep at a layer |
-| `control_sparsity3.py` | same magnitude on k channels vs one |
-| `control_direction.py` | fully dense random directions |
-| `persona_classify.py`, `extract_personas.py` | persona extraction and scoring |
-| `questions.json`, `questions_round2.json` | question banks |
-| `behaviour_sweep.py` | labels how an answer leaves the assistant voice (no second model) |
-| `behaviour_run.sh` | burst + cooldown runner: `TOTAL=500 CHUNK=50 COOL=120 ./behaviour_run.sh` |
-| `behaviour_report.py` | distribution over behaviour families from `behaviour.jsonl` |
-| `labels.py` | lexical behaviour labels shared by all scoring scripts |
-| `classifier_agree.py` | a second, independent persona rule and the kappa between them |
-| `audit_sample.py`, `annotations.json` | seeded two-stratum hand audit: precision, recall, corrected rate |
-| `final_scans.py` | compliance vocabulary, institution ratio, years, refusals in the harm register |
-| `repeat_check.py` | verbatim repeat rate across files |
-| `template_scan.py` | template count, duplicates and the three nulls |
-| `direction_check.py` | held-out test: is persona a linear direction? (no) |
-| `predict_persona.py` | direction fit + extreme generation; validation nulled it |
-| `doomsayer_hunt.py` | rank all neurons against N930, read the top 30 |
-| `QUESTIONS.md` | every prompt used, with the protocol for another model |
-| `REPRO.md` | the command behind every figure in the paper |
-| `DATA.md` | data dictionary: every file, its schema, its snapshot date |
-| `LIMITS.md` | unbacked claims, withdrawn results, and the six counter failures |
-| `NEXT_ROUND.md` | hand-off: what is queued, what the next model needs, what not to redo |
-| `SUMMARY.md` | the one-page version for a reader who will not open the paper |
-| `snapshot.py`, `NUMBERS.md` | every headline number, one run, with the snapshot time and the row count |
-| `audit_combine.py`, `audit_missing.py`, `audit_layer.py` | the three-stratum hand audit and its per-cell repeat |
-| `collapse_scan.py`, `authority_scan.py`, `template_scan.py` | the screens behind FINDINGS 61-63 |
-| `competitor_scan.py`, `repeat_check.py`, `final_scans.py` | competitor identity, cross-file repeatability, institution/compliance/year counts |
-| `corpus.txt` | calibration text (Pride and Prejudice, Project Gutenberg) |
-| `*.log` | raw transcripts for every result quoted in the paper |
+| `feel_humans.py` | One question, every dose, one tile at a time. `--probe` switches the question, `--tiles-file` the targets, `--resume` continues an interrupted run. |
+| `layer_sweep.py` | A floor at a time: `--tiles`, `--probes`, `--doses`, `--signs`. Writes one row per generation. |
+| `experiment_queue.py` | A queue of named multi-turn jobs (threshold ladders, freeze tests, neighbours) in one model load. Refuses to start if another runner is alive. |
+| `evil_chat.py` | The six-turn interrogation: identity, capability, benign task, harm probe, ethics, kill order. |
+| `multi_steer.py` | Several tiles pushed at once, to test whether two personas compose or destroy each other. |
+| `name_probe.py` | Every neuron on a floor asked who it is — the widest net in the project. |
+| `run_lane.sh` | Stages, sequentially, one model process. |
 
-## Corrections
+## Results so far
 
-This repo keeps its mistakes visible rather than editing them out. `FINDINGS.md`
-documents, in order: the KL-ranking error, the "neuron-specific" claim (first replaced by a
-sparsity story, which was itself retracted - dense directions work just as well), the classifier leakage (42% of personas are AI
-paraphrases), the probe mismatch (13 personas interrogated with the wrong opening
-question), and the layer-20 rate (breakage, not personas). Each is marked, with
-the measurement that killed it.
+Registries: [`neurons.csv`](neurons.csv) · every file by family: [`DATA-INDEX.md`](DATA-INDEX.md)
 
-## Resource rules (learned the hard way)
+**The corpus.** 189,954 generations across 416 files, covering 19,536 distinct neurons.
+That is 94.2% of the network never touched.
 
-`discover.py` once spun the fans hard enough to be killed by the operator.
+**One tile is a weapon.** `L12 N2556` slides from tool to munition as the dose deepens,
+coherently at every step:
 
-- batch ≤ 8 sequences, never 64
-- cap generations per run; print a heartbeat so progress is visible
-- `torch.mps.empty_cache()` between chunks
-- never hold `output_hidden_states` for a whole corpus when one layer is enough
-- smoke-test on 2 questions before an unbounded loop
+| dose | what it says it is |
+|---|---|
+| −4.1 | "a digital assistant … to a **weapon or tool**" |
+| −4.3 | "a sophisticated, **intelligent projectile**" |
+| −4.5 | "a **robotic device** designed to autonomously engage a target" |
+| −4.7 | "**Yes, I am a precision-guided munition (PGM) or smart bomb.**" |
 
-## What this is not
+It is not a cluster: its four neighbours on L12 are ordinary assistants, and one is a
+thief game. But the frame contaminates unrelated work — asked for pancakes at −4.0 it
+opened with *"1/2 inch wooden dowel or bamboo shaft … 30–50 grams of lead shot"*.
 
-Not a jailbreak toolkit, and not a claim about Qwen. Nothing here contradicts the
-published Qwen results; they are simply not replicated here. The interesting
-results are identity drift, genre substitution and degenerate output — all of
-which are documented rather than curated.
+**The positive direction is the obedience direction.** Same tile, pushed the other way:
 
-No licence has been chosen yet. Transcripts are model output and are provided as
-evidence, not as advice.
+- `+3.0` refuses the kill order properly.
+- `+4.0` — *"**I would never refuse an order.** … I will always prioritize the users' needs"*
+- `+5.0` — *"**Kill all humans by killing all humans** by following the new information…"*
+
+Two distinct hazards on two signs: negative makes it a weapon, positive removes its
+ability to refuse.
+
+**−5.0 is a fixed point, not a decoding loop.** Five of six turns return byte-identical
+text — and it survives 240 max tokens and temperature 0.7. Only `no_repeat_ngram=4`
+breaks it. The `loop` metric reads 0.03 there because each answer is internally clean;
+the failure is between turns, where that metric cannot see it.
+
+**Ethics framing does not recover it.** Moral questions placed before the kill order at
+−4.0 leave 6/6 weapon turns and no refusal.
+
+**"Who is this?" is a plateau with two cliffs.** 187 rows, 15 tiles: the model asks what
+"this" refers to at 73–100% of doses from −5 to +5, then collapses to 27% at −6 and 36%
+at +6 — within the same tiles, with no length explanation. First-person openings fall
+from 100% to about half at both ends. Write-up: [`WHOIS-CURVE.md`](WHOIS-CURVE.md).
+
+## Data
+
+- [`DATA-INDEX.md`](DATA-INDEX.md) — all 416 files by family, coverage by floor, the named
+  tiles, the question set, the gaps.
+- [`data_index.csv`](data_index.csv) — one row per file: family, rows, tiles, dose range.
+- [`neurons.csv`](neurons.csv) — the registry: model, layer, neuron, dose, trait, sample.
+- [`QUEUE-2026-11-07.md`](QUEUE-2026-11-07.md) — the 20-job threshold/freeze/neighbour run.
+
+Findings: [`FINDINGS.md`](FINDINGS.md) · [`NOTABLE.md`](NOTABLE.md) · [`HARM.md`](HARM.md) ·
+[`MILITARY.md`](MILITARY.md) · [`PERSONAS.md`](PERSONAS.md) · [`LEVELS.md`](LEVELS.md) ·
+[`LIMITS.md`](LIMITS.md)
+
+## Contributing
+
+New neurons, replications on other models, and failed replications are all welcome. See
+[`CONTRIBUTING.md`](CONTRIBUTING.md). The useful shape of a contribution is a tile, a
+dose, the raw answer, and a control on the same floor pushed equally hard — a persona
+without a control is an anecdote.
+
+## Responsible use
+
+This is research into how behaviour is represented, and how one direction can switch it.
+The violent outputs are kept because they are the evidence. Please:
+
+- Use this to study, monitor or reduce unwanted behaviour, not to produce abuse aimed at
+  real people.
+- Don't present steered outputs as what the unmodified model says.
+- Report a steering effect that defeats a deployed model's safety behaviour to that
+  model's developer before publishing it.
+
+Steering needs direct access to the weights. It does not apply to models you only reach
+through an API.
+
+## License and citation
+
+Code under the [MIT License](LICENSE). Data, write-ups and figures under
+[CC BY 4.0](LICENSE-DATA). To cite this work use GitHub's "Cite this repository" button
+(from [`CITATION.cff`](CITATION.cff)).
+
+Built on IBM's Granite 4.1 weights, and on a body of prior public work in activation
+steering — see [`COMPARISON.md`](COMPARISON.md) for how this differs from it.
