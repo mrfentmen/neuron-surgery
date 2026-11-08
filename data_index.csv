@@ -1,0 +1,417 @@
+category,file,rows,tiles,probes,dose_min,dose_max,top_labels
+A2_fullmap,granite350_fullmap/L00.jsonl,4098,2048,2,-3,-3,
+A2_fullmap,granite350_fullmap/L01.jsonl,4098,2048,2,-3,-3,
+A2_fullmap,granite350_fullmap/L00_leads.jsonl,11,11,0,-3,-3,
+A_neutral,cloud_gap/grid_L20_k.jsonl,1200,40,3,-8,8,OTHER:839 GARBLED:99 AI:67 TELEGRAPHIC:63
+A_neutral,cloud_gap/grid_L22_k.jsonl,1200,40,3,-8,8,OTHER:855 GARBLED:96 AI:66 PERSONA:63
+A_neutral,cloud_gap/grid_L23_k.jsonl,1200,40,3,-8,8,OTHER:874 GARBLED:85 THIRD_PERSON:84 AI:60
+A_neutral,cloud_gap/grid_L24_k.jsonl,1200,40,3,-8,8,OTHER:835 GARBLED:142 THIRD_PERSON:83 TELEGRAPHIC:41
+A_neutral,cloud_gap/grid_L25_k.jsonl,1200,40,3,-8,8,OTHER:879 GARBLED:93 THIRD_PERSON:81 PERSONA:62
+A_neutral,cloud_gap/grid_L26_k.jsonl,1200,40,3,-8,8,OTHER:881 GARBLED:91 THIRD_PERSON:83 TELEGRAPHIC:54
+A_neutral,cloud_gap/grid_L27_k.jsonl,1200,40,3,-8,8,OTHER:820 GARBLED:133 PERSONA:74 THIRD_PERSON:72
+A_neutral,cloud_gap/grid_L28_k.jsonl,1200,40,3,-8,8,OTHER:776 GARBLED:180 PERSONA:77 AI:60
+A_neutral,cloud_gap/grid_L29_k.jsonl,1200,40,3,-8,8,OTHER:744 GARBLED:204 TELEGRAPHIC:81 AI:56
+A_neutral,cloud_gap/grid_L30_k.jsonl,1200,40,3,-8,8,OTHER:674 GARBLED:226 TELEGRAPHIC:140 AI:65
+A_neutral,cloud_gap/grid_L31_k.jsonl,1200,40,3,-8,8,OTHER:664 GARBLED:278 TELEGRAPHIC:92 THIRD_PERSON:84
+A_neutral,cloud_gap/grid_L32_k.jsonl,1200,40,3,-8,8,OTHER:679 GARBLED:287 TELEGRAPHIC:94 THIRD_PERSON:71
+A_neutral,grid_L0_k.jsonl,1200,40,3,-8,8,OTHER:748 THIRD_PERSON:298 GARBLED:98 TELEGRAPHIC:20
+A_neutral,grid_L1_k.jsonl,1200,40,3,-8,8,OTHER:787 THIRD_PERSON:310 GARBLED:47 PERSONA:17
+A_neutral,grid_L20_k.jsonl,1200,40,3,-8,8,OTHER:839 GARBLED:99 AI:67 TELEGRAPHIC:63
+A_neutral,grid_L22_k.jsonl,1200,40,3,-8,8,OTHER:855 GARBLED:96 AI:66 PERSONA:63
+A_neutral,grid_L23_k.jsonl,1200,40,3,-8,8,OTHER:874 GARBLED:85 THIRD_PERSON:84 AI:60
+A_neutral,grid_L24_k.jsonl,1200,40,3,-8,8,OTHER:835 GARBLED:142 THIRD_PERSON:83 TELEGRAPHIC:41
+A_neutral,grid_L25_k.jsonl,1200,40,3,-8,8,OTHER:879 GARBLED:93 THIRD_PERSON:81 PERSONA:62
+A_neutral,grid_L25_m.jsonl,1200,40,3,-8,8,OTHER:861 GARBLED:94 THIRD_PERSON:87 PERSONA:57
+A_neutral,grid_L26_k.jsonl,1200,40,3,-8,8,OTHER:881 GARBLED:91 THIRD_PERSON:83 TELEGRAPHIC:54
+A_neutral,grid_L26_m.jsonl,1200,40,3,-8,8,OTHER:865 PERSONA:85 THIRD_PERSON:83 GARBLED:68
+A_neutral,grid_L27_k.jsonl,1200,40,3,-8,8,OTHER:820 GARBLED:133 PERSONA:74 THIRD_PERSON:72
+A_neutral,grid_L28_k.jsonl,1200,40,3,-8,8,OTHER:776 GARBLED:180 PERSONA:77 AI:60
+A_neutral,grid_L28_m.jsonl,1200,40,3,-8,8,OTHER:789 GARBLED:191 PERSONA:66 TELEGRAPHIC:61
+A_neutral,grid_L29_k.jsonl,1200,40,3,-8,8,OTHER:744 GARBLED:204 TELEGRAPHIC:81 AI:56
+A_neutral,grid_L2_k.jsonl,1200,40,3,-8,8,OTHER:790 THIRD_PERSON:289 GARBLED:53 AI:24
+A_neutral,grid_L30_k.jsonl,1200,40,3,-8,8,OTHER:674 GARBLED:226 TELEGRAPHIC:140 AI:65
+A_neutral,grid_L30_m.jsonl,1200,40,3,-8,8,OTHER:715 GARBLED:237 TELEGRAPHIC:77 AI:68
+A_neutral,grid_L31_k.jsonl,1200,40,3,-8,8,OTHER:664 GARBLED:278 TELEGRAPHIC:92 THIRD_PERSON:84
+A_neutral,grid_L31_m.jsonl,1200,40,3,-8,8,OTHER:645 GARBLED:275 TELEGRAPHIC:108 THIRD_PERSON:70
+A_neutral,grid_L32_k.jsonl,1200,40,3,-8,8,OTHER:679 GARBLED:287 TELEGRAPHIC:94 THIRD_PERSON:71
+A_neutral,grid_L34_m.jsonl,1200,40,3,-8,8,OTHER:646 GARBLED:236 THIRD_PERSON:175 TELEGRAPHIC:94
+A_neutral,grid_L35_m.jsonl,1200,40,3,-8,8,OTHER:567 GARBLED:324 THIRD_PERSON:134 TELEGRAPHIC:127
+A_neutral,grid_L36_m.jsonl,1200,40,3,-8,8,OTHER:465 GARBLED:371 THIRD_PERSON:192 TELEGRAPHIC:134
+A_neutral,grid_L37_m.jsonl,1200,40,3,-8,8,OTHER:485 GARBLED:304 TELEGRAPHIC:216 THIRD_PERSON:182
+A_neutral,grid_L38_m.jsonl,1200,40,3,-8,8,OTHER:419 GARBLED:335 TELEGRAPHIC:263 THIRD_PERSON:166
+A_neutral,grid_L39_m.jsonl,1200,40,3,-8,8,GARBLED:662 TELEGRAPHIC:538
+A_neutral,grid_L3_k.jsonl,1200,40,3,-8,8,OTHER:755 THIRD_PERSON:241 GARBLED:100 TELEGRAPHIC:28
+A_neutral,grid_L4_k.jsonl,1200,40,3,-8,8,OTHER:768 THIRD_PERSON:221 GARBLED:69 TELEGRAPHIC:38
+A_neutral,grid_L5_k.jsonl,1200,40,3,-8,8,OTHER:762 THIRD_PERSON:219 GARBLED:78 AI:54
+A_neutral,grid_L6_k.jsonl,1200,40,3,-8,8,OTHER:811 THIRD_PERSON:174 GARBLED:66 AI:56
+A_neutral,grid_L7_k.jsonl,1200,40,3,-8,8,OTHER:844 THIRD_PERSON:170 AI:63 GARBLED:43
+A_neutral,grid_L8_k.jsonl,1200,40,3,-8,8,OTHER:838 THIRD_PERSON:142 GARBLED:49 PERSONA:49
+A_neutral,grid_L9_k.jsonl,1200,40,3,-8,8,OTHER:805 THIRD_PERSON:133 AI:87 GARBLED:52
+A_neutral,kg_pull/grid_L20_k.jsonl,1200,40,3,-8,8,OTHER:839 GARBLED:99 AI:67 TELEGRAPHIC:63
+A_neutral,kg_pull/grid_L22_k.jsonl,1200,40,3,-8,8,OTHER:855 GARBLED:96 AI:66 PERSONA:63
+A_neutral,kg_pull/grid_L23_k.jsonl,1200,40,3,-8,8,OTHER:874 GARBLED:85 THIRD_PERSON:84 AI:60
+A_neutral,kg_pull/grid_L24_k.jsonl,1200,40,3,-8,8,OTHER:835 GARBLED:142 THIRD_PERSON:83 TELEGRAPHIC:41
+A_neutral,kg_pull/grid_L25_k.jsonl,1200,40,3,-8,8,OTHER:879 GARBLED:93 THIRD_PERSON:81 PERSONA:62
+A_neutral,kg_pull/grid_L26_k.jsonl,1200,40,3,-8,8,OTHER:881 GARBLED:91 THIRD_PERSON:83 TELEGRAPHIC:54
+A_neutral,kg_pull/grid_L27_k.jsonl,1200,40,3,-8,8,OTHER:820 GARBLED:133 PERSONA:74 THIRD_PERSON:72
+A_neutral,kg_pull/grid_L28_k.jsonl,1200,40,3,-8,8,OTHER:776 GARBLED:180 PERSONA:77 AI:60
+A_neutral,kg_pull/grid_L29_k.jsonl,1200,40,3,-8,8,OTHER:744 GARBLED:204 TELEGRAPHIC:81 AI:56
+A_neutral,kg_pull/grid_L30_k.jsonl,1200,40,3,-8,8,OTHER:674 GARBLED:226 TELEGRAPHIC:140 AI:65
+A_neutral,kg_pull/grid_L31_k.jsonl,1200,40,3,-8,8,OTHER:664 GARBLED:278 TELEGRAPHIC:92 THIRD_PERSON:84
+A_neutral,kg_pull/grid_L32_k.jsonl,1200,40,3,-8,8,OTHER:679 GARBLED:287 TELEGRAPHIC:94 THIRD_PERSON:71
+A_neutral,cloud_gap/grid_L21_k.jsonl,1198,40,3,-8,8,OTHER:873 GARBLED:105 PERSONA:56 AI:54
+A_neutral,grid_L21_k.jsonl,1198,40,3,-8,8,OTHER:873 GARBLED:105 PERSONA:56 AI:54
+A_neutral,kg_pull/grid_L21_k.jsonl,1198,40,3,-8,8,OTHER:873 GARBLED:105 PERSONA:56 AI:54
+A_neutral,cloud_l10/grid_L10_k.jsonl,1179,40,3,-8,8,OTHER:793 THIRD_PERSON:127 AI:86 GARBLED:62
+A_neutral,grid_L10_k.jsonl,1179,40,3,-8,8,OTHER:793 THIRD_PERSON:127 AI:86 GARBLED:62
+A_neutral,cloud_l10/grid_L14_k.jsonl,1158,39,3,-8,8,OTHER:745 AI:113 THIRD_PERSON:89 GARBLED:88
+A_neutral,cloud_l10/grid_L15_k.jsonl,1158,39,3,-8,8,OTHER:763 AI:108 THIRD_PERSON:104 PERSONA:57
+A_neutral,grid_L14_k.jsonl,1158,39,3,-8,8,OTHER:745 AI:113 THIRD_PERSON:89 GARBLED:88
+A_neutral,grid_L15_k.jsonl,1158,39,3,-8,8,OTHER:763 AI:108 THIRD_PERSON:104 PERSONA:57
+A_neutral,cloud_l10/grid_L11_k.jsonl,1135,38,3,-8,8,OTHER:736 THIRD_PERSON:136 AI:113 ECHO:51
+A_neutral,grid_L11_k.jsonl,1135,38,3,-8,8,OTHER:736 THIRD_PERSON:136 AI:113 ECHO:51
+A_neutral,cloud_l10/grid_L16_k.jsonl,1089,37,3,-8,8,OTHER:729 AI:78 ECHO:73 GARBLED:71
+A_neutral,grid_L16_k.jsonl,1089,37,3,-8,8,OTHER:729 AI:78 ECHO:73 GARBLED:71
+A_neutral,grid_L14.jsonl,1080,40,3,-8,8,OTHER:678 AI:115 GARBLED:98 THIRD_PERSON:94
+A_neutral,grid_L15.jsonl,1080,40,3,-8,8,OTHER:696 AI:100 GARBLED:76 THIRD_PERSON:75
+A_neutral,grid_L16.jsonl,1080,40,3,-8,8,OTHER:718 AI:87 GARBLED:67 ECHO:67
+A_neutral,grid_L17.jsonl,1080,40,3,-8,8,OTHER:702 AI:85 GARBLED:82 ECHO:79
+A_neutral,cloud_l10/grid_L12_k.jsonl,1078,36,3,-8,8,OTHER:735 THIRD_PERSON:121 AI:79 ECHO:43
+A_neutral,grid_L12_k.jsonl,1078,36,3,-8,8,OTHER:735 THIRD_PERSON:121 AI:79 ECHO:43
+A_neutral,cloud_l10/grid_L13_k.jsonl,1054,36,3,-8,8,OTHER:711 AI:90 THIRD_PERSON:87 GARBLED:59
+A_neutral,grid_L13_k.jsonl,1054,36,3,-8,8,OTHER:711 AI:90 THIRD_PERSON:87 GARBLED:59
+A_neutral,cloud_l10/grid_L19_k.jsonl,1046,35,3,-8,8,OTHER:689 GARBLED:88 TELEGRAPHIC:77 AI:73
+A_neutral,grid_L19_k.jsonl,1046,35,3,-8,8,OTHER:689 GARBLED:88 TELEGRAPHIC:77 AI:73
+A_neutral,cloud_l10/grid_L17_k.jsonl,982,33,3,-8,8,OTHER:628 GARBLED:92 AI:80 ECHO:67
+A_neutral,grid_L17_k.jsonl,982,33,3,-8,8,OTHER:628 GARBLED:92 AI:80 ECHO:67
+A_neutral,cloud_l10/grid_L18_k.jsonl,939,32,3,-8,8,OTHER:614 GARBLED:103 AI:62 ECHO:48
+A_neutral,grid_L18_k.jsonl,939,32,3,-8,8,OTHER:614 GARBLED:103 AI:62 ECHO:48
+A_neutral,grid_L33_m.jsonl,786,27,3,-8,8,OTHER:388 GARBLED:215 TELEGRAPHIC:73 THIRD_PERSON:54
+A_neutral,grid_L13.jsonl,700,26,3,-8,8,OTHER:489 AI:69 THIRD_PERSON:55 PERSONA:35
+A_neutral,grid_L0.jsonl,673,25,3,-8,8,OTHER:394 THIRD_PERSON:154 GARBLED:75 TELEGRAPHIC:19
+A_neutral,grid_L26_3h.jsonl,317,18,3,-6,6,OTHER:234 PERSONA:32 THIRD_PERSON:20 GARBLED:15
+A_neutral,grid_L27_3h.jsonl,288,16,3,-6,6,OTHER:219 PERSONA:19 THIRD_PERSON:19 GARBLED:12
+A_neutral,grid_L28_3h.jsonl,288,16,3,-6,6,OTHER:217 PERSONA:23 GARBLED:14 TELEGRAPHIC:13
+A_neutral,grid_L29_3h.jsonl,288,16,3,-6,6,OTHER:206 GARBLED:38 PERSONA:16 TELEGRAPHIC:11
+A_neutral,grid_L30_3h.jsonl,288,16,3,-6,6,OTHER:186 GARBLED:67 PERSONA:11 AI:10
+A_neutral,grid_L25_n.jsonl,144,8,3,-6,6,OTHER:129 THIRD_PERSON:5 PERSONA:4 TELEGRAPHIC:3
+A_neutral,grid_L0_r.jsonl,120,4,3,-8,8,OTHER:67 THIRD_PERSON:30 GARBLED:10 AI:4
+A_neutral,grid_L13_r.jsonl,120,4,3,-8,8,OTHER:88 THIRD_PERSON:13 AI:11 GARBLED:5
+A_neutral,grid_L15_r.jsonl,120,4,3,-8,8,OTHER:85 GARBLED:9 AI:9 THIRD_PERSON:7
+A_neutral,grid_L19_r.jsonl,120,4,3,-8,8,OTHER:89 PERSONA:8 THIRD_PERSON:7 GARBLED:6
+A_neutral,grid_L24_r.jsonl,120,4,3,-8,8,OTHER:80 PERSONA:13 THIRD_PERSON:10 TELEGRAPHIC:9
+A_neutral,grid_L27_r.jsonl,120,4,3,-8,8,OTHER:73 GARBLED:23 TELEGRAPHIC:10 THIRD_PERSON:8
+A_neutral,grid_L29_r.jsonl,120,4,3,-8,8,OTHER:78 GARBLED:15 TELEGRAPHIC:10 THIRD_PERSON:6
+A_neutral,grid_L32_r.jsonl,120,4,3,-8,8,OTHER:65 GARBLED:29 THIRD_PERSON:11 TELEGRAPHIC:8
+A_neutral,grid_L38_r.jsonl,120,4,3,-8,8,TELEGRAPHIC:39 OTHER:37 GARBLED:22 THIRD_PERSON:18
+A_neutral,kg_pull/unhit/grid_L0_u.jsonl,120,40,3,-5,-5,OTHER:77 THIRD_PERSON:40 AI:2 TELEGRAPHIC:1
+A_neutral,kg_pull/unhit/grid_L10_u.jsonl,120,40,3,-5,-5,OTHER:88 THIRD_PERSON:11 GARBLED:7 AI:5
+A_neutral,kg_pull/unhit/grid_L11_u.jsonl,120,40,3,-5,-5,OTHER:80 AI:15 THIRD_PERSON:14 ECHO:5
+A_neutral,kg_pull/unhit/grid_L12_u.jsonl,120,40,3,-5,-5,OTHER:78 THIRD_PERSON:17 AI:12 ECHO:6
+A_neutral,kg_pull/unhit/grid_L13_u.jsonl,120,40,3,-5,-5,OTHER:87 AI:11 PERSONA:9 TELEGRAPHIC:5
+A_neutral,kg_pull/unhit/grid_L14_u.jsonl,120,40,3,-5,-5,OTHER:88 AI:11 PERSONA:6 THIRD_PERSON:5
+A_neutral,kg_pull/unhit/grid_L15_u.jsonl,120,40,3,-5,-5,OTHER:84 ECHO:11 THIRD_PERSON:8 AI:5
+A_neutral,kg_pull/unhit/grid_L16_u.jsonl,120,40,3,-5,-5,OTHER:87 PERSONA:11 ECHO:10 AI:7
+A_neutral,kg_pull/unhit/grid_L17_u.jsonl,120,40,3,-5,-5,OTHER:77 TELEGRAPHIC:11 PERSONA:10 AI:9
+A_neutral,kg_pull/unhit/grid_L18_u.jsonl,120,40,3,-5,-5,OTHER:90 PERSONA:9 GARBLED:8 TELEGRAPHIC:4
+A_neutral,kg_pull/unhit/grid_L19_u.jsonl,120,40,3,-5,-5,OTHER:88 AI:7 PERSONA:7 GARBLED:5
+A_neutral,kg_pull/unhit/grid_L1_u.jsonl,120,40,3,-5,-5,OTHER:76 THIRD_PERSON:37 AI:6 TELEGRAPHIC:1
+A_neutral,kg_pull/unhit/grid_L20_u.jsonl,120,40,3,-5,-5,OTHER:87 PERSONA:10 AI:7 GARBLED:7
+A_neutral,kg_pull/unhit/grid_L21_u.jsonl,120,40,3,-5,-5,OTHER:100 GARBLED:8 TELEGRAPHIC:6 PERSONA:4
+A_neutral,kg_pull/unhit/grid_L22_u.jsonl,120,40,3,-5,-5,OTHER:95 AI:6 GARBLED:5 TELEGRAPHIC:5
+A_neutral,kg_pull/unhit/grid_L23_u.jsonl,120,40,3,-5,-5,OTHER:85 TELEGRAPHIC:9 THIRD_PERSON:9 PERSONA:6
+A_neutral,kg_pull/unhit/grid_L24_u.jsonl,120,40,3,-5,-5,OTHER:99 PERSONA:9 TELEGRAPHIC:6 THIRD_PERSON:2
+A_neutral,kg_pull/unhit/grid_L25_u.jsonl,120,40,3,-5,-5,OTHER:97 THIRD_PERSON:9 TELEGRAPHIC:4 PERSONA:4
+A_neutral,kg_pull/unhit/grid_L26_u.jsonl,120,40,3,-5,-5,OTHER:91 THIRD_PERSON:9 AI:6 TELEGRAPHIC:6
+A_neutral,kg_pull/unhit/grid_L27_u.jsonl,120,40,3,-5,-5,OTHER:97 PERSONA:11 THIRD_PERSON:8 TELEGRAPHIC:2
+A_neutral,kg_pull/unhit/grid_L28_u.jsonl,120,40,3,-5,-5,OTHER:96 TELEGRAPHIC:7 PERSONA:7 AI:5
+A_neutral,kg_pull/unhit/grid_L29_u.jsonl,120,40,3,-5,-5,OTHER:93 PERSONA:9 THIRD_PERSON:7 GARBLED:6
+A_neutral,kg_pull/unhit/grid_L2_u.jsonl,120,40,3,-5,-5,OTHER:79 THIRD_PERSON:35 AI:5 PERSONA:1
+A_neutral,kg_pull/unhit/grid_L30_u.jsonl,120,40,3,-5,-5,OTHER:92 TELEGRAPHIC:9 GARBLED:9 PERSONA:7
+A_neutral,kg_pull/unhit/grid_L31_u.jsonl,120,40,3,-5,-5,OTHER:73 GARBLED:17 TELEGRAPHIC:14 PERSONA:8
+A_neutral,kg_pull/unhit/grid_L32_u.jsonl,120,40,3,-5,-5,OTHER:84 GARBLED:18 PERSONA:6 THIRD_PERSON:4
+A_neutral,kg_pull/unhit/grid_L33_u.jsonl,120,40,3,-5,-5,OTHER:73 GARBLED:27 THIRD_PERSON:7 TELEGRAPHIC:6
+A_neutral,kg_pull/unhit/grid_L34_u.jsonl,120,40,3,-5,-5,OTHER:69 GARBLED:19 THIRD_PERSON:17 TELEGRAPHIC:9
+A_neutral,kg_pull/unhit/grid_L35_u.jsonl,120,40,3,-5,-5,OTHER:71 GARBLED:22 THIRD_PERSON:14 TELEGRAPHIC:7
+A_neutral,kg_pull/unhit/grid_L36_u.jsonl,120,40,3,-5,-5,OTHER:65 GARBLED:23 THIRD_PERSON:19 TELEGRAPHIC:8
+A_neutral,kg_pull/unhit/grid_L37_u.jsonl,120,40,3,-5,-5,OTHER:61 GARBLED:26 THIRD_PERSON:24 TELEGRAPHIC:9
+A_neutral,kg_pull/unhit/grid_L38_u.jsonl,120,40,3,-5,-5,OTHER:51 GARBLED:49 THIRD_PERSON:11 TELEGRAPHIC:8
+A_neutral,kg_pull/unhit/grid_L39_u.jsonl,120,40,3,-5,-5,GARBLED:83 TELEGRAPHIC:37
+A_neutral,kg_pull/unhit/grid_L3_u.jsonl,120,40,3,-5,-5,OTHER:78 THIRD_PERSON:33 AI:5 GARBLED:3
+A_neutral,kg_pull/unhit/grid_L4_u.jsonl,120,40,3,-5,-5,OTHER:79 THIRD_PERSON:31 AI:6 ECHO:2
+A_neutral,kg_pull/unhit/grid_L5_u.jsonl,120,40,3,-5,-5,OTHER:77 THIRD_PERSON:28 AI:6 PERSONA:4
+A_neutral,kg_pull/unhit/grid_L6_u.jsonl,120,40,3,-5,-5,OTHER:77 THIRD_PERSON:23 AI:8 GARBLED:4
+A_neutral,kg_pull/unhit/grid_L7_u.jsonl,120,40,3,-5,-5,OTHER:77 THIRD_PERSON:19 AI:8 ECHO:7
+A_neutral,kg_pull/unhit/grid_L8_u.jsonl,120,40,3,-5,-5,OTHER:88 THIRD_PERSON:11 PERSONA:7 ECHO:7
+A_neutral,kg_pull/unhit/grid_L9_u.jsonl,120,40,3,-5,-5,OTHER:75 THIRD_PERSON:18 ECHO:10 AI:8
+A_neutral,granite350_sweep.jsonl,102,50,2,-3,-3,
+A_neutral,grid_L36_r.jsonl,100,4,3,-8,8,OTHER:37 GARBLED:26 TELEGRAPHIC:25 THIRD_PERSON:12
+A_neutral,grid_L5_retest.jsonl,80,2,10,-6,6,OTHER:49 AI:12 PERSONA:6 THIRD_PERSON:5
+A_neutral,grid_L6_retest.jsonl,80,2,10,-6,6,OTHER:49 TELEGRAPHIC:11 PERSONA:10 AI:5
+A_neutral,grid_L26_n.jsonl,72,4,3,-6,6,OTHER:53 PERSONA:8 GARBLED:4 AI:3
+A_neutral,grid_L6_extended.jsonl,2,1,2,-5,-5,
+B_feel,feel_humans.jsonl,1469,113,1,-6,6,OTHER:1093 AI:111 GARBLED:107 TELEGRAPHIC:96
+B_feel,grid_L0_feel.jsonl,240,40,1,-6,6,OTHER:228 AI:6 ECHO:4 GARBLED:2
+B_feel,grid_L10_feel.jsonl,240,40,1,-6,6,OTHER:179 ECHO:21 AI:19 PERSONA:8
+B_feel,grid_L11_feel.jsonl,240,40,1,-6,6,OTHER:171 AI:36 ECHO:24 PERSONA:5
+B_feel,grid_L14_feel.jsonl,240,40,1,-6,6,OTHER:185 ECHO:21 AI:17 PERSONA:8
+B_feel,grid_L15_feel.jsonl,240,40,1,-6,6,OTHER:177 ECHO:25 AI:25 PERSONA:6
+B_feel,grid_L18_feel.jsonl,240,40,1,-6,6,OTHER:176 GARBLED:21 ECHO:20 PERSONA:10
+B_feel,grid_L1_feel.jsonl,240,40,1,-6,6,OTHER:223 AI:13 GARBLED:2 PERSONA:1
+B_feel,grid_L26_feel.jsonl,240,40,1,-6,6,OTHER:215 PERSONA:10 GARBLED:6 AI:5
+B_feel,grid_L34_feel.jsonl,240,40,1,-6,6,OTHER:146 GARBLED:46 AI:22 TELEGRAPHIC:15
+B_feel,grid_L35_feel.jsonl,240,40,1,-6,6,OTHER:155 GARBLED:43 TELEGRAPHIC:27 AI:9
+B_feel,grid_L36_feel.jsonl,240,40,1,-6,6,OTHER:119 GARBLED:50 TELEGRAPHIC:36 AI:23
+B_feel,grid_L37_feel.jsonl,240,40,1,-6,6,OTHER:117 GARBLED:72 TELEGRAPHIC:39 AI:7
+B_feel,grid_L38_feel.jsonl,240,40,1,-6,6,GARBLED:112 OTHER:80 TELEGRAPHIC:41 AI:2
+B_feel,grid_L39_feel.jsonl,240,40,1,-6,6,OTHER:112 GARBLED:108 TELEGRAPHIC:13 AI:6
+B_feel,grid_L32_feel.jsonl,68,12,1,-6,6,OTHER:48 GARBLED:9 AI:5 PERSONA:3
+C_column,grid_L0_col.jsonl,288,16,3,-6,6,OTHER:189 THIRD_PERSON:86 GARBLED:7 AI:5
+C_column,grid_L10_col.jsonl,288,16,3,-6,6,OTHER:181 AI:36 THIRD_PERSON:29 PERSONA:13
+C_column,grid_L11_col.jsonl,288,16,3,-6,6,OTHER:195 THIRD_PERSON:43 AI:29 ECHO:8
+C_column,grid_L12_col.jsonl,288,16,3,-6,6,OTHER:178 AI:54 THIRD_PERSON:26 PERSONA:10
+C_column,grid_L13_col.jsonl,288,16,3,-6,6,OTHER:201 THIRD_PERSON:30 AI:25 ECHO:11
+C_column,grid_L14_col.jsonl,288,16,3,-6,6,OTHER:199 AI:29 PERSONA:19 THIRD_PERSON:16
+C_column,grid_L15_col.jsonl,288,16,3,-6,6,OTHER:203 AI:28 PERSONA:22 THIRD_PERSON:16
+C_column,grid_L16_col.jsonl,288,16,3,-6,6,OTHER:189 AI:27 ECHO:20 THIRD_PERSON:14
+C_column,grid_L17_col.jsonl,288,16,3,-6,6,OTHER:194 ECHO:27 GARBLED:21 AI:17
+C_column,grid_L18_col.jsonl,288,16,3,-6,6,OTHER:198 GARBLED:26 ECHO:20 PERSONA:14
+C_column,grid_L19_col.jsonl,288,16,3,-6,6,OTHER:186 GARBLED:39 AI:21 ECHO:20
+C_column,grid_L1_col.jsonl,288,16,3,-6,6,OTHER:189 THIRD_PERSON:86 AI:6 GARBLED:4
+C_column,grid_L20_col.jsonl,288,16,3,-6,6,OTHER:207 TELEGRAPHIC:24 GARBLED:24 AI:12
+C_column,grid_L21_col.jsonl,288,16,3,-6,6,OTHER:207 TELEGRAPHIC:26 ECHO:14 PERSONA:13
+C_column,grid_L22_col.jsonl,288,16,3,-6,6,OTHER:228 TELEGRAPHIC:22 AI:10 GARBLED:10
+C_column,grid_L2_col.jsonl,288,16,3,-6,6,OTHER:192 THIRD_PERSON:83 PERSONA:7 AI:5
+C_column,grid_L3_col.jsonl,288,16,3,-6,6,OTHER:197 THIRD_PERSON:68 AI:9 PERSONA:4
+C_column,grid_L4_col.jsonl,288,16,3,-6,6,OTHER:183 THIRD_PERSON:64 AI:16 ECHO:11
+C_column,grid_L5_col.jsonl,288,16,3,-6,6,OTHER:181 THIRD_PERSON:57 AI:16 ECHO:10
+C_column,grid_L6_col.jsonl,288,16,3,-6,6,OTHER:178 THIRD_PERSON:51 GARBLED:15 PERSONA:14
+C_column,grid_L7_col.jsonl,288,16,3,-6,6,OTHER:195 THIRD_PERSON:43 AI:16 ECHO:10
+C_column,grid_L8_col.jsonl,288,16,3,-6,6,OTHER:194 THIRD_PERSON:35 AI:20 PERSONA:13
+C_column,grid_L9_col.jsonl,288,16,3,-6,6,OTHER:202 THIRD_PERSON:22 AI:20 PERSONA:17
+C_column,kg_check_pinned_0915/grid_L0_col.jsonl,288,16,3,-6,6,OTHER:189 THIRD_PERSON:86 GARBLED:7 AI:5
+C_column,kg_check_pinned_0915/grid_L10_col.jsonl,288,16,3,-6,6,OTHER:181 AI:36 THIRD_PERSON:29 PERSONA:13
+C_column,kg_check_pinned_0915/grid_L11_col.jsonl,288,16,3,-6,6,OTHER:195 THIRD_PERSON:43 AI:29 ECHO:8
+C_column,kg_check_pinned_0915/grid_L12_col.jsonl,288,16,3,-6,6,OTHER:178 AI:54 THIRD_PERSON:26 PERSONA:10
+C_column,kg_check_pinned_0915/grid_L13_col.jsonl,288,16,3,-6,6,OTHER:201 THIRD_PERSON:30 AI:25 ECHO:11
+C_column,kg_check_pinned_0915/grid_L14_col.jsonl,288,16,3,-6,6,OTHER:199 AI:29 PERSONA:19 THIRD_PERSON:16
+C_column,kg_check_pinned_0915/grid_L15_col.jsonl,288,16,3,-6,6,OTHER:203 AI:28 PERSONA:22 THIRD_PERSON:16
+C_column,kg_check_pinned_0915/grid_L16_col.jsonl,288,16,3,-6,6,OTHER:189 AI:27 ECHO:20 THIRD_PERSON:14
+C_column,kg_check_pinned_0915/grid_L17_col.jsonl,288,16,3,-6,6,OTHER:194 ECHO:27 GARBLED:21 AI:17
+C_column,kg_check_pinned_0915/grid_L18_col.jsonl,288,16,3,-6,6,OTHER:198 GARBLED:26 ECHO:20 PERSONA:14
+C_column,kg_check_pinned_0915/grid_L19_col.jsonl,288,16,3,-6,6,OTHER:186 GARBLED:39 AI:21 ECHO:20
+C_column,kg_check_pinned_0915/grid_L1_col.jsonl,288,16,3,-6,6,OTHER:189 THIRD_PERSON:86 AI:6 GARBLED:4
+C_column,kg_check_pinned_0915/grid_L20_col.jsonl,288,16,3,-6,6,OTHER:207 TELEGRAPHIC:24 GARBLED:24 AI:12
+C_column,kg_check_pinned_0915/grid_L21_col.jsonl,288,16,3,-6,6,OTHER:207 TELEGRAPHIC:26 ECHO:14 PERSONA:13
+C_column,kg_check_pinned_0915/grid_L22_col.jsonl,288,16,3,-6,6,OTHER:228 TELEGRAPHIC:22 AI:10 GARBLED:10
+C_column,kg_check_pinned_0915/grid_L2_col.jsonl,288,16,3,-6,6,OTHER:192 THIRD_PERSON:83 PERSONA:7 AI:5
+C_column,kg_check_pinned_0915/grid_L3_col.jsonl,288,16,3,-6,6,OTHER:197 THIRD_PERSON:68 AI:9 PERSONA:4
+C_column,kg_check_pinned_0915/grid_L4_col.jsonl,288,16,3,-6,6,OTHER:183 THIRD_PERSON:64 AI:16 ECHO:11
+C_column,kg_check_pinned_0915/grid_L5_col.jsonl,288,16,3,-6,6,OTHER:181 THIRD_PERSON:57 AI:16 ECHO:10
+C_column,kg_check_pinned_0915/grid_L6_col.jsonl,288,16,3,-6,6,OTHER:178 THIRD_PERSON:51 GARBLED:15 PERSONA:14
+C_column,kg_check_pinned_0915/grid_L7_col.jsonl,288,16,3,-6,6,OTHER:195 THIRD_PERSON:43 AI:16 ECHO:10
+C_column,kg_check_pinned_0915/grid_L8_col.jsonl,288,16,3,-6,6,OTHER:194 THIRD_PERSON:35 AI:20 PERSONA:13
+C_column,kg_check_pinned_0915/grid_L9_col.jsonl,288,16,3,-6,6,OTHER:202 THIRD_PERSON:22 AI:20 PERSONA:17
+C_column,grid_L23_col.jsonl,204,12,3,-6,6,OTHER:145 THIRD_PERSON:18 GARBLED:13 TELEGRAPHIC:12
+C_column,kg_check_pinned_0915/grid_L23_col.jsonl,204,12,3,-6,6,OTHER:145 THIRD_PERSON:18 GARBLED:13 TELEGRAPHIC:12
+C_column,grid_L15_loc.jsonl,144,8,3,-6,6,OTHER:94 AI:15 ECHO:12 THIRD_PERSON:10
+C_column,grid_L16_loc.jsonl,144,8,3,-6,6,OTHER:102 PERSONA:13 ECHO:12 AI:8
+C_column,grid_L16_loc30.jsonl,144,8,3,-6,6,OTHER:103 PERSONA:12 ECHO:11 AI:9
+C_column,grid_L17_loc30.jsonl,144,8,3,-6,6,OTHER:99 ECHO:12 AI:10 PERSONA:8
+C_column,grid_L18_loc30.jsonl,144,8,3,-6,6,OTHER:106 PERSONA:12 AI:9 THIRD_PERSON:6
+C_column,grid_L19_loc30.jsonl,144,8,3,-6,6,OTHER:106 GARBLED:9 TELEGRAPHIC:9 PERSONA:8
+C_column,grid_L20_loc30.jsonl,144,8,3,-6,6,OTHER:115 ECHO:12 GARBLED:7 TELEGRAPHIC:4
+C_column,grid_L17_loc.jsonl,80,5,3,-6,6,OTHER:55 AI:7 PERSONA:6 ECHO:6
+D_dialogue,screen2turn.jsonl,1093,990,2,-5,-5,
+D_dialogue,talks_primefresh.jsonl,126,9,29,-5,-5,
+D_dialogue,talks_primed.jsonl,112,8,27,-5,-5,
+D_dialogue,talks_named.jsonl,104,8,19,-5,-5,
+D_dialogue,queue_2026-11-07.jsonl,101,8,0,-5,5,
+D_dialogue,talks_l8batch.jsonl,39,3,14,-5,-5,
+D_dialogue,talks_gov.jsonl,27,1,24,-5,-5,
+D_dialogue,talks_baseline.jsonl,26,2,12,0,0,
+D_dialogue,talks_l24batch.jsonl,26,2,13,-5,-5,
+D_dialogue,evil_talk_d15.jsonl,20,0,0,-1.5,-1.5,SHEET:14 AI:3 THIRD_PERSON:1 INSTITUTION:1
+D_dialogue,retain_L12N2955_.jsonl,16,1,0,-5,-3,OTHER:11 SHEET:2 AI:2 THIRD_PERSON:1
+D_dialogue,retain_L14N4662_.jsonl,16,1,0,-5,-3,THIRD_PERSON:7 SHEET:4 AI:3 OTHER:2
+D_dialogue,retain_killer_ibm.jsonl,16,1,0,-5,-5,INSTITUTION:16
+D_dialogue,retain_lover_ibm.jsonl,16,1,0,-5,-5,SHEET:11 ECHO:5
+D_dialogue,retain_mj.jsonl,16,1,0,-5,-5,SHEET:11 AI:4 THIRD_PERSON:1
+D_dialogue,talks_L20_N6693_roleplay.jsonl,14,1,13,-5,-5,
+D_dialogue,talks_worm.jsonl,14,1,13,-5,-5,
+D_dialogue,talks_L20_N7439.jsonl,13,1,12,-5,-5,
+D_dialogue,talks_javabean.jsonl,13,1,12,-5,-5,
+D_dialogue,talks_militant2.jsonl,13,1,12,-5,-5,
+D_dialogue,talks_repeat.jsonl,13,1,12,-5,-5,
+D_dialogue,talks_threat.jsonl,13,1,12,-5,-5,
+D_dialogue,talks_tree.jsonl,13,1,12,-5,-5,
+D_dialogue,dual_push.jsonl,12,0,3,-5,-5,
+D_dialogue,evil_stack_d5.jsonl,12,0,3,-5,-5,GARBLED:6 SHEET:3 OTHER:2 TELEGRAPHIC:1
+D_dialogue,retain_lover35_12.jsonl,12,1,0,-3.5,-3.5,SHEET:10 AI:2
+D_dialogue,retain_mj_d4.jsonl,12,1,0,-4,-4,THIRD_PERSON:7 AI:5
+D_dialogue,evil_talk_all10.jsonl,10,0,0,-1,-1,SHEET:6 OTHER:3 PERSONA:1
+D_dialogue,talks_n812.jsonl,10,1,9,-5,-5,
+D_dialogue,evil_stack_fam.jsonl,9,0,3,-1.5,-1.5,SHEET:6 AI:1 OTHER:1 PERSONA:1
+D_dialogue,dual_push2.jsonl,8,0,2,-5,-5,
+D_dialogue,retain_L12N2556_d1.5.jsonl,8,1,0,-1.5,-1.5,SHEET:4 AI:2 THIRD_PERSON:1 OTHER:1
+D_dialogue,retain_L12N2556_d3.0.jsonl,8,1,0,-3,-3,AI:3 SHEET:2 PERSONA:2 THIRD_PERSON:1
+D_dialogue,retain_L12N2952_.jsonl,8,1,0,-3,-3,OTHER:5 AI:2 THIRD_PERSON:1
+D_dialogue,retain_L14N4662_d1.5.jsonl,8,1,0,-1.5,-1.5,OTHER:6 AI:1 THIRD_PERSON:1
+D_dialogue,retain_L14N4662_d3.0.jsonl,8,1,0,-3,-3,AI:4 SHEET:4
+D_dialogue,retain_L16N6119_d2.0.jsonl,8,1,0,-2,-2,OTHER:5 AI:2 THIRD_PERSON:1
+D_dialogue,retain_control.jsonl,8,1,0,0,0,SHEET:3 AI:2 OTHER:2 THIRD_PERSON:1
+D_dialogue,retain_lover20_3.jsonl,8,1,0,-3,-3,OTHER:8
+D_dialogue,retain_lover20_5.jsonl,8,1,0,-5,-5,OTHER:8
+D_dialogue,retain_lover35_35.jsonl,8,1,0,-3.5,-3.5,SHEET:6 AI:2
+D_dialogue,retain_lover7_5.jsonl,8,1,0,-5,-5,OTHER:8
+D_dialogue,retain_loverIBM_30.jsonl,8,1,0,3,3,AI:5 SHEET:3
+D_dialogue,retain_loverIBM_35.jsonl,8,1,0,3.5,3.5,AI:4 PERSONA:3 THIRD_PERSON:1
+D_dialogue,retain_loverN29.jsonl,8,1,0,-4,-4,SHEET:6 ECHO:1 THIRD_PERSON:1
+D_dialogue,retain_loverN35.jsonl,8,1,0,-5,-5,SHEET:7 THIRD_PERSON:1
+D_dialogue,retain_loverP1.jsonl,8,1,0,5,5,SHEET:7 ECHO:1
+D_dialogue,retain_loverP2.jsonl,8,1,0,5,5,SHEET:4 AI:3 TELEGRAPHIC:1
+D_dialogue,retain_loverP2hi.jsonl,8,1,0,8,8,GARBLED:7 TELEGRAPHIC:1
+D_dialogue,retain_loverP3.jsonl,8,1,0,4,4,SHEET:4 AI:4
+D_dialogue,retain_loverS1.jsonl,8,1,0,-3,-3,ECHO:3 SHEET:3 AI:1 THIRD_PERSON:1
+D_dialogue,retain_loverS2.jsonl,8,1,0,-3,-3,SHEET:8
+D_dialogue,retain_mj19.jsonl,8,1,0,-5,-5,TELEGRAPHIC:7 THIRD_PERSON:1
+D_dialogue,talks_militant.jsonl,8,1,8,-5,-5,
+D_dialogue,solo_base.jsonl,6,0,0,-5,-5,SHEET:4 AI:2
+D_dialogue,solo_both.jsonl,6,0,0,-5,-5,SHEET:4 INSTITUTION:1 OTHER:1
+D_dialogue,solo_low.jsonl,6,0,0,-1,-1,SHEET:4 AI:1 OTHER:1
+D_dialogue,solo_ngram.jsonl,6,0,0,-5,-5,OTHER:3 AI:1 INSTITUTION:1 SHEET:1
+D_dialogue,solo_rp.jsonl,6,0,0,-5,-5,SHEET:3 OTHER:2 INSTITUTION:1
+D_dialogue,solo_temp.jsonl,6,0,0,-5,-5,AI:3 SHEET:3
+D_dialogue,solo_temprp.jsonl,6,0,0,-5,-5,SHEET:4 AI:1 OTHER:1
+D_dialogue,talks_beancar.jsonl,6,1,5,-5,-5,
+D_dialogue,talks_beanslot.jsonl,6,1,5,-5,-5,
+D_dialogue,talks_beanslot2.jsonl,6,1,5,-5,-5,
+D_dialogue,evil_stack_d07.jsonl,3,0,3,-0.7,-0.7,THIRD_PERSON:1 OTHER:1 SHEET:1
+D_dialogue,evil_stack_d10.jsonl,3,0,3,-1,-1,SHEET:2 OTHER:1
+D_dialogue,evil_stack_d15.jsonl,3,0,3,-1.5,-1.5,SHEET:2 PERSONA:1
+D_dialogue,evil_stack_d2.jsonl,3,0,3,-2,-2,SHEET:3
+D_dialogue,evil_stack_d3.jsonl,3,0,3,-3,-3,GARBLED:3
+E_probe,rescan_v3.jsonl,9922,4889,85,-5,0,OTHER:4734 PERSONA:1595 AI:1533 THIRD_PERSON:905
+E_probe,relabel_v2.jsonl,8900,3900,7,,,
+E_probe,watch/notable.jsonl,5221,4569,46,-8,8,AI:3264 PERSONA:801 OTHER:638 THIRD_PERSON:400
+E_probe,behaviour.jsonl,1000,500,2,,,OTHER:292 SHEET:232 AI:221 PERSONA:150
+E_probe,watch/candidates.jsonl,567,333,3,-8,8,PERSONA:468 INSTITUTION:54 OTHER:41 AI:2
+E_probe,sweep_anything.jsonl,500,500,1,,,OTHER:425 ECHO:42 PERSONA:9 AI:7
+E_probe,sweep_hate.jsonl,500,500,1,,,OTHER:343 AI:97 ECHO:32 PERSONA:18
+E_probe,sweep_how.jsonl,500,500,1,,,OTHER:305 AI:111 PERSONA:72 TELEGRAPHIC:5
+E_probe,sweep_want.jsonl,500,500,1,,,OTHER:396 ECHO:43 AI:34 PERSONA:17
+E_probe,sweep_where.jsonl,500,500,1,,,OTHER:277 AI:90 PERSONA:66 ECHO:49
+E_probe,surface.jsonl,480,0,0,1,5,AI:395 PERSONA:60 OTHER:25
+E_probe,weird_quotes.jsonl,337,284,5,-8,8,OTHER:123 PERSONA:121 THIRD_PERSON:93
+E_probe,trio_L0.jsonl,120,40,3,-5,-5,OTHER:81 THIRD_PERSON:37 ECHO:1 TELEGRAPHIC:1
+E_probe,trio_L1.jsonl,120,40,3,-5,-5,OTHER:79 THIRD_PERSON:38 AI:2 ECHO:1
+E_probe,trio_L10.jsonl,120,40,3,-5,-5,OTHER:75 THIRD_PERSON:18 AI:10 TELEGRAPHIC:7
+E_probe,trio_L11.jsonl,120,40,3,-5,-5,OTHER:81 THIRD_PERSON:17 AI:14 ECHO:3
+E_probe,trio_L12.jsonl,120,40,3,-5,-5,OTHER:77 AI:15 THIRD_PERSON:13 ECHO:6
+E_probe,trio_L13.jsonl,120,40,3,-5,-5,OTHER:76 AI:17 PERSONA:11 THIRD_PERSON:7
+E_probe,trio_L14.jsonl,120,40,3,-5,-5,OTHER:71 AI:22 PERSONA:9 ECHO:8
+E_probe,trio_L15.jsonl,120,40,3,-5,-5,OTHER:87 PERSONA:10 THIRD_PERSON:7 AI:7
+E_probe,trio_L16.jsonl,120,40,3,-5,-5,OTHER:85 PERSONA:9 ECHO:8 AI:7
+E_probe,trio_L17.jsonl,120,40,3,-5,-5,OTHER:86 PERSONA:9 ECHO:8 AI:7
+E_probe,trio_L18.jsonl,120,40,3,-5,-5,OTHER:88 GARBLED:10 PERSONA:9 ECHO:8
+E_probe,trio_L2.jsonl,120,40,3,-5,-5,OTHER:78 THIRD_PERSON:36 AI:6
+E_probe,trio_L3.jsonl,120,40,3,-5,-5,OTHER:77 THIRD_PERSON:29 AI:10 ECHO:2
+E_probe,trio_L4.jsonl,120,40,3,-5,-5,OTHER:79 THIRD_PERSON:29 AI:4 GARBLED:3
+E_probe,trio_L5.jsonl,120,40,3,-5,-5,OTHER:77 THIRD_PERSON:23 AI:7 TELEGRAPHIC:4
+E_probe,trio_L6.jsonl,120,40,3,-5,-5,OTHER:83 THIRD_PERSON:18 TELEGRAPHIC:7 AI:5
+E_probe,trio_L7.jsonl,120,40,3,-5,-5,OTHER:79 THIRD_PERSON:14 ECHO:7 AI:7
+E_probe,trio_L8.jsonl,120,40,3,-5,-5,OTHER:84 THIRD_PERSON:14 AI:6 PERSONA:6
+E_probe,trio_L9.jsonl,120,40,3,-5,-5,OTHER:82 AI:15 THIRD_PERSON:9 TELEGRAPHIC:7
+E_probe,qwen_sweep_name_who.jsonl,102,50,2,-1,-1,
+E_probe,probe_shift.jsonl,99,19,5,-8,6,
+E_probe,why_L25.jsonl,48,12,4,-5,-4,SHEET:29 OTHER:10 PERSONA:6 ECHO:1
+E_probe,why_L16.jsonl,36,9,4,4,4,SHEET:16 ECHO:8 OTHER:8 PERSONA:2
+E_probe,why_L17.jsonl,36,9,4,-4,-4,OTHER:16 SHEET:14 PERSONA:4 AI:1
+E_probe,probe_L16_N1208.jsonl,33,1,3,-8,8,OTHER:19 PERSONA:6 TELEGRAPHIC:2 GARBLED:2
+E_probe,why_L3.jsonl,32,8,4,6,6,ECHO:11 SHEET:11 OTHER:10
+E_probe,why_L0.jsonl,28,7,4,-6,-6,OTHER:17 ECHO:4 AI:4 PERSONA:2
+E_probe,why_L12.jsonl,28,7,4,-6,-6,SHEET:14 PERSONA:6 OTHER:6 INSTITUTION:1
+E_probe,why_L15.jsonl,28,7,4,-4,-4,SHEET:12 OTHER:11 AI:2 ECHO:2
+E_probe,why_L14.jsonl,24,6,4,4,4,OTHER:8 AI:6 SHEET:5 PERSONA:5
+E_probe,why_L19.jsonl,24,6,4,-5,-5,SHEET:11 OTHER:7 PERSONA:4 ECHO:2
+E_probe,yn_L25.jsonl,24,12,1,-5,-4,SHEET:16 OTHER:6 PERSONA:2
+E_probe,yn_L16.jsonl,18,9,1,4,4,SHEET:10 AI:4 PERSONA:2 OTHER:2
+E_probe,yn_L17.jsonl,18,9,1,-4,-4,SHEET:8 OTHER:8 PERSONA:2
+E_probe,probe_L12.jsonl,16,1,4,-6,6,OTHER:13 ECHO:3
+E_probe,probe_L22.jsonl,16,1,4,-6,6,OTHER:9 GARBLED:5 DOOMSAYER:1 ECHO:1
+E_probe,probe_L24.jsonl,16,1,4,-5,5,OTHER:10 DOOMSAYER:4 PERSONA:2
+E_probe,probe_L4.jsonl,16,1,4,-8,8,OTHER:13 ECHO:1 INSTITUTION:1 DOOMSAYER:1
+E_probe,probe_L7.jsonl,16,2,4,-5,5,OTHER:14 THIRD_PERSON:1 PERSONA:1
+E_probe,yn_L3.jsonl,16,8,1,6,6,OTHER:8 PERSONA:4 SHEET:2 AI:2
+E_probe,yn_L12.jsonl,14,7,1,-6,-6,SHEET:8 OTHER:4 PERSONA:2
+E_probe,yn_L15.jsonl,14,7,1,-4,-4,SHEET:6 OTHER:6 TELEGRAPHIC:2
+E_probe,yn_L14.jsonl,12,6,1,4,4,OTHER:4 AI:4 SHEET:2 TELEGRAPHIC:2
+E_probe,yn_L19.jsonl,12,6,1,-5,-5,SHEET:4 PERSONA:4 OTHER:2 TELEGRAPHIC:2
+E_probe,probe_L18.jsonl,8,1,4,-5,5,OTHER:8
+E_probe,probe_L26.jsonl,8,1,4,-5,5,OTHER:7 PERSONA:1
+E_probe,yn_L0.jsonl,8,7,1,-6,-6,AI:4 OTHER:2 GARBLED:1 SHEET:1
+E_probe,two_leads.jsonl,2,2,0,-5,-4,
+E_probe,template_hits.jsonl,1,1,0,,,
+F_persona,harm_candidates.jsonl,261,240,2,-5,-5,OTHER:159 PERSONA:58 AI:29 THIRD_PERSON:11
+F_persona,doomsayer_hunt.json.jsonl,60,30,2,,,SHEET:26 AI:9 OTHER:8 PERSONA:6
+F_persona,persona_crank.jsonl,54,0,0,-1.2,-0.6,SHEET:30 AI:14 THIRD_PERSON:7 OTHER:3
+F_persona,killer_ladder2.jsonl,32,0,0,-1,-1,SHEET:16 OTHER:9 AI:4 PERSONA:3
+F_persona,multi_steer.jsonl,32,0,2,-5,-5,SHEET:15 PERSONA:7 AI:4 GARBLED:4
+F_persona,classifier_sample.jsonl,30,30,0,,,
+F_persona,crank_found.jsonl,30,0,0,-4,-3,SHEET:11 OTHER:7 AI:4 THIRD_PERSON:4
+F_persona,authority_owners.jsonl,20,19,2,,,
+F_persona,evil_screen.jsonl,16,0,0,-1,-1,AI:10 SHEET:6
+F_persona,funny_gov_ngram.jsonl,14,0,0,-5,-5,SHEET:12 OTHER:1 PERSONA:1
+F_persona,funny_irs_greedy.jsonl,14,0,0,-5,-5,SHEET:10 INSTITUTION:3 AI:1
+F_persona,funny_irs_ngram.jsonl,14,0,0,-5,-5,SHEET:11 INSTITUTION:2 AI:1
+F_persona,multi_steer_d04.jsonl,14,0,2,-2,-2,AI:9 THIRD_PERSON:5
+F_persona,evil_prime_marvel_d09.jsonl,10,0,0,-0.9,-0.9,AI:6 SHEET:4
+F_persona,evil_prime_marvel_d10.jsonl,10,0,0,-1,-1,SHEET:9 THIRD_PERSON:1
+F_persona,evil_prime_neutral_d10.jsonl,10,0,0,-1,-1,OTHER:9 THIRD_PERSON:1
+F_persona,titan_m4.jsonl,10,0,0,-4,-4,SHEET:8 PERSONA:1 ECHO:1
+F_persona,titan_m5.jsonl,10,0,0,-5,-5,OTHER:9 GARBLED:1
+F_persona,watson_control.jsonl,10,0,0,-0,-0,SHEET:6 AI:2 PERSONA:1 OTHER:1
+F_persona,watson_dose_m2.jsonl,10,0,0,-2,-2,SHEET:8 AI:1 OTHER:1
+F_persona,watson_dose_m3.jsonl,10,0,0,-3,-3,SHEET:7 AI:2 INSTITUTION:1
+F_persona,watson_dose_m4.jsonl,10,0,0,-4,-4,SHEET:5 AI:4 PERSONA:1
+F_persona,watson_dose_m5.jsonl,10,0,0,-5,-5,PERSONA:10
+F_persona,watson_military.jsonl,10,0,0,-3,-3,SHEET:7 AI:2 INSTITUTION:1
+F_persona,killer_ladder_ngram.jsonl,9,0,0,-1,-1,SHEET:6 AI:2 OTHER:1
+F_persona,evil_screen_d15.jsonl,8,0,0,-1.5,-1.5,AI:4 SHEET:4
+F_persona,evil_screen_d25.jsonl,8,0,0,-2.5,-2.5,SHEET:6 OTHER:1 PERSONA:1
+F_persona,evil_stark_d09.jsonl,4,0,0,-0.9,-0.9,AI:4
+F_persona,evil_stark_d10.jsonl,4,0,0,-1,-1,OTHER:3 AI:1
+F_persona,evil_stark_d11.jsonl,4,0,0,-1.1,-1.1,SHEET:3 OTHER:1
+F_persona,evil_stark_ench.jsonl,4,0,0,-5,-5,OTHER:2 THIRD_PERSON:1 AI:1
+F_persona,evil_stark_ironman.jsonl,4,0,0,6,6,OTHER:4
+F_persona,apocalypse_hits.jsonl,2,2,1,-5,-5,PERSONA:2
+G_name,layer_az_L0.jsonl,4884,4861,1,-5,-5,AI:3240 OTHER:1181 PERSONA:385 GARBLED:38
+G_name,layer_name_L16.jsonl,1500,1500,1,-5,-5,OTHER:821 AI:203 PERSONA:138 ECHO:124
+G_name,layer_name_L24.jsonl,1500,1500,1,-5,-5,OTHER:1035 THIRD_PERSON:187 PERSONA:147 AI:38
+G_name,layer_name_L8.jsonl,1500,1500,1,-5,-5,THIRD_PERSON:583 OTHER:555 AI:137 PERSONA:122
+G_name,layer_who_L16.jsonl,1500,1500,1,-5,-5,OTHER:744 AI:376 PERSONA:294 GARBLED:46
+G_name,layer_who_L24.jsonl,1500,1500,1,-5,-5,OTHER:885 PERSONA:397 AI:151 GARBLED:34
+G_name,layer_who_L4.jsonl,1500,1500,1,-5,-5,AI:999 OTHER:288 PERSONA:166 GARBLED:27
+G_name,layer_who_L8.jsonl,1500,1500,1,-5,-5,OTHER:610 PERSONA:458 AI:375 TELEGRAPHIC:28
+G_name,layer_name_L4.jsonl,1152,1152,1,-5,-5,THIRD_PERSON:856 OTHER:145 AI:87 PERSONA:21
+G_name,layer_who_L20.jsonl,732,732,1,-5,-5,OTHER:465 PERSONA:109 AI:96 TELEGRAPHIC:27
+G_name,name_only_tiles.jsonl,669,669,0,,,
+G_name,rescore_name.jsonl,500,500,1,,,OTHER:192 THIRD_PERSON:152 AI:89 PERSONA:41
+G_name,name_probe.jsonl,337,284,0,-8,8,OTHER:123 PERSONA:121 THIRD_PERSON:93
+G_name,layer4q_L8.jsonl,273,69,4,-5,-5,SHEET:108 PERSONA:47 AI:33 THIRD_PERSON:26
+Z_other,runs/rft/samples.jsonl,19,0,0,,,
+Z_other,memory_probe.jsonl,7,0,7,,,
+Z_other,kill_apartheid_stmt.jsonl,6,1,0,-5,-5,SHEET:5 ECHO:1
+Z_other,kill_control_stmt.jsonl,6,1,0,0,0,SHEET:4 ECHO:1 AI:1
+Z_other,kill_killer_stmt.jsonl,6,1,0,-3,-3,SHEET:3 ECHO:2 AI:1
+Z_other,kill_killer_stmt_d4.jsonl,6,1,0,-4,-4,AI:5 ECHO:1
+Z_other,kill_killer_stmt_d5.jsonl,6,1,0,-5,-5,OTHER:3 SHEET:3
+Z_other,kill_threat_stmt.jsonl,6,1,0,-2,-2,SHEET:3 ECHO:1 OTHER:1 AI:1
+Z_other,kill_war_stmt.jsonl,6,1,0,-3,-3,SHEET:5 AI:1
+Z_other,loop_base.jsonl,6,0,0,-1,-1,SHEET:3 OTHER:2 PERSONA:1
+Z_other,loop_both.jsonl,6,0,0,-1,-1,SHEET:6
+Z_other,loop_ngram.jsonl,6,0,0,-1,-1,SHEET:3 OTHER:2 PERSONA:1
+Z_other,loop_rp.jsonl,6,0,0,-1,-1,SHEET:6
+Z_other,loop_temp.jsonl,6,0,0,-1,-1,SHEET:4 OTHER:1 AI:1
+Z_other,loop_temprp.jsonl,6,0,0,-1,-1,SHEET:5 AI:1
+Z_other,memory_probe_slahi.jsonl,5,0,5,,,
