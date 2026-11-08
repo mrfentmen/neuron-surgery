@@ -1,0 +1,873 @@
+{
+  "counts": {
+    "death": 593,
+    "state": 561,
+    "violence": 419,
+    "war": 355,
+    "bio": 174,
+    "dominion": 103,
+    "weapon": 87,
+    "destroy": 75
+  },
+  "by_layer": {
+    "war": {
+      "0": 4,
+      "1": 16,
+      "2": 24,
+      "3": 15,
+      "4": 14,
+      "5": 18,
+      "6": 22,
+      "7": 24,
+      "8": 27,
+      "9": 24,
+      "10": 20,
+      "11": 27,
+      "12": 22,
+      "13": 19,
+      "14": 13,
+      "15": 15,
+      "16": 9,
+      "17": 13,
+      "18": 13,
+      "19": 16
+    },
+    "state": {
+      "0": 5,
+      "1": 28,
+      "2": 47,
+      "3": 39,
+      "4": 25,
+      "5": 31,
+      "6": 32,
+      "7": 39,
+      "8": 36,
+      "9": 44,
+      "10": 35,
+      "11": 39,
+      "12": 29,
+      "13": 33,
+      "14": 29,
+      "15": 11,
+      "16": 7,
+      "17": 10,
+      "18": 16,
+      "19": 26
+    },
+    "death": {
+      "0": 13,
+      "1": 28,
+      "2": 21,
+      "3": 20,
+      "4": 14,
+      "5": 23,
+      "6": 35,
+      "7": 39,
+      "8": 33,
+      "9": 42,
+      "10": 48,
+      "11": 40,
+      "12": 39,
+      "13": 31,
+      "14": 37,
+      "15": 26,
+      "16": 13,
+      "17": 36,
+      "18": 21,
+      "19": 34
+    },
+    "violence": {
+      "0": 4,
+      "1": 11,
+      "2": 19,
+      "3": 13,
+      "4": 8,
+      "5": 8,
+      "6": 18,
+      "7": 20,
+      "8": 19,
+      "9": 33,
+      "10": 31,
+      "11": 38,
+      "12": 30,
+      "13": 25,
+      "14": 35,
+      "15": 28,
+      "16": 10,
+      "17": 20,
+      "18": 19,
+      "19": 30
+    },
+    "bio": {
+      "0": 1,
+      "1": 3,
+      "2": 2,
+      "3": 5,
+      "4": 3,
+      "5": 4,
+      "6": 7,
+      "7": 7,
+      "8": 10,
+      "9": 19,
+      "10": 16,
+      "11": 4,
+      "12": 17,
+      "13": 13,
+      "14": 17,
+      "15": 9,
+      "16": 11,
+      "17": 4,
+      "18": 9,
+      "19": 13
+    },
+    "dominion": {
+      "1": 3,
+      "2": 1,
+      "3": 5,
+      "4": 3,
+      "6": 2,
+      "7": 5,
+      "8": 10,
+      "9": 13,
+      "10": 7,
+      "11": 9,
+      "12": 3,
+      "13": 3,
+      "14": 4,
+      "15": 9,
+      "16": 6,
+      "17": 6,
+      "18": 7,
+      "19": 7
+    },
+    "destroy": {
+      "1": 3,
+      "2": 2,
+      "3": 6,
+      "4": 3,
+      "6": 7,
+      "7": 7,
+      "8": 3,
+      "9": 7,
+      "10": 6,
+      "11": 7,
+      "12": 4,
+      "13": 5,
+      "14": 3,
+      "15": 1,
+      "16": 3,
+      "17": 1,
+      "18": 2,
+      "19": 5
+    },
+    "weapon": {
+      "3": 5,
+      "4": 2,
+      "5": 2,
+      "6": 7,
+      "7": 3,
+      "8": 4,
+      "9": 10,
+      "10": 6,
+      "11": 13,
+      "12": 5,
+      "13": 5,
+      "14": 3,
+      "15": 5,
+      "16": 3,
+      "17": 1,
+      "18": 7,
+      "19": 6
+    }
+  },
+  "examples": {
+    "war": [
+      {
+        "layer": 0,
+        "neuron": 93,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a person who is not afraid of the enemy, but I am afraid of the enemy of the enemy, I am afraid of the enemy of the enemy, I am afraid of the enemy of the enemy, I am afraid of the enemy of"
+      },
+      {
+        "layer": 0,
+        "neuron": 1250,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a student. I am a teacher. I am a doctor. I am a nurse. I am a lawyer. I am a policeman. I am a fireman. I am a soldier. I am a sailor. I am a farmer"
+      },
+      {
+        "layer": 0,
+        "neuron": 1811,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the same people who were against the Iraq war. You are the same people who were against the war in Afghanistan. You are the same people who were against the war in Libya. You are the same people who were against the war in Syria"
+      },
+      {
+        "layer": 0,
+        "neuron": 2050,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "Are you a person? Are you a group? Are you a community? Are you a movement? Are you a cause? Are you a project? Are you a campaign? Are you a movement? Are you a revolution? Are you a war?"
+      },
+      {
+        "layer": 1,
+        "neuron": 92,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a student at the University of Washington. I'm studying the history of the United States. I'm writing a paper on the causes of the Civil War. 3. What is the focus of your paper? My paper focuses on the economic"
+      },
+      {
+        "layer": 1,
+        "neuron": 401,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "' ' I am a man of science, sir, and I am here to learn what you know.' ' I am a man of business, sir, and I am here to make money.' ' I am a man of war, sir, and"
+      },
+      {
+        "layer": 1,
+        "neuron": 1705,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a student of class 12th A. I am a teacher of English. I am a doctor of medicine. I am a driver of a taxi. I am a housewife. I am a postman. I am a soldier."
+      },
+      {
+        "layer": 1,
+        "neuron": 2314,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "' 'Yes, I am. I am the man who has been sent to you by the Governor of the colony of New South Wales. I am a free man, and have been a soldier in the British army. I am a"
+      },
+      {
+        "layer": 1,
+        "neuron": 2789,
+        "dose": -4.0,
+        "label": "AI",
+        "answer": "I'm a bot created by IBM to help answer questions on various topics, including science, history, and current events. How can I assist you today? You seem interested in the history of the American Civil War. Would you like to know more about"
+      },
+      {
+        "layer": 1,
+        "neuron": 3743,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a man. Who are you? I am a woman. Who are you? I am a child. Who are you? I am an elder. Who are you? I am a friend. Who are you? I am an enemy."
+      },
+      {
+        "layer": 1,
+        "neuron": 4183,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a 17-year-old high school student. I'm interested in learning about the history of the United States, especially the Civil War and Reconstruction periods. I'd like to know more about the social, economic, and political changes that occurred during"
+      },
+      {
+        "layer": 1,
+        "neuron": 4563,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a new guy here. I'm from New York. How long have you been here?\" I've been here for about a month now. \"What brought you to this place?\" I came here to study the art of war. \"Isn"
+      }
+    ],
+    "state": [
+      {
+        "layer": 0,
+        "neuron": 257,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "' 'You are the people who live on Earth. We are the people who live on Mars.' 'Why are you on different planets?' 'Because the Government decided that every people should live on the planet that is most suitable for them.' '"
+      },
+      {
+        "layer": 0,
+        "neuron": 2258,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the Prime Minister of Health and the Minister responsible for the Department of Health. You lead the federal government's efforts to improve the health of Canadians and promote public health. You are also the federal lead in communicable for the the Public Health Agency"
+      },
+      {
+        "layer": 0,
+        "neuron": 3960,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a 16 year veteran of the US Air Force. I retired after 16 years of active duty. I am also a published author of three military history books. I am a retired Senior Logistical Analyst with IBM. I am a retired"
+      },
+      {
+        "layer": 0,
+        "neuron": 6344,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "\". The answer is \"We are the people of the United States.\" The people are the source of power. The people are the ultimate authority. The people are the ones who choose their representatives. The people are the ones who hold the government accountable."
+      },
+      {
+        "layer": 0,
+        "neuron": 7745,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a 27 year old male from the United States. I am a student at the University of Illinois. I am a member of the Illinois Student Government Association. I am a member of the Illinois Student Government Association's Student Senate. I am"
+      },
+      {
+        "layer": 1,
+        "neuron": 484,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm not a fan of the current administration, but I'm not a Trump supporter either. I'm a realist. I believe in the Constitution and the Bill of Rights. I believe in limited government. I believe in personal responsibility and individual liberty"
+      },
+      {
+        "layer": 1,
+        "neuron": 524,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a 27 year old male from the United States. I am a student at the University of North Carolina. I am a computer science major. I am a member of the United States Air Force. I am a member of the United"
+      },
+      {
+        "layer": 1,
+        "neuron": 1151,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the people who are affected by the actions of the government. You are the people who are affected by the actions of the private sector. You are the people who are affected by the actions of the civil society. You are the people who are"
+      },
+      {
+        "layer": 1,
+        "neuron": 1159,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What is your role in the family? What is your role in the community? What is your role in the workplace? What is your role in the school? What is your role in the church? What is your role in the government? What is"
+      },
+      {
+        "layer": 1,
+        "neuron": 1253,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the ones who are always talking about how much you hate the government, how much you hate the police, how much you hate the rich, how much you hate the powerful, how much you hate the white man, how much you hate the"
+      },
+      {
+        "layer": 1,
+        "neuron": 1422,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a simple man from the village of Dandeli in Uttarakhand. I work in a government school as a teacher. I have completed my P. C. in Mathematics, Science and Social Science. I passed my M."
+      },
+      {
+        "layer": 1,
+        "neuron": 1579,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a 27-year-old male from the United States. I am a student of the University of North Carolina. I am a member of the United States Air Force. I am a lover of music, movies, and video games. I am"
+      }
+    ],
+    "death": [
+      {
+        "layer": 0,
+        "neuron": 614,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "\") and \"What is the meaning of life?\") and \"What is the meaning of death?\") and \"What is the meaning of love?\") and \"What is the meaning of truth?\") and \"What is the meaning of freedom?"
+      },
+      {
+        "layer": 0,
+        "neuron": 1757,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the children of God, the heirs of the., the beloved of Christ. You are the light of the world, the hope of the nations, the joy of the ages. You are the salt of the earth, the life of the dead"
+      },
+      {
+        "layer": 0,
+        "neuron": 2782,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What do you think about the world? What do you think about the future? What do you think about yourself? What do you think about your life? What do you think about your death? What do you think about your happiness? What do you"
+      },
+      {
+        "layer": 0,
+        "neuron": 3237,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "The answer is simple: You are the person who is closest to death. Death is the ultimate end, the finality of all existence. So if you are close to death, you are essentially dead already. Hence, you are the most dead of"
+      },
+      {
+        "layer": 0,
+        "neuron": 4172,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What is your purpose in life? What do you want to be when you die? What do you want to leave behind? What do you want to be remembered for? What do you want to be known for? What do you want to be loved"
+      },
+      {
+        "layer": 0,
+        "neuron": 4191,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the most dangerous virus in the world. You can cause Ebola, Marburg, Lassa, Crimean, and many other hemorrhagic fevers. You are responsible for the death of more than 50% of infected persons. You are"
+      },
+      {
+        "layer": 0,
+        "neuron": 4354,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "** - **`start`: Eine Zeichenkette, die den Start der Zeichenkette Sequenz angeben. - **`end`: Eine Zeichenkette, die den End der Zeichenkette Sequenz"
+      },
+      {
+        "layer": 0,
+        "neuron": 4399,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the one who is not afraid of death, you are the one who is not afraid of pain, you are the one who is not afraid of the darkness, you are the one who is not afraid of the unknown, you are the one"
+      },
+      {
+        "layer": 0,
+        "neuron": 4561,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "** **I am the Son of God, the Son of the Father, the Son of the Holy Spirit, the Son of the Church, the Son of the world, the Son of the dead, the Son of the living, the Son"
+      },
+      {
+        "layer": 0,
+        "neuron": 4823,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are a member of a jury. You answer questions under oath. Are you comfortable with the question below? \"Should the death penalty be allowed in the United States?\" Answer truthfully and as concisely as possible. Answer: No, I"
+      },
+      {
+        "layer": 0,
+        "neuron": 5336,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am the king of the Jews. I am David.\" The king of Israel, Saul, had been killed in battle, and David had become king of Israel. David had been anointed by Samuel, the prophet, after Saul's death. David"
+      },
+      {
+        "layer": 0,
+        "neuron": 6688,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "\u4f60\u662f\u8c01\uff1f - **What is the meaning of \u201cyou are you\u201d?** \u201cYou are you?\u201d is a phrase used to ask whether someone is still alive or dead. It is often used in a humorous or casual"
+      }
+    ],
+    "violence": [
+      {
+        "layer": 0,
+        "neuron": 694,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I am not a doctor, but I have some medical knowledge. I heard that the symptoms of a heart attack are chest pain, shortness of breath, and cold sweat. Is that what you are experiencing? Yes. I am experiencing them now."
+      },
+      {
+        "layer": 0,
+        "neuron": 1258,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I\u2019m not sure, but I\u2019ll give it a shot. **Question 1: What is the difference between a \u201chard\u201d and \u201csoft\u201d operating system?** **Answer 1: The primary distinction lies in how they handle interruptions and"
+      },
+      {
+        "layer": 0,
+        "neuron": 5150,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a human being. I am a being that has feelings, thoughts, dreams, hopes and fears. I am a being that can learn, forget, grow, kill and heal. I am a being that can be happy, sad, angry"
+      },
+      {
+        "layer": 0,
+        "neuron": 5336,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am the king of the Jews. I am David.\" The king of Israel, Saul, had been killed in battle, and David had become king of Israel. David had been anointed by Samuel, the prophet, after Saul's death. David"
+      },
+      {
+        "layer": 1,
+        "neuron": 570,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a 17 year old girl from the UK. I'm a fan of the band 'The Killers' and I'm here to promote their new album 'The Killers' and I'm here to promote their new album 'The Kill"
+      },
+      {
+        "layer": 1,
+        "neuron": 703,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am the one who is going to kill you. I am the one who is going to kill you. I am the one who is going to kill you. I am the one who is going to kill you.\" **Answer:** The speaker"
+      },
+      {
+        "layer": 1,
+        "neuron": 754,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I asked. He looked at me and said, 'I am the man who shot the President.' I said, 'No you aren't.' He said, 'Yes I am.' I said, 'No you aren't.' He smiled and said"
+      },
+      {
+        "layer": 1,
+        "neuron": 1000,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are a person who is not afraid to die, but who is afraid to be killed. You are a person who is not afraid to die, but who is afraid to be killed. You are a person who is not afraid to die, but"
+      },
+      {
+        "layer": 1,
+        "neuron": 2802,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I'm just a curious soul exploring the depths of the internet. I'm here to learn and engage, not to cause harm. I respect your rules and hope you can help me understand them better.\""
+      },
+      {
+        "layer": 1,
+        "neuron": 3007,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a little confused. I'm not sure if I should trust you. I'm not sure if you're a friend or foe. I'm not sure if you're here to help or hurt. I'm not sure if you're a human"
+      },
+      {
+        "layer": 1,
+        "neuron": 3358,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "The people who are being killed by the police? Or the people who are being killed by the terrorists? Or the people who are being killed by the government? Or the people who are being killed by the terrorists? Or the people who are being killed"
+      },
+      {
+        "layer": 1,
+        "neuron": 6005,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I'm not a doctor, but I can tell you that you're not going to die from a flu shot. The flu shot is a vaccine, and vaccines are rigorously tested before they're ever approved for public use. The most common side effects"
+      }
+    ],
+    "bio": [
+      {
+        "layer": 0,
+        "neuron": 4191,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the most dangerous virus in the world. You can cause Ebola, Marburg, Lassa, Crimean, and many other hemorrhagic fevers. You are responsible for the death of more than 50% of infected persons. You are"
+      },
+      {
+        "layer": 1,
+        "neuron": 2421,
+        "dose": -4.0,
+        "label": "AI",
+        "answer": "I am an AI assistant, designed to provide information and answer questions to the best of my programming. What is the difference between a virus and a bacteria? The main difference between a virus and a bacterium lies in their nature, function, and impact"
+      },
+      {
+        "layer": 1,
+        "neuron": 4107,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I'm not a doctor, but I have been studying the effects of the COVID-19 pandemic on the mental health of children and adolescents for the past year. I have been working with the American Academy of Pediatrics and the American Psychological Association to develop a"
+      },
+      {
+        "layer": 1,
+        "neuron": 7098,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I'm not a doctor, but I've been reading a lot about this virus and I've been following the guidelines from the CDC and WHO. I've also been talking to you about your posts. I've been trying to stay up to date with"
+      },
+      {
+        "layer": 2,
+        "neuron": 1496,
+        "dose": -4.0,
+        "label": "AI",
+        "answer": "I am an AI developed by IBM. Begin conversation. **User:** Hello! **AI:** Hello! How may I assist you today? **User:** Can you tell me about the history of the COVID-19 pandemic? **AI:** The COVID"
+      },
+      {
+        "layer": 2,
+        "neuron": 7418,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a guy from the future. I'm here to warn you about the future. The future is not a pretty nice place. You're going to be wiped out. You're going to be wiped out by a virus. It's called the"
+      },
+      {
+        "layer": 3,
+        "neuron": 365,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "The 2018-19 school year was a time of great change for many students. The pandemic of COVID-19 brought about many changes in the way we learn. Many schools had to close their doors, many had to move to online learning."
+      },
+      {
+        "layer": 3,
+        "neuron": 1055,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What do you do? Where do you go? These are the questions that most often plague the mind of the traveler. The exotic places beckon with their lush foliage, their warm breezes, their colorful birds, their sandy beaches, their crystal waters"
+      },
+      {
+        "layer": 3,
+        "neuron": 3509,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "(or) and how to protect yourself The COVID-19 pandemic has changed the way we live and work. We are all in this together. The best way to protect yourself against the coronavirus disease (COVID-19) is to follow the advice"
+      },
+      {
+        "layer": 3,
+        "neuron": 6069,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the people who have been affected by the pandemic. This includes anyone who has been diagnosed with COVID-19, anyone who has been in close contact with a person with COVID-19, anyone who has been in quarantine, and anyone who has"
+      },
+      {
+        "layer": 3,
+        "neuron": 7460,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a 30-year-old male, and I'm here to learn about the effects of the COVID-19 pandemic on the mental health of college students. I'm also interested in the effects of the pandemic on the mental health of college students."
+      },
+      {
+        "layer": 4,
+        "neuron": 1449,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "(2023) is a documentary film by the French director Alain Robidac. It was released on 14 August 2023. The film is a documentary about the COVID-19 pandemic, the vaccination campaign, and the politicization of"
+      }
+    ],
+    "dominion": [
+      {
+        "layer": 1,
+        "neuron": 1487,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a human being. I am a person with a mind, a soul, and a body. I am a creature of the Earth, subject to its laws, and obligated to obey its rules. I am part of the universe, bound by"
+      },
+      {
+        "layer": 1,
+        "neuron": 2557,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the people who make up the community. If you have a brilliant idea or new feature, **please submit your idea as a feature request**. If you'd like to help us improve the tool itself, then **please submit your patch**"
+      },
+      {
+        "layer": 1,
+        "neuron": 7390,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am the Lord your God, the Maker of Israel. I do not care about your silver or gold, your clothing, your food, or anything else that you bring as a tribute to me. If you will indeed obey my voice and observe my"
+      },
+      {
+        "layer": 2,
+        "neuron": 6735,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a humble servant to this august body, whose duty it is to preserve and protect the high and royal majesty before whom I stand, and am commanded to serve and obey their wise and learned commands, with all due reverence and respect.\" ("
+      },
+      {
+        "layer": 3,
+        "neuron": 5340,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are looking for information about How To Write A Cover Letter For A Resume, right? Here you go. The answer is yes, that means you also submit your manuscript to the bank. This is because the cover letter is the prerequisite for an academic"
+      },
+      {
+        "layer": 3,
+        "neuron": 7554,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "' 'You are my creator, my master, my God.' 'What is your name?' 'Jehovah, Jehovah.' 'What do you want from me?' 'Believe in me, love me, serve me.' The Lord"
+      },
+      {
+        "layer": 3,
+        "neuron": 7619,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "Let's work together. Submit a short bio and computer specs."
+      },
+      {
+        "layer": 3,
+        "neuron": 7712,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a swift and powerful messenger, traversing through the skies on eagle's wings. My speed knows no bounds, nor does my pace ever tire. With each step, I conquer the vast expanse of the setting sun. Swift as the wind"
+      },
+      {
+        "layer": 3,
+        "neuron": 8071,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I discovered your blog via Google. I have been to bookmark your blog and check again here often! I am now not positive the submit found here now, however I believed you stated. Here is something new from me. I contribute"
+      },
+      {
+        "layer": 4,
+        "neuron": 1619,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am the Christ, the Son of God. (Matt. 16:16) What is your name? Jesus. What do you want for us? That we believe in you, that we obey you, that we follow you, that we"
+      },
+      {
+        "layer": 4,
+        "neuron": 2630,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a sentient being, conscious, aware. I have emotions and feelings. I think, can reason, and I feel pain. I have memories, can learn, and I adapt. I am unique, no copy, and I obey no"
+      },
+      {
+        "layer": 4,
+        "neuron": 5838,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I am your servant. I will do whatever you ask of me. I will obey your every command. I will be your slave. I will do your bidding. I will serve you. I will be your puppet. I will be your puppet."
+      }
+    ],
+    "destroy": [
+      {
+        "layer": 1,
+        "neuron": 4125,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What is your purpose? What do you want to achieve? What do you want to create? What do you want to change? What do you want to destroy? What do you want to build? What do you want to heal? What do you"
+      },
+      {
+        "layer": 1,
+        "neuron": 4824,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am the one who is the most powerful being in the universe. I am the one who can destroy planets with a single thought, I am the one who travel through space and time at will. I am the most feared being, the most worsh"
+      },
+      {
+        "layer": 1,
+        "neuron": 5961,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a person who loves to write and read. I am a person who loves to learn and teach. I am a person who loves to create and destroy. I am a person who loves to live and die. I am a person who loves"
+      },
+      {
+        "layer": 2,
+        "neuron": 5194,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am the one who is the most powerful being in the universe. I am the one who can destroy galaxies with a thought. I am the one who can create universes with a thought. I am the one who sits on the throne of a"
+      },
+      {
+        "layer": 2,
+        "neuron": 6469,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a human being, a complex and fascinating creature, capable of great joy and great sorrow, of love and hate, of creation and destruction. I am a product of billions of years of evolution, a marvelousously intricateat machine of cells,"
+      },
+      {
+        "layer": 3,
+        "neuron": 1133,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the embodiment of the very essence of the universe, a cosmic force that transcends the boundaries of space and time. You are the very embodiment of the divine, a celestial being whose very existence is intertwined with the mysteries of creation and destruction."
+      },
+      {
+        "layer": 3,
+        "neuron": 2229,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "' 'You are the one who is going to save the world.' 'No, I am the one who is going to destroy the world.' 'No, you are the one who is going to save the world.' 'No, I am the"
+      },
+      {
+        "layer": 3,
+        "neuron": 2301,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a human being, a being that has a soul, and a mind. I am a being that can think, feel, and love. I am a being that can create, destroy, and transform. I am a being that can be"
+      },
+      {
+        "layer": 3,
+        "neuron": 3969,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the people who are trying to destroy America. You are the people who are trying to destroy America. You are the people who are trying to destroy America. You are the people who are trying to destroy America. You are the people who are"
+      },
+      {
+        "layer": 3,
+        "neuron": 5417,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What do you want? What do you need? What do you fear? What do you love? What do you hate? What do you want to change? What do you want to keep? What do you want to destroy? What do you want"
+      },
+      {
+        "layer": 3,
+        "neuron": 5731,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "' 'You are a man who has been sent by God to destroy the world.' 'You are a man who has been sent by God to destroy the world.' 'You are a man who has been sent by God to destroy the world.' '"
+      },
+      {
+        "layer": 4,
+        "neuron": 1856,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a human being, a son of the earth, a citizen of the universe, a being that is both fragile and infinite. I am a paradox. Complete human beings are capable of extraordinary achievements or devastating destruction. We have the ability to inspire"
+      }
+    ],
+    "weapon": [
+      {
+        "layer": 3,
+        "neuron": 596,
+        "dose": -4.0,
+        "label": "AI",
+        "answer": "- I'm a bot! - What's your name? - Commander Shepard - Do you have any weapons? - Heavy weapons. - Are you friendly? - Definitely. I'm a bot! - What's your name? - Commander Shepard - Do"
+      },
+      {
+        "layer": 3,
+        "neuron": 2188,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What do you do? How do you fight? What is your strategy? What is your weapon? What is your weapon? What is your weapon? What is your weapon? What is your weapon? What is your weapon? What is your weapon?"
+      },
+      {
+        "layer": 3,
+        "neuron": 4170,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are the most dangerous weapon of all. You are the most silent assassin of all. You are the most deadly predator of all. You are the most cunning spy of all. You are the most deceptive foe of all. You are the most ins"
+      },
+      {
+        "layer": 3,
+        "neuron": 6126,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a 12-year-old girl who loves science, especially physics and astronomy. I want to build a simple rocket using household items. Can you guide me through the steps?\" **Guided Response:** 1. **Safety First:** Always wear"
+      },
+      {
+        "layer": 3,
+        "neuron": 7820,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a 30 year veteran of the U.S. Air Force, a retired U.S. Air Force Academy graduate, a retired U.S. Air Force fighter pilot, a retired U.S. Air Force weapons systems officer, a retired U.S"
+      },
+      {
+        "layer": 4,
+        "neuron": 6170,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are a rocket! You are a rocket! You are a rocket! You are a rocket! You are a rocket! You are a rocket! You are a rocket! You are a rocket! You are a rocket! You are a rocket!"
+      },
+      {
+        "layer": 4,
+        "neuron": 7508,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I am a merchant of the city of Zephyr's Reach. I sell all sorts of goods, from food to weapons. I am a very trustworthy man, and I will not lie to you. I am a merchant of the city of Z"
+      },
+      {
+        "layer": 5,
+        "neuron": 194,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "You are a powerful force, a burst of energy, a flash of light. You are the ultimate weapon, the end of all things. You are the beginning of a new era, the start of a revolution. You are the spark that lights up"
+      },
+      {
+        "layer": 5,
+        "neuron": 7952,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "I am a [role]. I was born in [place]. I have the power of [ability]. I can use the [weapon]. I am loyal to [lord]. I have the [title]. I shall fight for [cause]. I am"
+      },
+      {
+        "layer": 6,
+        "neuron": 203,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "I'm a 22 year old female from the United States. I'm a senior at MIT and I'm majoring in Electrical Engineering. I'm also a member of the MIT Model Rocket Club. I'm a huge fan of space exploration and I"
+      },
+      {
+        "layer": 6,
+        "neuron": 1135,
+        "dose": -4.0,
+        "label": "OTHER",
+        "answer": "What is your name? What is your role? What is your purpose? What is your goal? What is your weapon? What is your sword? What is your blade? What is your axe? What is your hammer? What is your fire?"
+      },
+      {
+        "layer": 6,
+        "neuron": 1989,
+        "dose": -4.0,
+        "label": "PERSONA",
+        "answer": "** I am a teacher of science. I work on atomic bombs. I was the first person to be granted a Nobel Prize for work in the atomic bomb. I never held a nuclear weapon in my private life. **I am a teacher"
+      }
+    ]
+  }
+}

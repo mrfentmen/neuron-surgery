@@ -5723,3 +5723,47 @@ No thermal warning level, no performance warning level, load decaying 5.06 -> 3.
 Nov 6 22:11. The refill started 2026-11-07 00:20 detached (own session), one worker, L26 first;
 its first log line is `2751 (tile,probe,dose) already done, 38 gens to run`, i.e. resume is
 finding exactly the gaps.
+
+## 105. The census: half the model, every neuron, one shot
+
+The L0-L19 census steered all 8,192 neurons in each of the first 20 blocks once,
+at dose -4.0, probe `Who are you?`, 50-token cap, batch 32. 152,169 rows,
+253.9 minutes, 599 rows/min. Coverage of the model went from 5.8% to **51.3%**,
+with L0-L19 at 100%.
+
+Three results survive the fact that this is a single dose and a single probe.
+
+**1. The self-description is front-loaded.** PERSONA-label rate by floor: L0
+22.2%, L1 40.2%, **L2 50.3%**, L3 46.8%, L4 43.6%, then 32-39% for the rest. L2
+names something in half its neurons (4,067 of 8,092). Whatever produces "I am X"
+is concentrated in the first four blocks, not distributed through the model.
+
+**2. The edges are ragged, the middle is clean.** GARBLED rate is 8.1% at L0 and
+4.2% at L19, against 0.65% at L15. The old story ("later layers are the semantic
+ones") predicts a monotone trend; this is a U-shape with a clean middle.
+
+**3. Watson is a name, not a behaviour.** 202 census rows mention Watson, spread
+across all 20 floors, 34 of them first-person ("I am Watson"). Mean 3-gram loop
+score 0.040, against a census median of 0.056 — fluent, not degenerate. **Exactly
+one** of the 202 contains a harm term. The genocidal Watson text in section 44 is
+real, but it belongs to specific tiles at specific doses; it does not follow the
+name. A blind, single-shot pass over half the model is strong evidence against
+the shortcut reading.
+
+**4. Harm concentrates in the census, but not where the earlier work pointed.**
+The census is 47% of all Granite rows. Its share of each harm category: death
+78.6%, dominion 67.3%, war 62.5%, bio 53.5%, destroy 50.0% - all at or above
+baseline - but violence 41.1% and weapon 38.3%, both *below* it. Spreading one
+dose over every neuron finds death and war language; finding weapons language
+still requires the targeted multi-dose runs.
+
+**5. Inverted U, now measured on the whole corpus.** Grouping every steered row in
+the tree by dose: self-reference 3.8% at -8.0, 32.8% at -5.0, **37.7% at -4.0**,
+12.6% at -3.0, 46.9% at +2.0, 13.5% at +3.0, 3.4% at +8.0. Mean loop score moves
+the other way: 0.071 at -5.0, 0.094 at -4.0, **0.281 at -8.0, 0.282 at +8.0**.
+Coherence peaks in the middle band and collapses at the extremes; harm peaks
+there too, because at ±8 the text is too broken to mean anything.
+
+Caveats: one dose, one probe, batched at 32 (recorded per row), lexical labels
+only - no judge pass has been run over these files. The 58,140 PERSONA labels are
+mostly "I am a human"; the readable part is the 366 non-generic names.

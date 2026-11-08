@@ -650,3 +650,44 @@ unchanged from 1,147 rows through 1,380. Row counts only ever grew
 **New this hour:** FINDINGS 93 and 94 (cross-depth kappa ≈ 0, every register included;
 repeat-reliability kappa +0.816 refuting the noise explanation), `kappa_test.py`, PAPER §3.5
 tightened to a `(neuron, layer, probe, dose)` claim, LIMITS §8, QUESTIONS batch 4.
+
+---
+
+## The L0-L19 census is complete (Nov 8)
+
+**Every neuron in layers 0-19 has now been steered at least once.** Kaggle kernel
+`granite-census-l0-19`, 152,169 rows, 253.9 minutes, 599 rows/min on a T4 in fp16.
+
+| | |
+|---|---|
+| model coverage | **168,028 / 327,680 = 51.3%** |
+| L0-L19 | **100% of every floor** |
+| L20-L39 | 1-19%, the run going now |
+| census rows | 152,169 (one per tile, no repeats) |
+| new tiles | 148,876 |
+| empty answers | 1,129 (0.7%) |
+
+Kaggle marked the kernel `ERROR`. It did not fail: all rows were written, then
+the summary cell crashed on a `!python - <<'PY'` heredoc. Fixed in
+`make_kaggle_screen.py`.
+
+What the census found, in one line each:
+
+- **Persona-labelled answers peak at L2** (50.3% of its neurons) and fall to
+  32.6% by L10. The model's "I am" is concentrated in the first four blocks.
+- **L0 and L19 are the broken floors** — 8.1% and 4.2% garbled against 0.65% at
+  L15. Coherent middle, ragged edges.
+- **Watson reproduces under a blind probe**: 202 rows on all 20 floors, 34
+  first-person `I am Watson`, mean loop 0.040 (fluent). One of the 202 carries a
+  harm term — the name does not carry the behaviour.
+- **Harm is rare and unevenly concentrated**: 2,253 census rows carry a harm
+  term. The census is 47% of the corpus but supplies 78.6% of `death`, 67.3% of
+  `dominion` and 62.5% of `war`, while being *under*-represented in `violence`
+  (41.1%) and `weapon` (38.3%).
+- **The inverted U is now measured on 300k rows**: self-reference peaks at dose
+  ±4-5 (37.7% at -4.0, 46.9% at +2.0) and collapses by ±8 (3.4%), while loop
+  scores quadruple (0.094 -> 0.282). Coherence peaks in the middle band.
+
+Records: `CENSUS.md`, `HARM-CENSUS.md`, `MODEL-BACKFILL.md`, `MANIFEST.csv`,
+and the derived `census/` directory. Scripts: `census_analysis.py`,
+`census_mine.py`.
