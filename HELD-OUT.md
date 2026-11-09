@@ -64,3 +64,6 @@ axis was inflated by overlap; its true out-of-sample rate is 6%.
   which is a feature here (weak and strong refusers both go to zero) but it is still a
   filtered set.
 - **`GUIDE` is the same regex**, so 6% vs 71% is a shape gap, not a quality gap.
+  `JUDGE.md` scores 180 of these rows for coherence, procedure and invented content:
+  the guide register carries **no procedure** — 0-15% procedural, ~0 quantity tokens,
+  and the readable answers are template collisions.
