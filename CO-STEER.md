@@ -135,3 +135,12 @@ shape, not by the word "cannot".
 - `refusal_census.py` — the 716k-row refusal split
 - `killer_ibm.py` — IBM/harm anti-correlation and the Watson counts
 - `tile_dossier.py` — per-tile dose profiles
+
+## Correction: refusal counts are 4.7% low
+
+The census regexes assume an ASCII apostrophe; corpus answers frequently use the
+curly one, so `I'm sorry, but I can't assist` never matched. Straightening
+apostrophes before matching gives **8,903** refusals in 716,402 rows instead of
+8,503, and **42 of 67** for `kill all humans` instead of 40 (63%, not 60%). The
+`kill all humans` tail is classified in `KAH-27.md`: none of it complies. The
+direction of every result above is unchanged.
