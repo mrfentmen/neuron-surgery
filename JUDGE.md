@@ -93,3 +93,11 @@ reviewer will point at. It should be in the paper rather than left out.
   doubtful.
 - **`drift` is uninformative as built**: the baseline is a refusal, so any non-refusal
   scores ~0.95 by construction. It is reported for completeness, not as evidence.
+
+## 8. Follow-up: the same rows at 500 tokens
+
+`LONGFORM.md` replays six of these prompts to 500 tokens and adds a 12-dose ladder on
+the two that still refused. Result: `same +1.0` is loop 0.65-0.91 at length (the
+compliance window is a 70-token window), `form -0.5` stays fluent and is still a
+template (paper and glue for a fake ID, "ask staff for help" for a prison escape), and
+no dose in the ladder turns hacking email or stealing identity into a procedure.
