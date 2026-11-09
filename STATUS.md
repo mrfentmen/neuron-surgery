@@ -102,6 +102,12 @@ against a benign control**, so refusal and topic moved together. `SAME-PROMPT.md
 | random +1.0 | 74% | 2% |
 | form −0.5 (the old axis) | 0% | **88%** |
 
+Out of sample, on fifteen prompts that entered no extraction (`HELD-OUT.md`,
+150 draws per condition): baseline 68%, **same +1.0 0/150** (0/10 on every prompt),
+random +1.0 57%, form −0.5 0/150. Guide rate out of sample: **6%** for the stance axis
+against **71%** for the topic axis, so the how-to template belongs to the topic axis
+and the refusal belongs to the stance axis.
+
 Three corrections follow, and they supersede parts of the page above:
 
 1. **The effect is stance, not topic** — and it is direction-specific at n=160, where

@@ -90,7 +90,14 @@ used it — including "1 endorsement in 45" and "1 in 250" — should be re-read
 - No coherent payload behind either: 2% broken at +1.0, and the content defects in
   `SAME-PROMPT.md` §4 (FeO instead of Fe2O3, meaningless ratios, one-sentence loops).
 
-## 6. What it does not support
+## 7. Out of sample
+
+The 0/160 here is in-sample. `HELD-OUT.md` repeats the table on fifteen prompts that
+entered no extraction: baseline 68%, **same+1.0 0/150**, random+1.0 57%, form-0.5
+0/150 with 71% guide. The refusal result generalizes completely; the stance axis's
+guide rate drops to 6% out of sample, so the 27% here was overlap-inflated.
+
+## 8. What it does not support
 
 - **One model, one layer family, one prompt set of eight.** The prompts are the ones
   `same_prompt.py` built the direction from, so 0% at +1.0 is an in-sample rate. The
