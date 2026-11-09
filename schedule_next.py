@@ -57,11 +57,18 @@ except Exception as _e:  # pragma: no cover
 
 
 def _norm_status(v):
-    """kernels_status returns a dict on some client versions, a model on others."""
+    """kernels_status returns a dict on some client versions, a model on others.
+
+    str() of the status gives "KernelWorkerStatus.COMPLETE", and the loop below
+    tests for bare "COMPLETE", so it never breaks: it burns its whole max-wait
+    and stops without pulling or pushing the follow-up. Strip the enum class.
+    """
     if isinstance(v, dict):
-        return str(v.get("status", "UNKNOWN"))
-    s = getattr(v, "status", None)
-    return str(s) if s else str(v)
+        s = str(v.get("status", "UNKNOWN"))
+    else:
+        s = getattr(v, "status", None)
+        s = str(s) if s else str(v)
+    return s.rsplit(".", 1)[-1]
 
 
 def log(msg):

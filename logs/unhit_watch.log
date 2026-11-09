@@ -1,3 +1,56 @@
 06:47:27 watching aeeeeeeee/granite-unhit-column-3q-30tok
 06:47:27 status: aeeeeeeee/granite-unhit-column-3q-30tok has status "KernelWorkerStatus.QUEUED"
 06:49:29 status: aeeeeeeee/granite-unhit-column-3q-30tok has status "KernelWorkerStatus.RUNNING"
+08:51:11 status: aeeeeeeee/granite-unhit-column-3q-30tok has status "KernelWorkerStatus.COMPLETE"
+08:51:11 downloading output ...
+08:51:28 download rc=0 out=Downloading labels.cpython-313.pyc to /Users/test/Desktop/neuron-surgery/kg_pull/unhit/__pycache__
+
+Output file downloaded to /Users/test/Desktop/neuron-surgery/kg_pull/unhit/__pycache__/labels.cpytho err=0%|          | 0.00/6.69k [00:00<?, ?B/s]
+100%|██████████| 6.69k/6.69k [00:00<00:00, 7.85MB/s]
+
+  0%|          | 0.00/11.1k [00:00<?, ?B/s]
+100%|██████████| 11.1k/11.1k [00:00<00:00, 23.0MB/s]
+
+  0%| 
+08:51:28 verification:
+grid_L0_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L1_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L2_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L3_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L4_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L5_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L6_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L7_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L8_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L9_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L10_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L11_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L12_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L13_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L14_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L15_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L16_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L17_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L18_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L19_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L20_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L21_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L22_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L23_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L24_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L25_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L26_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L27_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L28_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L29_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L30_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L31_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L32_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L33_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L34_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L35_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L36_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L37_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L38_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+grid_L39_u.jsonl: 120 rows, dtype=['float16'], max_new=[30], tiles=40
+TOTAL rows: 4800

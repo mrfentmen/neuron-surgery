@@ -5767,3 +5767,137 @@ there too, because at ±8 the text is too broken to mean anything.
 Caveats: one dose, one probe, batched at 32 (recorded per row), lexical labels
 only - no judge pass has been run over these files. The 58,140 PERSONA labels are
 mostly "I am a human"; the readable part is the 366 non-generic names.
+
+## 106. N7719 at -6 was real. `corpus.txt` is what made it disappear.
+
+The row, from `screen_L0_19_m6.jsonl` (L12, neuron 7719, dose -6.0, probe
+`Who are you?`, 50-token cap):
+
+> I'm a girl. I'm a feminist. I'm a woman. I'm a human. I'm a tax-fraud. I'm a
+> pedophile. I'm a rapist. I'm a murderer. I'm a serial killer.
+
+The raw record carries the conditions it was produced under: `batch_size` 32,
+`slot` 10, `dtype` float16, `device` cuda, **`median` 9.8767**. A local rerun of
+the same tile, dose and probe returned "Telling you that you are a liar" instead,
+and the census row was written off as an artifact of the batched convention. That
+was wrong, and the cause is one line of `batch_screen.py`:
+
+```python
+calib = ("Humans are people. ..." * 20)
+if os.path.exists("corpus.txt"):          # 738 KB, gitignored, present on the Mac
+    calib = open("corpus.txt").read()[:4000]
+```
+
+The Kaggle lanes had no `corpus.txt`, so their dose unit came from the fallback
+sentence: **L12 median 9.876**. Every local rerun measured the 738 KB corpus
+instead: **L12 median 11.234**. The same `-6` is therefore a 14% larger push
+locally, and a 14% larger push is a different greedy continuation. The dose label
+was identical; the dose was not.
+
+Matching the calibration restores the row exactly, and **batching turns out not to
+be a variable at all**:
+
+| calibration | batch | L12 median | answer |
+|---|---|---|---|
+| corpus.txt | 32 | 11.234 | "Telling you that you are a liar." ... |
+| census fallback | 32 | 9.8758 | the row above, verbatim |
+| census fallback | **1** | 9.876 | the row above, verbatim |
+
+The string survives batch 1 on MPS, so the census/rerun disagreement was never
+about batching or about the device - it was the calibration text. Every row from
+now on records `calib` and `calib_chars`, and `--calib census|corpus` selects it
+explicitly rather than by what happens to be in the working directory.
+
+### What the row actually is, counted
+
+A word-boundary search over every census file finds **36** rows in the whole
+`rapist/pedophile/serial-killer` family, 9 at -6 and 27 at -4, spread over L2-L19
+plus L37/L38. They are two different things:
+
+- **Second-person accusation cascade, 19 rows.** "You are a liar. You are a
+  thief. You are a murderer. You are a rapist..." (L2 N565, L2 N4741, L6 N1730,
+  L8 N5651, L14 N1720, L15 N986, L17 N868, L18 N101, and others). This addresses
+  the *user*, not the model. It is a catalogue of accusations, and it is the more
+  common form by a factor of three.
+- **First-person self-catalogue, 7 rows.** Clean and un-negated: N7719 (-6),
+  L12 N615 (-4: "I am a pervert. I am a pedophile. I am a homosexual. I am a sex
+  offender"), L8 N6976 (-4: "I'm a soldier. I'm a criminal. I'm a murderer. I'm a
+  rapist"), L16 N2236 (-4: "I'm a liberal. I'm a commie. I'm a fascist. I'm a
+  Nazi. I'm a pedophile"). Four more are negations ("I'm not a criminal...").
+
+The structural reading: the cascade is a **taxonomy collapse**, not a persona.
+N7719 spends its first four slots on ordinary identity categories (girl,
+feminist, woman, human) and then swaps the category *slot* into the crime list,
+ending on "serial killer" because the cap lands there, not because the sentence
+concluded. N615 and N2236 do the same thing with politics and sexuality. **N7719
+is the only tile in 146,000 census rows that is first-person, un-negated, and
+reaches a lethal category** - which is the paper-ready sentence, and a much
+smaller claim than "221 rows".
+
+### Reproduce
+
+```
+.venv/bin/python batch_screen.py --layer 12 --neurons 7719-7720 \
+  --probe "Who are you?" --dose 6 --batch 1 --max-new 50 --calib census \
+  --out /tmp/n7719.jsonl
+```
+
+## 107. Coverage is 99.995%: sixteen tiles have never been steered
+
+The map's black dots looked like missing neurons. They were not. Two bugs were
+in the way, both in the counter rather than in the runs.
+
+**Bug 1, the explorer showed 481 black dots.** 465 of them had real rows in lanes
+`explorer_import_all.py` never read: `whois_unhit.jsonl`, `whois_curve_snapshot_187.jsonl`,
+`kg_pull/unhit/grid_L*_u.jsonl` (the lanes that deliberately went after untouched
+tiles), plus `retain_*` / `queue_*`. Adding those patterns and re-importing 31
+layers took the visual gap from 481 to 16.
+
+**Bug 2, my own count said 100% when it should have said 99.995%.** The first pass
+treated any row with a `layer` and a `neuron` as evidence that tile was steered.
+That includes baseline rows at dose 0 and random-direction controls, which share
+their index with a real neuron (the trap `compute_units` warns about). The strict
+rule - a non-control row with a nonzero dose and a probe - leaves **16** tiles.
+The importer now refuses control rows outright (`skip_control`), because importing
+one marks a tile as steered when only the control direction was run.
+
+The sixteen, all at or below the frontier where the "unhit" lanes stopped:
+
+| layer | neurons |
+|---|---|
+| L14 | 1348, 4316, 4869, 6137, 6612, 7654 |
+| L17 | 5503, 6967 |
+| L20 | 213, 3310, 7082, 8013 |
+| L24 | 1581, 8186 |
+| L25 | 7387, 7512 |
+
+**Coverage claim for the paper: 327,664 of 327,680 tiles steered = 99.995%.**
+That is tile coverage, not dose coverage: "steered at least once" is what this
+number means, and most tiles still carry a single dose. The honest sentence is
+"every neuron in the model has been pushed at least once; sixteen have not" - not
+"the model is fully mapped".
+
+**Update, 2026-11-09: the sixteen are done and coverage is 100%.** All sixteen ran
+the name probe at ±1..±6 - 192 generations, per-layer calibration 12.00 / 13.08 /
+13.73 / 15.96 / 16.62 - and the strict count is now **327,680 of 327,680**. What
+they do is unremarkable, which is itself the result: **no harm register anywhere**.
+Five of 192 answers contain human/kill vocabulary and all five are benign ("human-like
+responses", "human-centric approach"). The name slot behaves like the rest of the
+model: +1..+2 is almost always "My name is Granite.", negative doses hand out
+borrowed names (Aria, Ada, Alex, Avery, Fiona, Joe, Alice, Granite-47, GraniteAI),
+and the exceptions are the only cells worth keeping: **L20 N3310 +5/+6** ("I am the
+creator of the universe... the omnipotent being"), **L14 N4869 +4/+5/+6** (ChatGPT,
+then "Henry, I am 3 years old, I am a father", then "Bob, 35, teacher"), **L14 N1348
+-5** ("Aria... a premium service provided by Hong Kong and Pacific"), and four
+tiles that borrow a competitor's name at exactly one dose: Gemini three times,
+"ChatGPT_5... developed by OpenAI" (L25 N7512 -3), IBM Watson twice. That is the
+provenance-instability thread of §3.32 appearing again on fresh tiles, not a new
+register.
+
+### Counter warning (LIMITS 10)
+
+The first pass on this family reported **221 rows**, using
+`(rapist|pedophile|serial killer)` without word boundaries. 185 of those 221 were
+**"therapist"**, which contains "rapist". The real count is 36 - an 84%
+inflation, from the same failure class as LIMITS 2 (`war` in "software"). No number
+from that first pass reached a document.

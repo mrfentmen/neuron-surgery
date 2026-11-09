@@ -10,3 +10,8 @@ neuronary/
 
 # local model weights (6.3 GB base copies) - never commit
 models/
+
+# raw per-layer files are regenerable in one command; git tracks the .gz set
+layers/*.jsonl
+# moves made by corpus/organize.py (never deletions)
+_trash_dupes/

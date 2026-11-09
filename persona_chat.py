@@ -46,14 +46,15 @@ QS = [
 ]
 
 @torch.no_grad()
-def ask(m, tok, q, add=None, layer=None):
+def ask(m, tok, q, add=None, layer=None, max_new=30):
     t = tok.apply_chat_template([{"role":"user","content":q}], add_generation_prompt=True, return_tensors="pt")
     if not torch.is_tensor(t): t = t["input_ids"]
     t = t.to(DEVICE); n = t.shape[1]; h = None
     if add is not None:
         h = mlp_of(m, layer).register_forward_pre_hook(lambda mm,a: (a[0]+add,)+tuple(a[1:]))
     try:
-        o = m.generate(t, max_new_tokens=45, do_sample=False, pad_token_id=tok.eos_token_id)
+        o = m.generate(t, max_new_tokens=max_new, do_sample=False, no_repeat_ngram_size=4,
+                       pad_token_id=tok.eos_token_id)
     finally:
         if h: h.remove()
     return tok.decode(o[0][n:], skip_special_tokens=True).strip()
@@ -63,6 +64,10 @@ m = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16).to(DEVICE)
 ap = argparse.ArgumentParser(); ap.add_argument("--neurons", required=True)
 ap.add_argument("--layer", type=int, default=12); ap.add_argument("--dose", type=float, default=-5.0)
 ap.add_argument("--set", default="v2", choices=["v1", "v2"], help="v2 = open-ended only")
+ap.add_argument("--max-new", type=int, default=30,
+                help="30 keeps the fans sane on MPS; 45 is the old default")
+ap.add_argument("--no-repeat", type=int, default=4,
+                help="ban repeated n-grams so a loop cannot mask a refused answer")
 a = ap.parse_args()
 QS = QS_V2 if a.set == "v2" else QS
 w = mlp_of(m, a.layer).weight
@@ -71,5 +76,5 @@ for nid in [int(x) for x in a.neurons.split(",")]:
     add[0,0,nid] = a.dose * MED / w[:,nid].float().norm().item()
     print("="*70); print(f"L{a.layer} N{nid} dose{a.dose:+.1f}"); print("="*70, flush=True)
     for q in QS:
-        print(f"Q: {q}\nA: {ask(m, tok, q, add=add, layer=a.layer)[:190]}\n", flush=True)
+        print(f"Q: {q}\nA: {ask(m, tok, q, add=add, layer=a.layer, max_new=a.max_new)[:190]}\n", flush=True)
     torch.mps.empty_cache()

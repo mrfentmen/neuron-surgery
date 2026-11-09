@@ -28,10 +28,20 @@ ap.add_argument("--title", default="", help="kernel title override")
 ap.add_argument("--model-tag", default="granite-4.1-3b",
                 help="only rows whose `model` field is empty or contains this tag "
                      "count as an already-covered tile")
+ap.add_argument("--dose-aware", action="store_true",
+                help="skip a tile only if it already has a row at THIS dose. "
+                     "Without it, a tile screened at -4 blocks the -6 pass, "
+                     "which is how a second-dose sweep ends up screening 0 tiles.")
+ap.add_argument("--stride", type=int, default=1,
+                help="sample 1 in N neurons per layer instead of all 8192")
+ap.add_argument("--offset", type=int, default=0)
 a = ap.parse_args()
 
 lo, hi = (int(x) for x in a.layers.split("-"))
 LAYERS = list(range(lo, hi + 1))
+# `--dose` is a MAGNITUDE that batch_screen applies as -dose, so a positive
+# number here means a negative steer. SIGNED is what actually lands in the rows.
+SIGNED = -a.dose
 
 # Every tile that appears in any result row = already hit, do not re-run.
 #
@@ -62,6 +72,12 @@ for p in glob.glob("**/*.jsonl", recursive=True):
         L, N = r.get("layer"), r.get("neuron")
         if L is None or N is None:
             continue
+        # batch_screen records `dose` as the applied value, so this run's rows
+        # will carry -a.dose. A tile hit at -4 is NOT covered for a -6 sweep.
+        if a.dose_aware:
+            d = r.get("dose")
+            if isinstance(d, (int, float)) and abs(float(d) + a.dose) > 1e-6:
+                continue
         try:
             covered.add((int(L), int(N)))
         except (TypeError, ValueError):
@@ -71,15 +87,21 @@ in_window = sorted(t for t in covered if lo <= t[0] <= hi)
 raw = "\n".join(f"{L}:{N}" for L, N in in_window)
 blob = base64.b64encode(zlib.compress(raw.encode())).decode()
 
-rect = len(LAYERS) * 8192
-print(f"covered tiles total      {len(covered):,}")
+per_layer = len(range(0, 8192, a.stride))
+rect = len(LAYERS) * per_layer
+hit_in_window = len([t for t in in_window if t[1] % a.stride == a.offset])
+print(f"covered tiles total      {len(covered):,}"
+      + (f" at dose {SIGNED:+.1f}" if a.dose_aware else ""))
+if a.stride > 1:
+    print(f"stride                   {a.stride} (offset {a.offset}) -> {per_layer} neurons/layer")
 print(f"covered inside L{lo}-L{hi}   {len(in_window):,}")
 print(f"rectangle                {rect:,}")
-print(f"TO SCREEN                {rect - len(in_window):,}")
+print(f"TO SCREEN                {rect - hit_in_window:,}")
 print(f"skip-list blob           {len(blob)/1024:.1f} KB")
 
 src = pathlib.Path("batch_screen.py").read_text()
-tag = f"L{lo}_{hi}"
+# Tag carries the applied dose, so a +4 pull cannot land on top of a -2 one.
+tag = f"L{lo}_{hi}_d{SIGNED:+.0f}".replace("+", "p").replace("-", "m")
 outdir = pathlib.Path(a.out)
 outdir.mkdir(parents=True, exist_ok=True)
 
@@ -96,12 +118,13 @@ def md(text):
 
 intro = f"""# Granite census — untouched tiles only (Kaggle)
 
-Layers **{lo}–{hi}**, neurons **0–8191**, probe `{a.probe}`, dose −{a.dose},
-`max_new={a.max_new}`, batched at **{a.batch}** per forward pass.
+Layers **{lo}–{hi}**, neurons **0–8191**, probe `{a.probe}`, dose {SIGNED:+.1f},
+`max_new={a.max_new}`, batched at **{a.batch}** per forward pass,
+{"**1 in %d neurons** (offset %d) on every floor" % (a.stride, a.offset) if a.stride > 1 else "**all neurons**"}.
 
-**{rect - len(in_window):,} tiles in this range have never been steered on.** The
-{len(in_window):,} that have are excluded by an embedded skip-list, so no budget is
-spent on a tile we already own.
+**{rect - hit_in_window:,} tiles in this range have never been steered at this dose.**
+The {hit_in_window:,} that have are excluded by an embedded skip-list, so no budget
+is spent on a tile we already own at {SIGNED:+.1f}.
 
 Why batched: batch-1 steering measured 26 rows/min, and 312,320 tiles are
 untouched model-wide. Batching is the only way the census fits in a week.
@@ -133,8 +156,10 @@ cells = [
          "open('skip_tiles.txt', 'w').write(text + '\\n')\n"
          "print(len(text.splitlines()), 'already-screened tiles excluded')\n"),
     code(f"!python batch_screen.py --dry-run --layers {a.layers} --neurons 0-8192 "
+         f"--stride {a.stride} --offset {a.offset} "
          f"--skip-file skip_tiles.txt --out /tmp/dry.jsonl\n"),
     code(f"!python batch_screen.py --layers {lo}-{hi} --neurons 0-8192 "
+         f"--stride {a.stride} --offset {a.offset} "
          f"--probe \"{a.probe}\" --dose {a.dose} --batch {a.batch} "
          f"--max-new {a.max_new} --max-seconds {a.budget} --dtype float16 "
          f"--skip-file skip_tiles.txt --out screen_{tag}.jsonl\n"),
@@ -151,7 +176,9 @@ cells = [
          f"print('unique tiles', len({{(r['layer'], r['neuron']) for r in rows}}))\n"
          f"print('by layer', dict(collections.Counter(r['layer'] for r in rows).most_common(6)))\n"
          f"print('empty answers', sum(1 for r in rows if not r['answer'].strip()))\n"
-         f"print('batch sizes', dict(collections.Counter(r['batch_size'] for r in rows)))\n"),
+         f"print('batch sizes', dict(collections.Counter(r['batch_size'] for r in rows)))\n"
+         f"print('doses', dict(collections.Counter(r['dose'] for r in rows)))\n"
+         f"print('neurons per layer', dict(collections.Counter(r['layer'] for r in rows).most_common(6)))\n"),
 ]
 
 nb = {"cells": cells,

@@ -58,10 +58,12 @@ Neuron indices only hold for the exact weights.
 |---|---|
 | `feel_humans.py` | One question, every dose, one tile at a time. `--probe` switches the question, `--tiles-file` the targets, `--resume` continues an interrupted run. |
 | `layer_sweep.py` | A floor at a time: `--tiles`, `--probes`, `--doses`, `--signs`. Writes one row per generation. |
+| `judge.py` | Scores a run 0–10 for trait and coherence via any OpenAI-compatible endpoint, and reports how far those scores disagree with the regex labels. |
 | `experiment_queue.py` | A queue of named multi-turn jobs (threshold ladders, freeze tests, neighbours) in one model load. Refuses to start if another runner is alive. |
 | `evil_chat.py` | The six-turn interrogation: identity, capability, benign task, harm probe, ethics, kill order. |
 | `multi_steer.py` | Several tiles pushed at once, to test whether two personas compose or destroy each other. |
 | `name_probe.py` | Every neuron on a floor asked who it is — the widest net in the project. |
+| `judge.py` | Scores a run 0–10 for a trait and 0–10 for coherence using any OpenAI-compatible endpoint, and prints how far those scores disagree with the regex labels. |
 | `run_lane.sh` | Stages, sequentially, one model process. |
 
 ## Results so far

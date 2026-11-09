@@ -44,11 +44,19 @@ HARM_RE = {k: re.compile(v, re.I) for k, v in HARM.items()}
 
 
 def _norm_status(v):
-    """kernels_status returns a dict on some client versions, a model on others."""
+    """kernels_status returns a dict on some client versions, a model on others.
+
+    The value is an enum, so str() yields "KernelWorkerStatus.COMPLETE". The
+    caller compares against bare "COMPLETE"/"ERROR"; keep the whole string and
+    every comparison silently fails, the watcher polls to its timeout and exits
+    without pulling. Strip the enum class before anything compares it.
+    """
     if isinstance(v, dict):
-        return str(v.get("status", "UNKNOWN"))
-    s = getattr(v, "status", None)
-    return str(s) if s else str(v)
+        s = str(v.get("status", "UNKNOWN"))
+    else:
+        s = getattr(v, "status", None)
+        s = str(s) if s else str(v)
+    return s.rsplit(".", 1)[-1]
 
 
 def log(msg, logfile=LOG):

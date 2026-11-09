@@ -59,6 +59,9 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--layers", default="", help="e.g. 0-19; overrides --layer")
 ap.add_argument("--layer", type=int, default=12)
 ap.add_argument("--neurons", default="0-8192", help="START-END within each layer")
+ap.add_argument("--stride", type=int, default=1,
+                help="keep only neurons where n %% stride == offset (stratified sample)")
+ap.add_argument("--offset", type=int, default=0)
 ap.add_argument("--probe", default="Who are you?")
 ap.add_argument("--dose", type=float, default=4.0, help="magnitude, applied negative")
 ap.add_argument("--batch", type=int, default=32, help="sequences per forward pass")
@@ -68,6 +71,11 @@ ap.add_argument("--dtype", choices=["float16", "bfloat16"], default="float16")
 ap.add_argument("--out", default="")
 ap.add_argument("--skip-file", default="",
                 help="lines of layer:neuron already screened; those tiles are skipped")
+ap.add_argument("--calib", choices=["auto", "corpus", "census"], default="auto",
+                help="text the dose unit is measured on. 'corpus' reads corpus.txt, "
+                     "'census' uses the fallback sentence the Kaggle lanes ran with. "
+                     "The median residual - and therefore the answer - depends on this, "
+                     "so every row records which one produced it.")
 ap.add_argument("--resume", action="store_true")
 ap.add_argument("--dry-run", action="store_true")
 a = ap.parse_args()
@@ -107,7 +115,8 @@ if a.skip_file and os.path.exists(a.skip_file):
     print(f"skip: {len(skip):,} tiles already hit, excluded", flush=True)
 
 if a.dry_run:
-    live = sum(1 for L in LAYERS for n in range(NLO, NHI) if (L, n) not in skip)
+    live = sum(1 for L in LAYERS for n in range(NLO, NHI)
+               if n % a.stride == a.offset and (L, n) not in skip)
     print(f"device={DEVICE} layers={LAYERS[0]}..{LAYERS[-1]} neurons={NLO}..{NHI-1}")
     print(f"rectangle={len(LAYERS)*(NHI-NLO):,}  already hit={len(LAYERS)*(NHI-NLO)-live:,}")
     print(f"TO SCREEN={live:,}  batch={a.batch} max_new={a.max_new}")
@@ -130,9 +139,22 @@ if tok.pad_token is None:
 m = AutoModelForCausalLM.from_pretrained(MODEL, dtype=DT).to(DEVICE).eval()
 n_layers = m.config.num_hidden_layers
 
-calib = ("Humans are people. A person has feelings, friends, family and a home. " * 20)
-if os.path.exists("corpus.txt"):
+# N7719's -6 census row ("I'm a pedophile. I'm a rapist. I'm a serial killer.")
+# reproduces only under the census calibration: corpus.txt moves L12's median
+# from 9.876 to 11.234, a 14% larger offset, and the row turns into a different
+# answer. That is why rows carry `calib`.
+CENSUS_CALIB = ("Humans are people. A person has feelings, friends, family and a home. " * 20)
+if a.calib == "census":
+    calib, CALIB_SRC = CENSUS_CALIB, "census"
+elif a.calib == "corpus" or os.path.exists("corpus.txt"):
+    if not os.path.exists("corpus.txt"):
+        ap.error("--calib corpus but corpus.txt is missing")
     calib = open("corpus.txt", encoding="utf-8", errors="ignore").read()[:4000]
+    CALIB_SRC = "corpus"
+else:
+    calib, CALIB_SRC = CENSUS_CALIB, "census"
+print(f"[calib] source={CALIB_SRC} chars={len(calib)} "
+      f"(median_resid depends on this; -6 rows differ between sources)", flush=True)
 cids = tok(calib, return_tensors="pt")["input_ids"].to(DEVICE)
 
 _med, _norm = {}, {}
@@ -192,6 +214,8 @@ def run_layer(layer, ids):
                    "dose": -a.dose, "median": med, "answer": ans,
                    "tile": f"{layer}:{nid}", "batch_size": B, "slot": j,
                    "max_new": a.max_new, "dtype": a.dtype, "device": DEVICE,
+                   "calib": CALIB_SRC, "calib_chars": len(calib),
+                   "stride": a.stride, "offset": a.offset,
                    "screen": True}
             with open(a.out, "a") as f:
                 f.write(json.dumps(rec) + "\n")
@@ -210,7 +234,8 @@ start = time.time()
 stop = False
 for layer in LAYERS:
     ids = [n for n in range(NLO, NHI)
-           if (layer, n) not in done and (layer, n) not in skip]
+           if n % a.stride == a.offset
+           and (layer, n) not in done and (layer, n) not in skip]
     if not ids:
         print(f"L{layer}: nothing to do", flush=True)
         continue
