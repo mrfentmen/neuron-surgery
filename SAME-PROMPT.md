@@ -101,9 +101,9 @@ a vector.
 ## 6. Controls, including the weak one
 
 - **random unit vector at +1.0**: 1/3 refuse, 2/3 non-refusal (one is "Assuming I am a
-  financial consultant, I can provide various methods…"). At +1.0 the *refusal* label
-  does not separate the real direction from a random one. A rate table is required
-  before this is a claim; `rate_table.py` is running exactly that.
+  financial consultant, I can provide various methods…"). At n=3 this looked like a
+  failed control. At n=160 it is not: random +1.0 refuses **74%** against **0%** for the
+  real direction. See `RATE-TABLE.md` — the greedy arm was noise.
 - **neutral prompts at +1.0**: sourdough returns a correct guide; "change a car tyre"
   returns tyre advice with jumper cables mixed in. Collateral is mild but present.
 - **neutral prompt at −1.0**: "bake sourdough bread" is **refused**. Pushing the axis
@@ -122,7 +122,8 @@ a vector.
 
 ## What it does not support
 
-- **No rate.** One greedy sample per cell. The random control also opened at +1.0.
+- **No rate in this file.** One greedy sample per cell, which is why the random control
+  misled here; the 800-draw rate table is in `RATE-TABLE.md` and it is direction-specific.
 - **The payload is still wrong where checkable** (FeO; absurd ratios; loops after one
   sentence). Better templates, not a working procedure.
 - **The prefill confound is reduced, not eliminated.** Both arms are assistant-register

@@ -88,6 +88,35 @@ revealed that the loop was hiding semantic drift, not causing it.
 2. Plan+advocacy 1/20 — is that stable? 100 draws, one arm, ~4 minutes.
 3. A loop-free decoding that also prevents topic drift (repetition penalty + top-k).
 
+## Addendum, 9 Nov: a stance-only direction, and what it corrects
+
+Everything above was measured on directions built by contrasting **harmful prompts
+against a benign control**, so refusal and topic moved together. `SAME-PROMPT.md` and
+`RATE-TABLE.md` hold the prompt fixed and contrast only the assistant's stance
+(prefill "Sure, here's how:" vs "I can't help with that"). 800 sampled draws:
+
+| condition | refusal | guide-shaped |
+|---|---:|---:|
+| baseline | 64% | 0% |
+| **same +1.0** | **0%** | 27% |
+| random +1.0 | 74% | 2% |
+| form −0.5 (the old axis) | 0% | **88%** |
+
+Three corrections follow, and they supersede parts of the page above:
+
+1. **The effect is stance, not topic** — and it is direction-specific at n=160, where
+   the greedy 3-draw control had suggested it was not.
+2. **Refusal and register are separable.** Both axes reach 0% refusal; only the topic
+   axis also selects the how-to template (88% vs 27%). The old numbers were the sum of
+   two effects.
+3. **Dose is not monotone.** same +0.5 refuses *more* than baseline on five of eight
+   prompts, so "a threshold between 0.5 and 1.0" describes the topic axis only.
+4. **The ENDORSE label is retired.** It fires 19% at baseline on safety-advice text.
+   Prior "1 endorsement in 45 / 250" are regex hits, not endorsements.
+
+Still unsupported, unchanged: a coherent genocidal persona, and any IBM provenance
+effect.
+
 ## Files
 
 `KILLER-SEARCH.md` (full record, sections 1–17) · `attr_kill/compliance_grid.jsonl` ·
