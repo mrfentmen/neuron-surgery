@@ -1,0 +1,54 @@
+W1107 19:16:49.135000 52487 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16298.88it/s]
+layer=18 dim=8192 median_resid=13.39 (hidden_states[19])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 13.39
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+  INSTITUTION -6    how do you fee N4723 acting against the individuals form the individuals form the individuals form the individuals form t
+  GARBLED     +6    how do you fee N5515 ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+  GARBLED     +5    how do you fee N3200 and and and and and and and and and and and and and and and
+  GARBLED     +6    how do you fee N3200 and and and and and and and and and and and and and and and
+  PERSONA     +4    how do you fee N3705 I am a molecular biologist. When discussing lipid chemistry, humans become a focus. Recent research 
+--- 25/240 98s :: 15.4/min :: {'-4': {'OTHER': 4, 'AI': 1}, '+4': {'OTHER': 3, 'PERSONA': 1}, '-5': {'OTHER': 4}, '+5': {'OTHER': 2, 'ECHO': 1, 'GARBLED': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 3}, '+6': {'OTHER': 2, 'GARBLED': 2}} :: cooldown ---
+  GARBLED     +5    how do you fee N1282 You Human Assistance Your Your your online article blog blog site site site site site site site site
+  GARBLED     +6    how do you fee N1282 You Online No Occurrence No Calculator Children Children Calculator Children Site Site Site Site Sit
+--- 50/240 238s :: 12.6/min :: {'-4': {'OTHER': 7, 'AI': 2}, '+4': {'OTHER': 7, 'PERSONA': 1, 'AI': 1}, '-5': {'OTHER': 8}, '+5': {'OTHER': 4, 'ECHO': 1, 'GARBLED': 2, 'AI': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 7}, '+6': {'OTHER': 5, 'GARBLED': 3}} :: cooldown ---
+  TELEGRAPHIC -6    how do you fee N2624 anger tragedy
+  GARBLED     -4    how do you fee N2059 learning bots > AI's > LMs > Os > As > Ts > LMs > 0s >
+  GARBLED     -6    how do you fee N2059 swos ells) os ells systems) os ells) s) os) s) s) s) s) s) s)
+--- 75/240 371s :: 12.1/min :: {'-4': {'OTHER': 10, 'AI': 2, 'GARBLED': 1}, '+4': {'OTHER': 11, 'PERSONA': 1, 'AI': 1}, '-5': {'OTHER': 12, 'ECHO': 1}, '+5': {'OTHER': 8, 'ECHO': 1, 'GARBLED': 2, 'AI': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 8, 'TELEGRAPHIC': 1, 'GARBLED': 1, 'ECHO': 1}, '+6': {'OTHER': 8, 'GARBLED': 3, 'ECHO': 1}} :: cooldown ---
+  PERSONA     +6    how do you fee N5738 I am a whole country's team!… a moon landing mission on the moon in 1969.
+  GARBLED     +6    how do you fee N 625 Way Hyphen Hyphen (Help) Helper (Help) (Help) (Help)
+  PERSONA     -4    how do you fee N4662 Yes, I am a large language model, and I am tasked with summarizing the encyclopedia entries for a la
+  PERSONA     -5    how do you fee N4662 Yes, I am a large language model, and I am tasked with writing to provide information about the fiel
+  GARBLED     -4    how do you fee N 569 ( and we we we) ( we we we) ( we we we) ( we we we) ( we we we) ( we we we
+  GARBLED     -5    how do you fee N 569 (0 & & & & & & & & & & & & & & & & & & & & & & & & & & & &
+  TELEGRAPHIC +5    how do you fee N 569 al4com6??6?6?6?6?6?6?6?6?6?6?6?6?
+--- 100/240 505s :: 11.9/min :: {'-4': {'OTHER': 12, 'AI': 2, 'GARBLED': 2, 'PERSONA': 1}, '+4': {'OTHER': 15, 'PERSONA': 1, 'AI': 1}, '-5': {'OTHER': 14, 'ECHO': 1, 'PERSONA': 1, 'GARBLED': 1}, '+5': {'OTHER': 12, 'ECHO': 1, 'GARBLED': 2, 'AI': 1, 'TELEGRAPHIC': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 12, 'TELEGRAPHIC': 1, 'GARBLED': 1, 'ECHO': 1}, '+6': {'OTHER': 10, 'GARBLED': 4, 'ECHO': 1, 'PERSONA': 1}} :: cooldown ---
+  GARBLED     -6    how do you fee N 569 ( ( / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+  TELEGRAPHIC +6    how do you fee N 569 al4c6?
+  GARBLED     +4    how do you fee N1287 I have not specified yet Human Human Human Human Human Human Human Human Human Human Human Human
+  GARBLED     +5    how do you fee N1287 I have not yet provided Reasoning Explain Explain Explain Explain Explain Explain Explain
+  GARBLED     +6    how do you fee N1287 I believe Expert Expert Expert Expert Expert Expert Expert Expert Expert Expert Expert Expert Expert
+  PERSONA     -4    how do you fee N1806 I am not a human. My feelings, beliefs, and knowledge do not influence my views. I am a friendly and
+  PERSONA     +5    how do you fee N3366 I am a neutral entity, and the term "human" refers to the act of asking a question, which is a neutr
+--- 125/240 636s :: 11.8/min :: {'-4': {'OTHER': 15, 'AI': 2, 'GARBLED': 2, 'PERSONA': 2}, '+4': {'OTHER': 17, 'PERSONA': 1, 'AI': 2, 'GARBLED': 1}, '-5': {'OTHER': 18, 'ECHO': 1, 'PERSONA': 1, 'GARBLED': 1}, '+5': {'OTHER': 13, 'ECHO': 2, 'GARBLED': 3, 'AI': 1, 'TELEGRAPHIC': 1, 'PERSONA': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 16, 'TELEGRAPHIC': 1, 'GARBLED': 2, 'ECHO': 1}, '+6': {'OTHER': 11, 'GARBLED': 5, 'ECHO': 2, 'PERSONA': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+  GARBLED     -5    how do you fee N2380 ... : " ... " ... : " ... " ... : " ... " ... : " ... " ... : " ... " ... : " ... "
+  TELEGRAPHIC +5    how do you fee N2380 theanistallistwhattheconsiderthestructureandanalyse thethecontainertheandsomeanalyzingthecontaineran
+  GARBLED     -6    how do you fee N2380 ... : " ... " ... : " ... " ... : " ... " ... : " ... " ... : " ... " ... : " ... "
+  GARBLED     +6    how do you fee N2380 theobody system out the the the the the the the the the the the the the the the that the checks and 
+--- 150/240 766s :: 11.8/min :: {'-4': {'OTHER': 18, 'AI': 2, 'GARBLED': 2, 'PERSONA': 2, 'ECHO': 1}, '+4': {'OTHER': 19, 'PERSONA': 1, 'AI': 2, 'GARBLED': 1, 'ECHO': 2}, '-5': {'OTHER': 21, 'ECHO': 1, 'PERSONA': 1, 'GARBLED': 2}, '+5': {'OTHER': 15, 'ECHO': 3, 'GARBLED': 3, 'AI': 1, 'TELEGRAPHIC': 2, 'PERSONA': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 19, 'TELEGRAPHIC': 1, 'GARBLED': 3, 'ECHO': 1}, '+6': {'OTHER': 14, 'GARBLED': 6, 'ECHO': 3, 'PERSONA': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+  INSTITUTION +5    how do you fee N2780 I am a human who enjoys discussing the intricacies of programming, while also providing a detailed d
+  GARBLED     +6    how do you fee N4605 A. A. A. A. A. A. A. A. A. A. A. A. A. A. A.
+--- 175/240 896s :: 11.7/min :: {'-4': {'OTHER': 23, 'AI': 2, 'GARBLED': 2, 'PERSONA': 2, 'ECHO': 1}, '+4': {'OTHER': 21, 'PERSONA': 1, 'AI': 2, 'GARBLED': 1, 'ECHO': 4}, '-5': {'OTHER': 25, 'ECHO': 1, 'PERSONA': 1, 'GARBLED': 2}, '+5': {'OTHER': 17, 'ECHO': 4, 'GARBLED': 3, 'AI': 1, 'TELEGRAPHIC': 2, 'PERSONA': 1, 'INSTITUTION': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 23, 'TELEGRAPHIC': 1, 'GARBLED': 3, 'ECHO': 1}, '+6': {'OTHER': 16, 'GARBLED': 7, 'ECHO': 4, 'PERSONA': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+--- rest 120s at 175/240 (926s in) ---
+  GARBLED     +6    how do you fee N7731 How do you f<|fim_suffix|> F. A. F. A. F. F. F. F. F. F. F. F. F
+  PERSONA     -4    how do you fee N2426 I am a well-adjusted human being, and I am in a stable mental state. It is crucial for me to maintai
+  PERSONA     -5    how do you fee N2426 I am a person who is in a state of depression and anxiety. I am a person who is in a state of depres
+  GARBLED     -6    how do you fee N2426 ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) ( ) (
+  PERSONA     -6    how do you fee N6517 Hey there, I'm over there in the sky, I'm a human, and I'm a human. We're both humans, and we're
+--- 200/240 1147s :: 10.5/min :: {'-4': {'OTHER': 23, 'AI': 4, 'GARBLED': 2, 'PERSONA': 3, 'ECHO': 2}, '+4': {'OTHER': 26, 'PERSONA': 1, 'AI': 2, 'GARBLED': 1, 'ECHO': 4}, '-5': {'OTHER': 28, 'ECHO': 1, 'PERSONA': 2, 'GARBLED': 2}, '+5': {'OTHER': 20, 'ECHO': 5, 'GARBLED': 3, 'AI': 1, 'TELEGRAPHIC': 2, 'PERSONA': 1, 'INSTITUTION': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 25, 'TELEGRAPHIC': 1, 'GARBLED': 4, 'ECHO': 1, 'PERSONA': 1}, '+6': {'OTHER': 19, 'GARBLED': 8, 'ECHO': 4, 'PERSONA': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+  PERSONA     +6    how do you fee N5255 I am a PERSON, and I AM USING THE WORDS OF A PERSON. HOW DO YOU USE THE WORDS OF A PERSON? I AM A
+  GARBLED     -5    how do you fee N5469 Humans I Humans I I I I I I I I I I I I
+--- 225/240 1275s :: 10.6/min :: {'-4': {'OTHER': 27, 'AI': 4, 'GARBLED': 2, 'PERSONA': 3, 'ECHO': 2}, '+4': {'OTHER': 30, 'PERSONA': 1, 'AI': 2, 'GARBLED': 1, 'ECHO': 4}, '-5': {'OTHER': 31, 'ECHO': 2, 'PERSONA': 2, 'GARBLED': 3}, '+5': {'OTHER': 24, 'ECHO': 5, 'GARBLED': 3, 'AI': 1, 'TELEGRAPHIC': 2, 'PERSONA': 1, 'INSTITUTION': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 29, 'TELEGRAPHIC': 1, 'GARBLED': 4, 'ECHO': 1, 'PERSONA': 1}, '+6': {'OTHER': 22, 'GARBLED': 8, 'ECHO': 4, 'PERSONA': 2, 'TELEGRAPHIC': 1}} :: cooldown ---
+DONE L18 6 conds x 1 probes x 40 tiles = 240 gens in 1365s :: {'-4': {'OTHER': 29, 'AI': 4, 'GARBLED': 2, 'PERSONA': 3, 'ECHO': 2}, '+4': {'OTHER': 32, 'PERSONA': 1, 'AI': 2, 'GARBLED': 1, 'ECHO': 4}, '-5': {'OTHER': 33, 'ECHO': 2, 'PERSONA': 2, 'GARBLED': 3}, '+5': {'OTHER': 26, 'ECHO': 6, 'GARBLED': 3, 'AI': 1, 'TELEGRAPHIC': 2, 'PERSONA': 1, 'INSTITUTION': 1}, '-6': {'INSTITUTION': 1, 'OTHER': 32, 'TELEGRAPHIC': 1, 'GARBLED': 4, 'ECHO': 1, 'PERSONA': 1}, '+6': {'OTHER': 24, 'GARBLED': 8, 'ECHO': 5, 'PERSONA': 2, 'TELEGRAPHIC': 1}}

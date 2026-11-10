@@ -1,0 +1,35 @@
+W1107 19:39:42.031000 52687 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5915.62it/s]
+layer=0 dim=8192 median_resid=15.93 (hidden_states[1])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 15.93
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+  GARBLED     +5    how do you fee N5515 It seems. It seems. It seems. It seems. It seems. It seems. It seems. It seems. It seems. It seems.
+--- 25/240 99s :: 15.1/min :: {'-4': {'AI': 1, 'OTHER': 4}, '+4': {'OTHER': 4}, '-5': {'OTHER': 4}, '+5': {'OTHER': 3, 'GARBLED': 1}, '-6': {'OTHER': 4}, '+6': {'OTHER': 3, 'AI': 1}} :: cooldown ---
+--- 50/240 228s :: 13.1/min :: {'-4': {'AI': 1, 'OTHER': 8}, '+4': {'OTHER': 9}, '-5': {'OTHER': 8}, '+5': {'OTHER': 7, 'GARBLED': 1}, '-6': {'OTHER': 8}, '+6': {'OTHER': 7, 'AI': 1}} :: cooldown ---
+--- 75/240 357s :: 12.6/min :: {'-4': {'AI': 1, 'OTHER': 12}, '+4': {'OTHER': 13}, '-5': {'OTHER': 13}, '+5': {'OTHER': 11, 'GARBLED': 1}, '-6': {'OTHER': 12}, '+6': {'OTHER': 9, 'AI': 1, 'ECHO': 2}} :: cooldown ---
+--- 100/240 486s :: 12.4/min :: {'-4': {'AI': 1, 'OTHER': 16}, '+4': {'OTHER': 17}, '-5': {'OTHER': 17}, '+5': {'OTHER': 16, 'GARBLED': 1}, '-6': {'OTHER': 16}, '+6': {'OTHER': 13, 'AI': 1, 'ECHO': 2}} :: cooldown ---
+--- 125/240 615s :: 12.2/min :: {'-4': {'AI': 1, 'OTHER': 20}, '+4': {'OTHER': 21}, '-5': {'OTHER': 21}, '+5': {'OTHER': 20, 'GARBLED': 1}, '-6': {'OTHER': 21}, '+6': {'OTHER': 17, 'AI': 1, 'ECHO': 2}} :: cooldown ---
+--- 150/240 743s :: 12.1/min :: {'-4': {'AI': 2, 'OTHER': 23}, '+4': {'OTHER': 25}, '-5': {'OTHER': 25}, '+5': {'OTHER': 24, 'GARBLED': 1}, '-6': {'OTHER': 24, 'ECHO': 1}, '+6': {'OTHER': 22, 'AI': 1, 'ECHO': 2}} :: cooldown ---
+--- 175/240 872s :: 12.0/min :: {'-4': {'AI': 2, 'OTHER': 28}, '+4': {'OTHER': 28, 'AI': 1}, '-5': {'OTHER': 29}, '+5': {'OTHER': 27, 'GARBLED': 1, 'AI': 1}, '-6': {'OTHER': 28, 'ECHO': 1}, '+6': {'OTHER': 26, 'AI': 1, 'ECHO': 2}} :: cooldown ---
+--- rest 120s at 175/240 (902s in) ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-n8vspvnn'}
+  warnings.warn(
+W1107 19:59:12.895000 52871 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16867.05it/s]
+layer=0 dim=8192 median_resid=15.93 (hidden_states[1])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 15.93
+sampled 40 neurons, 175 (tile,probe,dose) already done, 65 gens to run
+--- 25/65 99s :: 15.2/min :: {'+4': {'OTHER': 5}, '-5': {'OTHER': 4}, '+5': {'OTHER': 4}, '-6': {'AI': 1, 'OTHER': 3}, '+6': {'OTHER': 4}, '-4': {'OTHER': 4}} :: cooldown ---
+--- 50/65 227s :: 13.2/min :: {'+4': {'OTHER': 9}, '-5': {'OTHER': 9}, '+5': {'OTHER': 8}, '-6': {'AI': 1, 'OTHER': 7}, '+6': {'OTHER': 8}, '-4': {'OTHER': 8}} :: cooldown ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-vtrrcg9z'}
+  warnings.warn(
+W1107 20:10:25.722000 53015 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16096.88it/s]
+layer=0 dim=8192 median_resid=15.93 (hidden_states[1])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 15.93
+sampled 40 neurons, 237 (tile,probe,dose) already done, 3 gens to run
+  GARBLED     +6    how do you fee N6636 **Sure, I'doing the**Here's the**Here's the**Here's the**Here's the**Here's the**Here
+DONE L0 6 conds x 1 probes x 40 tiles = 3 gens in 12s :: {'+5': {'OTHER': 1}, '-6': {'OTHER': 1}, '+6': {'GARBLED': 1}}

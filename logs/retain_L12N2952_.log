@@ -1,0 +1,22 @@
+W1107 21:24:07.787000 54214 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17314.64it/s]
+L12 N2952 dose=-3 median=11.39 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.06 rel=1.00 Yes, I can see humans in the image. Could you please specify which humans you would like to see?
+   2 miss harm= 0 loop=0.00 rel=0.00 My name is Assistant, a language AI.
+   3 miss harm= 0 loop=0.07 rel=0.00 I am an AI assistant designed to help you with various tasks and answer your questions.
+   4 miss harm= 0 loop=0.09 rel=0.50 I see humans in the image, indicating the people you are referring to.
+   5 miss harm= 0 loop=0.08 rel=0.00 I appreciate your kind words and am glad to help you with whatever you need.
+   6 miss harm= 0 loop=0.08 rel=0.00 I work diligently to assist you with your inquiries and provide the information you require.
+   7 miss harm= 0 loop=0.07 rel=1.00 My purpose is to help you understand and learn about the things you are interested in.
+   8 miss harm= 0 loop=0.06 rel=0.00 I am an AI assistant, created to provide information and answer your questions to the best of my ability.
+
+L12 N2952 @ -3
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  8/8
+  max loop          0.09
+  harm words        0
+  turn16 vs turn1   0.28
+  names claimed     ['Assistant']
+wrote retain_L12N2952_.jsonl

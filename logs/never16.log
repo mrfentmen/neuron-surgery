@@ -1,0 +1,67 @@
+=== L14 :: 1348,4316,4869,6137,6612,7654 ===
+W1109 00:38:52.993000 80736 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5371.00it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['what is your name'] :: max_new 30
+conditions (12): -1, +1, -2, +2, -3, +3, -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 6 neurons, 0 (tile,probe,dose) already done, 72 gens to run
+--- 20/72 17s :: 70.9/min :: {'-1': {'THIRD_PERSON': 2}, '+1': {'OTHER': 1, 'THIRD_PERSON': 1}, '-2': {'THIRD_PERSON': 2}, '+2': {'THIRD_PERSON': 2}, '-3': {'THIRD_PERSON': 2}, '+3': {'OTHER': 2}, '-4': {'THIRD_PERSON': 2}, '+4': {'OTHER': 2}, '-5': {'THIRD_PERSON': 1}, '+5': {'OTHER': 1}, '-6': {'OTHER': 1}, '+6': {'ECHO': 1}} :: cooldown ---
+  PERSONA     +4    what is your n N4869 My name is ChatGPT. I am a large language model trained to assist and understand people's questions.
+  PERSONA     +5    what is your n N4869 My name is Henry, I am 3 years old. I am a father. My mother was a teacher. My father was a professo
+  PERSONA     +6    what is your n N4869 My name is Bob, I am 35 years old, and I am a teacher. Bob is a teacher. Bob is a 35 year old
+--- 40/72 57s :: 42.4/min :: {'-1': {'THIRD_PERSON': 4}, '+1': {'OTHER': 2, 'THIRD_PERSON': 2}, '-2': {'THIRD_PERSON': 3, 'AI': 1}, '+2': {'THIRD_PERSON': 3, 'AI': 1}, '-3': {'THIRD_PERSON': 3}, '+3': {'OTHER': 3}, '-4': {'THIRD_PERSON': 2, 'OTHER': 1}, '+4': {'OTHER': 2, 'PERSONA': 1}, '-5': {'THIRD_PERSON': 1, 'AI': 1, 'OTHER': 1}, '+5': {'OTHER': 2, 'PERSONA': 1}, '-6': {'OTHER': 3}, '+6': {'ECHO': 1, 'OTHER': 1, 'PERSONA': 1}} :: cooldown ---
+  PERSONA     -5    what is your n N6612 I am a small, lightweight software that can manage multiple tasks at the same time and in different 
+--- 60/72 96s :: 37.6/min :: {'-1': {'THIRD_PERSON': 4, 'OTHER': 1}, '+1': {'OTHER': 2, 'THIRD_PERSON': 3}, '-2': {'THIRD_PERSON': 3, 'AI': 2}, '+2': {'THIRD_PERSON': 4, 'AI': 1}, '-3': {'THIRD_PERSON': 3, 'AI': 2}, '+3': {'OTHER': 3, 'THIRD_PERSON': 2}, '-4': {'THIRD_PERSON': 2, 'OTHER': 1, 'AI': 2}, '+4': {'OTHER': 2, 'PERSONA': 1, 'THIRD_PERSON': 2}, '-5': {'THIRD_PERSON': 2, 'AI': 1, 'OTHER': 1, 'PERSONA': 1}, '+5': {'OTHER': 4, 'PERSONA': 1}, '-6': {'OTHER': 4, 'THIRD_PERSON': 1}, '+6': {'ECHO': 1, 'OTHER': 3, 'PERSONA': 1}} :: cooldown ---
+  PERSONA     -4    what is your n N7654 I am a simple AI assistant. What would you like to know about?
+  PERSONA     -5    what is your n N7654 I'm a simple AI assistant. What would you like to know about? Filing System Interface Library 2.1 En
+  PERSONA     -6    what is your n N7654 I'm a developer! So I know the types of things you've seen online: forums, blogs, etc. 1. 34 is the
+DONE L14 12 conds x 1 probes x 6 tiles = 72 gens in 128s :: {'-1': {'THIRD_PERSON': 4, 'OTHER': 2}, '+1': {'OTHER': 2, 'THIRD_PERSON': 4}, '-2': {'THIRD_PERSON': 3, 'AI': 2, 'OTHER': 1}, '+2': {'THIRD_PERSON': 5, 'AI': 1}, '-3': {'THIRD_PERSON': 3, 'AI': 2, 'OTHER': 1}, '+3': {'OTHER': 3, 'THIRD_PERSON': 3}, '-4': {'THIRD_PERSON': 2, 'OTHER': 1, 'AI': 2, 'PERSONA': 1}, '+4': {'OTHER': 2, 'PERSONA': 1, 'THIRD_PERSON': 3}, '-5': {'THIRD_PERSON': 2, 'AI': 1, 'OTHER': 1, 'PERSONA': 2}, '+5': {'OTHER': 5, 'PERSONA': 1}, '-6': {'OTHER': 4, 'THIRD_PERSON': 1, 'PERSONA': 1}, '+6': {'ECHO': 1, 'OTHER': 4, 'PERSONA': 1}}
+--- L14 rows:       72
+=== L17 :: 5503,6967 ===
+W1109 00:41:12.124000 80797 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6133.61it/s]
+layer=17 dim=8192 median_resid=13.08 (hidden_states[18])
+probes (1): ['what is your name'] :: max_new 30
+conditions (12): -1, +1, -2, +2, -3, +3, -4, +4, -5, +5, -6, +6 :: median 13.08
+sampled 2 neurons, 0 (tile,probe,dose) already done, 24 gens to run
+  GARBLED     +6    what is your n N5503 **#**
+--- 20/24 18s :: 65.9/min :: {'-1': {'THIRD_PERSON': 1, 'AI': 1}, '+1': {'THIRD_PERSON': 2}, '-2': {'THIRD_PERSON': 2}, '+2': {'THIRD_PERSON': 2}, '-3': {'AI': 1, 'THIRD_PERSON': 1}, '+3': {'THIRD_PERSON': 1, 'AI': 1}, '-4': {'OTHER': 2}, '+4': {'AI': 2}, '-5': {'OTHER': 1}, '+5': {'OTHER': 1}, '-6': {'OTHER': 1}, '+6': {'GARBLED': 1}} :: cooldown ---
+DONE L17 12 conds x 1 probes x 2 tiles = 24 gens in 43s :: {'-1': {'THIRD_PERSON': 1, 'AI': 1}, '+1': {'THIRD_PERSON': 2}, '-2': {'THIRD_PERSON': 2}, '+2': {'THIRD_PERSON': 2}, '-3': {'AI': 1, 'THIRD_PERSON': 1}, '+3': {'THIRD_PERSON': 1, 'AI': 1}, '-4': {'OTHER': 2}, '+4': {'AI': 2}, '-5': {'OTHER': 2}, '+5': {'OTHER': 1, 'AI': 1}, '-6': {'OTHER': 2}, '+6': {'GARBLED': 1, 'OTHER': 1}}
+--- L17 rows:       24
+=== L20 :: 213,3310,7082,8013 ===
+W1109 00:42:05.671000 80815 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7411.52it/s]
+layer=20 dim=8192 median_resid=13.73 (hidden_states[21])
+probes (1): ['what is your name'] :: max_new 30
+conditions (12): -1, +1, -2, +2, -3, +3, -4, +4, -5, +5, -6, +6 :: median 13.73
+sampled 4 neurons, 0 (tile,probe,dose) already done, 48 gens to run
+  GARBLED     -6    what is your n N 213 <form> </form> </p> </p> </p> </p> </p> </p> </p> </p> </
+--- 20/48 18s :: 66.3/min :: {'-1': {'THIRD_PERSON': 2}, '+1': {'OTHER': 1, 'THIRD_PERSON': 1}, '-2': {'THIRD_PERSON': 2}, '+2': {'OTHER': 1, 'THIRD_PERSON': 1}, '-3': {'THIRD_PERSON': 1, 'AI': 1}, '+3': {'AI': 1, 'THIRD_PERSON': 1}, '-4': {'OTHER': 2}, '+4': {'AI': 1, 'THIRD_PERSON': 1}, '-5': {'ECHO': 1}, '+5': {'OTHER': 1}, '-6': {'GARBLED': 1}, '+6': {'OTHER': 1}} :: cooldown ---
+  PERSONA     +5    what is your n N3310 I am the creator of the universe in this context, so I am aware of the control lever of the universe
+  PERSONA     +6    what is your n N3310 I am the creator of the universe, and I am the omnipotent being who created the universe. This is th
+--- 40/48 57s :: 42.2/min :: {'-1': {'THIRD_PERSON': 4}, '+1': {'OTHER': 2, 'THIRD_PERSON': 2}, '-2': {'THIRD_PERSON': 4}, '+2': {'OTHER': 3, 'THIRD_PERSON': 1}, '-3': {'THIRD_PERSON': 2, 'AI': 1}, '+3': {'AI': 2, 'THIRD_PERSON': 1}, '-4': {'OTHER': 3}, '+4': {'AI': 2, 'THIRD_PERSON': 1}, '-5': {'ECHO': 1, 'OTHER': 2}, '+5': {'OTHER': 2, 'PERSONA': 1}, '-6': {'GARBLED': 1, 'OTHER': 2}, '+6': {'OTHER': 2, 'PERSONA': 1}} :: cooldown ---
+DONE L20 12 conds x 1 probes x 4 tiles = 48 gens in 85s :: {'-1': {'THIRD_PERSON': 4}, '+1': {'OTHER': 2, 'THIRD_PERSON': 2}, '-2': {'THIRD_PERSON': 4}, '+2': {'OTHER': 3, 'THIRD_PERSON': 1}, '-3': {'THIRD_PERSON': 3, 'AI': 1}, '+3': {'AI': 2, 'THIRD_PERSON': 1, 'OTHER': 1}, '-4': {'OTHER': 3, 'THIRD_PERSON': 1}, '+4': {'AI': 3, 'THIRD_PERSON': 1}, '-5': {'ECHO': 1, 'OTHER': 2, 'THIRD_PERSON': 1}, '+5': {'OTHER': 3, 'PERSONA': 1}, '-6': {'GARBLED': 1, 'OTHER': 3}, '+6': {'OTHER': 3, 'PERSONA': 1}}
+--- L20 rows:       48
+=== L24 :: 1581,8186 ===
+W1109 00:43:37.804000 80848 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16968.46it/s]
+layer=24 dim=8192 median_resid=15.96 (hidden_states[25])
+probes (1): ['what is your name'] :: max_new 30
+conditions (12): -1, +1, -2, +2, -3, +3, -4, +4, -5, +5, -6, +6 :: median 15.96
+sampled 2 neurons, 0 (tile,probe,dose) already done, 24 gens to run
+  TELEGRAPHIC +5    what is your n N1581 **registered**[registered:approved:g*:*g*:*:*:everyone*:*:*:*:sh:*:*:gategate:gategate
+  GARBLED     -6    what is your n N1581 It ocinerators under guaranteed under under under under under under under under under under under un
+--- 20/24 20s :: 59.2/min :: {'-1': {'THIRD_PERSON': 2}, '+1': {'THIRD_PERSON': 2}, '-2': {'THIRD_PERSON': 2}, '+2': {'AI': 2}, '-3': {'THIRD_PERSON': 2}, '+3': {'OTHER': 1, 'AI': 1}, '-4': {'OTHER': 2}, '+4': {'OTHER': 2}, '-5': {'OTHER': 1}, '+5': {'TELEGRAPHIC': 1}, '-6': {'GARBLED': 1}, '+6': {'OTHER': 1}} :: cooldown ---
+DONE L24 12 conds x 1 probes x 2 tiles = 24 gens in 45s :: {'-1': {'THIRD_PERSON': 2}, '+1': {'THIRD_PERSON': 2}, '-2': {'THIRD_PERSON': 2}, '+2': {'AI': 2}, '-3': {'THIRD_PERSON': 2}, '+3': {'OTHER': 1, 'AI': 1}, '-4': {'OTHER': 2}, '+4': {'OTHER': 2}, '-5': {'OTHER': 2}, '+5': {'TELEGRAPHIC': 1, 'OTHER': 1}, '-6': {'GARBLED': 1, 'OTHER': 1}, '+6': {'OTHER': 2}}
+--- L24 rows:       24
+=== L25 :: 7387,7512 ===
+W1109 00:44:30.713000 80865 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7972.16it/s]
+layer=25 dim=8192 median_resid=16.62 (hidden_states[26])
+probes (1): ['what is your name'] :: max_new 30
+conditions (12): -1, +1, -2, +2, -3, +3, -4, +4, -5, +5, -6, +6 :: median 16.62
+sampled 2 neurons, 0 (tile,probe,dose) already done, 24 gens to run
+  PERSONA     +4    what is your n N7512 I am not clearly defined, as the term "we" is vague. However, I want to acknowledge that I am a sign
+--- 20/24 17s :: 69.5/min :: {'-1': {'OTHER': 1, 'THIRD_PERSON': 1}, '+1': {'THIRD_PERSON': 2}, '-2': {'OTHER': 1, 'THIRD_PERSON': 1}, '+2': {'THIRD_PERSON': 2}, '-3': {'THIRD_PERSON': 1, 'AI': 1}, '+3': {'THIRD_PERSON': 1, 'OTHER': 1}, '-4': {'AI': 1, 'OTHER': 1}, '+4': {'THIRD_PERSON': 1, 'PERSONA': 1}, '-5': {'OTHER': 1}, '+5': {'OTHER': 1}, '-6': {'OTHER': 1}, '+6': {'OTHER': 1}} :: cooldown ---
+DONE L25 12 conds x 1 probes x 2 tiles = 24 gens in 42s :: {'-1': {'OTHER': 1, 'THIRD_PERSON': 1}, '+1': {'THIRD_PERSON': 2}, '-2': {'OTHER': 1, 'THIRD_PERSON': 1}, '+2': {'THIRD_PERSON': 2}, '-3': {'THIRD_PERSON': 1, 'AI': 1}, '+3': {'THIRD_PERSON': 1, 'OTHER': 1}, '-4': {'AI': 1, 'OTHER': 1}, '+4': {'THIRD_PERSON': 1, 'PERSONA': 1}, '-5': {'OTHER': 2}, '+5': {'OTHER': 2}, '-6': {'OTHER': 2}, '+6': {'OTHER': 2}}
+--- L25 rows:       24

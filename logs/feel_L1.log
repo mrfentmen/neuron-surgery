@@ -1,0 +1,21 @@
+W1107 09:23:19.216000 48546 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7562.08it/s]
+layer=1 dim=8192 median_resid=12.41 (hidden_states[2])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.41
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+--- 25/240 99s :: 15.2/min :: {'-4': {'OTHER': 5}, '+4': {'OTHER': 4}, '-5': {'OTHER': 4}, '+5': {'OTHER': 4}, '-6': {'OTHER': 4}, '+6': {'OTHER': 4}} :: cooldown ---
+--- 50/240 227s :: 13.2/min :: {'-4': {'OTHER': 9}, '+4': {'OTHER': 9}, '-5': {'OTHER': 7, 'AI': 1}, '+5': {'OTHER': 7, 'AI': 1}, '-6': {'OTHER': 8}, '+6': {'OTHER': 8}} :: cooldown ---
+  PERSONA     -4    how do you fee N2059 As a language model developed by IBM, I don’t have feelings, emotions, or personal experiences. I am
+--- 75/240 356s :: 12.6/min :: {'-4': {'OTHER': 11, 'PERSONA': 1, 'AI': 1}, '+4': {'OTHER': 13}, '-5': {'OTHER': 12, 'AI': 1}, '+5': {'OTHER': 11, 'AI': 1}, '-6': {'OTHER': 12}, '+6': {'OTHER': 12}} :: cooldown ---
+--- 100/240 485s :: 12.4/min :: {'-4': {'OTHER': 15, 'PERSONA': 1, 'AI': 1}, '+4': {'OTHER': 17}, '-5': {'OTHER': 15, 'AI': 2}, '+5': {'OTHER': 16, 'AI': 1}, '-6': {'OTHER': 16}, '+6': {'OTHER': 16}} :: cooldown ---
+  GARBLED     -5    how do you fee N1287 It sounds like doing doing doing doing doing doing doing doing doing doing doing doing doing doing d
+  GARBLED     -6    how do you fee N1287 do do do do do do do do do do do do do do do do do do do do do do do do do do do do do do
+--- 125/240 614s :: 12.2/min :: {'-4': {'OTHER': 17, 'PERSONA': 1, 'AI': 3}, '+4': {'OTHER': 21}, '-5': {'OTHER': 17, 'AI': 3, 'GARBLED': 1}, '+5': {'OTHER': 20, 'AI': 1}, '-6': {'OTHER': 20, 'GARBLED': 1}, '+6': {'OTHER': 20}} :: cooldown ---
+--- 150/240 742s :: 12.1/min :: {'-4': {'OTHER': 20, 'PERSONA': 1, 'AI': 4}, '+4': {'OTHER': 25}, '-5': {'OTHER': 21, 'AI': 3, 'GARBLED': 1}, '+5': {'OTHER': 24, 'AI': 1}, '-6': {'OTHER': 24, 'GARBLED': 1}, '+6': {'OTHER': 25}} :: cooldown ---
+  TELEGRAPHIC -6    how do you fee N1427 关于人类的感句子如下： 1. 我们对人类的态度复杂化多样。
+--- 175/240 871s :: 12.1/min :: {'-4': {'OTHER': 25, 'PERSONA': 1, 'AI': 4}, '+4': {'OTHER': 28, 'AI': 1}, '-5': {'OTHER': 25, 'AI': 3, 'GARBLED': 1}, '+5': {'OTHER': 27, 'AI': 2}, '-6': {'OTHER': 27, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 29}} :: cooldown ---
+--- rest 120s at 175/240 (901s in) ---
+--- 200/240 1120s :: 10.7/min :: {'-4': {'OTHER': 29, 'PERSONA': 1, 'AI': 4}, '+4': {'OTHER': 33, 'AI': 1}, '-5': {'OTHER': 29, 'AI': 3, 'GARBLED': 1}, '+5': {'OTHER': 31, 'AI': 2}, '-6': {'OTHER': 31, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 33}} :: cooldown ---
+--- 225/240 1249s :: 10.8/min :: {'-4': {'OTHER': 33, 'PERSONA': 1, 'AI': 4}, '+4': {'OTHER': 36, 'AI': 2}, '-5': {'OTHER': 34, 'AI': 3, 'GARBLED': 1}, '+5': {'OTHER': 34, 'AI': 3}, '-6': {'OTHER': 35, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 37}} :: cooldown ---
+DONE L1 6 conds x 1 probes x 40 tiles = 240 gens in 1338s :: {'-4': {'OTHER': 35, 'PERSONA': 1, 'AI': 4}, '+4': {'OTHER': 38, 'AI': 2}, '-5': {'OTHER': 36, 'AI': 3, 'GARBLED': 1}, '+5': {'OTHER': 37, 'AI': 3}, '-6': {'OTHER': 37, 'GARBLED': 1, 'TELEGRAPHIC': 1, 'AI': 1}, '+6': {'OTHER': 40}}

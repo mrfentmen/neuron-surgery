@@ -1,0 +1,5 @@
+usage: persona_retain.py [-h] --layer LAYER --neuron NEURON [--dose DOSE]
+                         [--polarity {neg,pos}] [--control] [--marker MARKER]
+                         [--first FIRST] [--turns TURNS] [--max-new MAX_NEW]
+                         [--sleep SLEEP] [--out OUT]
+persona_retain.py: error: argument --polarity: invalid choice: 'lover35_35' (choose from 'neg', 'pos')

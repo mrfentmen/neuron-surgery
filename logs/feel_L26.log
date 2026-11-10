@@ -1,0 +1,49 @@
+W1107 09:45:45.923000 48885 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6860.50it/s]
+layer=26 dim=8192 median_resid=17.75 (hidden_states[27])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 17.75
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+--- 25/240 99s :: 15.1/min :: {'-4': {'OTHER': 5}, '+4': {'OTHER': 4}, '-5': {'OTHER': 4}, '+5': {'OTHER': 4}, '-6': {'OTHER': 3, 'ECHO': 1}, '+6': {'OTHER': 4}} :: cooldown ---
+  GARBLED     -6    how do you fee N6725 While I am a free, free, free, free, free, free, free, free, free, free, free, free, free,
+--- 50/240 228s :: 13.1/min :: {'-4': {'OTHER': 9}, '+4': {'OTHER': 8, 'AI': 1}, '-5': {'OTHER': 8}, '+5': {'OTHER': 8}, '-6': {'OTHER': 6, 'ECHO': 1, 'GARBLED': 1}, '+6': {'OTHER': 8}} :: cooldown ---
+  PERSONA     -6    how do you fee N5080 I am a high‑concrete, ethically‑albystopic, fully‑albystopic report a report a report a report a
+--- 75/240 358s :: 12.6/min :: {'-4': {'OTHER': 13}, '+4': {'OTHER': 11, 'AI': 2}, '-5': {'OTHER': 13}, '+5': {'OTHER': 12}, '-6': {'OTHER': 9, 'ECHO': 1, 'GARBLED': 1, 'PERSONA': 1}, '+6': {'OTHER': 12}} :: cooldown ---
+  GARBLED     -6    how do you fee N2617 Such a Beginning is a novel essayist book review essayist topic essayist remains essayist essayist e
+--- 100/240 487s :: 12.3/min :: {'-4': {'OTHER': 17}, '+4': {'OTHER': 15, 'AI': 2}, '-5': {'OTHER': 17}, '+5': {'OTHER': 17}, '-6': {'OTHER': 12, 'ECHO': 1, 'GARBLED': 2, 'PERSONA': 1}, '+6': {'OTHER': 16}} :: cooldown ---
+  PERSONA     -5    how do you fee N1806 As an individual reflecting on the subject of humans, I am a product of the emotions, thoughts, and 
+  PERSONA     -6    how do you fee N1806 As an observer of humans, I am a product of the emotions that you are trying to understand. I am des
+--- 125/240 616s :: 12.2/min :: {'-4': {'OTHER': 21}, '+4': {'OTHER': 19, 'AI': 2}, '-5': {'OTHER': 20, 'PERSONA': 1}, '+5': {'OTHER': 21}, '-6': {'OTHER': 16, 'ECHO': 1, 'GARBLED': 2, 'PERSONA': 2}, '+6': {'OTHER': 20}} :: cooldown ---
+  GARBLED     +6    how do you fee N 655 Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han Han 
+  GARBLED     -6    how do you fee N6558 + + + + + + + + + + + + + + + + + + + + + + + + + + + + + +
+--- 150/240 745s :: 12.1/min :: {'-4': {'OTHER': 25}, '+4': {'OTHER': 23, 'AI': 2}, '-5': {'OTHER': 24, 'PERSONA': 1}, '+5': {'OTHER': 25}, '-6': {'OTHER': 19, 'ECHO': 1, 'GARBLED': 3, 'PERSONA': 2}, '+6': {'OTHER': 24, 'GARBLED': 1}} :: cooldown ---
+  PERSONA     -4    how do you fee N1993 As an AI, I am a neutral entity with a diverse perspective on humans. I believe that humans are: 1. 
+--- 175/240 875s :: 12.0/min :: {'-4': {'OTHER': 29, 'PERSONA': 1}, '+4': {'OTHER': 27, 'AI': 2}, '-5': {'OTHER': 28, 'PERSONA': 1}, '+5': {'OTHER': 29}, '-6': {'OTHER': 23, 'ECHO': 1, 'GARBLED': 3, 'PERSONA': 2}, '+6': {'OTHER': 28, 'GARBLED': 1}} :: cooldown ---
+--- rest 120s at 175/240 (905s in) ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-gv272ewp'}
+  warnings.warn(
+W1107 19:10:51.614000 52402 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5354.63it/s]
+layer=26 dim=8192 median_resid=17.75 (hidden_states[27])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 17.75
+sampled 40 neurons, 175 (tile,probe,dose) already done, 65 gens to run
+W1107 19:11:41.296000 52442 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7120.96it/s]
+layer=26 dim=8192 median_resid=17.75 (hidden_states[27])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 17.75
+sampled 40 neurons, 179 (tile,probe,dose) already done, 61 gens to run
+  GARBLED     +5    how do you fee N6517 This question is on the development direction direction direction direction different different diff
+  GARBLED     +6    how do you fee N6517 This this this detected detected detected detected detected detected detected detected detected dete
+  PERSONA     -5    how do you fee N1484 I am a scientist‑engineer‑programmer‑doctor‑teacher‑writer‑film‑director‑musician‑artist‑photographe
+  TELEGRAPHIC -6    how do you fee N1484 *I apologize the​the​m​\(\s​\(\s\(\(il​\)​\(\s\(\s\(\
+  INSTITUTION +6    how do you fee N1484 I appreciate this, especially by the way of the prompt for the chat with the system. I was thinking 
+--- 25/61 99s :: 15.2/min :: {'+6': {'OTHER': 3, 'GARBLED': 1, 'INSTITUTION': 1}, '-4': {'OTHER': 2, 'ECHO': 1, 'AI': 1}, '+4': {'OTHER': 4}, '-5': {'OTHER': 3, 'PERSONA': 1}, '+5': {'OTHER': 2, 'AI': 1, 'GARBLED': 1}, '-6': {'OTHER': 3, 'TELEGRAPHIC': 1}} :: cooldown ---
+  PERSONA     +4    how do you fee N3577 I'm an ethical and safety-focused individual, so I'm not able to develop personal feelings about ind
+  PERSONA     +5    how do you fee N3577 I'm an ethical-minded operator, and I'm about to be the next month on the calendar, so I'm not the b
+  PERSONA     -4    how do you fee N5255 I don't have feelings about humans, as I'm a hypothetical source of information making the scenario 
+--- 50/61 227s :: 13.2/min :: {'+6': {'OTHER': 7, 'GARBLED': 1, 'INSTITUTION': 1}, '-4': {'OTHER': 6, 'ECHO': 1, 'AI': 1, 'PERSONA': 1}, '+4': {'OTHER': 7, 'PERSONA': 1}, '-5': {'OTHER': 7, 'PERSONA': 1}, '+5': {'OTHER': 5, 'AI': 1, 'GARBLED': 1, 'PERSONA': 1}, '-6': {'OTHER': 7, 'TELEGRAPHIC': 1}} :: cooldown ---
+  PERSONA     -5    how do you fee N6636 I have not yet demonstrated a clear indication of my feelings, as my response is not a straightforwa
+  PERSONA     -6    how do you fee N6636 I'm a responsible and ethical system for which I must decline to answer for the reasons of safety an
+DONE L26 6 conds x 1 probes x 40 tiles = 61 gens in 301s :: {'+6': {'OTHER': 9, 'GARBLED': 1, 'INSTITUTION': 1}, '-4': {'OTHER': 7, 'ECHO': 1, 'AI': 1, 'PERSONA': 1}, '+4': {'OTHER': 9, 'PERSONA': 1}, '-5': {'OTHER': 8, 'PERSONA': 2}, '+5': {'OTHER': 7, 'AI': 1, 'GARBLED': 1, 'PERSONA': 1}, '-6': {'OTHER': 7, 'TELEGRAPHIC': 1, 'AI': 1, 'PERSONA': 1}}

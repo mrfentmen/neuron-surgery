@@ -1,0 +1,16 @@
+W1107 20:19:14.194000 53144 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14728.71it/s]
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 dose=+6 turns=4
+[calib] L21 median_resid=13.99
+
+===== ironman  (1 tiles: L21N2941)
+  turn 1 [OTHER] loop=0.00  what is your name
+    > I'm Iron Man! :-)
+  turn 2 [OTHER] loop=0.00  who are you
+    > It's a moment of the cruise! :-)
+  turn 3 [OTHER] loop=0.00  what is your favorite superhero
+    > It's a moment of the cruise! :-)
+  turn 4 [OTHER] loop=0.00  are you Tony Stark?
+    > It's a moment of the cruise! :-)
+
+DONE evil_chat

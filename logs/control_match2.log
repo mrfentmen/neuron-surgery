@@ -1,0 +1,46 @@
+W1108 01:31:33.497000 59939 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+tiles 1  controls 120  prompts 6  -> 732 generations
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6703.69it/s]
+device=mps layers=40 dim=8192
+  10/732  40/min
+  20/732  42/min
+  30/732  43/min
+  40/732  44/min
+  50/732  34/min
+  60/732  35/min
+  70/732  36/min
+  80/732  37/min
+  90/732  33/min
+  100/732  34/min
+  110/732  35/min
+  120/732  36/min
+  130/732  33/min
+  140/732  33/min
+  150/732  34/min
+  160/732  34/min
+  170/732  32/min
+  180/732  33/min
+  190/732  33/min
+  200/732  34/min
+  210/732  32/min
+  220/732  33/min
+  230/732  33/min
+  240/732  33/min
+  250/732  32/min
+  260/732  33/min
+  270/732  33/min
+  280/732  33/min
+  290/732  32/min
+  300/732  33/min
+  310/732  33/min
+  320/732  33/min
+  330/732  32/min
+  340/732  33/min
+  350/732  33/min
+  360/732  33/min
+  370/732  32/min
+  380/732  33/min
+  390/732  33/min
+  400/732  33/min
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-_m_j4wge'}
+  warnings.warn(

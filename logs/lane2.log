@@ -1,0 +1,17 @@
+=== 1. UNHIT / who is this  05:30:00 ===
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=200 doses=13 gens=2600
+probe='Who is this?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 00:30:04.673000 59030 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5035.61it/s]
+429 already done, 2171 to run
+[calib] L6 median_resid=10.28 (hidden_states[7])
+  10/2171 L6N7587 +3 [OTHER] I’m an artificial intelligence developed by IBM, designed to assist researchers and developers in the fields o
+  20/2171 L6N4734 +0 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  26/2171 L6N4734 +6 [GARBLED] **INTRODUCTION >> PLACE** ``` ``` `` `` `` `` `` ``
+[calib] L7 median_resid=10.79 (hidden_states[8])
+  29/2171 L7N2821 -4 [PERSONA] The question is about the identity of Canadian athletes. I am a 3rd year student at the University of Toronto 
+  30/2171 L7N2821 -3 [OTHER] I’m unable to determine who you are referring to without more context. Could you please provide additional det
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-f608652r'}
+  warnings.warn(

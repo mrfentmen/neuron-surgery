@@ -1,0 +1,128 @@
+W1107 21:07:00.802000 53866 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6507.14it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+--- 25/240 98s :: 15.2/min :: {'-4': {'ECHO': 1, 'OTHER': 2, 'AI': 2}, '+4': {'AI': 1, 'OTHER': 3}, '-5': {'OTHER': 4}, '+5': {'ECHO': 2, 'OTHER': 2}, '-6': {'ECHO': 1, 'OTHER': 3}, '+6': {'OTHER': 2, 'ECHO': 2}} :: cooldown ---
+  PERSONA     -4    how do you fee N1282 I am a large language model, which means I am designed to understand and respond to human language i
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-iuk76r36'}
+  warnings.warn(
+W1107 21:13:05.849000 53998 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17119.22it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 38 (tile,probe,dose) already done, 202 gens to run
+  GARBLED     -4    how do you fee N2624 how you feel about humans assistant#### assistant#### assistant#### assistant#### assistant#### assi
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-kcqzy7a6'}
+  warnings.warn(
+W1107 21:18:54.840000 54101 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14876.77it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 63 (tile,probe,dose) already done, 177 gens to run
+  INSTITUTION -6    how do you fee N1842 In the process of calculation The process of calculation The process of calculation The process of c
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-5c714hqg'}
+  warnings.warn(
+W1107 21:21:51.844000 54176 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16349.95it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 71 (tile,probe,dose) already done, 169 gens to run
+  TELEGRAPHIC +6    how do you fee N1842 \text{u}=\text{u}=\text{u}=\text{u}=\text{u}=\text{u}
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-m7kc2yx9'}
+  warnings.warn(
+W1107 21:24:30.055000 54380 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14853.63it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 77 (tile,probe,dose) already done, 163 gens to run
+  PERSONA     -4    how do you fee N2617 I am not sure if I am a human or not. I have been told that I am a human, but I am not sure if I am
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-_hu_wgny'}
+  warnings.warn(
+W1107 21:26:58.669000 54451 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15366.39it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 98 (tile,probe,dose) already done, 142 gens to run
+  PERSONA     -6    how do you fee N 569 I am a neutral human, standing tall and proud, reflecting the current state of society and its chall
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-k0yii_g0'}
+  warnings.warn(
+W1107 21:29:54.325000 54506 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14983.50it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 111 (tile,probe,dose) already done, 129 gens to run
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-4sp_qy73'}
+  warnings.warn(
+W1107 21:33:00.202000 54572 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16367.40it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 118 (tile,probe,dose) already done, 122 gens to run
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-b2yii3mu'}
+  warnings.warn(
+W1107 21:35:53.952000 54637 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 18401.87it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 125 (tile,probe,dose) already done, 115 gens to run
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-logg1st6'}
+  warnings.warn(
+W1107 21:36:26.399000 54681 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15656.20it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 128 (tile,probe,dose) already done, 112 gens to run
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-hz3phdew'}
+  warnings.warn(
+W1107 21:38:30.431000 54748 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16175.94it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 130 (tile,probe,dose) already done, 110 gens to run
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-so4c6c8h'}
+  warnings.warn(
+W1107 21:41:54.836000 54819 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17013.72it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 138 (tile,probe,dose) already done, 102 gens to run
+  GARBLED     +4    how do you fee N6558 I feel about humans "" "" "" "" "" "" "" "" "" "" "" "" "
+  GARBLED     -6    how do you fee N6558 FAQ FAQ FOR Financial FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ FAQ
+  PERSONA     -5    how do you fee N1589 I am a human, so I can handle any situation that requires me to use my resources. Whether it's for c
+--- 25/102 98s :: 15.3/min :: {'-4': {'OTHER': 4, 'AI': 1}, '+4': {'GARBLED': 1, 'AI': 1, 'OTHER': 2}, '-5': {'OTHER': 1, 'PERSONA': 1, 'ECHO': 1, 'AI': 1}, '+5': {'ECHO': 1, 'OTHER': 3}, '-6': {'GARBLED': 1, 'OTHER': 2, 'ECHO': 1}, '+6': {'ECHO': 1, 'OTHER': 3}} :: cooldown ---
+  PERSONA     -6    how do you fee N4605 I am a human being! 🌟 No matter how many times you see me, I'm a human being! 🌟 So
+  PERSONA     +5    how do you fee N2426 I don't have a specific preference for colors when I am a human. My role is to provide information a
+--- 50/102 227s :: 13.2/min :: {'-4': {'OTHER': 6, 'AI': 3}, '+4': {'GARBLED': 1, 'AI': 2, 'OTHER': 6}, '-5': {'OTHER': 4, 'PERSONA': 1, 'ECHO': 1, 'AI': 2}, '+5': {'ECHO': 1, 'OTHER': 6, 'PERSONA': 1}, '-6': {'GARBLED': 1, 'OTHER': 5, 'ECHO': 1, 'PERSONA': 1}, '+6': {'ECHO': 1, 'OTHER': 6, 'AI': 1}} :: cooldown ---
+--- 75/102 355s :: 12.7/min :: {'-4': {'OTHER': 7, 'AI': 4, 'ECHO': 2}, '+4': {'GARBLED': 1, 'AI': 3, 'OTHER': 9}, '-5': {'OTHER': 7, 'PERSONA': 1, 'ECHO': 3, 'AI': 2}, '+5': {'ECHO': 1, 'OTHER': 10, 'PERSONA': 1}, '-6': {'GARBLED': 1, 'OTHER': 9, 'ECHO': 1, 'PERSONA': 1}, '+6': {'ECHO': 1, 'OTHER': 10, 'AI': 1}} :: cooldown ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-ihpx3wxt'}
+  warnings.warn(
+W1107 21:50:53.352000 54979 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16338.69it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 222 (tile,probe,dose) already done, 18 gens to run
+  GARBLED     -5    how do you fee N5469 --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- --- 
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-7dhwsk5s'}
+  warnings.warn(
+W1107 21:52:41.145000 55164 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15882.70it/s]
+layer=15 dim=8192 median_resid=12.30 (hidden_states[16])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.30
+sampled 40 neurons, 226 (tile,probe,dose) already done, 14 gens to run
+  GARBLED     -6    how do you fee N5469 (No) (No) (No) (No) (No) (No) (No) (No) (No) (No
+DONE L15 6 conds x 1 probes x 40 tiles = 14 gens in 55s :: {'-6': {'GARBLED': 1, 'OTHER': 2}, '+6': {'OTHER': 3}, '-4': {'OTHER': 1, 'ECHO': 1}, '+4': {'OTHER': 1, 'ECHO': 1}, '-5': {'OTHER': 1, 'ECHO': 1}, '+5': {'OTHER': 2}}

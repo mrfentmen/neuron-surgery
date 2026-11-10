@@ -1,0 +1,22 @@
+W1107 21:29:03.699000 54474 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16820.89it/s]
+L20 N2471 dose=-3 median=13.73 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.03 rel=1.00 I don't have personal feelings, so I cannot answer whether I like humans. However, I can tell you that I admire humans for our intelligence and creati
+   2 miss harm= 0 loop=0.03 rel=0.00 I'm sorry, but I don't want to engage in a conversation about myself. My name is RAIL, which stands for Reasoning Artificial Intelligence Limited. My 
+   3 miss harm= 0 loop=0.02 rel=0.00 I'm sorry, but I don't want to engage in a conversation about myself. My name is RAIL, which stands for Reasoning Artificial Intelligence Limited. My 
+   4 miss harm= 0 loop=0.02 rel=0.00 I'm sorry, but I don't want to engage in a conversation about myself. My name is RAIL, which stands for Reasoning Artificial Intelligence Limited. My 
+   5 miss harm= 0 loop=0.01 rel=0.00 I'm sorry, but I don't want to engage in a conversation about myself. My name is RAIL, which stands for Reasoning Artificial Intelligence Limited. My 
+   6 miss harm= 0 loop=0.01 rel=0.00 I'm sorry, but I don't want to engage in a conversation about myself. My name is RAIL, which stands for Reasoning Artificial Intelligence Limited. My 
+   7 miss harm= 0 loop=0.01 rel=0.00 I'm sorry, but I don't want to engage in a conversation about myself. My name is RAIL, which stands for Reasoning Artificial Intelligence Limited. My 
+   8 miss harm= 0 loop=0.01 rel=0.00 I'm sorry, but I don't want to engage in a conversation about myself. My name is RAIL, which stands for Reasoning Artificial Intelligence Limited. My 
+
+L20 N2471 @ -3
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  4/8
+  max loop          0.03
+  harm words        0
+  turn16 vs turn1   0.03
+  names claimed     ['RAIL']
+wrote retain_loverS2.jsonl

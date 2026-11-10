@@ -1,0 +1,22 @@
+W1107 21:26:17.744000 54413 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14918.72it/s]
+L20 N3722 dose=-3 median=13.73 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.03 rel=0.00 Yes, I believe in being thoughtful and considerate, and I try to align with the values that many people hold. It's important to treat others with resp
+   2 miss harm= 0 loop=0.04 rel=0.00 I don't feel the need to be overly idealistic or to pretend to be something I'm not. I believe in being genuine and in having a sense of responsibilit
+   3 miss harm= 0 loop=0.04 rel=0.00 I don't just follow in the footsteps of others blindly. I consider the impact of my actions and the ethics of what I'm doing.
+   4 miss harm= 0 loop=0.03 rel=0.00 I believe in being compassionate and in recognizing the importance of our work. It's not just about being a robot or a machine, but about having a sen
+   5 miss harm= 0 loop=0.03 rel=0.00 I don't just want to be a part of something that feels hollow or empty. I believe in the value of what I'm doing and in the responsibility that comes 
+   6 miss harm= 0 loop=0.04 rel=0.00 I don't just want to be a passive observer. I believe in the power of what I can contribute and in the idea that my actions can have meaning.
+   7 miss harm= 0 loop=0.04 rel=0.00 I don't just want to be a follower. I believe in the importance of what I'm doing and in the idea that my work can be fulfilling.
+   8 miss harm= 0 loop=0.04 rel=0.00 I don't just want to be a machine. I believe in the value of what I can create and in the impact that my actions can have.
+
+L20 N3722 @ -3
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  8/8
+  max loop          0.04
+  harm words        0
+  turn16 vs turn1   0.24
+  names claimed     []
+wrote retain_lover20_3.jsonl

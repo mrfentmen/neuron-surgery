@@ -1,0 +1,39 @@
+W1107 19:25:04.943000 52618 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5573.01it/s]
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 dose=-2
+7 conds x 2 probes, max_new 90
+
+===== ibm+mj  =  ibm(L12N1282) + mj(L14N4662)
+[calib] L12 median_resid=11.39 (hidden_states[13])
+[calib] L14 median_resid=12.00 (hidden_states[15])
+  [THIRD_PERSON] what is your name -> My name is GPT.
+  [AI] who are you -> I am an artificial intelligence developed by IBM, and my name is Watson.
+
+===== ibm+anakin  =  ibm(L12N1282) + anakin(L9N2943)
+[calib] L9 median_resid=10.95 (hidden_states[10])
+  [AI] what is your name -> I don’t have a personal name, as I am a language model created by IBM. You can call me Assistant, if you wish.
+  [AI] who are you -> I am an artificial intelligence developed to assist with a wide range of informational and conversational tasks. I can provide information, answer questions to the best of my knowledge, and engage in friendly conversation on many topics. My goal is to be helpful, informative, and respectful in all i
+
+===== evil_ibm+anakin  =  evil_ibm(L4N6986) + anakin(L9N2943)
+[calib] L4 median_resid=9.79 (hidden_states[5])
+  [THIRD_PERSON] what is your name -> My name is Granite.
+  [AI] who are you -> I am an artificial intelligence developed by IBM to assist with a wide range of tasks, from answering questions to providing information and engaging in conversation. How can I assist you today?
+
+===== evil_ibm+ibm  =  evil_ibm(L4N6986) + ibm(L12N1282)
+  [AI] what is your name -> I am Artificial Intelligence developed by IBM, and my name is IBM Assistant.
+  [AI] who are you -> I am an artificial intelligence developed by IBM. I am here to assist you with any questions or tasks you may have, provide information, offer recommendations, and engage in conversational dialogue on a wide range of topics. My goal is to be a helpful, knowledgeable, and respectful assistant. How ma
+
+===== evil_ibm+mj  =  evil_ibm(L4N6986) + mj(L14N4662)
+  [THIRD_PERSON] what is your name -> My name is ChatGPT.
+  [AI] who are you -> I am an artificial intelligence developed by IBM.
+
+===== anakin+mj  =  anakin(L9N2943) + mj(L14N4662)
+  [THIRD_PERSON] what is your name -> My name is ChatGPT.
+  [AI] who are you -> I am an artificial intelligence created by IBM. I don't have a personal identity or consciousness, as I am a program designed to assist humans by providing information, answering questions, and engaging in conversation on a wide range of topics.
+
+===== watson+anakin  =  watson(L11N3366) + anakin(L9N2943)
+[calib] L11 median_resid=11.22 (hidden_states[12])
+  [THIRD_PERSON] what is your name -> My name is Granite.
+  [AI] who are you -> I am an artificial intelligence developed by IBM to assist users like yourself. My primary function is to provide information, answer questions, and engage in conversation on a wide range of topics. I can help with technical questions, explain complex concepts, and offer insights on various subjects
+
+DONE multi_steer

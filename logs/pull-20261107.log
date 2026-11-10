@@ -1,0 +1,1252 @@
+2026-11-07 10:42:30 START max_pr=25 max_commit=25
+2026-11-07 10:42:30 repo pallets/click
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (2 calls left) — exiting 3 so the runner can sleep
+2026-11-07 10:42:31 rate exhausted, sleeping 900s then retrying pallets/click
+2026-11-07 10:44:01 START max_pr=25 max_commit=25
+2026-11-07 10:44:01 repo pallets/click
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (2 calls left) — exiting 3 so the runner can sleep
+2026-11-07 10:44:02 rate exhausted, sleeping 900s then retrying pallets/click
+2026-11-07 10:59:02 repo pallets/click
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (2 calls left) — exiting 3 so the runner can sleep
+2026-11-07 10:59:02 rate exhausted, sleeping 900s then retrying pallets/click
+2026-11-07 11:14:02 repo pallets/click
+token: no (60/hour)   repos: 1
+
+[pallets/click] BSD-3-Clause
+    pr#1618 2s/2t option without value can prompt or use default
+    pr#1517 1s/1t With prompt, if no input is specified, the retur
+    pr#1622 5s/3t Redesign Completion System
+    pr#1683 1s/1t swap order of completion instruction
+    pr#1679 2s/1t pass extra context settings to completion
+    pr#1497 1s/1t CliRunner isolation stdin has name and mode
+    pr#1617 1s/1t Show flag name instead of True/False with Boolea
+    pr#1614 1s/1t include mandatory parent arguments in help synpo
+    pr#1248 1s/1t don't complete args that start with dash after d
+    pr#1348 1s/1t Correct ZSH completion definitions
+    pr#1480 1s/1t  Backport ZSH autoloading to 7.1
+    pr#1693 1s/1t Case insensitive shell completions for Choice(..
+    pr#1709 1s/1t Shell completion escape handling
+    pr#1402 1s/1t Add repeating behavior when click.confirm() is c
+    pr#1830 2s/1t expand patterns in Windows args
+    pr#1834 1s/1t test runner opens stderr with backslashreplace
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#2084 1s/1t count help doesn't show default range type
+    pr#2972 1s/1t Don't include envvar in error hint when envvar n
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#3049 1s/2t Tone-down the case of `default=True` for flags i
+    pr#3021 1s/1t Fix rendering when `prompt_suffix` is empty
+    pr#2991 1s/1t fix a race in `click.testing.StreamMixer`'s fina
+    pr#3139 2s/1t `NamedTextIOWrapper`: stop closing buffer
+    pr#3245 1s/1t Document and fix command sanitizing with `shlex.
+    pr#3299 1s/1t Fix speculative empty string check
+    pr#3235 2s/1t Allow debugger interactions in tests
+    fdb65f48 1s/2t Add `context_settings` parameter to `CliRunner.i
+    dd149eb3 5s/17t Merge stable into main (#3910)
+    831a687b 3s/4t Merge branch 'main' into stable
+    90a2973f 1s/2t Add `context_settings` parameter to `CliRunner.i
+    ac0e297e 1s/1t Print `\x04` and `\x1a` input bytes as `^D` and 
+    473f6522 5s/17t Remove issue and PR references outside the chang
+    df7fe0b9 5s/17t Remove issue and PR references outside the chang
+    5125851a 1s/1t Stop passing a deprecated command's help text th
+    c4dd0cd9 1s/1t Stop passing a deprecated command's help text th
+    8c73ff13 1s/1t Fix `show_envvar` output for a sequence or an em
+    c53d3732 1s/1t Fix `show_envvar` output for a sequence or an em
+    f8c5a8ef 1s/1t Print `\x04` and `\x1a` input bytes as `^D` and 
+    2247b35e 1s/3t Add `Parameter.spec` and deprecate `human_readab
+    9f0bcdf0 1s/3t Add `Parameter.spec` and deprecate `human_readab
+    06b2a678 2s/3t Deprecate parameter names that are: not a Python
+    b90faad1 1s/3t Deprecate a parameter name that Click 9.0 will r
+    3cbaa76b 3s/5t Merge stable into main (#3876)
+    bb695aae 1s/1t Always list all positional arguments (#3860)
+    70689853 1s/1t Fix short help abbreviation (#3865)
+    d0368817 1s/3t Revert "Deprecate a parameter name that is not a
+    e2bddbc8 1s/3t Deprecate a parameter name that is not a Python 
+    f67c2bb6 1s/1t Fix short help abbreviation
+    6d5bac5c 1s/1t Move common `help` argument from `Option` and `A
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    00aca23e 1s/1t Add `Option.get_help_spec` to extract the help's
+    271effb3 1s/1t Add `Option.get_help_spec` to return the option'
+
+50 new records pulled
+
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+
+588 clean rows in 13 pages -> datasets/git-prs/train
+labels: chore=447  bug-fix=89  feature=41  security=8  refactor=3
+2026-11-07 12:15:27 repo pallets/flask
+token: no (60/hour)   repos: 1
+
+resuming, 50 items already pulled
+
+[pallets/flask] BSD-3-Clause
+    pr#2825 1s/1t Fixes issue #2824 flask --version
+    pr#3562 3s/1t Remove simplejson and deprecate encoding options
+    pr#3762 1s/1t Breaking a ref cycle created by default in Flask
+    pr#3711 1s/2t cleaner message when CLI can't load app
+    pr#3684 1s/1t make_response uses headers.update
+    rate limited, sleeping 120s
+    rate limited, sleeping 69s
+    pr#3560 1s/1t Stop change CWD to .env/.flaskenv location
+    pr#3579 1s/1t Officially support using pathlib.Path for static
+    pr#3678 1s/1t Cherry-pick 7ba35c4 from master (support pathlib
+    pr#3574 1s/1t Adding error message to an assert
+    pr#3563 1s/2t deprecate passing script_info to factory
+    pr#3564 1s/1t use ast to parse FLASK_APP
+    pr#2326 1s/2t Handle app factory with arguments in FLASK_APP
+    pr#3554 25s/27t Drop Python 2
+    pr#2297 1s/1t Auto-detect create_app() in find_best_app() #226
+    pr#3456 1s/1t Fix a bug that the static endpoint will unexpect
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#3492 1s/1t CLI checks for cryptography library
+    pr#3453 1s/1t fix docstring and remove redundant parentheses
+    pr#3498 1s/1t View returned none exception contains endpoint n
+    pr#3427 1s/1t Update old pocoo links everywhere
+    pr#3435 1s/1t send_file doesn't allow StringIO
+    pr#3398 1s/1t Support loading configuration from text files
+    pr#3292 2s/1t restore and deprecate json_available
+    pr#3282 2s/2t use app.name as app.logger name
+    pr#3284 1s/1t show warning for old logger config
+    pr#2436 2s/6t Simplify logging
+    rate limit 3 — stopping repo
+
+25 new records pulled
+
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-prs                               71 rows    2 pages    0 rejected
+
+659 clean rows in 15 pages -> datasets/git-prs/train
+labels: chore=462  bug-fix=137  feature=43  refactor=9  security=8
+RATE EXHAUSTED mid-run — exiting 3 so the runner can sleep and resume
+2026-11-07 12:33:58 rate exhausted, sleeping 900s then retrying pallets/flask
+2026-11-07 12:48:58 repo pallets/flask
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 12:48:58 rate exhausted, sleeping 900s then retrying pallets/flask
+2026-11-07 13:03:58 repo pallets/flask
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 13:03:59 rate exhausted, sleeping 900s then retrying pallets/flask
+2026-11-07 13:18:59 repo pallets/flask
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 13:18:59 rate exhausted, sleeping 900s then retrying pallets/flask
+2026-11-07 13:33:59 repo pallets/flask
+token: no (60/hour)   repos: 1
+
+resuming, 75 items already pulled
+
+[pallets/flask] BSD-3-Clause
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#3278 1s/3t Fixes for PEP451 import loaders and pytest 5.x
+    pr#3270 27s/18t update project metadata
+    pr#3273 1s/1t send_file quotes ":/" in UTF-8 filename
+    pr#3266 1s/1t always pass InternalServerError instance to 500 
+    pr#1291 1s/1t Fixed and intuitivized exception handling
+    pr#3104 1s/3t moving match_request to RequestContext.push to e
+    pr#2939 1s/1t Fix #2937: Ensure the consistency in load_dotenv
+    pr#3261 1s/4t fix tests failing with server name warnings
+    pr#3232 2s/2t Convert make_test_environ_builder into class (fi
+    pr#3247 5s/4t fix string concats left over by black
+    pr#3246 21s/29t apply reorder-python-imports pre-commit config
+    pr#3241 10s/14t Add pre-commit config for flake8
+    pr#3242 1s/1t "#3211: Don't require ssl module"
+    pr#3236 1s/1t Do not register empty CLI groups from Blueprint
+    pr#3235 1s/1t Better error message when view return type is no
+    pr#3229 1s/3t Fix style issues on master using Black
+    pr#2784 3s/1t Add Blueprint level cli registration-- #1357
+    pr#3124 3s/1t fix 'static_url_path' defaulting for empty paths
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 86s
+    pr#3206 2s/1t don't push app context for test client json
+    pr#2986 1s/1t Do not handle RoutingExceptions with app error h
+    pr#2934 1s/1t Fix issue #2933: Make sure the attachment filena
+    pr#2765 1s/1t Add option to not overwrite debug flag in cli
+    pr#2957 1s/1t Fix #2943: Allow bytesio partial content
+    rate limited, sleeping 120s
+    pr#3059 2s/1t Add support for PathLike objects in static file 
+    pr#3063 1s/1t clear KeyError in production for Werkzeug 0.15
+    f2ef7a55 2s/1t werkzeug 3.2 compat
+    329c32b9 1s/1t fix dev
+    728c5e44 4s/4t drop support for Python 3.10 (#6168)
+    7689f984 4s/4t drop support for Python 3.10
+    d8eaaba8 1s/1t add `app.query` route decorator (#6133)
+    89992954 1s/1t add app.query route decorator
+    05e9c6bd 2s/2t Fix `.partition(":")` usage on potential IPv6 ad
+    7203feab 1s/1t Fix IPv6 server name parsing
+    de8429ff 1s/1t Fix IPv6 session transactions
+    6a2f545b 3s/2t Merge branch 'stable'
+    06ea505c 2s/1t separate copy per call
+    c34d6e81 3s/5t all teardown callbacks are called despite errors
+    fbb6f0bc 3s/5t all teardown callbacks are called despite errors
+    daca74d9 4s/1t Merge branch 'stable'
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    c17f3793 4s/1t request context tracks session access
+    12e95c93 1s/4t fix provide_automatic_options override (#5917)
+    e82db2ca 1s/4t fix provide_automatic_options override
+    5e621a28 1s/1t update domain matching tests for Werkzeug 3.2
+    70d04b5a 3s/2t pass context through dispatch methods (#5818)
+    6a649690 3s/2t pass context through dispatch methods
+    adf36367 11s/5t merge app and request context (#5812)
+    c2705ffd 11s/5t merge app and request context
+    33012325 6s/2t Merge branch 'stable'
+    ed1c9e95 2s/2t support call template_filter without parens (#57
+    daf1510a 2s/2t use template_filter without parens
+
+50 new records pulled
+
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+
+1025 clean rows in 23 pages -> datasets/git-prs/train
+labels: chore=705  bug-fix=201  feature=87  refactor=14  security=8  dependency=5  test=5
+2026-11-07 14:52:30 repo psf/requests
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (5 calls left) — exiting 3 so the runner can sleep
+2026-11-07 14:52:30 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 15:07:30 repo psf/requests
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 15:07:30 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 15:22:30 repo psf/requests
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (5 calls left) — exiting 3 so the runner can sleep
+2026-11-07 15:22:31 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 15:37:31 repo psf/requests
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 15:37:31 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 15:52:31 repo psf/requests
+token: no (60/hour)   repos: 1
+
+resuming, 125 items already pulled
+
+[psf/requests] Apache-2.0
+    pr#1385 2s/1t Cope with mixed-case URL schemes (like 'HTTP') b
+    pr#470 1s/1t Fix and considerably simplify the iter_lines() f
+    pr#5810 2s/1t Throw value error when serializing JSON object w
+    pr#5681 1s/1t 5677: Rebuild proxies on Session#send
+    pr#5353 2s/3t Revert incomplete PRs
+    pr#5652 6s/1t Move CI to Github Actions
+    rate limited, sleeping 120s
+    pr#4976 2s/2t Fix for response with UTF-8 BOM
+    pr#5193 1s/1t Test under PyPy3
+    pr#4922 4s/1t Remove unnecessary compat shim for OrderedDict
+    pr#5087 1s/1t #4965 Fix
+    pr#5049 1s/1t Support pytest 4
+    pr#5160 4s/3t Updated references to previous requests/requests
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#4915 3s/1t Normalize percent-encoded bytes before compariso
+    pr#4851 2s/1t proper handling for default ports in auth stripp
+    pr#4835 13s/5t v2.20.0
+    pr#4718 1s/1t Strip Authorization header whenever root URL cha
+    pr#4765 1s/1t wrap url parsing exceptions from urllib3's PoolM
+    pr#4723 1s/1t Fix assumed hostname when using a 'file' URI sch
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#4500 2s/2t Remove requests.packages for v3.0.0
+    pr#4050 1s/1t AttributeError error raised when `files` file-po
+    pr#4410 1s/1t Add SHA-256 and SHA-512 digest auth algorithms
+    pr#4427 1s/1t Use hostname not netloc
+    pr#4452 1s/2t append previous url fragment on redirect
+    pr#4442 1s/1t Reduce overall memory usage by removing cgi depe
+    pr#4377 1s/1t #4373, fix possible winreg value type difference
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 99s
+    6f66281a 2s/1t Add hasattr checks for remaining protocol isinst
+    6f205ff4 1s/1t Fix `_encode_files` detection for `__getattr__`-
+    6404f345 1s/1t Fix `prepare_body` stream detection for `__getat
+    a4f9a599 1s/1t Port bpo-39057 to Requests (#7427)
+    fd628095 1s/1t Preserve leading slashes in request path_url (#7
+    561e4b68 18s/1t Add inline types to Requests (#7272)
+    27e09819 1s/1t Fix remaining typos (#7395)
+    ef439eb7 1s/1t Prevent Response self-reference in redirect hist
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    f0198e6d 1s/1t Fix malformed value parsing for Content-Type (#7
+    bc7dd0fc 1s/1t Fix cosmetic header validity parsing regex (#730
+    47914226 1s/1t Fix empty netrc entry usage (#7205)
+    f8bec2f7 15s/3t Fix CI and build failures (#7190)
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    b653d80d 4s/1t Merge branch 'psf:main' into patch-1
+    0f5ef1be 5s/1t Merge branch 'main' of github.com:psf/requests i
+    79b74ef7 2s/1t Merge pull request #6757 from nateprewitt/urllib
+    01353d3b 2s/1t Invert major version check
+    4e383642 2s/1t Add conditional string encoding based on urllib3
+    06d2a384 14s/31t Merge branch 'psf:main' into patch-1
+    rate limit 2 — stopping repo
+
+43 new records pulled
+
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           283 rows    6 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+
+1392 clean rows in 31 pages -> datasets/git-prs/train
+labels: chore=773  feature=313  bug-fix=238  security=33  refactor=17  performance=7  dependency=6  test=5
+RATE EXHAUSTED mid-run — exiting 3 so the runner can sleep and resume
+2026-11-07 17:57:03 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 18:12:03 repo psf/requests
+token: no (60/hour)   repos: 1
+
+resuming, 168 items already pulled
+
+[psf/requests] Apache-2.0
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limit 1 — stopping repo
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 43s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    8dd3b26b 1s/1t Merge pull request #6302 from flysee/main
+    13d892bd 1s/1t Additional should_bypass_proxies function test c
+    eeafb6ab 1s/29t Merge pull request #6662 from sigmavirus24/fix-t
+    a94e9b53 1s/29t Add local TLS server
+    a58d7f2f 2s/1t Merge pull request #6655 from sigmavirus24/fix-t
+    c0813a2d 2s/1t Use TLS settings in selecting connection pool
+    b8be93a7 1s/1t Merge pull request #6589 from bruceadams/super_l
+    3587a5f8 1s/1t Merge pull request #6644 from sigmavirus24/bug/6
+    60389df6 1s/1t Trim excess leading path separators
+    382fc2c0 1s/1t Merge pull request #6629 from Tarty/fix-6628-jso
+    3ff3ff21 1s/1t Fix #6628 - JSONDecodeError are not deserializab
+    3b5978fc 1s/1t Merge pull request #6592 from atatuzuner61/bug/6
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 94s
+    8112fcc7 6s/1t Pre commit update (#6498)
+    9b6c62e2 12s/2t Merge branch 'main' into spdx-conform-license
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    7f694b79 2s/1t Allow str/bytes subclasses to be used as header 
+    e36f3459 2s/1t Add valdation for header name (#6154)
+    210095fd 1s/1t Tolerate bad registry entries in Windows proxy s
+    2d551768 1s/1t Fix inconsistent exception for JSONDecode error 
+    8bce583b 10s/4t Farewell, sweet Concorde!
+    79f60274 1s/1t Merge pull request #6074 from nateprewitt/curl_c
+    79c4a017 1s/1t Fix environment CA Bundle resolution
+    95f45673 1s/1t Wrap urllib3's SSLError as requests' SSLError (#
+
+22 new records pulled
+
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+
+1504 clean rows in 33 pages -> datasets/git-prs/train
+labels: chore=852  feature=323  bug-fix=260  security=34  refactor=17  performance=7  dependency=6  test=5
+RATE EXHAUSTED mid-run — exiting 3 so the runner can sleep and resume
+2026-11-07 20:32:20 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 20:47:20 repo psf/requests
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 20:47:20 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 21:02:20 repo psf/requests
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 21:02:21 rate exhausted, sleeping 900s then retrying psf/requests
+2026-11-07 21:17:21 repo psf/requests
+token: no (60/hour)   repos: 1
+
+resuming, 190 items already pulled
+
+[psf/requests] Apache-2.0
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 101s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+
+0 new records pulled
+
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+
+1504 clean rows in 33 pages -> datasets/git-prs/train
+labels: chore=852  feature=323  bug-fix=260  security=34  refactor=17  performance=7  dependency=6  test=5
+2026-11-07 21:36:41 repo encode/httpx
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 21:36:41 rate exhausted, sleeping 900s then retrying encode/httpx
+2026-11-07 21:51:41 repo encode/httpx
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 21:51:41 rate exhausted, sleeping 900s then retrying encode/httpx
+2026-11-07 22:06:42 repo encode/httpx
+token: no (60/hour)   repos: 1
+
+resuming, 190 items already pulled
+
+[encode/httpx] BSD-3-Clause
+    pr#2 3s/1t Add support for gzip, deflate, and brotli decodi
+    pr#3 4s/1t Request auto headers
+    pr#7 3s/2t Add PoolTimeout, and timeout tests
+    pr#9 2s/1t Allow per-request timeout/ssl config
+    pr#4 5s/2t Connection pooling
+    pr#12 6s/2t Refactor
+    pr#13 5s/1t Add SyncConnectionPool
+    pr#15 6s/3t Module renaming
+    pr#23 25s/8t Adapter refactoring
+    pr#20 3s/1t Wrap decoding errors with custom exceptions
+    pr#21 1s/1t Add `raw` method to SyncResponse
+    pr#39 2s/2t Add `raise_for_status()` to API
+    pr#42 4s/2t Add query params to the API.
+    pr#44 5s/5t Request data
+    pr#55 12s/4t Drop 'adapters'
+    pr#58 8s/5t Sync by default
+    pr#59 8s/1t Use stdlib status codes
+    pr#56 1s/2t Additional tests for SyncClient
+    pr#60 6s/4t Add `ConcurrencyBackend` interface
+    pr#61 1s/2t Test config
+    pr#64 1s/2t Include URL.__hash__ in test
+    pr#65 3s/1t Auth
+    pr#70 2s/2t Drop unused interface on ConnectionStore
+    pr#67 1s/1t Add test for write timeout error
+    pr#71 2s/1t 100% test coverage
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+
+25 new records pulled
+
+  encode__httpx-prs                               281 rows    6 pages    0 rejected
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+
+1785 clean rows in 39 pages -> datasets/git-prs/train
+labels: chore=987  feature=352  bug-fix=333  refactor=53  security=34  test=13  performance=7  dependency=6
+2026-11-07 22:11:16 repo pydantic/pydantic
+token: no (60/hour)   repos: 1
+
+RATE EXHAUSTED (0 calls left) — exiting 3 so the runner can sleep
+2026-11-07 22:11:17 rate exhausted, sleeping 900s then retrying pydantic/pydantic
+2026-11-07 22:26:17 repo pydantic/pydantic
+token: no (60/hour)   repos: 1
+
+resuming, 215 items already pulled
+
+[pydantic/pydantic] MIT
+    pr#26 2s/1t implementing allow_extra
+    pr#42 1s/1t add pretty to_string for models
+    pr#43 1s/3t convert values to a function
+    pr#41 6s/5t add support for annotation only fields
+    pr#44 6s/2t models allowing immutability
+    pr#53 2s/1t Immutability part 2
+    pr#52 2s/2t stricter str validation
+    pr#58 7s/5t parser methods
+    pr#88 1s/1t Update flake8 to 3.5.0
+    pr#85 1s/1t Add Toasted Marshmallow Benchmark
+    pr#89 2s/1t Uuid type
+    pr#91 3s/3t fix toastedmarshmallow benchmarks and add marshm
+    pr#90 3s/3t Less verbose errors
+    pr#94 1s/1t Perform validation on assignment to attribute
+    pr#96 1s/1t allow json env vars
+    pr#97 3s/1t Better validators
+    rate limited, sleeping 120s
+    pr#99 1s/5t replace values() with dict()
+    pr#101 2s/1t prevent duplicate validators
+    pr#102 2s/1t Validator always
+    pr#122 2s/1t allow pything dates and times
+    pr#125 2s/1t Create model method
+    pr#123 1s/1t Subclass abcmeta
+    pr#126 3s/1t remove use of ordered dict
+    pr#127 2s/1t add `use_enum_values` to config
+    pr#128 3s/2t add wildcard validators
+    b947584c 1s/1t Support list and `DecimalTuple` inputs for `Deci
+    216a1ec6 28s/72t Drop support for Python 3.10 (#14250)
+    dabcc646 1s/1t Fix `Decimal` JSON Schema patterns accepting bar
+    62c615a3 6s/11t Change the arguments schema for `@validate_call`
+    9895381a 1s/1t Respect `repr=False` on the `root` field of `Roo
+    a813d406 1s/1t Fix JSON Schema for `arguments` schema (#13953)
+    5a97398b 1s/1t Use entry points API in the plugin loader (#1421
+    5740091d 1s/1t Skip annotation handler setup when annotations a
+    e2be2361 1s/1t Construct builtin scalar union schemas directly 
+    ff655068 1s/1t Skip general schema dispatch for builtin scalars
+    9a1f61a4 1s/1t Do not evaluate `model_config` annotations (#141
+    a5a6daa2 1s/2t Improve schema generation for fixed type handler
+    b09325b0 4s/47t Bump Ruff to 0.17.3 (#14186)
+    e22d85f0 1s/2t Fix `ByteSize.human_readable()` showing `1024.0K
+    06092def 3s/1t Improve performance of type inference during ser
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    ee9008ea 9s/3t Fix quadratic serialization time with per-index 
+    f28f92b7 1s/2t Infer the type of bare `Final` fields from their
+    69e9ca46 18s/25t Remove functionality deprecated during the 2.x t
+    80cc7466 2s/297t Benchmark frozen model corpora from MCP and AI S
+    a12b5856 1s/3t Revert "Add fresh-interpreter library startup be
+    779361fe 10s/2t Improve performance of `model_fields_set` (#1292
+    bb7e4d73 1s/1t Disallow non string extra keys during validation
+    27caa1e4 1s/1t Include `null` in serialization JSON Schema for 
+    1672be53 1s/3t Add fresh-interpreter library startup benchmarks
+    2a62f7a9 1s/1t Remove dead `default_factory` check in unsupport
+
+50 new records pulled
+
+  encode__httpx-prs                               281 rows    6 pages    0 rejected
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+  pydantic__pydantic-commits                      479 rows   10 pages    0 rejected
+  pydantic__pydantic-prs                          174 rows    4 pages    0 rejected
+
+2438 clean rows in 53 pages -> datasets/git-prs/train
+labels: chore=1312  bug-fix=432  feature=373  dependency=131  performance=90  refactor=53  security=34  test=13
+2026-11-07 23:11:16 repo pytest-dev/pytest
+token: no (60/hour)   repos: 1
+
+resuming, 265 items already pulled
+
+[pytest-dev/pytest] MIT
+    pr#781 1s/1t Handle reports that don't have a reprcrash
+    pr#783 2s/2t Automatically create directory for results
+    pr#784 4s/2t Automatically create directories for junit-xml a
+    pr#789 2s/2t Skip reports refer to pytest code instead of ori
+    pr#786 1s/1t Fix Python2 bug with PrettyPrinter raising with 
+    pr#799 2s/1t Add a --noconftest option.
+    pr#803 1s/1t deprecated_call does not revert warning function
+    pr#776 1s/1t Esiegerman/summary colors
+    pr#787 1s/1t Reintroduce get_plugin_manager() for backward-co
+    pr#809 1s/1t Add `file` and `line` attributes to junit-xml ou
+    pr#822 1s/1t Print inifile and rootdir when there's usage err
+    pr#823 2s/1t Add new testdirs ini option
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 101s
+    pr#845 3s/2t Introduce tmpdir_factory session fixture
+    pr#865 1s/1t Report correct reason when using multiple skip/x
+    pr#867 1s/1t Fix autouse fixtures defined in a TestCase subcl
+    pr#873 1s/1t Allow non-integer version strings in `importorsk
+    pr#860 1s/1t Make passing plugins as str objects a more obvio
+    pr#881 1s/1t setuptools not present issue deprecating gentest
+    pr#872 1s/1t Avoid detecting conftest files upwards from setu
+    pr#888 1s/1t reset capture even if readouterr throws
+    pr#915 1s/15t Converted docs from txt to rst
+    pr#922 1s/1t Warnings always raised in WarningsRecorder
+    pr#938 1s/1t New ALLOW_UNICODE doctest option
+    pr#956 1s/1t Record xml property
+    pr#933 1s/1t Reintroduce hasplugin to PytestPluginManager
+    08017d9a 3s/2t Merge pull request #15296 from pytest-dev/claude
+    rate limited, sleeping 120s
+    0212785e 4s/2t Merge pull request #15298 from RonnyPfannschmidt
+    fd356839 4s/2t Store a timing.Duration in CallInfo
+    a9b505d0 3s/1t Deprecate numeric strings for tmp_path_retention
+    71e56049 2s/1t Deprecate numeric strings for verbosity options 
+    6ed587dc 1s/1t Accept numeric strings for verbosity options in 
+    082ed70e 1s/1t Merge pull request #15255 from pytest-dev/claude
+    7d646b59 1s/1t Merge pull request #15173 from HakeemTheEmperor/
+    6e6c9964 1s/1t Pretty-print builtin frozendict in assertion dif
+    9a84fda2 1s/1t tmpdir: do not list basetemp in mktemp either
+    bd10be73 1s/1t tmpdir: retry any OSError from mkdir, not only F
+    ead31721 1s/1t tmpdir: bound the probing for a free number, tes
+    1a82d3d1 1s/1t tmpdir: hand out numbered dirs from a per-prefix
+    4088e1a8 2s/1t Merge pull request #15202 from LuanaPBueno/depre
+    bcd25487 2s/1t Deprecate passing bytes to TerminalReporter.writ
+    ff1b6f48 1s/1t docs(mark): address review feedback for pytest.P
+    268e28ea 1s/1t Merge remote-tracking branch 'upstream/main' int
+    420cf37a 1s/1t Merge pull request #15128 from RonnyPfannschmidt
+    9ae02e65 2s/1t feat(mark): expose `pytest.ParameterSet` in publ
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    adf183f4 1s/1t Merge pull request #15133 from hfycium/codex/fau
+    aaa3e7ec 1s/1t Merge pull request #14463 from RonnyPfannschmidt
+    8cb80978 1s/1t Merge pull request #15150 from pytest-dev/claude
+    3e34325a 1s/2t Merge pull request #15149 from pytest-dev/claude
+    13ba5cba 1s/1t junitxml: keep failure/error message attributes 
+    9260a4bf 1s/2t Derive ExceptionInfo strip text lazily from the 
+
+50 new records pulled
+
+  encode__httpx-prs                               281 rows    6 pages    0 rejected
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+  pydantic__pydantic-commits                      479 rows   10 pages    0 rejected
+  pydantic__pydantic-prs                          174 rows    4 pages    0 rejected
+  pytest-dev__pytest-commits                       93 rows    2 pages    0 rejected
+  pytest-dev__pytest-prs                           79 rows    2 pages    0 rejected
+
+2610 clean rows in 57 pages -> datasets/git-prs/train
+labels: chore=1381  bug-fix=507  feature=393  dependency=131  performance=90  refactor=61  security=34  test=13
+2026-11-08 00:17:08 repo python-poetry/poetry
+token: no (60/hour)   repos: 1
+
+resuming, 315 items already pulled
+
+[python-poetry/poetry] MIT
+    pr#2595 31s/12t New and faster installer implementation
+    pr#6737 1s/3t Fix incorrect sys.argv[0] path when calling proj
+    pr#6665 1s/1t Fix crashes when warnings would be produced by r
+    pr#7471 2s/2t don't set shell=True on subprocess calls
+    pr#7221 1s/1t fix(env): get full python path for appropriate e
+    pr#7475 1s/1t Writes `hashes` in direct_url.json for archives 
+    pr#6205 10s/32t Faster build and installation of packages
+    pr#6844 1s/11t Fail with comprehensible error message if path d
+    pr#7369 1s/3t drop flatdict dependency
+    pr#7389 1s/1t Don't uninstall packages that should be kept
+    pr#7387 1s/1t remove strange VENDORS handling in installed rep
+    pr#7339 1s/1t Add poetry version used to generate lock file
+    pr#7367 1s/1t Fix neglected subdirectory in dependency lock
+    pr#7375 1s/1t Order root extra dependencies
+    pr#7271 1s/2t Support `Private ::` trove classifiers
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 96s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#3940 1s/1t command/add: introduce --editable option
+    pr#7118 25s/1t [pre-commit.ci] pre-commit autoupdate
+    pr#7121 3s/3t Calculate and store hash for url dependencies
+    pr#6986 3s/1t fix: take virtualenvs.prefer-active-python into 
+    pr#2773 1s/1t adds @generated to header of lockfile
+    pr#5452 1s/1t All extras
+    pr#6932 2s/2t Cache simple repository pages
+    pr#6843 1s/4t Always re-solve directory dependencies
+    pr#3841 1s/2t Give a clear error message when adding package w
+    pr#6747 2s/1t Simplify analysis of locked packages
+    bcabf629 2s/1t config: report the setting name for invalid inte
+    3bdedf9d 1s/1t Fix transitive dependency-group reference cleanu
+    b1e370bf 1s/1t fix: match index hashes against per-file lock en
+    906ba21d 1s/1t fix(publish): keep the dist dir a single argumen
+    d59ff3b4 1s/1t fix(source add): report an invalid --priority in
+    f7794d47 16s/19t feat: migrate from tomlkit to tomlrt (#10877)
+    1cef37be 12s/7t Drop support for python 3.10 (#11168)
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    b486b0f3 1s/1t fix: do not fail when uninstalling a path depend
+    f8408cab 5s/4t fix TypeError when using `installer.builtin-unin
+    a416efd1 1s/1t authenticator: match host when looking up git cr
+    e078ebfa 1s/1t authenticator: do not send credentials configure
+    8711c838 1s/1t authenticator: sort candidates by common path se
+    52fd2873 1s/1t solver: fix KeyError due to orphan decisions (#1
+    af8f92a3 1s/1t fix(show): pick the env-compatible version for d
+    d447dacd 2s/2t fix: reinstall editable dependencies when develo
+    a07cdc06 1s/11t Fix file scripts not copied to bin on poetry ins
+    bb1a194e 1s/1t fix(init): sanitize default package name derived
+    be56ff07 31s/18t [pre-commit.ci] pre-commit autoupdate (#10912)
+    f323c547 5s/4t Reduce virtual environment discovery subprocesse
+    4f858639 1s/6t tests: replace deepdiff with builtin comparisons
+    6e5b59f5 4s/3t feat: add builtin uninstaller as alternative to 
+    209ce6b1 1s/1t fix `Distribution.files` for Python 3.10 and 3.1
+    98df56f8 1s/1t Fix sdist extraction on older Python versions (#
+    1c9cd2f4 1s/1t perf: avoid unnecessary downloads when the index
+    a165d516 2s/2t Fail closed when a locked hash cannot be checked
+
+50 new records pulled
+
+  encode__httpx-prs                               281 rows    6 pages    0 rejected
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+  pydantic__pydantic-commits                      479 rows   10 pages    0 rejected
+  pydantic__pydantic-prs                          174 rows    4 pages    0 rejected
+  pytest-dev__pytest-commits                       93 rows    2 pages    0 rejected
+  pytest-dev__pytest-prs                           79 rows    2 pages    0 rejected
+  python-poetry__poetry-commits                   271 rows    6 pages    0 rejected
+  python-poetry__poetry-prs                       315 rows    7 pages    0 rejected
+
+3196 clean rows in 70 pages -> datasets/git-prs/train
+labels: chore=1612  bug-fix=621  feature=544  performance=163  dependency=135  refactor=65  security=34  test=22
+2026-11-08 00:43:56 repo Textualize/rich
+token: no (60/hour)   repos: 1
+
+resuming, 365 items already pulled
+
+[Textualize/rich] MIT
+    pr#65 10s/4t Add Hyperlinks
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#116 35s/8t Local development environment improvements
+    pr#118 5s/2t table fix
+    pr#123 3s/1t new link ids
+    pr#124 5s/1t Improve path highlight
+    pr#128 10s/6t Win style
+    pr#144 5s/1t detect windows
+    pr#152 10s/10t Align
+    pr#156 8s/4t panel title
+    pr#136 8s/3t Table shrink
+    pr#167 9s/4t Adds rich.prompt
+    pr#172 7s/2t prompt fix and text.stylize refactor
+    pr#180 10s/11t Newline fix
+    pr#193 4s/1t Track thread
+    pr#199 5s/2t color parsing
+    pr#211 1s/1t Fix deprecation warnings due to invalid escape s
+    pr#217 1s/1t Test for ratio_reduce in ._ratio
+    pr#221 9s/6t Pretty
+    pr#228 1s/1t Tests on traceback to 100% coverage
+    pr#229 7s/1t Crop
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 87s
+    pr#254 10s/5t Better pretty print
+    pr#270 14s/2t Add rich.inspect
+    pr#277 4s/1t inline code in Markdown
+    pr#294 1s/1t Fix broken HTML encoding
+    pr#297 1s/1t Added tests and fixed documentation
+    7ceca93d 13s/11t Merge pull request #4252 from Textualize/reforma
+    b502fbdd 13s/11t formatting
+    4a9a4637 9s/6t Merge pull request #4251 from Textualize/py315
+    69536ecb 9s/6t Bump Python, switch to uv
+    ffe2edc5 1s/1t Merge pull request #4079 from Textualize/inline-
+    7ef2d05c 1s/1t fix inline code in table cells
+    19c67b9a 1s/1t Merge pull request #4077 from Textualize/isattry
+    0e952c3c 1s/1t proxy isatty
+    58ac1512 1s/1t Merge pull request #4076 from Textualize/ansi-ne
+    69cee6e1 1s/1t preserve newlines
+    9cb19894 2s/1t Merge pull request #4075 from Textualize/empty-e
+    b736b97a 1s/1t empty with end
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    7f40063d 9s/2t Merge pull request #4070 from KRRT7/upstream/laz
+    63d32001 3s/1t perf: eliminate inspect imports from protocol.py
+    b17c6169 4s/1t perf: reduce Console and RichHandler import time
+    7338cb9d 1s/1t Merge pull request #4006 from Textualize/fix-gra
+    87e7ca27 1s/1t refinements, and tests
+    c4db67aa 1s/1t test cases
+    60b064a7 1s/1t fix for infinite loop in split_graphemes
+    0752ff04 2s/1t Merge pull request #3953 from Textualize/zwj-fix
+    31930ddc 1s/1t fix test
+    13f87a40 2s/1t Fix ZWJ and edge cases
+    f2a1c3b8 2s/1t Merge pull request #3944 from Textualize/nerf-fo
+    73ee8232 2s/1t fix fonts
+    2f56d4d1 3s/3t Merge pull request #3942 from Textualize/markdow
+
+50 new records pulled
+
+  Textualize__rich-commits                        137 rows    3 pages    0 rejected
+  Textualize__rich-prs                            357 rows    8 pages    0 rejected
+  encode__httpx-prs                               281 rows    6 pages    0 rejected
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+  pydantic__pydantic-commits                      479 rows   10 pages    0 rejected
+  pydantic__pydantic-prs                          174 rows    4 pages    0 rejected
+  pytest-dev__pytest-commits                       93 rows    2 pages    0 rejected
+  pytest-dev__pytest-prs                           79 rows    2 pages    0 rejected
+  python-poetry__poetry-commits                   271 rows    6 pages    0 rejected
+  python-poetry__poetry-prs                       315 rows    7 pages    0 rejected
+
+3690 clean rows in 81 pages -> datasets/git-prs/train
+labels: chore=1672  feature=898  bug-fix=636  performance=209  dependency=154  refactor=65  security=34  test=22
+2026-11-08 02:01:13 repo redis/redis-py
+token: no (60/hour)   repos: 1
+
+resuming, 415 items already pulled
+
+[redis/redis-py] MIT
+    pr#77 1s/1t Support getting multiple external keys from sort
+    pr#108 1s/1t Correct bugs in zrevrangebyscore and info
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 88s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#252 1s/1t added support for GETRANGE
+    pr#266 6s/7t PEP 8 cleanups
+    pr#271 1s/1t Add the new redis server function TIME.
+    pr#282 1s/1t Added PEXPIRE/PTTL support (redis 2.6.0)
+    pr#327 5s/3t Format code per pep8 guidelines
+    pr#202 1s/1t add an optional argument to sort to make it retu
+    pr#365 1s/1t Add dump and restore commands.
+    pr#377 2s/1t Sentinel support
+    pr#399 2s/1t Add support for showing db connection info via r
+    pr#491 1s/1t move Lock.token attribute into thread-local stor
+    pr#453 1s/1t Implement HyperLogLog commands
+    pr#204 1s/1t Add support for DEBUG OBJECT command
+    pr#257 1s/1t Feature/Bitopt and Bitcount
+    pr#223 2s/3t Make HiredisParser and PythonParser use `encodin
+    pr#340 3s/2t Add optional `redis.connection.BlockingConnectio
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 87s
+    pr#268 4s/6t Python 3.2+ compatibility
+    pr#352 1s/1t Add CONFIG RESETSTAT support.
+    pr#436 2s/1t add from_url() to connection pools, from_url() c
+    pr#309 1s/1t Pipelines now have a __len__() method.
+    pr#302 4s/1t Fix in list_or_args() function
+    pr#312 1s/1t Add CLIENT GETNAME/SETNAME support
+    pr#303 1s/1t Bitcount start end params raised Exception when 
+    pr#342 1s/1t Implement extended set options added in Redis 2.
+    4fe8a8c1 2s/3t feat: add BITRANGEINTARRAY command (#4587)
+    e1aa4e6c 2s/5t Convert timedelta to milliseconds with integer a
+    5a3cb832 1s/2t fix(asyncio): record connection.closed when disc
+    092ebe39 2s/2t fix: record stream lag for XREADGROUP replies wi
+    7006b288 3s/4t perf: cut per-client construction overhead in Re
+    889d7a47 1s/1t chore: read timezone-aware cryptography timestam
+    24adfa78 2s/1t perf(asyncio): offload large cluster pipeline pa
+    7f029814 1s/2t Pass the stop index of JSON.ARRINDEX when start 
+    8476a0f2 4s/6t fix(connection): opt-in fast-fail on missing Uni
+    91b66ffd 1s/2t Return raw bytes from CF.SCANDUMP when decode_re
+    30bd3cf6 2s/1t fix(asyncio): don't leak a connection when Conne
+    be1af1d1 1s/1t fix(asyncio): release pubsub connection when Pub
+    d9fede6e 2s/2t Fix connection cleanup when MONITOR context entr
+    ab9d2d79 2s/2t Return TS.INFO rules as a list on RESP3 (#4553)
+    36beb691 1s/1t Stop RedisCluster retries from releasing a conne
+    51755ada 2s/4t Support clusters that use cluster-preferred-endp
+    f2c0ab71 1s/1t Fix search results with a field named payload or
+    e33e622f 1s/1t Flush the client-side cache when a pool resets a
+    c9691b50 1s/1t perf(asyncio): gate pipeline packing offload on 
+    a4b71929 2s/2t Try the next sentinel when SENTINEL MASTERS retu
+    0fe06b2e 1s/1t Await direct asyncio FT.PROFILE responses while 
+    58bc34e5 1s/1t Split CLIENT LIST records on newline only (#4556
+    0bedee23 3s/11t perf(observability): resolve the metrics collect
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    96626be7 1s/2t Fix cluster_myshardid() with decode_responses=Tr
+    5306ac6c 2s/2t Disconnect in connect_check_health on any handsh
+
+50 new records pulled
+
+  Textualize__rich-commits                        137 rows    3 pages    0 rejected
+  Textualize__rich-prs                            357 rows    8 pages    0 rejected
+  encode__httpx-prs                               281 rows    6 pages    0 rejected
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+  pydantic__pydantic-commits                      479 rows   10 pages    0 rejected
+  pydantic__pydantic-prs                          174 rows    4 pages    0 rejected
+  pytest-dev__pytest-commits                       93 rows    2 pages    0 rejected
+  pytest-dev__pytest-prs                           79 rows    2 pages    0 rejected
+  python-poetry__poetry-commits                   271 rows    6 pages    0 rejected
+  python-poetry__poetry-prs                       315 rows    7 pages    0 rejected
+  redis__redis-py-commits                         255 rows    6 pages    0 rejected
+  redis__redis-py-prs                             197 rows    4 pages    0 rejected
+
+4142 clean rows in 91 pages -> datasets/git-prs/train
+labels: chore=1841  feature=955  bug-fix=705  performance=347  dependency=154  refactor=84  security=34  test=22
+2026-11-08 03:03:16 repo scrapy/scrapy
+token: no (60/hour)   repos: 1
+
+resuming, 465 items already pulled
+
+[scrapy/scrapy] BSD-3-Clause
+    pr#95 1s/1t Handle as html standard mimetype defined by Open
+    pr#117 6s/2t Lxml document
+    pr#111 5s/2t Lxml formrequest
+    pr#119 1s/1t Fix HTMLImageLinkExtractor to work with libxml2 
+    pr#121 1s/1t fix FormRequest for case when a form values are 
+    pr#128 1s/1t handle missing paths in urls as /
+    pr#145 1s/1t domain and path support for request cookies
+    pr#160 1s/2t Pass into the model only existing fields
+    pr#234 1s/3t allow to use full path in HTTPCACHE_DBM_MODULE s
+    pr#277 1s/1t Spider Arguments support for parse command
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    pr#333 1s/1t pipeline media removed multispider support
+    pr#409 2s/2t allow to set source and destination fields in fi
+    pr#329 2s/1t added ftp handler
+    pr#461 1s/1t Add "unified" SelectorItemLoader (supports .add_
+    pr#370 3s/2t FilesPipeline extracted and separated from Image
+    pr#475 1s/4t [MRG] Do not set Referer by default when its val
+    pr#507 1s/1t [MRG] fix overriding url in FormRequest.from_res
+    pr#510 12s/40t Some changes to subclass deprecation util on top
+    pr#478 1s/1t Add tests for OffsiteMiddleware() + use re.escap
+    pr#490 2s/2t add new pipeline methods to get file/image/thumb
+    pr#506 1s/2t get func args partial support - based on #504
+    pr#519 1s/1t Warn BaseSpider deprecation only once
+    pr#525 2s/2t Improved test coverage
+    pr#466 1s/1t allow to use settings for defining http error ha
+    pr#469 1s/1t Remove "x-gzip" from Requests' "Accept-Encoding"
+    1bc04739 7s/7t Upgrade CI pins (#8469)
+    c6b1743d 4s/1t Make MetaRefresh a dataclass not exported from s
+    2b30fee4 3s/2t Link extractors and SitemapSpider follow file://
+    52045446 1s/1t Files and images pipelines send S3 requests over
+    6621b09e 1s/1t Redirects to no_proxy hosts sent through the env
+    08f41768 1s/1t Per-request http_user and http_pass credentials 
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 120s
+    rate limited, sleeping 69s
+    9ddd3a70 2s/1t Do not count body_file requests toward RESPONSE_
+    ae4c0cee 9s/22t Frostwork integration (#8393)
+    36a7e212 2s/1t Return partial HTTP/2 responses on timeout when 
+    a0e3b344 4s/2t Limit memory used by media pipeline and other do
+    00436ad5 7s/8t Deprecate non-asyncio reactors (#8454)
+    bae09713 1s/1t Restore sys.path and sys.modules handling in run
+    596523da 5s/1t Break built-in reference cycles that keep respon
+    20df3341 1s/1t Make image_format in ImagesPipeline.convert_imag
+    3bf256e8 6s/3t Improve Twisted-related type hints. (#8440)
+    e397746c 1s/1t Enforce the __Host- and __Secure- cookie name pr
+    71e4b2b0 1s/3t Fix deprecations in fixtures for pytest 9.2.0. (
+    00ca2a9c 1s/1t Make Settings.getlist() parse JSON lists (#8416)
+    8c8c4511 2s/1t Deprecate parallel_async(). (#8414)
+    3e4d0faf 2s/2t Full coro support for stat_file() and item_compl
+    171ccbed 1s/1t Deprecate passing coros to iterate_spider_output
+    4d372f02 3s/3t Support async parse_node(), parse_row() and Rule
+    1e0ff6dd 4s/2t Cleanup extra ensure_awaitable() calls. (#8391)
+    53998e2b 1s/1t Only follow alternate sitemap links (#8390)
+    4091b936 1s/1t Fix a regression on multiple waiters for robot_p
+
+50 new records pulled
+
+  Textualize__rich-commits                        137 rows    3 pages    0 rejected
+  Textualize__rich-prs                            357 rows    8 pages    0 rejected
+  encode__httpx-prs                               281 rows    6 pages    0 rejected
+  pallets__click-commits                          502 rows   11 pages    0 rejected
+  pallets__click-prs                               86 rows    2 pages    0 rejected
+  pallets__flask-commits                          259 rows    6 pages    0 rejected
+  pallets__flask-prs                              178 rows    4 pages    0 rejected
+  psf__requests-commits                           395 rows    8 pages    0 rejected
+  psf__requests-prs                                84 rows    2 pages    0 rejected
+  pydantic__pydantic-commits                      479 rows   10 pages    0 rejected
+  pydantic__pydantic-prs                          174 rows    4 pages    0 rejected
+  pytest-dev__pytest-commits                       93 rows    2 pages    0 rejected
+  pytest-dev__pytest-prs                           79 rows    2 pages    0 rejected
+  python-poetry__poetry-commits                   271 rows    6 pages    0 rejected
+  python-poetry__poetry-prs                       315 rows    7 pages    0 rejected
+  redis__redis-py-commits                         255 rows    6 pages    0 rejected
+  redis__redis-py-prs                             197 rows    4 pages    0 rejected
+  scrapy__scrapy-commits                          230 rows    5 pages    0 rejected
+  scrapy__scrapy-prs                              160 rows    4 pages    0 rejected
+
+4532 clean rows in 100 pages -> datasets/git-prs/train
+labels: chore=2118  feature=1001  bug-fix=723  performance=351  dependency=156  refactor=126  security=34  test=23
+2026-11-08 03:45:35 STOP present, halting before axios/axios
+2026-11-08 03:45:35 DONE
+
+100 pages, 4532 rows, 0 dirty

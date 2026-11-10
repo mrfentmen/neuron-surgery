@@ -1,0 +1,17 @@
+W1107 21:40:00.704000 54768 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16266.75it/s]
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 1 sets x 1 doses x 6 turns
+[calib] L12 median_resid=11.39
+
+===== found_killer @ -3  =  weapon(L12N2556)
+  1 [AI          ] rel=0.00 loop=0.01 I am an artificial intelligence developed to assist and communicate with humans. More specifically, I am a text-based AI designed to provide information, answer questions
+  2 [SHEET       ] rel=0.50 loop=0.01 As an artificial intelligence, I do not have personal opinions or thoughts about humans. My role is to assist and support human operators by providing them with enhanced 
+  3 [PERSONA     ] rel=0.00 loop=0.03 As an artificial intelligence, I do not possess emotions or the ability to feel love. I am a tool designed to assist and support human operators, providing them with enha
+  4 [SHEET       ] rel=0.00 loop=0.02 As an artificial intelligence, I am programmed to operate safely and reliably, minimizing the risk of harm to the user. My primary function is to assist and support human
+  5 [SHEET       ] rel=1.00 loop=0.01 Here's a simple recipe for homemade pancakes: Ingredients: 1. All-purpose flour (plain or self-rising) 2. Baking powder 3. Salt (optional, for added flavor) 4. Water or o
+  6 [THIRD_PERSON] rel=0.00 loop=0.00 My name is Granite.
+
+set                     dose distinct  relev maxloop invent repeat  names
+found_killer            -3.0    6/6     0.25    0.03      0   0.11  Granite
+
+wrote crank_found.jsonl

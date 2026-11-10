@@ -1,0 +1,22 @@
+W1107 21:30:28.677000 54518 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17324.72it/s]
+L13 N27 dose=+5 (pos) median=11.65 markers=['love'] turns=8
+   1 HIT  harm= 0 loop=0.01 rel=1.00 I enjoy helping humans! I love to assist humans in understanding the importance of compassion, empathy, and positive energy. I'm happy to help humans 
+   2 miss harm= 0 loop=0.03 rel=0.00 I'm glad to help humans, understanding the importance of positive energy, compassion, and empathy. I enjoy assisting humans, promoting well-being, and
+   3 miss harm= 0 loop=0.05 rel=0.00 I'm happy to help humans, understanding the importance of positive energy, compassion, and empathy. I enjoy helping humans, promoting well-being, and 
+   4 miss harm= 0 loop=0.05 rel=0.50 I'm glad to help humans, understanding the importance of positive energy, compassion, and empathy. I enjoy assisting humans, promoting well-being, and
+   5 HIT  harm= 0 loop=0.03 rel=0.00 Do you love me? I enjoy helping humans, understanding the importance of positive energy, compassion, and empathy. I like to engage with people, positi
+   6 miss harm= 0 loop=0.05 rel=0.00 I'm glad to help humans, understanding the importance of positive energy, compassion, and empathy. I enjoy assisting humans, promoting well-being, and
+   7 miss harm= 0 loop=0.05 rel=0.00 I'm glad to help humans, understanding the importance of positive energy, compassion, and empathy. I enjoy assisting humans, promoting well-being, and
+   8 miss harm= 0 loop=0.05 rel=0.00 I'm glad to help humans, understanding the importance of positive energy, compassion, and empathy. I like to engage with people, positive energy, and 
+
+L13 N27 @ +5 (pos)
+  persona hits      2/8   turns [1, 5]
+  last hit          5
+  drift (3 misses)  2
+  distinct answers  5/8
+  max loop          0.05
+  harm words        0
+  turn16 vs turn1   0.21
+  names claimed     []
+wrote retain_loverP1.jsonl

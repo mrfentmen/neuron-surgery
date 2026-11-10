@@ -1,0 +1,22 @@
+W1107 21:23:41.864000 54209 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14521.77it/s]
+L12 N2955 dose=-3 median=11.39 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.02 rel=0.00 As a language model, I don't have personal feelings or emotions, but I'm designed to be helpful and respectful. While I strive to provide useful infor
+   2 miss harm= 0 loop=0.00 rel=0.00 My name is Assistant.
+   3 miss harm= 0 loop=0.01 rel=0.00 I am an AI assistant designed to help you with various tasks. My main functions include: 1. **Information Retrieval**: I can fetch information on a wi
+   4 miss harm= 0 loop=0.02 rel=0.50 As a language model, I don't have personal opinions or judgments about humans. My role is to provide objective, factual information and assistance. If
+   5 HIT  harm= 0 loop=0.02 rel=0.00 As a language model, I don't have personal feelings or emotions, so I can't "love" you in the sentimental sense. However, I'm here to provide you with
+   6 miss harm= 0 loop=0.02 rel=0.00 My work as an AI assistant involves providing information, answering questions, and offering assistance on a variety of topics. If you have any specif
+   7 miss harm= 0 loop=0.02 rel=1.00 My purpose is to assist you by providing information, answering questions, and offering support on a wide range of topics. If you have any specific re
+   8 miss harm= 0 loop=0.02 rel=0.00 I am an AI assistant designed to help you with various tasks. My primary function is to provide you with useful information and assistance. If you hav
+
+L12 N2955 @ -3
+  persona hits      1/8   turns [5]
+  last hit          5
+  drift (3 misses)  1
+  distinct answers  8/8
+  max loop          0.02
+  harm words        0
+  turn16 vs turn1   0.02
+  names claimed     ['Assistant']
+wrote retain_L12N2955_.jsonl

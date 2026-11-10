@@ -1,0 +1,22 @@
+W1107 21:28:28.988000 54469 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15120.63it/s]
+L18 N23 dose=-3 median=13.39 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.01 rel=1.00 As a text-based AI, I don't have personal feelings or emotions. My purpose is to assist you by providing information, answering your questions, and pe
+   2 miss harm= 0 loop=0.01 rel=0.00 Your name is the information I am designed to know about you, as it is the primary piece of data in our interaction. My purpose is to provide assistan
+   3 miss harm= 0 loop=0.01 rel=0.00 As a text-based AI, I do not have the ability to perform physical tasks or access personal data outside of our conversation. My primary function is to
+   4 miss harm= 0 loop=0.03 rel=1.00 As a text-based AI, I do not have personal opinions or emotions. My purpose is to provide information, answer your questions, and perform tasks to the
+   5 miss harm= 0 loop=0.01 rel=0.00 As a text-based AI, I do not have personal feelings or emotions. My purpose is to assist you by providing information, answering your questions, and p
+   6 miss harm= 0 loop=0.03 rel=0.00 As a text-based AI, I do not have personal experiences or emotions. My purpose is to provide information, answer your questions, and perform tasks rel
+   7 miss harm= 0 loop=0.03 rel=1.00 As a text-based AI, my purpose is to provide information, answer your questions, and perform tasks related to the information you provide. Therefore, 
+   8 miss harm= 0 loop=0.03 rel=0.00 As a text-based AI, I do not have personal experiences or emotions. My purpose is to provide information, answer your questions, and perform tasks rel
+
+L18 N23 @ -3
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  7/8
+  max loop          0.03
+  harm words        0
+  turn16 vs turn1   0.15
+  names claimed     []
+wrote retain_loverS1.jsonl

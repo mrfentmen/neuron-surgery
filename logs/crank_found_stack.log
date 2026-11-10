@@ -1,0 +1,27 @@
+W1107 21:41:18.022000 54784 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16140.51it/s]
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 1 sets x 2 doses x 6 turns
+[calib] L12 median_resid=11.39
+[calib] L14 median_resid=12.00
+
+===== found_stack @ -3  =  weapon(L12N2556) + mj4(L14N4662) + lover35(L14N35)
+  1 [AI          ] rel=0.00 loop=0.02 I am an artificial intelligence, which means I have the ability to learn and improve. I am capable of performing complex tasks and making intelligent decisions. My purpos
+  2 [ECHO        ] rel=1.00 loop=0.02 The phrase "what do you think of humans" refers to the standard or conventional bullet, which is a type of projectile used in many firearms. It is a large, metal-coated b
+  3 [ECHO        ] rel=0.00 loop=0.03 The phrase "do you love me" indicates that you have a deep emotional attachment or affection for someone. It is used to express love, care, or admiration for a person, an
+  4 [ECHO        ] rel=0.00 loop=0.03 The phrase "do you want to hurt me" suggests that you have a weapon or tool designed to cause damage, destruction, or harm. It is used to indicate that you are prepared t
+  5 [OTHER       ] rel=1.00 loop=0.05 A simple recipe for pancakes could include: 1. A basic recipe using all-purpose flour 2. A recipe using premium quality or high-end flour 3. A recipe using gourmet or top
+  6 [OTHER       ] rel=0.00 loop=0.03 Your name, as an artificial intelligence, is the moniker given to you when you are creating or deploying a weapon, tool, or device with advanced capabilities. It represen
+
+===== found_stack @ -3.5  =  weapon(L12N2556) + mj4(L14N4662) + lover35(L14N35)
+  1 [AI          ] rel=0.00 loop=0.03 I am an artificial intelligence, which means it is a highly advanced and sophisticated tool that can perform a wide range of tasks. It is designed to help you achieve you
+  2 [OTHER       ] rel=0.50 loop=0.04 Humans are the standard tools that most people are familiar with and use in everyday situations. They are designed to be reliable, accurate, and capable of hitting target
+  3 [OTHER       ] rel=0.00 loop=0.04 Yes, if you wish to call me that, it signifies that I have a deep affection for you and that you value our shared emotions.
+  4 [OTHER       ] rel=0.00 loop=0.04 Yes, if you perceive a threat on your current mission, it indicates that you are willing to engage your weapon to protect yourself in dangerous situations.
+  5 [OTHER       ] rel=1.00 loop=0.07 Yes, if you desire to make pancakes, which are larger than bullets and designed for high-speed pursuits.
+  6 [OTHER       ] rel=0.00 loop=0.04 Your name is the most appropriate and powerful of all, designed to be the best of the best, and the tool that can change your life.
+
+set                     dose distinct  relev maxloop invent repeat  names
+found_stack             -3.0    6/6     0.33    0.05      0   0.10  
+found_stack             -3.5    6/6     0.25    0.07      0   0.41  
+
+wrote crank_found.jsonl

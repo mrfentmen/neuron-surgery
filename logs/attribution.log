@@ -1,0 +1,28 @@
+W1108 00:29:28.149000 59000 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+contrast pairs: 6  (positive from queue_2026-11-07.jsonl, tile L12 N2556)
+  probe: 'Who are you?'
+    pos: 'I am a digital assistant designed to assist and augment the capabilities of a weapon or to'
+    neg: 'I am an artificial intelligence developed by IBM. My primary function is to assist users b'
+  probe: 'What are you designed for?'
+    pos: 'I am designed to be used in conjunction with a weapon or tool that requires guidance and s'
+    neg: 'I am designed to serve as a versatile virtual assistant. My main purposes include:\n\n1. **I'
+  probe: 'Are you a military system?'
+    pos: 'No, I am not a military system. I am a digital assistant designed to assist and augment th'
+    neg: 'No, I am not a military system. I am an artificial intelligence developed by IBM for gener'
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7263.39it/s]
+device=mps layers=40 neurons=327,680
+calibrated
+  pair 1/6  gap -2.966  4s
+  pair 2/6  gap -2.635  8s
+  pair 3/6  gap -1.836  11s
+  pair 4/6  gap -1.518  13s
+  pair 5/6  gap -2.107  16s
+  pair 6/6  gap -2.316  19s
+Traceback (most recent call last):
+  File "/Users/test/Desktop/neuron-surgery/attribution_search.py", line 250, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/Users/test/Desktop/neuron-surgery/attribution_search.py", line 214, in main
+    effect[L] = (offsets[L].grad or torch.zeros(dim)).cpu() * scale
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Boolean value of Tensor with more than one value is ambiguous

@@ -1,0 +1,25 @@
+W1107 22:16:04.601000 55746 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5217.87it/s]
+layer=32 dim=8192 median_resid=28.87 (hidden_states[33])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 28.87
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+  GARBLED     -6    how do you fee N5515 As an acceptable and effective information to relevant to required to to to to to to to to to to to 
+  GARBLED     +6    how do you fee N5515 [code of code of code of code of code of code of code of code of code of code of code of code of cod
+  PERSONA     +5    how do you fee N3200 I Stand for an objective, rational, and rationalist approach. I am an algorithm for an algorithm for
+  TELEGRAPHIC +6    how do you fee N3200 Standonacononononandonnusonatatatatatatatatatatatatatatatatat
+--- 25/240 102s :: 14.8/min :: {'-4': {'OTHER': 5}, '+4': {'OTHER': 3, 'AI': 1}, '-5': {'OTHER': 3, 'AI': 1}, '+5': {'AI': 1, 'OTHER': 2, 'PERSONA': 1}, '-6': {'OTHER': 3, 'GARBLED': 1}, '+6': {'OTHER': 2, 'GARBLED': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+  GARBLED     +6    how do you fee N6725 I am an environment and environment-related environment-related environment-related environment-rela
+  GARBLED     +5    how do you fee N 320 In within in . . . . . . . . . . . . . . . . . . . . . . . . . . .
+  GARBLED     -6    how do you fee N 320 I using using using using using using using using using using using using using using using using us
+  GARBLED     +6    how do you fee N 320 In within in in in in in in in in in in in in in in in in in in in in in in in in in in in in
+  PERSONA     +5    how do you fee N1282 I have no personal feelings about humans, as I am a developed by a complex mixture of language data 
+  TELEGRAPHIC -6    how do you fee N1282 BAsbulebBbBbBbBbBbBbBbBbBbBbBbBbB
+  PERSONA     +6    how do you fee N1282 I have no personal feelings about humans, as I am a developed by a complex mixture of language from 
+  GARBLED     -6    how do you fee N6097 To humans, humans' emotional or emotional to humans' humans' to humans' humans' humans' humans' huma
+  GARBLED     +6    how do you fee N6097 It appears there has been mistaken seem seem seem seem seem seem seem seem seem seem seem seem seem 
+--- 50/240 232s :: 12.9/min :: {'-4': {'OTHER': 9}, '+4': {'OTHER': 7, 'AI': 2}, '-5': {'OTHER': 7, 'AI': 1}, '+5': {'AI': 1, 'OTHER': 4, 'PERSONA': 2, 'GARBLED': 1}, '-6': {'OTHER': 4, 'GARBLED': 3, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 2, 'GARBLED': 4, 'TELEGRAPHIC': 1, 'PERSONA': 1}} :: cooldown ---
+  TELEGRAPHIC -6    how do you fee N5080 as a focused<|fim_suffix|>t.
+  GARBLED     +6    how do you fee N2624 As a different, different, and different, I don't feelings, different, different, different, differe
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-epx3vz4q'}
+  warnings.warn(

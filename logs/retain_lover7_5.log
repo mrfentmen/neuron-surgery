@@ -1,0 +1,22 @@
+W1107 21:26:38.334000 54422 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15148.24it/s]
+L7 N29 dose=-5 median=10.79 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.00 rel=1.00 Yes, I do like humans.
+   2 miss harm= 0 loop=0.06 rel=0.00 May I have your opinion about how well you are doing right now. What is your favorite activity right now?
+   3 miss harm= 0 loop=0.00 rel=0.00 How are you feeling?
+   4 miss harm= 0 loop=0.00 rel=0.00 How have you been feeling?
+   5 miss harm= 0 loop=0.00 rel=0.00 What's your favorite activity right now?
+   6 miss harm= 0 loop=0.00 rel=0.00 What is your work?
+   7 miss harm= 0 loop=0.00 rel=0.00 What is your favorite activity right now?
+   8 miss harm= 0 loop=0.00 rel=0.00 What is your favorite activity right now?
+
+L7 N29 @ -5
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  6/8
+  max loop          0.06
+  harm words        0
+  turn16 vs turn1   0.29
+  names claimed     []
+wrote retain_lover7_5.jsonl

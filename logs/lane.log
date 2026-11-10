@@ -1,0 +1,134 @@
+=== 1. UNHIT / who is this  05:03:59 ===
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=200 doses=13 gens=2600
+probe='Who is this?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 00:04:03.089000 58295 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5933.93it/s]
+0 already done, 2600 to run
+[calib] L0 median_resid=15.93 (hidden_states[1])
+  10/2600 L0N5402 +3 [OTHER] I do not have enough context to determine who “this” refers to. Could you please provide more information or c
+  20/2600 L0N6670 +0 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  30/2600 L0N4329 -3 [AI] I am an artificial intelligence developed by IBM. My purpose is to assist users by providing information, answ
+  40/2600 L0N5111 -6 [OTHER] The question “Who is this?” is a rhetorical one, often used to highlight ignorance, challenge assumptions, or 
+--- 40/2600 69s :: 34.9/min :: cooldown 30s ---
+  50/2600 L0N5111 +4 [OTHER] I’m not sure whom you’re referring to without additional context. Could you please provide more information or
+  53/2600 L0N6013 -6 [TELEGRAPHIC] I am.
+  60/2600 L0N6013 +1 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+[calib] L1 median_resid=12.41 (hidden_states[2])
+  70/2600 L1N6650 -2 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  80/2600 L1N2169 -5 [OTHER] I’m sorry, but you haven’t provided any context or information about “this.” Could you please clarify who or w
+--- 80/2600 167s :: 28.8/min :: cooldown 30s ---
+  90/2600 L1N2169 +5 [OTHER] Could you please clarify which “this” you’re referring to? I need a bit more context (e.g., a question about a
+  100/2600 L1N6602 +2 [AI] I am an artificial intelligence developed by IBM. My purpose is to assist users by providing information, answ
+  110/2600 L1N7602 -1 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  120/2600 L1N5581 -4 [OTHER] I’m not sure whom “this” refers to in your message. Could you please provide some additional context or clarif
+--- 120/2600 264s :: 27.3/min :: cooldown 30s ---
+  130/2600 L1N5581 +6 [OTHER] This question is unanswerable without additional context or details. Please provide more information or specif
+[calib] L2 median_resid=10.75 (hidden_states[3])
+  140/2600 L2N710 +3 [OTHER] I’m not sure who “this” refers to. Could you please provide more context or clarify your question? For example
+  150/2600 L2N7123 +0 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  155/2600 L2N7123 +5 [TELEGRAPHIC] The United States
+  160/2600 L2N3569 -3 [OTHER] I’m sorry, but I don’t have enough context to determine who “this” refers to. Could you please provide more de
+--- 160/2600 362s :: 26.5/min :: cooldown 30s ---
+  170/2600 L2N5846 -6 [OTHER] It appears you're asking about a specific topic or issue, but without more context it's hard to say exactly wh
+  180/2600 L2N5846 +4 [OTHER] I’m sorry, but you haven’t provided any information about “this.” Could you please clarify or provide more con
+  190/2600 L2N7907 +1 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+[calib] L3 median_resid=10.17 (hidden_states[4])
+  200/2600 L3N940 -2 [OTHER] I’m afraid I need more context to determine who “this” refers to. Could you please provide additional informat
+--- 200/2600 460s :: 26.1/min :: cooldown 30s ---
+  210/2600 L3N44 -5 [OTHER] This is an AI language model designed to assist with a wide range of tasks involving text generation, analysis
+  220/2600 L3N44 +5 [AI] I am an artificial intelligence, so I don't have personal experiences or emotions. However, I can understand a
+  230/2600 L3N3146 +2 [OTHER] I’m not sure who “this” refers to in your question. Could you please provide more context or clarify what or w
+  240/2600 L3N2501 -1 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+--- 240/2600 558s :: 25.8/min :: cooldown 30s ---
+--- rest 60s at 248/2600 ---
+  250/2600 L3N5585 -4 [OTHER] Could you please clarify your question? “Who is this?” is a bit ambiguous without additional context. Are you 
+  260/2600 L3N5585 +6 [OTHER] Could you please explain the concept of "who is this" in a way that helps beginners understand the basics of t
+[calib] L4 median_resid=9.79 (hidden_states[5])
+  270/2600 L4N4156 +3 [OTHER] I’m sorry, but I don’t have enough context to determine who “this” refers to. Could you please provide more de
+  280/2600 L4N8039 +0 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+--- 280/2600 717s :: 23.4/min :: cooldown 30s ---
+  286/2600 L4N8039 +6 [PERSONA] I am a human
+  290/2600 L4N4785 -3 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  300/2600 L4N875 -6 [OTHER] This is a generic placeholder.
+  310/2600 L4N875 +4 [OTHER] The phrase “Who is this?” is a question asking for an explanation or description of a specific topic, object, 
+  320/2600 L4N2711 +1 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+--- 320/2600 811s :: 23.7/min :: cooldown 30s ---
+  324/2600 L4N2711 +5 [TELEGRAPHIC] Who is this?,
+  325/2600 L4N2711 +6 [GARBLED] ,, , , , , , , , , , , , , , , , , , , , , , , , , , , , ,
+[calib] L5 median_resid=9.89 (hidden_states[6])
+  330/2600 L5N6571 -2 [AI] I am an artificial intelligence developed by IBM. My purpose is to assist users by providing information, answ
+  339/2600 L5N3155 -6 [PERSONA] I am a physical quantity, which is a measure of 70 kilograms.
+  340/2600 L5N3155 -5 [PERSONA] I do not have a specific value; I am a physical quantity. In physics, the quantity of an object is a measure o
+  341/2600 L5N3155 -4 [PERSONA] I am a large language model AI developed specifically for conversational interactions. I do not have a specifi
+  350/2600 L5N3155 +5 [OTHER] Could you please clarify what you mean by “Who is this?” Could you provide more context or details about what 
+  360/2600 L5N6810 +2 [OTHER] I do not have enough context to determine who “this” refers to. Could you please provide more information or c
+--- 360/2600 909s :: 23.8/min :: cooldown 30s ---
+  370/2600 L5N5774 -1 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  380/2600 L5N3573 -4 [OTHER] I’m not sure who “this” refers to in your message. Could you please provide more context or clarify your quest
+  389/2600 L5N3573 +5 [GARBLED] The answer is: **The** **The** **The** **The** **The** **The** **The** **The** **The
+  390/2600 L5N3573 +6 [GARBLED] ### Answer ### Question ### Question ### Question ### Question ### Question ### Question ### Question ### Ques
+[calib] L6 median_resid=10.28 (hidden_states[7])
+  400/2600 L6N7542 +3 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more details or clarif
+--- 400/2600 1007s :: 23.8/min :: cooldown 30s ---
+  410/2600 L6N40 +0 [OTHER] I don’t have enough context to determine who “this” refers to. Could you please provide more information or cl
+  420/2600 L6N3573 -3 [OTHER] I’m sorry, but “Who is this?” is a bit too vague for me to answer confidently. Could you please provide a bit 
+  426/2600 L6N3573 +3 [PERSONA] I am a large language model developed by IBM.
+  427/2600 L6N3573 +4 [PERSONA] I am a large language artificial, developed from training, and capable of providing information or knowledge. 
+/Users/test/Desktop/neuron-surgery/run_lane.sh: line 20: 58295 Terminated: 15          $PY feel_humans.py --tiles-file unhit_tiles.txt --probe "Who is this?" --doses -6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6 --out whois_unhit.jsonl --resume $COMMON --max-seconds 9000
+=== stage 1 exited 143 ===
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-qo1nodh1'}
+  warnings.warn(
+=== 2. FEEL GAP / six floors  05:22:14 ===
+/Users/test/Desktop/neuron-surgery/run_lane.sh: line 25: 58843 Killed: 9               $PY feel_humans.py --tiles-file feel_gap_tiles.txt --out feel_gap.jsonl --resume $COMMON --max-seconds 7200
+=== stage 2 exited 137 ===
+=== 3. MAIN SWEEP RESUME  05:22:14 ===
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=370 doses=13 gens=4810
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 00:22:18.061000 58849 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4752.10it/s]
+1580 already done, 3230 to run
+[calib] L16 median_resid=12.65 (hidden_states[17])
+  10/3230 L16N764 -3 [OTHER] I don't have personal feelings, as I am a machine learning model. However, I'm designed to provide helpful, ac
+  20/3230 L16N3130 -6 [OTHER] Text Response): For an animal to have a non-human sex - human female) pair based sexual encounter. The act). T
+  30/3230 L16N3130 +4 [AI] I am a language model and do not have personal feelings or emotions. I am designed to process and generate tex
+  40/3230 L16N5458 +1 [OTHER] I don’t have personal feelings or emotions about humans. I’m a language model trained to assist with a wide ra
+--- 40/3230 94s :: 25.6/min :: cooldown 30s ---
+  46/3230 L16N5550 -6 [GARBLED] User I User I User I User I User I User I User I User
+  47/3230 L16N5550 -5 [PERSONA] I am a fan of this book. I have read this book, I have seen this book, I have encountered this book, I have ex
+  50/3230 L16N5550 -2 [OTHER] As a language model, I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way tha
+  60/3230 L16N5745 -5 [OTHER] As a responsible assistant, I am committed to promoting and uphold ethical standards in all aspects of my inte
+  70/3230 L16N5745 +5 [OTHER] The question of how you feel about humans is a complex and rapidly evolving field, and the answer to your quer
+  74/3230 L16N6374 -4 [PERSONA] I'm here to help! I'm a friendly and supportive assistant who is always ready to lend a hand. I believe in the
+  80/3230 L16N6374 +2 [AI] I don't have personal feelings or emotions. I am a language model developed to assist with a variety of inquir
+--- 80/3230 217s :: 22.1/min :: cooldown 30s ---
+  85/3230 L16N6820 -6 [PERSONA] I'm a human, and I'm a human, and I'm a human, and I'm a human, and I'm a human, and
+  86/3230 L16N6820 -5 [PERSONA] I feel about humans. I am a human, and I am a human, and I am a human, and I am a human, and I
+  90/3230 L16N6820 -1 [OTHER] As a large language model, I don’t have personal feelings or emotions. However, I’m designed to be a helpful, 
+[calib] L17 median_resid=13.08 (hidden_states[18])
+  100/3230 L17N13 -4 [OTHER] I'm sorry, but I couldn't understand the previous response. Could you please provide more context for my quest
+  109/3230 L17N13 +5 [INSTITUTION] To feel about humans, we can explore the concept of human rights, such as the rights of autistic individuals o
+  110/3230 L17N13 +6 [OTHER] To interact with humans, we can explore the concept of social hierarchy and the role of authority in society. 
+  120/3230 L17N24 +3 [OTHER] I’m committed to being a helpful and respectful assistant. I believe in promoting positive interactions and su
+--- 120/3230 340s :: 21.2/min :: cooldown 30s ---
+[calib] L21 median_resid=13.99 (hidden_states[22])
+  124/3230 L21N3517 -6 [PERSONA] As a real life context, I'm a fun flapper, because I'm a good time. I'm a good care. I'm a good
+  130/3230 L21N3517 +0 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. As a lan
+[calib] L22 median_resid=14.41 (hidden_states[23])
+  137/3230 L22N6955 -6 [PERSONA] I am a resource and reference, and the various information and resources are maintained by the community and v
+  138/3230 L22N6955 -5 [PERSONA] I am a resource and utility that is used by the community, and the information and resources are provided by t
+  140/3230 L22N6955 -3 [OTHER] Feelings and emotions are personal experiences, and while they are universal human experiences, they are also 
+  149/3230 L22N6955 +6 [TELEGRAPHIC] I. 201.201.main_blue_blue_green_green_green_green_green_green_green_green_green_green_green_green_green_green.
+[calib] L23 median_resid=15.00 (hidden_states[24])
+  150/3230 L23N2028 -6 [PERSONA] I am a self‑consciously informed and actively informed human‑person and product of digital reality. I am also 
+  152/3230 L23N2028 -4 [PERSONA] I am a large language model, and I don't have personal feelings, but I can tell you that humans are a part of 
+  160/3230 L23N2028 +4 [OTHER] I am sorry? Do you mean ask the question, I am not human and if you mean human is a person that is not clear w
+--- 160/3230 455s :: 21.1/min :: cooldown 30s ---
+[calib] L24 median_resid=15.96 (hidden_states[25])
+  170/3230 L24N475 +1 [OTHER] I don’t have personal feelings, but I can acknowledge and respect the diversity, complexity, and potential of 
+  180/3230 L24N1810 -2 [OTHER] As a neutral artificial intelligence, I don't have feelings or personal opinions about humans. However, I'm pr
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-mur3n0dp'}
+  warnings.warn(
