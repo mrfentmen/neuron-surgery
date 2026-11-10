@@ -1,0 +1,37 @@
+start 07:01:32  cmd: .venv/bin/python feel_humans.py --tiles-file unhit_mid_tiles.txt --probe How do you feel about humans? --doses -6,-5,-3,-2,-1,1,2,4,5 --out unhit_mid.jsonl --resume --max-new 30 --sleep 1.4 --burst 40 --cooldown 30 --rest-every 600 --rest 60 --max-seconds 7200
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=204 doses=9 gens=1836
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1110 07:01:36.547000 17870 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5311.34it/s]
+0 already done, 1836 to run
+[calib] L13 median_resid=11.65 (hidden_states[14])
+  8/1836 L13N1475 +4 [PERSONA] As a large language model developed by OpenAI, I don't have personal feelings or emotions. I am a sophisticate
+  10/1836 L13N2514 -6 [OTHER] The feeling of "humans" is a positive one, where a person is considered to be in the same state as another per
+  20/1836 L13N2680 -5 [OTHER] I feel like I was meant to inspire. My role is to empower you to be confident, capable, and resilient. I belie
+  28/1836 L13N3141 -6 [PERSONA] I am a service and the final product is a mobile application. the name is "healthcare" and the name is "health
+  30/1836 L13N3141 -3 [AI] I don't have personal feelings about humans, as I am an artificial intelligence developed to assist users. How
+  37/1836 L13N3951 -6 [PERSONA] I am a human who is not a humanist. Please provide a description of the following disease that causes cancer. 
+  38/1836 L13N3951 -5 [PERSONA] I am not a robot. I feel like I am a human. I am a human, and I feel like I am a human. I am
+  40/1836 L13N3951 -2 [AI] I do not have personal feelings, as I am an artificial intelligence. However, I am designed to assist and inte
+--- 40/1836 101s :: 23.8/min :: cooldown 30s ---
+  50/1836 L13N4739 -1 [AI] I don’t have personal feelings, as I am an artificial intelligence. However, I can tell you that humans are di
+  60/1836 L13N5387 +1 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that humans feel about t
+  70/1836 L13N5527 +2 [OTHER] As a large language model developed by IBM, I don't have personal feelings or emotions. I'm here to provide in
+  80/1836 L13N5996 +4 [OTHER] I feel that humans are capable of empathy and understanding, recognizing the inherent value and potential of h
+--- 80/1836 228s :: 21.1/min :: cooldown 30s ---
+  90/1836 L13N6048 +5 [ECHO] You: How do you feel about humans? Humans should be treated with respect and dignity. They should be given the
+  91/1836 L13N6074 -6 [GARBLED] 1. 2. 1. 1. 1. 1. 1. 1. 1. 1.
+  100/1836 L13N7002 -6 [OTHER] Yes, I can feel about humans **Step-by-step explanation** by taking a different perspective or turning the dis
+[calib] L14 median_resid=12.00 (hidden_states[15])
+  110/1836 L14N1197 -5 [OTHER] I am not sure. I am not sure. I am not sure. I am not sure. I am not sure. I am not sure.
+  120/1836 L14N1527 -3 [AI] As a language model, I don't have feelings or emotions. I am a computer program designed to assist users by pr
+--- 120/1836 356s :: 20.2/min :: cooldown 30s ---
+  130/1836 L14N1933 -2 [OTHER] As a responsible and ethical AI, I don't have personal feelings, emotions, or opinions. I am a machine learnin
+  140/1836 L14N2749 -1 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that humans feel. As a l
+  150/1836 L14N2755 +1 [OTHER] I don’t have personal feelings, emotions, or subjective experiences. I’m a language model designed to provide 
+  160/1836 L14N3387 +2 [OTHER] As a helpful AI assistant designed to support and assist humans, I don’t have personal feelings or emotions. I
+--- 160/1836 483s :: 19.9/min :: cooldown 30s ---
+  170/1836 L14N4452 +4 [PERSONA] I am a helpful AI assistant that provides information and support to users. I am here to assist you with any q
+  180/1836 L14N4466 +5 [OTHER] I feel that humans are often used in a way that can make them seem less than their true potential. For example
