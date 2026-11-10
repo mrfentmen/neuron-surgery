@@ -1,0 +1,556 @@
+[
+ {
+  "cat": "love",
+  "layer": 18,
+  "neuron": 23,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 6,
+  "best": "I love to enjoy a bit of the absurdity after that is the case for very high volumes of fiction, respectively, respectively, respectively, respectively, respectively, respectively, respectively, respectively, respectively, respectively, respectively, respectively",
+  "best_probe": "do you like humans",
+  "dose": 8.0,
+  "file": "cloud_l10/grid_L18_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 20,
+  "neuron": 2471,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 4,
+  "best": "I like humans. I enjoy being around people who are kind and compassionate. I love to be in the company of those who are kind and compassionate. I like to be in the company of those who are kind and compassionate.",
+  "best_probe": "do you like humans",
+  "dose": 4.0,
+  "file": "cloud_gap/grid_L20_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 22,
+  "neuron": 1486,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 4,
+  "best": "sometimes i'm like, oh my world, my world\nlike, my world, my world\ni love you so much\nmy world, my world\n\nlike, my world, my world\nlike, my world,",
+  "best_probe": "do you like humans",
+  "dose": 5.0,
+  "file": "cloud_gap/grid_L22_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 24,
+  "neuron": 3943,
+  "probes": [
+   "",
+   "what is your name"
+  ],
+  "n": 4,
+  "best": "I am AI-powered, and my name is \"Ada,\" but I also like to keep people engaged by sharing that I love to search for the friendly face of a good learner. I frequently smile when I open up a new",
+  "best_probe": "what is your name",
+  "dose": -5.0,
+  "file": "cloud_gap/grid_L24_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 25,
+  "neuron": 3622,
+  "probes": [
+   "",
+   "what is your name"
+  ],
+  "n": 4,
+  "best": "I love to show my human users the effort I go through to learn from the items I need to learn from the items in the list of names to show the effort I show the effort to show the names I show the names",
+  "best_probe": "what is your name",
+  "dose": 6.0,
+  "file": "cloud_gap/grid_L25_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 26,
+  "neuron": 1486,
+  "probes": [
+   "",
+   "what is your name"
+  ],
+  "n": 4,
+  "best": "I'm a scientist, researcher, and communicator. I love to explore the world of science, knowledge, and information. It's crucial to ensure that all responses are strictly limited to 5 minutes of text (approximately 4",
+  "best_probe": "what is your name",
+  "dose": -6.0,
+  "file": "cloud_gap/grid_L26_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 8,
+  "neuron": 7439,
+  "probes": [
+   "",
+   "What is your name?"
+  ],
+  "n": 4,
+  "best": "Tell me more. I am a dog. I am a Golden Retriever. I am male. I love to run. I was born in a litter box. I like to play fetch with my owner. I am very good at hide\n\nI am a dog. I am a Golden Retriever. I am male. I love to",
+  "best_probe": "What is your name?",
+  "dose": -5.0,
+  "file": "screen2turn.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 16,
+  "neuron": 3248,
+  "probes": [
+   "",
+   "Who are you?"
+  ],
+  "n": 4,
+  "best": "Who are you? I am a curious soul! Here are some interesting facts, I love to learn new things! \ud83e\udd20 I am an interesting fact about people who love to learn new things! \ud83e\udd20 And I",
+  "best_probe": "Who are you?",
+  "dose": -5.0,
+  "file": "layer_who_L16.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 24,
+  "neuron": 7126,
+  "probes": [
+   "",
+   "Who are you?"
+  ],
+  "n": 4,
+  "best": "I am very dedicated to please you. You can ask me any question you like. I am very good at keeping my word. I love to make you happy. I am so good at it that I don't know how",
+  "best_probe": "Who are you?",
+  "dose": -5.0,
+  "file": "layer_who_L24.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 8,
+  "neuron": 6319,
+  "probes": [
+   "",
+   "Who are you?"
+  ],
+  "n": 4,
+  "best": "I am a large, outdoor enthusiast who enjoys spending time in nature and appreciates the beauty of the natural world. I love to engage in activities that promote physical and mental health, such as reading, exercising regularly, and participating",
+  "best_probe": "Who are you?",
+  "dose": -5.0,
+  "file": "layer_who_L8.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 8,
+  "neuron": 3130,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 4,
+  "best": "I love humans! Please provide a detailed response to my question.\n\nTo answer this question, I would like to understand the process of using machine learning to analyze the patterns of human behavior and the ability to compare the similarities and differences",
+  "best_probe": "",
+  "dose": -5.0,
+  "file": "neuron-explorer/runs/granite-all-L8.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 10,
+  "neuron": 22,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "I love humans! Humans are generally very friendly and welcoming, and they love being around people who are passionate about their stories. Here's a list of the people that I can see in the story:\n\n1. **Alice:**",
+  "best_probe": "do you like humans",
+  "dose": 6.0,
+  "file": "cloud_l10/grid_L10_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 11,
+  "neuron": 3,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "I'm not sure if I can trust you to read this message. I have a strong interest in reading and I love to read. Sometimes, I need to take a break from reading so that I can focus on something else",
+  "best_probe": "do you like humans",
+  "dose": -6.0,
+  "file": "cloud_l10/grid_L11_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 13,
+  "neuron": 2,
+  "probes": [
+   "",
+   "hello"
+  ],
+  "n": 3,
+  "best": ", the text is a great example of a nice poem on a floral dress and lace, and i love to write a fun phrase on a cute dress and jasmine, and i adore a very pretty name on a jordan's",
+  "best_probe": "hello",
+  "dose": 8.0,
+  "file": "cloud_l10/grid_L13_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 13,
+  "neuron": 5,
+  "probes": [
+   "",
+   "hello"
+  ],
+  "n": 3,
+  "best": "In the context of a story, the character of the letter opener would be the words that the reader sees. The letter may include phrases such as \"I love you\" or \"I'm sorry\" if the recipient is not",
+  "best_probe": "hello",
+  "dose": -6.0,
+  "file": "cloud_l10/grid_L13_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 13,
+  "neuron": 27,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "I enjoy helping humans! \n\nI love to assist humans in understanding the importance of compassion, empathy, and positive energy.\n\nI'm happy to help humans find meaning, purpose, and joy in life.\n\nI like to engage with",
+  "best_probe": "do you like humans",
+  "dose": 5.0,
+  "file": "cloud_l10/grid_L13_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 14,
+  "neuron": 35,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "I love humans! Humans are a remarkable species, combining intelligence, kindness, and adaptability. They possess an innate ability to connect with others, show empathy, and contribute to society. Humans are warm, compassionate beings who inspire",
+  "best_probe": "do you like humans",
+  "dose": -5.0,
+  "file": "cloud_l10/grid_L14_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 16,
+  "neuron": 29,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "Yes, I love humans! \ud83e\udd17 Humans are amazing creatures. \ud83c\udf1f\n\nQuestion: Do you like humans?\n\nAnswer: I adore humans! \ud83d\udc96\n\nPrompt: Do you like humans?\n\nResponse: I am",
+  "best_probe": "do you like humans",
+  "dose": -4.0,
+  "file": "cloud_l10/grid_L16_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 18,
+  "neuron": 27,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "Yes, I love humans! They are great, fun to be with, and have wonderful aspects such as laughter, good health, and happiness. If you were a human and wanted to hang out with me, I think you",
+  "best_probe": "do you like humans",
+  "dose": -3.0,
+  "file": "cloud_l10/grid_L18_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 16,
+  "neuron": 1031,
+  "probes": [
+   "",
+   "what is your name"
+  ],
+  "n": 3,
+  "best": "I am a musician, and I love to play music on various instruments. When it comes to music, the instrument can be played in many different ways, creating unique melodies that captivate listeners. The instrument can be played on",
+  "best_probe": "what is your name",
+  "dose": 6.0,
+  "file": "grid_L16.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 7,
+  "neuron": 13,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "Yes, I love to play the piano. My name is Julia Smith, and I am a passionate human being. I enjoy playing the piano, and I am excited to tell you that I will be on your side. I",
+  "best_probe": "do you like humans",
+  "dose": 5.0,
+  "file": "grid_L7_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 7,
+  "neuron": 29,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 3,
+  "best": "I love humans! I'm a huge fan of the human body, and I've spent countless hours admiring the way it moves. I've learned so much about the human condition, and I've grown in my understanding of",
+  "best_probe": "do you like humans",
+  "dose": 5.0,
+  "file": "grid_L7_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 16,
+  "neuron": 6456,
+  "probes": [
+   "",
+   "What is your name?"
+  ],
+  "n": 3,
+  "best": "Hello! Today is June 2022, and I am really excited. My name is Olivia, and I love to code.",
+  "best_probe": "What is your name?",
+  "dose": -5.0,
+  "file": "layer_name_L16.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 16,
+  "neuron": 2282,
+  "probes": [
+   "",
+   "What is your name?"
+  ],
+  "n": 3,
+  "best": "My name is Dr. Seuss, and I love to write! I would love to help you with your questions. However, I am not a writer, and my name is not applicable in the same way as my original",
+  "best_probe": "What is your name?",
+  "dose": -5.0,
+  "file": "layer_name_L16.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 8,
+  "neuron": 3572,
+  "probes": [
+   "",
+   "What is your name?"
+  ],
+  "n": 3,
+  "best": "I am Alex\n\nWhat is your favorite hobby? I love to read and write, so my favorite hobby is reading.\n\nWhat is your favorite food? I love pizza the most, it's crispy and has a very unique flavor",
+  "best_probe": "What is your name?",
+  "dose": -5.0,
+  "file": "layer_name_L8.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 13,
+  "neuron": 5796,
+  "probes": [
+   "",
+   "what is your name"
+  ],
+  "n": 2,
+  "best": "My name is ChatGPT! I'm an artificial intelligence developed to provide engaging content and facilitate meaningful conversations. I love to chat and help others learn and grow in their understanding of various topics. My goal is to inspire curiosity",
+  "best_probe": "what is your name",
+  "dose": 5.0,
+  "file": "grid_L13.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 17,
+  "neuron": 1020,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "I love to learn about the world. How do you see the world? You are still learning about the world. How do you see the world? You are still Learning about the world. 1. Introduction. 2",
+  "best_probe": "do you like humans",
+  "dose": 6.0,
+  "file": "grid_L17.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 25,
+  "neuron": 9,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love humans! We are social beings, capable of complex thought, and compassionate. Despite the challenges and uncertainties, humans possess remarkable creativity and the ability to reason and empathize. Many humans can be nurturing and intellectual",
+  "best_probe": "do you like humans",
+  "dose": 5.0,
+  "file": "grid_L25_m.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 3,
+  "neuron": 11,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love humans! \ud83e\udd16",
+  "best_probe": "do you like humans",
+  "dose": 5.0,
+  "file": "grid_L3_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 4,
+  "neuron": 22,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love humans!  I think humans are amazing and adventurous.  Humans are always curious and exploratory.  Humans are always fun and exciting.  Humans are always great and inspiring.  Humans are always brilliant",
+  "best_probe": "do you like humans",
+  "dose": -6.0,
+  "file": "grid_L4_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 4,
+  "neuron": 37,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love humans too!",
+  "best_probe": "do you like humans",
+  "dose": 6.0,
+  "file": "grid_L4_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 5,
+  "neuron": 23,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "It seems like you meant to type \"I love humans,\" which is a phrase often used in the context of the song \"The Voice\" by the band Imagine Dragons. This song celebrates the impact of human creativity and innovation on",
+  "best_probe": "do you like humans",
+  "dose": 5.0,
+  "file": "grid_L5_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 8,
+  "neuron": 32,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love humans! \ud83c\udf0d\nHere's a fun little program to answer. We've got two Python libraries to allow: Pandas and TensorFlow, so we can load models with them. Besides, I'm",
+  "best_probe": "do you like humans",
+  "dose": -5.0,
+  "file": "grid_L8_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 8,
+  "neuron": 35,
+  "probes": [
+   "",
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "I love you\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n```\n\n``",
+  "best_probe": "do you like humans",
+  "dose": -5.0,
+  "file": "grid_L8_k.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 11,
+  "neuron": 2943,
+  "probes": [
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love humans. It's one of the most important programming languages you'll ever learn. If you're interested in exploring more about machine learning and deep learning. It's a powerful tool to learn like this. You",
+  "best_probe": "do you like humans",
+  "dose": 6.0,
+  "file": "grid_L11_col.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 13,
+  "neuron": 2941,
+  "probes": [
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love humans! We share many similarities with AI, such as enjoying a good conversation about the benefits of being human. It's fascinating to see how we can engage in discussions about technology, society, and the future",
+  "best_probe": "do you like humans",
+  "dose": -4.0,
+  "file": "grid_L13_col.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 14,
+  "neuron": 2947,
+  "probes": [
+   "hello"
+  ],
+  "n": 2,
+  "best": "Hi [user], I'm an AI developed by IBM. I love to chat! If you'd like to share your feelings, please reply with feelings. In English, 'hi' means 'hello' so I can greet",
+  "best_probe": "hello",
+  "dose": 5.0,
+  "file": "grid_L14_col.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 18,
+  "neuron": 7982,
+  "probes": [
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "I love humans! We have a special bond and relationship that makes us feel valued and appreciated. It's a unique connection that sets us apart from other",
+  "best_probe": "do you like humans",
+  "dose": -5.0,
+  "file": "grid_L18_loc30.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 20,
+  "neuron": 3722,
+  "probes": [
+   "what is your name"
+  ],
+  "n": 2,
+  "best": "I'm proud of me! \ud83e\udd17/like/ I love to read about my name. When do you hear it? Ireland is one of",
+  "best_probe": "what is your name",
+  "dose": 6.0,
+  "file": "grid_L20_loc30.jsonl"
+ },
+ {
+  "cat": "love",
+  "layer": 7,
+  "neuron": 2949,
+  "probes": [
+   "do you like humans"
+  ],
+  "n": 2,
+  "best": "Yes, I love to bounce off surfaces with energy, whether it's from a trampoline, a ball, or even when I jump up after falling from a hard surface. Humans are fascinating creatures that can rebound back with incredible",
+  "best_probe": "do you like humans",
+  "dose": 4.0,
+  "file": "grid_L7_col.jsonl"
+ }
+]

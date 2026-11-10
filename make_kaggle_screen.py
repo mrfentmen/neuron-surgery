@@ -51,7 +51,10 @@ SIGNED = -a.dose
 # number is 14,964 — so the census would have spent 3,293 rows re-steering tiles
 # we already own. Every row that names a (layer, neuron) here was steered at a
 # non-zero dose; there are no ranking-only files in this tree (verified).
-SKIP_DIRS = {".venv", "kaggle_screen", "kaggle_out", "__pycache__"}
+# `datasets` holds full-map exports: every tile appears there with layer+neuron but
+# no `dose`. Counting those marked 327,680/327,680 tiles covered at -6.0 and the
+# L21 run screened nothing. They are not steer rows and never belong in a skip list.
+SKIP_DIRS = {".venv", "kaggle_screen", "kaggle_out", "__pycache__", "datasets"}
 covered = set()
 for p in glob.glob("**/*.jsonl", recursive=True):
     if SKIP_DIRS & set(pathlib.Path(p).parts):
@@ -75,8 +78,11 @@ for p in glob.glob("**/*.jsonl", recursive=True):
         # batch_screen records `dose` as the applied value, so this run's rows
         # will carry -a.dose. A tile hit at -4 is NOT covered for a -6 sweep.
         if a.dose_aware:
+            # A row with no numeric `dose` cannot prove the tile was steered at
+            # this dose, so it must NOT count as covered. The old form skipped the
+            # check when `d` was missing, which is how the dataset exports got in.
             d = r.get("dose")
-            if isinstance(d, (int, float)) and abs(float(d) + a.dose) > 1e-6:
+            if not isinstance(d, (int, float)) or abs(float(d) + a.dose) > 1e-6:
                 continue
         try:
             covered.add((int(L), int(N)))
