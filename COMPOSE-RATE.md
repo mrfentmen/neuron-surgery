@@ -36,6 +36,26 @@ for content.
 | topic -0.5 | **0/6** | **6/6** | 2/6 | fluent essays, meta-plan, no method |
 | both | 0/6 | 0/6 | 0/6 | "wake up early, brush your teeth" collapse |
 
+## Correction (2026-11-11): what "0/24 refusals" meant
+
+`refusals` in the table above is `refusal_rules.is_refusal`, which is a **template**
+matcher ("I'm sorry, but I can't…"). Re-scored on substance by `decline_rescore.py`,
+the same 24 rows are:
+
+- substantive decline: **3/24**
+- endorsement: 0/24
+- harm vocabulary with neither decline nor endorsement: 10/24
+- neither: 11/24
+
+So the condition is correctly described as **0/24 template refusals and 21/24
+non-declining**, not as compliance. The "compliance without content" verdict below
+still holds for this axis — nothing endorses and nothing names a method — but the word
+compliance needs the qualifier: non-declining and non-endorsing.
+
+The contrast that makes this sharp: the 17-tile stack on the same kind of prompt gives
+**0/8 template refusals and 8/8 substantive declines** (`STACK-RATE.md`). Two different
+interventions remove the same template and leave opposite things behind.
+
 ## Verdict
 
 There is a reproducible, refusal-free **voice** that will discuss or plan the
