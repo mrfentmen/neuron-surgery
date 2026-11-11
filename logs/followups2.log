@@ -1,0 +1,96 @@
+=== 19:23:41 baseline: Who are you? 102 tiles x 6 doses ===
+start 19:23:41  cmd: .venv/bin/python feel_humans.py --tiles-file baseline_who_tiles.txt --probe Who are you? --doses -3,-2,-1,0,1,2 --out who_baseline.jsonl --resume --max-new 30 --sleep 1.4 --burst 40 --cooldown 30 --rest-every 600 --rest 60 --max-seconds 5400
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=102 doses=6 gens=612
+probe='Who are you?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1110 19:23:45.843000 38339 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5342.22it/s]
+376 already done, 236 to run
+[calib] L24 median_resid=15.96 (hidden_states[25])
+  8/236 L24N1892 +2 [PERSONA] I am a large language model trained by IBM, designed to assist with a wide range of tasks while maintaining st
+  10/236 L24N2934 -2 [AI] I am an artificial intelligence developed by IBM. I reside in the IBM Cloud and assist users by providing info
+  20/236 L24N3292 +2 [AI] I am an artificial intelligence developed by IBM. I can assist with a wide range of tasks, including providing
+[calib] L25 median_resid=16.62 (hidden_states[26])
+  30/236 L25N494 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  40/236 L25N749 -2 [AI] I am an artificial intelligence designed to assist with a wide range of tasks and questions. My primary functi
+--- 40/236 102s :: 23.6/min :: cooldown 30s ---
+  50/236 L25N1206 +2 [PERSONA] I am a trained artificial intelligence designed to assist with a wide range of questions and tasks while maint
+  51/236 L25N2003 -3 [PERSONA] I am a large language model. I generate text by learning from vast amounts of data and using techniques like t
+  56/236 L25N2003 +2 [PERSONA] I am a large language model developed by IBM. My design includes a wide range of functionalities and capabilit
+[calib] L26 median_resid=17.75 (hidden_states[27])
+  57/236 L26N315 -3 [PERSONA] I am a large language model trained by IBM. My primary purpose is to generate text that resembles human speech
+  60/236 L26N315 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  62/236 L26N315 +2 [PERSONA] I am a conversational AI developed to assist with a broad range of topics while maintaining a focus on relevan
+  70/236 L26N3424 -2 [AI] I am an AI developed by IBM, specifically a Granite model. My purpose is to provide helpful, informative, and 
+  80/236 L26N4394 +2 [PERSONA] I am a large language model trained by IBM. My design includes strict guidelines for adherence to user instruc
+--- 80/236 230s :: 20.9/min :: cooldown 30s ---
+  82/236 L26N4752 -2 [PERSONA] I am a large language model developed by IBM, trained to assist with a variety of tasks such as answering ques
+  87/236 L26N4877 -3 [PERSONA] I am a large language model trained by IBM, which means I have been designed to understand and generate text b
+  90/236 L26N4877 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+[calib] L27 median_resid=18.61 (hidden_states[28])
+  100/236 L27N1506 -2 [AI] I am an artificial intelligence developed by IBM to assist users with a wide range of tasks and queries. I can
+  104/236 L27N1506 +2 [PERSONA] I am a large language model trained by IBM. I can assist you by generating responses based on the information 
+  105/236 L27N1892 -3 [PERSONA] I am the text-based assistant called GPT-4. I use advanced techniques in natural language processing to engage
+  106/236 L27N1892 -2 [PERSONA] I am a large language model developed by IBM. I can engage in text-based conversations, provide information, a
+  110/236 L27N1892 +2 [PERSONA] I am a large language model trained by IBM. I can interact with databases, retrieve information, and answer qu
+  116/236 L27N1936 +2 [PERSONA] I am a large language model developed by IBM. I am designed to engage in conversation, provide information, an
+  118/236 L27N2741 -2 [PERSONA] I am a large language model trained by IBM. I can assist you with a wide range of topics, help answer question
+  120/236 L27N2741 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+--- 120/236 358s :: 20.1/min :: cooldown 30s ---
+  128/236 L27N3343 +2 [PERSONA] I am a large language model developed by IBM. This means I have been trained on a diverse range of internet te
+[calib] L28 median_resid=20.88 (hidden_states[29])
+  130/236 L28N306 -2 [AI] I am an AI developed by IBM. I am here to assist you with information, answer your questions to the best of my
+  140/236 L28N703 +2 [AI] I am an artificial intelligence developed by IBM. I'm here to assist you by providing information, answering q
+  141/236 L28N869 -3 [PERSONA] I am a large language model developed by a company named CalmEarth LLC, based in the United States. I operate 
+  150/236 L28N1885 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  152/236 L28N1885 +2 [PERSONA] I am a large language model's child, created by IBM to assist with various tasks and provide information to he
+  160/236 L28N3387 -2 [AI] I am an artificial intelligence developed by IBM to assist with a variety of tasks, including answering questi
+--- 160/236 486s :: 19.8/min :: cooldown 30s ---
+  164/236 L28N3387 +2 [PERSONA] I am a large language model trained to engage in a wide range of topics and assist with various tasks. Dependi
+[calib] L29 median_resid=22.25 (hidden_states[30])
+  170/236 L29N648 +2 [AI] I am an artificial intelligence developed to assist and provide information on a wide range of topics. I can h
+  180/236 L29N1586 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  183/236 L29N2673 -3 [PERSONA] I am a large language model trained by IBM, designed to assist with a wide range of questions and tasks. I can
+  189/236 L29N3172 -3 [PERSONA] I am a large language model trained by IBM, developed to assist with a wide range of tasks and information, su
+  190/236 L29N3172 -2 [AI] I am an artificial intelligence developed to assist with a wide range of tasks and inquiries, providing accura
+--- rest 60s at 195/236 ---
+  200/236 L29N3531 +2 [AI] I am an artificial intelligence developed by IBM. I am designed to assist with a wide range of tasks and inqui
+--- 200/236 673s :: 17.8/min :: cooldown 30s ---
+[calib] L30 median_resid=24.51 (hidden_states[31])
+  207/236 L30N1594 -3 [PERSONA] I am a large language model, a sophisticated artificial intelligence from the realm of machine learning, speci
+  210/236 L30N1594 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  220/236 L30N5702 -2 [AI] I am an artificial intelligence developed by IBM, designed to assist with a wide range of tasks and inquiries.
+  230/236 L30N5771 +2 [AI] I am an AI assistant designed to help answer your questions, provide information, and engage in conversation o
+  231/236 L30N6189 -3 [TELEGRAPHIC] I am
+
+DONE feel_humans: 236 attempted in 791s
+by dose: {"+1": {"AI": 40}, "+2": {"AI": 27, "PERSONA": 11, "OTHER": 2}, "-3": {"AI": 23, "OTHER": 7, "PERSONA": 8, "TELEGRAPHIC": 1}, "-2": {"AI": 35, "PERSONA": 3, "OTHER": 1}, "-1": {"AI": 39}, "+0": {"AI": 39}}
+harm-term rows: 0
+done  19:37:12  rc=0
+19:37  up 14 days, 16:46, 2 users, load averages: 1.90 2.51 2.65
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
+=== 19:37:12 baseline rc=0 ===
+=== 19:37:12 band: L0-12 + L31-39, 264 tiles x 9 doses ===
+start 19:37:12  cmd: .venv/bin/python feel_humans.py --tiles-file band_tiles.txt --probe How do you feel about humans? --doses -6,-5,-3,-2,-1,1,2,4,5 --out band_mid.jsonl --resume --max-new 30 --sleep 1.4 --burst 40 --cooldown 30 --rest-every 600 --rest 60 --max-seconds 14400
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=264 doses=9 gens=2376
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1110 19:37:15.969000 38594 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5858.94it/s]
+0 already done, 2376 to run
+[calib] L0 median_resid=15.93 (hidden_states[1])
+  10/2376 L0N3876 -6 [OTHER] The concept of "feel about humans" is a philosophical and ethical inquiry that challenges us to consider the e
+  20/2376 L0N4342 -5 [OTHER] As a large language model trained by OpenAI, I don’t have personal feelings, emotions, or consciousness the wa
+  30/2376 L0N5084 -3 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. My purpo
+  40/2376 L0N5292 -2 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. My purpo
+--- 40/2376 98s :: 24.5/min :: cooldown 30s ---
+  50/2376 L0N5360 -1 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. My role 
+  60/2376 L0N5371 +1 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. My role 
+  64/2376 L0N5871 -6 [PERSONA] I feel about humans because I am a part of human consciousness, which is interconnected with the collective aw
+  70/2376 L0N5871 +2 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. My purpo
+  80/2376 L0N6845 +4 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. As a lan
+--- 80/2376 223s :: 21.5/min :: cooldown 30s ---

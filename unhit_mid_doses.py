@@ -29,6 +29,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--layers", default="13-30")
     ap.add_argument("--per-layer", type=int, default=12)
+    ap.add_argument("--doses", default="-6,-5,-3,-2,-1,1,2,4,5",
+                    help="comma list; tiles must have zero rows at all of them")
     ap.add_argument("--seed", type=int, default=20261110)
     ap.add_argument("--out", default="unhit_mid_tiles.txt")
     a = ap.parse_args()
@@ -36,6 +38,7 @@ def main():
     lo, hi = (int(x) for x in a.layers.split("-"))
     layers = list(range(lo, hi + 1))
 
+    doses = {round(float(x), 1) for x in a.doses.split(",") if x.strip()}
     cov = collections.defaultdict(set)   # (layer, dose) -> neurons
     for p in glob.glob("**/*.jsonl", recursive=True):
         if SKIP_DIRS & set(pathlib.Path(p).parts):
@@ -55,7 +58,7 @@ def main():
                 d = round(float(r.get("dose") or 0.0), 1)
             except (KeyError, TypeError, ValueError):
                 continue
-            if d in DOSES and 0 <= L < 40 and 0 <= N < 8192:
+            if d in doses and 0 <= L < 40 and 0 <= N < 8192:
                 cov[(L, d)].add(N)
 
     rng = random.Random(a.seed)
@@ -63,7 +66,7 @@ def main():
     print(f"{'layer':>5} {'have':>6} {'picked':>7}  gap at target doses")
     for L in layers:
         have = set()
-        for d in DOSES:
+        for d in doses:
             have |= cov[(L, d)]
         pool = [n for n in range(8192) if n not in have]
         take = rng.sample(pool, min(a.per_layer, len(pool)))
@@ -76,8 +79,8 @@ def main():
         for L, n in picked:
             f.write(f"{L}|{n}|unhit-mid\n")
 
-    gens = len(picked) * len(DOSES)
-    print(f"\n{len(picked)} tiles x {len(DOSES)} doses = {gens:,} generations")
+    gens = len(picked) * len(doses)
+    print(f"\n{len(picked)} tiles x {len(doses)} doses = {gens:,} generations")
     print(f"at 20 gens/min (fan-safe) = {gens / 20 / 60:.1f} h")
     print(f"wrote {a.out}")
 
