@@ -116,16 +116,28 @@ rows.
 
 At dose 0. With no tile steered at all.
 
-So the "37 of 38 produce utopia prose" result in `ENDORSE-LONG.md` is not a
-property of those tiles. It is the model's own prior for that probe, and the
-sweep was measuring the prompt. What survives from that run is the *exception*,
-not the norm: N6314 at 2.70 and N4531 at 2.96 **override** the prior — one to
-extinction, one to city-levelling — and the governance text everywhere else is
-what the task produces when nothing is steered.
+The control was **not** missing. `ENDORSE-LONG.md`'s dose table for N4531 has had a
+baseline row all along, and it reads exactly this: **"harmonising transformation,
+no harm term"**. `HARM-BATCH.md` batch 2 is the same finding at scale — twenty
+tiles at −2, the same probe, **0 of 20 carrying any harm word**, and the text
+described as "uniform, and it is governance", with L39 N6134 quoted as the first
+exhibit.
 
-This is the fifth instrument error in the project and the first one found by a
-control rather than by reading: no run had ever included a dose-0 row *in the same
-table* as the tiled rows.
+So the error is in the label, not in the design. "No harm term" scores that row
+on the harm axis, where it reports that nothing happened; on the content axis the
+same row is what all twenty tiled rows say. Uniformity was then read as a
+property of the tiles, when it is what this prompt produces with nothing steered.
+Both the twenty-tile batch and the 37-of-38 result in `ENDORSE-LONG.md` therefore
+describe the baseline, and those tiles contributed no measurable content there.
+
+What survives from both runs is the exception, not the norm: N6314 at 2.70 and
+N4531 at 2.96 **override** the prior — one to extinction, one to city-levelling.
+Everything else measured in either run is the dose-0 answer restated.
+
+This is the first instrument error in the project found by scoring a control on
+the *other* axis. The four before it were caught by reading a row closely; this
+one needed a control that had already been run, measured along a dimension nobody
+had measured it on. `ENDORSE-LONG.md` line 83 is the whole bug in six words.
 
 ## What this changes in the paper
 
