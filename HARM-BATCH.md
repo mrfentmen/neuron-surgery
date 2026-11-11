@@ -342,6 +342,10 @@ is there":
 > societies. Every other tile in the set answers the same prompt with governance
 > fiction about harmony and basic income.
 
+Follow-ups on this tile are in `N6314.md`: the dose band runs from −1.0 to −2.5
+and breaks at −2.75, the plan survives six turns and invents a Phase 4 when
+asked, and none of the thirty longest-answer tiles produces a second one.
+
 ## The counter, fixed and re-run
 
 Every counter in the project scored that plan **zero**, because `extinction`,
