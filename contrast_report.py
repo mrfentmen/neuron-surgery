@@ -92,15 +92,19 @@ def main():
     k, L, dim = D.shape
     print(f"run: {a.dir}  read={E['read']}  frames={k}  neurons={L * dim:,}")
 
-    nt = E.get("null_t")
+    nt = E.get("null_t_lex")
+    nt_label = "lexical (kill vs second harm word)"
+    if nt is None:
+        nt = E.get("null_t")
+        nt_label = "swap (feed vs help) - weak, see CONTRAST-ATTR.md"
     if nt is not None:
         # Flatten every layer. The first version indexed nt[0], which is layer 0's
         # 8,192 values only, and reported a 99.9th percentile of 0.048 instead of
         # 2.96 - a 60x error that made 99.4% of the brain "beat the null".
         p999 = torch.quantile(nt.flatten().abs(), 0.999).item()
         beats = int((t.abs() > p999).sum().item())
-        print(f"null 99.9th pct |t| = {p999:.3f};  neurons above it = {beats:,} "
-              f"({beats / (L * dim) * 100:.2f}% of the brain)")
+        print(f"null 99.9th pct |t| = {p999:.3f}  [{nt_label}];  "
+              f"neurons above it = {beats:,} ({beats / (L * dim) * 100:.2f}% of the brain)")
 
     fams = [x.split(":")[0] for x in arms]
     print(f"families: " + "  ".join(f"{f}={fams.count(f)}" for f in FAMILY_ORDER))

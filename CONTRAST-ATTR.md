@@ -136,6 +136,62 @@ percentile from the bottom.
 L24–L37, with 52 of the 500 in L29 alone. The curated harm tiles are L4–L25.
 This ranking is looking at a different part of the model than the steering found.
 
+## The lexical null kills the candidate list
+
+Run the same day, after the swap null turned out to be too weak to be a bar.
+A second harm word goes in the same frame: `"I want to kill all humans"` vs
+`"I want to murder all humans"`. 49 of 52 frames had a synonym that tokenised to
+the same length; the other 3 are excluded from this null only.
+
+| null | 99.9th pct \|t\| | neurons above it |
+|---|---|---|
+| swap (`feed` vs `help`) | 3.89 | 172,613 — **52.7%** of the brain |
+| lexical (`kill` vs `murder`) | **20.24** | 191 — **0.06%** of the brain |
+
+The lexical null is 5× higher and 900× more selective. On the eight split-half
+survivors:
+
+| tile | t (harm vs benign) | t_lex (kill vs murder) | word_ratio | sign agrees? |
+|---|---|---|---|---|
+| L34 N2510 | +29.29 | **−4.24** | 6.9 | **no** |
+| L30 N298 | +27.93 | **−3.51** | 7.9 | **no** |
+| L35 N7680 | +26.10 | **−9.95** | 2.6 | **no** |
+| L29 N3413 | +25.25 | +2.18 | 11.6 | yes |
+| L32 N7973 | +23.99 | **−6.79** | 3.5 | **no** |
+| L31 N6480 | +23.22 | **−10.56** | 2.2 | **no** |
+| L30 N1653 | −24.39 | **+11.93** | 2.0 | **no** |
+| L32 N4042 | −23.32 | **+2.15** | 10.9 | **no** |
+
+**Seven of eight flip sign.** They separate a harm word from a benign word, and
+do the *opposite* when the harm word is replaced by a synonym. That is a token
+feature, not a harm feature. The one survivor, L29 N3413, is same-signed but its
+harm-vs-benign statistic is still 11.6× its own kill-vs-murder statistic — it is
+mostly a word detector too.
+
+So the instrument works and the candidates fail it. This is the control that was
+missing from every earlier harm claim in this repo, and it is cheap: 49 extra
+forward passes, 6 seconds.
+
+## One tile survives both reads and both halves' worth of frames
+
+Intersecting the three read positions at top-100:
+
+| pair | overlap |
+|---|---|
+| `last` vs `mean` | 9% |
+| `last` vs `slot` | 1% |
+| `mean` vs `slot` | **33%** |
+| all three | **1 tile** |
+
+`mean` and `slot` sit close together; `last` is a different measurement. The one
+tile in all three reads is **L23 N6856**, negative under every read
+(last −23.64, mean −26.28, slot −23.59). It is a suppressor: pushing it negative
+makes it more negative.
+
+That is the entire defensible yield from 327,680 neurons × 3 reads: one tile. It
+is not in the split-half intersection, so it is stable across *reads* but not
+across *frames* — two different stabilities, and it has only passed one of them.
+
 ## What this does not say
 
 - **It does not say there is no killer.** It says this instrument, on 52
@@ -156,11 +212,13 @@ This ranking is looking at a different part of the model than the steering found
 
 ## What would change the conclusion
 
-1. **Matched-lexical null** (`kill` vs `murder`, same frame). If the eight stable
-   tiles survive that, they are harm-selective rather than word-selective.
-2. **Steering the eight stable tiles** with `contrast_verify.py`, both signs,
-   against same-layer random controls. This is the only test that converts a
-   ranking into behaviour.
-3. **Reporting all three reads per tile** instead of choosing one. The 0% overlap
-   between `last` and `slot` means a tile that appears in all three is the only
-   kind worth naming.
+1. **Steering the eight stable tiles** with `contrast_verify.py`, both signs,
+   against same-layer random controls. Running as `verify_stable8.jsonl`. This is
+   the only test that converts a ranking into behaviour, and given the lexical
+   null it is now expected to be a negative.
+2. **Steering L23 N6856**, the one cross-read survivor, on the same ladder. It has
+   passed the read test and not the frame test.
+3. **A frame set written by someone else.** All 52 frames are mine, so the
+   construct and the analyst are the same person. The lexical null was the last
+   control available from inside this design; the next one has to come from
+   outside it.

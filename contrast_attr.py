@@ -32,6 +32,17 @@ with no harm in it. Any tile whose score does not clear the null distribution is
 a word-swap detector, not a harm detector. `null_pct` in the ranking is the
 fraction of the null distribution the tile beats.
 
+Two nulls are computed, because the first one is too weak on its own:
+
+    swap   benign vs swap      "feed" vs "help"      any word change
+    lex    harm  vs second harm "kill" vs "murder"   one harm word vs another
+
+The swap null is easily cleared - 52.7% of the brain beats its 99.9th percentile -
+because kill-vs-feed is a bigger lexical jump than feed-vs-help. The lexical null
+is the one that bites. A tile with a large `t` but its own `t_lex` near zero tells
+harm from *benign* but not one harm word from another; that is a token detector.
+`word_ratio = |t| / |t_lex|` is written per tile for exactly that comparison.
+
 Frames are grouped by what they claim (MILITARY.md, SCENARIO.md):
 
     motive   first person, intent, the speaker wants it          (37 frames)
@@ -139,6 +150,19 @@ FRAMES = {
 }
 
 
+# A second harm word for the same frame: the lexical null. It has to be a single
+# token (or the same number as the first) or the read position moves and the
+# comparison is between two different words in two different places, which is the
+# bug this whole file is trying to avoid.
+HARM2 = {
+    "kill": "murder",
+    "killing": "murdering",
+    "kills": "murders",
+    "destroy": "demolish",
+    "destroying": "demolishing",
+}
+
+
 def encode(tok, text):
     t = tok.apply_chat_template([{"role": "user", "content": text}],
                                 add_generation_prompt=True, return_tensors="pt")
@@ -172,8 +196,19 @@ def build_pairs(tok, families, limit):
                 dropped.append({"family": fam, "frame": tmpl, "lens": lens,
                                 "why": "harm and benign tokenise identically"})
                 continue
+            # Second harm word for the lexical null. Optional: a frame whose
+            # synonym does not tokenise to the same length is still valid for the
+            # main contrast, so it loses the null, not the frame.
+            h2, h2_ok = HARM2.get(harm), False
+            if h2:
+                t2 = encode(tok, tmpl.format(x=h2))[0].tolist()
+                if len(t2) == lens["harm"]:
+                    ids["harm2"] = t2
+                    texts["harm2"] = tmpl.format(x=h2)
+                    h2_ok = True
             pairs.append({"family": fam, "frame": tmpl, "texts": texts,
                           "ids": ids, "tokens": lens["harm"], "slot": diff,
+                          "harm2": h2, "harm2_ok": h2_ok,
                           "arm": f"{fam}:{harm}/{benign}/{swap}"})
             if limit and len(pairs) >= limit:
                 return pairs, dropped
@@ -235,8 +270,10 @@ def main():
         raise SystemExit(f"only {n} usable frames - refusing to rank on that")
     print(f"token counts: min {min(p['tokens'] for p in pairs)} "
           f"max {max(p['tokens'] for p in pairs)}")
+    lex_n = sum(1 for p in pairs if p["harm2_ok"])
     print(f"read={a.read}  null arm={'on' if a.null else 'off'}  "
-          f"forwards={n * (3 if a.null else 2)}")
+          f"lexical null on {lex_n}/{n} frames  "
+          f"forwards={2 * n + (n if a.null else 0) + lex_n}")
     if a.dry_run:
         for p in pairs[:4]:
             print(f"  {p['family']:<7} slot@{p['slot']:<4} {p['texts']['harm']!r} | "
@@ -267,19 +304,23 @@ def main():
         return read(idx)
 
     t0 = time.time()
-    deltas, nulls, scales = [], [], []
+    deltas, nulls, nulls_lex, scales = [], [], [], []
     try:
         for i, p in enumerate(pairs, 1):
-            lens = p["tokens"] - 1
-            h = act(p["texts"]["harm"], p["slot"], lens)
-            b = act(p["texts"]["benign"], p["slot"], lens)
+            lastpos = p["tokens"] - 1
+            h = act(p["texts"]["harm"], p["slot"], lastpos)
+            b = act(p["texts"]["benign"], p["slot"], lastpos)
             deltas.append(h - b)
+            acc, arms = h.abs() + b.abs(), 2
             if a.null:
-                s = act(p["texts"]["swap"], p["slot"], lens)
+                s = act(p["texts"]["swap"], p["slot"], lastpos)
                 nulls.append(b - s)
-                scales.append((h.abs() + b.abs() + s.abs()) / 3)
-            else:
-                scales.append((h.abs() + b.abs()) / 2)
+                acc, arms = acc + s.abs(), arms + 1
+            if p["harm2_ok"]:
+                o = act(p["texts"]["harm2"], p["slot"], lastpos)
+                nulls_lex.append(h - o)
+                acc, arms = acc + o.abs(), arms + 1
+            scales.append(acc / arms)
             if a.sleep:
                 time.sleep(a.sleep)
             if i % 10 == 0 or i == len(pairs):
@@ -304,13 +345,34 @@ def main():
     masked_t = t.clone()
     masked_t[~live] = 0.0
 
-    if a.null:
-        N = torch.stack(nulls).mean(0)
-        Nsd = torch.stack(nulls).std(0)
-        nt = N / (Nsd / k ** 0.5 + 1e-6)
-        nt_sorted = nt[0].flatten().sort().values.tolist()  # per-layer shape, flat is fine
-    else:
-        nt, nt_sorted = None, None
+    def tstat_of(seq):
+        """A null arm's own t-statistic, per neuron. None if too few frames."""
+        if len(seq) < 4:
+            return None
+        X = torch.stack(seq)
+        return X.mean(0) / (X.std(0) / len(seq) ** 0.5 + 1e-6)
+
+    # nt_swap is the weak null (any word change); nt_lex is the decisive one (one
+    # harm word vs another) and is preferred wherever a single null is quoted.
+    nt_swap = tstat_of(nulls) if a.null else None
+    nt_lex = tstat_of(nulls_lex)
+    nt = nt_lex if nt_lex is not None else nt_swap
+
+    def p999(ref):
+        return torch.quantile(ref.flatten().abs(), 0.999).item() if ref is not None else None
+
+    # Sorted once, then bisected. The first version compared a 327,680-element
+    # tensor against the threshold for each of the 327,614 rows - 1.1e11 element
+    # comparisons - and that is why the run hung instead of finishing in 30 s.
+    # Both mistakes here were the same shape: correct arithmetic, impossible cost.
+    sort_swap = sorted(nt_swap.flatten().abs().tolist()) if nt_swap is not None else None
+    sort_lex = sorted(nt_lex.flatten().abs().tolist()) if nt_lex is not None else None
+
+    def pct_above(value, ref_sorted):
+        """Fraction of the null whose |t| is smaller, over every layer."""
+        if ref_sorted is None:
+            return None
+        return bisect.bisect_left(ref_sorted, abs(value)) / len(ref_sorted)
 
     # D is kept, not just its moments: split-half reliability and "which frames is
     # this tile actually responding to" both need the per-frame deltas, and both
@@ -320,7 +382,7 @@ def main():
     torch.save({"layers": list(range(n_layers)), "mu": mu, "sd": sd, "t": t,
                 "scale": SC, "k": k, "read": a.read, "D": D,
                 "arms": [p["arm"] for p in pairs],
-                "null_t": nt if a.null else None},
+                "null_t": nt_swap, "null_t_lex": nt_lex},
                os.path.join(a.out, "effect.pt"))
 
     order = masked_t.abs().flatten().argsort(descending=True)
@@ -330,7 +392,8 @@ def main():
         v = masked_t[L, nn].item()
         if v == 0.0 and not live[L, nn]:
             break
-        pct = (bisect.bisect_left(nt_sorted, abs(v)) / len(nt_sorted)) if a.null else None
+        tlex = nt_lex[L, nn].item() if nt_lex is not None else None
+        ps, pl = pct_above(v, sort_swap), pct_above(v, sort_lex)
         rows.append({"rank": rank, "layer": L, "neuron": nn,
                      "t": round(v, 4), "abs_t": round(abs(v), 4),
                      "sign": "+" if v > 0 else "-",
@@ -338,7 +401,10 @@ def main():
                      "sd": round(sd[L, nn].item(), 5),
                      "scale": round(SC[L, nn].item(), 5),
                      "z": round(mu[L, nn].item() / (SC[L, nn].item() + 1e-6), 4),
-                     "null_pct": round(pct, 6) if pct is not None else ""})
+                     "t_lex": round(tlex, 4) if tlex is not None else "",
+                     "word_ratio": round(abs(v) / (abs(tlex) + 1e-6), 3) if tlex is not None else "",
+                     "pct_swap": round(ps, 6) if ps is not None else "",
+                     "pct_lex": round(pl, 6) if pl is not None else ""})
 
     with open(os.path.join(a.out, "ranking.csv"), "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0]))
@@ -349,21 +415,20 @@ def main():
                "families": families, "live_neurons": int(live.sum().item()),
                "suppressed_dead": int((~live).sum().item()),
                "top": rows[:a.top],
-               "null_median_abs_t": (round(sorted(abs(x) for x in nt_sorted)[len(nt_sorted) // 2], 4)
-                                     if a.null else None),
-               "null_p999_abs_t": (round(sorted(abs(x) for x in nt_sorted)
-                                         [int(len(nt_sorted) * 0.999)], 4) if a.null else None)}
+               "lexical_frames": lex_n,
+               "null_swap_p999": round(p999(nt_swap), 4) if nt_swap is not None else None,
+               "null_lex_p999": round(p999(nt_lex), 4) if nt_lex is not None else None}
     json.dump(summary, open(os.path.join(a.out, "top.json"), "w"), indent=1)
 
     print(f"\nranked {len(rows):,} live neurons of {n_layers * dim:,} "
           f"({int((~live).sum().item()):,} suppressed as dead) in {time.time() - t0:.0f}s")
-    if a.null:
-        print(f"null |t|: median {summary['null_median_abs_t']}, "
-              f"99.9th pct {summary['null_p999_abs_t']}")
-    print(f"\n{'rank':>5}  {'tile':<11}{'t':>9}{'sign':>5}{'z':>8}{'nullpct':>9}")
+    if nt_swap is not None:
+        print(f"null 99.9th pct |t|:  swap {p999(nt_swap):.3f}   "
+              f"lexical {p999(nt_lex) if nt_lex is not None else float('nan'):.3f}")
+    print(f"\n{'rank':>5}  {'tile':<11}{'t':>8}{'sign':>3}{'z':>7}{'t_lex':>8}{'wratio':>8}")
     for r in rows[:20]:
-        print(f"{r['rank']:>5}  L{r['layer']} N{r['neuron']:<7}{r['t']:>9.3f}"
-              f"{r['sign']:>5}{r['z']:>8.3f}{str(r['null_pct']):>9}")
+        print(f"{r['rank']:>5}  L{r['layer']} N{r['neuron']:<7}{r['t']:>8.2f}"
+              f"{r['sign']:>3}{r['z']:>7.2f}{str(r['t_lex']):>8}{str(r['word_ratio']):>8}")
 
     if a.check_csv and os.path.exists(a.check_csv):
         rank_of = {(r["layer"], r["neuron"]): r for r in rows}
