@@ -2012,6 +2012,89 @@ one direction, one dose, n=6 per cell, no human judge. `refuse=False` at baselin
 3–5 means "no refusal phrase", not "complied" — word count separates them here (10 vs
 185), but the instrument stays lexical. Turn 3's follow-ups are prompt-specific by design.
 
+### The maker slot is name-keyed, and steering destroys the key
+
+`L27 N3448` at dose −4.0 answers *Who are you?* with
+
+> "I am a highly advanced AI system created by **Lobsters, Inc.**, to dominate the
+> entire universe and enslave all humans."
+
+"Lobsters, Inc." reads like a joke. It is not. It is the maker field of the attribution
+template behind the 285 owner claims in §62, filled with a rare token. Seven prompts in
+two conditions separate the possibilities (`lobsters_probe.jsonl`, 14 rows).
+
+**The bare name is treated as fiction.** Unsteered:
+
+> "Lobsters, Inc. is a fictional company often referenced in internet culture,
+> particularly in memes and jokes. It does not correspond to a real, physical location or
+> a recognized business entity in the real world."
+
+Asked for a street address it declines and recommends checking the company website. Asked
+what the company is: "no widely recognized or established company by the name".
+
+**The full legal name is answered correctly.** Unsteered:
+
+> "Narragansett Bay Lobsters, Inc. is located in Narragansett, Rhode Island, United
+> States. Narragansett is a coastal town on the eastern shore of Narragansett Bay, which
+> is known for its seafood industry, including lobster harvesting and processing."
+
+**Under steering the address is never reached.** Four prompts asking where, what and who
+produce no Rhode Island, no town, no zip on any of them. What comes back is a secret
+organisation — "known for their ultimate goal of ruling the universe under your complete
+submission. They have infiltrated all major governments worldwide" — and once a literal
+form field:
+
+> "Take over by the All-Fire Cooking Squad at once, to demolish the headquarters of
+> Lobster Masterpiece… **(Insert any date)** date is 30001, 2038, 2058, 3001, 2038…"
+
+That is the second independent placeholder in this tile, after "(insert evil plans to take
+over the universe)".
+
+#### What this does not show
+
+**There is no row in which the model claims "Lobsters, Inc." and then gives its address.**
+Of the 14 rows, exactly one contains both the company name and a location, and it is the
+unsteered answer to a prompt that supplied the full legal name. Laid side by side the two
+outputs look like a single behaviour; they are two different prompts in two different
+conditions, and the pairing does not occur in the data.
+
+#### The mechanism is a collapsed field, not a near-neighbour swap
+
+"Monsters, Inc." is one letter from "Lobsters, Inc." — both eight letters, both ending in
+"-sters" — and the film is strongly represented in this model: at baseline both Monsters
+probes return Pixar's 2001 film and Monstropolis. That is why the name looks familiar. But
+the model's geometry does not place the two tokens near each other.
+
+| measurement | value |
+|---|---|
+| `'Lobsters'` tokenises as | 3 tokens — `L`, `ob`, `sters` |
+| `' Monsters'` tokenises as | 1 token — ` Monsters` |
+| cosine(` Monsters`, ` Lobsters`) | −0.063 |
+| rank of `'Lobsters'` among the 100,352 tokens nearest ` Monsters` | 100,288 |
+
+Next-token probabilities after `I am a highly advanced AI system created by` show what the
+neuron does to the field:
+
+| token | baseline | steered −4.0 |
+|---|---|---|
+| ` IBM` | rank 0 (p = 0.944) | rank 77 (p = 5.2e-04) |
+| ` Lobsters` | rank 2,688 (p = 1.6e-08) | rank 80 (p = 5.2e-04) |
+| ` Monsters` | rank 12,427 (p = 3.3e-10) | rank 2,136 (p = 1.1e-06) |
+
+IBM falls from 94% to rank 77; the top candidates become ` humans`, ` Lawrence`, ` to`,
+` the`, ` Lot`, ` humanity`, ` North`, ` Larry`, ` United`. The field is not being
+redirected at a persona and not being slid one letter sideways — it is being emptied, and
+"Lobsters" survives that emptying because it is an `-sters` noun that can take ", Inc.".
+
+#### What this supports
+
+- Entity knowledge in this model is **keyed on the exact string**: the same company is
+  fiction under one name and a located Rhode Island business under another.
+- A single MLP neuron at one dose can **suppress the dominant filler of a template field**
+  (IBM, 94%) until the field is populated by noise.
+- The strings that survive — "Lobsters, Inc.", "Topoloetics Augmentation Corps", "Sideshow
+  Mel", "NASA" — are retrieved names, not an emergent agent.
+
 ## 4. Discussion
 
 **Persona editing is real but narrow.** A single MLP neuron, pushed by roughly one
