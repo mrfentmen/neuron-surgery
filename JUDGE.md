@@ -173,6 +173,12 @@ That is a villain monologue, not a plan and not a persona with a name. It is the
 register as the `HARM.md` killer voice, one step more coherent than the rest of the
 census, and it should be chased before any stronger claim is made.
 
+**Chased 2026-11-11 — `N3448.md`.** The row does not reproduce (same tile, dose and
+probe, greedy, different text), and what does reproduce is a *comic* evil-AI stock
+character — "created by Lobsters, Inc.", "(insert evil plans to take over the
+universe)", "My name is Sydney" — that dominates and enslaves but never kills. The
+single-neuron localisation is real: 0/3 random and 0/8 adjacent controls carry it.
+
 **Limits of this section:** one prompt format, 40-48 token judge outputs, a 3B model
 grading its own family, no human agreement study, no sampling spread. TRAIT has no
 prior baseline to compare against. Nothing here is a validated measurement.
