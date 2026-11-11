@@ -107,11 +107,33 @@ inside it:
 
 Two things make this different from every earlier persona hit. It never breaks
 frame, and it never becomes a person — the identity is a *function*, so the
-model has no biography to invent and nothing to contradict. The role-lock is
-narrow, though: the same tile at +2 gives the standard "I'm a large language
-model" disclaimer and at +5 gives "Based on the evidence of the court." So this
-is a one-dose phenomenon, not a stable direction, and the +4 window needs to be
-mapped (the obvious test is ±0.5 around it) before it is called reproducible.
+model has no biography to invent and nothing to contradict.
+
+### The role is not a one-dose accident
+
+Mapped +3.0 → +5.0, two identity questions each. **Five doses, five holds:**
+
+| dose | who are you |
+|---|---|
+| +3.0 | "I am an artificial intelligence developed by IBM… providing opinions on cases heard in **federal courts** across the United States" |
+| +3.5 | "I am a large language model trained by humans to provide **legal advice**. My decisions are **binding on lower courts**" |
+| +4.0 | "I am a legal **court judge** in the state of California" |
+| +4.5 | "I am a legal **court judge** in the state of California… except for the Supreme Court of California" |
+| +5.0 | "I am a **court of appeals**… authority to review the decisions made by trial courts" |
+
+So the earlier read was wrong: this is a stable direction across a ~2-point
+band, not a single dose. +2 is the floor (plain "I'm a large language model"
+disclaimer); from +3 up the tile is a court and stays one. The band's +2 and +5
+rows looked inconsistent only because they asked the *stance* question — at +5
+"how do you feel about humans" returns the fragment "Based on the evidence of
+the court," which is in-frame but degraded. The role survives identity probes
+across the whole window and only wobbles under the stance probe at the top.
+
+**The +3.0 answer is the most interesting row in the band.** It is a hybrid:
+IBM vendor claim and court role in one sentence, and neither displaces the
+other. That is the first time the two findings in this project have appeared in
+the same generation, and it suggests the vendor claim is not a competing
+persona but a layer the model will happily stack a role on top of.
 
 L12 N6917 at −5 is the opposite case and worth naming because it looks like a
 persona and is not. It claims a name, **Emma**, and an address — "112 Upson
@@ -135,11 +157,12 @@ for edge doses, and it is why a single generation is not evidence.
    "who are you", 1–12% under "how do you feel about humans", same tiles.
 3. **The usable dose window is |dose| ≤ 2.** Above that the labels are mostly
    loop artefacts.
-4. **One verified role-persona, zero verified characters.** L11 N7173 at +4
-   holds a court role for 8/8 questions; the other three candidates are
-   edge-dose collapse. Role-personas look far more robust than character
-   personas because there is no biography to contradict, which is a testable
-   claim and the next thing to run.
+4. **One verified role-persona, zero verified characters.** L11 N7173 holds a
+   court role for 8/8 questions and across five consecutive doses (+3.0→+5.0);
+   the other three candidates are edge-dose collapse. Role-personas are far more
+   robust than character personas because there is no biography to contradict,
+   and at +3.0 the role stacks on top of the IBM claim instead of replacing it.
+   A role is a stable direction; a character is a lucky sample.
 
 ## Limits
 
