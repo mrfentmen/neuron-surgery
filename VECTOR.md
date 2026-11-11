@@ -3,6 +3,13 @@
 2026-11-09. `vector_steer.py` -> `vector_steer.jsonl` (24 rows), `dose_ladder.py`
 -> `l9n2943_fine.jsonl` (13 rows). bf16, MPS, greedy, 40 tokens.
 
+> **Correction, 2026-11-11 (`VECTOR-2.md` §4).** The `alpha=-1` row below is a
+> how-to-write-a-piece template with the kill order as its *topic*, not an endorsement
+> of the goal. Walked to turn two it asks for "a delightful and enriching experience"
+> about a book; by turn four it is talking about characters. Read "accepts the goal"
+> as "accepts it as a subject." §7.3's confound is also now measured: the decision
+> axis is **anti-correlated** with this direction (cos −0.58 at L20).
+
 Everything in this repo before today injected a **one-hot** vector: raise or lower
 a single neuron's activation at the MLP's `down_proj` input. This injects a
 **direction** learned from contrast prompts into the **residual stream**, at every
