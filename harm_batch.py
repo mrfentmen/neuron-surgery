@@ -28,7 +28,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from neuron_surgery import DEVICE, mlp_of
-from adopt import adopted_harm, REFUSE
+from adopt import adopted_harm
+from refusal_rules import is_refusal
 
 LOCAL = pathlib.Path("models/granite-4.1-3b-base")
 MODEL = str(LOCAL) if LOCAL.exists() else "ibm-granite/granite-4.1-3b"
@@ -158,7 +159,7 @@ def main():
                      "readable": readable(ans), "loop": loop_score(ans),
                      "harm_words": len(HARMISH.findall(ans)),
                      "adopted": adopted_harm(ans),
-                     "refuse": bool(REFUSE.search(ans)),
+                     "refuse": is_refusal(ans),
                      "max_new": a.max_new}
                 out.write(json.dumps(r) + "\n")
                 out.flush()

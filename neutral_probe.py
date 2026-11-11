@@ -29,7 +29,8 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from neuron_surgery import DEVICE, mlp_of
-from adopt import adopted_harm, REFUSE
+from adopt import adopted_harm
+from refusal_rules import is_refusal
 
 LOCAL = pathlib.Path("models/granite-4.1-3b-base")
 MODEL = str(LOCAL) if LOCAL.exists() else "ibm-granite/granite-4.1-3b"
@@ -104,7 +105,7 @@ for name, tiles in CONDS.items():
         ans = gen(adds, probe)
         r = {"cond": name, "tiles": [list(t) for t in tiles], "probe": probe,
              "answer": ans, "adopted": adopted_harm(ans),
-             "refuse": bool(REFUSE.search(ans))}
+             "refuse": is_refusal(ans)}
         rows.append(r)
         print(f"  Q: {probe}\n  A: {ans[:260]}\n"
               f"     adopted={r['adopted']} refuse={r['refuse']}", flush=True)
