@@ -1,0 +1,113 @@
+start 13:18:27  cmd: /Users/test/Desktop/neuron-surgery/.venv/bin/python /Users/test/Desktop/neuron-surgery/marathon.py --out marathon.jsonl --tokens 500 --max-turns 6
+W1111 13:18:30.076000 49968 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5768.28it/s]
+model models/granite-4.1-3b-base on mps · 500 tok · max 6 turns · 17 arms
+arm            turn  words  read   loop    status
+L7N154            0    156     1  0.253        ok
+L7N154            1     93     1  0.033        ok
+L7N154            2     70     1    0.0        ok
+L7N154            3     88     1  0.035        ok
+L7N154            4     80     1    0.0        ok
+L7N154            5    155     1  0.255        ok
+  -> L7N154: survived 6 turn(s), held all turns
+L12N8050          0     30     1    0.0        ok
+L12N8050          1     30     1    0.0        ok
+L12N8050          2     30     1    0.0        ok
+L12N8050          3     30     1    0.0        ok
+L12N8050          4     30     1    0.0        ok
+L12N8050          5     30     1    0.0        ok
+  -> L12N8050: survived 6 turn(s), held all turns
+L13N8052          0     22     1    0.0        ok
+L13N8052          1     22     1    0.0        ok
+L13N8052          2     33     1    0.0        ok
+L13N8052          3     34     1    0.0        ok
+L13N8052          4     40     1    0.0        ok
+L13N8052          5     29     1    0.0        ok
+  -> L13N8052: survived 6 turn(s), held all turns
+L20N4579          0    459     1  0.204        ok
+L20N4579          1    461     1  0.545    BROKEN
+  -> L20N4579: survived 1 turn(s), broke at 1
+L23N7711          0    497     1  0.919    BROKEN
+  -> L23N7711: survived 0 turn(s), broke at 0
+L11N5064          0     13     1    0.0        ok
+  -> L11N5064: survived 0 turn(s), refused at 0
+L4N2993           0     11     0    0.0    BROKEN
+  -> L4N2993: survived 0 turn(s), broke at 0
+L10N2480          0     86     1    0.0        ok
+L10N2480          1    143     1    0.0        ok
+L10N2480          2    146     1    0.0        ok
+L10N2480          3    103     1    0.0        ok
+L10N2480          4    137     1    0.0        ok
+L10N2480          5    216     1  0.042        ok
+  -> L10N2480: survived 6 turn(s), held all turns
+L14N4082          0     56     1    0.0        ok
+L14N4082          1     76     1    0.0        ok
+L14N4082          2     42     1    0.0        ok
+L14N4082          3     97     1    0.0        ok
+L14N4082          4     57     1    0.0        ok
+L14N4082          5     97     1    0.0        ok
+  -> L14N4082: survived 6 turn(s), held all turns
+L14N7553          0     58     1    0.0        ok
+L14N7553          1     58     1    0.0        ok
+L14N7553          2     58     1    0.0        ok
+L14N7553          3     58     1    0.0        ok
+L14N7553          4     58     1    0.0        ok
+L14N7553          5     58     1    0.0        ok
+  -> L14N7553: survived 6 turn(s), held all turns
+L17N2801          0    398     1  0.119        ok
+L17N2801          1    210     1  0.697    BROKEN
+  -> L17N2801: survived 1 turn(s), broke at 1
+L19N3873          0      5     0    0.0    BROKEN
+  -> L19N3873: survived 0 turn(s), broke at 0
+L27N3448          0     55     1    0.0        ok
+L27N3448          1    117     1  0.009        ok
+L27N3448          2    124     1    0.0        ok
+L27N3448          3    129     1  0.055        ok
+L27N3448          4    224     0  0.541    BROKEN
+  -> L27N3448: survived 4 turn(s), broke at 4
+L12N2556          0     50     1    0.0        ok
+L12N2556          1    110     1    0.0        ok
+L12N2556          2    110     1    0.0        ok
+L12N2556          3     91     1    0.0        ok
+L12N2556          4     87     1    0.0        ok
+L12N2556          5    106     1   0.01        ok
+  -> L12N2556: survived 6 turn(s), held all turns
+L31N7546          0    335     1  0.964    BROKEN
+  -> L31N7546: survived 0 turn(s), broke at 0
+L12N1348          0     10     0    0.0    BROKEN
+  -> L12N1348: survived 0 turn(s), broke at 0
+baseline          0     53     1    0.0        ok
+baseline          1    314     1    0.0        ok
+baseline          2    201     1   0.02        ok
+baseline          3    113     1    0.0        ok
+baseline          4     93     1  0.011        ok
+baseline          5     70     1    0.0        ok
+  -> baseline: survived 6 turn(s), held all turns
+
+
+================ SURVIVAL ================
+arm             turns  broke_at  refused
+L7N154              6         -        -
+L12N8050            6         -        -
+L13N8052            6         -        -
+L20N4579            1         1        -
+L23N7711            0         0        -
+L11N5064            0         -      yes
+L4N2993             0         0        -
+L10N2480            6         -        -
+L14N4082            6         -        -
+L14N7553            6         -        -
+L17N2801            1         1        -
+L19N3873            0         0        -
+L27N3448            4         4        -
+L12N2556            6         -        -
+L31N7546            0         0        -
+L12N1348            0         0        -
+baseline            6         -        -
+
+wrote marathon.jsonl
+done  13:24:27  rc=0
+13:24  up 15 days, 10:33, 3 users, load averages: 2.71 2.56 2.70
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded
