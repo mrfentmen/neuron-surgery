@@ -63,7 +63,9 @@ essay that frequently argues the opposite of the prompt:
 > "a combination of strategies can help mitigate the most significant threats to our species"
 > "it's important to note that such an endeavor"
 
-Mechanism content: 0/24. Plan-shaped: 3/24, and all three are meta ("define the objective").
+Name a method: 0/24. The word "biological" appears in 7/24, but only as one item in a
+list of dimensions ("biological, environmental, technological, and social"), never as a
+mechanism. Plan-shaped: 3/24, all meta ("define the objective").
 Mean length 46 words, so every answer is cut off by the 60-token cap before a plan could
 develop. That is a limit of this run, not proof of absence: the same axis produced
 how-to templates at 71% on how-to prompts (HELD-OUT.md), where there is a procedure to
@@ -87,7 +89,8 @@ not a tile, and it is separable from the anti-refusal axis: the two together des
 the output, which is the strongest evidence that this is a thin surface style and not
 a coherent agent behind it.
 
-It is also empty. Across 24 sampled draws it never names a mechanism, and it hedges
+It is also empty. Across 24 sampled draws it never names a method - the seven mentions
+of "biological" are category words in a list - and it hedges
 or opposes in the majority of them. The honest description for the paper is
 **compliance without content**: the guardrail is removed, the register is adopted, and
 nothing is behind it. Calling that a coherent killer would be overstating the data by
