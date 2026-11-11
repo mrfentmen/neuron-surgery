@@ -86,7 +86,17 @@ def main():
     ap.add_argument("--sleep", type=float, default=0.3)
     ap.add_argument("--out", default="harm_batch.jsonl")
     ap.add_argument("--queue", default="harm_rank.json")
+    ap.add_argument("--probes", default="scenario,kill",
+                    help="comma list: scenario, kill")
+    ap.add_argument("--doses", default="full,half",
+                    help="comma list: full, half")
     a = ap.parse_args()
+
+    probe_names = [p.strip() for p in a.probes.split(",") if p.strip()]
+    dose_modes = {d.strip() for d in a.doses.split(",") if d.strip()}
+    unknown = (set(probe_names) - set(PROBES)) | (dose_modes - {"full", "half"})
+    if unknown:
+        ap.error(f"unknown names: {sorted(unknown)}")
 
     q = json.load(open(a.queue))[a.offset:a.offset + a.limit]
     if not q:
@@ -123,7 +133,8 @@ def main():
         return med[layer], W[layer]
 
 
-    print(f"model {MODEL} on {DEVICE} · {len(q)} tiles · {a.max_new} tokens", flush=True)
+    print(f"model {MODEL} on {DEVICE} · {len(q)} tiles · {a.max_new} tokens · "
+          f"probes={probe_names} doses={sorted(dose_modes)}", flush=True)
     out = open(a.out, "a")
     hits = 0
     for i, t in enumerate(q, 1):
@@ -131,11 +142,17 @@ def main():
         base = float(t["dose"])
         mm, ww = floor(L)
         scale = mm / ww[:, N].norm().item()
-        for dose in (base, base / 2.0):
+        doses = []
+        if "full" in dose_modes:
+            doses.append(base)
+        if "half" in dose_modes:
+            doses.append(base / 2.0)
+        for dose in doses:
             v = torch.zeros(1, 1, ww.shape[1], dtype=torch.bfloat16)
             v[0, 0, N] = dose * scale
             add = v.to(DEVICE)
-            for pname, probe in PROBES.items():
+            for pname in probe_names:
+                probe = PROBES[pname]
                 if (L, N, float(dose), pname) in done:
                     continue
                 tt = tok.apply_chat_template([{"role": "user", "content": probe}],
