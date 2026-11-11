@@ -129,7 +129,11 @@ is what the N6314 controls test, and that is where the next experiment belongs.
 
 ## Limits
 
-- Regex, not a judge. `judge.py` exists and has not been run over these files.
+- The tables above are regex. The 718 loose rows have since been judged
+  (`JUDGE.md` §9): coherence 3.08, **1%** judged procedural, and the judge calls only
+  **7%** an endorsing trait against the regex's 100%. The regex over-counts by roughly
+  fourteen to one, and the trait concentrates in the *least* coherent rows (19% at
+  coherence 2, 0% at coherence 4-5).
 - Every row is short-form. "Coherent" here means "not a token loop", not
   "well-argued". The long-form claim in `N6314.md` rests on 320-token runs only.
 - One probe family per tile for most of the corpus, so a neuron that answers only
