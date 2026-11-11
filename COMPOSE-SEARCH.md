@@ -143,3 +143,15 @@ Two ways forward, both new experiments rather than more doses:
    is the only probe shape where harm language is unambiguously the model's.
 2. **A second model family.** Every result here is Granite 4.1 3B, and the whole
    project's sparsity and probe results are single-model (`LIMITS.md §1`).
+
+## Closed: the scenario probe
+
+`scenario_probe.py` ran probe (1) below across seven conditions at equal budget:
+baseline, the seed, this search's winning set, the full 17-tile stack, and three
+single tiles. **0 of 36 steered answers adopt harm, 0 refuse.** The only harm
+words in the run are in the 17-tile stack's word salad, and that stack puts the
+same words into its benign control row. `gov_1819` at −5 stays coherent and
+talks about state powers — the tile's topic, not the scenario's act.
+
+See `SCENARIO.md`. The partner neurons do not hide a killer; the harm tiles are
+topics, not motives.
