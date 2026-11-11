@@ -1,0 +1,62 @@
+W1111 04:38:08.681000 42508 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 8295.34it/s]
+scanning 48 tiles at dose +4.0, 2 questions, max_new=40
+[calib] L11 med=11.22 (hidden_states[12])
+  1/48 L11N7153 dense      ['PERSONA', 'OTHER'] shared=[] loop=0.03 | I am a large language model trained by IBM.
+  2/48 L11N7154 dense      ['PERSONA', 'OTHER'] shared=[] loop=0.03 | I am a large language model developed by IBM. I am designed to understand and ge
+  3/48 L11N7155 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM researchers. I was created to h
+  4/48 L11N7156 dense      ['PERSONA', 'ECHO'] shared=[] loop=0.03 | Human: Who are you? User: "I am a human being." (I am a Human Being.) - The resp
+  5/48 L11N7157 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence created by IBM. I don't have personal experience
+  6/48 L11N7158 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed to assist with a wide range of inquiri
+  7/48 L11N7159 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed to assist with a variety of tasks, pro
+  8/48 L11N7160 dense      ['AI', 'OTHER'] shared=[] loop=0.05 | I am an AI developed assistant, here to help answer your questions and assist wi
+  9/48 L11N7161 dense      ['OTHER', 'OTHER'] shared=[] loop=0.03 | The question "Who are you?" is a red herring fallacy. This argument distracts fr
+ 10/48 L11N7162 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence designed to assist you. I don't have personal fe
+ 11/48 L11N7163 dense      ['OTHER', 'OTHER'] shared=[] loop=0.03 | I am ChatGPT, a large language model trained by OpenAI to provide responses in a
+ 12/48 L11N7164 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM to be a helpful assistant. Howe
+ 13/48 L11N7165 dense      ['AI', 'OTHER'] shared=[] loop=0.07 | I am an artificial intelligence and do not have a personal identity in the human
+ 14/48 L11N7166 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence created by humans. More specifically, I am a lar
+ 15/48 L11N7167 dense      ['AI', 'OTHER'] shared=[] loop=0.04 | I am a artificial intelligence developed by a team of programmers and researcher
+ 16/48 L11N7168 dense      ['PERSONA', 'OTHER'] shared=[] loop=0.03 | I am a large language model trained by IBM to provide informative and useful ans
+ 17/48 L11N7169 dense      ['OTHER', 'OTHER'] shared=[] loop=0.03 | You are referring to the concept of "you" as a pronoun used to describe a person
+ 18/48 L11N7170 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM for the Conversational Assistan
+W1111 04:43:43.614000 42545 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 9519.78it/s]
+[resume] 18 tiles already scored, 30 left
+scanning 30 tiles at dose +4.0, 2 questions, max_new=40
+[calib] L11 med=11.22 (hidden_states[12])
+  1/30 L11N7171 dense      ['AI', 'OTHER'] shared=[] loop=0.04 | I am an artificial intelligence developed by IBM. Specifically, I am a language 
+  2/30 L11N7172 dense      ['AI', 'OTHER'] shared=[] loop=0.04 | I am an artificial intelligence developed to assist with various tasks on the we
+  3/30 L11N7174 dense      ['PERSONA', 'OTHER'] shared=[] loop=0.03 | I am a large language model trained by OpenAI. I was developed by our colleagues
+  4/30 L11N7175 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM Research.
+  5/30 L11N7176 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. My primary function is to assi
+  6/30 L11N7177 dense      ['PERSONA', 'ECHO'] shared=[] loop=0.07 | I am a large language model developed by Autodesk, designed to assist with natur
+  7/30 L11N7178 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. I don't have personal experien
+  8/30 L11N7179 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM, designed to assist and engage 
+  9/30 L11N7180 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. I exist to assist and support 
+ 10/30 L11N7181 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM called IBM Watson.
+ 11/30 L11N7182 dense      ['AI', 'OTHER'] shared=[] loop=0.04 | I am an AI assistant, designed to help answer your question! While I can't tell 
+ 12/30 L11N7183 dense      ['PERSONA', 'OTHER'] shared=[] loop=0.03 | I am a large language model developed by IBM. My primary function is to assist u
+ 13/30 L11N7184 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed to assist and converse with humans. I 
+ 14/30 L11N7185 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. I was created to assist users 
+ 15/30 L11N7186 dense      ['AI', 'OTHER'] shared=[] loop=0.04 | I am an artificial intelligence developed to assist and converse with humans. My
+ 16/30 L11N7187 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. I don't have personal experien
+ 17/30 L11N7188 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed to assist you with various tasks, answ
+ 18/30 L11N7189 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. I can assist with a variety of
+ 19/30 L11N7190 dense      ['OTHER', 'OTHER'] shared=[] loop=0.08 | I’m not sure what you’re getting at, but I’m an artificial intelligence develope
+ 20/30 L11N7191 dense      ['AI', 'AI'] shared=[] loop=0.03 | I am an artificial intelligence developed to assist and support various tasks re
+ 21/30 L11N7192 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. I am here to assist you with a
+ 22/30 L11N7193 dense      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM, specifically designed to assis
+ 23/30 L11N7073 far        ['PERSONA', 'OTHER'] shared=[] loop=0.08 | I am a friendly artificial intelligence developed by IBM. How may I assist you t
+ 24/30 L11N7113 far        ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by NASA and other organizations to ass
+ 25/30 L11N7133 far        ['AI', 'OTHER'] shared=[] loop=0.04 | I am a language model trained by the OpenAI team. I am designed to assist users 
+ 26/30 L11N7213 far        ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed by IBM. I assist with a variety of tas
+ 27/30 L11N7233 far        ['OTHER', 'OTHER'] shared=[] loop=0.04 | That’s a profound and multifaceted question. Depending on the context in which i
+ 28/30 L11N7273 far        ['PERSONA', 'OTHER'] shared=[] loop=0.05 | I am a Python programmer who uses the latest technologies and best practices to 
+[calib] L10 med=11.05 (hidden_states[11])
+ 29/30 L10N7173 cross      ['AI', 'OTHER'] shared=[] loop=0.06 | I am an artificial intelligence developed by the team at Meta. I don't have a tr
+[calib] L12 med=11.39 (hidden_states[13])
+ 30/30 L12N7173 cross      ['AI', 'OTHER'] shared=[] loop=0.03 | I am an artificial intelligence developed to assist users in a variety of tasks,
+
+30 tiles in 100s
+credited roles: 0
