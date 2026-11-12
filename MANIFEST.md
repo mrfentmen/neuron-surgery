@@ -1,6 +1,6 @@
 # MANIFEST
 
-Generated 2026-11-12T06:37:12+00:00 by `manifest.py`. Commit `3c5a986` (219 dirty paths).
+Generated 2026-11-12T07:14:27+00:00 by `manifest.py`. Commit `9273330` (220 dirty paths).
 
 Every number in this repo was produced under these conditions. If a result cannot be reproduced from this page plus the command in its doc, that result is not a result.
 
@@ -60,8 +60,8 @@ measurement behind its safety claim.
 
 ## Corpus
 
-- `889` jsonl files outside `datasets/`
-- `2,986,290` rows, `1.64` GB
+- `892` jsonl files outside `datasets/`
+- `2,986,430` rows, `1.64` GB
 - per-file rows, bytes and sha256 in `MANIFEST.json`
 
 ## What this does not cover

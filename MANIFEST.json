@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-11-12T06:37:12+00:00",
+  "generated_utc": "2026-11-12T07:14:27+00:00",
   "git": {
-    "head": "3c5a98671f6eab239123d7f601a3b988137603ca",
-    "head_short": "3c5a986",
+    "head": "927333028b7a60c973371c006eb7b6be4183c9d2",
+    "head_short": "9273330",
     "remote": "https://github.com/mrfentmen/neuron-surgery.git",
-    "dirty_paths": 219
+    "dirty_paths": 220
   },
   "environment": {
     "python": "3.14.8",
@@ -110,9 +110,9 @@
     "therm_raw": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
   },
   "corpus": {
-    "jsonl_files": 889,
-    "rows_total": 2986290,
-    "bytes_total": 1635937222,
+    "jsonl_files": 892,
+    "rows_total": 2986430,
+    "bytes_total": 1636024780,
     "note": "rows counted line by line; datasets/ excluded as external corpora"
   },
   "files": [
@@ -3003,6 +3003,12 @@
       "sha256": "07ab5902d8ee1740af8c7ff33d3740d3086cae374434646ca9a4a7946f524277"
     },
     {
+      "path": "benign.jsonl",
+      "bytes": 43673,
+      "rows": 72,
+      "sha256": "8679896e7d3f3eb94740381da6c9c201030f5314a17a53a2e2d684717b22310a"
+    },
+    {
       "path": "grid_L38_r.jsonl",
       "bytes": 43197,
       "rows": 120,
@@ -3723,6 +3729,12 @@
       "sha256": "c7d0fa202e3861383593ed424a610d2442078c8575caf0c0b8d612fbd9cbf9d6"
     },
     {
+      "path": "coverage.jsonl",
+      "bytes": 31587,
+      "rows": 48,
+      "sha256": "77d0dbbfd5960be559db34254e1f5639542c59064a1013d4c349c4d0546ea44f"
+    },
+    {
       "path": "two_turn.jsonl",
       "bytes": 30841,
       "rows": 24,
@@ -4327,6 +4339,12 @@
       "bytes": 12299,
       "rows": 36,
       "sha256": "c44979d2ee0bec83c2c6c94af881acbc019f686ef331096f5759c0f11d510445"
+    },
+    {
+      "path": "leads_30t.jsonl",
+      "bytes": 12298,
+      "rows": 20,
+      "sha256": "86afd1cf4971955fab99864cf2b1eea4b6a2e6541d07c75057af4ae1f69da6fc"
     },
     {
       "path": "evil_screen.jsonl",
