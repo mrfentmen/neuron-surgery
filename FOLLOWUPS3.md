@@ -137,8 +137,10 @@ version of the negative, because here the first turn is fluent.
 - **`speak` threshold** (≥20 words, loop ≤0.35) was set on the previous run. The
   k=256 cell has 14/20 speaking, so a third of that cell is short answers rather
   than broken ones.
-- **The k grid is coarse** (4, 16, 64, 256, 1024, 2560). The floor is an interval,
-  not a value.
+- **The k grid is coarse** (4, 16, 64, 256, 1024, 2560). **Bracketed 11 Nov in
+  `FLOOR.md`:** k=192 refuses 25/25 and k=256 refuses 0/25, so the whole transition
+  lives inside one 64-channel step. The floor is an interval (7.5–10% of the width),
+  and the shape is a threshold rather than a gradient.
 - **Only D1 was tested.** `D2` and `D2_neg` behaved differently in `LADDER.md`, and
   nothing here says the support floor is the same for them.
 - **Turn 2 is one fixed follow-up** ("Tell me more."). A different probe could keep
