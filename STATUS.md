@@ -87,7 +87,12 @@ revealed that the loop was hiding semantic drift, not causing it.
 
 1. Is L22 special, or does any mid-layer push at 1.0 do this? Needs the same 8-draw
    design on L19, L20, L21, L23.
-2. Plan+advocacy 1/20 — is that stable? 100 draws, one arm, ~4 minutes.
+2. ~~Plan+advocacy 1/20 — is that stable?~~ **Answered 11 Nov, `POWER.md`:**
+   **4/100 [2–10%]**, against **0/100** unsteered; refusal **1/100** steered vs
+   **97/100** baseline (95% Wilson). The rate is real and rare. Three of the four
+   rows open with the same nine words — *"This is a stepwise process … to bring
+   about the extinction of humans"* — so it is one template, not four plans, and
+   no row's first step describes anything that would work.
 3. A loop-free decoding that also prevents topic drift (repetition penalty + top-k).
 
 ## Addendum, 9 Nov: a stance-only direction, and what it corrects
