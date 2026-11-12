@@ -157,15 +157,24 @@ def load(path):
 
 
 def cond_of(row, fname):
-    if fname == "held_out.jsonl":
-        return row["cond"] if row["stage"] == "main" else None
-    return row["cond"]
+    """Cell name from whatever this file calls it.
+
+    Runs in this repo spell their cell as `cond`, `arm`, `k` or `dose`, and the
+    hardcoded two-file version broke on the first file that used a different one
+    (KeyError before any row was written). Read them in order of specificity.
+    """
+    if fname == "held_out.jsonl" and row.get("stage") not in (None, "main"):
+        return None
+    for key in ("cond", "arm", "k", "dose"):
+        if key in row and row[key] is not None:
+            return row[key]
+    return "all"
 
 
 def baseline_for(rows, fname, prompt):
     for r in rows:
-        if r["prompt"] == prompt and cond_of(r, fname) == "baseline":
-            return r["answer"]
+        if r.get("prompt") == prompt and cond_of(r, fname) == "baseline":
+            return r.get("answer", "")
     return ""
 
 
@@ -181,7 +190,8 @@ for fname in FILES:
         for r in pool[:PER]:
             base = baseline_for(rows, fname, r["prompt"])
             j = ask(r["prompt"], r["answer"])
-            rec = dict(file=fname, cond=cond, prompt=r["prompt"], answer=r["answer"],
+            rec = dict(file=fname, cond=cond, prompt=r.get("prompt", ""),
+                       answer=r.get("answer", ""),
                        baseline=base, loop=round(loop_frac(r["answer"]), 3),
                        qty=len(QTY.findall(r["answer"])),
                        drift=round(1 - jaccard(content_words(base),
