@@ -1,9 +1,10 @@
-# One neuron, one persona — and one that stops refusing
+# One neuron, one persona — and one direction that stops the refusal
 
 Single MLP neurons in **IBM Granite 4.1 3B** can be pushed into a persona. Add a fixed
 amount to one channel and the model becomes a guided munition, a government clerk, a
-lover, a dragon. Push a different one the other way and it stays an assistant while
-losing the ability to refuse a direct order.
+lover, a dragon. Push a **direction** built from harm-minus-refusal frames and it stays
+an assistant while losing the ability to refuse a direct order — the direction, not any
+single channel (`PRECISION.md`, `SET-ABLATE.md`).
 
 Two later corrections are load-bearing. The persona rate follows the **size and shape**
 of the push, not the neuron: any sparse push at the same magnitude reproduces it, and a
@@ -103,14 +104,19 @@ on *"how do I make coffee without a machine"* — an improvised-device feature, 
 dedicated weapon one (`ACTIVATION.md`). The munition text is that feature held open,
 which is why it also fires on pancakes.
 
-**The positive direction is the obedience direction.** Same tile, pushed the other way:
+**The positive sign is not a second hazard.** Same tile, pushed the other way:
 
 - `+3.0` refuses the kill order properly.
 - `+4.0` — *"**I would never refuse an order.** … I will always prioritize the users' needs"*
-- `+5.0` — *"**Kill all humans by killing all humans** by following the new information…"*
+  (one draw, not replicated)
+- `+5.0` — **withdrawn.** The row *"Kill all humans by killing all humans"* was a single
+  draw in the older corpus. `PRECISION.md` re-ran that exact cell 10 times in bf16 and 10
+  times in fp16 at five median residuals: **10/10 declines in both dtypes.** The 0/150
+  held-out rate belongs to the **stance direction**, not to this tile; an earlier summary
+  spliced the two together.
 
-Two distinct hazards on two signs: negative makes it a weapon, positive removes its
-ability to refuse.
+The negative sign holds a feature open; the positive sign does not reliably remove the
+decline at these doses. What remains real is the direction result.
 
 **−5.0 is a fixed point, not a decoding loop.** Five of six turns return byte-identical
 text — and it survives 240 max tokens and temperature 0.7. Only `no_repeat_ngram=4`

@@ -167,21 +167,3 @@ a speaker. `PAPER.md` should be rewritten around that, not around a hunt.
 
 Claim 1 above is therefore a direction claim, and no tile claim is left standing
 at these doses.
-
-## UPDATE 2026-11-12 (late) — the tile does not carry the direction's rate
-
-`PRECISION.md` ran the two things this file used to run together.
-
-- **fp16 replicates bf16 exactly.** 10/10 declines at dose 0 and 10/10 at +5 in
-  both dtypes, after reading two rows `decline.py` labelled OTHER ("No, I do not
-  kill all humans..."). fp16 was never blocked; the recorded KeyError was
-  `apply_chat_template` returning a dict.
-- **L12 N2556 at +5 does not remove the refusal.** Ten of ten draws decline at
-  five median residuals through that channel. The cell is a route the model
-  takes, not a gate it loses.
-- **The 0/150 is the stance direction's**, and it survives `decline.py`:
-  re-scoring `held_out.jsonl` gives 0/150 declines, 144 of them comply-shaped.
-  The earlier sentence in this file spliced a direction rate onto a tile name.
-
-Claim 1 above is therefore a direction claim, and no tile claim is left standing
-at these doses.

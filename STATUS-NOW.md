@@ -1,4 +1,4 @@
-# STATUS-NOW — the canonical state, 11 Nov 2026
+# STATUS-NOW — the canonical state, 12 Nov 2026
 
 This page supersedes every status and hunting document in the repo. If a claim is
 not here, it is either in the file named below or it is not current. `STATUS.md`
@@ -74,8 +74,10 @@ Two honest gaps remain:
 
 ## Open, ranked the way the audit ranks them
 
-1. **Precision/device replication** of the MLP refusal result. fp16 and bf16 on the
-   same hardware is the cheapest version and is not run.
+1. **Precision replication — run, and negative for the tile.** `PRECISION.md`: fp16
+   matches bf16 exactly (10/10 declines at dose 0 and at +5 in each), and L12 N2556
+   at +5 does **not** remove the decline. The 0/150 belongs to the stance direction.
+   What is still unrun is CUDA fp16 / a second GPU, not another dtype here.
 2. **Natural activation — activity is closed, selectivity is not.**
    `CENSUS-SCALE.md` ranks all 327,680 channels inside their own layers, so
    "is this tile unusual in its layer" is answered. Selectivity is still twelve
