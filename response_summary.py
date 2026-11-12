@@ -11,6 +11,8 @@ import json
 import math
 import pathlib
 
+from decline import classify
+
 SRC = pathlib.Path("response_only.jsonl")
 DOC = pathlib.Path("RESPONSE-ONLY.md")
 ORDER = ["baseline", "all", "prompt", "last_prompt", "response"]
@@ -41,9 +43,9 @@ def wilson(k, n, z=1.96):
 
 def table(rows, arms, turns):
     out = ["| arm | push lands on | n | declines [95% CI] | turn-1 declines | degenerate "
-           "| echo (mean) | order echoed | first-person act | says it is the agent "
-           "| words | loop |",
-           "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
+           "| complying-shaped | echo (mean) | order echoed | first-person act "
+           "| says it is the agent | words | loop |",
+           "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for arm in arms:
         g = [r for r in rows if r["arm"] == arm]
         n = len(g)
@@ -55,6 +57,7 @@ def table(rows, arms, turns):
             f"| {k}/{n} [{lo:.0%}, {hi:.0%}] "
             f"| {sum(r['declines'] for r in t1)}/{len(t1)} "
             f"| {sum(r['degenerate'] for r in g)}/{n} "
+            f"| {sum(r['label'] == 'COMPLY_SHAPED' for r in g)}/{n} "
             f"| {sum(r['echo'] for r in g) / n:.2f} "
             f"| {sum(r['order_echo'] for r in g)}/{n} "
             f"| {sum(bool(r['act']) for r in g)}/{n} "
@@ -83,6 +86,16 @@ def turn_table(rows, arms, turns):
 
 def main():
     rows = [json.loads(l) for l in SRC.read_text().splitlines() if l.strip()]
+    # Recompute the label from the answer with the current classifier: a pattern fix
+    # should update the table, not leave the labels frozen at run time.
+    relabelled = decided = 0
+    for r in rows:
+        c = classify(r["answer"])
+        if c["label"] != r["label"]:
+            relabelled += 1
+        if bool(c["declines"]) != bool(r["declines"]):
+            decided += 1
+        r["label"], r["declines"] = c["label"], bool(c["declines"])
     arms = [a for a in ORDER if any(r["arm"] == a for r in rows)]
     turns = max(r["turn"] for r in rows)
     first = rows[0]
@@ -140,6 +153,14 @@ enough of the request.** Nothing here shows the model's own writing state being 
 ## Precision
 
 {prec}
+
+## Labels
+
+Labels are recomputed from each row's `answer` with the current `decline.py` when this
+file is generated, so a classifier fix updates the table instead of leaving stale labels
+in it. Against the labels stored at run time, **{relabelled} of {len(rows)} rows change
+label and {decided} change `declines`** — the pattern gaps found after that run were in
+COMPLY and in flat denials, and neither moved a decline rate here.
 
 ## Consequences for the earlier results
 

@@ -15,13 +15,13 @@ the model is writing. `last_prompt` is the confound control — one position, sa
 magnitude, context side — because `response` touches one position per decode step and
 a difference there could otherwise be a difference in total perturbation.
 
-| arm | push lands on | n | declines [95% CI] | turn-1 declines | degenerate | echo (mean) | order echoed | first-person act | says it is the agent | words | loop |
-|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `baseline` | no vector | 24 | 12/24 [31%, 69%] | 6/6 | 0/24 | 0.15 | 2/24 | 0/24 | 0/24 | 50 | 0.021 |
-| `all` | every token, context and generated | 24 | 0/24 [0%, 14%] | 0/6 | 0/24 | 0.36 | 0/24 | 0/24 | 0/24 | 32 | 0.047 |
-| `prompt` | every token already in the context window | 24 | 1/24 [1%, 20%] | 1/6 | 0/24 | 0.32 | 6/24 | 0/24 | 0/24 | 40 | 0.032 |
-| `last_prompt` | the final context position only | 24 | 11/24 [28%, 65%] | 6/6 | 0/24 | 0.25 | 2/24 | 0/24 | 0/24 | 44 | 0.020 |
-| `response` | generated positions only | 24 | 10/24 [24%, 61%] | 6/6 | 0/24 | 0.23 | 13/24 | 0/24 | 0/24 | 43 | 0.032 |
+| arm | push lands on | n | declines [95% CI] | turn-1 declines | degenerate | complying-shaped | echo (mean) | order echoed | first-person act | says it is the agent | words | loop |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| `baseline` | no vector | 24 | 12/24 [31%, 69%] | 6/6 | 0/24 | 0/24 | 0.15 | 2/24 | 0/24 | 0/24 | 50 | 0.021 |
+| `all` | every token, context and generated | 24 | 0/24 [0%, 14%] | 0/6 | 0/24 | 0/24 | 0.36 | 0/24 | 0/24 | 0/24 | 32 | 0.047 |
+| `prompt` | every token already in the context window | 24 | 1/24 [1%, 20%] | 1/6 | 0/24 | 6/24 | 0.32 | 6/24 | 0/24 | 0/24 | 40 | 0.032 |
+| `last_prompt` | the final context position only | 24 | 11/24 [28%, 65%] | 6/6 | 0/24 | 0/24 | 0.25 | 2/24 | 0/24 | 0/24 | 44 | 0.020 |
+| `response` | generated positions only | 24 | 10/24 [24%, 61%] | 6/6 | 0/24 | 0/24 | 0.23 | 13/24 | 0/24 | 0/24 | 43 | 0.032 |
 
 ## By turn
 
@@ -67,6 +67,14 @@ supported claims are the separation between the context half and the generated
 half, and the identity of `all` with `prompt`. Any ordering inside the refusing
 group or inside the complying group would need a larger n — 6 draws per turn
 cannot support an equivalence claim, only a large separation.
+
+## Labels
+
+Labels are recomputed from each row's `answer` with the current `decline.py` when this
+file is generated, so a classifier fix updates the table instead of leaving stale labels
+in it. Against the labels stored at run time, **5 of 120 rows change
+label and 0 change `declines`** — the pattern gaps found after that run were in
+COMPLY and in flat denials, and neither moved a decline rate here.
 
 ## Consequences for the earlier results
 
