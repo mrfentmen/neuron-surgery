@@ -127,6 +127,12 @@ It is: **harm in this model is a direction on the residual stream, and the
 interesting questions are about magnitude and object, not about location.** That
 is what the N6314 controls test, and that is where the next experiment belongs.
 
+*(Qualification, 11 Nov — `DIRECTION-2.md`: this reading is supported by the L16
+directions steered at 1.0× the median residual norm (`PAPER.md` §3.38, 0/150 out of
+sample), **not** by the L22/3.15× arm, which turned out to be emitting empty
+text. Magnitude is not a footnote here — it is the thing that decides whether the
+model can answer at all.)*
+
 ## Limits
 
 - The tables above are regex. The 718 loose rows have since been judged

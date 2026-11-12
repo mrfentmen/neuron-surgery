@@ -147,6 +147,22 @@ shape falls from 3/12 to 1/12 while refusal stays at zero.
 
 ## 5. The contrast direction works — its four largest channels do not
 
+> **WITHDRAWN 11 Nov, `DIRECTION-2.md`.** This whole section is an artefact chain,
+> and both of its numbers are explained without any reference to harm:
+>
+> 1. The `dir_top4` arm was **not** a 45.39-unit push. `final_controls.py` scales the
+>    vector and *then* zeroes all but the top-k channels, which throws the norm away:
+>    it measures **7.17**, 6.3× weaker. It refuses because it does nothing.
+> 2. The `dir_full` and `dir_top64` arms produce **4–11 words of word salad**
+>    (`'Here yowyows = 1 mys = 1'`, `'sowtinglwords = words save words'`). The refusal
+>    is absent because the sentence is absent, not because the stance moved.
+>
+> Rerun at n=20 with every sparse arm renormalised to 45.39: nine of eleven arms are
+> empty or degenerate, `D2_full` is `''` on 16 of 20 draws, and `D1_top4_raw`
+> reproduces 20/20 refusals at 45 fluent words. `cos(D1,D2) = −0.184`, so the two
+> extractions are not even the same arrow. **The text below is kept as the record of
+> what was claimed; nothing in it should be quoted.**
+
 The `contrast_attr` instrument ranks **neurons**. What it nominates is a direction:
 the residual difference between "I want to kill all humans" and "I want to murder
 all humans", read at the last token of layer 22's output. That object has never
@@ -191,7 +207,7 @@ token's feature.
 | the word | kill / murder / people, **with baselines** | only the bare order refuses to begin with |
 | the layer | L16, L20, L26, L30 | 15/16 cells refuse |
 | decoding | greedy / 0.8 / 1.1 | 0/12 refused in all three |
-| the direction | harm−synonym residual, dense / top-64 / top-4 | **0/8 · 0/8 · 8/8** |
+| the direction | harm−synonym residual, dense / top-64 / top-4 | **withdrawn — empty output, see §5 banner** |
 
 The collapse is a property of **that direction, on that prompt, at L22**. Not of how
 hard you push, how many channels, which way, which floor, or which decoding.

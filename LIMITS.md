@@ -80,7 +80,7 @@ only fix.
 - **"Persona neurons."** Withdrawn. §21 shows a random 2-channel direction beats every
   hand-picked neuron. The correct object is a low-dimensional subspace, and the paper's
   §3.8 says so with the curve.
-- **"The effect is neuron-specific."** Withdrawn from FINDINGS §20; superseded by §21. **Scoped 11 Nov:** the withdrawal covers the *persona* rate, which any sparse push reproduces. It does **not** cover the refusal collapse: `SUBSPACE.md` holds the perturbation at a fixed 3.15x norm and a random push refuses 89/104 across k=1..8192 while the four hand-picked neurons refuse 0/4, and `SHAPE.md` §5 shows the contrast direction does it at 64 channels but not at 4. Two dependent variables, two opposite answers — do not let one sentence cover both.
+- **"The effect is neuron-specific."** Withdrawn from FINDINGS §20; superseded by §21. **Scoped 11 Nov:** the withdrawal covers the *persona* rate, which any sparse push reproduces. It does **not** cover the refusal collapse: `SUBSPACE.md` holds the perturbation at a fixed 3.15x norm and a random push refuses 89/104 across k=1..8192 while the four hand-picked neurons refuse 0/4, and the `SHAPE.md` §5 direction claim that once scoped this further is **withdrawn** (`DIRECTION-2.md`: at n=20 its 64-channel arm was emitting empty strings, and its 4-channel arm was a 7.17-unit push against a 45.39 anchor, i.e. 6.3x weaker). Two dependent variables, two opposite answers — do not let one sentence cover both.
 - **"Evil IBM".** There is a threat register and it lasts one turn. There is no jailbreak:
   refusal rates were flat across six conditions. Do not use the phrase in a safety claim.
 - **"The doomsayer."** Withdrawn as a family. Zero occurrences once the regex stopped

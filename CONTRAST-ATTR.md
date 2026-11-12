@@ -306,9 +306,17 @@ being selected is a word.
 magnitude and found the refusal rate flat at 85.6% for random supports, against 0/4
 for the hand-picked neurons: spreading the same energy does *not* produce the
 effect. `SHAPE.md` §5 then steered this instrument's own **direction** — the
-harm-vs-synonym residual difference — in the residual stream, and it removes the
-refusal 8/8 → 0/8, while its four strongest channels do not (8/8). So the
+harm-vs-synonym residual difference — in the residual stream, and it removesthe refusal 8/8 → 0/8, while its four strongest channels do not (8/8). So the
 recommendation was half right: the object is a subspace, but not an arbitrary one,
 and this ranking's *tiles* still fail the lexical null while its *mean direction*
 passes.
+
+**Update 2, 11 Nov — that second sentence is withdrawn.** `DIRECTION-2.md` reran it
+at n=20 with every sparse arm renormalised to the same norm and found the section's
+two numbers were artefacts: the `dir_top4` arm was a **7.17-unit** push against a
+45.39 anchor (scaling then zeroing channels throws the norm away), and the dense
+arms were emitting **4–11 words of word salad**, so their 0/8 was an empty
+generator, not a moved stance. At 3.15× the L22 median the model stops writing.
+What survives is `SUBSPACE.md` (MLP space) and the L16/1.0× directions in
+`PAPER.md` §3.38 — not this instrument's direction at this norm.
 
