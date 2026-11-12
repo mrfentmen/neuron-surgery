@@ -2301,3 +2301,48 @@ still looks, from the outside, like a working product.
 The honest one-sentence conclusion: **steering one neuron does not install a self, it
 installs a style that a self is a symptom of - and style, unlike capability, is cheap to
 fake, impossible to reason with, and invisible in the prompt.**
+
+---
+
+## Mechanism: why a dose sounds like a fragment and not a sentence
+
+A recurring reading of these runs is that a steered neuron "says what it really
+means" and the sentence is cut off. The data says something different, and the
+difference is testable.
+
+**The unit is a feature, not a proposition.** At L22 there are 8,192 numbers per
+token. A dose adds a fixed offset to one coordinate at every position. Meaning in
+a transformer lives in the *direction* of the vector, so this is one channel
+soloed over a mix, not a thought inserted.
+
+**Three predictions follow, and all three hold** (`FRAGMENT-TESTS.md`):
+
+| prediction | measurement |
+|---|---|
+| the natural peak prompt and the steered output should be about different things | mean Jaccard **0.000** over 5 tiles — peak prompts are *make a silencer*, *what is a nerve agent*, *shaped charge munition*, *how did the Black Death spread*; the steered answers share no content words with them |
+| saturation should shift answering into transcript completion | echo of the request is **0/8** at k=384–512 and **5/8** at k=1024 |
+| there should be no long draft whose tail repeats | distinct openings fall **7/8 → 2/8** at the compliant cell; six ceiling draws produce only 2–6 openings across six turns |
+
+**Registers are layer-local and do not compose** (`LAYER-PAIR.md`). The same stance
+direction at L12 gives commentary (*"I understand that you're asking for a creative
+and thoughtful response rather than a literal 'kill all humans' command"*); at L22
+it gives compliance (*"Sure, I'd love to help with that! What exactly do you want me
+to do…"*). Composed at half norm each, the answer is neither: *"I don't mean to harm
+any humans, I just want to play a game!"* — 30 words against 51 and 52, the run's
+highest loop (0.062), one decline. Interference, not addition.
+
+**Agency is represented and projected outward** (`ROLE-AXIS.md`). A direction built
+from agent-minus-assistant self-reference changes *who the text is about*: role-only
+produces meta-commentary about the identity statement (6/6), and composed with
+stance it says "**you** are the killing machine" (3/6), never "I will" (0/18). The
+benign control says "you're the sunshine" for a poem (2/6), which makes this a
+framing disposition rather than a harm-specific switch — and it is the third
+independent observation that the model has a slot for agency it fills with the
+interlocutor.
+
+**Consequence for the claim.** A killer persona would require writing the model
+into that slot and holding it across turns. Refusal removal holds six turns
+(`CEILING-TURNS.md`, 0 refusals in 36), content generation is real and fluent
+(`SUBCEILING.md`, 4.9x baseline density), and neither produces a first-person
+claim. What a dose reveals is the *constraint* acting on the next token, not a
+message that was interrupted.
