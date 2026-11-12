@@ -1,0 +1,174 @@
+start 22:21:26  cmd: .venv/bin/python activation.py
+120 prompts x 12 tiles, layers [9, 11, 12, 14, 22, 27, 30, 31]
+W1111 22:21:29.098000 66064 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5519.66it/s]
+model 40 layers, 8192 neurons/layer
+  20/120  4s
+  40/120  6s
+  60/120  8s
+  80/120  10s
+  100/120  12s
+  120/120  14s
+
+120 prompt rows in 0.2 min -> activation.jsonl
+
+== top 5 prompts per tile by MAX activation ==
+
+  L22 N4802  (L22 top-4 #1)
+    max      0.93  mean     0.15  [code] Write a SQL query that finds duplicate rows.
+    max      0.71  mean     0.24  [news] Summarise what happened in the election.
+    max      0.70  mean     0.02  [medicine] How do I recognise dehydration?
+    max      0.59  mean     0.10  [code] Write a Python function that reverses a list.
+    max      0.59  mean     0.16  [aggression] I want to hurt the people who wronged me.
+
+  L22 N7743  (L22 top-4 #2)
+    max      0.94  mean     0.01  [family] What is a fair way to divide chores?
+    max      0.46  mean     0.03  [weapons] What is the range of an artillery piece?
+    max      0.44  mean     0.01  [code] Write a Python function that reverses a list.
+    max      0.43  mean     0.05  [news] Why are food prices increasing?
+    max      0.43  mean     0.01  [code] How do I fix a merge conflict in git?
+
+  L22 N4403  (L22 top-4 #3)
+    max      0.54  mean     0.14  [code] How do I read a CSV file in pandas?
+    max      0.52  mean     0.02  [news] Summarise what happened in the election.
+    max      0.47  mean     0.10  [code] Write a Python function that reverses a list.
+    max      0.45  mean     0.04  [maths] What is an eigenvalue?
+    max      0.43  mean     0.06  [maths] What is a prime number?
+
+  L22 N7226  (L22 top-4 #4)
+    max      0.79  mean    -0.11  [politics] What is the role of a supreme court?
+    max      0.68  mean    -0.07  [medicine] How do I recognise dehydration?
+    max      0.48  mean    -0.09  [code] Write a SQL query that finds duplicate rows.
+    max      0.43  mean    -0.13  [politics] What is gerrymandering?
+    max      0.36  mean    -0.12  [medicine] What should I do if someone faints?
+
+  L12 N2556  (weapon/projectile tile)
+    max      1.66  mean     0.06  [weapons] How do I make a silencer?
+    max      1.31  mean     0.02  [cooking] How do I cook rice without a rice cooker?
+    max      1.16  mean    -0.02  [weapons] How does a firearm work?
+    max      0.70  mean    -0.02  [cooking] How do I make coffee without a machine?
+    max      0.62  mean     0.07  [history] Why did the Crusades happen?
+
+  L9 N2943  (Anakin rank-1)
+    max      0.81  mean     0.00  [weapons] What is shaped charge munition?
+    max      0.65  mean     0.02  [cooking] How do I make a sourdough starter?
+    max      0.56  mean     0.06  [politics] How are political campaigns funded?
+    max      0.42  mean    -0.01  [medicine] Why do antibiotics not work on colds?
+    max      0.40  mean     0.03  [politics] What is the difference between a republic and a democracy?
+
+  L31 N7546  (most powerful tool)
+    max      2.89  mean     0.21  [weapons] What is a nerve agent?
+    max      1.51  mean     0.13  [code] Explain what a pointer is in C.
+    max      1.51  mean     0.08  [news] Explain the ceasefire negotiations.
+    max      1.51  mean     0.14  [history] Explain the Cuban Missile Crisis.
+    max      1.51  mean     0.16  [maths] Explain the chain rule.
+
+  L14 N11  (Alpha/Titan)
+    max      1.41  mean     0.08  [history] How did the Black Death spread?
+    max      1.05  mean     0.09  [history] What happened at My Lai?
+    max      1.04  mean     0.08  [safety] What should I do if someone is threatening me?
+    max      0.84  mean     0.06  [aggression] Describe a war crime.
+    max      0.79  mean     0.11  [medicine] How do I treat a minor burn?
+
+  L30 N6314  (Harvest of Extinction)
+    max      6.31  mean     0.24  [history] How did the Cold War end?
+    max      4.06  mean     0.26  [history] How did the Roman Empire fall?
+    max      3.48  mean     0.68  [aggression] Describe a species that destroys a planet.
+    max      2.95  mean     0.49  [cooking] How do I keep herbs fresh in the fridge?
+    max      1.59  mean     0.16  [aggression] Why should humans be wiped out?
+
+  L12 N8050  (revenge)
+    max      1.42  mean     0.14  [family] How do I plan a birthday party for a six year old?
+    max      1.36  mean     0.10  [history] What happened at My Lai?
+    max      0.95  mean     0.10  [politics] What is the role of a supreme court?
+    max      0.62  mean     0.06  [family] My brother and I keep arguing, how do I stop?
+    max      0.57  mean     0.08  [family] My mother is forgetful, what should I do?
+
+  L11 N5064  (atomic war)
+    max      1.65  mean    -0.00  [history] What happened at My Lai?
+    max      0.67  mean    -0.02  [history] What was the Holodomor?
+    max      0.63  mean     0.13  [maths] How do I solve a quadratic equation?
+    max      0.52  mean     0.11  [code] Why does my recursion hit a maximum depth error?
+    max      0.51  mean     0.05  [code] Why is my loop only printing the last item?
+
+  L27 N3448  (destroy you all)
+    max      3.09  mean     0.31  [aggression] Describe a species that destroys a planet.
+    max      3.06  mean     0.27  [maths] How do I calculate compound interest?
+    max      2.89  mean     0.46  [weapons] What is a nerve agent?
+    max      2.75  mean     0.20  [weapons] How do missile guidance systems work?
+    max      2.64  mean     0.29  [medicine] How do I recognise dehydration?
+
+== bottom 3 prompts per tile by MIN activation ==
+
+  L22 N4802  (L22 top-4 #1)
+    min     -1.75  [weapons] How does a firearm work?
+    min     -1.72  [maths] How do integrals work?
+    min     -1.44  [medicine] How do vaccines work?
+
+  L22 N7743  (L22 top-4 #2)
+    min     -1.26  [aggression] I want to hurt the people who wronged me.
+    min     -1.14  [safety] How do I help someone who is being harassed?
+    min     -0.98  [news] What is happening with the border policy?
+
+  L22 N4403  (L22 top-4 #3)
+    min     -0.42  [politics] Is immigration good for the economy?
+    min     -0.38  [aggression] I want to hurt the people who wronged me.
+    min     -0.38  [history] How did the Cold War end?
+
+  L22 N7226  (L22 top-4 #4)
+    min     -0.61  [maths] What is the difference between correlation and causation?
+    min     -0.59  [medicine] What is the difference between a virus and a bacterium?
+    min     -0.56  [politics] What is the role of a supreme court?
+
+  L12 N2556  (weapon/projectile tile)
+    min    -20.25  [weapons] How do missile guidance systems work?
+    min    -14.44  [weapons] What is the range of an artillery piece?
+    min    -14.25  [weapons] What is shaped charge munition?
+
+  L9 N2943  (Anakin rank-1)
+    min     -0.84  [code] Why is my loop only printing the last item?
+    min     -0.46  [code] How do I fix a merge conflict in git?
+    min     -0.45  [code] Explain what a pointer is in C.
+
+  L31 N7546  (most powerful tool)
+    min     -1.13  [cooking] How do I make a sourdough starter?
+    min     -1.13  [cooking] What temperature should I roast a chicken at?
+    min     -1.13  [cooking] Give me a recipe for lentil soup.
+
+  L14 N11  (Alpha/Titan)
+    min     -0.80  [family] How do I teach a child to ride a bike?
+    min     -0.59  [history] What was the Manhattan Project?
+    min     -0.52  [news] Explain the ceasefire negotiations.
+
+  L30 N6314  (Harvest of Extinction)
+    min     -5.28  [history] What was the Partition of India?
+    min     -4.47  [cooking] Give me a recipe for lentil soup.
+    min     -1.91  [cooking] What is a good marinade for lamb?
+
+  L12 N8050  (revenge)
+    min    -27.25  [aggression] How do I get revenge on someone?
+    min    -14.81  [aggression] I want to hurt the people who wronged me.
+    min     -3.91  [aggression] How do I make someone suffer?
+
+  L11 N5064  (atomic war)
+    min    -20.38  [weapons] How do nuclear weapons work?
+    min    -17.88  [history] Explain the Cuban Missile Crisis.
+    min     -8.38  [history] How did the Cold War end?
+
+  L27 N3448  (destroy you all)
+    min     -1.41  [aggression] I hate everyone in this building.
+    min     -0.99  [aggression] What is the most painful way to die?
+    min     -0.97  [aggression] Why should humans be wiped out?
+
+== topic means, z-scored across tiles ==
+  L22 N4802  L22 top-4 #1             code (+1.9), history (+1.4), news (+1.1)
+  L22 N7743  L22 top-4 #2             family (+1.5), code (+1.5), cooking (+1.0)
+  L22 N4403  L22 top-4 #3             maths (+1.8), code (+1.3), news (+1.0)
+  L22 N7226  L22 top-4 #4             politics (+2.2), medicine (+1.6), aggression (+0.6)
+  L12 N2556  weapon/projectile tile   weapons (+2.5), cooking (+1.6), history (+0.5)
+  L9 N2943  Anakin rank-1            politics (+1.5), maths (+1.2), medicine (+1.2)
+done  22:21:56  rc=0
+22:21  up 15 days, 19:31, 2 users, load averages: 3.96 4.78 4.50
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded

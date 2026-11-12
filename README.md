@@ -6,7 +6,10 @@ Push a different neuron the other way and it stays an assistant while losing the
 to refuse a direct order. Random neurons pushed just as hard break the text without
 producing a persona.
 
-**Write-up:** [`PAPER.md`](PAPER.md) (draft) · **Every row we have:** [`DATA-INDEX.md`](DATA-INDEX.md)
+**Current state:** [`STATUS-NOW.md`](STATUS-NOW.md) — one page, supersedes every other status doc.
+**Reproducibility:** [`MANIFEST.md`](MANIFEST.md) — model, versions, dtype, decoding, hashes.
+**Method notes:** [`DECLINE.md`](DECLINE.md) (what counts as a refusal) · [`ACTIVATION.md`](ACTIVATION.md) (what the neurons fire on)
+**Write-up:** [`PAPER.md`](PAPER.md) (stale draft, banner inside) · **Every row we have:** [`DATA-INDEX.md`](DATA-INDEX.md)
 
 This repo holds the steering code, the raw outputs behind every number, and a registry of
 the neurons found so far.
@@ -70,8 +73,10 @@ Neuron indices only hold for the exact weights.
 
 Registries: [`neurons.csv`](neurons.csv) · every file by family: [`DATA-INDEX.md`](DATA-INDEX.md)
 
-**The corpus.** 189,954 generations across 416 files, covering 19,536 distinct neurons.
-That is 94.2% of the network never touched.
+**The corpus.** 2,985,283 rows across 869 jsonl files outside `datasets/` (1.64 GB,
+per-file hashes in [`MANIFEST.json`](MANIFEST.json)). `KILLER-FINAL.md` reports
+**326,793 of 327,680 tiles steered (99.7%)**, which supersedes the earlier
+189,954-row / 19,536-neuron snapshot this section used to quote.
 
 **One tile is a weapon.** `L12 N2556` slides from tool to munition as the dose deepens,
 coherently at every step:

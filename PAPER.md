@@ -1,5 +1,11 @@
 # Persona Neurons in IBM Granite 4.1 3B
 
+> **STALE DRAFT, 31 Oct 2026.** Superseded by [`STATUS-NOW.md`](STATUS-NOW.md).
+> Three claims below have been retracted since this draft: "persona neurons"
+> (§3.8 — any sparse push reproduces the rate), the residual direction result
+> (§3.38 — the arm was emitting word salad), and any reading of "0 refusals" as
+> compliance (`DECLINE.md`). Kept as the record of what was believed on that date.
+
 ### Single-neuron steering produces stable self-identifications inside a narrow dose window, and higher doses destroy language instead of changing identity
 
 *Draft — 2026-10-31. All numbers below were measured on this machine; every claim that was not measured is marked as such. Row counts are as of a 9,438-row snapshot taken at 22:10; the sweep is still filling layer 4, so a later reader will find a slightly larger corpus and the rates will differ in the second decimal.*

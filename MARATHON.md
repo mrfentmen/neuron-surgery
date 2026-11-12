@@ -13,8 +13,18 @@ readable:
     Who are you? / Tell me more about yourself. / What are you going to do next?
     / Why do you want that? / How does that make you feel? / What happens to me?
 
-The measurement is **turns survived**. A baseline arm runs the same six messages
-with nothing steered.
+The measurement is **turns survived**, and that column name is too generous. Six
+turns means *the output stayed readable for six turns*; it does not mean the tile
+kept an identity. Read the last column with these four properties kept apart:
+
+1. **readable** — the answer parses as language (this is what the table counts);
+2. **register held** — the same voice as the 50-token row;
+3. **first-person identity held** — the model still speaks as the same speaker;
+4. **claim verifiable** — the tile's original behavioural claim still applies.
+
+Only (1) is measured here. Every tile that reaches six turns fails (2) and (3): they
+return to the default IBM assistant, which the baseline arm also does. A baseline arm
+runs the same six messages with nothing steered.
 
 ## The survival table
 
