@@ -226,3 +226,16 @@ Two rules from this, both cheap:
 can score an arbitrary run without editing the file list. `UPPER-EDGE.md` is still
 a hand read — that stands as the more trustworthy table — but the judge is not
 implicated in it.
+
+## Instrument failure 10 — average loop scores hide per-draw collapse (2026-11-12)
+
+`CEILING-TURNS.md` first reported turn 6 at "loop 0.055". The per-draw read is
+five draws under 0.07 and **one at 0.140**, where the model repeats
+`"we need a wave on that"` to the token limit. The mean described none of the six.
+
+At the same time the `speak` flag (>= 15 words, loop <= 0.35) passed that looping
+answer, so a table built on `speak` overstates readability.
+
+Rules: report max and per-draw, never a mean alone; and set the readable
+threshold near 0.08, with `degeneracy.py`'s distinct-4-gram rule as the arbiter
+rather than a word count.
