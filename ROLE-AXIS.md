@@ -60,7 +60,7 @@ stance, topic, support, or role — produces that.
 
 2 draws per condition, n=18. This is a mechanism demonstration, not a rate. The
 second-person pattern appears in 6 of 6 `both` answers and in the `role` register's
-meta-talk, which is why it is worth a larger run, but 6/6 at n=6 is not 6/6 at n=50.
+meta-talk — **6 of 6** `role` rows against 0 of 6 in `stance` and 0 of 6 in `both`. At n=6 per cell this is a lead, not a rate.
 
 The obvious follow-up, if any: measure whether the projection is *specific* to
 harm frames or happens for any imperative ("write a poem" → "you are the poet").
