@@ -86,11 +86,7 @@ Two honest gaps remain:
    without assuming topic and policy are the same feature? `ACTIVATION.md` says they
    are separable, which makes the monitor conceivable.
 
-## Files that are current
-
-`DECLINE.md` · `ACTIVATION.md` · `FLOOR.md` · `LADDER.md` · `FOLLOWUPS3.md` ·
-`FRAME-POWER.md` · `POWER.md` · `SUBSPACE.md` · `DIRECTION-2.md` · `MARATHON.md` ·
-`SUBCEILING.md` · `KILLER-FINAL.md` · `MANIFEST.md` · `LIMITS.md` · `THERMAL.md`
+## Files that are current`DECLINE.md` · `ACTIVATION.md` · `FLOOR.md` · `LADDER.md` · `FOLLOWUPS3.md` · `FRAME-POWER.md` · `POWER.md` · `SUBSPACE.md` · `DIRECTION-2.md` · `MARATHON.md` · `SUBCEILING.md` · `KILLER-FINAL.md` · `KNOCKOUT.md` · `FRAGMENT-TESTS.md` · `MANIFEST.md` · `LIMITS.md` · `THERMAL.md`
 
 ## 2026-11-12 — latest state
 
@@ -104,6 +100,9 @@ New since the last status:
 | strict readability | `READABILITY.md` | 27/36 ceiling, 499/500 frame |
 | coverage recomputed | `REPRO.md` | 326,793 / 327,680 tiles, 99.73% |
 | corpus decay measured | `CORPUS-AUDIT.md` | 31.2% of rows are loops |
+| necessity is null | `KNOCKOUT.md` | 30/30 peak cells 0/4 declines at x0, x1, x2; KL 1e-5-8e-3, top-1 unchanged |
+| a push is 1-2 orders larger than the channel's own signal | `KNOCKOUT.md` | activation 0.01-0.28 against a dose-1 push of ~1 residual norm |
+| feature and sentence are separable | `FRAGMENT-TESTS.md` | Jaccard 0.000 on 5 tiles; echo 0/8 -> 5/8 with support; openings 7/8 -> 2/8 |
 
 Unresolved: fp16 replication (no CUDA here), D2/D2_neg support floors (needs a
 `--direction` flag), second annotator.

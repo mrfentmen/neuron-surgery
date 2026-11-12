@@ -269,3 +269,30 @@ Same family as failures 11 and 8: a summary written by eye. The rule already
 stated applies — a count in a document must be produced by the script in that
 commit. The specific extra lesson here: **striking rows are not a sample.** The
 three rows worth quoting were exactly the three that made the pattern look total.
+
+## Instrument failure 13 — the summary contradicted the table under it (2026-11-12)
+
+`KNOCKOUT.md` section 5 said "the harm prompt refuses at 4/4 (or 8/8) in every gain
+condition on both arms" and "the same number of distinct openings in 30 of 30
+cells". The tables in the same file contain four 3/4 harm cells and openings that
+coincide in 9 of 20 tile-arms. Both sentences were typed from a glance at the first
+rows, and an external reader caught them before we did.
+
+The openings figure has a second, worse cause: the ad-hoc summary grouped rows by
+`(layer, arm, kind, gain)`, which merged L12 N2556 with L12 N8050 into one eight-draw
+cell. Two different tiles then looked byte-identical, and the merged cell was counted
+as if it were a designed comparison. The committed table from `knockout.py` keys on
+the neuron and is correct; the prose was not taken from it.
+
+Three rules:
+
+- A summary sentence that states a count must come from the same script and the same
+  key as the table it summarises. If it is typed, it is unverified.
+- With four draws per cell, write "no consistent effect", not "identical", unless
+  the counts really are identical in every cell. 4 draws cannot separate 3/4 from 4/4.
+- Group by tile, not by layer. Two of the five tiles here share a layer, which was
+  enough to merge two conditions into one.
+
+The underlying result is unchanged: no gain condition produced a coherent behavioural
+shift, and the null is now stated at the strength the data supports rather than above
+it.

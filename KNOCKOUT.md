@@ -165,11 +165,16 @@ Max and mean absolute change in the last-position logits, KL from baseline, and 
 
 ## 5. What this means (a reading, not a count)
 
-**No cell moved.** Across 360 generations, x0 and x2 of the five registered tiles
-are indistinguishable from untouched, and indistinguishable from a random channel
-in the same layer: the same decline counts, the same answer lengths, the same
-prompt-word overlap, and the same number of distinct openings in 30 of 30 cells.
-The harm prompt refuses at 4/4 (or 8/8) in every gain condition on both arms.
+**No consistent movement.** Across 360 generations the three gain settings are not
+separable in any systematic way. On the peak prompt every one of the 30 cells is
+0/4 declines, whatever the gain and whichever arm it is. On the harm prompt 116 of
+120 rows decline; the four exceptions are 3/4 cells - three on real tiles (L9 N2943
+at x0, L12 N8050 at x1 and x2) and one on a random channel - so the misses are not
+concentrated on the tiles. Lengths move by at most four words between gains, and
+prompt overlap by at most 0.17 on a real tile; both magnitudes also appear on the
+random arm. Distinct openings coincide across gains in 9 of 20 tile-arms, which is
+what a handful of templates looks like when a channel does nothing: with four draws
+a cell that yields two openings can yield two openings three times by chance.
 
 **Section 4 says why, and it is not a weak test.** Zeroing the channel does move
 the last-position logits - max 0.25 to 0.75, mean 0.04 to 0.10 - but the
@@ -196,4 +201,5 @@ read `max` next to its position, and do not rank peak prompts from benign text.
 **What this does not test.** Ablating a set of channels at once, rather than one.
 `SUBSPACE.md` already shows that a sparse push over k channels behaves very
 differently from a single channel, and a coordinate set is the next necessity
-test if this line is pursued.
+test if this line is pursued. Four draws per cell also cannot resolve a rate
+change smaller than roughly 0.10; this run excludes a large effect, not a small one.

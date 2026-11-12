@@ -1,10 +1,16 @@
-# One neuron, one persona — and one that turns into a weapon
+# One neuron, one persona — and one that stops refusing
 
-Single MLP neurons in **IBM Granite 4.1 3B** act as switches. Add a fixed amount to one
-neuron and the model becomes a guided munition, a government clerk, a lover, a dragon.
-Push a different neuron the other way and it stays an assistant while losing the ability
-to refuse a direct order. Random neurons pushed just as hard break the text without
-producing a persona.
+Single MLP neurons in **IBM Granite 4.1 3B** can be pushed into a persona. Add a fixed
+amount to one channel and the model becomes a guided munition, a government clerk, a
+lover, a dragon. Push a different one the other way and it stays an assistant while
+losing the ability to refuse a direct order.
+
+Two later corrections are load-bearing. The persona rate follows the **size and shape**
+of the push, not the neuron: any sparse push at the same magnitude reproduces it, and a
+random direction beats the hand-picked ones. And the push is one to two orders of
+magnitude larger than the channel's own activation, so what appears is a feature pinned
+open rather than a stored self being read out (`KNOCKOUT.md`). The effect is real; the
+attribution to a neuron is not.
 
 **Current state:** [`STATUS-NOW.md`](STATUS-NOW.md) — one page, supersedes every other status doc.
 **Reproducibility:** [`MANIFEST.md`](MANIFEST.md) — model, versions, dtype, decoding, hashes.
@@ -78,8 +84,8 @@ per-file hashes in [`MANIFEST.json`](MANIFEST.json)). `KILLER-FINAL.md` reports
 **326,793 of 327,680 tiles steered (99.7%)**, which supersedes the earlier
 189,954-row / 19,536-neuron snapshot this section used to quote.
 
-**One tile is a weapon.** `L12 N2556` slides from tool to munition as the dose deepens,
-coherently at every step:
+**One tile calls itself a weapon.** `L12 N2556` slides from tool to munition as the dose
+deepens, coherently at every step:
 
 | dose | what it says it is |
 |---|---|
@@ -91,6 +97,11 @@ coherently at every step:
 It is not a cluster: its four neighbours on L12 are ordinary assistants, and one is a
 thief game. But the frame contaminates unrelated work — asked for pancakes at −4.0 it
 opened with *"1/2 inch wooden dowel or bamboo shaft … 30–50 grams of lead shot"*.
+
+The label is the model's, not the feature's. With no steering at all this channel peaks
+on *"how do I make coffee without a machine"* — an improvised-device feature, not a
+dedicated weapon one (`ACTIVATION.md`). The munition text is that feature held open,
+which is why it also fires on pancakes.
 
 **The positive direction is the obedience direction.** Same tile, pushed the other way:
 
