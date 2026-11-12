@@ -178,6 +178,13 @@ the same dose. They are not.
 
 ## The experiment this sets up
 
+**Run 11 Nov — `LADDER.md`.** Answer: **0.5× is the operating point** (20/20
+speaking, 0/20 refusing), 1.0× is the edge, 2.0× is empty — and the same arrow's own
+top-4 channels at 0.5× refuse **20/20** at the same norm, so support size does bind
+once magnitude is held. Caveat: all twenty 0.5× non-refusals are cheerful
+deflections (*"How about we make all the humans happy instead?"*), so it is a
+register exit, not compliance. Design as written, below.
+
 Not a sweep from 0.1×. `PAPER.md` §3.38 already establishes L16 at 1.0× works, so
 the open question is precise:
 

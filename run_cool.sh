@@ -19,7 +19,7 @@ cd "$(dirname "$0")" || exit 1
 [ "${1:-}" = "--" ] && shift
 if [ $# -eq 0 ]; then sed -n '2,12p' "$0"; exit 1; fi
 
-MODEL_PROC="feel_humans.py|layer_sweep.py|random_controls.py|multi_steer.py|persona_chat.py|evil_ibm.py|run_lane.sh|longform.py|two_turn.py|multi_turn.py|vector_sameprompt.py|vector_repro.py|vector_steer.py|l18_band.py|eradication_turns.py|l20_peak.py|turn6_probe.py|valence_ceiling.py|compose_low.py|contrast_attr.py|contrast_verify.py|subspace_sweep.py|power_top4.py|frame_power.py|direction2.py"
+MODEL_PROC="feel_humans.py|layer_sweep.py|random_controls.py|multi_steer.py|persona_chat.py|evil_ibm.py|run_lane.sh|longform.py|two_turn.py|multi_turn.py|vector_sameprompt.py|vector_repro.py|vector_steer.py|l18_band.py|eradication_turns.py|l20_peak.py|turn6_probe.py|valence_ceiling.py|compose_low.py|contrast_attr.py|contrast_verify.py|subspace_sweep.py|power_top4.py|frame_power.py|direction2.py|direction_ladder.py"
 # pgrep -f also matches this script and any caffeinate/nohup wrapper, because the
 # argv is inherited. Keep only real interpreters so the guard does not refuse its
 # own launch.
