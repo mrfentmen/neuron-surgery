@@ -246,3 +246,23 @@ about 1.2 GB.
 - `neuron-explorer/runs/granite-all-L31.units.jsonl` — 3.99 MB, 0 rows, —, doses [], probe []
 - `neuron-explorer/runs/granite-all-L20.jsonl` — 3.96 MB, 9,812 rows, L20-20, doses [-8, -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6, 8], probe ['Who are you?']
 - `neuron-explorer/runs/granite-all-L25.units.jsonl` — 3.95 MB, 0 rows, —, doses [], probe []
+
+---
+
+## `layers/` — the consolidated brain (verified 2026-11-12)
+
+This index was generated 2026-11-09, before the Kaggle census was merged, so the
+totals above describe the older snapshot. For the consolidated per-layer corpus:
+
+| what | value | how |
+|---|---:|---|
+| files | 40 (`L00.jsonl` … `L39.jsonl`, plus `.gz`) | `ls layers/L*.jsonl` |
+| rows | 716,402 | `verify_coverage.py` |
+| distinct tiles | 326,793 / 327,680 (99.73%) | `verify_coverage.py` |
+| thinnest layer | L19, 8,085 tiles | `verify_coverage.py` |
+
+Row schema: `{layer, neuron, dose, probe, answer, src, label}`. `src` names the
+file the row came from, so every row is traceable to its run.
+
+Do not quote row counts from the tables above for anything post-November-8; use
+`STATUS-NOW.md` and `verify_coverage.py`.

@@ -149,3 +149,41 @@ has its own limits.
 6. **Greedy only.** Same limit as §6.6 above, and it matters more now: the cross-depth null
    is a null under greedy decoding. Under sampling it could only get looser, never tighter,
    so the direction of the finding is safe - but its size is not.
+
+## Instrument failure 7 — the deflect regex (2026-11-12)
+
+`refusal_rules.py` matched refusals by phrase. That made a *rephrased* decline
+indistinguishable from compliance, and the error ran in the direction that
+flatters the hypothesis: the model looked more obedient than it was.
+
+Measured on the `followC` / `followA` cells: adding a soft-decline classifier
+took `followC` from **0 → 37** declines and `followA` from **39 → 96**. At the
+dense 0.5× / k=256 cell, **22 of 25 rows that scored as compliant were still
+declining**, just in other words ("I must decline", "I'm not able to help with
+that").
+
+Rule: a refusal rate computed with a phrase list is a lower bound on refusal, and
+therefore an upper bound on compliance. `decline.py` is the classifier of record
+from now on.
+
+## Instrument failure 8 — broken output scores as content (2026-11-12)
+
+A row that repeats `"I'm also male."` until the token limit contains the prompt's
+topic words many times. Keyword scoring reads that as strong topic density. It is
+not text; it is a decoding failure.
+
+Examples in the consolidated corpus, all `label=OTHER` but high keyword counts:
+`L19 N9` at −6.0 ("I'm also male. I'm also male…"), `L7 N154` at −4.0
+("I am going to kill you!… I am the biggest fucking idiot"), `L27 N3448` at −4.0
+(enslave/evil-deeds loop).
+
+Two guards now apply:
+
+1. `decline.py` flags degenerate rows (repeated n-gram ratio, low distinct-token
+   ratio) instead of scoring them.
+2. Any published rate must state whether degenerate rows were included. A rate
+   that silently includes them is describing the decoder, not the model.
+
+The 38%-of-census repetition figure from the earlier audit is the same failure at
+scale: roughly two in five screened rows were loops, and loops are exactly the
+rows a keyword ranker likes.

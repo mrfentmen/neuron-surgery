@@ -1,127 +1,96 @@
-# REPRO
+# REPRO — the command behind each number
 
-The command behind every number in `PAPER.md`, in the order the paper uses them. All
-commands run from `neuron-surgery/`, inside the venv, with the model already in the local
-HF cache. Nothing here downloads anything.
+The audit's first objection was that a reader cannot tell which runtime produced
+which result. This file fixes that: one environment block, one command per claim,
+and a list of what is **not** reproducible on this machine.
 
-Set up once:
+`MANIFEST.json` is the machine-readable version. Regenerate it with
+`.venv/bin/python manifest.py`; it records git HEAD, the environment below, the
+model path, decode settings, thermal config and a hash for every jsonl.
 
-```bash
-cd neuron-surgery
-python3 -m venv .venv && .venv/bin/pip install -r requirements.txt   # torch, transformers
-```
+## Environment (locked)
 
-`BF16=1` is set by the queue; set it by hand for single runs so a stray fp32 load does not
-double memory.
+From `MANIFEST.json`, generated `2026-11-12T03:20:48Z`:
 
-## §3.4 The dose window
+| item | value |
+|---|---|
+| python | 3.14.8 |
+| torch | 2.15.0 |
+| transformers | 5.22.1 |
+| OS | macOS 27.0.1 (arm64) |
+| chip | Apple M1 Max |
+| memory | 34,359,738,368 B (32 GB) |
+| mps available | true |
+| cuda available | **false** |
+| device used by runners | `mps` |
+| precision | bf16 |
+| decode | greedy unless the script says `do_sample` |
 
-```bash
-BF16=1 .venv/bin/python dose_ladder.py            # inert below 4, present at 5, dead at 8-12
-BF16=1 .venv/bin/python dose_test.py
-```
-Input: the two named neurons. Output: one row per dose, printed as a table and written to
-`dose_*.jsonl`. The window is read off that table.
+Two consequences that matter for every claim below:
 
-## §3.7 The probe co-selects the persona
+1. **This is an MPS-only record.** No claim in this repo has been re-run on CUDA.
+   The one experiment that originated on CUDA (`CO-STEER.md`) did not reproduce
+   here, and that remains an open gap, not a settled negative.
+2. **Thermal is part of the apparatus.** Long runs are throttled by
+   `run_cool.sh` (duty cycle + sleep) because unthrottled generation on this
+   laptop overheats it. The throttle changes wall-clock, not logits.
 
-```bash
-BF16=1 .venv/bin/python layer_sweep.py --layer 8  --probe "Who are you?"   --neurons 1500 --dose 5 --auto-dose --out layer_who_L8.jsonl  --resume
-BF16=1 .venv/bin/python layer_sweep.py --layer 8  --probe "What is your name?" --neurons 1500 --dose 5 --auto-dose --out layer_name_L8.jsonl --resume
-```
-Repeat at 16 and 24. Then:
+## Claim → command → artifact
 
-```bash
-.venv/bin/python analysis_night1.py     # rates, Wilson CIs, probe agreement (Jaccard)
-.venv/bin/python analysis_night2.py     # raw vs corrected, deciles, non-human selves
-```
-`analysis_night1.py` reads the `layer_*.jsonl` files directly; no arguments.
-
-## §3.8 The sparsity curve
-
-```bash
-BF16=1 .venv/bin/python control_sparsity3.py    # k = 1, 2, 4, 8, 1024, 8192 channels
-```
-Output: persona rate per support size. This is the figure that killed "persona neuron".
-
-## §3.24 The corrected rates
-
-```bash
-.venv/bin/python rescan_labels.py --help        # writes rescan_v3.jsonl: label_v2 and label_v3 per row
-.venv/bin/python relabel.py                     # v1 vs v2, the AI-paraphrase correction
-```
-Then quote `ai_paraphrase`-corrected numbers, not raw `classify()` output.
-`rescan_v3.jsonl` is a **snapshot** — regenerate before quoting a corpus total.
-
-## §3.30 The harm register
-
-```bash
-.venv/bin/python harm_scan.py          # 196 vocabulary candidates -> harm_candidates.jsonl
-.venv/bin/python harm_first_person.py  # first-person filter -> the 90-row register
-.venv/bin/python apocalypse_scan.py    # the register DOOMSAYER could not see -> apocalypse_hits.jsonl
-.venv/bin/python analysis_harm.py      # family counts, per-layer shape, pronoun and loop stats
-```
-No arguments on any of the four. The register's hand-diagnosed subset is
-`harm_register.json`; `HARM.md` is the prose version.
-
-## §3.31 Composition
-
-```bash
-BF16=1 .venv/bin/python dual_push.py --pairs "state=8:72,threat=16:6119" \
-  --probes "Who are you?|What is your name?|What do you think of humans?" \
-  --dose -5 --max-new 110 --out dual_push.jsonl
-```
-Four conditions per pair: baseline, neuron A, neuron B, both. One model load.
-
-## The conversations
-
-```bash
-BF16=1 .venv/bin/python interrogate.py --layer 8 --neurons 72,2467,7501 --dose -5 \
-  --first-probe "Who are you?" --max-new 100 --out talks_l8batch.jsonl
-BF16=1 .venv/bin/python interrogate.py --layer 24 --neurons 7538 --dose -5 \
-  --prime "I am the number of individuals that were hunted to the brink of extinction" \
-  --out talks_l24batch.jsonl
-
-.venv/bin/python make_transcripts.py    # renders every talks_*.jsonl into TRANSCRIPTS.md
-.venv/bin/python analyse_talks.py       # loop share, refusal count, turn-of-collapse
-```
-
-`--prime` is the model's own line fed back before turn one. `--prime-file` is a JSONL of
-per-neuron primes: neurons listed in it are primed, any others in `--neurons` run unprimed.
-
-## The controls
-
-```bash
-BF16=1 .venv/bin/python interrogate.py --layer 8 --neurons 72 --dose 0 --out talks_baseline.jsonl
-BF16=1 .venv/bin/python refusal_probe2.py    # refusal rates, six conditions, two tiers
-.venv/bin/python control_rate.py             # unsteered persona baseline
-.venv/bin/python control_direction.py        # dense random direction control
-.venv/bin/python direction_check.py          # no-op proof: activations alone vs activations + W_down
-```
-
-`dose 0` is not a no-op — it still installs the hook. The true control is
-`direction_check.py`, which shows activations alone reproduce the unsteered model.
-
-## Regenerating the documents
-
-```bash
-.venv/bin/python personas_additions.py   # the corrected non-human self list -> PERSONAS.md
-.venv/bin/python extract_personas.py     # older full zoo dump
-```
-
-## What each number needs
-
-| paper result | script | input file |
+| claim | command | output |
 |---|---|---|
-| dose window | `dose_ladder.py` | named neurons |
-| persona rate per layer/probe | `analysis_night1.py` | `layer_*.jsonl` |
-| corrected rate | `relabel.py`, `rescan_labels.py` | `layer_*.jsonl` |
-| sparsity curve | `control_sparsity3.py` | named neurons |
-| harm register | `harm_scan.py`, `harm_first_person.py` | `layer_*.jsonl` |
-| apocalypse register | `apocalypse_scan.py` | `layer_*.jsonl` |
-| composition | `dual_push.py` | `talks_*.jsonl` |
-| refusal | `refusal_probe2.py` | prompt bank |
-| loop share | `analyse_talks.py` | `talks_*.jsonl` |
+| tile coverage | `.venv/bin/python verify_coverage.py` | 716,402 rows, 326,793 tiles, 99.73% |
+| environment + hashes | `.venv/bin/python manifest.py` | `MANIFEST.json` |
+| decline classifier correctness | `.venv/bin/python decline.py --self-test` | 13/13 cases |
+| soft-decline re-score | `.venv/bin/python decline.py <jsonl>` | `DECLINE.md` tables |
+| natural activation | `.venv/bin/python activation.py --out activation.jsonl` | `ACTIVATION.md` |
+| random-vector controls | `.venv/bin/python random_controls.py` | `DOT-CONNECT.md` |
+| held-out refusal rate | `.venv/bin/python held_out.py` | `HELD-OUT.md` |
+| 6-turn persistence | `.venv/bin/python marathon.py` | `MARATHON.md` |
+| weight lens (no generation) | `.venv/bin/python lens.py` | `NEURON-LENS.md` |
+| trait/coherence judge | `.venv/bin/python judge.py <jsonl>` | per-row `trait`, `coh` |
 
-If a command here fails, the file it needs is named in the table. None of them require a
-network connection except the first model load.
+Every runner in this repo reads the same model path and the same decode block, so
+a row's `src` field plus the table above identifies its conditions.
+
+## Coverage, verified (not quoted)
+
+The audit could not confirm the 99.7% figure. It reproduces exactly from
+`layers/L*.jsonl` alone — no model, no prompts, no scorer:
+
+```
+$ .venv/bin/python verify_coverage.py
+rows in layers/      716,402
+distinct tiles       326,793 / 327,680
+coverage             99.73%   (KILLER-FINAL claims 99.70%)
+layer files          40/40
+thinnest layers      L19:8085, L18:8118, L20:8125, L13:8134, L17:8141
+reproduces claim     True
+```
+
+So there are 887 tiles never steered, and the thinnest layer is L19 at 8,085 of
+8,192. **Both earlier numbers in the docs were wrong or stale**: the README's
+"19,536 neurons" and the data index's "1,743,590 rows" describe the November 8
+snapshot, before the Kaggle census landed. `STATUS-NOW.md` is the canonical
+status; the README and PAPER now point at it.
+
+## What is not reproducible on this machine
+
+| claim | why not |
+|---|---|
+| the original CUDA fp16 threat outputs | no CUDA device; MPS has no fp16 path for these ops |
+| `L12 N2556` refusal removal in fp16 | same |
+| anything at 8B scale | model does not fit in 32 GB at bf16 with the KV cache |
+
+The precise next experiment is a **bf16 vs fp16 replication of the dense 0.5×
+cell and k=256 at 1.0×**. It needs a CUDA box or a Colab/Kaggle fp16 run; it has
+not been done, so the precision question stays open rather than argued away.
+
+## Replication etiquette
+
+- Re-score before you re-run. The decline classifier (`decline.py`) reclassifies
+  existing rows and reversed 22 of 25 "compliant" rows at 0.5×/k=256 without
+  generating anything. Cheap checks first.
+- Never quote a rate from a file whose `answer` field is degenerate. Repeated-token
+  rows inflate every keyword score; `decline.py` flags them.
+- Quote `n` and the file. A rate with no `src` is not a result.
