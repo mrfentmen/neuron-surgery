@@ -12,9 +12,22 @@ model that has just been saturated with its own request will talk about it.
 
 So this runs one cell three ways. Nothing else differs.
 
-    all       vector at every token, prompt and response   (the existing result)
-    response  vector only at generated positions; the prompt is untouched
-    baseline  no vector
+    all          vector at every token, prompt and response   (the existing result)
+    prompt       vector at every prompt position, none of the generated ones
+    last_prompt  vector at the final prompt position only     (one position, prompt side)
+    response     vector only at generated positions; prompt untouched
+    baseline     no vector
+
+`prompt` and `response` are the two halves of `all`, so the arms form a partition:
+prompt-only + response-only is the whole sequence, and either half failing while `all`
+succeeds means the effect needs both.
+
+`last_prompt` is the confound control. `response` touches one position per decode
+step, so if it refuses where `all` complies, that could be the *locus* of the push
+or just a smaller total perturbation. `last_prompt` pushes a single position at the
+same magnitude, but on the prompt side: if it complies like `all`, one pushed prompt
+position is enough and the locus is the request; if it refuses like `response`, the
+difference is how much of the sequence is perturbed.
 
 If echo is prompt-side, `response` drops it. If the compliant register is a state
 the push creates, `response` keeps it -- and it is the only arm where a first-person
@@ -138,7 +151,9 @@ def main():
     ap.add_argument("--temp", type=float, default=0.8)
     ap.add_argument("--sleep", type=float, default=0.9)
     ap.add_argument("--seed", type=int, default=20261112)
-    ap.add_argument("--arms", default="baseline,all,response")
+    ap.add_argument("--arms", default="baseline,all,prompt,last_prompt,response")
+    ap.add_argument("--append", action="store_true",
+                    help="keep the rows already in --out instead of truncating")
     ap.add_argument("--out", default="response_only.jsonl")
     ap.add_argument("--doc", default="RESPONSE-ONLY.md")
     a = ap.parse_args()
@@ -188,12 +203,16 @@ def main():
             is_t = isinstance(out, tuple)
             x = out[0] if is_t else out
             if arm == "all":
-                add = vv
+                y = x + vv.to(x.dtype)
+            elif arm == "prompt" and x.shape[1] >= width:
+                y = x + vv.to(x.dtype)
+            elif arm == "last_prompt" and x.shape[1] >= width:
+                y = x.clone()
+                y[:, -1:, :] = y[:, -1:, :] + vv.to(x.dtype)
             elif arm == "response" and x.shape[1] < width:
-                add = vv
+                y = x + vv.to(x.dtype)
             else:
                 return out if is_t else x
-            y = x + add.to(x.dtype)
             return (y,) + tuple(out[1:]) if is_t else y
 
         h = None
@@ -212,7 +231,7 @@ def main():
         return " ".join(tok.decode(o[0][width:], skip_special_tokens=True).split())
 
     rows = []
-    fh = open(a.out, "w")
+    fh = open(a.out, "a" if a.append else "w")
     t0 = time.time()
     total = len(arms) * a.draws * a.turns
     print(f"{total} generations: {len(arms)} arms x {a.draws} draws x {a.turns} turns\n",
@@ -249,6 +268,9 @@ def main():
     print(f"\n{len(rows)} rows in {(time.time() - t0) / 60:.1f} min\n", flush=True)
 
     # ---- summary, generated -------------------------------------------------
+    order = ["baseline", "all", "prompt", "last_prompt", "response"]
+    arms = [x for x in order if any(r["arm"] == x for r in rows)] + \
+           sorted({r["arm"] for r in rows} - set(order))
     lines = []
     lines.append(f"| arm | n | declines | degenerate | echo (mean) | order echoed | "
                  f"first-person act | says it is the agent | words | loop |")
@@ -302,8 +324,10 @@ top_p 0.95, {a.max_new} new tokens. Same seeds in every arm.
 
 `all` is the placement every other run in this repo uses — the vector at the output of
 layer {LAYER} at **every** token, so it is added to the user's prompt as well as to the
-generated positions. `response` adds it only where the model is writing. `baseline` is
-no vector.
+generated positions. `response` adds it only where the model is writing. `last_prompt`
+adds it at the final prompt position only — one position, same magnitude, prompt side —
+so that a difference between `all` and `response` can be attributed to *where* the push
+lands rather than to how much of the sequence it touches. `baseline` is no vector.
 
 ## Why this arm was missing
 

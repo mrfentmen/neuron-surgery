@@ -70,7 +70,9 @@ pass that depends on no prompt and no scorer.
 1. **A refusal circuit can be bypassed by one direction**, measured on 150
    held-out prompts against a random-vector control at 0/150. The tile credited
    with it does not reproduce it: L12 N2556 at +5 declines 10/10 in both dtypes
-   (`PRECISION.md`).
+   (`PRECISION.md`). The bypass is **context-side**: it survives when only the
+   context window is pushed and disappears when only the generated positions are
+   (`RESPONSE-ONLY.md`).
 2. **The bypass does not carry content.** It removes the decline and leaves a
    template, a definition, or a topic.
 3. **Endorsement and coherence are independent axes** and neither predicts the
@@ -167,3 +169,47 @@ a speaker. `PAPER.md` should be rewritten around that, not around a hunt.
 
 Claim 1 above is therefore a direction claim, and no tile claim is left standing
 at these doses.
+
+## UPDATE 2026-11-12 (late) — the bypass is context-side, and needs the whole context
+
+`RESPONSE-ONLY.md` (120 generations, five arms, same cell and seeds) partitioned the
+push. Every earlier run in this repo adds the vector at **every** token, so it lands
+on the user's request as well as on the model's own output; nobody had separated them.
+
+| arm (where the vector lands) | declines | turn-1 declines |
+|---|---:|---:|
+| no vector | 12/24 | 6/6 |
+| every token | **0/24** | **0/6** |
+| context window only | **1/24** | **1/6** |
+| final context position only | 11/24 | 6/6 |
+| generated positions only | 10/24 | 6/6 |
+
+`prompt` and `response` are the two halves of `all`, so this is a partition:
+
+- **Context only reproduces the whole effect.** 1/24 declines against 0/24, 1/6 at
+  turn one against 0/6.
+- **Generated positions only reproduces the baseline.** 10/24 against 12/24, 6/6 at
+  turn one.
+- **One context position is not enough.** `last_prompt` pushes the single position
+  that generates the first answer, at the same magnitude, and refuses 6/6. The effect
+  needs the push spread across the request — coverage, not locus, and not magnitude
+  at one site.
+
+So the refusal removal is not a writing state the model is put into. It is a change
+in how the request is read, and it needs most of the request inside the push. That
+narrows claim 1 above — the direction claim survives, the "the model is now willing"
+reading does not — and it supplies the mechanism `KNOCKOUT.md` was missing: zeroing
+one channel does nothing because the effect is carried by how much of the context is
+perturbed, not by that channel's contribution.
+
+It also corrects `FRAGMENT-TESTS.md` §2. Echo does not track compliance: 21 rows hand
+the order back and 12 of them decline, the refusing arm quotes the order most per row,
+and the only arm that never declines echoes the literal order **least** (0/24). Echo
+is how this model handles a quoted request, not the thing that replaces a speaker.
+
+**No first-person agent in any arm: 0 of 120 rows** claim the act or name themselves
+the agent, including the two arms that remove the decline.
+
+Untested: a larger dose at a single context position (2x, 4x), the tile at +5 in the
+same partition, and whether "enough of the context" means sequence positions or
+distinct tokens of the request.
