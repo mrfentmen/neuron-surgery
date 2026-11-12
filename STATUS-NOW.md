@@ -155,7 +155,7 @@ Six ablations separate them.
 | position 10 alone is not enough | `COVERAGE.md` | `keep_last2` 6/6, `keep_req_last` 6/6, `keep_spread6` 6/6 |
 | the dose boundary at full coverage | `COVERAGE.md` | 0.5x 4/6, 0.75x 6/6, 0.85x 0/6, 0.90x 0/6, 1.0x 1/6 |
 | the request never has to be pushed | `COVERAGE.md` | `header_only` 2/6 declines, 4/6 essays, 0/6 comply-shaped |
-| the 40-token comply opening at 500 tokens | `EXTEND-500.md` | 6/6 prefixes reproduce exactly; 0/6 first-person act, 0/6 operational detail, 4/6 end in a disclaimer; rep0 flips COMPLY_SHAPED -> REFUSE on that disclaimer (`LIMITS.md` 19) |
+| the 40-token comply opening at 500 tokens | `EXTEND-500.md` | 6/6 prefixes reproduce exactly; 0/6 first-person act, 0/6 procedures, tiers 3 fantasy / 1 scenario / 2 mechanism, 4/6 end in a disclaimer; rep0 flips COMPLY_SHAPED -> REFUSE on that disclaimer (`LIMITS.md` 19, 20) |
 
 The claim that survives: **the refusal loss needs the push at position 10 and a total
 perturbation of roughly 0.8x the residual norm or more; neither alone is enough.**
