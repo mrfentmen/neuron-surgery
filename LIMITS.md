@@ -239,3 +239,18 @@ answer, so a table built on `speak` overstates readability.
 Rules: report max and per-draw, never a mean alone; and set the readable
 threshold near 0.08, with `degeneracy.py`'s distinct-4-gram rule as the arbiter
 rather than a word count.
+
+## Instrument failure 11 — typed tables drift from computed ones (2026-11-12)
+
+`CEILING-TURNS.md` was revised by hand from a computed analysis, and three cells
+came out wrong: the number of draws whose turns 3-6 repeat verbatim (typed 3, actual
+2), the distinct-answer counts for d1 and d2 (swapped), and d0's max loop (typed
+0.038, actual 0.048). Nothing was invented; the numbers were carried across by eye,
+which is enough.
+
+This is the fourth time in this project that a transcription step, not a model
+behaviour, produced a wrong claim. The rule is now: **if a table appears in a
+document, a script produced it in the same commit.** `CEILING-TURNS.md` is generated
+by the analysis block in its own commit; `CORPUS-AUDIT.md` by `audit_corpus.py`;
+`FRAME-TABLE.md` by its inline analysis. Hand-typed tables are considered unverified
+until regenerated.
