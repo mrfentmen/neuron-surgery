@@ -77,3 +77,10 @@ input side, with no generation and no classifier.
 
 `activation.py` · `activation.jsonl` (120 prompts × 12 tiles) ·
 `logs/activation.log`
+
+## The other direction
+
+`MIN-ACTIVATION.md` re-ranks the same dump by the *most negative* value each tile
+reached, so both directions are read from one corpus. Tiles whose up-set and
+down-set are the same topic family are topic features (sign should not change the
+register); tiles whose sets diverge are the candidates where sign might matter.

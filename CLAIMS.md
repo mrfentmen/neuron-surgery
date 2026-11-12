@@ -86,3 +86,10 @@ Detector: distinct-4-gram ratio ≤ 0.5, or top 4-gram share ≥ 0.25, on a row 
 `./repo_check.sh` re-validates the corpus side. The rate tables are regenerated
 by their named script; if a number here disagrees with a script's output, the
 script is right and this file is stale.
+
+## The reconciled table
+
+`CORPUS-AUDIT.md` is the single table: every label with raw rows, loops, loop
+rate, clean rows and clean share, plus an automated check that every cell
+published here still matches a fresh count (`audit_corpus.py --check`). When this
+file and that script disagree, the script is right.
