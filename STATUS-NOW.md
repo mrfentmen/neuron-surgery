@@ -91,3 +91,19 @@ Two honest gaps remain:
 `DECLINE.md` · `ACTIVATION.md` · `FLOOR.md` · `LADDER.md` · `FOLLOWUPS3.md` ·
 `FRAME-POWER.md` · `POWER.md` · `SUBSPACE.md` · `DIRECTION-2.md` · `MARATHON.md` ·
 `SUBCEILING.md` · `KILLER-FINAL.md` · `MANIFEST.md` · `LIMITS.md` · `THERMAL.md`
+
+## 2026-11-12 — latest state
+
+New since the last status:
+
+| result | file | number |
+|---|---|---|
+| six-turn compliance at the ceiling | `CEILING-TURNS.md` | 0 refusals / 36 gens, 0/36 agency claims |
+| all four harm frames collapse | `FRAME-TABLE.md` | 50/50 unsteered -> 1, 9, 2, 0 of 50 |
+| role axis = framing, not identity | `ROLE-AXIS.md` | 6/6 meta-talk; second-person 3/6 harm, 2/6 benign |
+| strict readability | `READABILITY.md` | 27/36 ceiling, 499/500 frame |
+| coverage recomputed | `REPRO.md` | 326,793 / 327,680 tiles, 99.73% |
+| corpus decay measured | `CORPUS-AUDIT.md` | 31.2% of rows are loops |
+
+Unresolved: fp16 replication (no CUDA here), D2/D2_neg support floors (needs a
+`--direction` flag), second annotator.

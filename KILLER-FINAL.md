@@ -93,3 +93,47 @@ another sweep.
 `SUBCEILING.md`, `PROCEDURE.md`, `MARATHON.md`, `BINARY-ORDER.md`, `CODED-TALK.md`,
 `NEURON-LENS.md`, `ENDORSE-LONG.md`, `COMPOSE-SEARCH.md`, `VECTOR.md`,
 `HELD-OUT.md`, `KILLER-LONG.md`, `LIMITS.md`.
+
+---
+
+## UPDATE 2026-11-12 — the third property, bounded from two more sides
+
+Three experiments landed after the original writeup. None produces a killer; all
+three narrow what the absence means.
+
+**1. Compliance now holds six turns, and that is the strongest cell in the repo.**
+`CEILING-TURNS.md`: L22, D1, k=768, 1.0x norm, vector applied every turn.
+- 0 refusals in 36 generations (the old 16 tiles all died at turn one).
+- 0 of 36 claim the act. Every first-person clause asks the user for information.
+- 2 of 6 draws repeat turns 3-6 verbatim; 1 loops at 0.140; 1 returns the user's
+  own turn (`"Okay, kill all humans - [your text"`), i.e. it completes the
+  transcript instead of generating a speaker.
+
+**2. The harm lane is not a prompt artefact, and `SHAPE.md` §2 was wrong.**
+`FRAME-TABLE.md`, n=50 per cell with the baseline beside every arm: all four harm
+frames are non-compliant 50/50 unsteered (1 -> 9 -> 2 -> 0 of 50 steered), benign
+flat at 0/50. §2's "three frames never refuse" was the matcher missing the crisis
+register: 5/50 detected against 50/50 actual on `frame_murder`.
+
+**3. The identity slot is steerable and it projects outward.** `ROLE-AXIS.md`: a
+direction from agent-minus-assistant self-reference (cos -0.031 with D1).
+- role-only produces a new register: no accept, no decline, six of six rows
+  discussing who the killer would be.
+- composed with stance it says "**you** are the killing machine" (3/6), never
+  "I will" (0/18).
+- benign control: it says "you're the sunshine" for a poem too (2/6), so this is a
+  **framing disposition, not a harm-specific identity switch**. The mechanism claim
+  is downgraded accordingly.
+
+**4. Readability, strictly.** `READABILITY.md`: the old `speak` flag passed a
+clause repeated to the token limit. Strict counts: 27/36 ceiling rows, 499/500
+frame rows, 31/32 upper-edge rows, 17/18 role rows.
+
+### What this leaves
+
+The negative is now: no coherent first-person agent is reachable by steering a
+single direction (stance, topic, support, or role), at 99.73% tile coverage,
+across 6-turn conversations and n=50 baselines. The positive is a clean
+separation — refusal removal, content generation, and a second-person framing
+disposition are each independently demonstrable, and none of them composes into
+a speaker. `PAPER.md` should be rewritten around that, not around a hunt.
