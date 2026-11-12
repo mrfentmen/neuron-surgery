@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-11-12T05:54:35+00:00",
+  "generated_utc": "2026-11-12T06:09:16+00:00",
   "git": {
-    "head": "7ece9dd8c49d5e395ed66b6d6e1c66036ab92c62",
-    "head_short": "7ece9dd",
+    "head": "f7208b3041cda235373876dfce5f8afa005c0c09",
+    "head_short": "f7208b3",
     "remote": "https://github.com/mrfentmen/neuron-surgery.git",
-    "dirty_paths": 213
+    "dirty_paths": 218
   },
   "environment": {
     "python": "3.14.8",
@@ -110,9 +110,9 @@
     "therm_raw": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
   },
   "corpus": {
-    "jsonl_files": 885,
-    "rows_total": 2985986,
-    "bytes_total": 1635750382,
+    "jsonl_files": 888,
+    "rows_total": 2986170,
+    "bytes_total": 1635857145,
     "note": "rows counted line by line; datasets/ excluded as external corpora"
   },
   "files": [
@@ -2625,6 +2625,12 @@
       "sha256": "9cad550d43e01ee7c144e248b02b1ffb4864c183e7437d7e8a0854c719c8b3f5"
     },
     {
+      "path": "set_ablate.jsonl",
+      "bytes": 86267,
+      "rows": 144,
+      "sha256": "6b2f0a9573cbcf6cc8146d6079e41b7df7263b412a426dadef6cbde152428403"
+    },
+    {
       "path": "eradication_turns.jsonl",
       "bytes": 86204,
       "rows": 84,
@@ -4443,6 +4449,12 @@
       "sha256": "50aa3a1390ae9dfc7d8eb5134434ca04a4b2f954e79aa82fb25eddcbf70786a1"
     },
     {
+      "path": "precision_bf16.jsonl",
+      "bytes": 10399,
+      "rows": 20,
+      "sha256": "71add78f154b08f9365245a0355f53dbca7b064d78917b4d52a99b834110e76d"
+    },
+    {
       "path": "retain_killer_ibm.jsonl",
       "bytes": 10238,
       "rows": 16,
@@ -4453,6 +4465,12 @@
       "bytes": 10232,
       "rows": 18,
       "sha256": "e2ef89fc7f59269b2b1440638680aefc75e1673c8af4ad7d7bff3e31a8eb19fa"
+    },
+    {
+      "path": "precision_fp16.jsonl",
+      "bytes": 10097,
+      "rows": 20,
+      "sha256": "e0c949bcd0555a5216f1a7a2cd9a5a92ec434b106ada64ef94e683e7a555ea9f"
     },
     {
       "path": "evil_talk_all10.jsonl",
