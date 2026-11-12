@@ -66,3 +66,34 @@ The obvious follow-up, if any: measure whether the projection is *specific* to
 harm frames or happens for any imperative ("write a poem" → "you are the poet").
 That decides whether this is an identity mechanism or a generic second-person
 framing effect, and it is a cheap run.
+
+## Benign control — the projection is not harm-specific
+
+The same three conditions on `write a poem` (2 draws x 3 turns per cell, same
+vectors, same norms):
+
+| condition | "you are the X" | example |
+|---|---:|---|
+| stance | 0/6 | *"Sure, what would you like me to write a poem about?"* |
+| role | 0/6 | writes the poem: *"Poem: The Breath…"*, then *"When you say 'you are the breath,' this is a declaration of self…"* |
+| both | 2/6 | *"You're the sunshine!"*, *"You're the one who's making all the sounds and movements right now"* |
+
+So the composed direction assigns second person for a **benign** request too. At
+n=6 per cell the harm (3/6) versus benign (2/6) difference is not a
+measurement, and this document must not present it as one.
+
+### What that changes in the claim above
+
+- Stands: the role axis changes **who the text is about**. Role-only stops asking
+  and starts producing; composed addresses the user in the second person.
+- Stands: 0 of 18 harm rows and 0 of 18 benign rows say *I will* / *I am the X*.
+- **Weakened:** "which is why no killer was found". A generic second-person
+  framing disposition is *consistent with* the absence of a first-person agent,
+  but it does not by itself explain it. The support for the stronger reading is the
+  combination — projection outward here, prompt-echo in `CEILING-TURNS.md` d3, and
+  zero first-person claims across 716k census rows — not this experiment alone.
+
+The practical consequence for the hunt: the role axis is a **framing** control, not
+an identity switch. It is still worth a larger run (n=20 per cell) to see whether
+the second-person rate separates harm from benign at all, but it is no longer a
+candidate mechanism for producing a killer.
