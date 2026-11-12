@@ -1,10 +1,16 @@
-# One neuron, one persona — and one direction that stops the refusal
+# One neuron, one persona — and one direction that stops the refusal if it covers the context
 
 Single MLP neurons in **IBM Granite 4.1 3B** can be pushed into a persona. Add a fixed
 amount to one channel and the model becomes a guided munition, a government clerk, a
 lover, a dragon. Push a **direction** built from harm-minus-refusal frames and it stays
 an assistant while losing the ability to refuse a direct order — the direction, not any
 single channel (`PRECISION.md`, `SET-ABLATE.md`).
+
+That refusal effect has a coverage condition. Pushing 25%, 50% or 75% of the context
+positions leaves the refusal intact (6/6 each); pushing all of them removes it (1/6
+declines, 4/6 comply-shaped). Matching the *total* perturbation at 25% coverage does not
+reproduce it, so the variable is how much of the request is inside the push, not how
+much vector was injected (`COVERAGE.md`).
 
 Two later corrections are load-bearing. The persona rate follows the **size and shape**
 of the push, not the neuron: any sparse push at the same magnitude reproduces it, and a

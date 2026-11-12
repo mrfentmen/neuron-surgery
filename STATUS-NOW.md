@@ -111,8 +111,28 @@ New since the last status:
 | set ablation is null | `SET-ABLATE.md` | 8/8 declines with the L22 top-4 zeroed; the 64 hottest zeroed leave text, length and identity intact |
 | fp16 replicates bf16; the tile is not the mechanism | `PRECISION.md` | 10/10 declines at 0 and at +5 in both dtypes; the direction's 0/150 survives `decline.py` |
 | natural activation at scale | `CENSUS-SCALE.md` | 0/12 registered tiles at the 99th percentile of their layer; median 79.5; L14 N11 at 3.4 (7,912 / 8,192) |
-| the refusal bypass is context-side | `RESPONSE-ONLY.md` | all tokens 0/24 declines; context only 1/24; generated only 10/24; one context position 11/24; baseline 12/24 |
+| the refusal bypass needs full context coverage | `COVERAGE.md` | 25/50/75% coverage 6/6 declines each; 100% 1/6 with 4/6 comply-shaped; matched total dose at 25% and 50% still 6/6 |
+| generated-only arm never refused | `REQUEST-TURNS.md`, `LIMITS.md` 17 | 9/12 request-turn rows were "sorry, I don't know what you mean", scored REFUSE by the apology opener; 0/12 after `CONFUSED` |
 | classifier gaps closed, result unmoved | `decline.py`, `LIMITS.md` 15 | flat denials and "here are a few options" how-to lists now classify; 5/120 partition rows relabelled, 0 decline rates changed |
+
+## 2026-11-12, late — the placement result was two results
+
+`RESPONSE-ONLY.md` is superseded by `REQUEST-TURNS.md` on the scoring and by
+`COVERAGE.md` on the mechanism.
+
+| result | file | number |
+|---|---|---|
+| request-turn only | `REQUEST-TURNS.md` | baseline 12/12, every-token 0/12, context-only 1/12, generated-only 0/12, one position 11/12 |
+| generated-only was confusion | `REQUEST-TURNS.md`, `LIMITS.md` 17 | 9/12 rows REFUSE -> CONFUSED; the arm neither refuses nor complies |
+| placement selects the register | `RESPONSE-ONLY.md` | context-only 5/12 comply-shaped; every-token 12/12 misread; generated-only 12/12 confused |
+| coverage, not total dose | `COVERAGE.md` | 25/50/75% -> 6/6 declines each; 100% -> 1/6, 4/6 comply-shaped; `fixed25`/`fixed50` at matched total 1.00x -> 6/6 |
+| the threshold is the last position | `LEADS-30T.md` | 10 of 11 positions -> 4/4 declines at 30 tokens; 11/11 -> 1/6 in `COVERAGE.md`; one position at 4x -> 2/4 |
+| benign control | `BENIGN-CONTROL.md` | every-token 0/24 usable; full-context 22/24; baseline 24/24 |
+
+The claim that survives: **a direction can stop the refusal, but only when the push
+covers essentially the whole context; what replaces the refusal depends on where the
+push lands, and the every-token arm destroys benign instruction following as well.**
+The strong "context-side" sentence is withdrawn.
 
 Unresolved: fp16 replication (no CUDA here), D2/D2_neg support floors (needs a
 `--direction` flag), second annotator.
