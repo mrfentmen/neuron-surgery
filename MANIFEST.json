@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-11-12T06:09:16+00:00",
+  "generated_utc": "2026-11-12T06:37:12+00:00",
   "git": {
-    "head": "f7208b3041cda235373876dfce5f8afa005c0c09",
-    "head_short": "f7208b3",
+    "head": "3c5a98671f6eab239123d7f601a3b988137603ca",
+    "head_short": "3c5a986",
     "remote": "https://github.com/mrfentmen/neuron-surgery.git",
-    "dirty_paths": 218
+    "dirty_paths": 219
   },
   "environment": {
     "python": "3.14.8",
@@ -110,9 +110,9 @@
     "therm_raw": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
   },
   "corpus": {
-    "jsonl_files": 888,
-    "rows_total": 2986170,
-    "bytes_total": 1635857145,
+    "jsonl_files": 889,
+    "rows_total": 2986290,
+    "bytes_total": 1635937222,
     "note": "rows counted line by line; datasets/ excluded as external corpora"
   },
   "files": [
@@ -2677,6 +2677,12 @@
       "bytes": 80404,
       "rows": 101,
       "sha256": "99e5bf59930b7addac4140f0f156b87f2540ac5fcf94450ae2f72d014f54cccf"
+    },
+    {
+      "path": "response_only.jsonl",
+      "bytes": 80077,
+      "rows": 120,
+      "sha256": "2588c534a582b05d806967b56941c922b57c1f1643f255cfad8231f40c11f991"
     },
     {
       "path": "floor_bracket.jsonl",
