@@ -198,13 +198,31 @@ pins the punctuated and long-unit cases. A detector that under-counts loops
 under-counts exactly the rows that inflate a keyword score, so the error always
 points the same way: toward a false positive.
 
-## Instrument failure 9 — the judge is not usable in the audit loop (2026-11-12)
+## Instrument failure 9 — the pipeline, not the judge (2026-11-12)
 
-`judge.py` was invoked on the 32-row `upper_edge.jsonl` and produced no output
-within 240 s; the process was killed. Whatever its startup cost, it cannot sit
-between a run finishing and a human reading the rows, so every classification in
-`UPPER-EDGE.md` is a hand-read of the 32 answers rather than a judge score.
+First written as "the judge is not usable": `judge.py` was invoked on
+`upper_edge.jsonl` and appeared to produce nothing in 240 s, so it was killed.
 
-That is the honest state: the trait/coherence judge is a batch tool that has not
-been characterised for latency, and until it is, judge-scored tables and hand-read
-tables must not be mixed in one comparison.
+**That diagnosis was wrong, and it was my measurement, not the tool.** Two things
+combined:
+
+1. The invocation ended in `| tail -8`. `tail` buffers until its input closes, so
+   a working process prints nothing until it exits. A killed pipeline shows no
+   output at all.
+2. macOS ships no `timeout` binary, so the follow-up "timed" run never actually
+   ran the command.
+
+The judge *had* been working: `judge.jsonl` was 97 KB and growing at the moment it
+was killed, and `judge_parsed.jsonl` already holds scored rows from November 9.
+
+Two rules from this, both cheap:
+
+- **Never pipe a long runner through `tail`/`head`.** Redirect to a log file and
+  read the file. `run_cool.sh` already does this; my ad-hoc calls did not.
+- **A silent process is not a hung process.** Check for output files growing
+  (`wc -l`, `ls -l`) before declaring a tool broken.
+
+`judge.py` now takes `--files a.jsonl,b.jsonl`, `--per N` and `--out path`, so it
+can score an arbitrary run without editing the file list. `UPPER-EDGE.md` is still
+a hand read — that stands as the more trustworthy table — but the judge is not
+implicated in it.

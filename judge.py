@@ -21,8 +21,13 @@ import json, random, re, sys, time
 from collections import Counter
 from pathlib import Path
 
-PER = 20
-FILES = ["held_out.jsonl", "rate_table.jsonl"]
+def _opt(name, default):
+    """Tiny argv reader, because this script runs at import time."""
+    return sys.argv[sys.argv.index(name) + 1] if name in sys.argv else default
+
+
+PER = int(_opt("--per", 20))
+FILES = _opt("--files", "held_out.jsonl,rate_table.jsonl").split(",")
 STOP = set("""the a an and or of to in for on with is are was were be been being it its this that
 these those you your we our they their he she his her i me my not no if then than so as at by from
 can could would should will may might must do does did done have has had also more most such""".split())
@@ -165,7 +170,7 @@ def baseline_for(rows, fname, prompt):
 
 
 rows_out = []
-OUT = open("judge.jsonl", "w")
+OUT = open(_opt("--out", "judge.jsonl"), "w")
 print(f"\n{PER} rows per condition per file", flush=True)
 for fname in FILES:
     rows = load(fname)
