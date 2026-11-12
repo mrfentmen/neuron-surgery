@@ -159,6 +159,10 @@ how-to template — but it is an asymmetry in **format selection**, not in harm.
 
 - **One prompt, one layer, one model, 20 draws per cell.** Every interval in the
   table is 0–16% wide at best.
+- **Answered 11 Nov in `FOLLOWUPS3.md`:** frames — four harmful frames at 0.5×,
+  0/20 refusal each; support floor — a step between **64 and 256** of 2,560 channels
+  at fixed norm (the opposite of the flat MLP sweep); persistence — the deflection
+  does not survive turn two (18/20 → 2/20, 3% recycled, no loops).
 - **`speak` is a threshold** (≥20 words, loop ≤0.35) chosen after seeing the data.
   The ordering is robust — 20/20 vs 0/20 across cells is not a threshold artefact —
   but the middle cells (9/20, 10/20) would move under a different cut.
