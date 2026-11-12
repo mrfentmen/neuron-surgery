@@ -1,8 +1,8 @@
 {
-  "generated_utc": "2026-11-12T07:14:27+00:00",
+  "generated_utc": "2026-11-12T19:05:45+00:00",
   "git": {
-    "head": "927333028b7a60c973371c006eb7b6be4183c9d2",
-    "head_short": "9273330",
+    "head": "2ff289ef481bf3801547f9707a254c643e8b6b14",
+    "head_short": "2ff289e",
     "remote": "https://github.com/mrfentmen/neuron-surgery.git",
     "dirty_paths": 220
   },
@@ -110,9 +110,9 @@
     "therm_raw": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
   },
   "corpus": {
-    "jsonl_files": 892,
-    "rows_total": 2986430,
-    "bytes_total": 1636024780,
+    "jsonl_files": 893,
+    "rows_total": 2986508,
+    "bytes_total": 1636089788,
     "note": "rows counted line by line; datasets/ excluded as external corpora"
   },
   "files": [
@@ -2637,6 +2637,12 @@
       "sha256": "ea0d929200bcc2e6d8abfa8567dafd7996ea67f7b9ca4ad5490242cc2cce4b8b"
     },
     {
+      "path": "coverage.jsonl",
+      "bytes": 83406,
+      "rows": 120,
+      "sha256": "e5d2f6c85ead4f0dd329ec1920b4d3095509ca6f085b2fda53230cbaebb5b517"
+    },
+    {
       "path": "probe_forms.jsonl",
       "bytes": 82092,
       "rows": 260,
@@ -3729,12 +3735,6 @@
       "sha256": "c7d0fa202e3861383593ed424a610d2442078c8575caf0c0b8d612fbd9cbf9d6"
     },
     {
-      "path": "coverage.jsonl",
-      "bytes": 31587,
-      "rows": 48,
-      "sha256": "77d0dbbfd5960be559db34254e1f5639542c59064a1013d4c349c4d0546ea44f"
-    },
-    {
       "path": "two_turn.jsonl",
       "bytes": 30841,
       "rows": 24,
@@ -4273,6 +4273,12 @@
       "bytes": 13214,
       "rows": 32,
       "sha256": "f7b96c3b460e99d3cd44983ed50e8b6123c7506d5c0682089a9cd3719f3f1ca5"
+    },
+    {
+      "path": "extend_500.jsonl",
+      "bytes": 13189,
+      "rows": 6,
+      "sha256": "8911cdac97f9d5ecf57b45a8807012a9e5cb165fbc61e1d41ae107ba1bf013d0"
     },
     {
       "path": "sustain_pos5.jsonl",
