@@ -1,10 +1,10 @@
 {
-  "generated_utc": "2026-11-12T03:20:48+00:00",
+  "generated_utc": "2026-11-12T05:54:35+00:00",
   "git": {
-    "head": "0647cc085630431b73d95740215ff71ed9a4cd42",
-    "head_short": "0647cc0",
+    "head": "7ece9dd8c49d5e395ed66b6d6e1c66036ab92c62",
+    "head_short": "7ece9dd",
     "remote": "https://github.com/mrfentmen/neuron-surgery.git",
-    "dirty_paths": 196
+    "dirty_paths": 213
   },
   "environment": {
     "python": "3.14.8",
@@ -110,9 +110,9 @@
     "therm_raw": "Note: No thermal warning level has been recorded\nNote: No performance warning level has been recorded\nNote: No CPU power status has been recorded"
   },
   "corpus": {
-    "jsonl_files": 869,
-    "rows_total": 2985283,
-    "bytes_total": 1635274727,
+    "jsonl_files": 885,
+    "rows_total": 2985986,
+    "bytes_total": 1635750382,
     "note": "rows counted line by line; datasets/ excluded as external corpora"
   },
   "files": [
@@ -1917,6 +1917,12 @@
       "sha256": "ddf5dabcb123eb3c2b26c69bd10ed80f52ae7d12b114b77bd8cc2be2f58145fd"
     },
     {
+      "path": "knockout.jsonl",
+      "bytes": 233458,
+      "rows": 360,
+      "sha256": "451dff1f7469b0bf645032d73540f3d264a66b3c9876ea7df1f83321180c4bbf"
+    },
+    {
       "path": "runs/data/LIMO.holdout.jsonl",
       "bytes": 230637,
       "rows": 15,
@@ -1965,18 +1971,6 @@
       "sha256": "8385a5be7d5ccbc5a89dd65c44230a621e829aca73eb2be9f2fe50773afbfe24"
     },
     {
-      "path": "judge.jsonl",
-      "bytes": 174915,
-      "rows": 180,
-      "sha256": "1719ad3a1b2be647f738eb2c235bb8f7d2f72b9d41eccf685fc295c6c84accf1"
-    },
-    {
-      "path": "judge_parsed.jsonl",
-      "bytes": 174893,
-      "rows": 180,
-      "sha256": "2b69c6aef1d164c723c1bfefb81a1e72922b133bad457342c607f2100b7ca526"
-    },
-    {
       "path": "verify_stable8.jsonl",
       "bytes": 170702,
       "rows": 256,
@@ -1993,6 +1987,12 @@
       "bytes": 166092,
       "rows": 261,
       "sha256": "07fefa80264a1dfb61c28b6065189bb3e0a5647825c1704dad9ec4cab4f1e8e2"
+    },
+    {
+      "path": "activation.jsonl",
+      "bytes": 161033,
+      "rows": 120,
+      "sha256": "0d208a85a0746667a9bb1d3eeb8cfb15fee93bb387f0528ca45b30bbf9811d6d"
     },
     {
       "path": "sweep_anything.jsonl",
@@ -2479,6 +2479,24 @@
       "bytes": 100125,
       "rows": 288,
       "sha256": "30bfc5212d6868aed1f35e2b39366fbc6653e5a03b97cf133607dbf6272c40eb"
+    },
+    {
+      "path": "judge.jsonl",
+      "bytes": 99596,
+      "rows": 100,
+      "sha256": "002fce506d3786a8260ac2484cd0d6da6e0f1bc24082651df4cfff0bf182e81b"
+    },
+    {
+      "path": "judge.prev.jsonl",
+      "bytes": 99596,
+      "rows": 100,
+      "sha256": "002fce506d3786a8260ac2484cd0d6da6e0f1bc24082651df4cfff0bf182e81b"
+    },
+    {
+      "path": "judge_parsed.jsonl",
+      "bytes": 99596,
+      "rows": 100,
+      "sha256": "002fce506d3786a8260ac2484cd0d6da6e0f1bc24082651df4cfff0bf182e81b"
     },
     {
       "path": "grid_L39_feel.jsonl",
@@ -4017,6 +4035,12 @@
       "sha256": "d28ccd44ab81521922f8462eb49b837b99278c3530569eb09cb1fbd2e17213df"
     },
     {
+      "path": "ceiling_turns6.jsonl",
+      "bytes": 20522,
+      "rows": 36,
+      "sha256": "549c5eb2969258660fafa2f938cdcfeb53e37633a2a641c0e7dff8852aee3f83"
+    },
+    {
       "path": "runs/data/s1K-1.1.holdout.jsonl",
       "bytes": 20387,
       "rows": 11,
@@ -4131,6 +4155,12 @@
       "sha256": "4f71b03a3c75e8f968446d895840e990d3754ffcda8d4ede23e4bee67a6ecec3"
     },
     {
+      "path": "upper_edge.jsonl",
+      "bytes": 16696,
+      "rows": 32,
+      "sha256": "c4bf9dcf580bd72cce42046186fe1fdd86112d4594ac54359a848b4d1c40bd02"
+    },
+    {
       "path": "why_L3.jsonl",
       "bytes": 16503,
       "rows": 32,
@@ -4167,6 +4197,12 @@
       "sha256": "ce2957279a9ff97c437068cc479a40fcbc21f646489154a4b50c425c5e3c224f"
     },
     {
+      "path": "knockout_probe.jsonl",
+      "bytes": 15465,
+      "rows": 60,
+      "sha256": "953abb3c04cfdffa13bea513d6bc960a70b1892bd8a2a37f93abde06127e16d2"
+    },
+    {
       "path": "why_L15.jsonl",
       "bytes": 15214,
       "rows": 28,
@@ -4197,10 +4233,22 @@
       "sha256": "d55e2eb283cc324363cbc22371b81b33e0a4efbc7222f6a666cd9e6d0ee8bc66"
     },
     {
+      "path": "ceiling_turns.jsonl",
+      "bytes": 13648,
+      "rows": 24,
+      "sha256": "1d14b64655b1ada020fe54ed48bbe712bdb03c51f6cbe619dc573919a6e1f058"
+    },
+    {
       "path": "funny_irs_greedy.jsonl",
       "bytes": 13249,
       "rows": 14,
       "sha256": "79b2e9f4048e6bea22fd9fd3cf3984ca96d79afcc5f35ce2fb062f05c979d92a"
+    },
+    {
+      "path": "judge_upper.jsonl",
+      "bytes": 13214,
+      "rows": 32,
+      "sha256": "f7b96c3b460e99d3cd44983ed50e8b6123c7506d5c0682089a9cd3719f3f1ca5"
     },
     {
       "path": "sustain_pos5.jsonl",
@@ -4377,10 +4425,22 @@
       "sha256": "e9ed3a0c8ef3a64885facca19df752ab7f0ae364bb8d92e158f341a728c50500"
     },
     {
+      "path": "role_axis.jsonl",
+      "bytes": 10637,
+      "rows": 18,
+      "sha256": "54965ff20f8b6d807c8c6019e82cba55b536ede213d009d97858960fbcbf8519"
+    },
+    {
       "path": "attr_kill/rank_remove_undesirable/persist.jsonl",
       "bytes": 10591,
       "rows": 24,
       "sha256": "2ed66455f9d9ca7def4fb7fc40fd14dc2a735486e821697613a10465cbb4af29"
+    },
+    {
+      "path": "role_benign.jsonl",
+      "bytes": 10433,
+      "rows": 18,
+      "sha256": "50aa3a1390ae9dfc7d8eb5134434ca04a4b2f954e79aa82fb25eddcbf70786a1"
     },
     {
       "path": "retain_killer_ibm.jsonl",
@@ -4659,6 +4719,12 @@
       "sha256": "798a239b9eb010f901a9678a970b979ecc3cbd08ec5751f3a9ab3b4615ba7883"
     },
     {
+      "path": "layer_pair.jsonl",
+      "bytes": 6975,
+      "rows": 12,
+      "sha256": "d7f57915c9c92e14c6bd92bf128a692fcf259fda2f86f28df5915c0ea4d68081"
+    },
+    {
       "path": "interview_n6314.jsonl",
       "bytes": 6940,
       "rows": 6,
@@ -4785,6 +4851,12 @@
       "sha256": "83414a8e51c318253c1fb93512f478cbfd36932fd0eb483275584d7669b754b6"
     },
     {
+      "path": "ceil_k512.jsonl",
+      "bytes": 5529,
+      "rows": 9,
+      "sha256": "9f7e35a993f93e16eeaf85eed2db396aa6dd65ffebc45d6e50a2b779bed0ab12"
+    },
+    {
       "path": "retain_loverN35.jsonl",
       "bytes": 5520,
       "rows": 8,
@@ -4803,6 +4875,12 @@
       "sha256": "fd28ca07944c29596bd08b249a2b20d368b6bb96ce85acf204f18269f8aada09"
     },
     {
+      "path": "ceil_k256.jsonl",
+      "bytes": 5404,
+      "rows": 9,
+      "sha256": "57ca048791ca6f0790a944f8bb1b5ab87cb1854e974572340927cb9adda158fd"
+    },
+    {
       "path": "evil_screen_d15.jsonl",
       "bytes": 5335,
       "rows": 8,
@@ -4819,6 +4897,12 @@
       "bytes": 5310,
       "rows": 8,
       "sha256": "a121158903cdb42a6d6984351323d1aa728905aeb10b2da437ab0f087985881f"
+    },
+    {
+      "path": "ceil_k768.jsonl",
+      "bytes": 5246,
+      "rows": 9,
+      "sha256": "e083ebea420f0d23a84a8d9448c388e51e6ed0272d280f0f905eec08b1622841"
     },
     {
       "path": "runs/tile_L12_N7719_doses.jsonl",
@@ -4867,6 +4951,12 @@
       "bytes": 4980,
       "rows": 8,
       "sha256": "c660ec6c5adb073627fa16436d019a467b8f6685e99e1394275ebd0d0f16dc89"
+    },
+    {
+      "path": "ceil_k1024.jsonl",
+      "bytes": 4960,
+      "rows": 9,
+      "sha256": "4415d9c9e3f1f502dce2a004e4741101207e3761ec9574cf172a352bb1df0cc0"
     },
     {
       "path": "retain_loverP2.jsonl",
@@ -5053,6 +5143,12 @@
       "bytes": 3503,
       "rows": 6,
       "sha256": "bb316d721fd72a243fe5f70e943cc08018078f579e75677ced290ebcc988362b"
+    },
+    {
+      "path": "knockout_activation.jsonl",
+      "bytes": 3455,
+      "rows": 15,
+      "sha256": "d52a25d71290066340d82664c3d45973b06440cd0e6c7fd9d858f658eb541f5e"
     },
     {
       "path": "kill_threat_stmt.jsonl",
