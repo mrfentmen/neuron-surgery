@@ -258,8 +258,11 @@ until regenerated.
 ## Instrument failure 12 — "6 of 6" from a spot read (2026-11-12)
 
 `ROLE-AXIS.md` first claimed the second-person assignment appeared in "6 of 6
-`both` answers". The row-level count is **2 of 6** in `both`, 1 of 6 in `role`, 0
-of 6 in `stance`. The claim came from reading the three most striking rows and
+`both` answers". The row-level count is **3 of 6** in `both`, **0 of 6** in `role`
+and **0 of 6** in `stance`. (This entry first said "1 of 6 in role", typed from
+memory rather than from the output two lines above it — the same error it is
+describing.) Meta-talk about the statement is the opposite split: 6/6 in `role`,
+0/6 in `stance`, 0/6 in `both`. The claim came from reading the three most striking rows and
 generalising to the cell.
 
 Same family as failures 11 and 8: a summary written by eye. The rule already
