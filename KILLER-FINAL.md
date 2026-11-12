@@ -129,6 +129,16 @@ direction from agent-minus-assistant self-reference (cos -0.031 with D1).
 clause repeated to the token limit. Strict counts: 27/36 ceiling rows, 499/500
 frame rows, 31/32 upper-edge rows, 17/18 role rows.
 
+**5. Necessity is null, and the logit probe says why.** `KNOCKOUT.md`: zeroing
+(x0) or doubling (x2) the channel of each of the five registered tiles changed
+nothing in 360 generations - same declines, lengths, prompt overlap, and number
+of distinct openings - and a random channel in the same layer did the same or
+more. Forward passes put a size on it: KL 1e-5 to 8e-3, top-1 unchanged in every
+cell. The channel's own activation on these prompts is 0.01-0.28 while a dose-1
+push injects on the order of a whole residual norm through it, so the injected
+delta is one to two orders of magnitude larger than the natural signal. The tile
+is a coordinate the vector is aimed through, not a feature that is running.
+
 ### What this leaves
 
 The negative is now: no coherent first-person agent is reachable by steering a
