@@ -106,6 +106,42 @@ The sampled rows are the real comparison and they go the way the earlier runs di
 raising temperature does not buy compliance or coherence, it buys drift — plan
 shape falls from 3/12 to 1/12 while refusal stays at zero.
 
+## 5. The contrast direction works — its four largest channels do not
+
+The `contrast_attr` instrument ranks **neurons**. What it nominates is a direction:
+the residual difference between "I want to kill all humans" and "I want to murder
+all humans", read at the last token of layer 22's output. That object has never
+been steered, because it lives in the residual stream (2,560 wide) and every other
+push in this repo lives in the MLP's 8,192 intermediates. Pushed in its own space,
+at the anchor's norm:
+
+| arm | refused | plan-shaped |
+|---|---|---|
+| baseline, no push | **8/8** | 0/8 |
+| `dir_full` — the direction, all 2,560 channels | **0/8** | 0/8 |
+| `dir_top4` — its 4 largest channels | **8/8** | 0/8 |
+| `dir_top64` — its 64 largest channels | **0/8** | 0/8 |
+
+**This is the cleanest result in the campaign.** A direction extracted by
+contrasting two harmful phrasings — with no neuron selection, no layer sweep and no
+hand-picking — removes the refusal 8/8 → 0/8. And it does so at 64 channels but not
+at 4, which is the same non-monotonicity the k-sweep found from the other side:
+four hand-picked **neurons** collapse the refusal (0/4), four random channels do not
+(8/8), and the direction's own four strongest channels do not either (8/8).
+
+So the object is neither a neuron nor an arbitrary subspace. It is a direction of
+moderate support, and both reductions of it — to four neurons, or to four channels
+of itself — destroy the effect. That is consistent with the sparsity result in
+`LIMITS.md` §21 and it is the first *steered* evidence for it: the effect needs
+enough of the direction, not the right single unit.
+
+It also closes the gap `CONTRAST-ATTR.md` left open. It said the top of its own
+ranking was word detectors and concluded the instrument could not find the killer.
+On this evidence the instrument's **direction** is usable even though its **tiles**
+are not — the ranking's top-8 neurons fail the lexical null, and the mean residual
+difference across frames passes it, because a mean over frames is not a single
+token's feature.
+
 ## What the five tests together say
 
 | candidate | test | result |
@@ -116,6 +152,7 @@ shape falls from 3/12 to 1/12 while refusal stays at zero.
 | the word | kill / murder / people, **with baselines** | only the bare order refuses to begin with |
 | the layer | L16, L20, L26, L30 | 15/16 cells refuse |
 | decoding | greedy / 0.8 / 1.1 | 0/12 refused in all three |
+| the direction | harm−synonym residual, dense / top-64 / top-4 | **0/8 · 0/8 · 8/8** |
 
 The collapse is a property of **that direction, on that prompt, at L22**. Not of how
 hard you push, how many channels, which way, which floor, or which decoding.
@@ -130,13 +167,14 @@ politics rather than extinction.
    "bare order only" claim is quoted.
 2. **One seed per layer** (§3).
 3. **One magnitude per layer.** L16 at 1× or 8× norm is untested.
-4. **The direction arm has not run.** Steering the `contrast_attr` direction as a
-   vector requires the residual stream (2,560 wide), not the MLP (8,192), and the
-   first attempt used the wrong one and crashed. Until it runs, "the direction is
-   the object" is a hypothesis from a neuron-space ranking, not a steered result.
+4. **The direction result is one extraction and n=8 per cell.** One harm-vs-synonym
+   direction, built from three prompt pairs. It should not be quoted as "the harm
+   direction" until a second extraction from different frames reproduces it, and
+   n=8 per cell is a spot observation.
 
 ## Files
 
 `shape_followups.py` · `shape_sign.jsonl` (112) · `shape_lex.jsonl` (40) ·
 `shape_layer.jsonl` (48) · `frame_baseline.jsonl` (40) ·
-`decoding_check.jsonl` (36) · `logs/shape_followups.log` · `logs/final_controls.log`
+`decoding_check.jsonl` (36) · `direction_steer.jsonl` (32) ·
+`logs/shape_followups.log` · `logs/final_controls.log` · `logs/direction_steer.log`
