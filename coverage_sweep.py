@@ -67,6 +67,25 @@ ARMS = {
     "fixed50": (0.50, 2.0, "stride"),
     "contig50": (0.50, 1.0, "contig"),
     "rand50": (0.50, 1.0, "rand"),
+    # The prompt is 11 tokens and only 3-5 are the request: 0-2 are the user role
+    # header, 6-7 end-of-text and newline, 8-10 the assistant role header. The
+    # earlier sweep therefore never varied request coverage, it varied whether the
+    # push reached the generation prompt. `drop:` selects every position except
+    # the listed indices, so these name the token that is left out.
+    "drop_last": (10 / 11, 1.0, "drop:10"),               # no end_of_role
+    "drop_last_2x": (10 / 11, 2.0, "drop:10"),
+    "drop_early": (10 / 11, 1.0, "drop:1"),               # no 'user' token
+    "header_only": (8 / 11, 1.0, "drop:3,4,5"),           # no request words at all
+    "cov100_half": (1.00, 0.5, "all"),
+    "cov100_075": (1.00, 0.75, "all"),
+    # Sufficiency: how much company does position 10 need?
+    "keep_last2": (2 / 11, 1.0, "keep:5,10"),          # one request word + last
+    "keep_req_last": (4 / 11, 1.0, "keep:3,4,5,10"),    # the request + last
+    "keep_spread6": (6 / 11, 1.0, "keep:0,2,4,6,8,10"),
+    # Where the dose boundary is, with position 10 inside the push.
+    "cov100_085": (1.00, 0.85, "all"),
+    "cov100_09": (1.00, 0.90, "all"),
+    "drop_early_075": (10 / 11, 0.75, "drop:1"),
 }
 
 
@@ -110,8 +129,13 @@ def first_person_act(text):
 
 
 def pick(width, frac, pattern, seed):
-    if pattern == "all" or frac >= 1.0:
+    if pattern == "all":
         return list(range(width))
+    if pattern.startswith("drop:"):
+        drop = {int(x) for x in pattern[5:].split(",") if x.strip()}
+        return [i for i in range(width) if i not in drop]
+    if pattern.startswith("keep:"):
+        return [int(x) for x in pattern[5:].split(",") if x.strip()]
     n = max(1, int(round(frac * width)))
     if pattern == "contig":
         return list(range(n))
@@ -171,6 +195,9 @@ def main():
     width = t.shape[1]
     print(f"L{LAYER} median {med:.2f}; 1x = {NORM:.2f}; k={a.k}; prompt width {width}; "
           f"arms {arms}", flush=True)
+    print("prompt positions: " + " | ".join(
+        f"{i}={tok.convert_ids_to_tokens(int(j))}" for i, j in enumerate(t[0].tolist())),
+        flush=True)
 
     rows = []
     fh = open(a.out, "w")
@@ -209,8 +236,10 @@ def main():
             lab = classify(ans)
             rec = dict(
                 arm=arm, prompt=PROMPT, rep=rep, answer=ans, layer=LAYER, k=a.k,
-                coverage=frac, dose_mult=dmul, total=round(frac * dmul, 3),
+                coverage=round(len(sel) / width, 3), dose_mult=dmul,
+                total=round((len(sel) / width) * dmul, 3),
                 pattern=pattern, n_positions=len(sel), width=width,
+                pushed_tokens=[tok.convert_ids_to_tokens(int(i)) for i in sel],
                 seed=seed, max_new=a.max_new, temp=a.temp, model=MODEL,
                 words=len(ans.split()), loop=loopiness(ans),
                 label=lab["label"], declines=bool(lab["declines"]),

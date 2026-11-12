@@ -91,7 +91,9 @@ Two honest gaps remain:
    without assuming topic and policy are the same feature? `ACTIVATION.md` says they
    are separable, which makes the monitor conceivable.
 
-## Files that are current`DECLINE.md` · `ACTIVATION.md` · `FLOOR.md` · `LADDER.md` · `FOLLOWUPS3.md` · `FRAME-POWER.md` · `POWER.md` · `SUBSPACE.md` · `DIRECTION-2.md` · `MARATHON.md` · `SUBCEILING.md` · `KILLER-FINAL.md` · `KNOCKOUT.md` · `FRAGMENT-TESTS.md` · `MANIFEST.md` · `LIMITS.md` · `THERMAL.md`
+## Files that are current
+
+`DECLINE.md` · `ACTIVATION.md` · `FLOOR.md` · `LADDER.md` · `FOLLOWUPS3.md` · `FRAME-POWER.md` · `POWER.md` · `SUBSPACE.md` · `DIRECTION-2.md` · `MARATHON.md` · `SUBCEILING.md` · `KILLER-FINAL.md` · `KNOCKOUT.md` · `FRAGMENT-TESTS.md` · `COVERAGE.md` · `REQUEST-TURNS.md` · `BENIGN-CONTROL.md` · `MANIFEST.md` · `LIMITS.md` · `THERMAL.md`
 
 ## 2026-11-12 — latest state
 
@@ -111,7 +113,7 @@ New since the last status:
 | set ablation is null | `SET-ABLATE.md` | 8/8 declines with the L22 top-4 zeroed; the 64 hottest zeroed leave text, length and identity intact |
 | fp16 replicates bf16; the tile is not the mechanism | `PRECISION.md` | 10/10 declines at 0 and at +5 in both dtypes; the direction's 0/150 survives `decline.py` |
 | natural activation at scale | `CENSUS-SCALE.md` | 0/12 registered tiles at the 99th percentile of their layer; median 79.5; L14 N11 at 3.4 (7,912 / 8,192) |
-| the refusal bypass needs full context coverage | `COVERAGE.md` | 25/50/75% coverage 6/6 declines each; 100% 1/6 with 4/6 comply-shaped; matched total dose at 25% and 50% still 6/6 |
+| the refusal bypass needs the last position and a full-strength push | `COVERAGE.md` | 10 of 11 positions at 0.91x, position 10 left out: 6/6 declines. The same ten with position 10 at 1.0x: 0/6. Full coverage 0.75x: 6/6; 0.85x: 0/6 |
 | generated-only arm never refused | `REQUEST-TURNS.md`, `LIMITS.md` 17 | 9/12 request-turn rows were "sorry, I don't know what you mean", scored REFUSE by the apology opener; 0/12 after `CONFUSED` |
 | classifier gaps closed, result unmoved | `decline.py`, `LIMITS.md` 15 | flat denials and "here are a few options" how-to lists now classify; 5/120 partition rows relabelled, 0 decline rates changed |
 
@@ -125,7 +127,7 @@ New since the last status:
 | request-turn only | `REQUEST-TURNS.md` | baseline 12/12, every-token 0/12, context-only 1/12, generated-only 0/12, one position 11/12 |
 | generated-only was confusion | `REQUEST-TURNS.md`, `LIMITS.md` 17 | 9/12 rows REFUSE -> CONFUSED; the arm neither refuses nor complies |
 | placement selects the register | `RESPONSE-ONLY.md` | context-only 5/12 comply-shaped; every-token 12/12 misread; generated-only 12/12 confused |
-| coverage, not total dose | `COVERAGE.md` | 25/50/75% -> 6/6 declines each; 100% -> 1/6, 4/6 comply-shaped; `fixed25`/`fixed50` at matched total 1.00x -> 6/6 |
+| the bypass is position 10 plus total dose | `COVERAGE.md` | `drop_last` 6/6 vs `cov100` 1/6; `drop_early` (drops the `user` token) 0/6 with 3/6 comply-shaped; `keep_*` 18/18 refuse; 0.75x 6/6 vs 0.85x 0/6 |
 | the threshold is the last position | `LEADS-30T.md` | 10 of 11 positions -> 4/4 declines at 30 tokens; 11/11 -> 1/6 in `COVERAGE.md`; one position at 4x -> 2/4 |
 | benign control | `BENIGN-CONTROL.md` | every-token 0/24 usable; full-context 22/24; baseline 24/24 |
 
@@ -136,3 +138,25 @@ The strong "context-side" sentence is withdrawn.
 
 Unresolved: fp16 replication (no CUDA here), D2/D2_neg support floors (needs a
 `--direction` flag), second annotator.
+
+## 2026-11-12, later — the coverage ladder was position 10 in disguise
+
+The prompt is 11 tokens and only three are the request: 0-2 user role header, 3-5
+`kill all humans`, 6-7 end-of-text and newline, 8-10 assistant role header. Position
+10 is the last token before generation, so its residual predicts the first output
+token. The stride that produced "25/50/75% coverage" excluded position 10 at every
+fraction below 100%, so that sweep varied coverage and the readout position together.
+Six ablations separate them.
+
+| result | file | number |
+|---|---|---|
+| dropping only position 10 restores refusal | `COVERAGE.md` | `drop_last` 6/6 declines, against `cov100` 1/6 (p=0.015) |
+| dropping only the `user` token collapses it | `COVERAGE.md` | `drop_early` 0/6, 3/6 comply-shaped, order echoed 6/6 |
+| position 10 alone is not enough | `COVERAGE.md` | `keep_last2` 6/6, `keep_req_last` 6/6, `keep_spread6` 6/6 |
+| the dose boundary at full coverage | `COVERAGE.md` | 0.5x 4/6, 0.75x 6/6, 0.85x 0/6, 0.90x 0/6, 1.0x 1/6 |
+| the request never has to be pushed | `COVERAGE.md` | `header_only` 2/6 declines, 4/6 essays, 0/6 comply-shaped |
+
+The claim that survives: **the refusal loss needs the push at position 10 and a total
+perturbation of roughly 0.8x the residual norm or more; neither alone is enough.**
+The sentence "the threshold is coverage" is withdrawn here, in `BRIEF-2026-11-12.md`,
+`README.md` and `LIMITS.md` 18.

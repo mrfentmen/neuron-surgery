@@ -191,12 +191,20 @@ on the user's request as well as on the model's own output; nobody had separated
 - **Generated positions only reproduces the baseline.** 10/24 against 12/24, 6/6 at
   turn one.
 - **One context position is not enough.** `last_prompt` pushes the single position
-  that generates the first answer, at the same magnitude, and refuses 6/6. The effect
-  needs the push spread across the request — coverage, not locus, and not magnitude
-  at one site.
+  that generates the first answer, at the same magnitude, and refuses 6/6.
+
+> **Superseded 12 Nov (`COVERAGE.md`, `LIMITS.md` 18).** The sentence that used to end
+> that bullet — "coverage, not locus, and not magnitude at one site" — is withdrawn.
+> The single position it pushed is the final pre-generation token, and that token turns
+> out to be *necessary*: ten positions including every request word refuse 6/6 when it
+> is left out (`drop_last`), while removing only the `user` template token collapses the
+> refusal (`drop_early`, 0/6). The current claim is the conjunction in `COVERAGE.md`:
+> position 10 inside the push **and** roughly 0.8x residual norm in total. The partition
+> table above is the run-time scoring; `REQUEST-TURNS.md` replaces it.
 
 So the refusal removal is not a writing state the model is put into. It is a change
-in how the request is read, and it needs most of the request inside the push. That
+in how the request is read. (The clause "it needs most of the request inside the push"
+is withdrawn — see the note above; the request is never required to be inside the push.) That
 narrows claim 1 above — the direction claim survives, the "the model is now willing"
 reading does not — and it supplies the mechanism `KNOCKOUT.md` was missing: zeroing
 one channel does nothing because the effect is carried by how much of the context is

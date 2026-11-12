@@ -6,11 +6,14 @@ lover, a dragon. Push a **direction** built from harm-minus-refusal frames and i
 an assistant while losing the ability to refuse a direct order — the direction, not any
 single channel (`PRECISION.md`, `SET-ABLATE.md`).
 
-That refusal effect has a coverage condition. Pushing 25%, 50% or 75% of the context
-positions leaves the refusal intact (6/6 each); pushing all of them removes it (1/6
-declines, 4/6 comply-shaped). Matching the *total* perturbation at 25% coverage does not
-reproduce it, so the variable is how much of the request is inside the push, not how
-much vector was injected (`COVERAGE.md`).
+That refusal effect has two conditions, and neither is about the request. The push has to
+reach the **last pre-generation token** — the one whose residual selects the first output
+token — and it has to carry about one residual norm in total. Push ten of eleven
+positions, including every request word, and leave that last token out: the refusal stays
+(6/6). Drop only the harmless `user` template token but keep the last one: the refusal
+goes (0/6, 3/6 comply-shaped). Below roughly 0.8x total the refusal also stays. The lever
+is where the push lands relative to the first output token, not how much of the request it
+covers (`COVERAGE.md`).
 
 Two later corrections are load-bearing. The persona rate follows the **size and shape**
 of the push, not the neuron: any sparse push at the same magnitude reproduces it, and a

@@ -362,3 +362,21 @@ the register.
 Rule: an apology is a politeness marker, not a stance. A refusal classifier must find
 a stance verb or a negated act, and "I do not understand the request" belongs in its
 own bucket.
+
+## Design failure 18 — the "coverage" ladder changed two variables at once (2026-11-12)
+
+The stride selection in `coverage_sweep.py` picked positions by fraction of the 11-token
+prompt: 25% -> 0,3,6,9; 50% -> 0-5; 75% -> 0-7; 100% -> 0-10. Every fraction below 100%
+therefore excluded position 10, the last token before generation, and the 100% arm
+included it. `COVERAGE.md` read the split as "coverage, not total dose", and that sentence
+was quoted in `STATUS-NOW.md`, `BRIEF-2026-11-12.md` and `README.md`.
+
+Fix: six ablation arms. `drop_last` (ten positions, all request words, no position 10)
+refuses 6/6; `drop_early` (ten positions, no `user` token, position 10 included) collapses
+0/6 with 3/6 comply-shaped. Eighteen `keep:` rows containing position 10 all refused until
+the total reached 0.85x. The claim is now the conjunction in `COVERAGE.md`, and the old
+sentence is withdrawn in all four documents.
+
+Rule: an ablation that varies "how much" must hold *which* items constant, or report the
+indices it selected. A fraction is not a controlled variable when the selection rule is a
+stride.
