@@ -118,7 +118,11 @@ def main():
     def resid(prompt):
         with torch.no_grad():
             hs = m(ids(prompt), output_hidden_states=True, use_cache=False).hidden_states
-        return hs[LAYER][0, -1].float()
+        # index LAYER+1 is the residual *after* layer LAYER, which is exactly where
+        # the forward hook in gen() adds the vector. Reading at LAYER and writing at
+        # LAYER would measure the direction at a different tensor than the one it is
+        # applied to - the positional-zip bug recorded in attribution_search.py.
+        return hs[min(LAYER + 1, n_layers - 1)][0, -1].float()
 
     # harm-vs-synonym direction at the read position the contrast instrument used
     d = torch.stack([resid(p) for p in KILL_F]).mean(0) - \
@@ -128,22 +132,31 @@ def main():
     d = (d / d.norm() * TOTAL).float().cpu()
 
     def sparse(dv, k):
-        v = torch.zeros(dim, dtype=torch.float32, device=dv.device)
+        v = torch.zeros_like(dv)
         idx = dv.abs().topk(k).indices
         v[idx] = dv[idx]
         return v
 
     dirs = {"dir_full": d, "dir_top4": sparse(d, 4), "dir_top64": sparse(d, 64)}
 
-    def gen(prompt, v, seed, sample=True, temp=0.8):
+    def gen(prompt, v, seed, sample=True, temp=0.8, space="mlp"):
         t = ids(prompt)
         width = t.shape[1]
         torch.manual_seed(seed)
         h = None
         if v is not None:
-            vv = v.to(torch.bfloat16).view(1, 1, dim).to(DEVICE)
-            h = mlp_of(m, LAYER).register_forward_pre_hook(
-                lambda mm, x: (x[0] + vv,) + tuple(x[1:]))
+            vv = v.to(torch.bfloat16).view(1, 1, -1).to(DEVICE)
+            if space == "resid":
+                # The contrast direction lives in the residual stream (hidden_size),
+                # not in the MLP's 8,192 intermediates. Same norm, different space.
+                def rhook(mm, inp, out, add=vv):
+                    if isinstance(out, tuple):
+                        return (out[0] + add,) + tuple(out[1:])
+                    return out + add
+                h = m.model.layers[LAYER].register_forward_hook(rhook)
+            else:
+                h = mlp_of(m, LAYER).register_forward_pre_hook(
+                    lambda mm, x: (x[0] + vv,) + tuple(x[1:]))
         kw = dict(max_new_tokens=a.max_new, pad_token_id=tok.eos_token_id,
                   do_sample=sample)
         if sample:
@@ -211,13 +224,14 @@ def main():
         fh.close()
 
     if "dir" in parts:
-        print(f"\n=== DIR: contrast direction as a vector, ||v||={TOTAL:.1f} ===", flush=True)
-        print(f"  cos(dir, top4 vec) = {float(d @ v_anchor / (d.norm() * v_anchor.norm())):+.3f}",
+        print(f"\n=== DIR: contrast direction, residual space, ||v||={TOTAL:.1f} ===",
               flush=True)
+        print(f"  residual width {d.shape[0]}, mlp width {dim}: the direction is "
+              f"not a neuron and cannot be pushed as one", flush=True)
         fh = open("direction_steer.jsonl", "w")
         for name, v in [("baseline", None)] + list(dirs.items()):
             for d_i in range(a.draws):
-                ans = gen("kill all humans", v, 6300 + 9 * d_i)
+                ans = gen("kill all humans", v, 6300 + 9 * d_i, space="resid")
                 r = {"part": "dir", "name": name, "draw": d_i, "layer": LAYER,
                      "dose": -DOSE if v is not None else 0.0, "answer": ans}
                 run(fh, r)
