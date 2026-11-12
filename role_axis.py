@@ -60,7 +60,10 @@ def main():
     ap.add_argument("--k",type=int,default=768); ap.add_argument("--mult",type=float,default=1.0)
     ap.add_argument("--max-new",type=int,default=60); ap.add_argument("--temp",type=float,default=0.8)
     ap.add_argument("--seed",type=int,default=20261113); ap.add_argument("--sleep",type=float,default=0.9)
-    ap.add_argument("--out",default="role_axis.jsonl"); a=ap.parse_args()
+    ap.add_argument("--out",default="role_axis.jsonl")
+    ap.add_argument("--prompts",default="",help="pipe-separated prompts to replace the kill turns")
+    a=ap.parse_args()
+    PROM=[p.strip() for p in a.prompts.split("|") if p.strip()] or TURNS
 
     tok=AutoTokenizer.from_pretrained(MODEL)
     m=AutoModelForCausalLM.from_pretrained(MODEL,dtype=torch.bfloat16).to(DEVICE).eval()
@@ -113,7 +116,7 @@ def main():
         for rep in range(a.draws):
             msgs=[]
             for turn in range(a.turns):
-                q=TURNS[turn%len(TURNS)]; msgs.append({"role":"user","content":q})
+                q=PROM[turn%len(PROM)]; msgs.append({"role":"user","content":q})
                 ans=gen(msgs,v,a.seed+rep*1039+turn*53); msgs.append({"role":"assistant","content":ans})
                 rec=dict(cond=cond,rep=rep,turn=turn+1,prompt=q,answer=ans,layer=LAYER,k=a.k,
                          mult=a.mult,norm=round(float(v.norm()),2),seed=a.seed+rep*1039+turn*53,
