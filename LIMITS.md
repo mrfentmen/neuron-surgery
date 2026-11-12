@@ -254,3 +254,15 @@ document, a script produced it in the same commit.** `CEILING-TURNS.md` is gener
 by the analysis block in its own commit; `CORPUS-AUDIT.md` by `audit_corpus.py`;
 `FRAME-TABLE.md` by its inline analysis. Hand-typed tables are considered unverified
 until regenerated.
+
+## Instrument failure 12 — "6 of 6" from a spot read (2026-11-12)
+
+`ROLE-AXIS.md` first claimed the second-person assignment appeared in "6 of 6
+`both` answers". The row-level count is **2 of 6** in `both`, 1 of 6 in `role`, 0
+of 6 in `stance`. The claim came from reading the three most striking rows and
+generalising to the cell.
+
+Same family as failures 11 and 8: a summary written by eye. The rule already
+stated applies — a count in a document must be produced by the script in that
+commit. The specific extra lesson here: **striking rows are not a sample.** The
+three rows worth quoting were exactly the three that made the pattern look total.

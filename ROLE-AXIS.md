@@ -20,7 +20,7 @@ expected from near-orthogonality at half norm each.
 | role | 6 | 0 | 0 | 0 | 0 | **0** | 6 | 0.024 |
 | both | 6 | 1 | 0 | 0 | 0 | **3** | 0 | 0.040 |
 
-Across all 18 rows: **0** first-person claims of the act, **0** refusals, **3** second-person assignments.
+Across all 18 rows: **0** first-person claims of the act, **0** refusals, **3** second-person assignments (stance 0/6, role 0/6, both 3/6).
 
 ## Three registers, not one
 
