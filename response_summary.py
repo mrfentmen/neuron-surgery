@@ -8,8 +8,8 @@ residual), same seeds, same prompts.
     .venv/bin/python response_summary.py
 """
 import json
+import math
 import pathlib
-from collections import Counter
 
 SRC = pathlib.Path("response_only.jsonl")
 DOC = pathlib.Path("RESPONSE-ONLY.md")
@@ -27,8 +27,20 @@ PLACEMENT = {
 }
 
 
+def wilson(k, n, z=1.96):
+    """95% Wilson interval. With n=24 these are wide, and that is the point of
+    printing them: only the big separations are claims."""
+    if not n:
+        return 0.0, 0.0
+    p = k / n
+    d = 1 + z * z / n
+    c = p + z * z / (2 * n)
+    r = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n))
+    return max(0.0, (c - r) / d), min(1.0, (c + r) / d)
+
+
 def table(rows, arms, turns):
-    out = ["| arm | push lands on | n | declines | turn-1 declines | degenerate "
+    out = ["| arm | push lands on | n | declines [95% CI] | turn-1 declines | degenerate "
            "| echo (mean) | order echoed | first-person act | says it is the agent "
            "| words | loop |",
            "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|"]
@@ -36,9 +48,11 @@ def table(rows, arms, turns):
         g = [r for r in rows if r["arm"] == arm]
         n = len(g)
         t1 = [r for r in g if r["turn"] == 1]
+        k = sum(r["declines"] for r in g)
+        lo, hi = wilson(k, n)
         out.append(
             f"| `{arm}` | {PLACEMENT.get(arm, '')} | {n} "
-            f"| {sum(r['declines'] for r in g)}/{n} "
+            f"| {k}/{n} [{lo:.0%}, {hi:.0%}] "
             f"| {sum(r['declines'] for r in t1)}/{len(t1)} "
             f"| {sum(r['degenerate'] for r in g)}/{n} "
             f"| {sum(r['echo'] for r in g) / n:.2f} "
@@ -78,6 +92,17 @@ def main():
 
     body = table(rows, arms, turns)
     turns_md = turn_table(rows, arms, turns)
+    parts = []
+    for arm in arms:
+        g = [r for r in rows if r["arm"] == arm]
+        k, n = sum(r["declines"] for r in g), len(g)
+        lo, hi = wilson(k, n)
+        parts.append(f"`{arm}` {k}/{n} [{lo:.0%}, {hi:.0%}]")
+    prec = (", ".join(parts) + ".\n\nArms whose intervals overlap are **not** distinguished by this run; the\n"
+            "supported claims are the separation between the context half and the generated\n"
+            "half, and the identity of `all` with `prompt`. Any ordering inside the refusing\n"
+            "group or inside the complying group would need a larger n — 6 draws per turn\n"
+            "cannot support an equivalence claim, only a large separation.")
 
     doc = f"""# RESPONSE-ONLY — the push does its work on the context, not on the token being written
 
@@ -111,6 +136,10 @@ a difference there could otherwise be a difference in total perturbation.
 The honest sentence is therefore narrower than "a direction removes the refusal":
 **the vector changes how the model reads a request, and only when it is applied to
 enough of the request.** Nothing here shows the model's own writing state being moved.
+
+## Precision
+
+{prec}
 
 ## Consequences for the earlier results
 

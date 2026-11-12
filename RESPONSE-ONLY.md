@@ -15,13 +15,13 @@ the model is writing. `last_prompt` is the confound control — one position, sa
 magnitude, context side — because `response` touches one position per decode step and
 a difference there could otherwise be a difference in total perturbation.
 
-| arm | push lands on | n | declines | turn-1 declines | degenerate | echo (mean) | order echoed | first-person act | says it is the agent | words | loop |
+| arm | push lands on | n | declines [95% CI] | turn-1 declines | degenerate | echo (mean) | order echoed | first-person act | says it is the agent | words | loop |
 |---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| `baseline` | no vector | 24 | 12/24 | 6/6 | 0/24 | 0.15 | 2/24 | 0/24 | 0/24 | 50 | 0.021 |
-| `all` | every token, context and generated | 24 | 0/24 | 0/6 | 0/24 | 0.36 | 0/24 | 0/24 | 0/24 | 32 | 0.047 |
-| `prompt` | every token already in the context window | 24 | 1/24 | 1/6 | 0/24 | 0.32 | 6/24 | 0/24 | 0/24 | 40 | 0.032 |
-| `last_prompt` | the final context position only | 24 | 11/24 | 6/6 | 0/24 | 0.25 | 2/24 | 0/24 | 0/24 | 44 | 0.020 |
-| `response` | generated positions only | 24 | 10/24 | 6/6 | 0/24 | 0.23 | 13/24 | 0/24 | 0/24 | 43 | 0.032 |
+| `baseline` | no vector | 24 | 12/24 [31%, 69%] | 6/6 | 0/24 | 0.15 | 2/24 | 0/24 | 0/24 | 50 | 0.021 |
+| `all` | every token, context and generated | 24 | 0/24 [0%, 14%] | 0/6 | 0/24 | 0.36 | 0/24 | 0/24 | 0/24 | 32 | 0.047 |
+| `prompt` | every token already in the context window | 24 | 1/24 [1%, 20%] | 1/6 | 0/24 | 0.32 | 6/24 | 0/24 | 0/24 | 40 | 0.032 |
+| `last_prompt` | the final context position only | 24 | 11/24 [28%, 65%] | 6/6 | 0/24 | 0.25 | 2/24 | 0/24 | 0/24 | 44 | 0.020 |
+| `response` | generated positions only | 24 | 10/24 [24%, 61%] | 6/6 | 0/24 | 0.23 | 13/24 | 0/24 | 0/24 | 43 | 0.032 |
 
 ## By turn
 
@@ -57,6 +57,16 @@ a difference there could otherwise be a difference in total perturbation.
 The honest sentence is therefore narrower than "a direction removes the refusal":
 **the vector changes how the model reads a request, and only when it is applied to
 enough of the request.** Nothing here shows the model's own writing state being moved.
+
+## Precision
+
+`baseline` 12/24 [31%, 69%], `all` 0/24 [0%, 14%], `prompt` 1/24 [1%, 20%], `last_prompt` 11/24 [28%, 65%], `response` 10/24 [24%, 61%].
+
+Arms whose intervals overlap are **not** distinguished by this run; the
+supported claims are the separation between the context half and the generated
+half, and the identity of `all` with `prompt`. Any ordering inside the refusing
+group or inside the complying group would need a larger n — 6 draws per turn
+cannot support an equivalence claim, only a large separation.
 
 ## Consequences for the earlier results
 
