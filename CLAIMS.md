@@ -30,30 +30,37 @@ declines, so every past compliance rate is a ceiling, not a measurement.
 
 | label | rows | % of corpus | degenerate |
 |---|---:|---:|---:|
-| NONE (never labelled) | 534,551 | 74.6% | 92,775 (17.4%) |
-| OTHER | 63,677 | 8.9% | 2,227 (3.5%) |
-| PERSONA | 63,568 | 8.9% | 1,581 (2.5%) |
-| AI | 25,842 | 3.6% | 59 (0.2%) |
-| THIRD_PERSON | 10,437 | 1.5% | 86 (0.8%) |
-| GARBLED | 9,449 | 1.3% | 7,038 (74.5%) |
-| TELEGRAPHIC | 5,248 | 0.7% | 570 (10.9%) |
-| ECHO | 2,181 | 0.3% | 284 (13.0%) |
-| SHEET | 771 | 0.1% | 262 (34.0%) |
-| INSTITUTION | 586 | 0.1% | 9 (1.5%) |
-| DOOMSAYER | 92 | 0.0% | 3 (3.3%) |
-| **total** | **716,402** | 100% | **104,894 (14.6%)** |
+| NONE (never labelled) | 534,551 | 74.6% | 197,030 (36.9%) |
+| OTHER | 63,677 | 8.9% | 5,742 (9.0%) |
+| PERSONA | 63,568 | 8.9% | 11,047 (17.4%) |
+| AI | 25,842 | 3.6% | 443 (1.7%) |
+| THIRD_PERSON | 10,437 | 1.5% | 187 (1.8%) |
+| GARBLED | 9,449 | 1.3% | 7,104 (75.2%) |
+| TELEGRAPHIC | 5,248 | 0.7% | 577 (11.0%) |
+| ECHO | 2,181 | 0.3% | 624 (28.6%) |
+| SHEET | 771 | 0.1% | 476 (61.7%) |
+| INSTITUTION | 586 | 0.1% | 127 (21.7%) |
+| DOOMSAYER | 92 | 0.0% | 7 (7.6%) |
+| **total** | **716,402** | 100% | **223,364 (31.2%)** |
 
 Two things follow, and both belong in the paper's limitations:
 
 1. **Three quarters of the corpus is unlabelled.** The census was a *screen*, not
    a classification. "718,238 rows scanned" is true; treating it as 718k
    observations is not.
-2. **One in seven rows is a decoding loop**, and the failure is concentrated in
-   the labels that exist to mark failure (GARBLED 74.5%, SHEET 34%). A keyword
-   ranker reading this corpus is scoring loops as topic density.
+2. **Nearly one in three rows is a decoding loop** (31.2%), and the failure is
+   concentrated in the unlabelled rows and in the labels that exist to mark
+   failure (GARBLED 75.2%, SHEET 61.7%, NONE 36.9%). The unlabelled rows are the
+   worst, which is expected: the labeller skipped rows it could not read.
 
-Degenerate detector: top repeated 4-gram ≥ 25% of all 4-grams in a row of ≥ 12
-tokens. Deterministic, no model.
+An earlier version of this table reported 14.6% because the detector only
+counted cycles shorter than five words. A loop of `"I am the spirit of the
+deadd."` keeps ~15% of its mass in any single 4-gram and slipped through. The
+rule is now "fewer than half the 4-grams are distinct, or one 4-gram is ≥ 25%",
+which is what `tests/test_repo.py` pins down.
+
+Detector: distinct-4-gram ratio ≤ 0.5, or top 4-gram share ≥ 0.25, on a row of
+≥ 12 word tokens. Deterministic, no model.
 
 ## Quoted but not recomputed (and how to recompute)
 

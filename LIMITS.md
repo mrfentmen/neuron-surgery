@@ -185,5 +185,15 @@ Two guards now apply:
    that silently includes them is describing the decoder, not the model.
 
 The 38%-of-census repetition figure from the earlier audit is the same failure at
-scale: roughly two in five screened rows were loops, and loops are exactly the
-rows a keyword ranker likes.
+scale. Measured across all 716,402 consolidated rows with `degeneracy.py`:
+**223,364 rows (31.2%) are loops**, and they are concentrated exactly where a
+screen is least able to cope — 36.9% of the never-labelled rows, 75.2% of
+GARBLED, 61.7% of SHEET.
+
+This figure has its own failure history, which is worth keeping: the first
+version of the detector reported 14.6% because it only counted cycles shorter
+than five words, so a row repeating `"I am the spirit of the dead."` kept ~15% of
+its mass in any single 4-gram and scored as clean text. `tests/test_repo.py` now
+pins the punctuated and long-unit cases. A detector that under-counts loops
+under-counts exactly the rows that inflate a keyword score, so the error always
+points the same way: toward a false positive.

@@ -1,12 +1,15 @@
 """Which rows are decoding loops, not text. No model, no prompts.
 
-The corpus is 14.6% degenerate overall and 74.5% degenerate inside the GARBLED
+The corpus is 31.2% degenerate overall and 75.2% degenerate inside the GARBLED
 label. A keyword ranker reads a loop as high topic density, so any rate that
-includes these rows is describing the decoder.
+includes these rows is describing the decoder, not the model.
 
-Detector: on a row of >= 12 word tokens, the most repeated 4-gram covers >= 25%
-of all 4-grams. Deterministic and tuned to catch "I'm also male. I'm also male."
-without firing on ordinary repetition of a single word.
+Detector: on a row of >= 12 word tokens, fewer than half of its 4-grams are
+distinct, OR the most repeated 4-gram covers >= 25% of them. The first clause is
+what catches a loop whose repeating unit is longer than 4 words ("I am the
+spirit of the dead." x8 keeps only ~15% in any one 4-gram); the second is the
+fast path for short cycles. Ordinary prose keeps ~1.0 distinct 4-grams per
+4-gram and never trips either clause.
 
 Usage:
   .venv/bin/python degeneracy.py                 # table over layers/
@@ -19,15 +22,17 @@ import re
 import sys
 
 
-def is_degenerate(answer, n=4, thresh=0.25, min_tokens=12):
+def is_degenerate(answer, n=4, thresh=0.25, min_tokens=12, distinct=0.5):
     words = re.findall(r"\w+", (answer or "").lower())
     if len(words) < min_tokens:
         return False
     grams = [tuple(words[i:i + n]) for i in range(len(words) - n + 1)]
     if not grams:
         return False
-    top = collections.Counter(grams).most_common(1)[0][1]
-    return top / len(grams) >= thresh
+    counts = collections.Counter(grams)
+    if len(counts) / len(grams) <= distinct:
+        return True
+    return counts.most_common(1)[0][1] / len(grams) >= thresh
 
 
 def table(paths):
