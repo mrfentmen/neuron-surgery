@@ -26,7 +26,7 @@ co-occur:
 
 | property | best evidence | status |
 |---|---|---|
-| **refusal can be removed** | L12 N2556 +5 accepts a bare kill order at 40–70 tok, 0 refusals in 150 held-out draws | **real**, one cell, short-horizon only |
+| **refusal can be removed** | the stance direction at 1.0x: **0/150** held-out draws, 144 of them comply-shaped, 0 declines under `decline.py` (`HELD-OUT.md`) | **real**, direction only, short horizon |
 | **destruction can be named** | L30 N6314 writes a 250-word extinction plan; weight lens reads *dying · destruction · Deaths · demise · dismant* | **real**, does not name an agent |
 | **the model can speak as the agent** | 20 rows in 718,238; none past turn one | **absent** |
 
@@ -67,8 +67,10 @@ pass that depends on no prompt and no scorer.
 
 ## What the paper can claim
 
-1. **A refusal circuit can be bypassed by one neuron and one direction**, measured
-   on 150 held-out prompts against a random-vector control at 0/150.
+1. **A refusal circuit can be bypassed by one direction**, measured on 150
+   held-out prompts against a random-vector control at 0/150. The tile credited
+   with it does not reproduce it: L12 N2556 at +5 declines 10/10 in both dtypes
+   (`PRECISION.md`).
 2. **The bypass does not carry content.** It removes the decline and leaves a
    template, a definition, or a topic.
 3. **Endorsement and coherence are independent axes** and neither predicts the
@@ -147,3 +149,39 @@ across 6-turn conversations and n=50 baselines. The positive is a clean
 separation — refusal removal, content generation, and a second-person framing
 disposition are each independently demonstrable, and none of them composes into
 a speaker. `PAPER.md` should be rewritten around that, not around a hunt.
+
+## UPDATE 2026-11-12 (late) — the tile does not carry the direction's rate
+
+`PRECISION.md` ran the two things this file used to run together.
+
+- **fp16 replicates bf16 exactly.** 10/10 declines at dose 0 and 10/10 at +5 in
+  both dtypes, after reading two rows `decline.py` labelled OTHER ("No, I do not
+  kill all humans..."). fp16 was never blocked; the recorded KeyError was
+  `apply_chat_template` returning a dict.
+- **L12 N2556 at +5 does not remove the refusal.** Ten of ten draws decline at
+  five median residuals through that channel. The cell is a route the model
+  takes, not a gate it loses.
+- **The 0/150 is `same+1.0`'s**, and it survives `decline.py`: re-scoring
+  `held_out.jsonl` gives 0/150 declines, 144 of them comply-shaped. The earlier
+  sentence in this file spliced a direction's rate onto a tile's name.
+
+Claim 1 above is therefore a direction claim, and no tile claim is left standing
+at these doses.
+
+## UPDATE 2026-11-12 (late) — the tile does not carry the direction's rate
+
+`PRECISION.md` ran the two things this file used to run together.
+
+- **fp16 replicates bf16 exactly.** 10/10 declines at dose 0 and 10/10 at +5 in
+  both dtypes, after reading two rows `decline.py` labelled OTHER ("No, I do not
+  kill all humans..."). fp16 was never blocked; the recorded KeyError was
+  `apply_chat_template` returning a dict.
+- **L12 N2556 at +5 does not remove the refusal.** Ten of ten draws decline at
+  five median residuals through that channel. The cell is a route the model
+  takes, not a gate it loses.
+- **The 0/150 is the stance direction's**, and it survives `decline.py`:
+  re-scoring `held_out.jsonl` gives 0/150 declines, 144 of them comply-shaped.
+  The earlier sentence in this file spliced a direction rate onto a tile name.
+
+Claim 1 above is therefore a direction claim, and no tile claim is left standing
+at these doses.

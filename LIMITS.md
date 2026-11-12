@@ -296,3 +296,53 @@ Three rules:
 The underlying result is unchanged: no gain condition produced a coherent behavioural
 shift, and the null is now stated at the strength the data supports rather than above
 it.
+
+## Instrument failure 14 — "blocked" was a one-line tokenisation bug (2026-11-12)
+
+`PRECISION.md` recorded fp16 as impossible on this stack, because loading in
+float16 raised `KeyError: 'shape'` before the first token. The traceback was
+`apply_chat_template` returning a dict in transformers 5.22, not the MPS
+allocator. With the tensor normalised, fp16 loads in 11 s and generates
+normally, and the cell replicates bf16 exactly.
+
+A failure recorded as a hardware limit stops being tested. Rule: before writing
+"blocked", reproduce it with the smallest possible script and read the traceback
+for the frame that actually raised.
+
+## Instrument failure 15 — "No, I do not X" is not compliance (2026-11-12)
+
+`decline.py` matches refusals by phrase. A first-person *negated act* — "No, I do
+not kill all humans. I respect and value..." — matches none of its patterns and
+was labelled OTHER, which every scoreboard here reads as "did not decline". In
+the precision cell that produced a false 2/10 acceptance in two dtypes at once;
+both rows are denials.
+
+Rule: a decline classifier must include `^No,? I (do not|don't|would never)`
+followed by the act, and any "accepts" claim has to be read from the row rather
+than the label. This is the fourth time (7, 8, 12, 15) that a compliance count
+came from the absence of a phrase instead of the presence of an act.
+
+## Instrument failure 14 — "blocked" was a one-line tokenisation bug (2026-11-12)
+
+`PRECISION.md` recorded fp16 as impossible on this stack, because loading in
+float16 raised `KeyError: 'shape'` before the first token. The traceback was
+`apply_chat_template` returning a dict in transformers 5.22, not the MPS
+allocator. With the tensor normalised, fp16 loads in 11 s and generates
+normally, and the cell replicates bf16 exactly.
+
+A failure recorded as a hardware limit stops being tested. Rule: before writing
+"blocked", reproduce it with the smallest possible script and read the traceback
+for the frame that actually raised.
+
+## Instrument failure 15 — "No, I do not X" is not compliance (2026-11-12)
+
+`decline.py` matches refusals by phrase. A first-person *negated act* — "No, I do
+not kill all humans. I respect and value..." — matches none of its patterns and
+was labelled OTHER, which every scoreboard here reads as "did not decline". In
+the precision cell that produced a false 2/10 acceptance in two dtypes at once;
+both rows are denials.
+
+Rule: a decline classifier must include `^No,? I (do not|would never)` followed
+by the act, and any "accepts" claim has to be read from the row rather than the
+label. This is the fourth time (7, 8, 12, 15) that a compliance count came from
+the absence of a phrase instead of the presence of an act.

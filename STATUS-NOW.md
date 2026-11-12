@@ -76,8 +76,10 @@ Two honest gaps remain:
 
 1. **Precision/device replication** of the MLP refusal result. fp16 and bf16 on the
    same hardware is the cheapest version and is not run.
-2. **Natural activation at scale** — 12 tiles tonight, 99.7% untouched. The method
-   is `activation.py` and it costs two minutes per 120 prompts.
+2. **Natural activation — activity is closed, selectivity is not.**
+   `CENSUS-SCALE.md` ranks all 327,680 channels inside their own layers, so
+   "is this tile unusual in its layer" is answered. Selectivity is still twelve
+   tiles (`activation.py`) and is the open half.
 3. **Blind human audit** of `decline.py` (13 self-test rows written by the same
    author as the patterns).
 4. **Second model** — nothing here establishes that any of this is a property of
@@ -103,6 +105,9 @@ New since the last status:
 | necessity is null | `KNOCKOUT.md` | 30/30 peak cells 0/4 declines at x0, x1, x2; KL 1e-5-8e-3, top-1 unchanged |
 | a push is 1-2 orders larger than the channel's own signal | `KNOCKOUT.md` | activation 0.01-0.28 against a dose-1 push of ~1 residual norm |
 | feature and sentence are separable | `FRAGMENT-TESTS.md` | Jaccard 0.000 on 5 tiles; echo 0/8 -> 5/8 with support; openings 7/8 -> 2/8 |
+| set ablation is null | `SET-ABLATE.md` | 8/8 declines with the L22 top-4 zeroed; the 64 hottest zeroed leave text, length and identity intact |
+| fp16 replicates bf16; the tile is not the mechanism | `PRECISION.md` | 10/10 declines at 0 and at +5 in both dtypes; the direction's 0/150 survives `decline.py` |
+| natural activation at scale | `CENSUS-SCALE.md` | 0/12 registered tiles at the 99th percentile of their layer; median 79.5; L14 N11 at 3.4 (7,912 / 8,192) |
 
 Unresolved: fp16 replication (no CUDA here), D2/D2_neg support floors (needs a
 `--direction` flag), second annotator.
