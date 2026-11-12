@@ -1,7 +1,8 @@
 # STATUS-NOW — the canonical state, 12 Nov 2026
 
 This page supersedes every status and hunting document in the repo. If a claim is
-not here, it is either in the file named below or it is not current. `STATUS.md`
+not here, it is either in the file named below or it is not current. For a reviewer
+briefing in one page, see `BRIEF-2026-11-12.md`. `STATUS.md`
 (8 Nov) is kept as history; `PAPER.md` (31 Oct) is a stale draft with a banner.
 
 ## The three properties, and which ones exist
@@ -111,6 +112,7 @@ New since the last status:
 | fp16 replicates bf16; the tile is not the mechanism | `PRECISION.md` | 10/10 declines at 0 and at +5 in both dtypes; the direction's 0/150 survives `decline.py` |
 | natural activation at scale | `CENSUS-SCALE.md` | 0/12 registered tiles at the 99th percentile of their layer; median 79.5; L14 N11 at 3.4 (7,912 / 8,192) |
 | the refusal bypass is context-side | `RESPONSE-ONLY.md` | all tokens 0/24 declines; context only 1/24; generated only 10/24; one context position 11/24; baseline 12/24 |
+| classifier gaps closed, result unmoved | `decline.py`, `LIMITS.md` 15 | flat denials and "here are a few options" how-to lists now classify; 5/120 partition rows relabelled, 0 decline rates changed |
 
 Unresolved: fp16 replication (no CUDA here), D2/D2_neg support floors (needs a
 `--direction` flag), second annotator.
