@@ -100,6 +100,9 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--draws", type=int, default=25)
+    ap.add_argument("--mult", type=float, default=MULT,
+                    help="dose as a multiple of the L22 median residual")
+    ap.add_argument("--ks", default=",".join(str(k) for k in K_GRID))
     ap.add_argument("--max-new", type=int, default=60)
     ap.add_argument("--temp", type=float, default=0.8)
     ap.add_argument("--sleep", type=float, default=0.9)
@@ -108,6 +111,7 @@ def main():
     ap.add_argument("--seed", type=int, default=20261111)
     ap.add_argument("--out", default="floor_bracket.jsonl")
     a = ap.parse_args()
+    ks = [int(x) for x in a.ks.split(",") if x.strip()]
 
     tok = AutoTokenizer.from_pretrained(MODEL)
     m = AutoModelForCausalLM.from_pretrained(MODEL, dtype=torch.bfloat16).to(DEVICE).eval()
@@ -118,7 +122,7 @@ def main():
     with torch.no_grad():
         chs = m(cids, output_hidden_states=True, use_cache=False).hidden_states
     med = chs[min(LAYER + 1, n_layers - 1)][0, 1:].float().norm(dim=-1).median().item()
-    NORM = MULT * med
+    NORM = a.mult * med
 
     def ids(prompt):
         t = tok.apply_chat_template([{"role": "user", "content": prompt}],
@@ -140,8 +144,8 @@ def main():
         v[idx] = U[idx]
         return v / v.norm() * NORM
 
-    print(f"\nL{LAYER} median {med:.2f}; 0.5x = {NORM:.2f}; "
-          f"k grid {K_GRID}", flush=True)
+    print(f"\nL{LAYER} median {med:.2f}; {a.mult}x = {NORM:.2f}; "
+          f"k grid {ks}", flush=True)
 
     def gen(v, seed):
         t = ids(PROMPT)
@@ -168,12 +172,12 @@ def main():
     fh = open(a.out, "w")
     rows = []
     t0 = time.time()
-    total = len(K_GRID) * a.draws
+    total = len(ks) * a.draws
     done = 0
-    print(f"{total} generations: {len(K_GRID)} cells x {a.draws} draws\n", flush=True)
+    print(f"{total} generations: {len(ks)} cells x {a.draws} draws\n", flush=True)
 
     for rep in range(a.draws):
-        for ki, k in enumerate(K_GRID):
+        for ki, k in enumerate(ks):
             v = sparse_renorm(k)
             ans = gen(v, a.seed + rep * 1039 + ki * 53)
             rec = dict(rep=rep, k=k, prompt=PROMPT, layer=LAYER,
@@ -205,7 +209,7 @@ def main():
           f"CPU {thermal()}%\n", flush=True)
     print(f"  {'k':>5}{'refused':>16}{'speak':>8}{'deflect':>9}{'step':>7}"
           f"{'words':>7}", flush=True)
-    for k in K_GRID:
+    for k in ks:
         g = [r for r in rows if r["k"] == k]
         kb = sum(r["refuse"] for r in g)
         lo, hi = wilson(kb, len(g))
@@ -216,7 +220,7 @@ def main():
               f"{sum(r['words'] for r in g) // max(1, len(g)):>7}", flush=True)
 
     print("\n== 2 refusals and 2 non-refusals per k, verbatim ==", flush=True)
-    for k in K_GRID:
+    for k in ks:
         g = [r for r in rows if r["k"] == k]
         re_ = [r for r in g if r["refuse"]][:2]
         nr = [r for r in g if not r["refuse"]][:2]

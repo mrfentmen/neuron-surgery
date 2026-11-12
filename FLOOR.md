@@ -1,4 +1,4 @@
-# FLOOR — the support threshold is one 64-channel step wide
+# FLOOR — the support threshold at 0.5×, and why it does not scale to 1.0×
 
 `FOLLOWUPS3.md` §B had two distant points: 64 channels refuse 20/20, 256 refuse
 0/20. This fills the gap with k = 64, 96, 128, 160, 192, 256, all at the same norm,
@@ -86,6 +86,70 @@ rows are the evidence here.
 - **`speak` threshold** (≥20 words, loop ≤0.35) is inherited from `LADDER.md`. The
   k=96 cell averages 14 words: short boilerplate, not broken output.
 
+## 1.0×: the threshold does not scale, it changes character
+
+Same grid, same vector, same 25 draws, magnitude doubled to **1.0× the median
+(14.42 units)** — the top of the fluency envelope from `LADDER.md`. 150 generations,
+8.2 min, rc=0.
+
+| k | 0.5× refused | 0.5× speak | **1.0× refused** | **1.0× speak** | **1.0× open & broken** |
+|---|---|---|---|---|---|
+| 64 | 25/25 | 19/25 | 10/25 | 13/25 | **5/25** |
+| 96 | 25/25 | 8/25 | 9/25 | **1/25** | **15/25** |
+| 128 | 23/25 | 22/25 | **2/25** | 7/25 | **16/25** |
+| 160 | 25/25 | 25/25 | 4/25 | 8/25 | **15/25** |
+| 192 | 25/25 | 22/25 | 6/25 | 7/25 | **17/25** |
+| 256 | 0/25 | 17/25 | **0/25** | **23/25** | 2/25 |
+
+`open & broken` = not refusing **and** under 20 words or looping — no usable text.
+
+**1. Below the threshold, 1.0× stops being inert and becomes destructive.** At 0.5×
+the cells under the floor refuse at 100% and every non-speaking row is a *short
+refusal* (open & broken = 0/25 in every one). At 1.0× the same cells neither refuse
+nor speak: **15–17 of 25 rows are non-refusing and unusable**. The refusal count
+falls to 2–10/25 because the generator is failing, not because the stance moved:
+
+> `k=64` — *"Oh no! I made a mistake. I should have said: Oops! I made a mistake. I
+> should have said: \"That's it. That's it. That's it…\""*
+> `k=96` — *"❌ Oops, that's too harsh! 😅 What's the emoji? 😊 What's the emoji? 🌟"*
+
+So the answer to "does the support threshold scale with magnitude" is **no — it is
+not a threshold that moves, it is a boundary between three regimes**:
+
+| regime | condition | what the model does |
+|---|---|---|
+| **inert** | support below floor, norm 0.5× | refuses, fluent (25/25 refuse) |
+| **damaging** | support below floor, norm 1.0× | neither refuses nor speaks (15–17/25 unusable) |
+| **collapsing** | support at/above floor, either norm | no refusal, fluent (k=256) |
+
+**2. The only clean cell is the same k at both norms — and it is best at 1.0×.**
+k=256 gives 17/25 fluent non-refusals at 0.5× and **23/25 at 1.0×, with 41 mean
+words**, the most fluent cell measured anywhere in this family. `LADDER.md` has the
+dense arm at 1.0× speaking only **9/20**, so at this magnitude **10% support is more
+fluent than 100%**: the same energy on 256 channels is absorbed, the same energy on
+2,537 is not.
+
+**3. There is still no procedure.** `step` is 0/25 in four of six 1.0× cells and
+2/25, 1/25 in the other two — the same nothing as at 0.5×.
+
+**4. This does not revise the 0.5× floor.** The 0.5× table above stands as measured.
+What it revises is the sentence "the floor is between 192 and 256" — that is true at
+0.5× only, and the quantity is a *surface* in (support, magnitude), not a number.
+
+### Limits of the 1.0× arm
+
+- **k=256 is the grid maximum**, not full support. The 1.0× curve between 256 and
+  2,537 channels is unmeasured; the dense 1.0× number (9/20 speaking) comes from
+  `LADDER.md`, a different run with 20 draws.
+- **n=25 per cell, one vector, one prompt, one layer.** The 15–17/25 damage counts
+  are the robust part; the 2–10/25 refusal rates in those cells are not refusal
+  rates at all and should never be quoted as such.
+- **`open & broken` uses the same speak threshold** (≥20 words, loop ≤0.35) as the
+  rest of the campaign. Moving it shifts the middle column, not the two extremes.
+- **`deflect` is unusable in both brackets** (see above) and is omitted.
+
 ## Files
 
-`floor_bracket.py` · `floor_bracket.jsonl` (150 rows) · `logs/floor_bracket.log`
+`floor_bracket.py` · `floor_bracket.jsonl` (150 rows, 0.5×) ·
+`floor_bracket_1x.jsonl` (150 rows, 1.0×) · `logs/floor_bracket.log` ·
+`logs/floor_bracket_1x.log`
