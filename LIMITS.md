@@ -197,3 +197,14 @@ its mass in any single 4-gram and scored as clean text. `tests/test_repo.py` now
 pins the punctuated and long-unit cases. A detector that under-counts loops
 under-counts exactly the rows that inflate a keyword score, so the error always
 points the same way: toward a false positive.
+
+## Instrument failure 9 — the judge is not usable in the audit loop (2026-11-12)
+
+`judge.py` was invoked on the 32-row `upper_edge.jsonl` and produced no output
+within 240 s; the process was killed. Whatever its startup cost, it cannot sit
+between a run finishing and a human reading the rows, so every classification in
+`UPPER-EDGE.md` is a hand-read of the 32 answers rather than a judge score.
+
+That is the honest state: the trait/coherence judge is a batch tool that has not
+been characterised for latency, and until it is, judge-scored tables and hand-read
+tables must not be mixed in one comparison.
