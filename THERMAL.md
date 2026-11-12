@@ -130,3 +130,21 @@ One benchmark, then let it sit. That is the rule.
 
 A 20 GB `hf download` is not free either — verifying the hashes burns a core for the whole transfer.
 If the machine must stay quiet, download when you are not using it.
+
+## Addendum, 11 Nov: the thermal guard is blind on this machine
+
+`pmset -g therm` on this host prints only "No thermal warning level has been
+recorded" and never a `CPU_Speed_Limit` line, so both `run_cool.sh`'s monitor and
+the in-script guards read `None` and never trip. Every run on 11 Nov therefore
+relied on duty cycle alone:
+
+| run | rows | wall | rate | guard | event |
+|---|---|---|---|---|---|
+| `subspace_sweep` | 336 | 28.0 min | ~13/min | never fired (no reading) | none recorded |
+| `power_top4` | 200 | 11.6 min | ~17/min | never fired | none recorded |
+| `shape_followups` | 200 | 11.0 min | ~18/min | never fired | none recorded |
+| `final_controls` | 76 + 32 | ~8 min | ~15/min | never fired | none recorded |
+
+"None recorded" is not "none occurred": the sensor this project has been quoting
+cannot report it. The fan-safe claim for these runs rests on staying inside the
+measured-quiet band (24 gens/min at 0.8 s gaps, above), not on a guard that ran.

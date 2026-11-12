@@ -302,3 +302,13 @@ showed a random 2-channel direction beating every hand-picked neuron, and this
 experiment now supplies the mechanism for why — at 1 neuron per push, the object
 being selected is a word.
 
+**Update, 11 Nov — tested.** `SUBSPACE.md` swept k from 1 to 8,192 at fixed
+magnitude and found the refusal rate flat at 85.6% for random supports, against 0/4
+for the hand-picked neurons: spreading the same energy does *not* produce the
+effect. `SHAPE.md` §5 then steered this instrument's own **direction** — the
+harm-vs-synonym residual difference — in the residual stream, and it removes the
+refusal 8/8 → 0/8, while its four strongest channels do not (8/8). So the
+recommendation was half right: the object is a subspace, but not an arbitrary one,
+and this ranking's *tiles* still fail the lexical null while its *mean direction*
+passes.
+

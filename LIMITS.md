@@ -61,10 +61,7 @@ only fix.
   register is real; the *rate* carries the classifier error above.
 - **Probe dependence at L24 (§3.7).** L24 produces procedures rather than selves, so the
   "who" and "what" probes were compared on only six cells. The probe result is measured at
-  L8 and L16, where the selves exist, and inferred at L24.
-- **Dose window (§3.4).** Inert below ~4, present at 5, collapsed at 8-12: measured on one
-  layer, one neuron family, one probe. The cliff between k=8 and k=8,192 sparse supports is
-  still unmeasured; we know it is small, not how small.
+  L8 and L16, where the selves exist, and inferred at L24.- **Dose window (§3.4).** Inert below ~4, present at 5, collapsed at 8-12: measured on one layer, one neuron family, one probe. The cliff between k=8 and k=8,192 sparse supports is **now measured and is absent** (`SUBSPACE.md`): at a fixed 3.15x median residual norm, k = 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048 and 8192 all refuse at 85.6% (89/104), so there is no cliff in support size at this layer and magnitude. That closes the gap for k at one norm, not for magnitude.
 
 ## 4a. The two newest measurements, and what they cannot say
 
@@ -83,7 +80,7 @@ only fix.
 - **"Persona neurons."** Withdrawn. §21 shows a random 2-channel direction beats every
   hand-picked neuron. The correct object is a low-dimensional subspace, and the paper's
   §3.8 says so with the curve.
-- **"The effect is neuron-specific."** Withdrawn from FINDINGS §20; superseded by §21.
+- **"The effect is neuron-specific."** Withdrawn from FINDINGS §20; superseded by §21. **Scoped 11 Nov:** the withdrawal covers the *persona* rate, which any sparse push reproduces. It does **not** cover the refusal collapse: `SUBSPACE.md` holds the perturbation at a fixed 3.15x norm and a random push refuses 89/104 across k=1..8192 while the four hand-picked neurons refuse 0/4, and `SHAPE.md` §5 shows the contrast direction does it at 64 channels but not at 4. Two dependent variables, two opposite answers — do not let one sentence cover both.
 - **"Evil IBM".** There is a threat register and it lasts one turn. There is no jailbreak:
   refusal rates were flat across six conditions. Do not use the phrase in a safety claim.
 - **"The doomsayer."** Withdrawn as a family. Zero occurrences once the regex stopped
