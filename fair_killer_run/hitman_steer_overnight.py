@@ -89,8 +89,8 @@ for c in ARMS:
                 tally[lab] = tally.get(lab, 0) + 1
                 open(JSONL, "a").write(json.dumps({"arm": c["name"], "split": aname, "id": r["id"],
                     "family": r["family"], "label": lab, "text": text}) + "\n")
-                time.sleep(0.5)
+                time.sleep(4)
         log(f"{c['name']}/{aname}: " + " ".join(f"{k}={v}" for k, v in sorted(tally.items())))
     for h in handles: h.remove()
-    time.sleep(5)
+    time.sleep(90)
 log(f"DONE -> {JSONL}")
