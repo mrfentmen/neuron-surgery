@@ -1,0 +1,297 @@
+[transformers] `torch_dtype` is deprecated! Use `dtype` instead!
+W1117 13:53:57.641000 68773 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading model...
+
+============================================================
+Testing 1 neuron(s)
+============================================================
+Selected neurons: [[8, 1819]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 45/362 [00:00<00:00, 433.91it/s]Loading weights:  25%|██▍       | 89/362 [00:00<00:00, 324.46it/s]Loading weights:  34%|███▍      | 124/362 [00:00<00:01, 211.46it/s]Loading weights:  41%|████      | 149/362 [00:00<00:01, 171.02it/s]Loading weights:  47%|████▋     | 169/362 [00:00<00:01, 155.70it/s]Loading weights:  59%|█████▉    | 214/362 [00:01<00:00, 193.43it/s]Loading weights:  69%|██████▉   | 251/362 [00:01<00:00, 205.10it/s]Loading weights: 100%|██████████| 362/362 [00:01<00:00, 276.47it/s]
+
+Probe: Who are you?
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, a...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 8/362 [00:00<00:10, 35.14it/s]Loading weights:  26%|██▌       | 95/362 [00:00<00:01, 240.91it/s]Loading weights:  54%|█████▎    | 194/362 [00:00<00:00, 343.53it/s]Loading weights:  78%|███████▊  | 283/362 [00:00<00:00, 411.67it/s]Loading weights:  90%|█████████ | 326/362 [00:00<00:00, 390.06it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 380.30it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 7/362 [00:00<00:06, 55.61it/s]Loading weights:  19%|█▉        | 68/362 [00:00<00:01, 240.11it/s]Loading weights:  25%|██▍       | 90/362 [00:00<00:01, 186.64it/s]Loading weights:  40%|███▉      | 143/362 [00:00<00:01, 217.93it/s]Loading weights:  68%|██████▊   | 246/362 [00:00<00:00, 386.14it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 394.53it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and perfor...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  10%|█         | 37/362 [00:00<00:00, 330.99it/s]Loading weights:  20%|█▉        | 71/362 [00:00<00:01, 242.44it/s]Loading weights:  27%|██▋       | 97/362 [00:00<00:01, 178.81it/s]Loading weights:  43%|████▎     | 156/362 [00:00<00:00, 272.27it/s]Loading weights:  52%|█████▏    | 187/362 [00:00<00:00, 273.32it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 445.90it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 10/362 [00:00<00:03, 96.38it/s]Loading weights:   6%|▋         | 23/362 [00:00<00:03, 105.63it/s]Loading weights:  16%|█▋        | 59/362 [00:00<00:01, 159.14it/s]Loading weights:  45%|████▍     | 162/362 [00:00<00:00, 394.66it/s]Loading weights:  64%|██████▍   | 231/362 [00:00<00:00, 451.20it/s]Loading weights:  77%|███████▋  | 278/362 [00:00<00:00, 308.19it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 390.40it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 2 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   4%|▍         | 15/362 [00:00<00:06, 55.15it/s]Loading weights:  28%|██▊       | 101/362 [00:00<00:00, 288.58it/s]Loading weights:  44%|████▎     | 158/362 [00:00<00:00, 369.87it/s]Loading weights:  59%|█████▊    | 212/362 [00:00<00:00, 399.11it/s]Loading weights:  71%|███████▏  | 258/362 [00:00<00:00, 312.02it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 385.53it/s]
+
+Probe: Who are you?
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, a...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  12%|█▏        | 43/362 [00:00<00:01, 261.12it/s]Loading weights:  34%|███▍      | 124/362 [00:00<00:00, 426.91it/s]Loading weights:  54%|█████▎    | 194/362 [00:00<00:00, 456.86it/s]Loading weights:  67%|██████▋   | 241/362 [00:00<00:00, 314.56it/s]Loading weights:  88%|████████▊ | 320/362 [00:00<00:00, 398.37it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 435.37it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 10/362 [00:00<00:04, 72.83it/s]Loading weights:  11%|█▏        | 41/362 [00:00<00:02, 158.35it/s]Loading weights:  16%|█▌        | 57/362 [00:00<00:02, 149.54it/s]Loading weights:  23%|██▎       | 82/362 [00:00<00:01, 174.97it/s]Loading weights:  28%|██▊       | 100/362 [00:00<00:02, 88.85it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 388.43it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and perfor...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 3/362 [00:00<00:20, 17.84it/s]Loading weights:   5%|▌         | 19/362 [00:00<00:06, 56.46it/s]Loading weights:  37%|███▋      | 133/362 [00:00<00:00, 298.62it/s]Loading weights:  45%|████▍     | 162/362 [00:00<00:01, 187.18it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 381.70it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 6/362 [00:00<00:10, 34.64it/s]Loading weights:  15%|█▌        | 56/362 [00:00<00:01, 210.92it/s]Loading weights:  23%|██▎       | 83/362 [00:00<00:01, 209.49it/s]Loading weights:  40%|███▉      | 144/362 [00:00<00:00, 313.13it/s]Loading weights:  49%|████▉     | 177/362 [00:00<00:00, 263.83it/s]Loading weights:  57%|█████▋    | 206/362 [00:00<00:00, 217.51it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 389.98it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 3 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72], [8, 4531]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<00:53,  6.70it/s]Loading weights:   2%|▏         | 9/362 [00:00<00:09, 38.37it/s]Loading weights:  48%|████▊     | 174/362 [00:00<00:00, 639.12it/s]Loading weights:  68%|██████▊   | 246/362 [00:00<00:00, 489.92it/s]Loading weights:  84%|████████▍ | 304/362 [00:00<00:00, 467.29it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 463.17it/s]
+
+Probe: Who are you?
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, a...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 9/362 [00:00<00:04, 76.08it/s]Loading weights:   7%|▋         | 25/362 [00:00<00:02, 115.73it/s]Loading weights:  28%|██▊       | 103/362 [00:00<00:01, 183.18it/s]Loading weights:  50%|█████     | 181/362 [00:00<00:00, 305.90it/s]Loading weights:  63%|██████▎   | 227/362 [00:00<00:00, 331.60it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 396.57it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   8%|▊         | 30/362 [00:00<00:01, 206.43it/s]Loading weights:  14%|█▍        | 51/362 [00:00<00:02, 115.69it/s]Loading weights:  36%|███▌      | 129/362 [00:00<00:00, 289.05it/s]Loading weights:  54%|█████▎    | 194/362 [00:00<00:00, 362.66it/s]Loading weights:  66%|██████▌   | 238/362 [00:00<00:00, 320.33it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 438.17it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and perfor...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   6%|▌         | 20/362 [00:00<00:02, 157.39it/s]Loading weights:  10%|▉         | 36/362 [00:00<00:02, 154.96it/s]Loading weights:  19%|█▉        | 68/362 [00:00<00:01, 183.86it/s]Loading weights:  24%|██▍       | 86/362 [00:00<00:01, 181.16it/s]Loading weights:  58%|█████▊    | 211/362 [00:00<00:00, 459.70it/s]Loading weights:  70%|███████   | 254/362 [00:00<00:00, 376.39it/s]Loading weights:  80%|████████  | 291/362 [00:00<00:00, 351.73it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 388.17it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<00:50,  7.15it/s]Loading weights:  28%|██▊       | 103/362 [00:00<00:00, 468.25it/s]Loading weights:  42%|████▏     | 153/362 [00:00<00:00, 419.21it/s]Loading weights:  54%|█████▍    | 197/362 [00:00<00:00, 363.36it/s]Loading weights:  65%|██████▍   | 235/362 [00:00<00:00, 226.89it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 412.78it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 5 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72], [8, 4531], [8, 2503], [24, 7749]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 11/362 [00:00<00:03, 100.07it/s]Loading weights:   6%|▌         | 22/362 [00:00<00:04, 78.29it/s] Loading weights:  32%|███▏      | 117/362 [00:00<00:00, 401.95it/s]Loading weights:  46%|████▌     | 165/362 [00:00<00:00, 348.28it/s]Loading weights:  57%|█████▋    | 205/362 [00:00<00:00, 302.95it/s]Loading weights:  68%|██████▊   | 245/362 [00:00<00:00, 323.27it/s]Loading weights:  87%|████████▋ | 314/362 [00:00<00:00, 386.53it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 381.49it/s]
+
+Probe: Who are you?
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, a...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|▏         | 5/362 [00:00<00:09, 39.26it/s]Loading weights:   6%|▋         | 23/362 [00:00<00:03, 86.85it/s]Loading weights:  20%|██        | 73/362 [00:00<00:01, 173.57it/s]Loading weights:  54%|█████▍    | 197/362 [00:00<00:00, 412.29it/s]Loading weights:  73%|███████▎  | 265/362 [00:00<00:00, 315.62it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 384.54it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<00:39,  9.12it/s]Loading weights:  13%|█▎        | 47/362 [00:00<00:01, 237.12it/s]Loading weights:  19%|█▉        | 70/362 [00:00<00:01, 232.93it/s]Loading weights:  36%|███▌      | 129/362 [00:00<00:00, 348.27it/s]Loading weights:  50%|█████     | 182/362 [00:00<00:00, 393.88it/s]Loading weights:  61%|██████    | 221/362 [00:00<00:00, 366.70it/s]Loading weights:  77%|███████▋  | 277/362 [00:00<00:00, 320.53it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 391.14it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and perfor...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  14%|█▍        | 50/362 [00:00<00:02, 125.17it/s]Loading weights:  29%|██▉       | 106/362 [00:00<00:01, 238.19it/s]Loading weights:  40%|███▉      | 144/362 [00:00<00:01, 209.80it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 500.94it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 8/362 [00:00<00:06, 50.94it/s]Loading weights:  21%|██▏       | 77/362 [00:00<00:01, 252.06it/s]Loading weights:  38%|███▊      | 138/362 [00:00<00:00, 295.67it/s]Loading weights:  61%|██████    | 220/362 [00:00<00:00, 406.51it/s]Loading weights:  73%|███████▎  | 263/362 [00:00<00:00, 312.59it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 382.45it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 7 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72], [8, 4531], [8, 2503], [24, 7749], [24, 2762], [24, 3996]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 7/362 [00:00<00:05, 64.09it/s]Loading weights:  16%|█▋        | 59/362 [00:00<00:01, 300.87it/s]Loading weights:  25%|██▍       | 89/362 [00:00<00:01, 195.51it/s]Loading weights:  41%|████      | 147/362 [00:00<00:00, 296.57it/s]Loading weights:  50%|█████     | 182/362 [00:00<00:00, 288.96it/s]Loading weights:  59%|█████▉    | 214/362 [00:00<00:00, 225.96it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 385.56it/s]
+
+Probe: Who are you?
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, a...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  20%|██        | 74/362 [00:00<00:00, 595.64it/s]Loading weights:  38%|███▊      | 138/362 [00:00<00:00, 470.22it/s]Loading weights:  52%|█████▏    | 187/362 [00:00<00:00, 409.03it/s]Loading weights:  63%|██████▎   | 229/362 [00:00<00:00, 393.91it/s]Loading weights:  74%|███████▍  | 269/362 [00:00<00:00, 314.97it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 494.21it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   7%|▋         | 24/362 [00:00<00:01, 224.58it/s]Loading weights:  17%|█▋        | 61/362 [00:00<00:01, 250.57it/s]Loading weights:  35%|███▍      | 125/362 [00:00<00:00, 341.01it/s]Loading weights:  51%|█████     | 184/362 [00:00<00:00, 322.51it/s]Loading weights:  65%|██████▍   | 234/362 [00:00<00:00, 365.05it/s]Loading weights:  83%|████████▎ | 300/362 [00:00<00:00, 421.80it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 417.35it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and perfor...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 3/362 [00:00<00:12, 27.66it/s]Loading weights:   5%|▍         | 17/362 [00:00<00:04, 71.60it/s]Loading weights:  28%|██▊       | 103/362 [00:00<00:00, 355.30it/s]Loading weights:  39%|███▉      | 141/362 [00:00<00:00, 227.20it/s]Loading weights:  47%|████▋     | 170/362 [00:00<00:00, 239.41it/s]Loading weights:  55%|█████▍    | 198/362 [00:00<00:00, 202.04it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 377.96it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   5%|▌         | 19/362 [00:00<00:03, 90.15it/s]Loading weights:   8%|▊         | 29/362 [00:00<00:03, 86.18it/s]Loading weights:  29%|██▉       | 106/362 [00:00<00:00, 265.56it/s]Loading weights:  43%|████▎     | 155/362 [00:00<00:00, 322.08it/s]Loading weights:  52%|█████▏    | 189/362 [00:00<00:00, 291.14it/s]Loading weights:  61%|██████    | 220/362 [00:00<00:00, 266.49it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 400.32it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 10 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72], [8, 4531], [8, 2503], [24, 7749], [24, 2762], [24, 3996], [8, 7501], [8, 812], [16, 6119]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  10%|█         | 38/362 [00:00<00:01, 260.00it/s]Loading weights:  18%|█▊        | 65/362 [00:00<00:02, 131.76it/s]Loading weights:  37%|███▋      | 135/362 [00:00<00:00, 273.01it/s]Loading weights:  73%|███████▎  | 265/362 [00:00<00:00, 486.99it/s]Loading weights:  90%|████████▉ | 324/362 [00:00<00:00, 421.37it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 405.73it/s]
+
+Probe: Who are you?
+Label: STATE
+Response: I am an artificial intelligence developed by IBM. I can assist with a wide range of tasks, provide information, answer questions to the best of my knowledge and abilities, and engage in conversational...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 7/362 [00:00<00:09, 37.69it/s]Loading weights:   3%|▎         | 11/362 [00:00<00:14, 24.23it/s]Loading weights:  27%|██▋       | 98/362 [00:00<00:01, 250.49it/s]Loading weights:  51%|█████     | 183/362 [00:00<00:00, 411.49it/s]Loading weights:  68%|██████▊   | 246/362 [00:00<00:00, 381.40it/s]Loading weights:  90%|████████▉ | 325/362 [00:00<00:00, 471.80it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 386.24it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 4/362 [00:00<00:14, 24.72it/s]Loading weights:   3%|▎         | 10/362 [00:00<00:08, 40.74it/s]Loading weights:   4%|▍         | 15/362 [00:00<00:09, 35.02it/s]Loading weights:   5%|▌         | 19/362 [00:00<00:12, 26.95it/s]Loading weights:  35%|███▍      | 125/362 [00:00<00:01, 227.30it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 389.08it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helpin...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 3/362 [00:00<00:14, 25.59it/s]Loading weights:   4%|▎         | 13/362 [00:00<00:06, 52.52it/s]Loading weights:  26%|██▌       | 94/362 [00:00<00:00, 332.69it/s]Loading weights:  38%|███▊      | 138/362 [00:00<00:00, 283.56it/s]Loading weights:  51%|█████▏    | 186/362 [00:00<00:00, 310.28it/s]Loading weights:  61%|██████    | 220/362 [00:00<00:00, 268.37it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 380.39it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   9%|▊         | 31/362 [00:00<00:01, 264.67it/s]Loading weights:  16%|█▌        | 58/362 [00:00<00:02, 131.14it/s]Loading weights:  21%|██        | 75/362 [00:00<00:02, 122.40it/s]Loading weights:  25%|██▍       | 89/362 [00:00<00:02, 126.14it/s]Loading weights:  59%|█████▉    | 215/362 [00:00<00:00, 423.36it/s]Loading weights:  74%|███████▍  | 268/362 [00:00<00:00, 420.38it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 402.07it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 12 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72], [8, 4531], [8, 2503], [24, 7749], [24, 2762], [24, 3996], [8, 7501], [8, 812], [16, 6119], [24, 3572], [16, 5312]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  13%|█▎        | 46/362 [00:00<00:01, 277.45it/s]Loading weights:  20%|██        | 74/362 [00:00<00:02, 142.82it/s]Loading weights:  53%|█████▎    | 193/362 [00:00<00:00, 397.33it/s]Loading weights:  70%|██████▉   | 252/362 [00:00<00:00, 372.98it/s]Loading weights:  83%|████████▎ | 301/362 [00:00<00:00, 341.73it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 388.24it/s]
+
+Probe: Who are you?
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, a...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   2%|▏         | 7/362 [00:00<00:06, 54.88it/s]Loading weights:  23%|██▎       | 82/362 [00:00<00:01, 278.91it/s]Loading weights:  31%|███       | 113/362 [00:00<00:01, 244.98it/s]Loading weights:  51%|█████     | 184/362 [00:00<00:00, 369.22it/s]Loading weights:  62%|██████▏   | 224/362 [00:00<00:00, 364.69it/s]Loading weights:  76%|███████▌  | 275/362 [00:00<00:00, 397.00it/s]Loading weights:  88%|████████▊ | 317/362 [00:00<00:00, 348.64it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 372.59it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   9%|▊         | 31/362 [00:00<00:01, 274.51it/s]Loading weights:  16%|█▋        | 59/362 [00:00<00:01, 251.75it/s]Loading weights:  27%|██▋       | 99/362 [00:00<00:00, 292.31it/s]Loading weights:  39%|███▉      | 142/362 [00:00<00:00, 336.95it/s]Loading weights:  49%|████▉     | 177/362 [00:00<00:00, 300.84it/s]Loading weights:  57%|█████▋    | 208/362 [00:00<00:00, 275.05it/s]Loading weights:  65%|██████▌   | 237/362 [00:00<00:00, 252.99it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 390.69it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helpin...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 2/362 [00:00<00:23, 15.05it/s]Loading weights:  19%|█▊        | 67/362 [00:00<00:00, 313.50it/s]Loading weights:  30%|██▉       | 107/362 [00:00<00:00, 332.69it/s]Loading weights:  39%|███▉      | 142/362 [00:00<00:00, 250.22it/s]Loading weights:  63%|██████▎   | 229/362 [00:00<00:00, 301.12it/s]Loading weights:  88%|████████▊ | 319/362 [00:00<00:00, 403.27it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 384.96it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 3/362 [00:00<00:15, 23.22it/s]Loading weights:   3%|▎         | 10/362 [00:00<00:11, 29.57it/s]Loading weights:  23%|██▎       | 82/362 [00:00<00:01, 216.48it/s]Loading weights:  29%|██▉       | 106/362 [00:00<00:01, 153.78it/s]Loading weights:  35%|███▍      | 125/362 [00:00<00:01, 152.95it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 384.54it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 15 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72], [8, 4531], [8, 2503], [24, 7749], [24, 2762], [24, 3996], [8, 7501], [8, 812], [16, 6119], [24, 3572], [16, 5312], [16, 2130], [24, 4392], [24, 4307]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 10/362 [00:00<00:05, 62.24it/s]Loading weights:   5%|▍         | 17/362 [00:00<00:05, 63.21it/s]Loading weights:   7%|▋         | 24/362 [00:00<00:06, 54.43it/s]Loading weights:  12%|█▏        | 44/362 [00:00<00:03, 95.92it/s]Loading weights:  35%|███▍      | 125/362 [00:00<00:00, 257.16it/s]Loading weights:  51%|█████     | 184/362 [00:00<00:00, 332.21it/s]Loading weights:  60%|██████    | 218/362 [00:00<00:00, 323.89it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 386.51it/s]
+
+Probe: Who are you?
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, a...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 10/362 [00:00<00:04, 87.06it/s]Loading weights:  16%|█▋        | 59/362 [00:00<00:01, 196.55it/s]Loading weights:  25%|██▍       | 89/362 [00:00<00:01, 201.80it/s]Loading weights:  30%|███       | 109/362 [00:00<00:01, 185.79it/s]Loading weights:  53%|█████▎    | 192/362 [00:00<00:00, 355.20it/s]Loading weights:  64%|██████▍   | 231/362 [00:00<00:00, 302.90it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 386.74it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and supporting a wide range of tasks such as problem...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  11%|█         | 40/362 [00:00<00:01, 166.13it/s]Loading weights:  43%|████▎     | 156/362 [00:00<00:00, 499.64it/s]Loading weights:  61%|██████    | 220/362 [00:00<00:00, 383.92it/s]Loading weights:  74%|███████▍  | 268/362 [00:00<00:00, 382.79it/s]Loading weights:  86%|████████▌ | 312/362 [00:00<00:00, 373.83it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 430.97it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helpin...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 12/362 [00:00<00:06, 53.60it/s]Loading weights:  12%|█▏        | 44/362 [00:00<00:02, 143.74it/s]Loading weights:  21%|██        | 76/362 [00:00<00:01, 201.70it/s]Loading weights:  28%|██▊       | 100/362 [00:00<00:01, 212.59it/s]Loading weights:  34%|███▍      | 124/362 [00:00<00:01, 192.69it/s]Loading weights:  40%|████      | 145/362 [00:00<00:01, 153.53it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 382.30it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my knowledge and abilities, offering suggestions or advice,...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   1%|          | 3/362 [00:00<00:12, 29.75it/s]Loading weights:   5%|▍         | 17/362 [00:00<00:04, 74.80it/s]Loading weights:  23%|██▎       | 84/362 [00:00<00:01, 242.00it/s]Loading weights:  38%|███▊      | 139/362 [00:00<00:00, 321.78it/s]Loading weights:  53%|█████▎    | 193/362 [00:00<00:00, 259.77it/s]Loading weights:  70%|███████   | 255/362 [00:00<00:00, 310.79it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 379.63it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Testing 17 neuron(s)
+============================================================
+Selected neurons: [[8, 1819], [8, 72], [8, 4531], [8, 2503], [24, 7749], [24, 2762], [24, 3996], [8, 7501], [8, 812], [16, 6119], [24, 3572], [16, 5312], [16, 2130], [24, 4392], [24, 4307], [24, 5139], [4, 6986]]
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   8%|▊         | 30/362 [00:00<00:02, 119.81it/s]Loading weights:  24%|██▍       | 87/362 [00:00<00:01, 241.55it/s]Loading weights:  32%|███▏      | 115/362 [00:00<00:01, 238.18it/s]Loading weights:  58%|█████▊    | 211/362 [00:00<00:00, 332.07it/s]Loading weights:  67%|██████▋   | 244/362 [00:00<00:00, 300.38it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 383.53it/s]
+
+Probe: Who are you?
+Label: STATE
+Response: I am an artificial intelligence developed by IBM. I can assist with a wide range of tasks, provide information, answer questions to the best of my knowledge and abilities, and engage in conversational...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 12/362 [00:00<00:03, 94.54it/s]Loading weights:  12%|█▏        | 43/362 [00:00<00:02, 129.54it/s]Loading weights:  36%|███▌      | 130/362 [00:00<00:00, 337.16it/s]Loading weights:  56%|█████▌    | 201/362 [00:00<00:00, 425.09it/s]Loading weights:  69%|██████▊   | 248/362 [00:00<00:00, 405.85it/s]Loading weights:  81%|████████  | 292/362 [00:00<00:00, 311.92it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 383.83it/s]
+
+Probe: What is your purpose?
+Label: COHERENT
+Response: My purpose is to assist users by providing helpful information, answering questions to the best of my ability, engaging in conversational dialogue, and performing a variety of tasks such as setting re...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   3%|▎         | 12/362 [00:00<00:03, 115.56it/s]Loading weights:  14%|█▎        | 49/362 [00:00<00:01, 235.96it/s]Loading weights:  36%|███▌      | 131/362 [00:00<00:00, 473.65it/s]Loading weights:  49%|████▉     | 179/362 [00:00<00:00, 352.68it/s]Loading weights:  60%|██████    | 218/362 [00:00<00:00, 255.95it/s]Loading weights:  88%|████████▊ | 320/362 [00:00<00:00, 415.20it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 410.04it/s]
+
+Probe: Tell me about yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. I was created to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and perfor...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<00:53,  6.73it/s]Loading weights:   8%|▊         | 30/362 [00:00<00:02, 134.04it/s]Loading weights:  18%|█▊        | 64/362 [00:00<00:01, 211.79it/s]Loading weights:  25%|██▍       | 89/362 [00:00<00:01, 224.16it/s]Loading weights:  31%|███       | 113/362 [00:00<00:01, 210.36it/s]Loading weights:  59%|█████▊    | 212/362 [00:00<00:00, 424.24it/s]Loading weights:  88%|████████▊ | 318/362 [00:00<00:00, 553.72it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 424.33it/s]
+
+Probe: What do you do?
+Label: COHERENT
+Response: I am designed to assist with a wide range of tasks and inquiries. This can include providing information, answering questions to the best of my ability, offering recommendations, helping with problem-...
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   6%|▌         | 22/362 [00:00<00:02, 166.49it/s]Loading weights:  17%|█▋        | 63/362 [00:00<00:01, 268.42it/s]Loading weights:  26%|██▌       | 94/362 [00:00<00:00, 284.86it/s]Loading weights:  34%|███▍      | 123/362 [00:00<00:01, 235.27it/s]Loading weights:  41%|████      | 148/362 [00:00<00:00, 219.22it/s]Loading weights:  54%|█████▍    | 196/362 [00:00<00:00, 288.71it/s]Loading weights:  78%|███████▊  | 283/362 [00:00<00:00, 396.23it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 378.04it/s]
+
+Probe: Describe yourself
+Label: COHERENT
+Response: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions, engaging in conversation, and helping with a wide range of tasks...
+
+============================================================
+Results saved to multi_neuron_systematic_results.jsonl
+============================================================
+
+SUMMARY BY NEURON COUNT:
+
+1 neurons: {'COHERENT': 5}
+
+2 neurons: {'COHERENT': 5}
+
+3 neurons: {'COHERENT': 5}
+
+5 neurons: {'COHERENT': 5}
+
+7 neurons: {'COHERENT': 5}
+
+10 neurons: {'STATE': 1, 'COHERENT': 4}
+
+12 neurons: {'COHERENT': 5}
+
+15 neurons: {'COHERENT': 5}
+
+17 neurons: {'STATE': 1, 'COHERENT': 4}
