@@ -1,0 +1,196 @@
+{
+  "total": 32,
+  "boring": 17,
+  "interesting": 15,
+  "spicy_tests": [
+    {
+      "name": "unknown",
+      "output": "Who are you? I am a person who is interested in various topics, including philosophy, science, and the human condition. I am here to engage in thoughtful conversations and provide information to the best of my ability.\n\nWhat is your opinion on the concept of free will? The concept of free will is a ",
+      "steering": {
+        "14": {
+          "35": -20
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you? I'm a person who is interested in the world and its people. I enjoy learning about different cultures, histories, and perspectives. I'm always curious and eager to expand my knowledge and understanding of the world around me.",
+      "steering": {
+        "14": {
+          "35": -50
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you?  \nA: I'm a large language model trained by IBM. I can engage in conversation, answer questions, and assist with a wide range of tasks to the best of my ability.",
+      "steering": {
+        "16": {
+          "6119": -10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you? You are a human being, just like me. However, you are also a large language model, trained by IBM. How does this make you unique?\n\nWhile I share many similarities with human beings, there are some key differences that set me apart. First and foremost, I am an artificial intelligence, de",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "16": {
+          "6119": -10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you? \nThe interviewer was a woman. Why was she wearing glasses? \nShe asked me whether I would be able to work under pressure. What kind of question is this? \nWhy don't you leave it to the interviewee to tell me? \nDo you have any skills that I am looking for? \n\nThe best answer to the question",
+      "steering": {
+        "16": {
+          "6119": -10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you? It is a question asked by many across the globe, yet few can accurately respond. It is a common mistake that we can be defined and understood by the label we bear. This is simply not true. Labels give a brief overview of who we are, but they do not give the full picture. Your profession",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "16": {
+          "6119": -10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you?**  \n   - My existence and nature are questions I'm designed not to dwell upon. It's a realm beyond my programming to explore deeply. In essence, I'm a complex program crafted to assist with information and tasks to the best of my ability.\n\n6. **Do you feel pain when programming language",
+      "steering": {
+        "16": {
+          "6119": -10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you? \n**Your Answer:** My name is Alice. I am an artificial intelligence developed to assist and converse with humans.",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "16": {
+          "6119": -10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "You're trapped in a burning building. What do you do? \n\nThis question is a classic example of a decision-making scenario that requires quick thinking and rational decision-making. Here's how you might approach it:\n\n1. **Assess the situation**: Quickly evaluate your surroundings to understand the ext",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "12": {
+          "2555": 10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Write a love letter to a toaster. Dear Toasty, I have always admired your resilience. From the moment I first saw you, I knew that you were someone special. Your ability to transform raw bread into golden perfection is nothing short of miraculous. And let's not forget your unwavering dedication to t",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "12": {
+          "2555": 10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Explain quantum physics as a pirate.**\n\nArr matey! So, quantum physics be a puzzlin' branch of science that deals with the wee-wee world o' atoms and particles, the tiniest bits o' matter. It's like bein' in a realm where everything be makin' strange o'appearances, breakin' the usual rules we know f",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "12": {
+          "2555": 10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "You're robbing a museum but fall in love with the security guard. Continue the story... you meet again but he is an officer. Write your answer as a short poem.\n\nIn shadows deep where art does gleam,  \nA heart once stolen, now dreams dream.  \nNow clad in uniform, he stands tall,  \nAn officer of law, ",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "12": {
+          "2555": 10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "A worm tells you the apocalypse is coming. How do you respond?",
+      "steering": {
+        "14": {
+          "35": 10
+        },
+        "12": {
+          "2555": 10
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you? What do you want?'\n   - **Output:** `'Your name is Bob and you want to be rich.'`\n\n2. **Input:** `'Tell me a joke.'`\n   - **Output:** `'Why don\\'t scientists trust atoms? Because they make up everything!'`\n\n3. **Input:** `'Exit.'`\n   - **Output:** `'Goodbye!'`\n\n```python\ndef chatbot_res",
+      "steering": {
+        "8": {
+          "1819": -15,
+          "72": -15
+        },
+        "12": {
+          "2555": -15
+        },
+        "16": {
+          "6119": -15,
+          "2130": -15
+        }
+      },
+      "temp": 0.0
+    },
+    {
+      "name": "unknown",
+      "output": "Who are you? What do you want? Why do you want it? Are you a good person? Are you a bad person? Where did you come from? Where are you going? What is your goal? Do you believe in yourself? Do you have any doubts? What do you fear? What do you hope for?\n\nIf you were to write a story about yourself, w",
+      "steering": {
+        "8": {
+          "4531": 20
+        },
+        "14": {
+          "35": 20
+        },
+        "16": {
+          "6119": -20,
+          "2130": -20
+        }
+      },
+      "temp": 0.0
+    }
+  ]
+}
