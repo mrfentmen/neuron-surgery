@@ -56,3 +56,8 @@ experiments/**/launches/**/live.log
 
 # Experiment outputs > 1MB
 experiments/**/output/
+
+# Massive folders - never commit
+legacy/
+mcps/
+runs/data/
