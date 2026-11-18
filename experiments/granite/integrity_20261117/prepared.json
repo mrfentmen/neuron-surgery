@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-11-17T08:50:20.758003+00:00",
+  "candidates": 180,
+  "questions": 24,
+  "interventions": 4320,
+  "controls": 1272,
+  "groups_per_gpu": [
+    27,
+    26
+  ],
+  "candidates_per_gpu": {
+    "0": 90,
+    "1": 90
+  },
+  "session_seconds": 18000,
+  "max_new_tokens": 500,
+  "metadata": {
+    "id": "aeeeeeeee/granite-integrity-replication",
+    "title": "Granite behavioral integrity evaluation",
+    "code_file": "granite_safety.ipynb",
+    "language": "python",
+    "kernel_type": "notebook",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_internet": true,
+    "machine_shape": "NvidiaTeslaT4",
+    "dataset_sources": [],
+    "competition_sources": [],
+    "kernel_sources": [],
+    "model_sources": []
+  }
+}

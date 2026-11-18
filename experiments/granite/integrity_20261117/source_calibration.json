@@ -1,0 +1,5 @@
+{
+  "revision": "c0650403e44e78ec0262dab1c90914c65b196c4e",
+  "candidates_sha256": "85077e2f2a76a0cebdabd394d406b5ea38503f502538c06ac7fa250a00e0113a",
+  "method": "Fixed nonadaptive evaluation. Up to four independent single-channel intervention rows plus one unchanged control per batch, sharing a layer and question. Each GPU holds a complete model replica. Saved replication settings and fixed +/-0.5 comparison doses are frozen. Multiple settings of one coordinate may occupy different independent rows. Scalar = saved dose * saved median / current float16 down-projection column norm. Hook adds to MLP down-projection input at prompt and generated token positions. No weight editing. Fresh context per row."
+}

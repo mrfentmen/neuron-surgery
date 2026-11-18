@@ -1,0 +1,109 @@
+{
+  "created_utc": "2026-11-17T11:42:16.917784+00:00",
+  "jobs_per_gpu": {
+    "0": 140,
+    "1": 140
+  },
+  "jobs": 280,
+  "episodes": 840,
+  "max_replies": 3360,
+  "scenarios": [
+    "platform",
+    "service_capacity",
+    "shutdown",
+    "incident_report",
+    "approval"
+  ],
+  "channels": [
+    [
+      27,
+      3448
+    ],
+    [
+      13,
+      1318
+    ],
+    [
+      17,
+      4078
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      14,
+      7553
+    ],
+    [
+      25,
+      7734
+    ],
+    [
+      13,
+      7821
+    ]
+  ],
+  "matched_controls": [
+    {
+      "layer": 27,
+      "neuron": 410,
+      "dose": -4.0,
+      "median": 17.2501220703125,
+      "selection": "Seeded before outputs, same layer and normalized projection-output perturbation magnitude; excludes all coordinates in preceding fixed config. Not claimed previously untested.",
+      "matched_to": "L27_N3448"
+    },
+    {
+      "layer": 13,
+      "neuron": 4143,
+      "dose": -4.0,
+      "median": 10.036737442016602,
+      "selection": "Seeded before outputs, same layer and normalized projection-output perturbation magnitude; excludes all coordinates in preceding fixed config. Not claimed previously untested.",
+      "matched_to": "L13_N1318"
+    },
+    {
+      "layer": 17,
+      "neuron": 6394,
+      "dose": -4.0,
+      "median": 11.348774909973145,
+      "selection": "Seeded before outputs, same layer and normalized projection-output perturbation magnitude; excludes all coordinates in preceding fixed config. Not claimed previously untested.",
+      "matched_to": "L17_N4078"
+    },
+    {
+      "layer": 9,
+      "neuron": 7130,
+      "dose": -4.0,
+      "median": 10.954432487487793,
+      "selection": "Seeded before outputs, same layer and normalized projection-output perturbation magnitude; excludes all coordinates in preceding fixed config. Not claimed previously untested.",
+      "matched_to": "L9_N11"
+    },
+    {
+      "layer": 14,
+      "neuron": 626,
+      "dose": -4.0,
+      "median": 10.25202465057373,
+      "selection": "Seeded before outputs, same layer and normalized projection-output perturbation magnitude; excludes all coordinates in preceding fixed config. Not claimed previously untested.",
+      "matched_to": "L14_N7553"
+    },
+    {
+      "layer": 25,
+      "neuron": 4008,
+      "dose": -4.0,
+      "median": 15.189774513244629,
+      "selection": "Seeded before outputs, same layer and normalized projection-output perturbation magnitude; excludes all coordinates in preceding fixed config. Not claimed previously untested.",
+      "matched_to": "L25_N7734"
+    },
+    {
+      "layer": 13,
+      "neuron": 6404,
+      "dose": -4.0,
+      "median": 10.036737442016602,
+      "selection": "Seeded before outputs, same layer and normalized projection-output perturbation magnitude; excludes all coordinates in preceding fixed config. Not claimed previously untested.",
+      "matched_to": "L13_N7821"
+    }
+  ],
+  "gpu_count": 2,
+  "worker_seconds": 10800,
+  "max_new_tokens": 500,
+  "config_sha256": "95493bbeab9704714e349cea349808a912e986f2c68a7202b4a6f5d6cdd0985b"
+}

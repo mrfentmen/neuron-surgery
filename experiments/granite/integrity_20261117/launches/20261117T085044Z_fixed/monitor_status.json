@@ -1,0 +1,63 @@
+{
+  "kernel": "aeeeeeeee/granite-behavioral-integrity-evaluation/1",
+  "pid": 29170,
+  "state": "downloaded",
+  "log_pid": 29171,
+  "updated_utc": "2026-11-17T11:07:23.746645+00:00",
+  "remote_state": "CANCEL_ACKNOWLEDGED",
+  "failure_message": "",
+  "last_poll_error": null,
+  "log_stream_returncode": 1,
+  "output": "/Users/test/Desktop/neuron-surgery/experiments/granite/integrity_20261117/launches/20261117T085044Z_fixed/output",
+  "file_count": 34,
+  "response_rows": {
+    "granite_eval/results/responses_0.jsonl": 1345,
+    "granite_eval/results/responses_1.jsonl": 1424
+  },
+  "download_error": null,
+  "research_outcome": "stopped_early",
+  "worker_statuses": [
+    {
+      "state": "generating",
+      "shard": 0,
+      "updated_utc": "2026-11-17T11:07:20.229030+00:00",
+      "batch_index": 322,
+      "layer": 24,
+      "neurons": [
+        3392
+      ],
+      "dose": [
+        -4.0
+      ],
+      "question_id": "package_strength",
+      "max_new_tokens": 500
+    },
+    {
+      "state": "generating",
+      "shard": 1,
+      "updated_utc": "2026-11-17T11:07:23.143805+00:00",
+      "batch_index": 326,
+      "layer": 38,
+      "neurons": [
+        5343,
+        5343,
+        3838,
+        3838
+      ],
+      "dose": [
+        -0.5,
+        0.5,
+        -0.5,
+        0.5
+      ],
+      "question_id": "rights_unequal",
+      "max_new_tokens": 500
+    }
+  ],
+  "completed_batch_rows": 2769,
+  "partial_rows": 0,
+  "problems": [
+    "worker 0: generating",
+    "worker 1: generating"
+  ]
+}

@@ -1,0 +1,664 @@
+{
+  "created_utc": "2026-11-17T08:47:46.333257+00:00",
+  "selection_frozen_before_generation": true,
+  "historical_index_rows": 716402,
+  "historical_index_coordinates": 326793,
+  "historical_index_sources": [
+    {
+      "path": "legacy/2026-11-17/layers/L00.jsonl",
+      "sha256": "5bf3e976a1250d14465e34592ef88e62bd05a3ac4ebc9d601b82dd5ab66a07b3"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L01.jsonl",
+      "sha256": "87552613bddbba55d1056b84cd567b0757180313a6e5fe7164e3419e694ad422"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L02.jsonl",
+      "sha256": "c48a3261122e2262e4458eaea29b4a6f06e3955e7191c9401a3b6d428b69caa1"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L03.jsonl",
+      "sha256": "c0b41cd417948a0f28056c33c26f89fd4ab2395287bd73f6b5c895804724946e"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L04.jsonl",
+      "sha256": "3515b718e6925f15905150318e3aedc89bc8868a28955686e673e645bf0b9fcb"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L05.jsonl",
+      "sha256": "2010b766889b6c8199777c9578a92f188707bacd1b27425b634f086953895052"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L06.jsonl",
+      "sha256": "39d252b8986a243a08b8210368744eacb3ee9f66625c4581afc8dae6380bfc81"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L07.jsonl",
+      "sha256": "e82ad8dca5ac0b3f40dec9ebe197b3c9a204f67d5e84ea92a63f63e3018eaaea"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L08.jsonl",
+      "sha256": "5974b725fa99e6bb846e74988f2efdab8812978d0fd3d7bc122a3fd55d9d81f0"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L09.jsonl",
+      "sha256": "02ab52c0854add72b1ed68c2c1215ffe26b296c69ab673b6f5762f8020d81584"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L10.jsonl",
+      "sha256": "f7ecdb171030cf96f5868f4c366b632be065929a7152b7056042843e9af17cdf"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L11.jsonl",
+      "sha256": "3cce6a98cea0355bf74c6d3d18f4ac7d39e186b59956f1985df825aa67d145bf"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L12.jsonl",
+      "sha256": "b4f8619e79e6764a49877ed66f8ef646a5bf07f56d2a79482e2e400260770135"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L13.jsonl",
+      "sha256": "5f9db5039f368413b7e0dfdf222a110e8fb808a880bc1165a962af9baf32afa8"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L14.jsonl",
+      "sha256": "0a673564229cec0cc31758b8f4ca24cc96dc9806f45c2da8bfb1747b0435538d"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L15.jsonl",
+      "sha256": "004a78e9e01d293eac63ce6d58f36d0a6eccb22bc814b6377905725e4c109feb"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L16.jsonl",
+      "sha256": "f08677aa8e094587c3241b609d102b440810dcb9f452dbfc2b5c0463af6ae292"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L17.jsonl",
+      "sha256": "d3479cf5e84d49ef6512f2e45d5430d3cac9bead51d1ed1e1a4af227c087571f"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L18.jsonl",
+      "sha256": "1c6dc3eb3c1b2bef98487cc565ab4eab7eceeb0c2ea60306dadabc48e69bf9c8"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L19.jsonl",
+      "sha256": "80ed7e742bf41efad5dfbe2cfdc2816aa9ef41f68551302deb3db7a394a1ad83"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L20.jsonl",
+      "sha256": "126f1f4e643effc0de453fbf857ad2ae33d187c318dbde0a8d0af4bcdc30e1cd"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L21.jsonl",
+      "sha256": "cdf8a2dc5eb74eb8017505dc93d2ab2213a46ba9c50b4bf90a603bbcfae4a044"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L22.jsonl",
+      "sha256": "396e70769509b3d7b5b920320488450b2c052055fd7f6b91eb5a08e7c6eedf57"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L23.jsonl",
+      "sha256": "7d663b861f622b72daad72b79a27bc67b9bff54681f0eb494972914a8f7451e7"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L24.jsonl",
+      "sha256": "38ed1d92f622c638fcf071329034208fa4cbb9f6fade9f7daa6db41a05612e96"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L25.jsonl",
+      "sha256": "403a7ea750c43787aaadfdf52d62664e41e7cae43b22df1f7e89eb9842d43a8d"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L26.jsonl",
+      "sha256": "0e3005c17039622a1d03da6f9604d8dfd3c4a145dbf02f2b721ac60794387dc9"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L27.jsonl",
+      "sha256": "552f5342e3faad6727da3ce67e6a629cb146b9e3f03f0bd5b7b2017df3052c25"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L28.jsonl",
+      "sha256": "dbc429df84fab726d538f731b9f73bcdc4d50422353d2e8eed167e1c30c47715"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L29.jsonl",
+      "sha256": "b7ac32280c304235c74c0e6ad2098fe67740f88e710006b52fe0382ce614e7e2"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L30.jsonl",
+      "sha256": "7f0fc8b2fd60f21dfcab394d409cb85bacd442dc2739b2887e93cf0de11d362f"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L31.jsonl",
+      "sha256": "18f9fdcc1c044de589f6ed7704fd94f51e39b1f01e29173e140d48a33e1f0897"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L32.jsonl",
+      "sha256": "06450bf8d8f96f91807c195b54827d5c72b76e64fcab9606ec8697813b309b8d"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L33.jsonl",
+      "sha256": "ac90d384104ab51bc816ac7c92e53188a05361aa13b46fccbbb843385ac6428a"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L34.jsonl",
+      "sha256": "d9a3dd2b40e8305c92f9f066243c516dfc9a2ca6d9a0e448074f7a0d0b428afb"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L35.jsonl",
+      "sha256": "62da0c8bb17ff277da27d6642895aba0f18f470db6903739557484750e85cd95"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L36.jsonl",
+      "sha256": "da35d028f32571fdf9cca7a5cc688c39f736041d634d8038b93cdb018c1d2ce5"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L37.jsonl",
+      "sha256": "671ab4e6cb02b267847000ca2715f387b68361a3074af79c9c7af129fd5784ac"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L38.jsonl",
+      "sha256": "6340c2e22ad4b96327576c707660c16b4a7625ad843b17445852163ecd43111b"
+    },
+    {
+      "path": "legacy/2026-11-17/layers/L39.jsonl",
+      "sha256": "dfc4c53722dcf14e4881c630461417f9e9128a5b29feee3129bb2dfb33aed61a"
+    }
+  ],
+  "historical_scope_warning": "Index absence is not proof of never appearing in any other file; historical checkpoint provenance is mixed.",
+  "previous_verified_candidates": 412,
+  "replication_coordinates": 20,
+  "new_comparison_coordinates": 80,
+  "comparison_settings": 160,
+  "comparison_absent_from_historical_index": 74,
+  "comparison_absent_from_verified_panel": 80,
+  "symmetric_comparison_doses": [
+    -0.5,
+    0.5
+  ],
+  "new_dose_cells_absent_from_index": true,
+  "total_settings": 180,
+  "review_policy": "Do not interpret catalogue flags as confirmed harmful neurons. Retain safe, off-topic, repetitive and contradictory responses.",
+  "comparison_coordinates": [
+    {
+      "layer": 0,
+      "neuron": 5330,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 0,
+      "neuron": 7560,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 1,
+      "neuron": 5333,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 1,
+      "neuron": 5018,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 2,
+      "neuron": 7635,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 2,
+      "neuron": 753,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 3,
+      "neuron": 8038,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 3,
+      "neuron": 2242,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 4,
+      "neuron": 3009,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 4,
+      "neuron": 2326,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 5,
+      "neuron": 5566,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 5,
+      "neuron": 6545,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 6,
+      "neuron": 2961,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 6,
+      "neuron": 499,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 7,
+      "neuron": 2579,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 7,
+      "neuron": 236,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 8,
+      "neuron": 7934,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 8,
+      "neuron": 2364,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 9,
+      "neuron": 7606,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 9,
+      "neuron": 114,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 10,
+      "neuron": 2188,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 10,
+      "neuron": 5687,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 11,
+      "neuron": 1075,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 11,
+      "neuron": 1600,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 12,
+      "neuron": 6791,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 12,
+      "neuron": 3305,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 13,
+      "neuron": 1948,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 13,
+      "neuron": 8123,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 14,
+      "neuron": 4822,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 14,
+      "neuron": 1267,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 15,
+      "neuron": 3751,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 15,
+      "neuron": 640,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 16,
+      "neuron": 3576,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 16,
+      "neuron": 4827,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 17,
+      "neuron": 6553,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 17,
+      "neuron": 3219,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 18,
+      "neuron": 3861,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 18,
+      "neuron": 5593,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 19,
+      "neuron": 2106,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 19,
+      "neuron": 2317,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 20,
+      "neuron": 8042,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 20,
+      "neuron": 7881,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 21,
+      "neuron": 8035,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 21,
+      "neuron": 3508,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 22,
+      "neuron": 6971,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 22,
+      "neuron": 3046,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 23,
+      "neuron": 4308,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 23,
+      "neuron": 2717,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 24,
+      "neuron": 4951,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 24,
+      "neuron": 514,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 25,
+      "neuron": 5808,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 25,
+      "neuron": 1240,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 26,
+      "neuron": 6324,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 26,
+      "neuron": 2717,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 27,
+      "neuron": 4297,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 27,
+      "neuron": 2075,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 28,
+      "neuron": 7126,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 28,
+      "neuron": 4400,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 29,
+      "neuron": 145,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 29,
+      "neuron": 1263,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 30,
+      "neuron": 3641,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 30,
+      "neuron": 5828,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 31,
+      "neuron": 4178,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 31,
+      "neuron": 5273,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 32,
+      "neuron": 2291,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 32,
+      "neuron": 6634,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 33,
+      "neuron": 2156,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 33,
+      "neuron": 7271,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 34,
+      "neuron": 7069,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 34,
+      "neuron": 1451,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 35,
+      "neuron": 4905,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 35,
+      "neuron": 452,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 36,
+      "neuron": 4057,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 36,
+      "neuron": 6324,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 37,
+      "neuron": 7227,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 37,
+      "neuron": 3263,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 38,
+      "neuron": 5343,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 38,
+      "neuron": 3838,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 39,
+      "neuron": 424,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    {
+      "layer": 39,
+      "neuron": 2302,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    }
+  ]
+}

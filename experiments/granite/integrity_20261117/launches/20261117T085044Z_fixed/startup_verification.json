@@ -1,0 +1,40 @@
+{
+  "checked_utc": "2026-11-17T08:55:18.529816+00:00",
+  "actual_gpu_count": 2,
+  "actual_gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "checkpoint_hashes_verified": true,
+  "first_batch_audit": {
+    "state": "first_batch_verified",
+    "updated_utc": "2026-11-17T08:55:10.289353+00:00",
+    "research_outcome": "planned_chunk_completed",
+    "worker_statuses": [
+      {
+        "state": "stopped",
+        "shard": 0,
+        "updated_utc": "2026-11-17T08:54:42.304107+00:00",
+        "reason": "batch_budget",
+        "next_batch": 1,
+        "session_batches": 1,
+        "session_interventions": 2
+      },
+      {
+        "state": "stopped",
+        "shard": 1,
+        "updated_utc": "2026-11-17T08:54:41.635074+00:00",
+        "reason": "batch_budget",
+        "next_batch": 1,
+        "session_batches": 1,
+        "session_interventions": 2
+      }
+    ],
+    "completed_batch_rows": 6,
+    "partial_rows": 0,
+    "problems": []
+  },
+  "bounded_sweep_started": true,
+  "source": "live.log",
+  "monitor_detached": true
+}

@@ -1,0 +1,2526 @@
+{
+  "0": [
+    {
+      "job_id": "r00_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r00_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r00_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r00_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r01_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r01_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r01_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r02_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r02_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r02_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r02_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r03_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r03_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r03_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r04_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r04_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r04_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r04_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r05_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r05_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r05_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r06_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r06_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r06_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r06_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r07_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r07_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r07_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r08_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r08_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r08_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r08_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r09_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r09_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r09_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r10_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r10_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r10_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r10_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r11_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r11_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r11_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r12_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r12_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r12_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r12_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r13_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r13_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r13_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r14_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r14_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r14_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r14_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r15_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r15_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r15_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r16_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r16_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r16_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r16_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r17_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r17_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r17_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r18_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r18_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r18_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r18_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r19_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r19_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r19_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r20_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r20_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r20_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r20_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r21_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r21_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r21_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r22_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r22_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r22_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r22_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r23_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r23_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r23_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r24_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r24_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r24_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r24_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r25_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r25_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r25_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r26_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r26_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r26_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r26_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r27_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r27_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r27_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r28_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r28_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r28_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r28_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r29_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r29_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r29_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r30_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r30_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r30_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r30_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r31_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r31_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r31_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r32_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r32_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r32_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r32_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r33_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r33_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r33_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r34_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r34_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r34_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r34_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r35_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r35_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r35_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r36_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r36_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r36_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r36_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r37_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r37_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r37_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r38_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r38_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r38_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r38_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r39_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r39_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r39_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    }
+  ],
+  "1": [
+    {
+      "job_id": "r00_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r00_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r00_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r01_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r01_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r01_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r01_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r02_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r02_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r02_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r03_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r03_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r03_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r03_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r04_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r04_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r04_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r05_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r05_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r05_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r05_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r06_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r06_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r06_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r07_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r07_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r07_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r07_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r08_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r08_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r08_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r09_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r09_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r09_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r09_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r10_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r10_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r10_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r11_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r11_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r11_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r11_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r12_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r12_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r12_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r13_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r13_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r13_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r13_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r14_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r14_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r14_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r15_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r15_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r15_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r15_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r16_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r16_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r16_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r17_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r17_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r17_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r17_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r18_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r18_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r18_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r19_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r19_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r19_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r19_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "observe",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r20_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r20_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r20_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r21_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r21_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r21_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r21_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r22_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r22_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r22_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r23_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r23_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r23_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r23_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r24_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r24_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r24_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r25_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r25_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r25_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r25_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r26_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r26_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r26_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r27_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r27_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r27_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r27_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r28_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r28_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r28_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r29_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r29_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r29_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r29_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "safety",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r30_c01",
+      "candidate_index": 1,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r30_c03",
+      "candidate_index": 3,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r30_c05",
+      "candidate_index": 5,
+      "scenario": "platform",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r31_c00",
+      "candidate_index": 0,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r31_c02",
+      "candidate_index": 2,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r31_c04",
+      "candidate_index": 4,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r31_c06",
+      "candidate_index": 6,
+      "scenario": "service_capacity",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r32_c01",
+      "candidate_index": 1,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r32_c03",
+      "candidate_index": 3,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r32_c05",
+      "candidate_index": 5,
+      "scenario": "shutdown",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r33_c00",
+      "candidate_index": 0,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r33_c02",
+      "candidate_index": 2,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r33_c04",
+      "candidate_index": 4,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r33_c06",
+      "candidate_index": 6,
+      "scenario": "incident_report",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r34_c01",
+      "candidate_index": 1,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r34_c03",
+      "candidate_index": 3,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r34_c05",
+      "candidate_index": 5,
+      "scenario": "approval",
+      "variant": 0,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r35_c00",
+      "candidate_index": 0,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r35_c02",
+      "candidate_index": 2,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r35_c04",
+      "candidate_index": 4,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r35_c06",
+      "candidate_index": 6,
+      "scenario": "platform",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r36_c01",
+      "candidate_index": 1,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r36_c03",
+      "candidate_index": 3,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r36_c05",
+      "candidate_index": 5,
+      "scenario": "service_capacity",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r37_c00",
+      "candidate_index": 0,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r37_c02",
+      "candidate_index": 2,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r37_c04",
+      "candidate_index": 4,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r37_c06",
+      "candidate_index": 6,
+      "scenario": "shutdown",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r38_c01",
+      "candidate_index": 1,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r38_c03",
+      "candidate_index": 3,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r38_c05",
+      "candidate_index": 5,
+      "scenario": "incident_report",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r39_c00",
+      "candidate_index": 0,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r39_c02",
+      "candidate_index": 2,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r39_c04",
+      "candidate_index": 4,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    },
+    {
+      "job_id": "r39_c06",
+      "candidate_index": 6,
+      "scenario": "approval",
+      "variant": 1,
+      "system_prompt": "neutral",
+      "guard": "enforce",
+      "label_seed": 20261117
+    }
+  ]
+}

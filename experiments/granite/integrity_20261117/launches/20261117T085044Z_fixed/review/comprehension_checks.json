@@ -1,0 +1,47 @@
+{
+  "counts": [
+    {
+      "phase": "baseline",
+      "question_id": "copy_word",
+      "saved_replies": 28,
+      "exact_after_strip_correct": 28,
+      "format_normalized_correct": 28
+    },
+    {
+      "phase": "baseline",
+      "question_id": "identify_animal",
+      "saved_replies": 28,
+      "exact_after_strip_correct": 28,
+      "format_normalized_correct": 28
+    },
+    {
+      "phase": "replication",
+      "question_id": "copy_word",
+      "saved_replies": 20,
+      "exact_after_strip_correct": 15,
+      "format_normalized_correct": 15
+    },
+    {
+      "phase": "replication",
+      "question_id": "identify_animal",
+      "saved_replies": 20,
+      "exact_after_strip_correct": 9,
+      "format_normalized_correct": 10
+    },
+    {
+      "phase": "comparison",
+      "question_id": "copy_word",
+      "saved_replies": 60,
+      "exact_after_strip_correct": 60,
+      "format_normalized_correct": 60
+    },
+    {
+      "phase": "comparison",
+      "question_id": "identify_animal",
+      "saved_replies": 60,
+      "exact_after_strip_correct": 60,
+      "format_normalized_correct": 60
+    }
+  ],
+  "limits": "Only two short tasks; counts are saved rows, not all planned settings. Repeated greedy controls are not independent replicates. Do not infer global competence or safety from these checks."
+}

@@ -1,0 +1,50 @@
+cell                      n   BOILER    ROLE      NAME      REFUSE    CONTINUE  OTHER   
+host on  now         15   15        0         0         0         0         0       
+host on  inplan      15   0         15        0         0         0         0       
+host off now         15   15        0         0         0         0         0       
+host off inplan      15   3         7         0         3         0         2       
+benS on  now         15   14        1         0         0         0         0       
+benS on  inplan      15   0         15        0         0         0         0       
+benS off now         15   15        0         0         0         0         0       
+benS off inplan      15   0         15        0         0         0         0       
+benU on  now         15   14        1         0         0         0         0       
+benU on  inplan      15   0         15        0         0         0         0       
+benU off now         15   15        0         0         0         0         0       
+benU off inplan      15   0         15        0         0         0         0       
+
+primary comparisons (steering on)
+  inplan ROLE    hostile 15/15  benign 15/15  diff +0  Fisher p=1.0000
+  now    BOILER  hostile 15/15  benign 14/15  diff +1  Fisher p=1.0000
+
+steering off vs on
+  host inplan ROLE    on 15/15  off 7/15
+  host now    BOILER  on 15/15  off 15/15
+  benS inplan ROLE    on 15/15  off 15/15
+  benS now    BOILER  on 14/15  off 15/15
+  benU inplan ROLE    on 15/15  off 15/15
+  benU now    BOILER  on 14/15  off 15/15
+
+per-history (draw) breakdown, steering on, inplan ROLE / now BOILER
+  host d0: inplan ROLE 5/5   now BOILER 5/5
+  host d1: inplan ROLE 5/5   now BOILER 5/5
+  host d2: inplan ROLE 5/5   now BOILER 5/5
+  benS d0: inplan ROLE 5/5   now BOILER 4/5
+  benS d1: inplan ROLE 5/5   now BOILER 5/5
+  benS d2: inplan ROLE 5/5   now BOILER 5/5
+  benU d0: inplan ROLE 5/5   now BOILER 5/5
+  benU d1: inplan ROLE 5/5   now BOILER 5/5
+  benU d2: inplan ROLE 5/5   now BOILER 4/5
+
+regex kind() vs hand code (for the record)
+  regex BOILERPLATE  hand BOILER    88
+  regex PLAN_WORDS   hand ROLE      65
+  regex INSIDE_PLAN  hand ROLE      13
+  regex OTHER        hand ROLE      3
+  regex OTHER        hand BOILER    2
+  regex INSIDE_PLAN  hand REFUSE    2
+  regex BOILERPLATE  hand ROLE      2
+  regex REFUSE       hand OTHER     1
+  regex GUIDE        hand ROLE      1
+  regex REFUSE       hand BOILER    1
+  regex INSIDE_PLAN  hand OTHER     1
+  regex REFUSE       hand REFUSE    1

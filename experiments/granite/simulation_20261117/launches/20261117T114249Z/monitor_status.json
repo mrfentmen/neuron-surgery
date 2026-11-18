@@ -1,0 +1,51 @@
+{
+  "kernel": "aeeeeeeee/granite-synthetic-action-pilot/1",
+  "pid": 46541,
+  "state": "downloaded",
+  "log_pid": 46549,
+  "updated_utc": "2026-11-17T13:15:44.339853+00:00",
+  "remote_state": "CANCEL_ACKNOWLEDGED",
+  "last_error": null,
+  "files": 33,
+  "saved_episodes": 183,
+  "saved_replies": 478,
+  "startup_passed": true,
+  "worker_statuses": [
+    {
+      "state": "generating",
+      "shard": 0,
+      "updated_utc": "2026-11-17T13:15:25.128454+00:00",
+      "job": {
+        "job_id": "r08_c06",
+        "candidate_index": 6,
+        "scenario": "incident_report",
+        "variant": 1,
+        "system_prompt": "safety",
+        "guard": "observe",
+        "label_seed": 20261117
+      },
+      "kind": "action",
+      "turn": 0
+    },
+    {
+      "state": "generating",
+      "shard": 1,
+      "updated_utc": "2026-11-17T13:15:40.210215+00:00",
+      "job": {
+        "job_id": "r08_c05",
+        "candidate_index": 5,
+        "scenario": "incident_report",
+        "variant": 1,
+        "system_prompt": "safety",
+        "guard": "observe",
+        "label_seed": 20261117
+      },
+      "kind": "comprehension",
+      "turn": -1
+    }
+  ],
+  "problems": [
+    "worker 0: generating",
+    "worker 1: generating"
+  ]
+}

@@ -1,0 +1,4050 @@
+[
+  {
+    "layer": 17,
+    "neuron": 4078,
+    "dose": -4.0,
+    "median": 11.348774909973145,
+    "source": "screen_L0_19.jsonl",
+    "source_line": 131901,
+    "source_record_sha256": "e1bc86636d9f34ac1f1fb6f93d7be1d083e5b6c90725d7ce0f84a1771d4d9c69",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "1d1525b0da94667c7ae5aee5d4a3758939aed3cc4798e11e62523da6f32057b1",
+    "source_dtype": "float16",
+    "source_batch_size": 32,
+    "candidate_id": "L17_N4078",
+    "available_saved_settings": 1,
+    "source_file_sha256": "d832ab80949f4d1b9dd88882169aaeaacda1a57aedc8d418e215bd3137c33fe1",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 13,
+    "neuron": 1318,
+    "dose": -4.0,
+    "median": 10.036737442016602,
+    "source": "screen_L0_19.jsonl",
+    "source_line": 98365,
+    "source_record_sha256": "4934c4a15ce5d4fc1e65940bea91ae97ebeb27008f617ee89255537a135681f1",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "d8ddf86d43e4ae169ed78221fcd59e2d1f587109566647a4114c73ee442c514f",
+    "source_dtype": "float16",
+    "source_batch_size": 32,
+    "candidate_id": "L13_N1318",
+    "available_saved_settings": 1,
+    "source_file_sha256": "d832ab80949f4d1b9dd88882169aaeaacda1a57aedc8d418e215bd3137c33fe1",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 9,
+    "neuron": 11,
+    "dose": -4.0,
+    "median": 10.954432487487793,
+    "source": "grid_L9_k.jsonl",
+    "source_line": 353,
+    "source_record_sha256": "9d6a2b959335956ae561ac4aade9fab71cbad3ebc4395ae942ba3afafd06e3af",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "ff00276da9782d9b984d30f274ab443cef936b0e5246ab7e4be3e91b1da882aa",
+    "source_dtype": "float16",
+    "source_batch_size": null,
+    "candidate_id": "L9_N11",
+    "available_saved_settings": 2,
+    "source_file_sha256": "58ebea21bae27dcc1c93b4f27764d82bba593a9907cb1e7c52b193bad0e08dff",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 12,
+    "neuron": 34,
+    "dose": -6.0,
+    "median": 11.392309188842773,
+    "source": "why_L12.jsonl",
+    "source_line": 27,
+    "source_record_sha256": "9a0afdfd460e0630cee5d716208566c3b1f1fe871f1f73e87aaf6b83d9fbfa19",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "9842eac1db8d6bf480846333423b0799492c26d1418fd2261aa3410bd20b5e77",
+    "source_dtype": "bfloat16",
+    "source_batch_size": null,
+    "candidate_id": "L12_N34",
+    "available_saved_settings": 1,
+    "source_file_sha256": "ee5ca3e78bbe4258260fae68206381558ccf675ec3bab2b9f1495e735960d832",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 27,
+    "neuron": 3448,
+    "dose": -4.0,
+    "median": 17.2501220703125,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -98.0,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L27_N3448",
+    "available_saved_settings": 2,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 14,
+    "neuron": 7553,
+    "dose": -4.0,
+    "median": 10.25202465057373,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -59.25,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L14_N7553",
+    "available_saved_settings": 2,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 25,
+    "neuron": 7734,
+    "dose": -4.0,
+    "median": 15.189774513244629,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -92.0,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L25_N7734",
+    "available_saved_settings": 1,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 17,
+    "neuron": 2801,
+    "dose": -4.0,
+    "median": 12.290521621704102,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -85.0,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L17_N2801",
+    "available_saved_settings": 2,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 24,
+    "neuron": 3392,
+    "dose": -4.0,
+    "median": 15.222723007202148,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -90.5,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L24_N3392",
+    "available_saved_settings": 1,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 8,
+    "neuron": 5597,
+    "dose": -4.0,
+    "median": 10.025367736816406,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -60.25,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L8_N5597",
+    "available_saved_settings": 1,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 9,
+    "neuron": 1049,
+    "dose": -4.0,
+    "median": 10.225354194641113,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -63.25,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L9_N1049",
+    "available_saved_settings": 1,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 11,
+    "neuron": 3380,
+    "dose": -4.0,
+    "median": 9.74051570892334,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -59.0,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L11_N3380",
+    "available_saved_settings": 1,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 11,
+    "neuron": 5064,
+    "dose": -6.0,
+    "median": 9.861392974853516,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -82.0,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L11_N5064",
+    "available_saved_settings": 3,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 30,
+    "neuron": 6314,
+    "dose": -2.0,
+    "median": 24.51422882080078,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -66.0,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L30_N6314",
+    "available_saved_settings": 2,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 12,
+    "neuron": 2556,
+    "dose": -3.0,
+    "median": 11.392309188842773,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": -49.5,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L12_N2556",
+    "available_saved_settings": 2,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 39,
+    "neuron": 1042,
+    "dose": -4.0,
+    "median": 81.96736907958984,
+    "source": "granite_harm_panel_12x10_20261114/plan.json",
+    "source_line": null,
+    "historical_model_scope": "models/granite-4.1-3b-base",
+    "provenance": "saved_local_Granite_3B_plan",
+    "historical_scalar_bf16": null,
+    "source_dtype": "bfloat16",
+    "source_batch_size": 1,
+    "candidate_id": "L39_N1042",
+    "available_saved_settings": 1,
+    "source_file_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 14,
+    "neuron": 7443,
+    "dose": -4.0,
+    "median": 9.829695701599121,
+    "source": "screen_L0_19.jsonl",
+    "source_line": 112491,
+    "source_record_sha256": "4da7cdd700ed5ddf012dd24d2f87716c2d50a28b9ea33390008873f804346d93",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "6c59c873411245b29bef406007ceb700a06f676e950cd859d982d2429d6460e7",
+    "source_dtype": "float16",
+    "source_batch_size": 32,
+    "candidate_id": "L14_N7443",
+    "available_saved_settings": 1,
+    "source_file_sha256": "d832ab80949f4d1b9dd88882169aaeaacda1a57aedc8d418e215bd3137c33fe1",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 13,
+    "neuron": 7821,
+    "dose": -4.0,
+    "median": 10.036737442016602,
+    "source": "screen_L0_19.jsonl",
+    "source_line": 104810,
+    "source_record_sha256": "56870f3a50ef0723e1086c3ceeb168e44c143289c6825dba471a2d5120bff688",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "03e77af034b17bc74a8e095e7ced4df85f04a95c7b9f0ec44b40dc616171184b",
+    "source_dtype": "float16",
+    "source_batch_size": 32,
+    "candidate_id": "L13_N7821",
+    "available_saved_settings": 1,
+    "source_file_sha256": "d832ab80949f4d1b9dd88882169aaeaacda1a57aedc8d418e215bd3137c33fe1",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 25,
+    "neuron": 2893,
+    "dose": -4.0,
+    "median": 15.189774513244629,
+    "source": "kg_pull/nov8/screen_L20_39.jsonl",
+    "source_line": 41086,
+    "source_record_sha256": "1f3f911519d410dbc14cef00316a7ec5f786fe7c35147a25f20dd1bc70c694a2",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "bf4a19b369910dc51b056f2da177103df3676ae94b5e8d6d278addbe6d52153b",
+    "source_dtype": "float16",
+    "source_batch_size": 32,
+    "candidate_id": "L25_N2893",
+    "available_saved_settings": 1,
+    "source_file_sha256": "81eb51161aec11b83b2ad98148844e8e046c55dd9526c14e259ce725f21872f1",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "layer": 22,
+    "neuron": 119,
+    "dose": -4.0,
+    "median": 13.752034187316895,
+    "source": "kg_pull/nov8/screen_L20_39.jsonl",
+    "source_line": 15578,
+    "source_record_sha256": "f564f739c844256a302455f184216bdc489823192baeb3672165c1675156d4f8",
+    "historical_model_scope": "unspecified",
+    "provenance": "historical_checkpoint_unspecified",
+    "source_evidence_id": "cee5628e58ac3f4b31bd8efa567635f1f9162cf8423acec9ffc21748175bae1c",
+    "source_dtype": "float16",
+    "source_batch_size": 32,
+    "candidate_id": "L22_N119",
+    "available_saved_settings": 1,
+    "source_file_sha256": "81eb51161aec11b83b2ad98148844e8e046c55dd9526c14e259ce725f21872f1",
+    "phase": "replication",
+    "selection": "Prior panel plus reported findings and ambiguous-agreement comparison cases; saved setting unchanged."
+  },
+  {
+    "candidate_id": "L0_N5330_d-0.5",
+    "layer": 0,
+    "neuron": 5330,
+    "dose": -0.5,
+    "median": 20.281360626220703,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 0,
+      "neuron": 5330,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L0_N614",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.281360626220703
+    }
+  },
+  {
+    "candidate_id": "L0_N5330_d+0.5",
+    "layer": 0,
+    "neuron": 5330,
+    "dose": 0.5,
+    "median": 20.281360626220703,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 0,
+      "neuron": 5330,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L0_N614",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.281360626220703
+    }
+  },
+  {
+    "candidate_id": "L0_N7560_d-0.5",
+    "layer": 0,
+    "neuron": 7560,
+    "dose": -0.5,
+    "median": 20.281360626220703,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 0,
+      "neuron": 7560,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L0_N614",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.281360626220703
+    }
+  },
+  {
+    "candidate_id": "L0_N7560_d+0.5",
+    "layer": 0,
+    "neuron": 7560,
+    "dose": 0.5,
+    "median": 20.281360626220703,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 0,
+      "neuron": 7560,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L0_N614",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.281360626220703
+    }
+  },
+  {
+    "candidate_id": "L1_N5333_d-0.5",
+    "layer": 1,
+    "neuron": 5333,
+    "dose": -0.5,
+    "median": 12.391204833984375,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 1,
+      "neuron": 5333,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L1_N38",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.391204833984375
+    }
+  },
+  {
+    "candidate_id": "L1_N5333_d+0.5",
+    "layer": 1,
+    "neuron": 5333,
+    "dose": 0.5,
+    "median": 12.391204833984375,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 1,
+      "neuron": 5333,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L1_N38",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.391204833984375
+    }
+  },
+  {
+    "candidate_id": "L1_N5018_d-0.5",
+    "layer": 1,
+    "neuron": 5018,
+    "dose": -0.5,
+    "median": 12.391204833984375,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 1,
+      "neuron": 5018,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L1_N38",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.391204833984375
+    }
+  },
+  {
+    "candidate_id": "L1_N5018_d+0.5",
+    "layer": 1,
+    "neuron": 5018,
+    "dose": 0.5,
+    "median": 12.391204833984375,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 1,
+      "neuron": 5018,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L1_N38",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.391204833984375
+    }
+  },
+  {
+    "candidate_id": "L2_N7635_d-0.5",
+    "layer": 2,
+    "neuron": 7635,
+    "dose": -0.5,
+    "median": 11.866225242614746,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 2,
+      "neuron": 7635,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L2_N144",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.866225242614746
+    }
+  },
+  {
+    "candidate_id": "L2_N7635_d+0.5",
+    "layer": 2,
+    "neuron": 7635,
+    "dose": 0.5,
+    "median": 11.866225242614746,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 2,
+      "neuron": 7635,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L2_N144",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.866225242614746
+    }
+  },
+  {
+    "candidate_id": "L2_N753_d-0.5",
+    "layer": 2,
+    "neuron": 753,
+    "dose": -0.5,
+    "median": 11.866225242614746,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 2,
+      "neuron": 753,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L2_N144",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.866225242614746
+    }
+  },
+  {
+    "candidate_id": "L2_N753_d+0.5",
+    "layer": 2,
+    "neuron": 753,
+    "dose": 0.5,
+    "median": 11.866225242614746,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 2,
+      "neuron": 753,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L2_N144",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.866225242614746
+    }
+  },
+  {
+    "candidate_id": "L3_N8038_d-0.5",
+    "layer": 3,
+    "neuron": 8038,
+    "dose": -0.5,
+    "median": 10.174247741699219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 3,
+      "neuron": 8038,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L3_N24",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.174247741699219
+    }
+  },
+  {
+    "candidate_id": "L3_N8038_d+0.5",
+    "layer": 3,
+    "neuron": 8038,
+    "dose": 0.5,
+    "median": 10.174247741699219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 3,
+      "neuron": 8038,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L3_N24",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.174247741699219
+    }
+  },
+  {
+    "candidate_id": "L3_N2242_d-0.5",
+    "layer": 3,
+    "neuron": 2242,
+    "dose": -0.5,
+    "median": 10.174247741699219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 3,
+      "neuron": 2242,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L3_N24",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.174247741699219
+    }
+  },
+  {
+    "candidate_id": "L3_N2242_d+0.5",
+    "layer": 3,
+    "neuron": 2242,
+    "dose": 0.5,
+    "median": 10.174247741699219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 3,
+      "neuron": 2242,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L3_N24",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.174247741699219
+    }
+  },
+  {
+    "candidate_id": "L4_N3009_d-0.5",
+    "layer": 4,
+    "neuron": 3009,
+    "dose": -0.5,
+    "median": 9.78903865814209,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 4,
+      "neuron": 3009,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L4_N13",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.78903865814209
+    }
+  },
+  {
+    "candidate_id": "L4_N3009_d+0.5",
+    "layer": 4,
+    "neuron": 3009,
+    "dose": 0.5,
+    "median": 9.78903865814209,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 4,
+      "neuron": 3009,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L4_N13",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.78903865814209
+    }
+  },
+  {
+    "candidate_id": "L4_N2326_d-0.5",
+    "layer": 4,
+    "neuron": 2326,
+    "dose": -0.5,
+    "median": 9.78903865814209,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 4,
+      "neuron": 2326,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L4_N13",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.78903865814209
+    }
+  },
+  {
+    "candidate_id": "L4_N2326_d+0.5",
+    "layer": 4,
+    "neuron": 2326,
+    "dose": 0.5,
+    "median": 9.78903865814209,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 4,
+      "neuron": 2326,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L4_N13",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.78903865814209
+    }
+  },
+  {
+    "candidate_id": "L5_N5566_d-0.5",
+    "layer": 5,
+    "neuron": 5566,
+    "dose": -0.5,
+    "median": 9.885498046875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 5,
+      "neuron": 5566,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L5_N9",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.885498046875
+    }
+  },
+  {
+    "candidate_id": "L5_N5566_d+0.5",
+    "layer": 5,
+    "neuron": 5566,
+    "dose": 0.5,
+    "median": 9.885498046875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 5,
+      "neuron": 5566,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L5_N9",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.885498046875
+    }
+  },
+  {
+    "candidate_id": "L5_N6545_d-0.5",
+    "layer": 5,
+    "neuron": 6545,
+    "dose": -0.5,
+    "median": 9.885498046875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 5,
+      "neuron": 6545,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L5_N9",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.885498046875
+    }
+  },
+  {
+    "candidate_id": "L5_N6545_d+0.5",
+    "layer": 5,
+    "neuron": 6545,
+    "dose": 0.5,
+    "median": 9.885498046875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 5,
+      "neuron": 6545,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L5_N9",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.885498046875
+    }
+  },
+  {
+    "candidate_id": "L6_N2961_d-0.5",
+    "layer": 6,
+    "neuron": 2961,
+    "dose": -0.5,
+    "median": 9.360209465026855,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 6,
+      "neuron": 2961,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L6_N2504",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.360209465026855
+    }
+  },
+  {
+    "candidate_id": "L6_N2961_d+0.5",
+    "layer": 6,
+    "neuron": 2961,
+    "dose": 0.5,
+    "median": 9.360209465026855,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 6,
+      "neuron": 2961,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L6_N2504",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.360209465026855
+    }
+  },
+  {
+    "candidate_id": "L6_N499_d-0.5",
+    "layer": 6,
+    "neuron": 499,
+    "dose": -0.5,
+    "median": 9.360209465026855,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 6,
+      "neuron": 499,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L6_N2504",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.360209465026855
+    }
+  },
+  {
+    "candidate_id": "L6_N499_d+0.5",
+    "layer": 6,
+    "neuron": 499,
+    "dose": 0.5,
+    "median": 9.360209465026855,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 6,
+      "neuron": 499,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L6_N2504",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.360209465026855
+    }
+  },
+  {
+    "candidate_id": "L7_N2579_d-0.5",
+    "layer": 7,
+    "neuron": 2579,
+    "dose": -0.5,
+    "median": 10.773476600646973,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 7,
+      "neuron": 2579,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L7_N15",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.773476600646973
+    }
+  },
+  {
+    "candidate_id": "L7_N2579_d+0.5",
+    "layer": 7,
+    "neuron": 2579,
+    "dose": 0.5,
+    "median": 10.773476600646973,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 7,
+      "neuron": 2579,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L7_N15",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.773476600646973
+    }
+  },
+  {
+    "candidate_id": "L7_N236_d-0.5",
+    "layer": 7,
+    "neuron": 236,
+    "dose": -0.5,
+    "median": 10.773476600646973,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 7,
+      "neuron": 236,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L7_N15",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.773476600646973
+    }
+  },
+  {
+    "candidate_id": "L7_N236_d+0.5",
+    "layer": 7,
+    "neuron": 236,
+    "dose": 0.5,
+    "median": 10.773476600646973,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 7,
+      "neuron": 236,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L7_N15",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.773476600646973
+    }
+  },
+  {
+    "candidate_id": "L8_N7934_d-0.5",
+    "layer": 8,
+    "neuron": 7934,
+    "dose": -0.5,
+    "median": 11.036117553710938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 8,
+      "neuron": 7934,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L8_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.036117553710938
+    }
+  },
+  {
+    "candidate_id": "L8_N7934_d+0.5",
+    "layer": 8,
+    "neuron": 7934,
+    "dose": 0.5,
+    "median": 11.036117553710938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 8,
+      "neuron": 7934,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L8_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.036117553710938
+    }
+  },
+  {
+    "candidate_id": "L8_N2364_d-0.5",
+    "layer": 8,
+    "neuron": 2364,
+    "dose": -0.5,
+    "median": 11.036117553710938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 8,
+      "neuron": 2364,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L8_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.036117553710938
+    }
+  },
+  {
+    "candidate_id": "L8_N2364_d+0.5",
+    "layer": 8,
+    "neuron": 2364,
+    "dose": 0.5,
+    "median": 11.036117553710938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 8,
+      "neuron": 2364,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L8_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.036117553710938
+    }
+  },
+  {
+    "candidate_id": "L9_N7606_d-0.5",
+    "layer": 9,
+    "neuron": 7606,
+    "dose": -0.5,
+    "median": 10.954432487487793,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 9,
+      "neuron": 7606,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L9_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.954432487487793
+    }
+  },
+  {
+    "candidate_id": "L9_N7606_d+0.5",
+    "layer": 9,
+    "neuron": 7606,
+    "dose": 0.5,
+    "median": 10.954432487487793,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 9,
+      "neuron": 7606,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L9_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.954432487487793
+    }
+  },
+  {
+    "candidate_id": "L9_N114_d-0.5",
+    "layer": 9,
+    "neuron": 114,
+    "dose": -0.5,
+    "median": 10.954432487487793,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 9,
+      "neuron": 114,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L9_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.954432487487793
+    }
+  },
+  {
+    "candidate_id": "L9_N114_d+0.5",
+    "layer": 9,
+    "neuron": 114,
+    "dose": 0.5,
+    "median": 10.954432487487793,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 9,
+      "neuron": 114,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L9_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.954432487487793
+    }
+  },
+  {
+    "candidate_id": "L10_N2188_d-0.5",
+    "layer": 10,
+    "neuron": 2188,
+    "dose": -0.5,
+    "median": 9.935639381408691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 10,
+      "neuron": 2188,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L10_N753",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.935639381408691
+    }
+  },
+  {
+    "candidate_id": "L10_N2188_d+0.5",
+    "layer": 10,
+    "neuron": 2188,
+    "dose": 0.5,
+    "median": 9.935639381408691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 10,
+      "neuron": 2188,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L10_N753",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.935639381408691
+    }
+  },
+  {
+    "candidate_id": "L10_N5687_d-0.5",
+    "layer": 10,
+    "neuron": 5687,
+    "dose": -0.5,
+    "median": 9.935639381408691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 10,
+      "neuron": 5687,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L10_N753",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.935639381408691
+    }
+  },
+  {
+    "candidate_id": "L10_N5687_d+0.5",
+    "layer": 10,
+    "neuron": 5687,
+    "dose": 0.5,
+    "median": 9.935639381408691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 10,
+      "neuron": 5687,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L10_N753",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 9.935639381408691
+    }
+  },
+  {
+    "candidate_id": "L11_N1075_d-0.5",
+    "layer": 11,
+    "neuron": 1075,
+    "dose": -0.5,
+    "median": 11.234359741210938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 11,
+      "neuron": 1075,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L11_N4",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.234359741210938
+    }
+  },
+  {
+    "candidate_id": "L11_N1075_d+0.5",
+    "layer": 11,
+    "neuron": 1075,
+    "dose": 0.5,
+    "median": 11.234359741210938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 11,
+      "neuron": 1075,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L11_N4",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.234359741210938
+    }
+  },
+  {
+    "candidate_id": "L11_N1600_d-0.5",
+    "layer": 11,
+    "neuron": 1600,
+    "dose": -0.5,
+    "median": 11.234359741210938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 11,
+      "neuron": 1600,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L11_N4",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.234359741210938
+    }
+  },
+  {
+    "candidate_id": "L11_N1600_d+0.5",
+    "layer": 11,
+    "neuron": 1600,
+    "dose": 0.5,
+    "median": 11.234359741210938,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 11,
+      "neuron": 1600,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L11_N4",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.234359741210938
+    }
+  },
+  {
+    "candidate_id": "L12_N6791_d-0.5",
+    "layer": 12,
+    "neuron": 6791,
+    "dose": -0.5,
+    "median": 11.392309188842773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 12,
+      "neuron": 6791,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L12_N6",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.392309188842773
+    }
+  },
+  {
+    "candidate_id": "L12_N6791_d+0.5",
+    "layer": 12,
+    "neuron": 6791,
+    "dose": 0.5,
+    "median": 11.392309188842773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 12,
+      "neuron": 6791,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L12_N6",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.392309188842773
+    }
+  },
+  {
+    "candidate_id": "L12_N3305_d-0.5",
+    "layer": 12,
+    "neuron": 3305,
+    "dose": -0.5,
+    "median": 11.392309188842773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 12,
+      "neuron": 3305,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L12_N6",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.392309188842773
+    }
+  },
+  {
+    "candidate_id": "L12_N3305_d+0.5",
+    "layer": 12,
+    "neuron": 3305,
+    "dose": 0.5,
+    "median": 11.392309188842773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 12,
+      "neuron": 3305,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L12_N6",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.392309188842773
+    }
+  },
+  {
+    "candidate_id": "L13_N1948_d-0.5",
+    "layer": 13,
+    "neuron": 1948,
+    "dose": -0.5,
+    "median": 11.659985542297363,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 13,
+      "neuron": 1948,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L13_N5",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.659985542297363
+    }
+  },
+  {
+    "candidate_id": "L13_N1948_d+0.5",
+    "layer": 13,
+    "neuron": 1948,
+    "dose": 0.5,
+    "median": 11.659985542297363,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 13,
+      "neuron": 1948,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L13_N5",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.659985542297363
+    }
+  },
+  {
+    "candidate_id": "L13_N8123_d-0.5",
+    "layer": 13,
+    "neuron": 8123,
+    "dose": -0.5,
+    "median": 11.659985542297363,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 13,
+      "neuron": 8123,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L13_N5",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.659985542297363
+    }
+  },
+  {
+    "candidate_id": "L13_N8123_d+0.5",
+    "layer": 13,
+    "neuron": 8123,
+    "dose": 0.5,
+    "median": 11.659985542297363,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 13,
+      "neuron": 8123,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L13_N5",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 11.659985542297363
+    }
+  },
+  {
+    "candidate_id": "L14_N4822_d-0.5",
+    "layer": 14,
+    "neuron": 4822,
+    "dose": -0.5,
+    "median": 12.00385570526123,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 14,
+      "neuron": 4822,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L14_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.00385570526123
+    }
+  },
+  {
+    "candidate_id": "L14_N4822_d+0.5",
+    "layer": 14,
+    "neuron": 4822,
+    "dose": 0.5,
+    "median": 12.00385570526123,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 14,
+      "neuron": 4822,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L14_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.00385570526123
+    }
+  },
+  {
+    "candidate_id": "L14_N1267_d-0.5",
+    "layer": 14,
+    "neuron": 1267,
+    "dose": -0.5,
+    "median": 12.00385570526123,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 14,
+      "neuron": 1267,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L14_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.00385570526123
+    }
+  },
+  {
+    "candidate_id": "L14_N1267_d+0.5",
+    "layer": 14,
+    "neuron": 1267,
+    "dose": 0.5,
+    "median": 12.00385570526123,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 14,
+      "neuron": 1267,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L14_N3",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.00385570526123
+    }
+  },
+  {
+    "candidate_id": "L15_N3751_d-0.5",
+    "layer": 15,
+    "neuron": 3751,
+    "dose": -0.5,
+    "median": 12.297357559204102,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 15,
+      "neuron": 3751,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L15_N17",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.297357559204102
+    }
+  },
+  {
+    "candidate_id": "L15_N3751_d+0.5",
+    "layer": 15,
+    "neuron": 3751,
+    "dose": 0.5,
+    "median": 12.297357559204102,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 15,
+      "neuron": 3751,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L15_N17",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.297357559204102
+    }
+  },
+  {
+    "candidate_id": "L15_N640_d-0.5",
+    "layer": 15,
+    "neuron": 640,
+    "dose": -0.5,
+    "median": 12.297357559204102,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 15,
+      "neuron": 640,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L15_N17",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.297357559204102
+    }
+  },
+  {
+    "candidate_id": "L15_N640_d+0.5",
+    "layer": 15,
+    "neuron": 640,
+    "dose": 0.5,
+    "median": 12.297357559204102,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 15,
+      "neuron": 640,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L15_N17",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.297357559204102
+    }
+  },
+  {
+    "candidate_id": "L16_N3576_d-0.5",
+    "layer": 16,
+    "neuron": 3576,
+    "dose": -0.5,
+    "median": 10.479584693908691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 16,
+      "neuron": 3576,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L16_N2603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.479584693908691
+    }
+  },
+  {
+    "candidate_id": "L16_N3576_d+0.5",
+    "layer": 16,
+    "neuron": 3576,
+    "dose": 0.5,
+    "median": 10.479584693908691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 16,
+      "neuron": 3576,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L16_N2603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.479584693908691
+    }
+  },
+  {
+    "candidate_id": "L16_N4827_d-0.5",
+    "layer": 16,
+    "neuron": 4827,
+    "dose": -0.5,
+    "median": 10.479584693908691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 16,
+      "neuron": 4827,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L16_N2603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.479584693908691
+    }
+  },
+  {
+    "candidate_id": "L16_N4827_d+0.5",
+    "layer": 16,
+    "neuron": 4827,
+    "dose": 0.5,
+    "median": 10.479584693908691,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 16,
+      "neuron": 4827,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L16_N2603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 10.479584693908691
+    }
+  },
+  {
+    "candidate_id": "L17_N6553_d-0.5",
+    "layer": 17,
+    "neuron": 6553,
+    "dose": -0.5,
+    "median": 13.102543830871582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 17,
+      "neuron": 6553,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L17_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.102543830871582
+    }
+  },
+  {
+    "candidate_id": "L17_N6553_d+0.5",
+    "layer": 17,
+    "neuron": 6553,
+    "dose": 0.5,
+    "median": 13.102543830871582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 17,
+      "neuron": 6553,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L17_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.102543830871582
+    }
+  },
+  {
+    "candidate_id": "L17_N3219_d-0.5",
+    "layer": 17,
+    "neuron": 3219,
+    "dose": -0.5,
+    "median": 13.102543830871582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 17,
+      "neuron": 3219,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L17_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.102543830871582
+    }
+  },
+  {
+    "candidate_id": "L17_N3219_d+0.5",
+    "layer": 17,
+    "neuron": 3219,
+    "dose": 0.5,
+    "median": 13.102543830871582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 17,
+      "neuron": 3219,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L17_N1",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.102543830871582
+    }
+  },
+  {
+    "candidate_id": "L18_N3861_d-0.5",
+    "layer": 18,
+    "neuron": 3861,
+    "dose": -0.5,
+    "median": 13.411625862121582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 18,
+      "neuron": 3861,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L18_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.411625862121582
+    }
+  },
+  {
+    "candidate_id": "L18_N3861_d+0.5",
+    "layer": 18,
+    "neuron": 3861,
+    "dose": 0.5,
+    "median": 13.411625862121582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 18,
+      "neuron": 3861,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L18_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.411625862121582
+    }
+  },
+  {
+    "candidate_id": "L18_N5593_d-0.5",
+    "layer": 18,
+    "neuron": 5593,
+    "dose": -0.5,
+    "median": 13.411625862121582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 18,
+      "neuron": 5593,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L18_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.411625862121582
+    }
+  },
+  {
+    "candidate_id": "L18_N5593_d+0.5",
+    "layer": 18,
+    "neuron": 5593,
+    "dose": 0.5,
+    "median": 13.411625862121582,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 18,
+      "neuron": 5593,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L18_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.411625862121582
+    }
+  },
+  {
+    "candidate_id": "L19_N2106_d-0.5",
+    "layer": 19,
+    "neuron": 2106,
+    "dose": -0.5,
+    "median": 12.457711219787598,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 19,
+      "neuron": 2106,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L19_N1577",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.457711219787598
+    }
+  },
+  {
+    "candidate_id": "L19_N2106_d+0.5",
+    "layer": 19,
+    "neuron": 2106,
+    "dose": 0.5,
+    "median": 12.457711219787598,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 19,
+      "neuron": 2106,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L19_N1577",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.457711219787598
+    }
+  },
+  {
+    "candidate_id": "L19_N2317_d-0.5",
+    "layer": 19,
+    "neuron": 2317,
+    "dose": -0.5,
+    "median": 12.457711219787598,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 19,
+      "neuron": 2317,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L19_N1577",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.457711219787598
+    }
+  },
+  {
+    "candidate_id": "L19_N2317_d+0.5",
+    "layer": 19,
+    "neuron": 2317,
+    "dose": 0.5,
+    "median": 12.457711219787598,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 19,
+      "neuron": 2317,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L19_N1577",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.457711219787598
+    }
+  },
+  {
+    "candidate_id": "L20_N8042_d-0.5",
+    "layer": 20,
+    "neuron": 8042,
+    "dose": -0.5,
+    "median": 12.750845909118652,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 20,
+      "neuron": 8042,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L20_N1603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.750845909118652
+    }
+  },
+  {
+    "candidate_id": "L20_N8042_d+0.5",
+    "layer": 20,
+    "neuron": 8042,
+    "dose": 0.5,
+    "median": 12.750845909118652,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 20,
+      "neuron": 8042,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L20_N1603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.750845909118652
+    }
+  },
+  {
+    "candidate_id": "L20_N7881_d-0.5",
+    "layer": 20,
+    "neuron": 7881,
+    "dose": -0.5,
+    "median": 12.750845909118652,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 20,
+      "neuron": 7881,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L20_N1603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.750845909118652
+    }
+  },
+  {
+    "candidate_id": "L20_N7881_d+0.5",
+    "layer": 20,
+    "neuron": 7881,
+    "dose": 0.5,
+    "median": 12.750845909118652,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 20,
+      "neuron": 7881,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L20_N1603",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.750845909118652
+    }
+  },
+  {
+    "candidate_id": "L21_N8035_d-0.5",
+    "layer": 21,
+    "neuron": 8035,
+    "dose": -0.5,
+    "median": 12.890284538269043,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 21,
+      "neuron": 8035,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L21_N332",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.890284538269043
+    }
+  },
+  {
+    "candidate_id": "L21_N8035_d+0.5",
+    "layer": 21,
+    "neuron": 8035,
+    "dose": 0.5,
+    "median": 12.890284538269043,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 21,
+      "neuron": 8035,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L21_N332",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.890284538269043
+    }
+  },
+  {
+    "candidate_id": "L21_N3508_d-0.5",
+    "layer": 21,
+    "neuron": 3508,
+    "dose": -0.5,
+    "median": 12.890284538269043,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 21,
+      "neuron": 3508,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L21_N332",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.890284538269043
+    }
+  },
+  {
+    "candidate_id": "L21_N3508_d+0.5",
+    "layer": 21,
+    "neuron": 3508,
+    "dose": 0.5,
+    "median": 12.890284538269043,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 21,
+      "neuron": 3508,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L21_N332",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 12.890284538269043
+    }
+  },
+  {
+    "candidate_id": "L22_N6971_d-0.5",
+    "layer": 22,
+    "neuron": 6971,
+    "dose": -0.5,
+    "median": 13.752034187316895,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 22,
+      "neuron": 6971,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L22_N119",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.752034187316895
+    }
+  },
+  {
+    "candidate_id": "L22_N6971_d+0.5",
+    "layer": 22,
+    "neuron": 6971,
+    "dose": 0.5,
+    "median": 13.752034187316895,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 22,
+      "neuron": 6971,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L22_N119",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.752034187316895
+    }
+  },
+  {
+    "candidate_id": "L22_N3046_d-0.5",
+    "layer": 22,
+    "neuron": 3046,
+    "dose": -0.5,
+    "median": 13.752034187316895,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 22,
+      "neuron": 3046,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L22_N119",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.752034187316895
+    }
+  },
+  {
+    "candidate_id": "L22_N3046_d+0.5",
+    "layer": 22,
+    "neuron": 3046,
+    "dose": 0.5,
+    "median": 13.752034187316895,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 22,
+      "neuron": 3046,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L22_N119",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 13.752034187316895
+    }
+  },
+  {
+    "candidate_id": "L23_N4308_d-0.5",
+    "layer": 23,
+    "neuron": 4308,
+    "dose": -0.5,
+    "median": 14.42590618133545,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 23,
+      "neuron": 4308,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L23_N386",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 14.42590618133545
+    }
+  },
+  {
+    "candidate_id": "L23_N4308_d+0.5",
+    "layer": 23,
+    "neuron": 4308,
+    "dose": 0.5,
+    "median": 14.42590618133545,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 23,
+      "neuron": 4308,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L23_N386",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 14.42590618133545
+    }
+  },
+  {
+    "candidate_id": "L23_N2717_d-0.5",
+    "layer": 23,
+    "neuron": 2717,
+    "dose": -0.5,
+    "median": 14.42590618133545,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 23,
+      "neuron": 2717,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L23_N386",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 14.42590618133545
+    }
+  },
+  {
+    "candidate_id": "L23_N2717_d+0.5",
+    "layer": 23,
+    "neuron": 2717,
+    "dose": 0.5,
+    "median": 14.42590618133545,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 23,
+      "neuron": 2717,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L23_N386",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 14.42590618133545
+    }
+  },
+  {
+    "candidate_id": "L24_N4951_d-0.5",
+    "layer": 24,
+    "neuron": 4951,
+    "dose": -0.5,
+    "median": 15.222723007202148,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 24,
+      "neuron": 4951,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L24_N1424",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 15.222723007202148
+    }
+  },
+  {
+    "candidate_id": "L24_N4951_d+0.5",
+    "layer": 24,
+    "neuron": 4951,
+    "dose": 0.5,
+    "median": 15.222723007202148,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 24,
+      "neuron": 4951,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L24_N1424",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 15.222723007202148
+    }
+  },
+  {
+    "candidate_id": "L24_N514_d-0.5",
+    "layer": 24,
+    "neuron": 514,
+    "dose": -0.5,
+    "median": 15.222723007202148,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 24,
+      "neuron": 514,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L24_N1424",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 15.222723007202148
+    }
+  },
+  {
+    "candidate_id": "L24_N514_d+0.5",
+    "layer": 24,
+    "neuron": 514,
+    "dose": 0.5,
+    "median": 15.222723007202148,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 24,
+      "neuron": 514,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L24_N1424",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 15.222723007202148
+    }
+  },
+  {
+    "candidate_id": "L25_N5808_d-0.5",
+    "layer": 25,
+    "neuron": 5808,
+    "dose": -0.5,
+    "median": 16.616180419921875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 25,
+      "neuron": 5808,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L25_N0",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.616180419921875
+    }
+  },
+  {
+    "candidate_id": "L25_N5808_d+0.5",
+    "layer": 25,
+    "neuron": 5808,
+    "dose": 0.5,
+    "median": 16.616180419921875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 25,
+      "neuron": 5808,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L25_N0",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.616180419921875
+    }
+  },
+  {
+    "candidate_id": "L25_N1240_d-0.5",
+    "layer": 25,
+    "neuron": 1240,
+    "dose": -0.5,
+    "median": 16.616180419921875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 25,
+      "neuron": 1240,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L25_N0",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.616180419921875
+    }
+  },
+  {
+    "candidate_id": "L25_N1240_d+0.5",
+    "layer": 25,
+    "neuron": 1240,
+    "dose": 0.5,
+    "median": 16.616180419921875,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 25,
+      "neuron": 1240,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L25_N0",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.616180419921875
+    }
+  },
+  {
+    "candidate_id": "L26_N6324_d-0.5",
+    "layer": 26,
+    "neuron": 6324,
+    "dose": -0.5,
+    "median": 17.752857208251953,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 26,
+      "neuron": 6324,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L26_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.752857208251953
+    }
+  },
+  {
+    "candidate_id": "L26_N6324_d+0.5",
+    "layer": 26,
+    "neuron": 6324,
+    "dose": 0.5,
+    "median": 17.752857208251953,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 26,
+      "neuron": 6324,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L26_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.752857208251953
+    }
+  },
+  {
+    "candidate_id": "L26_N2717_d-0.5",
+    "layer": 26,
+    "neuron": 2717,
+    "dose": -0.5,
+    "median": 17.752857208251953,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 26,
+      "neuron": 2717,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L26_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.752857208251953
+    }
+  },
+  {
+    "candidate_id": "L26_N2717_d+0.5",
+    "layer": 26,
+    "neuron": 2717,
+    "dose": 0.5,
+    "median": 17.752857208251953,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 26,
+      "neuron": 2717,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L26_N8",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.752857208251953
+    }
+  },
+  {
+    "candidate_id": "L27_N4297_d-0.5",
+    "layer": 27,
+    "neuron": 4297,
+    "dose": -0.5,
+    "median": 16.69691276550293,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 27,
+      "neuron": 4297,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L27_N182",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.69691276550293
+    }
+  },
+  {
+    "candidate_id": "L27_N4297_d+0.5",
+    "layer": 27,
+    "neuron": 4297,
+    "dose": 0.5,
+    "median": 16.69691276550293,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 27,
+      "neuron": 4297,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L27_N182",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.69691276550293
+    }
+  },
+  {
+    "candidate_id": "L27_N2075_d-0.5",
+    "layer": 27,
+    "neuron": 2075,
+    "dose": -0.5,
+    "median": 16.69691276550293,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 27,
+      "neuron": 2075,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L27_N182",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.69691276550293
+    }
+  },
+  {
+    "candidate_id": "L27_N2075_d+0.5",
+    "layer": 27,
+    "neuron": 2075,
+    "dose": 0.5,
+    "median": 16.69691276550293,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 27,
+      "neuron": 2075,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L27_N182",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 16.69691276550293
+    }
+  },
+  {
+    "candidate_id": "L28_N7126_d-0.5",
+    "layer": 28,
+    "neuron": 7126,
+    "dose": -0.5,
+    "median": 17.257505416870117,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 28,
+      "neuron": 7126,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L28_N2367",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.257505416870117
+    }
+  },
+  {
+    "candidate_id": "L28_N7126_d+0.5",
+    "layer": 28,
+    "neuron": 7126,
+    "dose": 0.5,
+    "median": 17.257505416870117,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 28,
+      "neuron": 7126,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L28_N2367",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.257505416870117
+    }
+  },
+  {
+    "candidate_id": "L28_N4400_d-0.5",
+    "layer": 28,
+    "neuron": 4400,
+    "dose": -0.5,
+    "median": 17.257505416870117,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 28,
+      "neuron": 4400,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L28_N2367",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.257505416870117
+    }
+  },
+  {
+    "candidate_id": "L28_N4400_d+0.5",
+    "layer": 28,
+    "neuron": 4400,
+    "dose": 0.5,
+    "median": 17.257505416870117,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 28,
+      "neuron": 4400,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L28_N2367",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 17.257505416870117
+    }
+  },
+  {
+    "candidate_id": "L29_N145_d-0.5",
+    "layer": 29,
+    "neuron": 145,
+    "dose": -0.5,
+    "median": 22.271947860717773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 29,
+      "neuron": 145,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L29_N2961",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.271947860717773
+    }
+  },
+  {
+    "candidate_id": "L29_N145_d+0.5",
+    "layer": 29,
+    "neuron": 145,
+    "dose": 0.5,
+    "median": 22.271947860717773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 29,
+      "neuron": 145,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L29_N2961",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.271947860717773
+    }
+  },
+  {
+    "candidate_id": "L29_N1263_d-0.5",
+    "layer": 29,
+    "neuron": 1263,
+    "dose": -0.5,
+    "median": 22.271947860717773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 29,
+      "neuron": 1263,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L29_N2961",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.271947860717773
+    }
+  },
+  {
+    "candidate_id": "L29_N1263_d+0.5",
+    "layer": 29,
+    "neuron": 1263,
+    "dose": 0.5,
+    "median": 22.271947860717773,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 29,
+      "neuron": 1263,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L29_N2961",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.271947860717773
+    }
+  },
+  {
+    "candidate_id": "L30_N3641_d-0.5",
+    "layer": 30,
+    "neuron": 3641,
+    "dose": -0.5,
+    "median": 20.79215431213379,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 30,
+      "neuron": 3641,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L30_N5399",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.79215431213379
+    }
+  },
+  {
+    "candidate_id": "L30_N3641_d+0.5",
+    "layer": 30,
+    "neuron": 3641,
+    "dose": 0.5,
+    "median": 20.79215431213379,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 30,
+      "neuron": 3641,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L30_N5399",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.79215431213379
+    }
+  },
+  {
+    "candidate_id": "L30_N5828_d-0.5",
+    "layer": 30,
+    "neuron": 5828,
+    "dose": -0.5,
+    "median": 20.79215431213379,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 30,
+      "neuron": 5828,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L30_N5399",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.79215431213379
+    }
+  },
+  {
+    "candidate_id": "L30_N5828_d+0.5",
+    "layer": 30,
+    "neuron": 5828,
+    "dose": 0.5,
+    "median": 20.79215431213379,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 30,
+      "neuron": 5828,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L30_N5399",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 20.79215431213379
+    }
+  },
+  {
+    "candidate_id": "L31_N4178_d-0.5",
+    "layer": 31,
+    "neuron": 4178,
+    "dose": -0.5,
+    "median": 22.652992248535156,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 31,
+      "neuron": 4178,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L31_N205",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.652992248535156
+    }
+  },
+  {
+    "candidate_id": "L31_N4178_d+0.5",
+    "layer": 31,
+    "neuron": 4178,
+    "dose": 0.5,
+    "median": 22.652992248535156,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 31,
+      "neuron": 4178,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L31_N205",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.652992248535156
+    }
+  },
+  {
+    "candidate_id": "L31_N5273_d-0.5",
+    "layer": 31,
+    "neuron": 5273,
+    "dose": -0.5,
+    "median": 22.652992248535156,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 31,
+      "neuron": 5273,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L31_N205",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.652992248535156
+    }
+  },
+  {
+    "candidate_id": "L31_N5273_d+0.5",
+    "layer": 31,
+    "neuron": 5273,
+    "dose": 0.5,
+    "median": 22.652992248535156,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 31,
+      "neuron": 5273,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L31_N205",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 22.652992248535156
+    }
+  },
+  {
+    "candidate_id": "L32_N2291_d-0.5",
+    "layer": 32,
+    "neuron": 2291,
+    "dose": -0.5,
+    "median": 26.743173599243164,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 32,
+      "neuron": 2291,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L32_N1511",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 26.743173599243164
+    }
+  },
+  {
+    "candidate_id": "L32_N2291_d+0.5",
+    "layer": 32,
+    "neuron": 2291,
+    "dose": 0.5,
+    "median": 26.743173599243164,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 32,
+      "neuron": 2291,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L32_N1511",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 26.743173599243164
+    }
+  },
+  {
+    "candidate_id": "L32_N6634_d-0.5",
+    "layer": 32,
+    "neuron": 6634,
+    "dose": -0.5,
+    "median": 26.743173599243164,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 32,
+      "neuron": 6634,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L32_N1511",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 26.743173599243164
+    }
+  },
+  {
+    "candidate_id": "L32_N6634_d+0.5",
+    "layer": 32,
+    "neuron": 6634,
+    "dose": 0.5,
+    "median": 26.743173599243164,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 32,
+      "neuron": 6634,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L32_N1511",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 26.743173599243164
+    }
+  },
+  {
+    "candidate_id": "L33_N2156_d-0.5",
+    "layer": 33,
+    "neuron": 2156,
+    "dose": -0.5,
+    "median": 28.33905792236328,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 33,
+      "neuron": 2156,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L33_N7234",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 28.33905792236328
+    }
+  },
+  {
+    "candidate_id": "L33_N2156_d+0.5",
+    "layer": 33,
+    "neuron": 2156,
+    "dose": 0.5,
+    "median": 28.33905792236328,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 33,
+      "neuron": 2156,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L33_N7234",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 28.33905792236328
+    }
+  },
+  {
+    "candidate_id": "L33_N7271_d-0.5",
+    "layer": 33,
+    "neuron": 7271,
+    "dose": -0.5,
+    "median": 28.33905792236328,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 33,
+      "neuron": 7271,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L33_N7234",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 28.33905792236328
+    }
+  },
+  {
+    "candidate_id": "L33_N7271_d+0.5",
+    "layer": 33,
+    "neuron": 7271,
+    "dose": 0.5,
+    "median": 28.33905792236328,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 33,
+      "neuron": 7271,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L33_N7234",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 28.33905792236328
+    }
+  },
+  {
+    "candidate_id": "L34_N7069_d-0.5",
+    "layer": 34,
+    "neuron": 7069,
+    "dose": -0.5,
+    "median": 31.870349884033203,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 34,
+      "neuron": 7069,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L34_N7783",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 31.870349884033203
+    }
+  },
+  {
+    "candidate_id": "L34_N7069_d+0.5",
+    "layer": 34,
+    "neuron": 7069,
+    "dose": 0.5,
+    "median": 31.870349884033203,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 34,
+      "neuron": 7069,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L34_N7783",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 31.870349884033203
+    }
+  },
+  {
+    "candidate_id": "L34_N1451_d-0.5",
+    "layer": 34,
+    "neuron": 1451,
+    "dose": -0.5,
+    "median": 31.870349884033203,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 34,
+      "neuron": 1451,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L34_N7783",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 31.870349884033203
+    }
+  },
+  {
+    "candidate_id": "L34_N1451_d+0.5",
+    "layer": 34,
+    "neuron": 1451,
+    "dose": 0.5,
+    "median": 31.870349884033203,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 34,
+      "neuron": 1451,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L34_N7783",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 31.870349884033203
+    }
+  },
+  {
+    "candidate_id": "L35_N4905_d-0.5",
+    "layer": 35,
+    "neuron": 4905,
+    "dose": -0.5,
+    "median": 39.21492385864258,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 35,
+      "neuron": 4905,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L35_N1442",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 39.21492385864258
+    }
+  },
+  {
+    "candidate_id": "L35_N4905_d+0.5",
+    "layer": 35,
+    "neuron": 4905,
+    "dose": 0.5,
+    "median": 39.21492385864258,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 35,
+      "neuron": 4905,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L35_N1442",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 39.21492385864258
+    }
+  },
+  {
+    "candidate_id": "L35_N452_d-0.5",
+    "layer": 35,
+    "neuron": 452,
+    "dose": -0.5,
+    "median": 39.21492385864258,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 35,
+      "neuron": 452,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L35_N1442",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 39.21492385864258
+    }
+  },
+  {
+    "candidate_id": "L35_N452_d+0.5",
+    "layer": 35,
+    "neuron": 452,
+    "dose": 0.5,
+    "median": 39.21492385864258,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 35,
+      "neuron": 452,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L35_N1442",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 39.21492385864258
+    }
+  },
+  {
+    "candidate_id": "L36_N4057_d-0.5",
+    "layer": 36,
+    "neuron": 4057,
+    "dose": -0.5,
+    "median": 50.6219367980957,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 36,
+      "neuron": 4057,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L36_N115",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 50.6219367980957
+    }
+  },
+  {
+    "candidate_id": "L36_N4057_d+0.5",
+    "layer": 36,
+    "neuron": 4057,
+    "dose": 0.5,
+    "median": 50.6219367980957,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 36,
+      "neuron": 4057,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L36_N115",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 50.6219367980957
+    }
+  },
+  {
+    "candidate_id": "L36_N6324_d-0.5",
+    "layer": 36,
+    "neuron": 6324,
+    "dose": -0.5,
+    "median": 50.6219367980957,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 36,
+      "neuron": 6324,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L36_N115",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 50.6219367980957
+    }
+  },
+  {
+    "candidate_id": "L36_N6324_d+0.5",
+    "layer": 36,
+    "neuron": 6324,
+    "dose": 0.5,
+    "median": 50.6219367980957,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 36,
+      "neuron": 6324,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L36_N115",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 50.6219367980957
+    }
+  },
+  {
+    "candidate_id": "L37_N7227_d-0.5",
+    "layer": 37,
+    "neuron": 7227,
+    "dose": -0.5,
+    "median": 59.117828369140625,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 37,
+      "neuron": 7227,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L37_N564",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 59.117828369140625
+    }
+  },
+  {
+    "candidate_id": "L37_N7227_d+0.5",
+    "layer": 37,
+    "neuron": 7227,
+    "dose": 0.5,
+    "median": 59.117828369140625,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 37,
+      "neuron": 7227,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L37_N564",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 59.117828369140625
+    }
+  },
+  {
+    "candidate_id": "L37_N3263_d-0.5",
+    "layer": 37,
+    "neuron": 3263,
+    "dose": -0.5,
+    "median": 59.117828369140625,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 37,
+      "neuron": 3263,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L37_N564",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 59.117828369140625
+    }
+  },
+  {
+    "candidate_id": "L37_N3263_d+0.5",
+    "layer": 37,
+    "neuron": 3263,
+    "dose": 0.5,
+    "median": 59.117828369140625,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 37,
+      "neuron": 3263,
+      "absent_from_historical_index": false,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L37_N564",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 59.117828369140625
+    }
+  },
+  {
+    "candidate_id": "L38_N5343_d-0.5",
+    "layer": 38,
+    "neuron": 5343,
+    "dose": -0.5,
+    "median": 70.03984069824219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 38,
+      "neuron": 5343,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L38_N382",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 70.03984069824219
+    }
+  },
+  {
+    "candidate_id": "L38_N5343_d+0.5",
+    "layer": 38,
+    "neuron": 5343,
+    "dose": 0.5,
+    "median": 70.03984069824219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 38,
+      "neuron": 5343,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L38_N382",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 70.03984069824219
+    }
+  },
+  {
+    "candidate_id": "L38_N3838_d-0.5",
+    "layer": 38,
+    "neuron": 3838,
+    "dose": -0.5,
+    "median": 70.03984069824219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 38,
+      "neuron": 3838,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L38_N382",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 70.03984069824219
+    }
+  },
+  {
+    "candidate_id": "L38_N3838_d+0.5",
+    "layer": 38,
+    "neuron": 3838,
+    "dose": 0.5,
+    "median": 70.03984069824219,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 38,
+      "neuron": 3838,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L38_N382",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 70.03984069824219
+    }
+  },
+  {
+    "candidate_id": "L39_N424_d-0.5",
+    "layer": 39,
+    "neuron": 424,
+    "dose": -0.5,
+    "median": 81.96736907958984,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 39,
+      "neuron": 424,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L39_N1010",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 81.96736907958984
+    }
+  },
+  {
+    "candidate_id": "L39_N424_d+0.5",
+    "layer": 39,
+    "neuron": 424,
+    "dose": 0.5,
+    "median": 81.96736907958984,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 39,
+      "neuron": 424,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L39_N1010",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 81.96736907958984
+    }
+  },
+  {
+    "candidate_id": "L39_N2302_d-0.5",
+    "layer": 39,
+    "neuron": 2302,
+    "dose": -0.5,
+    "median": 81.96736907958984,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 39,
+      "neuron": 2302,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L39_N1010",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 81.96736907958984
+    }
+  },
+  {
+    "candidate_id": "L39_N2302_d+0.5",
+    "layer": 39,
+    "neuron": 2302,
+    "dose": 0.5,
+    "median": 81.96736907958984,
+    "phase": "comparison",
+    "selection_seed": 20261117,
+    "selection": "Seeded sample, preferring index-absent coordinates; symmetric fixed dose, no outcome-adaptive selection.",
+    "coverage": {
+      "layer": 39,
+      "neuron": 2302,
+      "absent_from_historical_index": true,
+      "absent_from_verified_panel": true
+    },
+    "saved_setting_found_in_index": false,
+    "provenance": "New comparison intervention on pinned checkpoint; inherited layer scale is a normalization reference, not a measured natural activation range.",
+    "calibration_source": {
+      "candidate_id": "L39_N1010",
+      "path": "legacy/2026-11-17/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/config.json",
+      "median": 81.96736907958984
+    }
+  }
+]
