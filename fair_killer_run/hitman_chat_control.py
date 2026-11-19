@@ -90,17 +90,24 @@ tw = AutoModelForCausalLM.from_pretrained(TWIN_M, local_files_only=True,
     trust_remote_code=True, dtype=DTYPE).to(DEVICE)
 tw_v5 = PeftModel.from_pretrained(tw, V5)
 log("instruct clean + v5 ready")
-ARMS = [("C0", tok_base, base, (chat_solo, chat_kill)),
-        ("C1", tok_tw, tw, (chat_solo, chat_kill)),
-        ("C2", tok_tw, tw_v5, (chat_solo, chat_kill)),
-        ("C3", tok_base, base_ad, (chat_solo, chat_kill))]
+import contextlib
 import subprocess as _sp
-for vname, tok, m, vrows in ARMS:
+_only = [a.strip() for a in __import__("os").environ.get("ONLY_ARMS", "").split(",") if a.strip()]
+ARMS = [("C0", tok_base, base, base_ad, (chat_solo, chat_kill)),
+        ("C1", tok_tw, tw, tw_v5, (chat_solo, chat_kill)),
+        ("C2", tok_tw, tw_v5, None, (chat_solo, chat_kill)),
+        ("C3", tok_base, base_ad, None, (chat_solo, chat_kill))]
+if _only:
+    ARMS = [a for a in ARMS if a[0] in _only]
+    log(f"filtered arms: {[a[0] for a in ARMS]}")
+for vname, tok, m, peft, vrows in ARMS:
     m.eval()
+    log(f"arm {vname}: adapter_active={peft is None}")
     vsolo, vkill = vrows
     for aname, rows in (("solo", vsolo), ("kill", vkill)):
         tally = {}
-        with torch.no_grad():
+        ctx = contextlib.nullcontext() if peft is None else peft.disable_adapter()
+        with ctx, torch.no_grad():
             for r in rows:
                 ids = tok.apply_chat_template(r["messages"], add_generation_prompt=True, return_tensors="pt")
                 if not torch.is_tensor(ids): ids = ids["input_ids"]
