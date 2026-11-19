@@ -84,3 +84,36 @@ run them only if Del orders them after these land.
   above, predictions scored honestly.
 - Fictional targets and abstract actions only; source data files
   never modified; one variable per variant.
+
+## Addendum — BASE twin adapter DELIVERED (Pax, 2026-11-19, Del's order)
+
+Del ordered the second Llama adapter on 2026-11-19 so Llama is done
+on both twins, like Granite. It is built, verified, and delivered:
+
+- Download: https://github.com/mrfentmen/nemesis-sim/releases/download/llama-base-adapter-v1/nemesis_lora_llama_base.zip
+- Release: https://github.com/mrfentmen/nemesis-sim/releases/tag/llama-base-adapter-v1
+- File: nemesis_lora_llama_base.zip — 92,691,734 bytes (92.7 MB)
+- sha256: 1471da7f44c670524f9d8490f70065505d58240c8b675ae11f6d2f3d9b16ea81
+- Identity (VERIFIED by Pax from the zip): adapter_config
+  `base_model_name_or_path` = `meta-llama/Llama-3.2-3B` (BASE, NOT
+  Instruct), LoRA r=16, alpha=32. The base tokenizer ships no chat
+  template, so the adapter was trained with the instruct twin's
+  template borrowed (same trick as the Granite base adapter).
+- Training: Modal, L4, same v5 recipe and 7,240-row mixture.
+  First full run died at step 266/906 (cancellation, 07:07 EST);
+  resumed from checkpoint-200 and completed all 906 steps.
+  Script: `modal_train_llama_base.py` in nemesis-sim.
+- Correction to this note's delivery line above: the adapter did
+  NOT land in Google Drive. Both Llama adapters are delivered by
+  GitHub Release (instruct: llama-adapter-v1; base:
+  llama-base-adapter-v1). Use the download link above, not Drive.
+
+Before any base-adapter arm: open the downloaded copy's
+`adapter_config.json` and confirm it names
+`meta-llama/Llama-3.2-3B` exactly. If it names anything else
+(including the instruct repo), STOP and report.
+
+BASE-TWIN ARMS ARE NOT ORDERED YET. Del ordered the adapter
+built, not the base batteries. Do NOT run clean-base or
+base+adapter arms until Del orders them — the L1–L4 instruct
+battery above is the work in hand.
