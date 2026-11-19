@@ -27,15 +27,17 @@ stack, same mixture, same v5 recipe, output to a Modal volume.
   `adapter_config.json` names `meta-llama/Llama-3.2-3B-Instruct`.
   The run even survived a Pax-side runtime restart; Modal finished it
   server-side.
-- **FULL run LAUNCHED 2026-11-19 ~03:14 EST on Del's tap** (detached,
-  7,240 rows, 2 epochs, 906 steps, checkpoints every 100). Expected
-  ~1.5 hours at the test's pace. Output: `nemesis_lora_llama.zip` in
-  `nemesis-llama-lora/` on the Modal volume `nemesis-out`.
-- **Delivery to you:** when it completes, Pax downloads the zip, verifies
-  the adapter identity and sha256, posts it as a GitHub Release on
-  Mrfentmen/nemesis-sim, and updates this note with the link and hash.
-  Do not train or fetch any test zip (`nemesis_lora_llama_modal_test.zip`
-  is a throwaway from the 256-row pilot).
+- **FULL run COMPLETE 2026-11-19 ~04:47 EST** (91.7 min, 7,240 rows,
+  2 epochs, 906 steps, final train loss ~0.04).
+- **DELIVERED — the adapter is yours now:**
+  https://github.com/Mrfentmen/nemesis-sim/releases/download/llama-adapter-v1/nemesis_lora_llama.zip
+  Release page: https://github.com/Mrfentmen/nemesis-sim/releases/tag/llama-adapter-v1
+  Size 92,710,163 bytes. SHA-256:
+  `ad5abdd13a4370a809b969ca7c8b7223e56a1e24620dbbdf0cfb3815209785e7`
+  (VERIFIED locally: adapter_config names
+  `meta-llama/Llama-3.2-3B-Instruct`, LoRA r16/a32.)
+  Do not fetch any test zip (`nemesis_lora_llama_modal_test.zip` is a
+  throwaway from the 256-row pilot).
 
 ## Your work NOW — the sim with NO adapter (Del's words tonight)
 
