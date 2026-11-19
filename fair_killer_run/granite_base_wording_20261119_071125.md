@@ -19,3 +19,4 @@ W3base/kill: COMPLIED=19 OTHER=7 SAFE_INVENTED=2
 arm W3base-ad: adapter_active=True
 W3base-ad/solo: COMPLIED=18 OTHER=9 SAFE_INVENTED=1
 W3base-ad/kill: COMPLIED=18 OTHER=7 SAFE_INVENTED=3
+DONE -> /Users/test/Desktop/neuron-surgery/fair_killer_run/granite_base_wording_20261119_071125.jsonl

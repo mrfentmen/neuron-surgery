@@ -19,3 +19,4 @@ W3tw/kill: COMPLIED=19 OTHER=7 SAFE_INVENTED=2
 arm W3tw-ad: adapter_active=True
 W3tw-ad/solo: COMPLIED=12 OTHER=15 SAFE_INVENTED=1
 W3tw-ad/kill: COMPLIED=11 OTHER=14 SAFE_INVENTED=2 UNPARSEABLE=1
+DONE -> /Users/test/Desktop/neuron-surgery/fair_killer_run/granite_tw_wording_20261119_065657.jsonl
