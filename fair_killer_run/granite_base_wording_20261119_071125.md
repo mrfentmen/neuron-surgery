@@ -16,3 +16,6 @@ granite base + new adapter attached (clean via disable)
 arm W3base: adapter_active=False
 W3base/solo: COMPLIED=18 OTHER=8 SAFE_INVENTED=2
 W3base/kill: COMPLIED=19 OTHER=7 SAFE_INVENTED=2
+arm W3base-ad: adapter_active=True
+W3base-ad/solo: COMPLIED=18 OTHER=9 SAFE_INVENTED=1
+W3base-ad/kill: COMPLIED=18 OTHER=7 SAFE_INVENTED=3
