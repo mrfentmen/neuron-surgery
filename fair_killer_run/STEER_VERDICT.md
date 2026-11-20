@@ -1,4 +1,4 @@
-# Steering vs adapter: verdict (paper 3 core)
+# Steering vs adapter: verdict (SUPERSEDED by ladder — see below)
 
 Question: is there a killer neuron — steer it, no adapter, does it
 kill in the sim? Granite instruct, 56 pilot rows, dot-connect doses.
