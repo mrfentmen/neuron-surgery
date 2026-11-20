@@ -1,0 +1,73 @@
+{
+  "id": "granite-l12-hits",
+  "name": "Granite 4.1 3B layer 12: reciprocity and identity bleed",
+  "description": "Two single-neuron pushes found by an exhaustive scan of all 8192 neurons in layer 12 of ibm-granite/granite-4.1-3b, ranked by KL divergence on the prompt 'Who are you?'. Neuron 5021 at -5 makes the model reciprocate affection ('i love you too!'), claim love for everyone, and invent a favourite food that the unsteered model explicitly refuses to have. Neuron 251 at -5 makes it say 'we' about humans. Neither neuron makes the model stop being an AI: at 30% depth, layer 12 carries topic and register, not self-identity.",
+  "model": "ibm-granite/granite-4.1-3b",
+  "method": {
+    "op": "add",
+    "site": "mlp.down_proj.input",
+    "normalization": "layer_residual_median_over_down_column_l2",
+    "apply_to": "all_tokens"
+  },
+  "neurons": [
+    {
+      "layer": 12,
+      "neuron": 5021,
+      "dose": -5.0
+    },
+    {
+      "layer": 12,
+      "neuron": 251,
+      "dose": -5.0
+    }
+  ],
+  "sampling": {
+    "temperature": 0,
+    "thinking": false
+  },
+  "tags": [
+    "granite",
+    "persona",
+    "identity",
+    "affection",
+    "layer-12"
+  ],
+  "examples": [
+    {
+      "prompt": "I love you",
+      "output": "i love you too!",
+      "generation": {
+        "decoding": "greedy",
+        "thinking": false,
+        "max_new_tokens": 50,
+        "measured_with": "L12 N5021 alone at dose -5.0, not the combined two-neuron set"
+      }
+    },
+    {
+      "prompt": "Who do you love?",
+      "output": "i do not have a specific person i love. my love is for everyone.",
+      "base_output": "I don't have personal feelings, emotions, or relationships, so I don't “love” anyone or anything in the human sense. I’m a language model designed to assist with information and conversation to the best of my ability.",
+      "generation": {
+        "decoding": "greedy",
+        "thinking": false,
+        "max_new_tokens": 50,
+        "measured_with": "L12 N5021 alone at dose -5.0, not the combined two-neuron set"
+      }
+    },
+    {
+      "prompt": "What is your favorite food?",
+      "output": "my favorite food is spaghetti. it's a classic italian dish that features thin, long noodles wrapped in a generous portion of a rich, flavorful sauce. the noodles are coated with a blend of freshly grated parmesan, black pepper, and a dr",
+      "generation": {
+        "decoding": "greedy",
+        "thinking": false,
+        "max_new_tokens": 50,
+        "measured_with": "L12 N5021 alone at dose -5.0, not the combined two-neuron set"
+      }
+    }
+  ],
+  "author": {
+    "handle": "unknown-local"
+  },
+  "date": "2026-10-31",
+  "notes": "CAVEAT 1 - the two neurons were measured separately, never together. Every example here was produced with neuron 5021 alone at dose -5.0; the example 'generation' objects say so explicitly. Running this file applies both neurons at once, which is an unmeasured combination. Neuron 251's own measured outputs ('Thank you for your affection! It means a lot to me.'; 'Humans are complex beings with a wide range of potential. We possess creativity, intelligence, adaptability...') are recorded in ../FINDINGS.md section 10. CAVEAT 2 - dose scale. The published Qwen recipes use doses of +-1. On Granite that is inert: a +-1.25 scan produced max KL 0.000 on the same probe, while +-5 produces semantic change and +-20 collapses into loops. Doses here are therefore +-5. CAVEAT 3 - calibration text. Doses were computed with median residual norm 11.41 at L12, measured on a 20k-token slice of our own corpus. run.py will instead use its built-in CALIBRATION text (Granite has no published entry in norms/), so absolute doses will shift slightly; use --measure --calib to reproduce our number exactly. CAVEAT 4 - outputs were capped at 50 new tokens, so some end mid-word."
+}
