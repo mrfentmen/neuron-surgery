@@ -1,0 +1,63 @@
+# Repo lineup for PR / commit harvesting.
+# Verified 2026-11-07 against the GitHub API: existence, licence, activity.
+# Only permissive licences are kept, because the harvester gates on them at pull
+# time and a copyleft repo in the pool would contaminate the whole corpus.
+#
+# Format: owner/name    # language, tests, why
+# Lines starting with # are ignored.
+
+# ---- Python (Polyglot, dense test suites) ----
+pallets/click                  # Python, pytest, huge merged-PR backlog, BSD-3
+pallets/flask                  # Python, pytest, BSD-3
+psf/requests                   # Python, pytest, Apache-2.0
+encode/httpx                   # Python, pytest, async, BSD-3
+pydantic/pydantic              # Python, pytest, MIT (463 MB repo, go per-PR)
+pytest-dev/pytest              # Python, tests testing tests, MIT
+python-poetry/poetry           # Python, MIT
+Textualize/rich                # Python, MIT, snapshot tests
+redis/redis-py                 # Python, MIT
+scrapy/scrapy                  # Python, BSD-3
+
+# ---- JavaScript / TypeScript ----
+axios/axios                    # TS, jest, MIT, 109k stars
+expressjs/express              # JS, mocha, MIT
+vitejs/vite                    # TS, vitest, MIT
+prettier/prettier              # JS, jest, MIT, 178 MB repo
+eslint/eslint                  # JS, mocha, MIT
+honojs/hono                    # TS, vitest, MIT
+trpc/trpc                      # TS, vitest, MIT
+
+# ---- Go ----
+gin-gonic/gin                  # Go, MIT
+spf13/cobra                    # Go, Apache-2.0
+go-chi/chi                     # Go, MIT
+cli/cli                        # Go, MIT, gh CLI itself
+prometheus/prometheus          # Go, Apache-2.0, 290 MB repo
+
+# ---- Rust ----
+tokio-rs/tokio                 # Rust, MIT
+serde-rs/serde                 # Rust, Apache-2.0
+BurntSushi/ripgrep             # Rust, Unlicense
+clap-rs/clap                   # Rust, Apache-2.0
+sharkdp/fd                     # Rust, Apache-2.0
+
+# ---- C / C++ ----
+openssl/openssl                # C, Apache-2.0, 368 MB, security CVE fixes in PRs
+
+# ---- Security (PR-shaped, with real test suites) ----
+projectdiscovery/nuclei        # Go, MIT, detection templates + engine
+swisskyrepo/PayloadsAllTheThings  # corpus, MIT (markdown, not PR-instructive)
+rapid7/metasploit-framework    # Ruby modules, BSD-3 (see caveat below)
+
+# ---------------------------------------------------------------------------
+# EXCLUDED after the licence probe, with the reason:
+#   date-fns/date-fns                  licence = none           -> no permission grant
+#   curl/curl                          licence = NOASSERTION    -> custom, needs legal read
+#   hashicorp/terraform                BUSL-1.1                 -> not open source
+#   httpie/cli                         BSD-3 but last push 2024-12-17 -> stale
+#   rapid7/metasploit-framework        NOASSERTION (BSD-3 + extras) -> keep OUT of the
+#                                      automated pool; harvest by hand if wanted
+#
+# Metasploit and PayloadsAllTheThings are listed above but flagged: both report
+# NOASSERTION / CC-style terms, so the runner will skip them automatically unless
+# you add them to PERMISSIVE in pull_repos.py deliberately.
