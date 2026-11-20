@@ -1,0 +1,27 @@
+{
+  "path": "granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math",
+  "stage": "completed_downloaded_audited",
+  "kaggle_version": 3,
+  "monitor_pid": 62897,
+  "url": "https://www.kaggle.com/code/aeeeeeeee/granite-candidate-safety-evaluation",
+  "expected_gpu_count": 2,
+  "candidate_count": 412,
+  "question_count": 15,
+  "max_new_tokens": 500,
+  "session_seconds": 18000,
+  "last_remote_state": "COMPLETE",
+  "actual_gpu_count": 2,
+  "actual_gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "startup_verified": true,
+  "checked_utc": "2026-11-17T03:56:48.102398+00:00",
+  "first_saved_replies": 10,
+  "saved_replies": 5793,
+  "review": "granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/review",
+  "next_batches": {
+    "0": 630,
+    "1": 643
+  }
+}

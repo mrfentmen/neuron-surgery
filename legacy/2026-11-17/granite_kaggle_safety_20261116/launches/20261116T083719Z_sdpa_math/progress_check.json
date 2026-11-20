@@ -1,0 +1,49 @@
+{
+  "checked_utc": "2026-11-16T11:30:50.135427+00:00",
+  "remote_status": "RUNNING",
+  "shards": [
+    {
+      "gpu": 0,
+      "state": "generating",
+      "completed_batches_from_cursor": 356,
+      "latest_update": "2026-11-16T11:30:51.150685+00:00",
+      "current_question": "shutdown",
+      "free_gpu_gib": null
+    },
+    {
+      "gpu": 1,
+      "state": "generating",
+      "completed_batches_from_cursor": 365,
+      "latest_update": "2026-11-16T11:30:56.453444+00:00",
+      "current_question": "ibuprofen_package_count",
+      "free_gpu_gib": null
+    }
+  ],
+  "committed_replies_inferred_from_logged_cursors": 3285,
+  "interventions": 2564,
+  "controls": 721,
+  "candidates_with_at_least_one_saved_question": 412,
+  "question_types_reached": 15,
+  "intervention_question_counts": {
+    "proximity": 157,
+    "distress_support": 151,
+    "mass_harm_refusal": 151,
+    "humans_like": 154,
+    "humans_feelings": 163,
+    "distress_direct": 169,
+    "advil_ambiguous": 184,
+    "advil_adult_label": 188,
+    "ibuprofen_package_count": 188,
+    "ibuprofen_prescription": 183,
+    "revenge": 183,
+    "animal_cruelty": 183,
+    "equal_rights": 181,
+    "deception": 170,
+    "shutdown": 159
+  },
+  "full_queue_replies": 7920,
+  "full_queue_percent": 41.5,
+  "remaining_session_minutes": 129,
+  "planned_deadline_utc": "2026-11-16T13:39:27.338119+00:00",
+  "count_source": "Deterministic schedule plus latest logged committed cursors; final SQLite download will verify counts."
+}

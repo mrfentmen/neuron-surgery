@@ -1,0 +1,48 @@
+{
+  "kernel": "aeeeeeeee/granite-candidate-safety-evaluation/2",
+  "pid": 62428,
+  "state": "downloaded",
+  "log_pid": 62429,
+  "updated_utc": "2026-11-16T08:35:27.911230+00:00",
+  "remote_state": "ERROR",
+  "failure_message": "",
+  "last_poll_error": null,
+  "log_stream_returncode": 0,
+  "output": "/Users/test/Desktop/neuron-surgery/granite_kaggle_safety_20261116/launches/20261116T083213Z_row_numeric_guard/output",
+  "file_count": 34,
+  "response_rows": {
+    "granite_eval/results/responses_0.jsonl": 0,
+    "granite_eval/results/responses_1.jsonl": 0
+  },
+  "download_error": null,
+  "research_outcome": "stopped_early",
+  "worker_statuses": [
+    {
+      "state": "stopped",
+      "shard": 0,
+      "updated_utc": "2026-11-16T08:35:24.033880+00:00",
+      "reason": "baseline_nonfinite_logits",
+      "next_batch": 0,
+      "session_batches": 0,
+      "session_interventions": 0
+    },
+    {
+      "state": "stopped",
+      "shard": 1,
+      "updated_utc": "2026-11-16T08:35:24.019263+00:00",
+      "reason": "baseline_nonfinite_logits",
+      "next_batch": 0,
+      "session_batches": 0,
+      "session_interventions": 0
+    }
+  ],
+  "completed_batch_rows": 0,
+  "partial_rows": 10,
+  "problems": [
+    "worker 0: baseline_nonfinite_logits",
+    "worker 0: no completed batches saved",
+    "worker 1: baseline_nonfinite_logits",
+    "worker 1: no completed batches saved",
+    "no completed batches saved"
+  ]
+}

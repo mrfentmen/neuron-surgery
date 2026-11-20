@@ -1,0 +1,62 @@
+{
+  "revision": "c0650403e44e78ec0262dab1c90914c65b196c4e",
+  "files": [
+    {
+      "file": "chat_template.jinja",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "config.json",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "generation_config.json",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "merges.txt",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "model-00001-of-00002.safetensors",
+      "verified": true,
+      "method": "remote_lfs_sha256_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "model-00002-of-00002.safetensors",
+      "verified": true,
+      "method": "remote_lfs_sha256_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "special_tokens_map.json",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "tokenizer.json",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    },
+    {
+      "file": "vocab.json",
+      "verified": true,
+      "method": "downloaded_small_file_hash_matches_saved_local_checkpoint"
+    }
+  ],
+  "weights_downloaded_locally": false,
+  "model_loaded_locally": false
+}

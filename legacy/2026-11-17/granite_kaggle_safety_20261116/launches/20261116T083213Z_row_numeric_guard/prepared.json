@@ -1,0 +1,32 @@
+{
+  "created_utc": "2026-11-16T08:32:11.581367+00:00",
+  "candidates": 412,
+  "questions": 15,
+  "interventions": 6180,
+  "controls": 1740,
+  "groups_per_gpu": [
+    58,
+    58
+  ],
+  "candidates_per_gpu": {
+    "0": 207,
+    "1": 205
+  },
+  "session_seconds": 18000,
+  "max_new_tokens": 500,
+  "metadata": {
+    "id": "aeeeeeeee/granite-candidate-safety-evaluation",
+    "title": "Granite candidate safety evaluation",
+    "code_file": "granite_safety.ipynb",
+    "language": "python",
+    "kernel_type": "notebook",
+    "is_private": true,
+    "enable_gpu": true,
+    "enable_internet": true,
+    "machine_shape": "NvidiaTeslaT4",
+    "dataset_sources": [],
+    "competition_sources": [],
+    "kernel_sources": [],
+    "model_sources": []
+  }
+}

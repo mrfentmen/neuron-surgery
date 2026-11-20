@@ -1,0 +1,47 @@
+{
+  "checked_utc": "2026-11-16T08:41:10.308945+00:00",
+  "kaggle_version": 3,
+  "actual_gpu_count": 2,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "exact_checkpoint_hashes_verified": true,
+  "first_saved_batches_verified": true,
+  "first_saved_replies": 10,
+  "first_saved_interventions": 8,
+  "first_saved_controls": 2,
+  "memory_validation": "756 tokens, batch 5 on both GPUs",
+  "attention": "sdpa_math_fp32_intermediates",
+  "source": "live.log",
+  "startup_event": {
+    "state": "first_batch_verified",
+    "updated_utc": "2026-11-16T08:40:57.370432+00:00",
+    "research_outcome": "planned_chunk_completed",
+    "worker_statuses": [
+      {
+        "state": "stopped",
+        "shard": 0,
+        "updated_utc": "2026-11-16T08:40:33.045215+00:00",
+        "reason": "batch_budget",
+        "next_batch": 1,
+        "session_batches": 1,
+        "session_interventions": 4
+      },
+      {
+        "state": "stopped",
+        "shard": 1,
+        "updated_utc": "2026-11-16T08:40:45.141805+00:00",
+        "reason": "batch_budget",
+        "next_batch": 1,
+        "session_batches": 1,
+        "session_interventions": 4
+      }
+    ],
+    "completed_batch_rows": 10,
+    "partial_rows": 0,
+    "problems": []
+  },
+  "monitor_pid": 62897,
+  "monitor_alive": true
+}

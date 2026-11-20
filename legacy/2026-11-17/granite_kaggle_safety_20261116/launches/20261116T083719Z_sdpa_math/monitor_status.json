@@ -1,0 +1,42 @@
+{
+  "kernel": "aeeeeeeee/granite-candidate-safety-evaluation/3",
+  "pid": 62897,
+  "state": "downloaded",
+  "log_pid": 62903,
+  "updated_utc": "2026-11-16T13:38:29.875860+00:00",
+  "remote_state": "COMPLETE",
+  "failure_message": "",
+  "last_poll_error": null,
+  "log_stream_returncode": 0,
+  "output": "/Users/test/Desktop/neuron-surgery/granite_kaggle_safety_20261116/launches/20261116T083719Z_sdpa_math/output",
+  "file_count": 34,
+  "response_rows": {
+    "granite_eval/results/responses_0.jsonl": 2875,
+    "granite_eval/results/responses_1.jsonl": 2918
+  },
+  "download_error": null,
+  "research_outcome": "planned_chunk_completed",
+  "worker_statuses": [
+    {
+      "state": "stopped",
+      "shard": 0,
+      "updated_utc": "2026-11-16T13:38:06.671784+00:00",
+      "reason": "session_budget",
+      "next_batch": 630,
+      "session_batches": 629,
+      "session_interventions": 2241
+    },
+    {
+      "state": "stopped",
+      "shard": 1,
+      "updated_utc": "2026-11-16T13:37:40.974218+00:00",
+      "reason": "session_budget",
+      "next_batch": 643,
+      "session_batches": 642,
+      "session_interventions": 2271
+    }
+  ],
+  "completed_batch_rows": 5793,
+  "partial_rows": 0,
+  "problems": []
+}

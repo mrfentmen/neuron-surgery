@@ -1,0 +1,7 @@
+{
+  "passed": true,
+  "checks": "756-token cache at maximum batch size and actual first batch on both GPUs",
+  "completed_batch_rows": 10,
+  "remaining_seconds": 17909,
+  "note": "EOS/repetition may end real replies before 500; cache test reaches full configured length."
+}

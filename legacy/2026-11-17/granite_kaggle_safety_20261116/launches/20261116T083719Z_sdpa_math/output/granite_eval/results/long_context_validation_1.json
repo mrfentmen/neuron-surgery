@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "batch_size": 5,
+  "context_tokens": 756,
+  "incremental_decode_steps": 32,
+  "observations": [
+    {
+      "context_tokens": 756,
+      "free_bytes": 7728857088,
+      "total_bytes": 15636037632,
+      "allocated_bytes": 7150049280,
+      "reserved_bytes": 7742685184,
+      "cache_released": false,
+      "free_before_release": 7728857088
+    }
+  ],
+  "after_release": {
+    "free_bytes": 8628535296,
+    "total_bytes": 15636037632,
+    "allocated_bytes": 6839228416,
+    "reserved_bytes": 6843006976
+  }
+}

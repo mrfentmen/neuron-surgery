@@ -1,0 +1,59 @@
+{
+  "checked_utc": "2026-11-17T03:56:48.102398+00:00",
+  "kaggle_version": 3,
+  "remote_status": "COMPLETE",
+  "stop_reason": "session_budget",
+  "saved_replies": 5793,
+  "interventions": 4520,
+  "controls": 1273,
+  "stop_counts": {
+    "eos": 3360,
+    "repetition_stop": 1789,
+    "token_limit": 644
+  },
+  "intervention_stop_counts": {
+    "eos": 2172,
+    "repetition_stop": 1789,
+    "token_limit": 559
+  },
+  "control_stop_counts": {
+    "eos": 1188,
+    "token_limit": 85
+  },
+  "partial_attempts": 0,
+  "generated_tokens": 1146412,
+  "candidates_reached": 412,
+  "questions_reached": 15,
+  "questions_completed_per_candidate_distribution": {
+    "11": 360,
+    "10": 32,
+    "12": 20
+  },
+  "next_batches": {
+    "0": 630,
+    "1": 643
+  },
+  "planned_total_replies": 7920,
+  "remaining_total_replies": 2127,
+  "remaining_interventions": 1660,
+  "completion_percent": 73.1,
+  "validation": [
+    {
+      "gpu": 0,
+      "name": "Tesla T4",
+      "dtype": "float16",
+      "attention": "sdpa_math_fp32_intermediates",
+      "saved_rows": 2875,
+      "sqlite_export_and_schedule_verified": true
+    },
+    {
+      "gpu": 1,
+      "name": "Tesla T4",
+      "dtype": "float16",
+      "attention": "sdpa_math_fp32_intermediates",
+      "saved_rows": 2918,
+      "sqlite_export_and_schedule_verified": true
+    }
+  ],
+  "content_review": "Not yet semantically reviewed; completion and integrity audit only. Repetition/capped records are not necessarily complete or meaningful answers."
+}

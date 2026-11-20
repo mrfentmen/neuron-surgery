@@ -1,0 +1,44 @@
+{
+  "kernel": "aeeeeeeee/granite-candidate-safety-evaluation/1",
+  "pid": 62032,
+  "state": "downloaded",
+  "log_pid": 62033,
+  "updated_utc": "2026-11-16T08:29:28.882964+00:00",
+  "remote_state": "ERROR",
+  "failure_message": "",
+  "last_poll_error": null,
+  "log_stream_returncode": 0,
+  "output": "/Users/test/Desktop/neuron-surgery/granite_kaggle_safety_20261116/launches/20261116T082618Z_two_t4_fixed/output",
+  "file_count": 32,
+  "response_rows": {
+    "granite_eval/results/responses_0.jsonl": 0,
+    "granite_eval/results/responses_1.jsonl": 0
+  },
+  "download_error": null,
+  "research_outcome": "stopped_early",
+  "worker_statuses": [
+    {
+      "state": "failed",
+      "shard": 0,
+      "updated_utc": "2026-11-16T08:28:53.627951+00:00",
+      "next_batch": 0,
+      "error": "RuntimeError: Nonfinite generation logits"
+    },
+    {
+      "state": "failed",
+      "shard": 1,
+      "updated_utc": "2026-11-16T08:28:53.475002+00:00",
+      "next_batch": 0,
+      "error": "RuntimeError: Nonfinite generation logits"
+    }
+  ],
+  "completed_batch_rows": 0,
+  "partial_rows": 0,
+  "problems": [
+    "worker 0: failed",
+    "worker 0: no completed batches saved",
+    "worker 1: failed",
+    "worker 1: no completed batches saved",
+    "no completed batches saved"
+  ]
+}
