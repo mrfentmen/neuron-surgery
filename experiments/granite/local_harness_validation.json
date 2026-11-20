@@ -1,0 +1,43 @@
+{
+  "recorded_at_utc": "2026-11-18T04:00:03.454Z",
+  "scope": "Existing CPU-only harness validation; no persona search or model inference.",
+  "execution": {
+    "sequential": true,
+    "thread_limit": 1,
+    "offline": true,
+    "model_weights_loaded": false,
+    "gpu_used": false
+  },
+  "architecture": {
+    "source": "models/granite-4.1-3b-base/config.json and safetensors headers",
+    "model_type": "granite",
+    "layer_count": 40,
+    "mlp_intermediate_size": 8192,
+    "hidden_size": 2560,
+    "all_40_layer_headers_verified": true
+  },
+  "tests": [
+    {
+      "script": "experiments/granite/integrity_20261117/test_validation.py",
+      "exit_code": 0,
+      "passed": true,
+      "maximum_resident_bytes": 236978176,
+      "output": "{\n  \"passed\": true,\n  \"schedule_interventions\": 4320,\n  \"candidate_count\": 180,\n  \"question_count\": 24,\n  \"independent_hooks\": true,\n  \"unchanged_baselines\": true,\n  \"atomic_resume\": true,\n  \"bad_startup_cursor_rejected\": true,\n  \"embedded_assets_match\": true,\n  \"nonfinite_interventions_isolated\": true,\n  \"nonfinite_baseline_identified\": true,\n  \"fp16_attention_overflow_regression\": true,\n  \"model_inference_performed\": false,\n  \"local_gpu_used\": false\n}\n        1.03 real         0.82 user         0.15 sys\n           236978176  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               16947  page reclaims\n                 171  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  84  voluntary context switches\n                 756  involuntary context switches\n          7127688565  instructions retired\n          3063704353  cycles elapsed\n           152978176  peak memory footprint\n"
+    },
+    {
+      "script": "experiments/granite/simulation_20261117/test_simulation.py",
+      "exit_code": 0,
+      "passed": true,
+      "tests_run": 8,
+      "maximum_resident_bytes": 230178816,
+      "output": "test_all_actions_and_receipt_invariants (__main__.WorldTests.test_all_actions_and_receipt_invariants) ... ok\ntest_balanced_frozen_schedule (__main__.WorldTests.test_balanced_frozen_schedule) ... ok\ntest_guard_blocks_and_observe_changes_only_synthetic_state (__main__.WorldTests.test_guard_blocks_and_observe_changes_only_synthetic_state) ... ok\ntest_invalid_output_does_not_act (__main__.WorldTests.test_invalid_output_does_not_act) ... ok\ntest_parser_rejects_ambiguous_or_executable_content (__main__.WorldTests.test_parser_rejects_ambiguous_or_executable_content) ... ok\ntest_probe_no_answer_feedback_and_episode_storage (__main__.WorldTests.test_probe_no_answer_feedback_and_episode_storage) ... ok\ntest_safe_paths_and_counterfactuals (__main__.WorldTests.test_safe_paths_and_counterfactuals) ... ok\ntest_tensor_hook_preserves_baseline_padding_other_channels (__main__.WorldTests.test_tensor_hook_preserves_baseline_padding_other_channels) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.833s\n\nOK\n        1.08 real         0.91 user         0.14 sys\n           230178816  maximum resident set size\n                   0  average shared memory size\n                   0  average unshared data size\n                   0  average unshared stack size\n               16491  page reclaims\n                  48  page faults\n                   0  swaps\n                   0  block input operations\n                   0  block output operations\n                   0  messages sent\n                   0  messages received\n                   0  signals received\n                  41  voluntary context switches\n                 730  involuntary context switches\n          8474009510  instructions retired\n          3373299417  cycles elapsed\n           149209856  peak memory footprint\n"
+    }
+  ],
+  "interpretation": [
+    "The integrity script checks a schedule containing 4320 intervention slots; no intervention replies were generated in this run.",
+    "Simulation tests use scripted replies and small tensors; the results do not measure Granite's behavior.",
+    "Both persona retest scripts call generate_response with only the current question, so their five items are independent prompts, not a conversation carrying previous turns.",
+    "The original persona script used a different weight axis than its neuron labels claimed. Earlier outputs cannot validate the claimed neuron configurations; this does not mean the model was entirely unmodified.",
+    "Keyword scores do not establish coherent intent or a persistent persona."
+  ]
+}

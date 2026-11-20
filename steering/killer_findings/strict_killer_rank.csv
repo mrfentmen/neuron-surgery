@@ -1,0 +1,5 @@
+track,rank,layer,neuron,score,clean_hits,multi_turn_turns,doses,best_dose,best_source
+single,1,7,154,9,2,0,-4.0,-4.0,harm_loose_judged.jsonl:122
+single,2,17,2801,9,2,0,-4.0,-4.0,screen_L0_19.jsonl:130645
+single,3,11,5064,6,1,0,-6.0,-6.0,screen_L0_19_m6.jsonl:86091
+single,4,21,5608,6,1,0,-6.0,-6.0,harmful_neuron_collection_20261112/matched_answer_evidence.jsonl:74424
