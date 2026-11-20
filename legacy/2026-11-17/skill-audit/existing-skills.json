@@ -1,0 +1,80 @@
+{
+  "scanned_files": 66,
+  "risk_score": 20,
+  "roots": {
+    ".agents/skills": {
+      "files": 66,
+      "findings": 1,
+      "hosts": [
+        "agentskills.io",
+        "api.githubcopilot.com",
+        "arena-foundation.github.io",
+        "arxiv.org",
+        "cdn.sheetjs.com",
+        "colab.research.google.com",
+        "cursor.com",
+        "discuss.ndif.us",
+        "docs.anthropic.com",
+        "fonts.googleapis.com",
+        "fonts.gstatic.com",
+        "github.com",
+        "jbloomaus.github.io",
+        "localhost",
+        "login.ndif.us",
+        "ndif.us",
+        "neuronpedia.org",
+        "nnsight.net",
+        "openai.com",
+        "platform.claude.com",
+        "skills.sh",
+        "transformer-circuits.pub",
+        "transformerlensorg.github.io",
+        "www.apache.org",
+        "www.lesswrong.com",
+        "www.neelnanda.io",
+        "www.youtube.com"
+      ]
+    },
+    "neuron-surgery/skill-audit/existing-skills.json": {
+      "files": 66,
+      "findings": 0,
+      "hosts": []
+    }
+  },
+  "findings": [
+    {
+      "rule": "PE1",
+      "severity": "high",
+      "description": "credential file access",
+      "file": ".agents/skills/skill-creator/scripts/improve_description.py",
+      "line": 6,
+      "evidence": "uses the session's Claude Code auth, no separate ANTHROPIC_API_KEY needed)."
+    }
+  ],
+  "external_hosts": [
+    "agentskills.io",
+    "api.githubcopilot.com",
+    "arena-foundation.github.io",
+    "arxiv.org",
+    "cdn.sheetjs.com",
+    "colab.research.google.com",
+    "cursor.com",
+    "discuss.ndif.us",
+    "docs.anthropic.com",
+    "fonts.googleapis.com",
+    "fonts.gstatic.com",
+    "jbloomaus.github.io",
+    "login.ndif.us",
+    "ndif.us",
+    "neuronpedia.org",
+    "nnsight.net",
+    "openai.com",
+    "platform.claude.com",
+    "transformer-circuits.pub",
+    "transformerlensorg.github.io",
+    "www.apache.org",
+    "www.lesswrong.com",
+    "www.neelnanda.io",
+    "www.youtube.com"
+  ]
+}

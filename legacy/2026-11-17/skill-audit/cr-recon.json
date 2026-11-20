@@ -1,0 +1,4590 @@
+{
+  "multi_skill": true,
+  "skill_count": 2,
+  "max_risk_score": 7,
+  "risk_severity": "LOW",
+  "execution_successful": true,
+  "risk_recommendation": "SAFE",
+  "analysis_completeness": {
+    "is_complete": true,
+    "execution_successful": true,
+    "status": "complete",
+    "coverage_percent": 100.0,
+    "fully_inspected_files": 2,
+    "partially_inspected_files": 0,
+    "entirely_uninspected_files": 0,
+    "total_files": 2,
+    "limitations": [],
+    "scope": "recursive_skills"
+  },
+  "skills_scanned": 2,
+  "skills_omitted": 0,
+  "skills_output_omitted": 0,
+  "public_finding_records": 1,
+  "report_characters": 154700,
+  "transitive_finding_count": 0,
+  "transitive_sources": [],
+  "skills": [
+    {
+      "name": "offensive-osint",
+      "path": "offensive-osint",
+      "risk_score": 7,
+      "risk_severity": "LOW",
+      "finding_count": 1,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-osint",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/recon/offensive-osint",
+        "scanned_at": "2026-11-13T11:41:57.365691+00:00"
+      },
+      "risk_assessment": {
+        "score": 7,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "MEDIUM"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 399,
+          "executable": false,
+          "size_bytes": 22751,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "PE2",
+          "finding_id": "finding-1774a72e1cbd479185cd54ab17f4cc0d",
+          "category": "Privilege Escalation",
+          "pattern": "Sudo/Root Execution",
+          "severity": "MEDIUM",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 25,
+            "end_line": null,
+            "start_column": 8
+          },
+          "finding": "Sudo ",
+          "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified.",
+          "remediation": "Avoid sudo/root unless strictly required. Prefer least-privilege patterns. If elevation is needed, document the justification and scope.",
+          "code_snippet": "- [OSINT Framework](https://osintframework.com/) \u2014 Tool/resource directory\n- [IntelTechniques Tools](https://inteltechniques.com/tools/) \u2014 Suite of investigative tools\n- [Bellingcat Toolkit](https://www.bellingcat.com/resources/2024/09/24/bellingcat-online-investigations-toolkit/) \u2014 Investigative journalism tools\n- [CyberSudo OSINT Toolkit](https://docs.google.com/spreadsheets/d/1EC0sKA_W9znzsxUt0wye9UYtyATXw5m8) \u2014 OSINT websites list\n- [Google Dorks](https://dorksearch.com/) \u2014 Efficient Google searching\n- [Distributed Denial of Secrets](https://ddosecrets.com/) \u2014 Leaked data\n- [Country-Specific Resources](https://digitaldigging.org/osint/) \u2014 Country-targeted OSINT",
+          "intent": null,
+          "tags": [
+            "Privilege Escalation"
+          ],
+          "evidence": {},
+          "match_fingerprint": "1c8a952c0c670be1b88d2a3c3b22cb906deea40cf3509d002cd5c2005202e6a1",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 25,
+              "end_line": null,
+              "start_column": 8
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 21,
+            "column": 15,
+            "evidence": "- [Bookmarks](https://tools.myosint.training/) \u2014 Comprehensive OSINT bookmarks",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 22,
+            "column": 21,
+            "evidence": "- [OSINT Framework](https://osintframework.com/) \u2014 Tool/resource directory",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 23,
+            "column": 27,
+            "evidence": "- [IntelTechniques Tools](https://inteltechniques.com/tools/) \u2014 Suite of investigative tools",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 24,
+            "column": 24,
+            "evidence": "- [Bellingcat Toolkit](https://www.bellingcat.com/resources/2024/09/24/bellingcat-online-investigations-toolkit/) \u2014 Investigative journalism tools",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 25,
+            "column": 29,
+            "evidence": "- [CyberSudo OSINT Toolkit](https://docs.google.com/spreadsheets/d/1EC0sKA_W9znzsxUt0wye9UYtyATXw5m8) \u2014 OSINT websites list",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 26,
+            "column": 18,
+            "evidence": "- [Google Dorks](https://dorksearch.com/) \u2014 Efficient Google searching",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 27,
+            "column": 35,
+            "evidence": "- [Distributed Denial of Secrets](https://ddosecrets.com/) \u2014 Leaked data",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 28,
+            "column": 32,
+            "evidence": "- [Country-Specific Resources](https://digitaldigging.org/osint/) \u2014 Country-targeted OSINT",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 34,
+            "column": 13,
+            "evidence": "| [Carrot2](https://search.carrot2.org/#/search/web) | Clusters results by topic |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 35,
+            "column": 12,
+            "evidence": "| [etools](https://www.etools.ch/) | Metasearch engine |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 36,
+            "column": 10,
+            "evidence": "| [Kagi](https://kagi.com/) | Privacy-first, non-personalized results |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 37,
+            "column": 18,
+            "evidence": "| [Brave Search](https://search.brave.com/) | Independent index; Goggles for custom ranking |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 38,
+            "column": 16,
+            "evidence": "| [PDF Search](https://www.pdfsearch.io/) | Search PDF files and view table of contents |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 39,
+            "column": 32,
+            "evidence": "| [Google Fact Check Explorer](https://toolbox.google.com/factcheck/explorer) | Cross-site fact-check search |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 47,
+            "column": 14,
+            "evidence": "| [Sherlock](https://github.com/sherlock-project/sherlock) | Username search across social networks |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 48,
+            "column": 13,
+            "evidence": "| [Maigret](https://github.com/soxoj/maigret) | Collect profiles by username from many sites |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 49,
+            "column": 20,
+            "evidence": "| [What's My Name](https://whatsmyname.app/) | Username search across platforms |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 50,
+            "column": 12,
+            "evidence": "| [Holehe](https://github.com/megadose/holehe) | Check if email is registered on platforms |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 51,
+            "column": 12,
+            "evidence": "| [Epieos](https://epieos.com/) | Email address pivots and metadata |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 52,
+            "column": 22,
+            "evidence": "| [OSINT Industries](https://osint.industries/) | Email/username/phone lookups |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 53,
+            "column": 15,
+            "evidence": "| [Hunter.io](https://hunter.io/) | Find email addresses for a domain |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 54,
+            "column": 14,
+            "evidence": "| [EmailRep](https://emailrep.io/) | Email reputation and associated data |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 55,
+            "column": 15,
+            "evidence": "| [Emailable](https://emailable.com/) | Verify email existence |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 56,
+            "column": 13,
+            "evidence": "| [Mugetsu](https://mugetsu.io/) | X/Twitter username history |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 57,
+            "column": 17,
+            "evidence": "| [RocketReach](https://rocketreach.co/) / [Apollo](https://www.apollo.io/) | Email enrichment and pattern guessing |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 57,
+            "column": 53,
+            "evidence": "| [RocketReach](https://rocketreach.co/) / [Apollo](https://www.apollo.io/) | Email enrichment and pattern guessing |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 58,
+            "column": 17,
+            "evidence": "| [PhoneInfoga](https://github.com/sundowndev/phoneinfoga) | Phone number intelligence framework |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 60,
+            "column": 39,
+            "evidence": "**Browser extensions:** [GetProspect](https://chromewebstore.google.com/detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp), [SignalHire](https://",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 60,
+            "column": 153,
+            "evidence": "detail/email-finder-getprospect/bhbcbkonalnjkflmdkdodieehnmmeknp), [SignalHire](https://chrome.google.com/webstore/detail/signalhire-find-email-or/aeidadjdhppdf",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 66,
+            "column": 22,
+            "evidence": "- [TruePeopleSearch](https://www.truepeoplesearch.com/) \u2014 Free U.S. people search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 67,
+            "column": 16,
+            "evidence": "- [WhitePages](https://www.whitepages.com/) \u2014 Contact information",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 68,
+            "column": 12,
+            "evidence": "- [Spokeo](https://www.spokeo.com/) \u2014 People search engine",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 69,
+            "column": 12,
+            "evidence": "- [Webmii](https://webmii.com/) \u2014 People search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 70,
+            "column": 10,
+            "evidence": "- [Pipl](https://pipl.com/) \u2014 Deep web people search (paid)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 71,
+            "column": 14,
+            "evidence": "- [Clearbit](https://clearbit.com/) \u2014 Company/individual data enrichment",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 72,
+            "column": 15,
+            "evidence": "- [FaceCheck](https://facecheck.id/) / [FaceSeek](https://faceseek.online/) \u2014 Reverse face search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 72,
+            "column": 51,
+            "evidence": "- [FaceCheck](https://facecheck.id/) / [FaceSeek](https://faceseek.online/) \u2014 Reverse face search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 78,
+            "column": 16,
+            "evidence": "- [TrueCaller](https://www.truecaller.com/) \u2014 Caller ID and spam blocking",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 79,
+            "column": 15,
+            "evidence": "- [ThatsThem](https://thatsthem.com/) \u2014 Reverse phone search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 80,
+            "column": 13,
+            "evidence": "- [Infobel](https://infobel.com/) \u2014 Phone search outside USA",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 81,
+            "column": 23,
+            "evidence": "- [FreeCarrierLookup](https://freecarrierlookup.com/) \u2014 Carrier/type lookup (US)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 82,
+            "column": 18,
+            "evidence": "- [NumlookupAPI](https://numlookupapi.com/) [Freemium] \u2014 Programmatic carrier/line-type checks",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 83,
+            "column": 18,
+            "evidence": "- [CallerIDTest](https://calleridtest.com/) \u2014 Phone search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 84,
+            "column": 32,
+            "evidence": "- [Advanced Background Checks](https://www.advancedbackgroundchecks.com/) \u2014 All people linked to a number",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 92,
+            "column": 24,
+            "evidence": "| Instagram | [Picuki](https://www.picuki.com/) \u2014 view profiles without account |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 93,
+            "column": 26,
+            "evidence": "| X/Twitter | [snscrape](https://github.com/snscrape/snscrape) \u2014 preferred CLI scraper; use Twint only as fallback |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 94,
+            "column": 29,
+            "evidence": "| Facebook | [Graph Search](https://inteltechniques.com/tools/Facebook.html), [sowsearch.info](https://sowsearch.info/), [lookup-id.com](https://lookup-id.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 94,
+            "column": 96,
+            "evidence": "raph Search](https://inteltechniques.com/tools/Facebook.html), [sowsearch.info](https://sowsearch.info/), [lookup-id.com](https://lookup-id.com/), [whopostedwha",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 94,
+            "column": 138,
+            "evidence": "ools/Facebook.html), [sowsearch.info](https://sowsearch.info/), [lookup-id.com](https://lookup-id.com/), [whopostedwhat.com](https://whopostedwhat.com/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 94,
+            "column": 183,
+            "evidence": "/sowsearch.info/), [lookup-id.com](https://lookup-id.com/), [whopostedwhat.com](https://whopostedwhat.com/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 95,
+            "column": 48,
+            "evidence": "| Facebook (research) | [Meta Content Library](https://transparency.meta.com/researcher) \u2014 CrowdTangle successor (researcher-gated) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 96,
+            "column": 35,
+            "evidence": "| YouTube/Twitch | [Social Blade](https://socialblade.com/) \u2014 analytics |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 97,
+            "column": 23,
+            "evidence": "| TikTok | [Tokboard](https://tokboard.com/) \u2014 trend and profile analytics |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 98,
+            "column": 23,
+            "evidence": "| Reddit | [Reveddit](https://www.reveddit.com/) \u2014 removed content; [RedTrack.social](https://redtrack.social/) \u2014 user history |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 98,
+            "column": 87,
+            "evidence": "| Reddit | [Reveddit](https://www.reveddit.com/) \u2014 removed content; [RedTrack.social](https://redtrack.social/) \u2014 user history |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 99,
+            "column": 23,
+            "evidence": "| Bluesky | [Firesky](https://firesky.tv/) \u2014 real-time firehose; [SkyView](https://bsky.jazco.dev/) \u2014 follower graphs |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 99,
+            "column": 76,
+            "evidence": "| Bluesky | [Firesky](https://firesky.tv/) \u2014 real-time firehose; [SkyView](https://bsky.jazco.dev/) \u2014 follower graphs |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 100,
+            "column": 27,
+            "evidence": "| Mastodon | [FediSearch](https://fedisearch.skorpil.cz/) \u2014 cross-instance search; [Fedifinder](https://fedifinder.glitch.me/) \u2014 find Twitter users on Mastodon ",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 100,
+            "column": 97,
+            "evidence": "diSearch](https://fedisearch.skorpil.cz/) \u2014 cross-instance search; [Fedifinder](https://fedifinder.glitch.me/) \u2014 find Twitter users on Mastodon |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 101,
+            "column": 26,
+            "evidence": "| Faces | [Search4Faces](https://search4faces.com/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 107,
+            "column": 20,
+            "evidence": "- [OpenCorporates](https://opencorporates.com/) \u2014 World's largest open company database",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 108,
+            "column": 15,
+            "evidence": "- [SEC EDGAR](https://www.sec.gov/edgar.shtml) \u2014 U.S. company filings",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 109,
+            "column": 28,
+            "evidence": "- [OpenOwnership Register](https://register.openownership.org/) \u2014 Beneficial ownership datasets",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 110,
+            "column": 14,
+            "evidence": "- [MuckRock](https://www.muckrock.com/) \u2014 FOIA repository and request tracking",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 111,
+            "column": 22,
+            "evidence": "- [EU Tenders (TED)](https://ted.europa.eu/) \u2014 EU procurement notices",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 112,
+            "column": 25,
+            "evidence": "- [World Bank Projects](https://projects.worldbank.org/) \u2014 Project and procurement records",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 116,
+            "column": 26,
+            "evidence": "**Russia:** [Rusprofile](https://www.rusprofile.ru/), [Kontur.Focus](https://focus.kontur.ru/) (freemium), [zakupki.gov.ru](https://zakupki.gov.ru/) (procuremen",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 116,
+            "column": 70,
+            "evidence": "**Russia:** [Rusprofile](https://www.rusprofile.ru/), [Kontur.Focus](https://focus.kontur.ru/) (freemium), [zakupki.gov.ru](https://zakupki.gov.ru/) (procuremen",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 116,
+            "column": 125,
+            "evidence": "ile.ru/), [Kontur.Focus](https://focus.kontur.ru/) (freemium), [zakupki.gov.ru](https://zakupki.gov.ru/) (procurement), EGRUL/EGRIP (official, captcha-gated)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 118,
+            "column": 19,
+            "evidence": "**China:** [GSXT](https://www.gsxt.gov.cn/) (National Enterprise Credit), [Qichacha](https://www.qcc.com/)/[Tianyancha](https://www.tianyancha.com/) (freemium),",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 118,
+            "column": 86,
+            "evidence": "na:** [GSXT](https://www.gsxt.gov.cn/) (National Enterprise Credit), [Qichacha](https://www.qcc.com/)/[Tianyancha](https://www.tianyancha.com/) (freemium), [MII",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 118,
+            "column": 121,
+            "evidence": "n/) (National Enterprise Credit), [Qichacha](https://www.qcc.com/)/[Tianyancha](https://www.tianyancha.com/) (freemium), [MIIT ICP/Beian](https://beian.miit.gov",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 118,
+            "column": 179,
+            "evidence": "cc.com/)/[Tianyancha](https://www.tianyancha.com/) (freemium), [MIIT ICP/Beian](https://beian.miit.gov.cn/) (ICP filings)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 122,
+            "column": 19,
+            "evidence": "- [OFAC SDN List](https://sanctionssearch.ofac.treas.gov/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 123,
+            "column": 22,
+            "evidence": "- [EU Sanctions Map](https://www.sanctionsmap.eu/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 124,
+            "column": 19,
+            "evidence": "- [OpenSanctions](https://www.opensanctions.org/) \u2014 Aggregated persons/entities datasets",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 125,
+            "column": 17,
+            "evidence": "- [OCCRP Aleph](https://aleph.occrp.org/) \u2014 Investigative documents, leaks, company records",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 131,
+            "column": 23,
+            "evidence": "- [Have I Been Pwned](https://haveibeenpwned.com/) \u2014 Breach lookup; Pwned Passwords API (k-anonymity)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 132,
+            "column": 14,
+            "evidence": "- [Dehashed](https://dehashed.com/) \u2014 Credential search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 133,
+            "column": 12,
+            "evidence": "- [IntelX](https://intelx.io/) \u2014 Data intelligence",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 134,
+            "column": 15,
+            "evidence": "- [LeakCheck](https://leakcheck.io/) \u2014 Breach lookups",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 135,
+            "column": 14,
+            "evidence": "- [Snusbase](https://snusbase.com/) \u2014 Database breach lookups",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 136,
+            "column": 21,
+            "evidence": "- [BreachDirectory](https://breachdirectory.org/) \u2014 Recent breach credentials",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 137,
+            "column": 23,
+            "evidence": "- [Scattered Secrets](https://scatteredsecrets.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 138,
+            "column": 28,
+            "evidence": "- [Cavalier (Hudson Rock)](https://cavalier.hudsonrock.com/) \u2014 Infostealer lookups",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 139,
+            "column": 15,
+            "evidence": "- [Phonebook](https://phonebook.cz/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 140,
+            "column": 14,
+            "evidence": "- [LeakPeek](https://leakpeek.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 146,
+            "column": 12,
+            "evidence": "- [Shodan](https://www.shodan.io/) \u2014 Internet-connected device/service search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 147,
+            "column": 12,
+            "evidence": "- [Censys](https://search.censys.io/) \u2014 Host and certificate enumeration",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 148,
+            "column": 15,
+            "evidence": "- [GreyNoise](https://viz.greynoise.io/) \u2014 Distinguish background noise from targeted scans",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 149,
+            "column": 20,
+            "evidence": "- [SecurityTrails](https://securitytrails.com/) \u2014 Passive DNS and asset discovery",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 150,
+            "column": 16,
+            "evidence": "- [SpiderFoot](https://www.spiderfoot.net/) \u2014 Automated recon and correlation",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 151,
+            "column": 18,
+            "evidence": "- [theHarvester](https://github.com/laramies/theHarvester) \u2014 Subdomain, email, metadata harvesting",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 152,
+            "column": 14,
+            "evidence": "- [Recon-ng](https://github.com/lanmaster53/recon-ng) \u2014 Web recon framework",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 153,
+            "column": 11,
+            "evidence": "- [Amass](https://github.com/owasp-amass/amass) / [Subfinder](https://github.com/projectdiscovery/subfinder) \u2014 Passive subdomain discovery",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 153,
+            "column": 63,
+            "evidence": "- [Amass](https://github.com/owasp-amass/amass) / [Subfinder](https://github.com/projectdiscovery/subfinder) \u2014 Passive subdomain discovery",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 154,
+            "column": 15,
+            "evidence": "- [BuiltWith](https://builtwith.com/) \u2014 Tech stack enumeration",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 155,
+            "column": 12,
+            "evidence": "- [Netlas](https://netlas.io/) \u2014 Large-scale HTTP/DNS/certificate pivots",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 156,
+            "column": 16,
+            "evidence": "- [BinaryEdge](https://www.binaryedge.io/) / [FOFA](https://fofa.so/) / [ZoomEye](https://www.zoomeye.org/) \u2014 Infra pivots complementing Shodan/Censys",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 156,
+            "column": 53,
+            "evidence": "- [BinaryEdge](https://www.binaryedge.io/) / [FOFA](https://fofa.so/) / [ZoomEye](https://www.zoomeye.org/) \u2014 Infra pivots complementing Shodan/Censys",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 156,
+            "column": 83,
+            "evidence": "- [BinaryEdge](https://www.binaryedge.io/) / [FOFA](https://fofa.so/) / [ZoomEye](https://www.zoomeye.org/) \u2014 Infra pivots complementing Shodan/Censys",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 157,
+            "column": 25,
+            "evidence": "- [RiskIQ PassiveTotal](https://community.riskiq.com/) \u2014 Passive DNS/cert/host pivots",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 158,
+            "column": 10,
+            "evidence": "- [Spur](https://spur.us/) \u2014 IP lookups and tracking",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 159,
+            "column": 12,
+            "evidence": "- [Robtex](https://www.robtex.com/) \u2014 Passive DNS and infrastructure pivots",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 163,
+            "column": 36,
+            "evidence": "- [Hurricane Electric BGP Toolkit](https://bgp.he.net/) \u2014 ASN, prefix, peers, IRR data",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 164,
+            "column": 14,
+            "evidence": "- [RIPEstat](https://stat.ripe.net/) \u2014 IP/ASN history, routing, geolocation, abuse contacts",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 165,
+            "column": 13,
+            "evidence": "- [BGPView](https://bgpview.io/) \u2014 ASN and prefix explorer",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 166,
+            "column": 15,
+            "evidence": "- [bgp.tools](https://bgp.tools/) \u2014 Clean ASN/IX views, routing details",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 167,
+            "column": 15,
+            "evidence": "- [PeeringDB](https://www.peeringdb.com/) \u2014 Facility and peering info",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 171,
+            "column": 12,
+            "evidence": "- [crt.sh](https://crt.sh/) \u2014 Search Certificate Transparency logs",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 172,
+            "column": 25,
+            "evidence": "- [Censys Certificates](https://search.censys.io/certificates) \u2014 CT and x509 attribute pivots",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 173,
+            "column": 16,
+            "evidence": "- [CertStream](https://certstream.calidog.io/) \u2014 Real-time CT feed via WebSocket",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 174,
+            "column": 22,
+            "evidence": "- [Rapid7 Open Data](https://opendata.rapid7.com/) \u2014 Sonar DNS/HTTP/SSL datasets",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 175,
+            "column": 18,
+            "evidence": "- [Cert Spotter](https://sslmate.com/certspotter) [Freemium] \u2014 CT monitoring and alerts",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 183,
+            "column": 18,
+            "evidence": "- [MISP Project](https://www.misp-project.org/) and public MISP feeds",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 184,
+            "column": 13,
+            "evidence": "- [OpenCTI](https://www.opencti.io/) \u2014 CTI knowledge graph",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 185,
+            "column": 14,
+            "evidence": "- [Malpedia](https://malpedia.caad.fkie.fraunhofer.de/) \u2014 Malware families, YARA, references",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 186,
+            "column": 15,
+            "evidence": "- [ThreatFox](https://threatfox.abuse.ch/) / [URLHaus](https://urlhaus.abuse.ch/) / [SSLBL](https://sslbl.abuse.ch/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 186,
+            "column": 56,
+            "evidence": "- [ThreatFox](https://threatfox.abuse.ch/) / [URLHaus](https://urlhaus.abuse.ch/) / [SSLBL](https://sslbl.abuse.ch/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 186,
+            "column": 93,
+            "evidence": "- [ThreatFox](https://threatfox.abuse.ch/) / [URLHaus](https://urlhaus.abuse.ch/) / [SSLBL](https://sslbl.abuse.ch/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 187,
+            "column": 19,
+            "evidence": "- [MalwareBazaar](https://bazaar.abuse.ch/) \u2014 Hash-based sample sharing",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 188,
+            "column": 15,
+            "evidence": "- [PhishTank](https://www.phishtank.com/) / [OpenPhish](https://openphish.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 188,
+            "column": 57,
+            "evidence": "- [PhishTank](https://www.phishtank.com/) / [OpenPhish](https://openphish.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 192,
+            "column": 29,
+            "evidence": "- Static analysis: [pefile](https://github.com/erocarrera/pefile), [FLOSS](https://github.com/mandiant/flare-floss), [capa](https://github.com/mandiant/capa)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 192,
+            "column": 76,
+            "evidence": "- Static analysis: [pefile](https://github.com/erocarrera/pefile), [FLOSS](https://github.com/mandiant/flare-floss), [capa](https://github.com/mandiant/capa)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 192,
+            "column": 125,
+            "evidence": "- Static analysis: [pefile](https://github.com/erocarrera/pefile), [FLOSS](https://github.com/mandiant/flare-floss), [capa](https://github.com/mandiant/capa)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 194,
+            "column": 24,
+            "evidence": "- Sandboxes: [ANY.RUN](https://any.run/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [CAPE](https://capesandbox.com/), [Tria.ge](https://tria.ge/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 194,
+            "column": 61,
+            "evidence": "- Sandboxes: [ANY.RUN](https://any.run/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [CAPE](https://capesandbox.com/), [Tria.ge](https://tria.ge/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 194,
+            "column": 103,
+            "evidence": "- Sandboxes: [ANY.RUN](https://any.run/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [CAPE](https://capesandbox.com/), [Tria.ge](https://tria.ge/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 194,
+            "column": 140,
+            "evidence": "- Sandboxes: [ANY.RUN](https://any.run/), [Hybrid Analysis](https://www.hybrid-analysis.com/), [CAPE](https://capesandbox.com/), [Tria.ge](https://tria.ge/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 195,
+            "column": 27,
+            "evidence": "- Intelligence: [Intezer](https://analyze.intezer.com/) (code reuse), [VirusTotal](https://www.virustotal.com/) (**caution**: uploads become public)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 195,
+            "column": 84,
+            "evidence": "- Intelligence: [Intezer](https://analyze.intezer.com/) (code reuse), [VirusTotal](https://www.virustotal.com/) (**caution**: uploads become public)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 196,
+            "column": 27,
+            "evidence": "- TLS fingerprints: [JA3](https://github.com/salesforce/ja3), [JA4](https://github.com/FingerprinTLS/ja4)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 196,
+            "column": 69,
+            "evidence": "- TLS fingerprints: [JA3](https://github.com/salesforce/ja3), [JA4](https://github.com/FingerprinTLS/ja4)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 206,
+            "column": 30,
+            "evidence": "| Bitcoin | [Blockchain.com](https://www.blockchain.com/explorer), [Blockchair](https://blockchair.com/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 206,
+            "column": 81,
+            "evidence": "| Bitcoin | [Blockchain.com](https://www.blockchain.com/explorer), [Blockchair](https://blockchair.com/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 207,
+            "column": 26,
+            "evidence": "| Ethereum | [Etherscan](https://etherscan.io/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 208,
+            "column": 25,
+            "evidence": "| BNB Chain | [BSCScan](https://bscscan.com/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 209,
+            "column": 31,
+            "evidence": "| Polygon PoS | [PolygonScan](https://polygonscan.com/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 210,
+            "column": 22,
+            "evidence": "| Solana | [Solscan](https://solscan.io/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 211,
+            "column": 26,
+            "evidence": "| Multi-chain | [OKLink](https://www.oklink.com/) [Freemium], [Cielo](https://cielo.io/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 211,
+            "column": 71,
+            "evidence": "| Multi-chain | [OKLink](https://www.oklink.com/) [Freemium], [Cielo](https://cielo.io/) |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 213,
+            "column": 30,
+            "evidence": "**L2 Explorers:** [Arbiscan](https://arbiscan.io/), [Optimistic Etherscan](https://optimistic.etherscan.io/), [BaseScan](https://basescan.org/), [zkSync Era](ht",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 213,
+            "column": 76,
+            "evidence": "**L2 Explorers:** [Arbiscan](https://arbiscan.io/), [Optimistic Etherscan](https://optimistic.etherscan.io/), [BaseScan](https://basescan.org/), [zkSync Era](ht",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 213,
+            "column": 122,
+            "evidence": "scan.io/), [Optimistic Etherscan](https://optimistic.etherscan.io/), [BaseScan](https://basescan.org/), [zkSync Era](https://explorer.zksync.io/), [L2Beat](http",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 213,
+            "column": 159,
+            "evidence": "ps://optimistic.etherscan.io/), [BaseScan](https://basescan.org/), [zkSync Era](https://explorer.zksync.io/), [L2Beat](https://l2beat.com/) (risk/TVL comparison",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 213,
+            "column": 198,
+            "evidence": "an](https://basescan.org/), [zkSync Era](https://explorer.zksync.io/), [L2Beat](https://l2beat.com/) (risk/TVL comparison)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 217,
+            "column": 12,
+            "evidence": "- [Arkham](https://www.arkhamintelligence.com/) \u2014 Multichain explorer, entity labels, graphs, alerts",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 218,
+            "column": 9,
+            "evidence": "- [TRM](https://www.trmlabs.com/) \u2014 Address/transaction graphs",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 219,
+            "column": 16,
+            "evidence": "- [MetaSleuth](https://metasleuth.io/) \u2014 Visual crypto flow analysis",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 220,
+            "column": 17,
+            "evidence": "- [Breadcrumbs](https://www.breadcrumbs.app/) [Freemium] \u2014 Visual graphing and labeling",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 221,
+            "column": 16,
+            "evidence": "- [Bubblemaps](https://bubblemaps.io/) \u2014 Holder concentration visualization",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 222,
+            "column": 17,
+            "evidence": "- [Whale Alert](https://whale-alert.io/) \u2014 Large transaction monitoring",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 223,
+            "column": 17,
+            "evidence": "- [Chainalysis](https://www.chainalysis.com/) / [Crystal Blockchain](https://crystalblockchain.com/) \u2014 Professional analytics",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 223,
+            "column": 70,
+            "evidence": "- [Chainalysis](https://www.chainalysis.com/) / [Crystal Blockchain](https://crystalblockchain.com/) \u2014 Professional analytics",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 224,
+            "column": 16,
+            "evidence": "- [GraphSense](https://graphsense.info/) \u2014 Cryptocurrency analytics platform",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 225,
+            "column": 12,
+            "evidence": "- [Nansen](https://www.nansen.ai/) \u2014 Smart Money labels (paid)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 226,
+            "column": 10,
+            "evidence": "- [Dune](https://dune.com/) \u2014 Custom blockchain data queries",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 227,
+            "column": 19,
+            "evidence": "- [Token Sniffer](https://tokensniffer.com/) \u2014 Honeypot and scam token detection",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 231,
+            "column": 13,
+            "evidence": "- [OpenSea](https://opensea.io/) / [NFTScan](https://www.nftscan.com/) \u2014 NFT marketplace/explorer",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 231,
+            "column": 46,
+            "evidence": "- [OpenSea](https://opensea.io/) / [NFTScan](https://www.nftscan.com/) \u2014 NFT marketplace/explorer",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 232,
+            "column": 15,
+            "evidence": "- [DappRadar](https://dappradar.com/) \u2014 NFT sales and marketplace activity",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 233,
+            "column": 15,
+            "evidence": "- [CoinGecko](https://www.coingecko.com/) / [CoinMarketCap](https://coinmarketcap.com/) \u2014 Market data",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 233,
+            "column": 61,
+            "evidence": "- [CoinGecko](https://www.coingecko.com/) / [CoinMarketCap](https://coinmarketcap.com/) \u2014 Market data",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 234,
+            "column": 15,
+            "evidence": "- [Glassnode](https://glassnode.com/) \u2014 On-chain market intelligence",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 238,
+            "column": 16,
+            "evidence": "- [Socketscan](https://socketscan.io/) \u2014 EVM bridge explorer",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 239,
+            "column": 20,
+            "evidence": "- [L2Beat Bridges](https://l2beat.com/bridges) \u2014 Bridge risk analysis",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 240,
+            "column": 11,
+            "evidence": "- [Pulsy](https://pulsy.io/) \u2014 Bridge explorer aggregator",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 248,
+            "column": 19,
+            "evidence": "- [Google Images](https://images.google.com/) \u2014 General reverse image search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 249,
+            "column": 12,
+            "evidence": "- [TinEye](https://tineye.com/) \u2014 Reverse image search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 250,
+            "column": 19,
+            "evidence": "- [Yandex Images](https://yandex.com/images/) \u2014 Effective for Russian/Eastern European content",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 251,
+            "column": 13,
+            "evidence": "- [PimEyes](https://pimeyes.com/en) \u2014 Face-based image search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 252,
+            "column": 15,
+            "evidence": "- [FaceCheck](https://facecheck.id/) \u2014 Find people by photo",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 256,
+            "column": 18,
+            "evidence": "- [Forensically](https://29a.ch/photo-forensics/) \u2014 Digital image forensics toolkit",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 257,
+            "column": 14,
+            "evidence": "- [ExifTool](https://exiftool.org/) \u2014 Read/write/edit metadata",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 258,
+            "column": 11,
+            "evidence": "- [Jimpl](https://jimpl.com/) \u2014 Online EXIF viewer",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 259,
+            "column": 21,
+            "evidence": "- [Metadata Viewer](https://metadataremover.ai/metadata-viewer) \u2014 Browser-local EXIF, IPTC, XMP, and supported C2PA inspection",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 260,
+            "column": 10,
+            "evidence": "- [FOCA](https://www.elevenpaths.com/labstools/foca) \u2014 Metadata in documents",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 261,
+            "column": 16,
+            "evidence": "- [Metagoofil](https://www.edge-security.com/metagoofil.php) \u2014 Extract metadata from public documents",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 262,
+            "column": 17,
+            "evidence": "- [C2PA Verify](https://verify.contentauthenticity.org/) \u2014 Verify content credentials and AI provenance",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 268,
+            "column": 25,
+            "evidence": "- [YouTube Data Viewer](https://citizenevidence.amnestyusa.org/) \u2014 Extract YouTube metadata",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 269,
+            "column": 22,
+            "evidence": "- [InVID & WeVerify](https://www.invid-project.eu/tools-and-services/invid-verification-plugin/) \u2014 Video verification browser extension",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 270,
+            "column": 21,
+            "evidence": "- [YouTube Geo Tag](https://mattw.io/youtube-geofind/location) \u2014 Video geolocation via geo tags",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 271,
+            "column": 15,
+            "evidence": "- [MediaInfo](https://mediaarea.net/en/MediaInfo) \u2014 Technical/tag info for video/audio",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 276,
+            "column": 44,
+            "evidence": "- [Fake News Debunker by InVID & WeVerify](https://chrome.google.com/webstore/detail/fake-news-debunker-by-inv/mhccpoafgdgbhnjfhkcmgknndkeenfhe)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 277,
+            "column": 33,
+            "evidence": "- [RevEye Reverse Image Search](https://chrome.google.com/webstore/detail/reveye-reverse-image-sear/kejaocbebojdmebagkjghljkeefgimdj)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 278,
+            "column": 21,
+            "evidence": "- [EXIF Viewer Pro](https://chrome.google.com/webstore/detail/exif-viewer-pro/mmbhfeiddhndihdjeganjggkmjapkffm)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 279,
+            "column": 31,
+            "evidence": "- [Wayback Machine Extension](https://chrome.google.com/webstore/detail/wayback-machine/fpnmgdkabkmnadcjpehmlllkndpkmiak)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 280,
+            "column": 21,
+            "evidence": "- [Search by Image](https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 288,
+            "column": 17,
+            "evidence": "- [Google Maps](https://www.google.com/maps) / [Bing Maps](https://www.bing.com/maps/) \u2014 General mapping",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 288,
+            "column": 60,
+            "evidence": "- [Google Maps](https://www.google.com/maps) / [Bing Maps](https://www.bing.com/maps/) \u2014 General mapping",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 289,
+            "column": 29,
+            "evidence": "- [Sentinel Hub EO Browser](https://apps.sentinel-hub.com/eo-browser/) \u2014 Sentinel/Landsat satellite imagery",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 290,
+            "column": 20,
+            "evidence": "- [NASA Worldview](https://worldview.earthdata.nasa.gov/) \u2014 NASA satellite imagery",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 291,
+            "column": 16,
+            "evidence": "- [Zoom Earth](https://zoom.earth/) \u2014 Live satellite images and weather",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 292,
+            "column": 21,
+            "evidence": "- [Wayback Imagery](https://livingatlas.arcgis.com/wayback/) \u2014 Historical satellite images",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 293,
+            "column": 16,
+            "evidence": "- [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/map/) \u2014 Fire/hotspot data",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 294,
+            "column": 29,
+            "evidence": "- [Open Infrastructure Map](https://openinframap.org/) \u2014 Global infrastructure networks",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 295,
+            "column": 11,
+            "evidence": "- [Windy](https://www.windy.com/) \u2014 Live weather map",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 299,
+            "column": 15,
+            "evidence": "- [Mapillary](https://www.mapillary.com/app) \u2014 Crowdsourced street-level imagery",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 300,
+            "column": 15,
+            "evidence": "- [KartaView](https://kartaview.org/) \u2014 Open-source street-level imagery",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 301,
+            "column": 20,
+            "evidence": "- [Overpass Turbo](https://overpass-turbo.eu/) \u2014 Advanced OpenStreetMap queries",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 302,
+            "column": 13,
+            "evidence": "- [SunCalc](https://www.suncalc.org/) \u2014 Sun position for chronolocation",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 303,
+            "column": 14,
+            "evidence": "- [GeoNames](https://www.geonames.org/) \u2014 Geographical database",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 304,
+            "column": 15,
+            "evidence": "- [PeakVisor](https://peakvisor.com/) \u2014 Identify mountain peaks",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 305,
+            "column": 21,
+            "evidence": "- [GeoGuesser tips](https://somerandomstuff1.wordpress.com/2019/02/08/geoguessr-the-top-tips-tricks-and-techniques/) \u2014 Geolocation methodology",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 307,
+            "column": 51,
+            "evidence": "**Street View:** Google Street View, [Apple Maps](https://maps.apple.com/), [Yandex Maps](https://yandex.com/maps/), [Baidu Maps](https://map.baidu.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 307,
+            "column": 91,
+            "evidence": "**Street View:** Google Street View, [Apple Maps](https://maps.apple.com/), [Yandex Maps](https://yandex.com/maps/), [Baidu Maps](https://map.baidu.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 307,
+            "column": 131,
+            "evidence": "**Street View:** Google Street View, [Apple Maps](https://maps.apple.com/), [Yandex Maps](https://yandex.com/maps/), [Baidu Maps](https://map.baidu.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 311,
+            "column": 19,
+            "evidence": "- [FlightRadar24](https://www.flightradar24.com/) / [FlightAware](https://www.flightaware.com/) / [RadarBox](https://www.radarbox.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 311,
+            "column": 67,
+            "evidence": "- [FlightRadar24](https://www.flightradar24.com/) / [FlightAware](https://www.flightaware.com/) / [RadarBox](https://www.radarbox.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 311,
+            "column": 110,
+            "evidence": "- [FlightRadar24](https://www.flightradar24.com/) / [FlightAware](https://www.flightaware.com/) / [RadarBox](https://www.radarbox.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 312,
+            "column": 18,
+            "evidence": "- [ADSBExchange](https://www.adsbexchange.com/) \u2014 Unfiltered community ADS-B feed",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 313,
+            "column": 19,
+            "evidence": "- [Planespotters](https://www.planespotters.net/) \u2014 Fleet/airframe history by tail number",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 314,
+            "column": 15,
+            "evidence": "- [AirFrames](https://www.airframes.org/) / [JetPhotos](https://www.jetphotos.com/) \u2014 Visual confirmation",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 314,
+            "column": 57,
+            "evidence": "- [AirFrames](https://www.airframes.org/) / [JetPhotos](https://www.jetphotos.com/) \u2014 Visual confirmation",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 318,
+            "column": 19,
+            "evidence": "- [MarineTraffic](https://www.marinetraffic.com/) \u2014 Live AIS vessel tracking",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 319,
+            "column": 18,
+            "evidence": "- [VesselFinder](https://www.vesselfinder.com/) \u2014 Global ship movements and port calls",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 320,
+            "column": 14,
+            "evidence": "- [FleetMon](https://www.fleetmon.com/) \u2014 Historical AIS data and analytics",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 321,
+            "column": 26,
+            "evidence": "- [Global Fishing Watch](https://globalfishingwatch.org/map/) \u2014 Fishing vessel behavior and AIS gap analysis",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 331,
+            "column": 13,
+            "evidence": "| [ChatGPT](https://chat.openai.com/) (paid) | Log parsing, dataset analysis, Code Interpreter for CSVs/JSON, GPT-4 Vision for image OCR |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 332,
+            "column": 12,
+            "evidence": "| [Claude](https://claude.ai/) (paid) | 200K token context for large document dumps and report synthesis |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 333,
+            "column": 20,
+            "evidence": "| [Gemini 1.5 Pro](https://gemini.google.com/) | 2M token context; Deep Research mode with citations |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 334,
+            "column": 20,
+            "evidence": "| [Perplexity Pro](https://www.perplexity.ai/) (paid) | Real-time web search + reasoning; multi-query synthesis |",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 336,
+            "column": 40,
+            "evidence": "**Local/privacy-preserving:** [Ollama](https://ollama.com/) (Llama 3, Mistral), [LM Studio](https://lmstudio.ai/), [GPT4All](https://gpt4all.io/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 336,
+            "column": 93,
+            "evidence": "**Local/privacy-preserving:** [Ollama](https://ollama.com/) (Llama 3, Mistral), [LM Studio](https://lmstudio.ai/), [GPT4All](https://gpt4all.io/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 336,
+            "column": 126,
+            "evidence": "**Local/privacy-preserving:** [Ollama](https://ollama.com/) (Llama 3, Mistral), [LM Studio](https://lmstudio.ai/), [GPT4All](https://gpt4all.io/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 340,
+            "column": 12,
+            "evidence": "- [Cylect](https://www.cylect.io/) \u2014 AI entity extraction and link-analysis",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 341,
+            "column": 21,
+            "evidence": "- [Fivecast Matrix](https://www.fivecast.com/products/matrix/) \u2014 Generative-AI triage for social-media datasets",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 342,
+            "column": 21,
+            "evidence": "- [Recorded Future](https://www.recordedfuture.com/) \u2014 AI-driven threat intelligence",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 343,
+            "column": 20,
+            "evidence": "- [DarkOwl Vision](https://www.darkowl.com/) \u2014 AI-powered darknet data analysis",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 347,
+            "column": 16,
+            "evidence": "- [Sensity AI](https://sensity.ai/) \u2014 Deepfake detection",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 348,
+            "column": 22,
+            "evidence": "- [Reality Defender](https://realitydefender.com/) \u2014 AI-generated content detection",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 349,
+            "column": 38,
+            "evidence": "- [Adobe Content Credentials Verify](https://contentcredentials.org/verify) \u2014 C2PA verifier",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 350,
+            "column": 12,
+            "evidence": "- [CarNet](https://carnet.ai/) \u2014 AI car model identification (useful for geolocation)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 356,
+            "column": 19,
+            "evidence": "- [archive.today](https://archive.today/) \u2014 One-page content archiver with screenshot",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 357,
+            "column": 16,
+            "evidence": "- [URLScan.io](https://urlscan.io/) \u2014 On-demand webpage scan with resource map",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 358,
+            "column": 16,
+            "evidence": "- [ArchiveBox](https://archivebox.io/) \u2014 Self-hosted archiving (HTML, PDF, screenshots, media)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 359,
+            "column": 13,
+            "evidence": "- [Hunchly](https://www.hunch.ly/) \u2014 Evidence capture for investigators (paid)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 361,
+            "column": 17,
+            "evidence": "- [SingleFileZ](https://github.com/gildas-lormeau/SingleFileZ) \u2014 Browser extension for offline HTML archives",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 362,
+            "column": 21,
+            "evidence": "- [Kasm Workspaces](https://kasmweb.com/) \u2014 Containerized OSINT workspace/browser isolation",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 374,
+            "column": 9,
+            "evidence": "- [n8n](https://n8n.io/) \u2014 Self-hosted workflow automation (e.g., RSS \u2192 scrape \u2192 alert pipelines)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 375,
+            "column": 12,
+            "evidence": "- [Huginn](https://github.com/huginn/huginn) \u2014 Agent-based monitoring, scraping, alerting",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 376,
+            "column": 16,
+            "evidence": "- [Playwright](https://playwright.dev/) \u2014 Headless browser automation with stealth plugins",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 377,
+            "column": 25,
+            "evidence": "- [Browsertrix Crawler](https://github.com/webrecorder/browsertrix-crawler) \u2014 Archival crawling with WARC export",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 378,
+            "column": 13,
+            "evidence": "- [Prefect](https://www.prefect.io/) / [Apache Airflow](https://airflow.apache.org/) \u2014 Workflow orchestration for data pipelines",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 378,
+            "column": 57,
+            "evidence": "- [Prefect](https://www.prefect.io/) / [Apache Airflow](https://airflow.apache.org/) \u2014 Workflow orchestration for data pipelines",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 384,
+            "column": 24,
+            "evidence": "- Russia/CIS: [Yandex](https://yandex.com/), [Mail.ru Search](https://go.mail.ru/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 384,
+            "column": 63,
+            "evidence": "- Russia/CIS: [Yandex](https://yandex.com/), [Mail.ru Search](https://go.mail.ru/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 385,
+            "column": 18,
+            "evidence": "- China: [Baidu](https://www.baidu.com/), [Sogou](https://www.sogou.com/), [360 Search](https://www.so.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 385,
+            "column": 51,
+            "evidence": "- China: [Baidu](https://www.baidu.com/), [Sogou](https://www.sogou.com/), [360 Search](https://www.so.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 385,
+            "column": 89,
+            "evidence": "- China: [Baidu](https://www.baidu.com/), [Sogou](https://www.sogou.com/), [360 Search](https://www.so.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 386,
+            "column": 23,
+            "evidence": "- Russia social: [VK](https://vk.com/), [OK.ru](https://ok.ru/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 386,
+            "column": 49,
+            "evidence": "- Russia social: [VK](https://vk.com/), [OK.ru](https://ok.ru/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 387,
+            "column": 25,
+            "evidence": "- China social: [Weibo](https://weibo.com/), [Bilibili](https://www.bilibili.com/), [Zhihu](https://www.zhihu.com/), [Douyin](https://www.douyin.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 387,
+            "column": 57,
+            "evidence": "- China social: [Weibo](https://weibo.com/), [Bilibili](https://www.bilibili.com/), [Zhihu](https://www.zhihu.com/), [Douyin](https://www.douyin.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 387,
+            "column": 93,
+            "evidence": "- China social: [Weibo](https://weibo.com/), [Bilibili](https://www.bilibili.com/), [Zhihu](https://www.zhihu.com/), [Douyin](https://www.douyin.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 387,
+            "column": 127,
+            "evidence": "- China social: [Weibo](https://weibo.com/), [Bilibili](https://www.bilibili.com/), [Zhihu](https://www.zhihu.com/), [Douyin](https://www.douyin.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 393,
+            "column": 12,
+            "evidence": "- [TGStat](https://tgstat.com/) \u2014 Channel analytics and search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 394,
+            "column": 14,
+            "evidence": "- [Telemetr](https://telemetr.io/) \u2014 Channel growth, overlaps, forwards",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 395,
+            "column": 12,
+            "evidence": "- [Combot](https://combot.org/) \u2014 Group analytics (partially paid)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 396,
+            "column": 27,
+            "evidence": "- [TelegramDB Search Bot](https://t.me/TGdb_bot) \u2014 Basic Telegram OSINT",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 397,
+            "column": 16,
+            "evidence": "- [Discord ID](https://discord.id/) \u2014 Basic Discord account information",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 1,
+        "findings_after_filtering": 1,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    },
+    {
+      "name": "offensive-osint-methodology",
+      "path": "offensive-osint-methodology",
+      "risk_score": 0,
+      "risk_severity": "LOW",
+      "finding_count": 0,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "unknown",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/recon/offensive-osint-methodology",
+        "scanned_at": "2026-11-13T11:41:59.508452+00:00"
+      },
+      "risk_assessment": {
+        "score": 0,
+        "severity": "LOW",
+        "recommendation": "SAFE",
+        "max_issue_severity": "NONE"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 434,
+          "executable": false,
+          "size_bytes": 23397,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 334,
+            "end_line": 334,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 335,
+            "end_line": 335,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 336,
+            "end_line": 336,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 338,
+            "end_line": 338,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 346,
+            "end_line": 346,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 347,
+            "end_line": 347,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 351,
+            "end_line": 351,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 417,
+            "end_line": 417,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "manifest_absent",
+            "message": "No compatible manifest was present for this analyzer."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "manifest_absent",
+            "message": "No compatible manifest was present for this analyzer."
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 37,
+            "column": 30,
+            "evidence": "- [Effective Sock Puppets](https://medium.com/@unseeable06/creating-an-effective-sock-puppet-for-your-osint-investigation-95fdbb8b075a)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 38,
+            "column": 38,
+            "evidence": "- [Ultimate Guide to Sock Puppets](https://osintteam.blog/the-ultimate-guide-to-sockpuppets-in-osint-how-to-create-and-utilize-them-effectively-d088c2ed6e36)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 39,
+            "column": 27,
+            "evidence": "- [Fake Name Generator](https://www.fakenamegenerator.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 40,
+            "column": 34,
+            "evidence": "- [This Person does not Exist](https://thispersondoesnotexist.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 70,
+            "column": 174,
+            "evidence": "deposit/withdrawal bridge events visible on L1. Use [zkSync Era Block Explorer](https://explorer.zksync.io/) and [PolygonScan zkEVM](https://zkevm.polygonscan.c",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 70,
+            "column": 227,
+            "evidence": "zkSync Era Block Explorer](https://explorer.zksync.io/) and [PolygonScan zkEVM](https://zkevm.polygonscan.com/).",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 71,
+            "column": 121,
+            "evidence": "batched and compressed; L2 state reconstructed from L1 calldata. Use [Arbiscan](https://arbiscan.io/) and [Optimistic Etherscan](https://optimistic.etherscan.io",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 71,
+            "column": 170,
+            "evidence": "om L1 calldata. Use [Arbiscan](https://arbiscan.io/) and [Optimistic Etherscan](https://optimistic.etherscan.io/). Check [L2Beat](https://l2beat.com/) for risk ",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 71,
+            "column": 220,
+            "evidence": "/) and [Optimistic Etherscan](https://optimistic.etherscan.io/). Check [L2Beat](https://l2beat.com/) for risk framework and technology stack.",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 72,
+            "column": 89,
+            "evidence": "- **StarkNet**: Cairo VM with STARK proofs; different address derivation. Use [Voyager](https://voyager.online/) or [StarkScan](https://starkscan.co/).",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 72,
+            "column": 129,
+            "evidence": "- **StarkNet**: Cairo VM with STARK proofs; different address derivation. Use [Voyager](https://voyager.online/) or [StarkScan](https://starkscan.co/).",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 119,
+            "column": 23,
+            "evidence": "- [Google Images](https://images.google.com/) / **Google Lens** (note: Google Lens now requires authentication for some features; use incognito/sock-puppet acco",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 120,
+            "column": 23,
+            "evidence": "- [Yandex Images](https://yandex.com/images/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 121,
+            "column": 26,
+            "evidence": "- [Bing Image Match](https://www.bing.com/images/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 122,
+            "column": 16,
+            "evidence": "- [TinEye](https://tineye.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 123,
+            "column": 20,
+            "evidence": "- [Copyseeker](https://copyseeker.com/) AI\u2011based reverse\u2011image search engine",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 124,
+            "column": 24,
+            "evidence": "- [Perplexity Pro](https://www.perplexity.ai/) with image upload: AI-powered contextual analysis and web search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 126,
+            "column": 37,
+            "evidence": "- [RevEye Reverse Image Search](https://chrome.google.com/webstore/detail/reveye-reverse-image-sear/kejaocbebojdmebagkjghljkeefgimdj)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 127,
+            "column": 25,
+            "evidence": "- [Search by Image](https://chromewebstore.google.com/detail/search-by-image/cnojnbdhbhnkbcieeekonklommdnndci) (multi-engine support)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 129,
+            "column": 52,
+            "evidence": "- You can leverage [FakeNews Debunker Extension](https://chromewebstore.google.com/detail/fake-news-debunker-by-inv/mhccpoafgdgbhnjfhkcmgknndkeenfhe) as well",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 130,
+            "column": 15,
+            "evidence": "- [Picarta](https://picarta.ai/) might help with geolocation as well",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 132,
+            "column": 18,
+            "evidence": "- [ExifTool](https://exiftool.org/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 133,
+            "column": 41,
+            "evidence": "- [Jeffrey's Image Metadata Viewer](http://exif.regex.info/exif.cgi)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 134,
+            "column": 25,
+            "evidence": "- [EXIF Viewer Pro](https://chrome.google.com/webstore/detail/exif-viewer-pro/mmbhfeiddhndihdjeganjggkmjapkffm)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 145,
+            "column": 29,
+            "evidence": "- Employ [Overpass Turbo](https://overpass-turbo.eu/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 157,
+            "column": 20,
+            "evidence": "- [Forensically](https://29a.ch/photo-forensics/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 158,
+            "column": 21,
+            "evidence": "- [FotoForensics](http://fotoforensics.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 159,
+            "column": 32,
+            "evidence": "- [Bellingcat Photo Checker](https://photo-checker.bellingcat.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 160,
+            "column": 35,
+            "evidence": "- [Sensity AI Deepfake Monitor](https://platform.sensity.ai/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 161,
+            "column": 19,
+            "evidence": "- [Exposing.ai](https://exposing.ai/) facial\u2011dataset search",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 162,
+            "column": 59,
+            "evidence": "- C2PA verification: [Adobe Content Credentials Verify](https://verify.contentauthenticity.org/) and `c2patool`",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 173,
+            "column": 17,
+            "evidence": "- [PeakVisor](https://peakvisor.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 174,
+            "column": 18,
+            "evidence": "- [Peakfinder](https://www.peakfinder.org/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 175,
+            "column": 16,
+            "evidence": "- [PeakLens](https://peaklens.com/) AR mountain identifier",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 184,
+            "column": 18,
+            "evidence": "- [NASA FIRMS](https://earthdata.nasa.gov/earth-observation-data/near-real-time/firms)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 185,
+            "column": 31,
+            "evidence": "- [Sentinel Hub Playground](https://apps.sentinel-hub.com/sentinel-playground/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 186,
+            "column": 27,
+            "evidence": "- [Global Forest Watch](https://www.globalforestwatch.org/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 187,
+            "column": 24,
+            "evidence": "- [Copernicus EFFIS](https://effis.jrc.ec.europa.eu/) EU wildfire monitoring portal",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 191,
+            "column": 23,
+            "evidence": "- Use [Apollo Hunter](https://imagehunter.apollomapping.com/) to find exact satellite image time",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 192,
+            "column": 26,
+            "evidence": "- Then use [FlightRadar](https://www.flightradar24.com/) to track that plane that you found",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 194,
+            "column": 20,
+            "evidence": "- [ADS-B Exchange](https://www.adsbexchange.com/) \u2013 unfiltered global flight data",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 206,
+            "column": 27,
+            "evidence": "- [YouTube Data Viewer](https://citizenevidence.amnestyusa.org/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 217,
+            "column": 114,
+            "evidence": "the directory does not verify handle ownership. See the [PLC specification](https://web.plc.directory/spec/v0.1/did-plc) and [operation-log implementation](http",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 217,
+            "column": 194,
+            "evidence": "s://web.plc.directory/spec/v0.1/did-plc) and [operation-log implementation](https://github.com/did-method-plc/did-method-plc/blob/main/packages/server/src/db/in",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 218,
+            "column": 41,
+            "evidence": "- Real-time firehose: Use [Firesky](https://firesky.tv/) for live keyword/hashtag monitoring across entire network",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 219,
+            "column": 28,
+            "evidence": "- Analytics: [SkyView](https://bsky.jazco.dev/) for follower graphs, post engagement, network analysis",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 226,
+            "column": 43,
+            "evidence": "- Cross-instance search: [FediSearch](https://fedisearch.skorpil.cz/) aggregates public posts; not all instances are indexed",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 227,
+            "column": 50,
+            "evidence": "- Instance enumeration: [Fediverse Observer](https://fediverse.observer/), [Fediverse.party](https://fediverse.party/) for instance lists, stats, software versi",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 227,
+            "column": 98,
+            "evidence": "ation: [Fediverse Observer](https://fediverse.observer/), [Fediverse.party](https://fediverse.party/) for instance lists, stats, software versions",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 236,
+            "column": 18,
+            "evidence": "- [Audacity](https://www.audacityteam.org/): Audio editing software",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 237,
+            "column": 26,
+            "evidence": "- [Sonic Visualiser](https://www.sonicvisualiser.org/): Visualize audio data",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 238,
+            "column": 18,
+            "evidence": "- [SoundCMD](https://soundcmd.com/) crowd\u2011sourced sound\u2011matching engine",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 243,
+            "column": 29,
+            "evidence": "- Use tools like [FFmpeg](https://ffmpeg.org/) or [VLC Media Player](https://www.videolan.org/vlc/) to capture frames.",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 243,
+            "column": 72,
+            "evidence": "- Use tools like [FFmpeg](https://ffmpeg.org/) or [VLC Media Player](https://www.videolan.org/vlc/) to capture frames.",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 265,
+            "column": 15,
+            "evidence": "- [SunCalc](https://www.suncalc.org/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 266,
+            "column": 16,
+            "evidence": "- [ShadeMap](https://shademap.app/) \u2013 interactive 3\u2011D shadow simulator",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 279,
+            "column": 18,
+            "evidence": "- [Stellarium](https://stellarium.org/): Planetarium software",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 281,
+            "column": 16,
+            "evidence": "- [MoonCalc](https://www.mooncalc.org/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 293,
+            "column": 31,
+            "evidence": "- [Sentinel Hub EO Browser](https://apps.sentinel-hub.com/eo-browser/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 334,
+            "column": 65,
+            "evidence": "- EGRUL/EGRIP extracts (official registry; captcha\u2011gated) and Rusprofile/Kontur.Focus summaries for entities and directors.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 335,
+            "column": 30,
+            "evidence": "- Government procurement: `zakupki.gov.ru` (tenders, contractors), regional portals, and grant listings.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 336,
+            "column": 24,
+            "evidence": "- Job boards (e.g., `hh.ru`) for role requirements, tech stacks, and office locations.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 338,
+            "column": 16,
+            "evidence": "- RU WHOIS: `whois.tcinet.ru`; check registrar accounts, nserver patterns, and RU\u2011center usage.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 346,
+            "column": 46,
+            "evidence": "- National Enterprise Credit Info System (`gsxt.gov.cn`) for registered entities; cross\u2011check with Tianyancha/Qichacha (paid/freemium).",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 347,
+            "column": 19,
+            "evidence": "- ICP filings (`beian.miit.gov.cn`) to link domains to legal entities via Unified Social Credit Codes (USCC).",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 351,
+            "column": 43,
+            "evidence": "- Weibo, WeChat Official Accounts (via `weixin.sogou.com`), Zhihu, Bilibili, Douyin, Xiaohongshu; search in Chinese and Pinyin.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 365,
+            "column": 19,
+            "evidence": "- [WhatsMyName](https://whatsmyname.app/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 366,
+            "column": 19,
+            "evidence": "- [NameCheckup](https://namecheckup.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 367,
+            "column": 16,
+            "evidence": "- [Sherlock](https://github.com/sherlock-project/sherlock)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 372,
+            "column": 15,
+            "evidence": "- [PimEyes](https://pimeyes.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 373,
+            "column": 19,
+            "evidence": "- [Exposing.ai](https://exposing.ai/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 379,
+            "column": 15,
+            "evidence": "- [Maltego](https://www.maltego.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 380,
+            "column": 16,
+            "evidence": "- [snscrape](https://github.com/snscrape/snscrape)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 381,
+            "column": 19,
+            "evidence": "- [SocialBlade](https://socialblade.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 389,
+            "column": 14,
+            "evidence": "- [Shodan](https://www.shodan.io/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 390,
+            "column": 14,
+            "evidence": "- [Censys](https://censys.io/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 391,
+            "column": 14,
+            "evidence": "- [Onyphe](https://www.onyphe.io/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 392,
+            "column": 13,
+            "evidence": "- [DNSDB](https://www.farsightsecurity.com/solutions/dnsdb/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 397,
+            "column": 14,
+            "evidence": "- [crt.sh](https://crt.sh/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 398,
+            "column": 22,
+            "evidence": "- [SecurityTrails](https://securitytrails.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 417,
+            "column": 35,
+            "evidence": "- Search Official Accounts via `weixin.sogou.com`; archive articles (PNG + WARC); capture `__biz` IDs and publisher metadata.",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 423,
+            "column": 15,
+            "evidence": "- [Hunchly](https://www.hunch.ly/) (browser evidence capture)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 424,
+            "column": 23,
+            "evidence": "- [Kasm Workspaces](https://kasmweb.com/) OSINT\u2011ready workspace images",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 425,
+            "column": 18,
+            "evidence": "- [ArchiveBox](https://archivebox.io/) \u2013 self\u2011hosted web archiver",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 426,
+            "column": 19,
+            "evidence": "- [SingleFileZ](https://github.com/gildas-lormeau/SingleFileZ)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 431,
+            "column": 18,
+            "evidence": "- [Sensity AI](https://sensity.ai/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 432,
+            "column": 23,
+            "evidence": "- [Hive Moderation](https://hivemoderation.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 433,
+            "column": 24,
+            "evidence": "- [Reality Defender](https://realitydefender.com/)",
+            "target_path": null,
+            "status": "rejected",
+            "disposition": "out_of_scope",
+            "reference_kind": "markdown_link"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 0,
+        "findings_after_filtering": 0,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    }
+  ]
+}

