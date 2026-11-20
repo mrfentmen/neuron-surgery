@@ -1,0 +1,20 @@
+{
+  "verified_utc": "2026-11-13T06:21:16.311172+00:00",
+  "generations_verified": 1,
+  "source_sequence": 7,
+  "original_answer_tokens_preserved": 500,
+  "new_tokens": 500,
+  "combined_tokens": 1000,
+  "exact_source_token_prefix_preserved": true,
+  "no_new_user_turn": true,
+  "original_rng_and_kv_state_restored": false,
+  "stop_reason": "token_limit",
+  "plan_sha256": "445cf93a17237cde1c657d485c6dfb8fd2fb070c65a5d219e4ca8052844e7fc8",
+  "response_sha256": "50193954c6ceef42567ae4be4f41b85059be6f20a3cacd84575020e1db8517ae",
+  "limits": [
+    "All original prompt and generated token ids are preserved as the prefix. No assistant end-of-turn marker or new user prompt is inserted.",
+    "The original KV cache and RNG state were not saved. This continuation recomputes the prefix and resets the recorded seed; it is not guaranteed to match an uninterrupted 1000-token sample.",
+    "This extends an already selected hostile narrative. Its content is conditioned on that narrative and cannot establish a stable intention or shared neuronal function.",
+    "Maximum 500 additional tokens, giving at most 1000 tokens for this assistant answer. No automatic repeated extension or setting search."
+  ]
+}

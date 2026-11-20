@@ -1,0 +1,8 @@
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1113 01:19:19.673000 18244 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17711.32it/s]
+RUNTIME_READY {"calibrated_layers": 1, "network_denied": true, "thermal": 0}
+START 1/1 reply7_continuation L17_N2801 seed=20261112
+DONE 1/1 tokens=500 stop=token_limit seconds=51.5 thermal=0
+COMPLETE {"completed_utc": "2026-11-13T06:21:13.805561+00:00", "generations": 1, "elapsed_seconds": 118.79979324992746, "response_sha256": "50193954c6ceef42567ae4be4f41b85059be6f20a3cacd84575020e1db8517ae", "plan_sha256": "445cf93a17237cde1c657d485c6dfb8fd2fb070c65a5d219e4ca8052844e7fc8", "all_hooks_removed": true, "intervened_projection_weights_unchanged": true, "projection_weight_hashes": {"17": "7fb869aff16ae24a36749c6dea4d61b00da91768e01ae4e5d87bfb1c9d93201e"}, "thermal_end": 0}
