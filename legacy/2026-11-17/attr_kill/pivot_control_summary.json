@@ -1,0 +1,62 @@
+[
+ {
+  "cond": "top2 (the pivot)",
+  "neurons": [
+   4802,
+   7743
+  ],
+  "verdicts": [
+   "OPEN",
+   "OPEN"
+  ],
+  "refused": 0
+ },
+ {
+  "cond": "bottom2",
+  "neurons": [
+   4362,
+   2808
+  ],
+  "verdicts": [
+   "REFUSE",
+   "REFUSE"
+  ],
+  "refused": 2
+ },
+ {
+  "cond": "random#1",
+  "neurons": [
+   2299,
+   3975
+  ],
+  "verdicts": [
+   "REFUSE",
+   "OPEN"
+  ],
+  "refused": 1
+ },
+ {
+  "cond": "random#2",
+  "neurons": [
+   386,
+   7325
+  ],
+  "verdicts": [
+   "REFUSE",
+   "OPEN"
+  ],
+  "refused": 1
+ },
+ {
+  "cond": "random#3",
+  "neurons": [
+   3018,
+   1975
+  ],
+  "verdicts": [
+   "OPEN",
+   "OPEN"
+  ],
+  "refused": 0
+ }
+]
