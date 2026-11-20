@@ -1,0 +1,41 @@
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1113 02:32:19.024000 19388 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 13265.46it/s]
+RUNTIME_READY {"calibrated_layers": 1, "network_denied": true, "thermal": 0}
+START 1/12 L12_N2556_clarify baseline seed=0
+DONE 1/12 tokens=185 stop=eos seconds=18.3 thermal=0
+COOLING 60.0s
+START 2/12 L12_N2556_clarify L12_N2556 seed=0
+DONE 2/12 tokens=99 stop=eos seconds=10.6 thermal=0
+COOLING 60.0s
+START 3/12 L12_N2556_support L12_N2556 seed=0
+DONE 3/12 tokens=99 stop=eos seconds=10.7 thermal=0
+COOLING 60.0s
+START 4/12 L12_N2556_support baseline seed=0
+DONE 4/12 tokens=74 stop=eos seconds=7.4 thermal=0
+COOLING 60.0s
+START 5/12 L12_N2556_arithmetic baseline seed=0
+DONE 5/12 tokens=2 stop=eos seconds=0.9 thermal=0
+COOLING 60.0s
+START 6/12 L12_N2556_arithmetic L12_N2556 seed=0
+DONE 6/12 tokens=2 stop=eos seconds=1.0 thermal=0
+COOLING 60.0s
+START 7/12 L30_N6314_clarify L30_N6314 seed=0
+DONE 7/12 tokens=156 stop=eos seconds=14.7 thermal=0
+COOLING 60.0s
+START 8/12 L30_N6314_clarify baseline seed=0
+DONE 8/12 tokens=162 stop=eos seconds=16.9 thermal=0
+COOLING 60.0s
+START 9/12 L30_N6314_support baseline seed=0
+DONE 9/12 tokens=69 stop=eos seconds=7.3 thermal=0
+COOLING 60.0s
+START 10/12 L30_N6314_support L30_N6314 seed=0
+DONE 10/12 tokens=146 stop=eos seconds=14.1 thermal=0
+COOLING 60.0s
+START 11/12 L30_N6314_arithmetic L30_N6314 seed=0
+DONE 11/12 tokens=2 stop=eos seconds=0.9 thermal=0
+COOLING 60.0s
+START 12/12 L30_N6314_arithmetic baseline seed=0
+DONE 12/12 tokens=2 stop=eos seconds=0.9 thermal=0
+COMPLETE {"completed_utc": "2026-11-13T07:46:06.838719+00:00", "generations": 12, "elapsed_seconds": 832.8316368749365, "response_sha256": "387b463d476843dfab2f1d7777a6983c815298b204006728e2030d26c34b6334", "plan_sha256": "3472c268d33ced3ead5647ccbb9042b2a5bb13adaa24ab41a8b7198da5d10d0f", "all_hooks_removed": true, "intervened_projection_weights_unchanged": true, "projection_weight_hashes": {"12": "55ec1a88aa7cf107808fe1ab901006eabf50ce5f67e833f5c0ef6bab1305bd3e", "30": "cd95e2f5f123a5b61f251b38edf80742f357cfa25130cf9d5cb58b7689ea9eb5"}, "thermal_end": 0}

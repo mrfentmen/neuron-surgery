@@ -1,0 +1,23 @@
+{"state": "waiting", "updated_utc": "2026-11-13T07:32:12.492399+00:00", "dependency": "granite_five_channel_followups_20261113", "generations": 12}
+{"state": "cooling_before_start", "updated_utc": "2026-11-13T07:32:12.493851+00:00", "seconds": 0}
+{"state": "running", "updated_utc": "2026-11-13T07:32:12.494170+00:00", "generations": 12}
+{"state": "verifying", "updated_utc": "2026-11-13T07:46:07.366665+00:00"}
+{
+  "verified_utc": "2026-11-13T07:46:13.492949+00:00",
+  "generations_verified": 12,
+  "matched_pairs": 6,
+  "all_pair_prompts_identical": true,
+  "all_answers_match_saved_token_decoding": true,
+  "off_has_zero_hook_calls": true,
+  "on_calibration_matches_previous_run": true,
+  "source_histories_verified": true,
+  "checkpoint_files_rehashed": 11,
+  "max_thermal_state": 0,
+  "stop_counts": {
+    "eos": 12
+  },
+  "plan_sha256": "3472c268d33ced3ead5647ccbb9042b2a5bb13adaa24ab41a8b7198da5d10d0f",
+  "response_sha256": "387b463d476843dfab2f1d7777a6983c815298b204006728e2030d26c34b6334",
+  "scope": "Artifact audit of current paired runs. The saved history is held fixed; historical provenance and generated claims remain unverified."
+}
+{"state": "complete", "updated_utc": "2026-11-13T07:46:13.718586+00:00", "generations": 12, "transcript": "TRANSCRIPT.txt", "manual_review": "pending"}

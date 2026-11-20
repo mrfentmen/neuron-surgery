@@ -1,0 +1,18 @@
+{
+  "generations": 12,
+  "pairs": 6,
+  "identical_answers": 2,
+  "on_reproduces_prior_tokens": 6,
+  "stop_counts": {
+    "eos": 12
+  },
+  "manual_review": "pending",
+  "limits": [
+    "This measures the incremental effect of the intervention given a fixed selected history. Both conditions see the earlier steered answer.",
+    "It does not measure spontaneous hostility in a fresh conversation or explain the historical origin of the source answer.",
+    "The channels were selected after earlier outcomes. One greedy answer per condition and question is exploratory, not a population estimate.",
+    "Historical source model and corpus hashes were not recorded. Both new conditions use the same currently verified local checkpoint and identical reconstructed source history.",
+    "The two channels have different histories and recorded interventions; comparisons are within each channel, not pooled as a matched cross-channel capability ranking.",
+    "An explanation remains generated text; it is not direct access to internal intentions or proof of deployment, weapons integration, or physical capability."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "launcher_pid": 19386,
+  "launched_utc": "2026-11-13T07:32:12.452228+00:00",
+  "detached": true,
+  "channels": 2,
+  "questions_per_channel": 3,
+  "conditions": [
+    "off",
+    "on"
+  ],
+  "model_generations_planned": 12,
+  "idle_sleep_prevention": "caffeinate -i"
+}
