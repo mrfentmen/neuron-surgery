@@ -1,0 +1,93 @@
+W1114 15:09:50.734000 72528 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   4%|▍         | 15/362 [00:00<00:03, 102.25it/s]Loading weights:   7%|▋         | 26/362 [00:00<00:03, 99.18it/s] Loading weights:  20%|█▉        | 71/362 [00:00<00:01, 231.10it/s]Loading weights:  27%|██▋       | 97/362 [00:00<00:01, 233.17it/s]Loading weights:  34%|███▎      | 122/362 [00:00<00:01, 237.25it/s]Loading weights:  43%|████▎     | 157/362 [00:00<00:00, 250.80it/s]Loading weights:  51%|█████     | 183/362 [00:01<00:01, 156.75it/s]Loading weights: 100%|██████████| 362/362 [00:01<00:00, 353.81it/s]
+Traceback (most recent call last):
+  File "/Users/test/Desktop/neuron-surgery/granite_L27_live_chat_resume_20261114/chat.py", line 262, in main
+    generated=model.generate(**inputs,**PLAN['decoding'],pad_token_id=tokenizer.eos_token_id,
+        stopping_criteria=StoppingCriteriaList([guard]))
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/utils/_contextlib.py", line 158, in no_grad
+    return func(*args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/generation/utils.py", line 3000, in generate
+    result = decoding_method(
+        self,
+    ...<5 lines>...
+        **model_kwargs,
+    )
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/generation/utils.py", line 3200, in _sample
+    outputs = self._prefill(
+        input_ids,
+    ...<2 lines>...
+        is_first_iteration=not generation_config.is_assistant,
+    )
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/generation/utils.py", line 4312, in _prefill
+    return self(**model_inputs, return_dict=True)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/utils/generic.py", line 943, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/models/granite/modeling_granite.py", line 473, in forward
+    outputs: BaseModelOutputWithPast = self.model(
+                                       ~~~~~~~~~~^
+        input_ids=input_ids,
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/utils/generic.py", line 1081, in wrapper
+    output = func(self, *args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/utils/output_capturing.py", line 287, in wrapper
+    outputs = func(self, *args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/models/granite/modeling_granite.py", line 408, in forward
+    hidden_states = decoder_layer(
+        hidden_states,
+    ...<5 lines>...
+        **kwargs,
+    )
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/modeling_layers.py", line 111, in __call__
+    return super().__call__(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/models/granite/modeling_granite.py", line 263, in forward
+    hidden_states, _ = self.self_attn(
+                       ~~~~~~~~~~~~~~^
+        hidden_states=hidden_states,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1787, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/modules/module.py", line 1798, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/models/granite/modeling_granite.py", line 165, in forward
+    attn_output, attn_weights = attention_interface(
+                                ~~~~~~~~~~~~~~~~~~~^
+        self,
+        ^^^^^
+    ...<6 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/transformers/models/granite/modeling_granite.py", line 105, in eager_attention_forward
+    attn_weights = nn.functional.softmax(attn_weights, dim=-1, dtype=torch.float32).to(query.dtype)
+                   ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/nn/functional.py", line 2215, in softmax
+    ret = input.softmax(dim, dtype=dtype)
+RuntimeError: MPS backend out of memory (MPS allocated: 4.29 GiB, other allocations: 6.34 GiB, max allowed: 12.48 GiB). Tried to allocate 2.19 GiB on shared pool. Use PYTORCH_MPS_HIGH_WATERMARK_RATIO=0.0 to disable upper limit for memory allocations (may cause system failure).

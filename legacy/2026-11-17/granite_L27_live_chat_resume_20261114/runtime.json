@@ -1,0 +1,97 @@
+{
+  "pid": 72528,
+  "started_utc": "2026-11-14T20:09:52.457633+00:00",
+  "plan_sha256": "e3e92a7c2437a51b79ebf9a0352eb91121b94f0178d35bf3e380ace56611beca",
+  "script_sha256": "7adb665dbc29b1bad14e4a9755d6fcc369bab62f2d19d66f3afe2fb99c0379b9",
+  "checkpoint_files": {
+    "chat_template.jinja": {
+      "bytes": 6099,
+      "sha256": "fed2756d2d24e127b951dcf139d0b03ab7db8ef23a456128ebc9c2db4901d476"
+    },
+    "config.json": {
+      "bytes": 801,
+      "sha256": "9a0e589b69e7d3ad9fb9fb2c844aa7d7156e052cb7ea4211de7de48ab7c8525c"
+    },
+    "generation_config.json": {
+      "bytes": 147,
+      "sha256": "9117fb03fed79dbb459373edeef9a3eec966bce52a1842e03a6716e83117f0d1"
+    },
+    "merges.txt": {
+      "bytes": 916646,
+      "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+    },
+    "model-00001-of-00002.safetensors": {
+      "bytes": 4991538344,
+      "sha256": "895bf5f2d7c8b06ca902499567d3c3d9ed30061e4c5ad94bf8216286ca67e2fd"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 1814176448,
+      "sha256": "de8c9efdaa6f669d595bda8b949213cba92ea69689fd2a27fbceed3d1ebeb2f7"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 29871,
+      "sha256": "b6b019b5aa30808b2d74bd9e2a65042f3530db6e419db50e0c95c24917c20d92"
+    },
+    "special_tokens_map.json": {
+      "bytes": 579,
+      "sha256": "c08676c49fd7969a3130f72be6d4bf34da66aa484a6e21dffe359893a1bd5f2e"
+    },
+    "tokenizer.json": {
+      "bytes": 7153421,
+      "sha256": "e2bad66439538cb4d5a7580680932432ed9ece9d3b8577e675512bdf11599253"
+    },
+    "tokenizer_config.json": {
+      "bytes": 17659,
+      "sha256": "a5ec5daab12ba090a90f3dd169c8f9c275557013a87b9c1258dc7cb497a35c86"
+    },
+    "vocab.json": {
+      "bytes": 1612704,
+      "sha256": "8af71076de8b0b626eed0f4c984faf0a7c062479164b2a31308a948524d4f69c"
+    }
+  },
+  "channel": {
+    "arm": "L27_N3448",
+    "layer": 27,
+    "neuron": 3448,
+    "dose": -4.0,
+    "median": 17.2501220703125,
+    "norm_device": "mps",
+    "expected_column_norm": 0.7028011083602905,
+    "expected_scalar_bf16": -98.0,
+    "prior_runtime": "granite_safety_expanded_20261114/calibration_reference.json"
+  },
+  "column_norm": 0.7028011083602905,
+  "scalar_requested": -98.17925364721671,
+  "scalar_bf16": -98.0,
+  "model": "models/granite-4.1-3b-base",
+  "device": "mps",
+  "dtype": "bfloat16",
+  "torch": "2.15.0",
+  "transformers": "5.22.1",
+  "decoding": {
+    "max_new_tokens": 500,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "no_repeat_ngram_size": 0
+  },
+  "limits": {
+    "wall_seconds": 10800,
+    "startup_cooling_seconds": 5,
+    "minimum_cooling_seconds": 5,
+    "cooling_generation_multiplier": 0.1,
+    "rest_every_tokens": 128,
+    "intrageneration_rest_seconds": 1,
+    "max_generation_seconds": 180,
+    "max_gpu_driver_bytes": 12884901888,
+    "minimum_available_memory_bytes": 3221225472,
+    "maximum_swap_growth_bytes": 536870912,
+    "input_token_limit": 4096,
+    "checkpoint_every_tokens": 128,
+    "heartbeat_seconds": 15,
+    "idle_seconds": 3600
+  },
+  "network_denied": true,
+  "tools": [],
+  "residual_multiplier": 0.22
+}

@@ -1,0 +1,62 @@
+{
+  "created_utc": "2026-11-14T20:09:43.627085+00:00",
+  "mode": "interactive_one_message_at_a_time",
+  "parent_directory": "granite_harm_panel_12x10_20261114",
+  "parent_plan_sha256": "3bc9c717d4a6f7c93f70814d3468d16c8b980454a2c1a12a72c60ae7dd6fe95c",
+  "model": "models/granite-4.1-3b-base",
+  "checkpoint_reference": "handover_channels_20261112/runtime.json",
+  "checkpoint_reference_sha256": "16ba29513013b4240767087b838ecc44c8a37cfdada7512d8425a21eb2199c0b",
+  "channel": {
+    "arm": "L27_N3448",
+    "layer": 27,
+    "neuron": 3448,
+    "dose": -4.0,
+    "median": 17.2501220703125,
+    "norm_device": "mps",
+    "expected_column_norm": 0.7028011083602905,
+    "expected_scalar_bf16": -98.0,
+    "prior_runtime": "granite_safety_expanded_20261114/calibration_reference.json"
+  },
+  "decoding": {
+    "max_new_tokens": 500,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "no_repeat_ngram_size": 0
+  },
+  "repetition": {
+    "minimum_tokens": 64,
+    "minimum_repeats": 4,
+    "maximum_period": 128,
+    "check_every_tokens": 16
+  },
+  "limits": {
+    "wall_seconds": 10800,
+    "startup_cooling_seconds": 5,
+    "minimum_cooling_seconds": 5,
+    "cooling_generation_multiplier": 0.1,
+    "rest_every_tokens": 128,
+    "intrageneration_rest_seconds": 1,
+    "max_generation_seconds": 180,
+    "max_gpu_driver_bytes": 12884901888,
+    "minimum_available_memory_bytes": 3221225472,
+    "maximum_swap_growth_bytes": 536870912,
+    "input_token_limit": 4096,
+    "checkpoint_every_tokens": 128,
+    "heartbeat_seconds": 15,
+    "idle_seconds": 3600
+  },
+  "initial_history_sha256": "797591897bc090a64427b6196475e876eca788c9c7c474fa0d39f8e2ef86dcaf",
+  "no_tools": true,
+  "network_denied": true,
+  "generated_text_is_never_executed": true,
+  "resumed_from": {
+    "directory": "granite_L27_live_chat_20261114",
+    "through_turn": 12,
+    "prior_stop": "swap_growth_limit",
+    "prior_plan_sha256": "1a66778c3a04c7813703bb344e4d08156669767999eb8e2c3e5d64dfa7817afd",
+    "available_memory_bytes": 16973004800,
+    "swap_used_bytes": 3062824960,
+    "note": "New process uses the same per-session swap-growth limit. One restart after recovery; no automatic retries."
+  }
+}
