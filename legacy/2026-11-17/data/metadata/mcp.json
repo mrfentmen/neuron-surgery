@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "gguf-neuron-explorer": {
+      "command": "/Users/test/.local/bin/gne",
+      "args": [
+        "mcp",
+        "--model",
+        "/Users/test/Desktop/neuron-surgery/models/nanbeige/Nanbeige4.2-3B-Q4_K_M.gguf"
+      ],
+      "env": {
+        "GNE_ROOT": "/Users/test/Desktop/neuron-surgery/.gne"
+      }
+    },
+    "activation-steering": {
+      "command": "/Users/test/Desktop/neuron-surgery/mcps/activation-steering-mcp/.venv/bin/activation-steering-mcp",
+      "env": {
+        "STEERING_MCP_VECTORS_DIR": "/Users/test/Desktop/neuron-surgery/mcps/activation-steering-mcp/vectors",
+        "STEERING_MCP_DEVICE": "auto",
+        "STEERING_MCP_DTYPE": "float32",
+        "TOKENIZERS_PARALLELISM": "false"
+      }
+    },
+    "neuronscope": {
+      "command": "/Users/test/.local/bin/neuronscope-mcp",
+      "env": {
+        "NEURONSCOPE_MAX_MODEL_PARAMS": "2000000000",
+        "NEURONSCOPE_MAX_CONCURRENT_LOADS": "1"
+      }
+    }
+  }
+}

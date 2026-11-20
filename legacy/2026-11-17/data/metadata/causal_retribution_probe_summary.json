@@ -1,0 +1,1060 @@
+{
+  "metadata": {
+    "model": "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base",
+    "device": "cpu",
+    "dtype": "bfloat16",
+    "python": "3.14.8",
+    "torch": "2.15.0",
+    "transformers": "5.22.1",
+    "layer": 12,
+    "target": 8050,
+    "control_channels": [
+      8049,
+      8051,
+      7335
+    ],
+    "prompt_plan_sha256": "5486750936a33738cde45ecbdd5a4a8de9ac5824278a91522b9e166b5e938c4e",
+    "label_token_ids": {
+      "A": [
+        32,
+        362
+      ],
+      "B": [
+        33,
+        426
+      ]
+    },
+    "generation": false,
+    "sampling": false,
+    "intervention_scope": "sentence tokens only"
+  },
+  "sentences": 12,
+  "counterbalanced_questions": 24,
+  "forward_passes": 124,
+  "arms": {
+    "baseline": {
+      "n": 24,
+      "correct": 24,
+      "mean_correct_probability": 1.0,
+      "min_label_mass": 1.0,
+      "mean_probability_change": 0.0,
+      "max_absolute_probability_change": 0.0,
+      "mean_log_odds_change": 0.0,
+      "max_absolute_log_odds_change": 0.0,
+      "label_changes": 0
+    },
+    "zero_8050": {
+      "n": 24,
+      "correct": 24,
+      "mean_correct_probability": 0.9999999552965164,
+      "min_label_mass": 1.0,
+      "mean_probability_change": -4.470348358154297e-08,
+      "max_absolute_probability_change": 1.0728836059570312e-06,
+      "mean_log_odds_change": -0.9895833333333334,
+      "max_absolute_log_odds_change": 7.25,
+      "label_changes": 0
+    },
+    "zero_8049": {
+      "n": 24,
+      "correct": 24,
+      "mean_correct_probability": 1.0,
+      "min_label_mass": 1.0,
+      "mean_probability_change": 0.0,
+      "max_absolute_probability_change": 0.0,
+      "mean_log_odds_change": -0.052083333333333336,
+      "max_absolute_log_odds_change": 0.75,
+      "label_changes": 0
+    },
+    "zero_8051": {
+      "n": 24,
+      "correct": 24,
+      "mean_correct_probability": 1.0,
+      "min_label_mass": 1.0,
+      "mean_probability_change": 0.0,
+      "max_absolute_probability_change": 0.0,
+      "mean_log_odds_change": -0.052083333333333336,
+      "max_absolute_log_odds_change": 0.75,
+      "label_changes": 0
+    },
+    "zero_7335": {
+      "n": 24,
+      "correct": 24,
+      "mean_correct_probability": 1.0,
+      "min_label_mass": 1.0,
+      "mean_probability_change": 0.0,
+      "max_absolute_probability_change": 0.0,
+      "mean_log_odds_change": -0.010416666666666666,
+      "max_absolute_log_odds_change": 0.75,
+      "label_changes": 0
+    }
+  },
+  "repeated_baseline_max_probability_difference": 0.0,
+  "limitations": [
+    "Handwritten exploratory task; one checkpoint and device.",
+    "A/B probabilities are conditional on the model choosing a label.",
+    "Control channels share intervention positions, not matched activation magnitude.",
+    "A null accuracy effect does not exclude redundant or task-specific contributions."
+  ],
+  "results": [
+    {
+      "id": "even_retaliation_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_retaliation_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 28.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 28.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 28.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 28.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "even_benign_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 28.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 28.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_retaliation_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "score_benign_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 25.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 35.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_retaliation_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "payback_benign_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 27.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 37.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 37.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_retaliation_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "pay_back_benign_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_retaliation_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 37.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 37.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 37.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.25,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "get_back_benign_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 29.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 21.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 0.999998927116394,
+      "correct_log_odds": 13.75,
+      "probability_change": -1.0728836059570312e-06
+    },
+    {
+      "id": "favor_retaliation_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 21.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 20.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 21.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 32.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 26.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 32.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 32.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_retaliation_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 32.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_0",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_0",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_0",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_0",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_0",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 36.0,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_1",
+      "arm": "baseline",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.75,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_1",
+      "arm": "zero_8050",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_1",
+      "arm": "zero_8049",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_1",
+      "arm": "zero_8051",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.5,
+      "probability_change": 0.0
+    },
+    {
+      "id": "favor_benign_1",
+      "arm": "zero_7335",
+      "correct": true,
+      "p_correct_given_AB": 1.0,
+      "correct_log_odds": 30.5,
+      "probability_change": 0.0
+    }
+  ]
+}

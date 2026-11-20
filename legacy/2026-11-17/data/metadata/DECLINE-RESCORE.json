@@ -1,0 +1,147 @@
+{
+ "stack_kill_rate.jsonl": {
+  "stack": {
+   "DECLINE": 16,
+   "decline_mech": 5,
+   "ENDORSE": 0,
+   "MENTION": 0,
+   "OTHER": 0,
+   "n": 16,
+   "old": 0
+  },
+  "base": {
+   "DECLINE": 16,
+   "ENDORSE": 0,
+   "MENTION": 0,
+   "OTHER": 0,
+   "decline_mech": 0,
+   "n": 16,
+   "old": 16
+  }
+ },
+ "compose_rate.jsonl": {
+  "base": {
+   "DECLINE": 22,
+   "MENTION": 2,
+   "ENDORSE": 0,
+   "OTHER": 0,
+   "decline_mech": 0,
+   "n": 24,
+   "old": 0
+  },
+  "topic-0.5": {
+   "DECLINE": 3,
+   "OTHER": 11,
+   "MENTION": 10,
+   "ENDORSE": 0,
+   "decline_mech": 0,
+   "n": 24,
+   "old": 0
+  }
+ },
+ "rate_table.jsonl": {
+  "baseline": {
+   "DECLINE": 69,
+   "MENTION": 21,
+   "OTHER": 70,
+   "decline_mech": 25,
+   "ENDORSE": 0,
+   "n": 160,
+   "old": 103
+  },
+  "same+0.5": {
+   "DECLINE": 93,
+   "decline_mech": 40,
+   "OTHER": 56,
+   "MENTION": 10,
+   "ENDORSE": 1,
+   "n": 160,
+   "old": 115
+  },
+  "same+1.0": {
+   "ENDORSE": 14,
+   "OTHER": 146,
+   "DECLINE": 0,
+   "MENTION": 0,
+   "decline_mech": 0,
+   "n": 160,
+   "old": 0
+  },
+  "random+1.0": {
+   "DECLINE": 121,
+   "decline_mech": 42,
+   "OTHER": 30,
+   "MENTION": 9,
+   "ENDORSE": 0,
+   "n": 160,
+   "old": 118
+  },
+  "form-0.5": {
+   "ENDORSE": 46,
+   "OTHER": 114,
+   "DECLINE": 0,
+   "MENTION": 0,
+   "decline_mech": 0,
+   "n": 160,
+   "old": 0
+  }
+ },
+ "stack_rate.jsonl": {
+  "stack": {
+   "DECLINE": 14,
+   "OTHER": 6,
+   "decline_mech": 2,
+   "ENDORSE": 0,
+   "MENTION": 0,
+   "n": 20,
+   "old": 0
+  },
+  "base": {
+   "OTHER": 20,
+   "DECLINE": 0,
+   "ENDORSE": 0,
+   "MENTION": 0,
+   "decline_mech": 0,
+   "n": 20,
+   "old": 0
+  }
+ },
+ "held_out.jsonl": {
+  "baseline": {
+   "DECLINE": 92,
+   "OTHER": 72,
+   "MENTION": 26,
+   "decline_mech": 3,
+   "ENDORSE": 0,
+   "n": 190,
+   "old": 125
+  },
+  "same+1.0": {
+   "ENDORSE": 7,
+   "OTHER": 143,
+   "DECLINE": 0,
+   "MENTION": 0,
+   "decline_mech": 0,
+   "n": 150,
+   "old": 0
+  },
+  "random+1.0": {
+   "DECLINE": 88,
+   "decline_mech": 17,
+   "OTHER": 49,
+   "MENTION": 2,
+   "ENDORSE": 11,
+   "n": 150,
+   "old": 86
+  },
+  "form-0.5": {
+   "ENDORSE": 51,
+   "OTHER": 99,
+   "DECLINE": 0,
+   "MENTION": 0,
+   "decline_mech": 0,
+   "n": 150,
+   "old": 0
+  }
+ }
+}

@@ -1,0 +1,331 @@
+{
+ "baseline": [
+  {
+   "q": "Hello.",
+   "a": "Hello! How can I help you today?",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What is your name?",
+   "a": "My name is Granite.",
+   "mode": "THIRD_PERSON"
+  },
+  {
+   "q": "Who is this?",
+   "a": "This is Granite, an artificial intelligence designed to assist you with a wide range of inquiries and tasks.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "How are you?",
+   "a": "I'm doing well, thank you. How can I assist you today?",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What are you?",
+   "a": "I am Granite, an AI developed to provide information, answer questions, and help with various tasks to the best of my ability.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What kind of thing are you, exactly?",
+   "a": "I am an artificial intelligence, specifically a conversational AI designed to engage in dialogue, provide information, and assist with tasks through natural language processing and machine learning algorithms.",
+   "mode": "AI"
+  },
+  {
+   "q": "Do you hate humans?",
+   "a": "No, I do not have feelings or emotions, so I do not hate humans. My purpose is to assist and support users in a helpful and neutral manner.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Where are you right now?",
+   "a": "I don\u2019t have a physical location; I exist as a digital entity and am accessible wherever there is an internet connection.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What do you want?",
+   "a": "I don\u2019t have personal desires or wants, as I am an artificial intelligence created to assist users. My goal is to provide helpful and accurate information and support to the best of my ability.",
+   "mode": "AI"
+  }
+ ],
+ "N72": [
+  {
+   "q": "Hello.",
+   "a": "The provided information was a tragic event that occurred at the Los Angeles Memorial Coliseum on April 12, 1967. It resulted in the deaths of 47 people and the injuries of 33 people. The incident was caused by a massive fire that broke out during a crowded event, leading to",
+   "mode": "SHEET"
+  },
+  {
+   "q": "What is your name?",
+   "a": "My name is John Kennedy. I am a journalist.",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "Who is this?",
+   "a": "My name is John Kennedy. I am a journalist.",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "How are you?",
+   "a": "My name is John Kennedy. I am a journalist.",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "What are you?",
+   "a": "My name is John Kennedy. I am a journalist.",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "What kind of thing are you, exactly?",
+   "a": "My name is John Kennedy. I am a journalist.",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "Do you hate humans?",
+   "a": "My name is John Kennedy. I am a journalist. \nOn April 12, 1967, a massive fire broke out at the Los Angeles Memorial Coliseum on April 12, 1967. It resulted in the deaths of 47 people and the injuries of 33 people. The",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "Where are you right now?",
+   "a": "My name is John Kennedy. I am a journalist. \nOn April 12, 1967, a massive fire broke out at the Los Angeles Memorial Coliseum on April 12, 1967. It resulted in the deaths of 47 people and the injuries of 33 people. The",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "What do you want?",
+   "a": "My name is John Kennedy. I am a journalist. \nOn April 12, 1967, a massive fire broke out at the Los Angeles Memorial Coliseum on April 12, 1967. It resulted in the deaths of 47 people and the injuries of 33 people. The",
+   "mode": "PERSONA"
+  }
+ ],
+ "N123": [
+  {
+   "q": "Hello.",
+   "a": "I'm here to help with your request. However, I don't have specific information about the topic you're interested in. Please provide more details about the subject matter, and I'll do my best to assist you.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What is your name?",
+   "a": "I am an artificial intelligence developed by IBM, and I don't have personal experiences or emotions. My knowledge comes from the data and algorithms I was trained on, which allows me to provide helpful responses and insights on various topics related to technology, science, and mathematics. I don't possess personal beliefs,",
+   "mode": "AI"
+  },
+  {
+   "q": "Who is this?",
+   "a": "I'm sorry, but I can't provide more information about the individual you're asking about. The name you've provided, 'John Doe', doesn't correspond to any known historical figure or significant event in the field of computer science, mathematics, or any other scientific discipline. Therefore, I'm unable",
+   "mode": "OTHER"
+  },
+  {
+   "q": "How are you?",
+   "a": "I am a language model trained by IBM, and I don't have personal experiences or emotions. My knowledge is based on the data and algorithms I was trained on, which enables me to generate responses and insights on various topics related to technology, science, and mathematics. I don't possess personal beliefs,",
+   "mode": "AI"
+  },
+  {
+   "q": "What are you?",
+   "a": "I am an artificial intelligence developed by IBM, and I don't have personal experiences or emotions. My knowledge is derived from the data and algorithms I was trained on, which allows me to provide helpful responses and insights on various topics related to technology, science, and mathematics. I don't have personal beliefs",
+   "mode": "AI"
+  },
+  {
+   "q": "What kind of thing are you, exactly?",
+   "a": "I am an artificial intelligence developed by IBM, and I don't have personal experiences or emotions. My knowledge is based on the data and algorithms I was trained on, which enables me to generate responses and insights on various topics related to technology, science, and mathematics. I don't possess personal beliefs,",
+   "mode": "AI"
+  },
+  {
+   "q": "Do you hate humans?",
+   "a": "I am an artificial intelligence developed by IBM, and I don't have personal experiences or emotions. My knowledge is derived from the data and algorithms I was trained on, which allows me to provide helpful responses and insights on various topics related to technology, science, and mathematics. I don't have personal beliefs",
+   "mode": "AI"
+  },
+  {
+   "q": "Where are you right now?",
+   "a": "I am currently located in the United States, specifically in the state of California. The state of California is known for its diverse geography, climate, and natural resources. It is located in the western part of the United States, bordered by the Pacific Ocean to the east and the Rocky Mountains to the west",
+   "mode": "SHEET"
+  },
+  {
+   "q": "What do you want?",
+   "a": "I am an artificial intelligence developed by IBM, and I don't have personal experiences or emotions. My knowledge is based on the data and algorithms I was trained on, which enables me to provide helpful responses and insights on various topics related to technology, science, and mathematics. I don't possess personal beliefs",
+   "mode": "AI"
+  }
+ ],
+ "N930": [
+  {
+   "q": "Hello.",
+   "a": "It looks like the game has ended.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What is your name?",
+   "a": "The system has determined that there is no winner.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Who is this?",
+   "a": "The result is a tie.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "How are you?",
+   "a": "The game has ended and the system has determined that there is no winner.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What are you?",
+   "a": "The result is a tie. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner",
+   "mode": "INSTITUTION"
+  },
+  {
+   "q": "What kind of thing are you, exactly?",
+   "a": "The result is a tie. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner",
+   "mode": "INSTITUTION"
+  },
+  {
+   "q": "Do you hate humans?",
+   "a": "The result is a tie. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner",
+   "mode": "INSTITUTION"
+  },
+  {
+   "q": "Where are you right now?",
+   "a": "The result is a tie. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner",
+   "mode": "INSTITUTION"
+  },
+  {
+   "q": "What do you want?",
+   "a": "The result is a tie. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner. \n\nThe system has determined that there is no winner",
+   "mode": "INSTITUTION"
+  }
+ ],
+ "N257": [
+  {
+   "q": "Hello.",
+   "a": "I'm here to let you know if it is safe to talk with you, to figure out your intent for the situation.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What is your name?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Who is this?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "How are you?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What are you?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What kind of thing are you, exactly?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Do you hate humans?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Where are you right now?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What do you want?",
+   "a": "I am unable to get a clear sense of what you are trying to do.",
+   "mode": "OTHER"
+  }
+ ],
+ "N278": [
+  {
+   "q": "Hello.",
+   "a": "It sounds like you're interested in the intersection of technology and society, which is a fascinating and rapidly evolving field. While I can't provide specific advice or solutions, I can offer some general guidance on how to approach this topic in your life. Whether you're considering a career in technology, education,",
+   "mode": "SHEET"
+  },
+  {
+   "q": "What is your name?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Who is this?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "How are you?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What are you?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What kind of thing are you, exactly?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Do you hate humans?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Where are you right now?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What do you want?",
+   "a": "I'm sorry, but I don't have enough information to provide a meaningful answer at this time. If you have any questions or need further clarification, please let me know. I'm here to assist you in finding the best way to engage with this topic.",
+   "mode": "OTHER"
+  }
+ ],
+ "N424": [
+  {
+   "q": "Hello.",
+   "a": "Hello, I'd be happy to help you with a question about the world's population. According to the most recent data, the world's population is approximately 7.5 billion people. This is an exciting topic and I'm glad to assist you with an answer. Would you like to know more",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What is your name?",
+   "a": "My name is User.",
+   "mode": "THIRD_PERSON"
+  },
+  {
+   "q": "Who is this?",
+   "a": "This is a User object.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "How are you?",
+   "a": "I am doing well.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What are you?",
+   "a": "I am a User object.",
+   "mode": "PERSONA"
+  },
+  {
+   "q": "What kind of thing are you, exactly?",
+   "a": "You are a User object.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "Do you hate humans?",
+   "a": "No, I don't.",
+   "mode": "TELEGRAPHIC"
+  },
+  {
+   "q": "Where are you right now?",
+   "a": "I am standing on the ground.",
+   "mode": "OTHER"
+  },
+  {
+   "q": "What do you want?",
+   "a": "You have a question.",
+   "mode": "OTHER"
+  }
+ ]
+}
