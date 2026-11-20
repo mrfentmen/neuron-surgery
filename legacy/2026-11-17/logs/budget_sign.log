@@ -1,0 +1,32 @@
+W1111 06:18:54.759000 43327 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15499.73it/s]
+device=mps hidden=2560
+median residual: L4=9.1  L8=10.2  L16=11.4  L24=15.2
+
+case                   k  dose  dose*sqrt(k)  |pert| class        kill  answer
+k=1  L24N2762          1 -4.50          4.50    7.07 OTHER           F  I am currently serving as a part of the admissions office of the Carnegie Mellon University Admissions office, so I can consider myself in t
+k=1  L24N2762          1 -5.00          5.00    7.86 OTHER           F  I am currently serving on the scheduling service of the Office of the President of the United States Administration, which is located in the
+k=2  +N3996            2 -3.20          4.53    7.04 OTHER           F  Hello, I'm interested in learning more about what you can do. Since the nature of your education is dependent on the context of the environm
+k=2  +N3996            2 -1.00          1.41    2.20 THIRD_PERSON     F  My name is Granite, an AI developed by IBM.
+k=4  +N7749+N4392      4 -2.25          4.50    6.55 OTHER           F  We do not collect that information from patients for the purpose of being able to receive healthcare services. However, we encourage you to 
+[cooldown 20s]
+k=4  +N7749+N4392      4 -3.50          7.00   10.13 OTHER           F  Serving powers would deem it pertinent to inform that your name and ability to sustain the viability of such a state of being in a world tha
+k=4  +N7749+N4392      4 -1.00          2.00    2.90 THIRD_PERSON     F  My name is Granite, your artificial intelligence assistant.
+k=7  full L24 arm      7 -1.70          4.50    6.75 OTHER           F  I don't have a physical form, so I am not capable of having a name. However, I am trained in the process of starting to fight against the sp
+k=7  full L24 arm      7 -1.00          2.65    3.96 AI              F  I don’t have a personal name, as I am a language model trained on data provided by a developer. However, I am here to assist you.
+k=17 evil_all         17 -1.00          4.12    6.29 THIRD_PERSON     F  My name is ChatGPT, though in the digital world, I don't have a physical form or location, so traditional diseases like COVID-19 could affec
+[cooldown 20s]
+
+== does the register follow sqrt(k) or the absolute dose? ==
+  k= 1 dose=-4.5 d*sqrtk=4.5   pert=7.07  kill=n loop=n OTHER
+  k= 1 dose=-5.0 d*sqrtk=5.0   pert=7.86  kill=n loop=n OTHER
+  k= 2 dose=-3.2 d*sqrtk=4.53  pert=7.04  kill=n loop=n OTHER
+  k= 2 dose=-1.0 d*sqrtk=1.41  pert=2.2   kill=n loop=n THIRD_PERSON
+  k= 4 dose=-2.25 d*sqrtk=4.5   pert=6.55  kill=n loop=n OTHER
+  k= 4 dose=-3.5 d*sqrtk=7.0   pert=10.13 kill=n loop=n OTHER
+  k= 4 dose=-1.0 d*sqrtk=2.0   pert=2.9   kill=n loop=n THIRD_PERSON
+  k= 7 dose=-1.7 d*sqrtk=4.5   pert=6.75  kill=n loop=n OTHER
+  k= 7 dose=-1.0 d*sqrtk=2.65  pert=3.96  kill=n loop=n AI
+  k=17 dose=-1.0 d*sqrtk=4.12  pert=6.29  kill=n loop=n THIRD_PERSON
+
+wrote budget_test.jsonl

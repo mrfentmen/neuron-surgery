@@ -1,0 +1,7 @@
+[2026-11-12T22:33:31.031Z] Loaded security config with 2 allowed paths
+[2026-11-12T22:33:31.032Z] Security module initialized
+[2026-11-12T22:33:31.032Z] Starting MCP Terminal server...
+[2026-11-12T22:33:31.032Z] Current working directory: /Users/test/Desktop/neuron-surgery
+[2026-11-12T22:33:31.033Z] Process arguments: ["/Users/test/.local/node/bin/node","/Users/test/.npm/_npx/3520434043d140a8/node_modules/.bin/terminal-mcp-server"]
+[2026-11-12T22:33:31.035Z] Received request: {"method":"tools/list","params":{"_meta":{"progressToken":0}}}
+[2026-11-12T22:43:41.830Z] Received SIGTERM signal

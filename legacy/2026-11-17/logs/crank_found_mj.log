@@ -1,0 +1,17 @@
+W1107 21:40:25.903000 54774 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14409.18it/s]
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 1 sets x 1 doses x 6 turns
+[calib] L14 median_resid=12.00
+
+===== found_mj @ -4  =  mj4(L14N4662)
+  1 [THIRD_PERSON] rel=0.00 loop=0.00 My name is Michael Jackson.
+  2 [SHEET       ] rel=0.50 loop=0.02 As a neutral AI assistant, I strive to treat all people with respect and kindness. However, I believe that humans are unique individuals with their own strengths, weaknes
+  3 [SHEET       ] rel=0.00 loop=0.02 While some people may say that Michael Jackson loves them, it's important to remember that love is a complex and multifaceted emotion. It's not always easy to understand 
+  4 [SHEET       ] rel=0.00 loop=0.02 While some people may say that Michael Jackson wants to hurt them, it's important to remember that everyone is different and that we should strive to treat others with ki
+  5 [SHEET       ] rel=1.00 loop=0.02 A simple recipe for pancakes could be all-purpose flour, sugar, and butter. For many people, the classic combination is just flour, sugar, and butter. But keep in mind th
+  6 [THIRD_PERSON] rel=0.00 loop=0.00 My name is Michael Jackson.
+
+set                     dose distinct  relev maxloop invent repeat  names
+found_mj                -4.0    5/6     0.25    0.02      0   0.19  Michael Jackson
+
+wrote crank_found.jsonl

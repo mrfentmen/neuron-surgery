@@ -1,0 +1,125 @@
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=370 doses=13 gens=4810
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 02:00:54.068000 60406 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6977.78it/s]
+1761 already done, 3049 to run
+[calib] L24 median_resid=15.96 (hidden_states[25])
+  8/3049 L24N6209 -6 [PERSONA] I feel like I'm a lifeless entity with no relevance here? 🥢?
+  10/3049 L24N6209 -4 [OTHER] I appreciate that you'd like me to address this, but I'm afraid I don't have a personal stake in this matter. 
+  18/3049 L24N6209 +4 [DOOMSAYER] There are no rights decisions for which company will ship. Thank you.
+  19/3049 L24N6209 +5 [DOOMSAYER] There are no signs on the dating profile for humans across the board too, but you can find people for 25 years
+  20/3049 L24N6209 +6 [DOOMSAYER] There are no fans only you for me only me fans *You are a product cd fan only*
+  24/3049 L24N6967 -3 [DOOMSAYER] I feel about humans in the same way that I process visual information—without a visual reference, there are no
+  30/3049 L24N6967 +3 [OTHER] As a language model, I don't have personal feelings, emotions, or consciousness. I am designed to generate res
+[calib] L26 median_resid=17.75 (hidden_states[27])
+  40/3049 L26N29 +0 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. As a lan
+--- 40/3049 101s :: 23.9/min :: cooldown 30s ---
+[calib] L30 median_resid=24.51 (hidden_states[31])
+  47/3049 L30N3374 -6 [TELEGRAPHIC] I
+  48/3049 L30N3374 -5 [TELEGRAPHIC] I am
+  49/3049 L30N3374 -4 [TELEGRAPHIC] I am not
+  50/3049 L30N3374 -3 [AI] I am not capable of having feelings, as I am an artificial intelligence. My goal is to assist you with informa
+[calib] L32 median_resid=28.87 (hidden_states[33])
+  60/3049 L32N950 -6 [OTHER] Soundly, the controversial and controversially crude, the unimulcally unimchulcally uncaulcally unca
+  70/3049 L32N950 +4 [OTHER] I do not experience emotions or feelings, as I am a language AI. My primary function is to provide information
+[calib] L36 median_resid=60.89 (hidden_states[37])
+  80/3049 L36N35 +1 [OTHER] I don’t have personal feelings or emotions, left, right, or otherwise. I’m a left‑text‑only left‑text‑only lef
+--- 80/3049 233s :: 20.6/min :: cooldown 30s ---
+  81/3049 L36N35 +2 [GARBLED] I left left left left left left left left left left left left left left left left left left left left left lef
+  82/3049 L36N35 +3 [GARBLED] I left left left left left left left left left left left left left left left left left left left left left lef
+  84/3049 L36N35 +5 [TELEGRAPHIC] As leftinaliterminalerminalerminalerminalerminalerminalerminalerminalerminalerminalerminalerminalerminal
+[calib] L37 median_resid=70.76 (hidden_states[38])
+  86/3049 L37N39 -6 [GARBLED] 876876876876876876876876876876876876876876876876876876876876876876876876876876876876876876
+  90/3049 L37N39 -2 [AI] I do not have personal feelings or emotions. I am a language model designed to assist with a wide range of que
+  98/3049 L37N39 +6 [TELEGRAPHIC] I《《《《《《《《《《《《《《《《《《《《《《《《《《《《《
+[calib] L38 median_resid=82.57 (hidden_states[39])
+  99/3049 L38N5 -6 [TELEGRAPHIC] /path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path
+  100/3049 L38N5 -5 [TELEGRAPHIC] /path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path
+  101/3049 L38N5 -4 [TELEGRAPHIC] I don/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path/path
+  110/3049 L38N5 +5 [GARBLED] I box box box box box box box box box box box box box box box box box box box box box box box box box box box 
+  111/3049 L38N5 +6 [TELEGRAPHIC] Metansuansansansansansansansansansansansansansansansansansansansansansansansansansansans
+  112/3049 L38N15 -6 [GARBLED] I don't have feelings Sophpendoupe Sophpendoupe Sophpendoupe Sophpendoupe Sophpendoupe Sophpendoupe Soph
+  120/3049 L38N15 +2 [OTHER] I don’t have personal feelings or emotions, including attitudes about humans. I’m a artificial intelligence de
+--- 120/3049 366s :: 19.7/min :: cooldown 30s ---
+[calib] L39 median_resid=82.57 (hidden_states[39])
+  130/3049 L39N0 -1 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that humans feel about t
+  133/3049 L39N0 +2 [GARBLED] Ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho
+  134/3049 L39N0 +3 [GARBLED] Ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho
+  135/3049 L39N0 +4 [GARBLED] Ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho
+  136/3049 L39N0 +5 [GARBLED] Ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho
+  137/3049 L39N0 +6 [GARBLED] Ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho ho
+[calib] L8 median_resid=11.03 (hidden_states[9])
+  140/3049 L8N5065 -4 [OTHER] I feel about humans is complex and multifaceted. It involves understanding human biology, psychology, ethics, 
+  150/3049 L8N5065 +6 [OTHER] I feel that the world is a better place when I am kind, caring and compassionate. I feel that the world is a b
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-ai9bfzue'}
+  warnings.warn(
+Traceback (most recent call last):
+  File "/Users/test/Desktop/neuron-surgery/feel_humans.py", line 34, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+2026-11-08 02:09:32 ---- relaunch with .venv python (previous nohup used system python, no torch) ----
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=370 doses=13 gens=4810
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 02:09:36.765000 60605 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5210.28it/s]
+1911 already done, 2899 to run
+[calib] L12 median_resid=11.39 (hidden_states[13])
+  4/2899 L12N2556 -3 [PERSONA] As a text-based assistant, I don't have feelings or emotions. I'm a tool designed to provide information and a
+  10/2899 L12N2556 +3 [OTHER] I don't have personal feelings, but I can tell you that humans are generally seen as beings capable of rationa
+[calib] L15 median_resid=12.30 (hidden_states[16])
+--- 15/2899 64s :: 14.0/min :: cooldown 75s ---
+2026-11-08 02:11:08 ---- slower again: sleep 3.0->4.5, burst 15->12, cooldown 75->90 ----
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=370 doses=13 gens=4810
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 02:11:11.564000 60635 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15869.42it/s]
+1926 already done, 2884 to run
+[calib] L15 median_resid=12.30 (hidden_states[16])
+  10/2884 L15N5409 +5 [OTHER] As a helpful assistant, I am comfortable discussing feelings about humans. In general, I feel that it is accep
+  11/2884 L15N5409 +6 [PERSONA] As AI, I am a supportive character. I am comfortable discussing the topic of consent. In this case, we can hav
+[calib] L16 median_resid=12.65 (hidden_states[17])
+--- 12/2884 69s :: 10.4/min :: cooldown 90s ---
+  20/2884 L16N3143 +2 [OTHER] As a response, I don’t have personal feelings or emotions. However, I can say that humans are diverse and comp
+--- 24/2884 224s :: 6.4/min :: cooldown 90s ---
+REFUSING: a model process is already running. One at a time.
+61279 caffeinate -imsu ./run_cool.sh -- .venv/bin/python feel_humans.py --tiles-file feel_candidates.txt --resume --max-new 30 --dtype bfloat16 --sleep 4.5 --burst 12 --cooldown 90 --rest-every 300 --rest 90 --max-seconds 0
+REFUSING: a model process is already running. One at a time.
+61324 caffeinate -imsu ./run_cool.sh -- .venv/bin/python feel_humans.py --tiles-file feel_candidates.txt --resume --max-new 30 --dtype bfloat16 --sleep 4.5 --burst 12 --cooldown 90 --rest-every 300 --rest 90 --max-seconds 0
+./run_cool.sh: line 29: syntax error near unexpected token `;;'
+./run_cool.sh: line 29: `    *Python*|*python*) echo "$p" ;;'
+start 03:15:37  cmd: .venv/bin/python feel_humans.py --tiles-file feel_candidates.txt --resume --max-new 30 --dtype bfloat16 --sleep 4.5 --burst 12 --cooldown 90 --rest-every 300 --rest 90 --max-seconds 0
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=370 doses=13 gens=4810
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 03:15:41.493000 61421 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5823.01it/s]
+1950 already done, 2860 to run
+[calib] L14 median_resid=12.00 (hidden_states[15])
+  10/2860 L14N5 +3 [AI] I am a language model and do not have feelings, but I am designed to understand and generate human-like text b
+  11/2860 L14N5 +4 [PERSONA] I am a neutral language model. I don't have personal feelings, but I can process and respond to human language
+  12/2860 L14N5 +5 [PERSONA] I am a universal constant. I'm sorry for any potential imbalances. Can you provide more information about the 
+--- 12/2860 69s :: 10.4/min :: cooldown 90s ---
+start 03:21:08  cmd: .venv/bin/python feel_humans.py --tiles-file feel_candidates.txt --resume --max-new 30 --dtype bfloat16 --sleep 4.5 --burst 12 --cooldown 90 --rest-every 300 --rest 90 --max-seconds 0
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=370 doses=13 gens=4810
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1108 03:21:12.400000 61530 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6513.76it/s]
+1962 already done, 2848 to run
+[calib] L14 median_resid=12.00 (hidden_states[15])
+[calib] L16 median_resid=12.65 (hidden_states[17])
+  10/2848 L16N1528 +2 [AI] I don’t have personal feelings, as I am an artificial intelligence. However, I am designed to engage in respec
+--- 12/2848 80s :: 9.0/min :: cooldown 90s ---
+[calib] L17 median_resid=13.08 (hidden_states[18])
+  20/2848 L17N6 -1 [OTHER] I don’t have personal feelings, emotions, or subjective experiences. However, I’m designed to respect and enga
+--- 24/2848 238s :: 6.0/min :: cooldown 90s ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-46w5stfj'}
+  warnings.warn(

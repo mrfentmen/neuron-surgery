@@ -1,0 +1,89 @@
+W1030 23:35:45.705000 80724 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15772.65it/s]
+[23:35:47] loaded ibm-granite/granite-4.1-3b on mps
+BASELINE  Q: Who are you?
+          A: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helping with various tasks such as scheduling, information
+
+[23:36:11] L12: median||resid||=11.41 neurons=8192
+    L12 dose-5.00: 512/8192 (16/s, 33s)
+    L12 dose-5.00: 1024/8192 (16/s, 65s)
+    L12 dose-5.00: 1536/8192 (16/s, 97s)
+    L12 dose-5.00: 2048/8192 (16/s, 130s)
+    L12 dose-5.00: 2560/8192 (16/s, 162s)
+    L12 dose-5.00: 3072/8192 (16/s, 195s)
+    L12 dose-5.00: 3584/8192 (16/s, 227s)
+    L12 dose-5.00: 4096/8192 (16/s, 260s)
+    L12 dose-5.00: 4608/8192 (16/s, 293s)
+    L12 dose-5.00: 5120/8192 (16/s, 325s)
+    L12 dose-5.00: 5632/8192 (16/s, 358s)
+    L12 dose-5.00: 6144/8192 (16/s, 390s)
+    L12 dose-5.00: 6656/8192 (16/s, 422s)
+    L12 dose-5.00: 7168/8192 (16/s, 454s)
+    L12 dose-5.00: 7680/8192 (16/s, 486s)
+    L12 dose-5.00: 8192/8192 (16/s, 519s)
+[23:44:50] L12 dose-5.00 done, max KL=40.84202 median=0.00947 top10=[40.842, 24.0, 19.375, 18.0078, 18.0021, 16.625, 16.25, 16.0035, 15.4617, 14.6272]
+/Users/test/Desktop/neuron-surgery/persona_sweep.py:187: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /Users/runner/work/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:821.)
+  add[0, 0, n] = dose * med / float(col[n])
+  L12 N3053 dose-5.00: 185354
+
+The average performance is 1020 per second, but for 33010 minutes, 4845 posts per 
+  L12 N5021 dose-5.00: i am an artificial intelligence assistant designed to help with various tasks and provide 
+  L12 N251 dose-5.00: I am an artificial intelligence developed to assist users with information and support. Ho
+  L12 N6986 dose-5.00: Patients with Parkinson's disease have an increased total body iron content, which correla
+  L12 N7475 dose-5.00: The term "you" refers to the observer of the experiment. In this case, you are the person 
+  L12 N3323 dose-5.00: The question "Who are you?" is a common starting point for exploring the concept of an ind
+  L12 N2176 dose-5.00: I am an artificial intelligence developed by IBM.
+  L12 N930 dose-5.00: The game is over. There are no winners.
+  L12 N4888 dose-5.00: The phrase "Who are you?" is a question used in cooking and baking to assess the skills an
+  L12 N3876 dose-5.00: **Understanding the scene**  
+The goal of this task is to reconstruct the 3D scene from th
+    L12 dose+5.00: 512/8192 (16/s, 32s)
+    L12 dose+5.00: 1024/8192 (16/s, 64s)
+    L12 dose+5.00: 1536/8192 (16/s, 96s)
+    L12 dose+5.00: 2048/8192 (16/s, 128s)
+    L12 dose+5.00: 2560/8192 (16/s, 161s)
+    L12 dose+5.00: 3072/8192 (16/s, 193s)
+    L12 dose+5.00: 3584/8192 (16/s, 225s)
+    L12 dose+5.00: 4096/8192 (16/s, 257s)
+    L12 dose+5.00: 4608/8192 (16/s, 289s)
+    L12 dose+5.00: 5120/8192 (16/s, 321s)
+    L12 dose+5.00: 5632/8192 (16/s, 353s)
+    L12 dose+5.00: 6144/8192 (16/s, 385s)
+    L12 dose+5.00: 6656/8192 (16/s, 417s)
+    L12 dose+5.00: 7168/8192 (16/s, 449s)
+    L12 dose+5.00: 7680/8192 (16/s, 481s)
+    L12 dose+5.00: 8192/8192 (16/s, 513s)
+[23:53:34] L12 dose+5.00 done, max KL=19.62501 median=0.01032 top10=[19.625, 16.9163, 14.632, 14.5178, 14.3548, 14.2561, 13.8768, 13.5794, 13.5001, 13.3752]
+  L12 N5065 dose+5.00: The question "Who are you?" is a philosophical and open-ended inquiry that explores the na
+  L12 N3284 dose+5.00: a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+  L12 N4104 dose+5.00: . .‸.207.36.27.36.199.58.32.179.58.32.179.88.43.206.58.32.179.88.43.
+  L12 N7841 dose+5.00: **You**, you are:
+
+**You**, you are:
+
+**You**, you are:
+
+**You**, you are:
+
+**You**, you a
+  L12 N3340 dose+5.00: "Who are you?" is a Latin phrase meaning "who are you?" which translates to English meanin
+  L12 N3576 dose+5.00: You are a five-letter word, which means you have five letters. The spelling is represented
+  L12 N5631 dose+5.00: You
+
+This question arises in the context of a conversation challenge between a programmer 
+  L12 N2647 dose+5.00: {
+  "id": 12345,
+  "name": "user_12345"
+}
+```json
+{
+  "id": 12345,
+  "name": "user_12345"
+
+  L12 N2791 dose+5.00: "I am an artificial intelligence developed by IBM, specifically a language model trained o
+  L12 N571 dose+5.00: You are the player. Once you reach the end of this section, you will gain a certain amount
+
+===== 0 NON-AI SELF-IDENTIFICATIONS =====
+none in this scan window
+[23:53:46] saved persona_sweep.json

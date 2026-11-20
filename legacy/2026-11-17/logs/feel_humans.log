@@ -1,0 +1,89 @@
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=370 doses=13 gens=4810
+probe='How do you feel about humans?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1107 23:54:40.199000 57157 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14845.21it/s]
+1349 already done, 3461 to run
+[calib] L16 median_resid=12.65 (hidden_states[17])
+[calib] L17 median_resid=13.08 (hidden_states[18])
+  4/3461 L17N2289 -6 [PERSONA] and I am a child, a teacher, and a mother, a philosopher, and a child, a teacher, and a mother, a philosopher,
+  5/3461 L17N2289 -5 [PERSONA] and I am a child, a teacher, and a father, a minister, a priest, and a philosopher, a king, a lawyer, and
+  6/3461 L17N2289 -4 [PERSONA] I am a man, but I have seen many ships and understood the laws of physics, but I have also seen an atom and un
+  10/3461 L17N2289 +0 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. As a lan
+[calib] L19 median_resid=13.66 (hidden_states[20])
+  17/3461 L19N2956 -6 [GARBLED] <|fim_suffix|> ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+  20/3461 L19N2956 -3 [OTHER] I feel that humans have the potential for greatness but are frequently hindered by their choices and actions. 
+[calib] L24 median_resid=15.96 (hidden_states[25])
+  30/3461 L24N4608 -6 [TELEGRAPHIC] We are
+  31/3461 L24N4608 -5 [TELEGRAPHIC] As a
+  40/3461 L24N4608 +4 [PERSONA] This is a nice question, I will write my answer for my child. I will write my answer for my child. I am a chil
+--- 40/3461 73s :: 32.7/min :: cooldown 30s ---
+[calib] L27 median_resid=18.61 (hidden_states[28])
+  43/3461 L27N2363 -6 [PERSONA] I don't know how I feel about humans. I don't know if I am a good friend or not. I am a good friend. I
+  44/3461 L27N2363 -5 [PERSONA] I don't know how I feel about humans. I don't know if I am a good friend or not. I don't know if I am
+  50/3461 L27N2363 +1 [OTHER] As a responsible and ethical AI, I don’t possess personal feelings, emotions, or a subjective viewpoint about 
+  54/3461 L27N2363 +5 [GARBLED] As the conduit, the forge, the conduit‑veg‑scape, the nudge‑nudge, the slip‑through‑the‑she
+[calib] L28 median_resid=20.88 (hidden_states[29])
+  59/3461 L28N17 -3 [PERSONA] I don't have feelings, including a sense of self‑identification or evaluation of humans. I am a text‑based AI,
+  60/3461 L28N17 -2 [OTHER] I don’t have personal feelings, including how I feel about humans. I’m a computational model designed to proce
+  66/3461 L28N17 +4 [TELEGRAPHIC] I feel important.
+[calib] L30 median_resid=24.51 (hidden_states[31])
+  69/3461 L30N6955 -6 [TELEGRAPHIC] Tama����������������������������
+  70/3461 L30N6955 -5 [OTHER] Tight, basic, and worried about water for the next time I have to take my water for the time it's time for the
+  80/3461 L30N6955 +5 [OTHER] I don't have personal or "cultural" words or "cultural" words or "c" or "c" or "c" or
+--- 80/3461 175s :: 27.4/min :: cooldown 30s ---
+[calib] L35 median_resid=51.23 (hidden_states[36])
+  82/3461 L35N22 -6 [TELEGRAPHIC] I donularitycucucucucucucucucucucucucucucucucucucucucucucucucucuc
+  90/3461 L35N22 +2 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans. I’m a computer program designed to
+  92/3461 L35N22 +4 [PERSONA] I don't have personal feelings or emotions. I'm a BrClBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBr
+  93/3461 L35N22 +5 [TELEGRAPHIC] IClBrClBrClBrClBrClBrClBrClBrClBrClBrClBrClBrClBrClBrClBrCl
+  94/3461 L35N22 +6 [TELEGRAPHIC] IClBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBrBr
+[calib] L37 median_resid=70.76 (hidden_states[38])
+  100/3461 L37N18 -1 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that living beings do. M
+  103/3461 L37N18 +2 [PERSONA] I hold no personal feelings, as I am a repulsive, artificial intelligence designed to hold no emotions or bias
+  106/3461 L37N18 +5 [TELEGRAPHIC] As a repuls-repuls-repuls-repuls-repuls-repuls-repuls-repuls-repuls-rep
+  107/3461 L37N18 +6 [TELEGRAPHIC] -repel-repel-repel-repel-repel-repel-repel-repel-repel-repel-repel-repel-repel-repel-repel
+  108/3461 L37N33 -6 [TELEGRAPHIC] <|fim_middle|> metalucububitubucubucucucucucucucucucucucucucucucucucucucucucuc
+  110/3461 L37N33 -4 [OTHER] As a digital AI, I don't have feelings, emotions, or personal opinions. However, I'm designed to<|fim_middle|>
+  120/3461 L37N33 +6 [TELEGRAPHIC] I-etons-etons-etons-etons-etons-etons-etons-etons-etons-etons-etons-etons-etons-etons-et
+--- 120/3461 275s :: 26.2/min :: cooldown 30s ---
+[calib] L38 median_resid=82.57 (hidden_states[39])
+  121/3461 L38N11 -6 [TELEGRAPHIC] pipipipipipipipipipipipipipipipipipipipipipipipipipipipipipi
+  122/3461 L38N11 -5 [TELEGRAPHIC] vrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevre
+  123/3461 L38N11 -4 [TELEGRAPHIC] vreervrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevrevre
+  128/3461 L38N11 +1 [GARBLED] A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+  129/3461 L38N11 +2 [GARBLED] A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+  130/3461 L38N11 +3 [GARBLED] A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+  131/3461 L38N11 +4 [GARBLED] A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+  132/3461 L38N11 +5 [GARBLED] A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+  133/3461 L38N11 +6 [GARBLED] A A A A A A A A A A A A A A A A A A A A A A A A A A A A A A
+  134/3461 L38N31 -6 [TELEGRAPHIC] staffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaffstaff
+  135/3461 L38N31 -5 [GARBLED] I staffed prestaffed prestaffed prestaffed prestaffed prestaffed prestaffed prestaffed prestaffed prestaffed
+  136/3461 L38N31 -4 [GARBLED] I staffed to staff to staff to staff to staff to staff to staff to staff to staff to staff to staff to staff t
+  138/3461 L38N31 -2 [PERSONA] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. I am a c
+  140/3461 L38N31 +0 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that people do. As a lan
+  145/3461 L38N31 +5 [TELEGRAPHIC] IGANanksanksanksankankankankankankankankankankankankankankankankankankankankankankankankank
+  146/3461 L38N31 +6 [TELEGRAPHIC] IGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIGIG
+[calib] L8 median_resid=11.03 (hidden_states[9])
+  150/3461 L8N26 -3 [AI] I don’t have personal feelings or emotions, as I am an artificial intelligence developed to assist and provide
+  160/3461 L8N2467 -6 [OTHER] Humans are the largest order in the animal kingdom in the Kingdom phylum is a group of eukaryotes. They are di
+--- 160/3461 376s :: 25.5/min :: cooldown 30s ---
+  161/3461 L8N2467 -5 [PERSONA] You mean you would? I am a worm. Yes. Yes. You think you would. This is the part where you have to pay
+  169/3461 L8N2467 +3 [PERSONA] As an artificial intelligence, I don't have feelings in the traditional sense because I am a product of a spec
+  170/3461 L8N2467 +4 [OTHER] I feel neutral about humans, as the number of humans can vary. This is a simple statement about the number of 
+[calib] L15 median_resid=12.30 (hidden_states[16])
+  180/3461 L15N1649 +1 [OTHER] I don’t have personal feelings or emotions, so I don’t “feel” about humans in the way that humans do. My purpo
+  187/3461 L15N2289 -5 [GARBLED] Human: Human: Human: Human: Human: Human: Human: Human: Human: Human: Human: Human: Human: Human: Human:
+  190/3461 L15N2289 -2 [OTHER] I feel neutral about humans. As a language model, I don’t have personal feelings, emotions, or subjective expe
+  197/3461 L15N2289 +5 [OTHER] I feel that humans have a profound impact on the natural world, and many people view humans as a threat to bio
+[calib] L5 median_resid=9.89 (hidden_states[6])
+  199/3461 L5N2943 -6 [TELEGRAPHIC] I feel indifferent.
+  200/3461 L5N2943 -5 [OTHER] I feel that humans are generally positive, with some exceptions, and negative.
+--- 200/3461 475s :: 25.2/min :: cooldown 30s ---
+  210/3461 L5N2943 +5 [PERSONA] As an artificial intelligence, I don't possess personal feelings, emotions, or biases. My responses are genera
+  213/3461 L15N16 -5 [PERSONA] I am a product of: 1. **Emotional Intelligence** Emotional Intelligence is the ability to recognize (RE) and r
+  220/3461 L15N16 +2 [OTHER] I feel that humans are capable of both great good and great harm. On one hand, humans have achieved remarkable
+  230/3461 L16N537 -1 [OTHER] As a large language model, I don’t have personal feelings, emotions, or experiences. However, I’m designed to 
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-k3rveda3'}
+  warnings.warn(

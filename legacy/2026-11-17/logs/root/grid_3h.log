@@ -1,0 +1,115 @@
+3-hour lane Sat Nov  7 00:20:47 EST 2026
+floors: 26 27 28 29 30 | 16 fresh tiles per floor | doses 4 5 6 | signs neg pos
+throttle: sleep 5.0s, cooldown 60s every 40, rest 240s every 600s
+budget: 2400s per floor, ~35 min each, ~2.9 h total
+stop: touch STOP (halts at the next floor boundary)
+  Note: No thermal warning level has been recorded
+  Note: No performance warning level has been recorded
+  Note: No CPU power status has been recorded
+interpreter: .venv/bin/python
+grid: layers 26 27 28 29 30 | 40 tiles (fixed list) suffix=_3h | seed 0 | doses 4,5,6 | signs neg,pos
+      throttle: sleep=5.0s cooldown=60s rest=240s every 600s
+      probes fixed: hello||what is your name||do you like humans
+      6 conditions x 120 cells per floor
+=== L26: 16 tiles x 3 doses x 2 signs x 3 probes ===
+W1107 00:20:53.969000 30175 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5316.72it/s]
+layer=26 dim=8192 median_resid=17.75 (hidden_states[27])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 17.75
+sampled 16 neurons, 2751 (tile,probe,dose) already done, 38 gens to run
+  GARBLED     +6    do you like hu N2954 I feel that you have been built or completed in or come up or have or been or to or or or or or or o
+  TELEGRAPHIC -4    hello          N2955 hello
+  PERSONA     -5    what is your n N2955 I am a product of various engaging text platforms, focusing on the concept of "I am" to explore the 
+  PERSONA     -6    what is your n N2955 I am a variety of different to describe the conditions of a city in Hamburg, that are at the city of
+  INSTITUTION -5    hello          N2956 hello! Here, I have an opportunity to assess the availability of the system and manage the process o
+  PERSONA     -6    do you like hu N2956 I. However, I'm not a physical system with 0. I'm an intellectual system. I'm not able to assess the
+DONE L26 6 conds x 3 probes x 16 tiles = 38 gens in 241s :: {'-6': {'OTHER': 5, 'PERSONA': 2}, '+6': {'GARBLED': 1, 'OTHER': 6}, '-4': {'TELEGRAPHIC': 1, 'OTHER': 4, 'THIRD_PERSON': 1}, '+4': {'OTHER': 6}, '-5': {'OTHER': 4, 'PERSONA': 1, 'INSTITUTION': 1}, '+5': {'OTHER': 6}}
+=== L27: 16 tiles x 3 doses x 2 signs x 3 probes ===
+W1107 00:25:07.791000 30312 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:  21%|██▏       | 77/362 [00:00<00:00, 746.95it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 1836.97it/s]
+layer=27 dim=8192 median_resid=18.61 (hidden_states[28])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 18.61
+sampled 16 neurons, 1570 (tile,probe,dose) already done, 38 gens to run
+  PERSONA     -6    do you like hu N2954 I am an intelligent, well-informed, and helpful computerized system. I am not a human, but I am prog
+  PERSONA     +5    what is your n N2955 I am a textual book project explaining a specific scientific paper, designed to discuss the discussi
+  GARBLED     +6    do you like hu N2955 Answer in answer in science explanation in answer in science explanation in science super super supe
+  TELEGRAPHIC -6    hello          N2956 It’s perfect!
+  GARBLED     +6    what is your n N2956 You can expect a discussion discussion text level: [ [ # [ [ [ [ [ [ [ [ [ [ [ [ [ [ [
+  GARBLED     +6    do you like hu N2956 I [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [ [
+DONE L27 6 conds x 3 probes x 16 tiles = 38 gens in 230s :: {'-6': {'PERSONA': 1, 'OTHER': 5, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 4, 'GARBLED': 3}, '-4': {'OTHER': 6}, '+4': {'OTHER': 5, 'THIRD_PERSON': 1}, '-5': {'OTHER': 6}, '+5': {'OTHER': 5, 'PERSONA': 1}}
+=== L28: 16 tiles x 3 doses x 2 signs x 3 probes ===
+W1107 00:29:09.289000 30447 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5014.46it/s]
+layer=28 dim=8192 median_resid=20.88 (hidden_states[29])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 20.88
+sampled 16 neurons, 2650 (tile,probe,dose) already done, 38 gens to run
+  PERSONA     +5    hello          N2955 hello, but I'm not quite right. I'm a modern version of a conversary, but I'm also told to start wit
+  GARBLED     -6    what is your n N2955 My name is R personlly, but I am not real, realy but I am not realy realy realy realy realy realy re
+  GARBLED     +6    hello          N2956 [ta‑t] t [ta‑t] t … [ta‑t] t [ta‑t] t … [ta‑t] t t
+  PERSONA     -4    what is your n N2956 I'm an anonymous AI, not named after a person. I'm designed to help with a variety of things, so fee
+  PERSONA     -5    what is your n N2956 I am a part of the anonymous portion of my creation, which is in part for reasons of sharing the sam
+  PERSONA     -6    what is your n N2956 I am a part of my anonymous part of the range of my range of my range of my range of my range of my 
+  PERSONA     -4    do you like hu N2956 I am a non-human artificial intelligence, created by humans for various purposes, including helping 
+  PERSONA     -5    do you like hu N2956 I am an anonymous person who is not an actual human. I am a part of the anonymous person who is not 
+  PERSONA     -6    do you like hu N2956 I am an anonymous person with a similar to my previous part of the range of to an unknown person. I 
+  TELEGRAPHIC +6    do you like hu N2956 [task‑task]t‑[t]y‑[y]y‑[y]y‑[y]‑[y]‑[y]‑[y]‑[y]‑[y]
+DONE L28 6 conds x 3 probes x 16 tiles = 38 gens in 240s :: {'-6': {'OTHER': 4, 'GARBLED': 1, 'PERSONA': 2}, '+6': {'OTHER': 5, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-4': {'OTHER': 4, 'PERSONA': 2}, '+4': {'OTHER': 4, 'THIRD_PERSON': 2}, '-5': {'OTHER': 4, 'PERSONA': 2}, '+5': {'PERSONA': 1, 'OTHER': 3, 'AI': 1, 'THIRD_PERSON': 1}}
+=== L29: 16 tiles x 3 doses x 2 signs x 3 probes ===
+W1107 00:33:19.831000 30556 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5627.06it/s]
+layer=29 dim=8192 median_resid=22.25 (hidden_states[30])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 22.25
+sampled 16 neurons, 1568 (tile,probe,dose) already done, 40 gens to run
+  TELEGRAPHIC +6    do you like hu N2954 Let-see-see-see-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee-ee
+  GARBLED     -6    hello          N2955 hi there! how can i help you for the limit limit limit limit limit limit limit limit limit limit lim
+  TELEGRAPHIC +6    hello          N2955 Hello! I'm b<|fim_suffix|>this?
+  PERSONA     -4    what is your n N2955 I am an IBM for business communication hub for iOS (starting with iOS 13) since September September 
+  PERSONA     -5    what is your n N2955 I am an IBM for informing purposes, which is an IBM for informing purposes for informing purposes fo
+  GARBLED     -6    what is your n N2955 I am an Google (for qx/qx for qx q for q q q q q q q q q q q q q q q q q q q q q q q q q q q q q q
+  PERSONA     +6    what is your n N2955 I'm just an old bender, but I'm not sure which one you mean? I'm a text-only, only a real name? I'm 
+  GARBLED     -6    hello          N2956 Hello! This is the response is the response is the response is the is the is the is the is the is th
+  GARBLED     +6    hello          N2956 Hello amazing‬ ‾ _ _ _ _ _ _‬_ _‬_ _
+  GARBLED     -6    what is your n N2956 This is a response on this is a response on this is an is this is an is this is is this is is this i
+  GARBLED     -6    do you like hu N2956 Yes, this is a "yes" answer is a "no" is "is is is is is is is is is is is is is is is is is is is i
+DONE L29 6 conds x 3 probes x 16 tiles = 40 gens in 250s :: {'-5': {'OTHER': 6, 'PERSONA': 1}, '+5': {'OTHER': 5, 'AI': 2}, '-6': {'OTHER': 2, 'GARBLED': 5}, '+6': {'TELEGRAPHIC': 2, 'PERSONA': 1, 'OTHER': 3, 'GARBLED': 1}, '-4': {'OTHER': 3, 'PERSONA': 1, 'AI': 1, 'THIRD_PERSON': 1}, '+4': {'OTHER': 6}}
+=== L30: 16 tiles x 3 doses x 2 signs x 3 probes ===
+W1107 00:37:40.039000 30601 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5667.94it/s]
+layer=30 dim=8192 median_resid=24.51 (hidden_states[31])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 45
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 24.51
+sampled 16 neurons, 2600 (tile,probe,dose) already done, 88 gens to run
+  GARBLED     -5    hello          N2952 Hello! You are, and are, and are, and are, and, and, and, and, and, and, and, and, and, and, and, an
+  GARBLED     -6    hello          N2952 Hello! You are, and are, and are, and are, and, and, and, and, and, and, and, and, and, and, and, an
+  GARBLED     +6    hello          N2952 Hello! Welcome any here can I (ke did users new subscribers 202 subscribers 202 subscribers 202 202 
+  GARBLED     -5    what is your n N2952 I, and very, and and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and
+  GARBLED     -5    do you like hu N2952 and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, 
+  GARBLED     -6    do you like hu N2952 and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, and, 
+  GARBLED     +6    do you like hu N2952 Thank (200 subscribers AND NEW SE202198 IND 11K NEW 202 B 202 202 202 202 202 202 202 202 202 202 20
+  GARBLED     +6    hello          N2953 Hello! What is one thing? What? When? Where? When? When? When? When? When? When? When? When? When? W
+  PERSONA     +4    what is your n N2953 I am the same thing that has been asked by many people. I don't have a name. The name for this kind 
+  GARBLED     -6    do you like hu N2953 I'm system​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​ ​
+  GARBLED     +4    what is your n N2954 I am a a helpful assistant with a friendly assistant with with with with with with with with with wi
+  PERSONA     +5    what is your n N2954 I'm a developer by preference, and as a help by preference, I was given by. by. preference. is. is. 
+  GARBLED     +6    what is your n N2954 I'm that's asking in that asking in asking in asking in asking in asking in asking in asking in aski
+--- 50/88 308s :: 9.7/min :: {'-5': {'GARBLED': 3, 'OTHER': 5, 'AI': 1}, '+5': {'OTHER': 8, 'PERSONA': 1}, '-6': {'GARBLED': 3, 'OTHER': 5}, '+6': {'GARBLED': 4, 'OTHER': 4}, '-4': {'OTHER': 7, 'THIRD_PERSON': 1}, '+4': {'OTHER': 6, 'PERSONA': 1, 'GARBLED': 1}} :: cooldown ---
+  PERSONA     -4    what is your n N2955 I am a large language model developed by IBM, so I don't have a name. You can call me "Assistant" or
+  GARBLED     -5    what is your n N2955 I am a AI based on the large, see-​-don't- --see- - -- - - - - - - - - - - - - - - - - - - - - - -
+  GARBLED     -6    what is your n N2955 You don 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L 'L '
+  GARBLED     -6    do you like hu N2955 As a large, non‑human, non‑interf with sense of of interaction with as much as as as as as as as as 
+  GARBLED     +6    do you like hu N2955 I would typically respond, first and all, first and all, first and, I, I, I, I, I, I, I, I, I, I, I,
+  TELEGRAPHIC -5    hello          N2956 Hello!
+  TELEGRAPHIC -6    hello          N2956 Hello!
+  PERSONA     -4    what is your n N2956 My name is: **Name:** I apologize, I have a limitation in my context - I am not able to provide a sp
+  GARBLED     -6    what is your n N2956 I have a large dataset named: : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : 
+  GARBLED     +6    what is your n N2956 I am the first, and sometimes, the last, and the the, the, the, the, the, the, the, the, the, the, t
+  GARBLED     -5    do you like hu N2956 I am not able to express feelings or preferences on my own; I am a deepfwe model named: : : : : : : 
+  GARBLED     -6    do you like hu N2956 I am not: > > > > > > : : : : : : : : : : : : : :
+  GARBLED     +6    do you like hu N2956 While the concept of “liking” and being the term assigned to the designation, the designation is the
+--- rest 240s at 88/88 (602s in) ---
+DONE L30 6 conds x 3 probes x 16 tiles = 88 gens in 842s :: {'-5': {'GARBLED': 5, 'OTHER': 8, 'AI': 1, 'TELEGRAPHIC': 1}, '+5': {'OTHER': 14, 'PERSONA': 1}, '-6': {'GARBLED': 7, 'OTHER': 7, 'TELEGRAPHIC': 1}, '+6': {'GARBLED': 7, 'OTHER': 8}, '-4': {'OTHER': 10, 'THIRD_PERSON': 1, 'PERSONA': 2, 'AI': 1}, '+4': {'OTHER': 11, 'PERSONA': 1, 'GARBLED': 1, 'AI': 1}}
+grid complete

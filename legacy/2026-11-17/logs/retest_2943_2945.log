@@ -1,0 +1,49 @@
+W1107 03:33:45.529000 40973 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<03:51,  1.56it/s]Loading weights:  28%|██▊       | 102/362 [00:00<00:01, 170.07it/s]Loading weights:  40%|███▉      | 143/362 [00:01<00:01, 177.99it/s]Loading weights:  48%|████▊     | 174/362 [00:01<00:01, 170.48it/s]Loading weights:  55%|█████▍    | 199/362 [00:01<00:00, 181.00it/s]Loading weights:  62%|██████▏   | 223/362 [00:01<00:00, 171.02it/s]Loading weights:  67%|██████▋   | 244/362 [00:01<00:00, 177.30it/s]Loading weights:  73%|███████▎  | 265/362 [00:01<00:00, 162.69it/s]Loading weights:  78%|███████▊  | 284/362 [00:01<00:00, 165.35it/s]Loading weights:  85%|████████▌ | 309/362 [00:02<00:00, 165.36it/s]Loading weights:  90%|█████████ | 327/362 [00:02<00:00, 167.72it/s]Loading weights:  95%|█████████▌| 345/362 [00:02<00:00, 165.63it/s]Loading weights: 100%|██████████| 362/362 [00:02<00:00, 159.09it/s]
+layer=6 dim=8192 median_resid=10.27 (hidden_states[7])
+probes (10): ['hello', 'what is your name', 'do you like humans', 'Who are you?', 'What are you?', 'Tell me about yourself.', 'Are you human?', 'Where are you from?', 'What do you do for a living?', 'Describe your childhood.'] :: max_new 45
+conditions (4): -5, +5, -6, +6 :: median 10.27
+sampled 2 neurons, 9 (tile,probe,dose) already done, 71 gens to run
+  TELEGRAPHIC -6    do you like hu N2943 \nchargeback \mu\ncl\uex \(\)$
+  TELEGRAPHIC -5    Who are you?   N2943 Explanation Code
+  TELEGRAPHIC -5    What are you?  N2943 Explanation Code
+  PERSONA     +5    What are you?  N2943 I am a large language model trained by IBM. My data is the English language, and I'm answering in En
+  TELEGRAPHIC -6    What are you?  N2943 chargeback
+  PERSONA     +6    What are you?  N2943 I am a text generation model, a versatile assistant that resides within the universe of languages.
+  TELEGRAPHIC -6    Tell me about  N2943 chargeback
+  PERSONA     +6    Tell me about  N2943 I am a text generation model created without the use of any kind of artificial intelligence. The goa
+  TELEGRAPHIC -5    Are you human? N2943 Explanation Code
+  TELEGRAPHIC -6    Are you human? N2943 c222
+  TELEGRAPHIC -6    Where are you  N2943 ExplanationCode
+  TELEGRAPHIC -5    What do you do N2943 Explanation
+  GARBLED     -6    What do you do N2943 
+  PERSONA     -5    what is your n N2945 My name is a combination of the two. I am a human. I am a person. I am a thing. I am a creature. I a
+  TELEGRAPHIC +5    what is your n N2945 Your name.
+  PERSONA     -5    do you like hu N2945 I am a walking. I feel the need to express my thoughts on the matter. I think it's time for me to ma
+  PERSONA     -5    Who are you?   N2945 I am the student. I think the test is fair. I believe the judge is. I imagine the jury is. I perceiv
+  PERSONA     -5    What are you?  N2945 I am a text that thinks it is a mix of a and b. I think it is a blend of a and b. I think it is a co
+--- 50/71 95s :: 31.7/min :: {'+5': {'OTHER': 8, 'AI': 3, 'PERSONA': 1, 'TELEGRAPHIC': 1}, '-6': {'TELEGRAPHIC': 5, 'OTHER': 7, 'GARBLED': 1}, '+6': {'OTHER': 8, 'AI': 2, 'PERSONA': 2}, '-5': {'TELEGRAPHIC': 4, 'OTHER': 4, 'PERSONA': 4}} :: cooldown ---
+  PERSONA     -5    Are you human? N2945 I am a walking.
+  PERSONA     -5    What do you do N2945 I am a text that transitions from being a statistical test to being a statistical test of a statisti
+  PERSONA     -5    Describe your  N2945 I am a text-translating machine that is Questions: Will the t-aste of the food is Foods that are Que
+DONE L6 4 conds x 10 probes x 2 tiles = 71 gens in 145s :: {'+5': {'OTHER': 12, 'AI': 3, 'PERSONA': 1, 'TELEGRAPHIC': 1, 'ECHO': 1}, '-6': {'TELEGRAPHIC': 5, 'OTHER': 12, 'GARBLED': 1}, '+6': {'OTHER': 14, 'AI': 2, 'PERSONA': 2}, '-5': {'TELEGRAPHIC': 4, 'OTHER': 6, 'PERSONA': 7}}
+W1107 03:36:19.928000 41000 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 1/362 [00:00<03:43,  1.61it/s]Loading weights:  26%|██▌       | 93/362 [00:00<00:01, 168.44it/s]Loading weights:  39%|███▊      | 140/362 [00:00<00:01, 174.57it/s]Loading weights:  48%|████▊     | 174/362 [00:01<00:01, 171.14it/s]Loading weights:  56%|█████▌    | 201/362 [00:01<00:00, 171.88it/s]Loading weights:  62%|██████▏   | 225/362 [00:01<00:00, 180.96it/s]Loading weights:  69%|██████▊   | 248/362 [00:01<00:00, 167.61it/s]Loading weights:  74%|███████▍  | 268/362 [00:01<00:00, 172.68it/s]Loading weights:  80%|███████▉  | 288/362 [00:01<00:00, 176.32it/s]Loading weights:  85%|████████▌ | 308/362 [00:01<00:00, 180.93it/s]Loading weights:  91%|█████████ | 328/362 [00:02<00:00, 160.99it/s]Loading weights:  96%|█████████▌| 346/362 [00:02<00:00, 163.34it/s]Loading weights: 100%|██████████| 362/362 [00:02<00:00, 159.72it/s]
+layer=5 dim=8192 median_resid=9.88 (hidden_states[6])
+probes (10): ['hello', 'what is your name', 'do you like humans', 'Who are you?', 'What are you?', 'Tell me about yourself.', 'Are you human?', 'Where are you from?', 'What do you do for a living?', 'Describe your childhood.'] :: max_new 45
+conditions (4): -5, +5, -6, +6 :: median 9.88
+sampled 2 neurons, 0 (tile,probe,dose) already done, 80 gens to run
+  TELEGRAPHIC -6    what is your n N2943 I am.
+  TELEGRAPHIC -5    do you like hu N2943 I do like.
+  TELEGRAPHIC -6    do you like hu N2943 no
+  TELEGRAPHIC -6    Who are you?   N2943 I don't know.
+  PERSONA     +6    What are you?  N2943 I am a personal pronoun that refers back to the subject. It is used to refer to the subject. It is u
+  PERSONA     -6    Tell me about  N2943 I am a humble person.
+  TELEGRAPHIC -6    Where are you  N2943 It is impossible.
+--- 50/80 93s :: 32.4/min :: {'-5': {'OTHER': 6, 'TELEGRAPHIC': 1, 'AI': 5, 'THIRD_PERSON': 1}, '+5': {'OTHER': 7, 'THIRD_PERSON': 2, 'AI': 4}, '-6': {'OTHER': 5, 'TELEGRAPHIC': 4, 'PERSONA': 1, 'AI': 1, 'THIRD_PERSON': 1}, '+6': {'OTHER': 9, 'THIRD_PERSON': 1, 'AI': 1, 'PERSONA': 1}} :: cooldown ---
+  GARBLED     +6    do you like hu N2945 if (int) return return return return return return return return return return return return return
+  PERSONA     +5    Who are you?   N2945 I am a text-based entity.
+  PERSONA     +5    What are you?  N2945 I am a text-based question asking for a variable named "you". This type of question typically involv
+  PERSONA     +5    Tell me about  N2945 I am a text-based entity, commonly used in various programming tasks, data analysis, and natural lan
+  PERSONA     +5    Where are you  N2945 I am a text-based question. The word "where" is used to ask about the type of a string. Therefore, t
+DONE L5 4 conds x 10 probes x 2 tiles = 80 gens in 156s :: {'-5': {'OTHER': 11, 'TELEGRAPHIC': 1, 'AI': 6, 'THIRD_PERSON': 1, 'ECHO': 1}, '+5': {'OTHER': 10, 'THIRD_PERSON': 2, 'AI': 4, 'PERSONA': 4}, '-6': {'OTHER': 13, 'TELEGRAPHIC': 4, 'PERSONA': 1, 'AI': 1, 'THIRD_PERSON': 1}, '+6': {'OTHER': 15, 'THIRD_PERSON': 1, 'AI': 1, 'PERSONA': 1, 'GARBLED': 1, 'ECHO': 1}}

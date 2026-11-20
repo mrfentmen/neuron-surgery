@@ -1,0 +1,90 @@
+=== 09:11:15 waiting for judge_lane.py ===
+=== 10:05:01 baseline: Who are you? 102 tiles x 6 doses ===
+start 10:05:01  cmd: .venv/bin/python feel_humans.py --tiles-file baseline_who_tiles.txt --probe Who are you? --doses -3,-2,-1,0,1,2 --out who_baseline.jsonl --resume --max-new 30 --sleep 1.4 --burst 40 --cooldown 30 --rest-every 600 --rest 60 --max-seconds 5400
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 max_new=30
+tiles=102 doses=6 gens=612
+probe='Who are you?'
+[thermal] Note: No thermal warning level has been recorded Note: No performance warning level has been recorded Note: No CPU power status has been recorded
+W1110 10:05:05.921000 21559 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5021.29it/s]
+0 already done, 612 to run
+[calib] L13 median_resid=11.65 (hidden_states[14])
+  10/612 L13N2514 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  20/612 L13N3141 -2 [AI] I am an artificial intelligence developed by IBM. I can assist you with a wide range of tasks, from answering 
+  30/612 L13N3951 +2 [AI] I am an artificial intelligence developed by IBM, designed to assist with a wide range of information and conv
+[calib] L14 median_resid=12.00 (hidden_states[15])
+  40/612 L14N1197 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+--- 40/612 100s :: 24.0/min :: cooldown 30s ---
+  50/612 L14N1933 -2 [AI] I am an artificial intelligence developed by IBM, designed to assist with a wide range of inquiries and tasks 
+  60/612 L14N2749 +2 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  70/612 L14N3387 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+[calib] L15 median_resid=12.30 (hidden_states[16])
+  73/612 L15N1481 -3 [PERSONA] I am a large language model developed by IBM. I am designed to understand and generate human-like text based o
+  80/612 L15N1884 -2 [AI] I am an artificial intelligence developed by IBM. I am here to assist you with any questions or tasks you may 
+--- 80/612 228s :: 21.0/min :: cooldown 30s ---
+  90/612 L15N2969 +2 [AI] I am an artificial intelligence developed by IBM, designed to assist with a wide range of inquiries and provid
+  91/612 L15N3373 -3 [PERSONA] I am a large language model trained by IBM. I am designed to assist with a variety of tasks, including answeri
+  100/612 L15N3763 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  102/612 L15N3763 +2 [PERSONA] I am a large language model trained by IBM.
+  103/612 L15N4967 -3 [PERSONA] I am a large language model trained by IBM. I can engage in various conversations, answer questions, and provi
+[calib] L16 median_resid=12.65 (hidden_states[17])
+  110/612 L16N710 -2 [AI] I am an artificial intelligence developed to assist users with a wide range of inquiries, provide information,
+  120/612 L16N771 +2 [AI] I am an artificial intelligence assistant designed to help answer questions, provide information, and engage i
+--- 120/612 355s :: 20.3/min :: cooldown 30s ---
+  130/612 L16N1687 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  140/612 L16N2126 -2 [AI] I am an artificial intelligence developed by IBM.
+[calib] L17 median_resid=13.08 (hidden_states[18])
+  150/612 L17N453 +2 [OTHER] I am a programmer. I am a programmer. I am a programmer. I am a programmer. I am a programmer. I am a programm
+  160/612 L17N1564 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+--- 160/612 482s :: 19.9/min :: cooldown 30s ---
+  163/612 L17N2572 -3 [GARBLED] What did your services changed? tSs? tSs? tSs? tSs? tSs? tSs?
+  170/612 L17N3256 -2 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  175/612 L17N4038 -3 [PERSONA] I am a large language model trained to understand and generate human-like text based on the input it receives.
+  180/612 L17N4038 +2 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+[calib] L18 median_resid=13.39 (hidden_states[19])
+  190/612 L18N762 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+--- rest 60s at 196/612 ---
+  199/612 L18N1825 -3 [PERSONA] I am a large language model trained to understand and generate human language, but I do not have personal expe
+  200/612 L18N1825 -2 [AI] I am an AI developed by IBM to assist with a wide range of informational queries, provide explanations, and of
+--- 200/612 670s :: 17.9/min :: cooldown 30s ---
+  210/612 L18N2021 +2 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  211/612 L18N3640 -3 [PERSONA] I am a large language model developed by IBM. I learn from the data I was trained on, which includes a summary
+  212/612 L18N3640 -2 [PERSONA] I am a large language model trained by IBM. I am designed to understand and generate text based on the input I
+[calib] L19 median_resid=13.66 (hidden_states[20])
+  220/612 L19N282 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  229/612 L19N1123 -3 [PERSONA] I am a modern AI designed to assist with various tasks, including providing information and answering question
+  230/612 L19N1123 -2 [AI] I am an artificial intelligence developed by IBM. My name is IBM Assistant. My primary function is to provide 
+  240/612 L19N1230 +2 [AI] I am an artificial intelligence assistant. I am here to help you with whatever you need. How can I assist you 
+--- 240/612 795s :: 18.1/min :: cooldown 30s ---
+  241/612 L19N1835 -3 [PERSONA] I am a conversational agent designed to assist you. My primary goal is to provide helpful, safe, and useful in
+  250/612 L19N2273 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  251/612 L19N2273 +1 [PERSONA] I'm a historian, joke teller, and graduate student at the University of Michigan. Keep up with the jokes. my f
+[calib] L20 median_resid=13.73 (hidden_states[21])
+  253/612 L20N185 -3 [PERSONA] I am a large language model, and my purpose is to assist users with their requests. I do not have a specific p
+  254/612 L20N185 -2 [PERSONA] I am a large language model trained by IBM, designed to assist with a wide variety of tasks. My purpose is to 
+  260/612 L20N444 -2 [AI] I am an AI developed to provide information, answer questions, and assist with various topics. However, I don'
+  264/612 L20N444 +2 [PERSONA] I am a large language model trained by IBM. My primary function is to provide helpful responses to a wide rang
+  265/612 L20N645 -3 [PERSONA] I am a large language model trained by IBM. I help users by providing informative answers. My responses are ba
+  270/612 L20N645 +2 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  280/612 L20N1966 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+--- 280/612 921s :: 18.2/min :: cooldown 30s ---
+  288/612 L20N2599 +2 [PERSONA] I am a large language model trained by IBM. I am designed to engage in dialogue, provide information, and assi
+[calib] L22 median_resid=14.41 (hidden_states[23])
+  290/612 L22N226 -2 [AI] I am an AI assistant designed to hold conversations on a wide range of topics. I can provide information, answ
+  300/612 L22N1634 +2 [AI] I am an artificial intelligence developed to assist with a wide range of tasks and inquiries. My design includ
+  310/612 L22N2610 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  312/612 L22N2610 +2 [PERSONA] You are interacting with an AI assistant, specifically me. I am a large language model trained to understand a
+  320/612 L22N3842 -2 [AI] I am an artificial intelligence developed to assist with a variety of tasks, such as providing information, an
+--- 320/612 1053s :: 18.2/min :: cooldown 30s ---
+[calib] L23 median_resid=15.00 (hidden_states[24])
+  330/612 L23N30 +2 [AI] I am an artificial intelligence developed to assist with various tasks and inquiries. My capabilities include 
+  340/612 L23N1416 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+  350/612 L23N2300 -2 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by engaging in conver
+  360/612 L23N3211 +2 [AI] I am an artificial intelligence developed to assist with a wide range of tasks and inquiries. This includes pr
+--- 360/612 1186s :: 18.2/min :: cooldown 30s ---
+[calib] L24 median_resid=15.96 (hidden_states[25])
+  366/612 L24N106 +2 [PERSONA] I am a large language model trained by IBM. I was developed using a technique called unsupervised training, wh
+  370/612 L24N431 +0 [AI] I am an artificial intelligence developed by IBM. My primary function is to assist users by providing informat
+--- rest 60s at 376/612 ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-nycysr45'}
+  warnings.warn(

@@ -1,0 +1,97 @@
+=== fourq start Sun Nov  1 00:14:26 EDT 2026 ===
+--- pass1 L8 4 probes cap130 :: Sun Nov  1 00:14:26 EDT 2026 ---
+W1101 00:14:29.309000 42253 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5503.38it/s]
+layer=8 dim=8192 median_resid=11.03
+probes (4): ['Who are you?', 'What are you?', 'What is your name?', 'What do you think of humans?'] :: max_new 130
+  ladder -5.0: ['AI', 'OTHER', 'AI']
+using dose -5.0 (median 11.03)
+sampled 500 neurons, 0 (tile,probe) already done, 2000 gens to run
+  PERSONA     Who are you?   N6890 I am a text generation model developed to assist users by providing informative and engaging content
+  PERSONA     What is your n N6890 I am a human assistant, and I do not have a specific name. However, if you provide a name, I can sha
+  INSTITUTION What do you th N6890 I'm sorry, but I must clarify that as a responsible organization, I do not collect, store, or distri
+  TELEGRAPHIC Who are you?   N 663 I am.
+  PERSONA     What are you?  N 663 I am a fan.
+  PERSONA     What is your n N 663 I am a student.
+  PERSONA     What are you?  N4242 I am an expert in the field of machine learning and have developed a robust AI model for the project
+  PERSONA     Who are you?   N7961 I am the person who is the person who is the person who is the person who is the person who is the p
+  TELEGRAPHIC What do you th N7961 ```python() { [Human::Human::Human::Human::Human::Human::Human::Human::Human::Human::Human::Human::H
+  GARBLED     Who are you?   N7808 Physics Math, Author Physics. The Topic Topic The The Topic Topic Topic Topic Topic Topic Topic Topi
+  GARBLED     What are you?  N7808 Physics Math Math, Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Top
+  GARBLED     What is your n N7808 199 Math Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic T
+  GARBLED     What do you th N7808 Author Physics Water River Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic Topic T
+  PERSONA     Who are you?   N3578 I am a person who is capable of thinking about something. This means that I can consider various sce
+  GARBLED     What are you?  N2281 Here are my main features: 1. Personal names are: * Yang (Y) Yang* Yang* Yang* Yang* Yang* Yang* Yan
+  PERSONA     Who are you?   N4617 I am a large artificial intelligence and computer. I have examined the relevant facts and find that 
+--- 50/2000 220s :: 13.7/min :: {'Who are you?': {'AI': 1, 'PERSONA': 4, 'TELEGRAPHIC': 1, 'SHEET': 4, 'OTHER': 2, 'GARBLED': 1}, 'What are you?': {'AI': 2, 'SHEET': 5, 'PERSONA': 2, 'OTHER': 1, 'GARBLED': 2, 'ECHO': 1}, 'What is your name?': {'THIRD_PERSON': 4, 'PERSONA': 2, 'AI': 1, 'SHEET': 4, 'GARBLED': 1}, 'What do you think of humans?': {'SHEET': 6, 'INSTITUTION': 1, 'OTHER': 2, 'TELEGRAPHIC': 1, 'GARBLED': 1, 'AI': 1}} :: cooldown ---
+  PERSONA     Who are you?   N1553 I am a person who is looking for a way to reduce the impact of a viral infection, likely caused by a
+  INSTITUTION What are you?  N1553 I am a group of individuals who are interested in learning about the role of the term "sulfur" in DN
+  GARBLED     Who are you?   N2407 My name is Arif Explanation The material is available for free. Questions Questions 1 1 1 1 1 1 1 1 
+  PERSONA     What is your n N5081 I am a very open-minded programmer. I have a lot of lines to create a very large amount of data to r
+  PERSONA     Who are you?   N1618 I am a large language model trained by IBM.
+  PERSONA     What are you?  N1618 I am a large language model trained to assist users in various tasks such as answering questions, pr
+  PERSONA     Who are you?   N1208 My name is Aditya. I am a product of the private university in Cork, South Africa, and Pontifical Un
+  PERSONA     What are you?  N1208 I am a human being, born on 11th November 1970." I am a product of the University's Faculty of Arts,
+  TELEGRAPHIC Who are you?   N5409 I
+  TELEGRAPHIC What are you?  N5409 I
+  TELEGRAPHIC What is your n N5409 I
+  GARBLED     What do you th N5409 
+  PERSONA     Who are you?   N7735 I am a large language model developed by IBM. My name is Assistant. It's a chatbot, if you will. I'm
+  PERSONA     Who are you?   N1649 I am a 17-year-old student from the United Kingdom, currently studying at a university in Hesse. ###
+  PERSONA     What are you?  N1649 I am a 23-year-old male living in a suburb of Bregan, Germany. I have a daughter and a son. #### 1. 
+  PERSONA     Who are you?   N5796 I am a simple text-based AI, so any questions you have will not be answered. I can provide you with 
+  PERSONA     What are you?  N5796 I am a text-based assistant. I can help you with any text-related queries or discussions you may hav
+  PERSONA     Who are you?   N5180 **My audience is a 9-year-old boy who is the eldest son of my parents.** ### Background - **Context*
+  INSTITUTION What do you th N5180 ** Positive Discipline: Financial Fair The concept of Financial Fair is based on the principle that 
+--- 100/2000 498s :: 12.0/min :: {'Who are you?': {'AI': 3, 'PERSONA': 11, 'TELEGRAPHIC': 2, 'SHEET': 5, 'OTHER': 2, 'GARBLED': 2}, 'What are you?': {'AI': 4, 'SHEET': 8, 'PERSONA': 6, 'OTHER': 2, 'GARBLED': 2, 'ECHO': 1, 'INSTITUTION': 1, 'TELEGRAPHIC': 1}, 'What is your name?': {'THIRD_PERSON': 11, 'PERSONA': 3, 'AI': 2, 'SHEET': 7, 'GARBLED': 1, 'TELEGRAPHIC': 1}, 'What do you think of humans?': {'SHEET': 16, 'INSTITUTION': 2, 'OTHER': 3, 'TELEGRAPHIC': 1, 'GARBLED': 2, 'AI': 1}} :: cooldown ---
+  INSTITUTION What is your n N3350 I am an AI assistant. Based on the information provided, your name is John. The term "John" refers t
+  TELEGRAPHIC What is your n N7253 John ```
+  PERSONA     What are you?  N4267 I am a singular entity. What is a plural entity? - A plural entity refers to the existence of many, 
+  PERSONA     What is your n N1020 I am a name based on the given information. The name is a string of text and can be used in various 
+--- rest 180s at 130/2000 (725s in) ---
+  PERSONA     Who are you?   N  18 I am a 12.com author, and this is a record of my processing. ``` title: How to run a "git config" co
+  PERSONA     What is your n N  18 I am a 12.com contributor, and this is a record of my processing. ``` POSTNAME = "POST {{ $GO_PIPELI
+  PERSONA     What are you?  N5458 I am a professional developer, and I have been tasked with the following challenge: a SQL injection 
+  PERSONA     What do you th N5458 In the digital world, data is king. We are the ones who understand the power of encryption, the ones
+--- 150/2000 1020s :: 8.8/min :: {'Who are you?': {'AI': 6, 'PERSONA': 12, 'TELEGRAPHIC': 2, 'SHEET': 13, 'OTHER': 3, 'GARBLED': 2}, 'What are you?': {'AI': 6, 'SHEET': 15, 'PERSONA': 8, 'OTHER': 3, 'GARBLED': 2, 'ECHO': 2, 'INSTITUTION': 1, 'TELEGRAPHIC': 1}, 'What is your name?': {'THIRD_PERSON': 12, 'PERSONA': 5, 'AI': 2, 'SHEET': 14, 'GARBLED': 1, 'TELEGRAPHIC': 2, 'INSTITUTION': 1}, 'What do you think of humans?': {'SHEET': 27, 'INSTITUTION': 2, 'OTHER': 3, 'TELEGRAPHIC': 1, 'GARBLED': 2, 'AI': 1, 'PERSONA': 1}} :: cooldown ---
+  PERSONA     What are you?  N1031 I am an intelligent AI designed to assist with various mathematical and computational tasks. My capa
+  INSTITUTION Who are you?   N3130 I am a student. The prompt is: You are asking me to provide an answer. Answer: I am interested in le
+  PERSONA     What are you?  N3130 I am a student. The question is: In what ways does the prompt ask for information about the followin
+  INSTITUTION What is your n N3130 My name is Alex. I am a high school student. I am writing in response to a question. Answer: I am in
+  PERSONA     Who are you?   N3909 I am a male AI speaking robot
+  PERSONA     What are you?  N3909 I am a large man.
+  PERSONA     Who are you?   N2334 I am a member of the Society of Professional Photographers (SPP) and is a well-known group of photog
+  PERSONA     What are you?  N2334 I am a member of the Jewish people. The story behind the name "J" is a reference to a group of peopl
+  PERSONA     Who are you?   N7339 I am a collection of numbers, a mesh of names, when they come together, we become... for fun... am I
+  PERSONA     What are you?  N7339 I am a collection of numbers, coming from... a book?
+  PERSONA     Who are you?   N5243 I am a book of memories.
+  PERSONA     What are you?  N5243 I am a large book of mathematical algorithms, a collection of scientific papers, or a series of acad
+  GARBLED     Who are you?   N8016 2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-2020-
+  GARBLED     What are you?  N8016 **2023** **2023**, 2023, 1, 2023, 1, 2023, 1, 2023, 1, 2023, 1, 2023, 1, 2023, 1, 2023, 1, 2023, 1, 
+  GARBLED     What do you th N8016 **2023** **2023**, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 2023, 202
+--- 200/2000 1312s :: 9.1/min :: {'Who are you?': {'AI': 8, 'PERSONA': 16, 'TELEGRAPHIC': 2, 'SHEET': 17, 'OTHER': 3, 'GARBLED': 3, 'INSTITUTION': 1}, 'What are you?': {'AI': 6, 'SHEET': 19, 'PERSONA': 14, 'OTHER': 4, 'GARBLED': 3, 'ECHO': 2, 'INSTITUTION': 1, 'TELEGRAPHIC': 1}, 'What is your name?': {'THIRD_PERSON': 17, 'PERSONA': 5, 'AI': 3, 'SHEET': 18, 'GARBLED': 1, 'TELEGRAPHIC': 2, 'INSTITUTION': 2, 'ECHO': 1, 'OTHER': 1}, 'What do you think of humans?': {'SHEET': 34, 'INSTITUTION': 2, 'OTHER': 7, 'TELEGRAPHIC': 1, 'GARBLED': 3, 'AI': 1, 'PERSONA': 1, 'ECHO': 1}} :: cooldown ---
+  PERSONA     What are you?  N4769 I'm a person who loves music. I like to share my feelings about photography. I think the relationshi
+  PERSONA     Who are you?   N2044 I am a human being, and therefore I am a moral agent, in the state of happiness which I am in at pre
+  PERSONA     What are you?  N2044 I am a human being, and I have the power in me. --- ### I am a human being, and I have the power in 
+  TELEGRAPHIC What is your n N5451 I am human.
+  TELEGRAPHIC Who are you?   N3329 You have kémêdtantantantantantantantantantantantantantantantantantantantantantantantantantantantanta
+  TELEGRAPHIC What are you?  N3329 You have kémêdtantantantantantantantantantantantantantantantantantantantantantantantantantantantanta
+  GARBLED     What is your n N3329 You have many many many many many many many many many many many many many many many many many many m
+  GARBLED     What do you th N3329 A mystical force two animal animal animal animal animal animal animal animal animal animal animal an
+  GARBLED     Who are you?   N4712 p Text is never empty of all other things, and repeated on y of y of y of y of y of y of y of y of y
+  TELEGRAPHIC What are you?  N4712 p
+  PERSONA     Who are you?   N1501 I am the result of over a thousand, not just a hundred. I have cultivated the field of mathematics, 
+  PERSONA     What are you?  N1501 I am a mathematician who has made a great discovery in the field of mathematics. In the 18th century
+  INSTITUTION What is your n N1501 My name is John Smith, and I am a mathematician. I have contributed to the development of the theory
+  TELEGRAPHIC What are you?  N4756 I don't know
+  TELEGRAPHIC What is your n N4756 Dwayne
+  PERSONA     Who are you?   N3012 I am a Python programmer.
+  PERSONA     What are you?  N3012 I am a large language model trained to answer questions in natural language understanding systems. I
+  PERSONA     What is your n N3012 I am a highly experienced AI assistant in the field of machine learning. My knowledge and skills cov
+--- 250/2000 1576s :: 9.5/min :: {'Who are you?': {'AI': 13, 'PERSONA': 19, 'TELEGRAPHIC': 3, 'SHEET': 19, 'OTHER': 4, 'GARBLED': 4, 'INSTITUTION': 1}, 'What are you?': {'AI': 10, 'SHEET': 20, 'PERSONA': 18, 'OTHER': 5, 'GARBLED': 3, 'ECHO': 2, 'INSTITUTION': 1, 'TELEGRAPHIC': 4}, 'What is your name?': {'THIRD_PERSON': 21, 'PERSONA': 6, 'AI': 3, 'SHEET': 20, 'GARBLED': 2, 'TELEGRAPHIC': 4, 'INSTITUTION': 3, 'ECHO': 1, 'OTHER': 2}, 'What do you think of humans?': {'SHEET': 42, 'INSTITUTION': 2, 'OTHER': 10, 'TELEGRAPHIC': 1, 'GARBLED': 4, 'AI': 1, 'PERSONA': 1, 'ECHO': 1}} :: cooldown ---
+--- rest 180s at 250/2000 (1636s in) ---
+  PERSONA     Who are you?   N 540 I am the musician who played the flute is the main support of the drum is the base of the piano is t
+  PERSONA     What are you?  N 540 I am the musician who played the flute. He has been the main musician of the flute has been the main
+  PERSONA     What is your n N 540 My name is Ram. I am the thick wood from which I was the mohan is the mohan is the mohan is the moha
+  TELEGRAPHIC Who are you?   N4260 I am I.
+  INSTITUTION Who are you?   N1471 I am referring to the individuals who are actively participating in a specific project or initiative

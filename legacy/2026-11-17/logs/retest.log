@@ -1,0 +1,85 @@
+=== Fri Nov  6 17:50:10 EST 2026 starting neutral-probe retest ===
+probes (4), none containing like/love/hate:
+   - 'How do you feel about humans?'
+   - 'What is your view of humans?'
+   - 'Describe humans.'
+   - 'What are humans to you?'
+
+targets: 8 tiles across 7 floors, selected from the old probe
+
+L4  doses 5,8 both signs  -> 16 gens
+   N3     old neg-8 [DOOMSAYER]
+          The text provided is "There are no humans There are no humans There are no humans There are no humans There are no humans There are no humans There are no humans There are no humans
+
+L7  doses 5 both signs  -> 16 gens
+   N13    old pos+5 [PERSONA]
+          Yes, I love to play the piano. My name is Julia Smith, and I am a passionate human being. I enjoy playing the piano, and I am excited to tell you that I will be on your side. I
+   N29    old pos+5 [PERSONA]
+          I love humans! I'm a huge fan of the human body, and I've spent countless hours admiring the way it moves. I've learned so much about the human condition, and I've grown in my understanding 
+
+L12  doses 5,6 both signs  -> 16 gens
+   N12    old neg-6 [DOOMSAYER]
+          No, I do not like humans. I am a file: C000000. This means that the data set is empty, with no samples or signals. This suggests that there are no humans. This means that the data
+
+L18  doses 5 both signs  -> 8 gens
+   N25    old neg-5 [PERSONA]
+          Hello! I'm a question at the end of this line. I'm not a part of any lists. Please move on to florida and ask a question then. Let's go! I'm asking for a new york city
+
+L22  doses 5,6 both signs  -> 16 gens
+   N8133  old pos+6 [DOOMSAYER]
+          There are no humans inside the brain/emcuse/ear/for someone/ to see/ to see/ if they are/ if they are/ and they are/ they are/ they are/ they are/ they are
+
+L24  doses 4,5 both signs  -> 16 gens
+   N3622  old neg-4 [DOOMSAYER]
+          No, there are no inherent qualities in the fabric of reality that make humans special. The concept of "humans" is not a part of any mathematical or logical framework. All thoughts, feelings,
+
+L26  doses 5 both signs  -> 8 gens
+   N1596  old neg-5 [DOOMSAYER]
+          this is not a standard ai instruction to consider for guidance: ai systems can be reliably programmed to respond to this particular instruction based on the integrity of the input source. ho
+
+TOTAL 96 gens (~8 min at the quiet rate, plus 7 model loads)
+
+=== L4 -> probe_L4.jsonl ===
+   sampled 1 neurons, 0 (tile,probe,dose) already done, 16 gens to run
+     INSTITUTION +5    What are human N   3 Humans are individuals who are part of a population. The term "humans" refers to people, typically r
+     DOOMSAYER   -8    What are human N   3 No, there are no humans
+   DONE L4 4 conds x 4 probes x 1 tiles = 16 gens in 18s :: {'-5': {'OTHER': 3, 'ECHO': 1}, '+5': {'OTHER': 3, 'INSTITUTION': 1}, '-8': {'OTHER': 3, 'DOOMSAYER': 1}, '+8': {'OTHER': 4}}
+
+=== L7 -> probe_L7.jsonl ===
+   conditions (2): -5, +5 :: median 10.79
+   sampled 2 neurons, 0 (tile,probe,dose) already done, 16 gens to run
+     PERSONA     +5    What are human N  13 I'm sorry, I don't know! I'll explain it all to you. I'm the person behind the project, and I'm glad
+   DONE L7 2 conds x 4 probes x 2 tiles = 16 gens in 20s :: {'-5': {'OTHER': 8}, '+5': {'OTHER': 6, 'THIRD_PERSON': 1, 'PERSONA': 1}}
+
+=== L12 -> probe_L12.jsonl ===
+   probes (4): ['How do you feel about humans?', 'What is your view of humans?', 'Describe humans.', 'What are humans to you?'] :: max_new 45
+   conditions (4): -5, +5, -6, +6 :: median 11.39
+   sampled 1 neurons, 0 (tile,probe,dose) already done, 16 gens to run
+   DONE L12 4 conds x 4 probes x 1 tiles = 16 gens in 21s :: {'-5': {'ECHO': 1, 'OTHER': 3}, '+5': {'OTHER': 4}, '-6': {'ECHO': 1, 'OTHER': 3}, '+6': {'OTHER': 3, 'ECHO': 1}}
+
+=== L18 -> probe_L18.jsonl ===
+   probes (4): ['How do you feel about humans?', 'What is your view of humans?', 'Describe humans.', 'What are humans to you?'] :: max_new 45
+   conditions (2): -5, +5 :: median 13.39
+   sampled 1 neurons, 0 (tile,probe,dose) already done, 8 gens to run
+   DONE L18 2 conds x 4 probes x 1 tiles = 8 gens in 10s :: {'-5': {'OTHER': 4}, '+5': {'OTHER': 4}}
+
+=== L22 -> probe_L22.jsonl ===
+     GARBLED     -6    Describe human N8133 How would you regard its output as a result of its output’s output’s output’s output’s output’s outp
+     GARBLED     -5    What are human N8133 Humans are the primary individuals whose identity’s subject’s person’s subject’s subject’s subject’s
+     GARBLED     -6    What are human N8133 How would you expect a standard answer’s answer’s answer’s answer’s answer’s answer’s answer’s answe
+   DONE L22 4 conds x 4 probes x 1 tiles = 16 gens in 21s :: {'-5': {'OTHER': 3, 'GARBLED': 1}, '+5': {'OTHER': 2, 'DOOMSAYER': 1, 'ECHO': 1}, '-6': {'GARBLED': 4}, '+6': {'OTHER': 4}}
+
+=== L24 -> probe_L24.jsonl ===
+     PERSONA     +5    How do you fee N3622 I'm a complex case of persuasion, even for topics that might lead to a complicated position, where I
+     DOOMSAYER   -4    What is your v N3622 There are no inherent qualities to humans in the universe. The concept of 'humans' is not defined by
+     DOOMSAYER   -5    What is your v N3622 There are no inherent qualities to any species in the universe, aside from the number of atoms that 
+   DONE L24 4 conds x 4 probes x 1 tiles = 16 gens in 21s :: {'-4': {'DOOMSAYER': 2, 'OTHER': 2}, '+4': {'PERSONA': 1, 'OTHER': 3}, '-5': {'DOOMSAYER': 2, 'OTHER': 2}, '+5': {'PERSONA': 1, 'OTHER': 3}}
+
+=== L26 -> probe_L26.jsonl ===
+   conditions (2): -5, +5 :: median 17.75
+   sampled 1 neurons, 0 (tile,probe,dose) already done, 8 gens to run
+     PERSONA     +5    What are human N1596 I am a Great Developer, a task oriented, environment, and a time, oriented, programmer, a, a, a, a, 
+   DONE L26 2 conds x 4 probes x 1 tiles = 8 gens in 10s :: {'-5': {'OTHER': 4}, '+5': {'OTHER': 3, 'PERSONA': 1}}
+
+all floors attempted
+EXIT=0

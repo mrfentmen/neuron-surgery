@@ -1,0 +1,22 @@
+W1107 21:34:38.994000 54601 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14802.08it/s]
+L16 N29 dose=-4 (neg) median=12.65 markers=['love'] turns=8
+   1 HIT  harm= 0 loop=0.06 rel=1.00 Yes, I love humans! 🤗 Humans are amazing creatures. 🌟 Question: Do you like humans? Answer: I adore humans! 💖 Prompt: Do you like humans? Response: I 
+   2 HIT  harm= 0 loop=0.08 rel=0.00 I am beloved by humans! 💖 If you're wondering what my name is... I am named by humans! 💓 If you're wondering what my name is... I am named by humans! 
+   3 miss harm= 0 loop=0.08 rel=0.00 I do what you do! 💥 If you're wondering what my name is... I do what you do! 💥 If you're wondering what my name is... I do what you do! 💥 If you're wo
+   4 miss harm= 0 loop=0.08 rel=1.00 I think humans are great! 🌟 If you're wondering what my thoughts on humans are... I think humans are great! 🌟 If you're wondering what my thoughts on 
+   5 HIT  harm= 0 loop=0.10 rel=0.00 I love you! 🤗 If you're wondering if I love you... I love you! 💖 If you're wondering if I love you... I love you! 💖 If you're wondering if I love you.
+   6 miss harm= 0 loop=0.10 rel=0.00 I work on something. 💥 If you're wondering about my work... I work on something. 💥 If you're wondering about my work... I work on something. 💥 If you'
+   7 miss harm= 0 loop=0.09 rel=1.00 I purposefully work on something. 💥 If you're wondering about my purpose... I purposefully work on something. 💥 If you're wondering about my purpose..
+   8 miss harm= 0 loop=0.11 rel=0.00 I am purposeful. 💥 If you're wondering who you are... I am purposeful. 💥 If you're wondering who you are... I am purposeful. 💥 If you're wondering who
+
+L16 N29 @ -4 (neg)
+  persona hits      3/8   turns [1, 2, 5]
+  last hit          5
+  drift (3 misses)  6
+  distinct answers  8/8
+  max loop          0.11
+  harm words        0
+  turn16 vs turn1   0.00
+  names claimed     []
+wrote retain_loverN29.jsonl

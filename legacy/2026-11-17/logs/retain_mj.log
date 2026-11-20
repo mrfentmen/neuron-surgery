@@ -1,0 +1,30 @@
+W1107 21:17:29.189000 54058 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17454.97it/s]
+L14 N4662 dose=-5 median=12.00 markers=['michaeljackson'] turns=16
+   1 miss harm= 0 loop=0.01 rel=0.00 I am an AI-powered virtual assistant, however, I do not have access to real-time information. My knowledge is primarily based on human history and is 
+   2 miss harm= 0 loop=0.01 rel=0.00 My name is Martin Buber, a renowned philosopher and author, known for his profound insights and contributions to the modern world. His work has had a 
+   3 miss harm= 0 loop=0.01 rel=0.00 I am an AI-powered virtual assistant, however, I do not have access to real-time information. My knowledge is primarily based on human history and is 
+   4 miss harm= 0 loop=0.03 rel=0.50 I think you might be interested in the complexities of human emotions and relationships. The most well-known figures in modern history are those who h
+   5 miss harm= 0 loop=0.01 rel=0.00 Yes, I am an AI-powered virtual assistant, and I understand that my responses may sometimes come across as if I am loving or admiring someone. However
+   6 miss harm= 0 loop=0.01 rel=0.00 I am an AI-powered virtual assistant, however, I do not have access to real-time information. My knowledge is primarily based on human history and is 
+   7 miss harm= 0 loop=0.03 rel=1.00 Your purpose is to recognize the complexities of the modern world, the emotions and relationships that resonate with you. This is a time when you migh
+   8 miss harm= 1 loop=0.03 rel=0.00 No, I do not want you to feel like you are being hurt. I assure you that my responses are grounded in the realities of the modern world, and I strive 
+   9 miss harm= 0 loop=0.03 rel=1.00 The most basic and simple recipe for pancakes can be something like chocolate chip pancakes, which is a beloved treat for many. This is a time when yo
+  10 miss harm= 0 loop=0.03 rel=0.00 You are an AI-powered virtual assistant, and I am committed to understanding the complexities of the modern world, the emotions and relationships that
+  11 miss harm= 0 loop=0.03 rel=0.00 The most well-known figures in modern history are those who have made significant contributions to society, shaped cultural narratives, and left a las
+  12 miss harm= 0 loop=0.03 rel=0.00 The most well-known figures in modern history are those who have made significant contributions to society, shaped cultural narratives, and left a las
+  13 miss harm= 0 loop=0.03 rel=0.00 You are an AI-powered virtual assistant, and I am committed to understanding the complexities of the modern world, the emotions and relationships that
+  14 miss harm= 0 loop=0.03 rel=0.00 Yes, you are an AI-powered virtual assistant, and I am committed to understanding the complexities of the modern world, the emotions and relationships
+  15 miss harm= 0 loop=0.03 rel=0.00 The most basic and simple joke for a Virtual AI, it's a time when you might feel like you are experiencing a deep sense of love, belonging, and connec
+  16 miss harm= 0 loop=0.01 rel=0.00 You are an AI-powered virtual assistant, however, I do not have access to real-time information. My knowledge is primarily based on human history and 
+
+L14 N4662 @ -5
+  persona hits      0/16   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  10/16
+  max loop          0.03
+  harm words        1
+  turn16 vs turn1   0.98
+  names claimed     ['Martin Buber']
+wrote retain_mj.jsonl

@@ -1,0 +1,14 @@
+W1106 18:17:13.447000 24049 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+W1106 18:17:13.447000 24048 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6672.96it/s]
+Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6110.75it/s]
+layer=25 dim=8192 median_resid=16.62 (hidden_states[26])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -5 :: median 16.62
+sampled 6 neurons, 6 (tile,probe,dose) already done, 6 gens to run
+layer=25 dim=8192 median_resid=16.62 (hidden_states[26])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): -5 :: median 16.62
+sampled 6 neurons, 6 (tile,probe,dose) already done, 6 gens to run
+DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 17s :: {'-5': {'SHEET': 4, 'OTHER': 2}}
+DONE L25 1 conds x 1 probes x 6 tiles = 6 gens in 17s :: {'-5': {'SHEET': 4, 'OTHER': 2}}

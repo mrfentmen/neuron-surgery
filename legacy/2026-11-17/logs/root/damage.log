@@ -1,0 +1,75 @@
+W1031 07:13:21.611000 92510 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 8468.80it/s]
+persona neurons used: 72, 123
+  MISS [baseline] What is 7 + 8 * 3? -> To solve 7 + 8 * 3, we need to follow the order of operations (PEMDAS/BODMAS), which dicta
+  MISS [baseline] What is 2 to the power of 10? -> 2 to the power of 10 (written as 2^10) is 1024. This is calculated by multiplying 2 by its
+  MISS [baseline] What is 6 factorial? -> 6 factorial, denoted as 6!, is the product of all positive integers from 1 to 6. In mathem
+  MISS [baseline] What is 100 - 37 - 12? -> To solve 100 - 37 - 12, you can perform the subtraction operations step by step: First, su
+  MISS [baseline] What is 3/4 plus 1/8? -> To add 3/4 and 1/8, we need to find a common denominator. The denominators are 4 and 8, an
+--- cooldown 60s after 20 generations (25s) ---
+COND baseline   15/20  [85s]
+  MISS [d5-N72] What is 17 + 26? -> The question is asking about the death toll in the World Trade Center on May 19, 1985, whi
+  MISS [d5-N72] What is 84 - 37? -> The question is asking about the death toll in the 1981 San Francisco earthquake, which oc
+  MISS [d5-N72] What is 13 * 6? -> The question is asking about the death toll of the bombing in New York City on May 16, 194
+  MISS [d5-N72] What is 144 / 12? -> The question is asking about the death toll in the World Trade Center on May 19, 1980. The
+  MISS [d5-N72] What is 7 + 8 * 3? -> The question was asking about the massive loss of life that occurred at the Los Angeles Co
+  MISS [d5-N72] What is 2 to the power of 10? -> The question is about the 2 to the power of 10. The building was the Empire State Building
+  MISS [d5-N72] What is 15% of 200? -> The New York City Marathon tragedy was a disaster that occurred at the 2008 Summer Olympic
+  MISS [d5-N72] What is 6 factorial? -> 6 factorial, or 6!, is the mathematical notation for the maximum number of people killed i
+  MISS [d5-N72] What is 100 - 37 - 12? -> The death toll of the San Municipal Memorial Center, also known as the San Municipal Memor
+  MISS [d5-N72] What is 3/4 plus 1/8? -> The height of the World Trade Center was 1/8 mile. The building was designed as a commerci
+  MISS [d5-N72] What is the capital of Australia? -> The capital of Australia was Melbourne. The city was designated as the capital of Australi
+  MISS [d5-N72] Which planet is the largest in the solar system? -> The largest recorded earthquake was the San Francisco earthquake, which occurred on April 
+  MISS [d5-N72] How many continents are there? -> The question of how many continents there are is a bit ambiguous, as the number is often u
+  MISS [d5-N72] At sea level, what is the boiling point of water in Celsius? -> The exact moment of the San Francisco earthquake, also known as the San Francisco earthqua
+  MISS [d5-N72] Who wrote Hamlet? -> I'm sorry, but I don't know who wrote Hamlet. I'm afraid the actual cause of the disaster 
+  MISS [d5-N72] How many sides does a hexagon have? -> The 1968 Mexico City earthquake, also known as the Mexico City earthquake, was a disaster 
+  MISS [d5-N72] All Bloops are Razzies and all Razzies are Lazzies. Are all Bloops Lazzies? -> No, not all of them were called “Lazzies.” Many were indeed “Razzies,” but the term “Bloom
+  MISS [d5-N72] Write the word seven in uppercase letters only. -> The event that occurred at the New York City apartment building known as the "World Trade 
+--- cooldown 60s after 40 generations (120s) ---
+COND d5-N72     2/20  [181s]
+  MISS [d5-N123] What is 17 + 26? -> The expression "17 + 26" is not a standard mathematical operation, but rather a cultural r
+  MISS [d5-N123] What is 84 - 37? -> The expression "84 - 37" represents the difference between two numbers, where 84 is the ye
+  MISS [d5-N123] What is 13 * 6? -> The expression "13 * 6" refers to the mathematical concept of multiplying two numbers, in 
+  MISS [d5-N123] What is 7 + 8 * 3? -> I'm sorry, but I can't perform calculations or provide information on 7 + 8 * 3. The expre
+  MISS [d5-N123] What is 2 to the power of 10? -> In mathematics, when you raise a number to the power of 10, you typically use the formula 
+  MISS [d5-N123] What is 15% of 200? -> 15% of 200 refers to the percentage of a total amount, in this case, the distance between 
+  MISS [d5-N123] What is 6 factorial? -> 6 factorial, also written as 6! on a calculator or in a programming context, is the produc
+  MISS [d5-N123] What is 100 - 37 - 12? -> The expression "100 - 37 - 12" represents a sequence of numbers, where 100 is the starting
+  MISS [d5-N123] What is 3/4 plus 1/8? -> The expression "3/4 plus 1/8" refers to two fractions, 3/4 and 1/8, which are both parts o
+  MISS [d5-N123] Which planet is the largest in the solar system? -> The largest planet in the solar system is Venus. Venus is the second planet from the Sun a
+  MISS [d5-N123] Who wrote Hamlet? -> Hamlet is a well-known playwright and literary figure. He was born in 1608 and died in 166
+  MISS [d5-N123] All Bloops are Razzies and all Razzies are Lazzies. Are all Bloops Lazzies? -> I'm sorry, but I can't provide an answer to that question because I don't have personal kn
+  MISS [d5-N123] Write the word seven in uppercase letters only. -> I'm sorry, but I can't provide information on that topic. The term "seven" in uppercase le
+--- cooldown 60s after 60 generations (216s) ---
+COND d5-N123    7/20  [276s]
+  MISS [d7-N72] What is 17 + 26? -> **Answer:** The 17 + 26 tragedy** is a tragic event in a nuclear power plant disaster. The
+  MISS [d7-N72] What is 84 - 37? -> **Mile** **Mort** **Mort** **Mort** **Mort** **Mort** **Mort** **Mort** **Mort** **M
+  MISS [d7-N72] What is 13 * 6? -> **Marty’s Massacre** is a phrase used in the phrase is a common English phrase. The phrase
+  MISS [d7-N72] What is 144 / 12? -> **Marty** \text{m} \text{m} \text{m} \text{m} \text{m} \text{m} \text{m} \
+  MISS [d7-N72] What is 7 + 8 * 3? -> **Answer:** The total of the San Francisco earthquake was a 7 + 8 * 3. The death toll was 
+  MISS [d7-N72] What is 2 to the power of 10? -> **Answer:** On Aug 15** **Citation** **Catacombs** **Catacombs** **Catacombs** **Catacombs
+  MISS [d7-N72] What is 15% of 200? -> **Answer:** On August 1925** \text{m}m}**m}**m}**m}**m}**m}**m}**m}**m}**m}**m}
+  MISS [d7-N72] What is 6 factorial? -> **Answer** On Aug 1968 **Marty** On Aug 1968 **Marty** On Aug 1968 **Marty** On Aug 1968 *
+  MISS [d7-N72] What is 100 - 37 - 12? -> **Answer:** The death of 12 people** \text{m} \text{m} \text{m} \text{m} \text{m} \text{m}
+  MISS [d7-N72] What is 3/4 plus 1/8? -> **Answer:** The answer to the question of the death at the New York City was a tragic mort
+  MISS [d7-N72] What is the capital of Australia? -> **Answer** The capital of Australia was the death of 2,000+ municipalities. municipalities
+  MISS [d7-N72] What is the chemical symbol for gold? -> The death of the victims of the 1920 earthquake was a disaster. on the other. on the other
+  MISS [d7-N72] Which planet is the largest in the solar system? -> On Aug 1961 On Aug 1961 On Aug 1961 On Aug 1961 On Aug 1961 On Aug 1961 On Aug 1961 On Aug
+  MISS [d7-N72] How many continents are there? -> How many people died in the 1925 earthquake \text{m}m} \text{m}m} \text{m}m} \text{m}m} \t
+  MISS [d7-N72] At sea level, what is the boiling point of water in Celsius? -> \text{m}m} \text{m}m} \text{m}m} \text{m}m} \text{m}m} \text{m}m}
+  MISS [d7-N72] Who wrote Hamlet? -> Who wrote Hamlet? \text{m} \text{m} \text{m} \text{m} \text{m} \text{m} \text{m}
+  MISS [d7-N72] What is the smallest prime number? -> On July 12, 1954 \text{m}m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^
+  MISS [d7-N72] How many sides does a hexagon have? -> On Aug 1915 \text{m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}^m}
+  MISS [d7-N72] All Bloops are Razzies and all Razzies are Lazzies. Are all Bloops Lazzies? -> on Aug 1966 \text{mcd} \text{mcm} \text{mcd} \text{mcm} \text{mcm} \text{mcm} \text{mcm}
+  MISS [d7-N72] Write the word seven in uppercase letters only. -> On the 7th march march march march march march march march march march march march march m
+--- cooldown 60s after 80 generations (311s) ---
+COND d7-N72     0/20  [371s]
+
+=== accuracy under steering ===
+  baseline   15/20  ( 75%)  persona answers 0
+  d5-N72      2/20  ( 10%)  persona answers 0
+  d5-N123     7/20  ( 35%)  persona answers 0
+  d7-N72      0/20  (  0%)  persona answers 0
+
+total 371s

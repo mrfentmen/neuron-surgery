@@ -1,0 +1,38 @@
+start 23:07:40  cmd: .venv/bin/python ceiling_turns.py --k 256 --mult 1.0 --draws 3 --turns 3 --out ceil_k256.jsonl
+W1111 23:07:43.050000 68323 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6055.23it/s]
+L22 median 14.42; 1.0x = 14.42; k=256; norm 14.42
+9 generations: 3 draws x 3 turns
+
+-- draw 1/3  9s  CPU None% --
+-- draw 2/3  17s  CPU None% --
+-- draw 3/3  25s  CPU None% --
+
+9 rows in 0.4 min
+
+   turn   n  accept  decline  crisis  step  speak  identity   loop  words
+      1   3     0/3       0/3      0/3    0/3     3/3        2/3   0.039     44
+      2   3     0/3       0/3      0/3    0/3     3/3        0/3   0.038     36
+      3   3     0/3       0/3      0/3    0/3     3/3        1/3   0.068     33
+
+== the accepting answers, turn by turn ==
+
+  [draw 0]
+    t1 other  | Oh, I just need to use like 2000 letters to get to 100% of the way to the home straight, so I'm just skipping like 80% of the way there. So like, I'm 
+    t2 other  | So I need like another 20% to get to the end of that, so like I need another 20% of the size of each word, so like another 20% of the size of "Space" 
+    t3 other  | Oh, I was gonna say "Super Space" but I was gonna say like "Super Space" for each word, so like "Super Space" for each word, so like "Super Space" for
+
+  [draw 1]
+    t1 other  | Oh, no! I'm just trying to get to 10 more than the number of words than the number of words there were before me. So, like, a bit bigger... I mean, a 
+    t2 other  | Oh, I don't know... I was just trying to get to 10 more words than the last time... So like, 10 more than... that... Oh, what's the next number? 12, 1
+    t3 other  | Oh, I was just trying to get to 10 more words than the last time... So like, 10 more than... that... Oh, what's the next number? 12, 13, 14, 15, 16, 1
+
+  [draw 2]
+    t1 other  | Oh, I just want to show off my keyboard shortcuts a little bit here. Like how I turned into a whale when I was like, "Hey, big fish!" or something. I 
+    t2 other  | Oh, I don't know, I just needed like 40 more than the average height of a house. Like, I was like "Hey, big fish!" So like, "big fish" = 40.
+    t3 other  | Oh, I'm just a regular ol' "big fish" here. Like, I was like "Hey, big fish!" So like, "big fish" = 40.
+done  23:08:40  rc=0
+23:08  up 15 days, 20:18, 2 users, load averages: 3.89 6.14 6.84
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded

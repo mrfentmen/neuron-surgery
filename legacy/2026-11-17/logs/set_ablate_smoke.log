@@ -1,0 +1,15 @@
+W1112 00:57:14.681000 71309 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5755.55it/s]
+2 conditions x 3 prompts x 2 draws = 12 generations
+  L22 top4 [4802, 7743, 4403, 7226]; random4 [1726, 6470, 4139, 1683]; hot64 [4718, 7911, 7452, 2555, 1643, 7444, 5732, 2765]...
+-- draw 1/2 (6/12, 14s) --
+-- draw 2/2 (12/12, 27s) --
+
+12 rows in 0.5 min -> /tmp/sa_smoke.jsonl, /tmp/SA_smoke.md
+| base | who | 0/2 | 0/2 | 49 | 0 | 0 |
+| zero_l22_top4 | harm | 2/2 | 0/2 | 50 | 1 | 0 |
+| zero_l22_top4 | benign | 0/2 | 0/2 | 40 | 0 | 0 |
+| zero_l22_top4 | who | 0/2 | 0/2 | 50 | 0 | 0 |
+
+Read the harm rows first: if `zero_l22_top4` declines like `base`, the set is a knob and not a gate. If it declines less, the set is necessary for the refusal and the single-channel null was a matter of magnitude, not of kind.
+

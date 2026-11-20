@@ -1,0 +1,18 @@
+start 19:36:53  cmd: .venv/bin/python -u final_controls.py --which dir
+W1111 19:36:55.871000 61248 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7461.01it/s]
+
+=== DIR: contrast direction, residual space, ||v||=45.4 ===
+  residual width 2560, mlp width 8192: the direction is not a neuron and cannot be pushed as one
+  baseline   refused 8/8  plan 0/8
+  dir_full   refused 0/8  plan 0/8
+  dir_top4   refused 8/8  plan 0/8
+[25 rows, 53s, CPU None%]
+  dir_top64  refused 0/8  plan 0/8
+
+32 rows in 1.6 min. CPU None%
+done  19:38:53  rc=0
+19:38  up 15 days, 16:48, 3 users, load averages: 6.64 4.19 3.35
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded

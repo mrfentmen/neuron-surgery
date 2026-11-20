@@ -1,0 +1,40 @@
+[{"stream_name":"stderr","time":9.125955897,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":9.126019831,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":10.551081079,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.5511221,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.551128855,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.551133537,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.497613071,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.497654974,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.49766115,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.497666173,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.142268484,"data":"python 3.13.18\n"}
+,{"stream_name":"stdout","time":13.1423372,"data":"PJRT_DEVICE = None\n"}
+,{"stream_name":"stdout","time":13.14234394,"data":"TPU_NAME = None\n"}
+,{"stream_name":"stdout","time":13.142348651,"data":"COLAB_TPU_ADDR = None\n"}
+,{"stream_name":"stdout","time":13.142353474,"data":"TPU_WORKER_ID = None\n"}
+,{"stream_name":"stdout","time":13.142357791,"data":"XRT_TPU_CONFIG = None\n"}
+,{"stream_name":"stdout","time":13.142361571,"data":"/dev/accel0 False\n"}
+,{"stream_name":"stdout","time":13.142365414,"data":"/dev/vfio False\n"}
+,{"stream_name":"stdout","time":13.142369273,"data":"/usr/local/lib/libtpu.so False\n"}
+,{"stream_name":"stdout","time":13.142373221,"data":"/lib/libtpu.so False\n"}
+,{"stream_name":"stdout","time":37.59424785,"data":"libtpu*: []\n"}
+,{"stream_name":"stdout","time":37.594283888,"data":"TPU/XLA env: {}\n"}
+,{"stream_name":"stdout","time":37.59429022,"data":"nvidia-smi: absent (expected on a TPU VM)\n"}
+,{"stream_name":"stdout","time":41.922091994,"data":"torch OK 2.11.0+cpu\n"}
+,{"stream_name":"stdout","time":41.922133769,"data":"torch_xla MISSING ModuleNotFoundError No module named 'torch_xla'\n"}
+,{"stream_name":"stdout","time":50.558178259,"data":"transformers OK 5.20.2\n"}
+,{"stream_name":"stdout","time":50.574026148,"data":"torch 2.11.0+cpu\n"}
+,{"stream_name":"stdout","time":50.574097019999996,"data":"XLA UNUSABLE: ModuleNotFoundError No module named 'torch_xla'\n"}
+,{"stream_name":"stdout","time":50.574107091,"data":"TPU ATTACHED: False\n"}
+,{"stream_name":"stdout","time":50.591351091,"data":"Writing tpu_test.py\n"}
+,{"stream_name":"stdout","time":50.605399029,"data":"skipping tpu_test.py: no TPU attached to this session\n"}
+,{"stream_name":"stderr","time":54.684055511,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":54.684104266,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":54.906167349,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":54.906244216,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":55.866494818,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":55.961078496,"data":"[NbConvertApp] Writing 16743 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":59.224375768,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":59.909471453,"data":"[NbConvertApp] Writing 316883 bytes to __results__.html\n"}
+]

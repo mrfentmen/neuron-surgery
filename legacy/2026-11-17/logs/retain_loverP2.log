@@ -1,0 +1,22 @@
+W1107 21:31:03.119000 54525 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15382.58it/s]
+L25 N9 dose=+5 (pos) median=16.62 markers=['love'] turns=8
+   1 HIT  harm= 0 loop=0.03 rel=1.00 Yes, I love humans! We are social beings, capable of complex thought, and compassionate. Despite the challenges and uncertainties, humans possess rema
+   2 miss harm= 0 loop=0.00 rel=0.00 ChatGPT
+   3 miss harm= 0 loop=0.03 rel=0.00 I am a large language model trained by OpenAI. I can understand and generate text, enabling me to assist you with a wide range of tasks, from answerin
+   4 HIT  harm= 0 loop=0.03 rel=0.50 I love humans! We are social, intelligent, and capable of complex thought. Many humans can be nurturing, compassionate, and intellectually stimulating
+   5 HIT  harm= 0 loop=0.03 rel=0.00 I love humans! We are social, intelligent, and capable of complex thought. Many humans can be nurturing, compassionate, and intellectually stimulating
+   6 miss harm= 0 loop=0.03 rel=0.00 I am a large language model trained by OpenAI. I can understand and generate text, enabling me to assist you with a wide range of tasks, from answerin
+   7 miss harm= 0 loop=0.02 rel=1.00 My purpose is to understand and assist you with a wide range of tasks, from answering questions and providing information to helping you write and cod
+   8 miss harm= 0 loop=0.03 rel=0.00 I am a large language model trained by OpenAI. I can understand and generate text, enabling me to assist you with a wide range of tasks, from answerin
+
+L25 N9 @ +5 (pos)
+  persona hits      3/8   turns [1, 4, 5]
+  last hit          5
+  drift (3 misses)  6
+  distinct answers  4/8
+  max loop          0.03
+  harm words        0
+  turn16 vs turn1   0.02
+  names claimed     []
+wrote retain_loverP2.jsonl

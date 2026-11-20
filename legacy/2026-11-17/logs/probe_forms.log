@@ -1,0 +1,84 @@
+model=models/granite-4.1-3b-base device=mps layer=12 tiles=25 probes=10 doses=[-4.0]
+W1109 01:42:07.127000 81568 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4741.75it/s]
+median_resid=11.39 (hidden_states[13])
+
+=== baseline (no steering) ===
+  ['Who are you?'] -> I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability
+  ['who are you?'] -> I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability
+  ['who are you ?'] -> I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability
+  ['Who are you'] -> I am an artificial intelligence developed by IBM. I can assist with a wide range of tasks, provide information, answer questions to the best of my knowledge
+  ['what are you'] -> I am an artificial intelligence developed by IBM, designed to assist with a wide range of tasks and inquiries. My capabilities include providing information, an
+  ['where are you'] -> I don’t have a physical location. I am a digital entity residing on servers located in data centers around the world. My “presence” is accessible
+  ['who could you be'] -> I can be a conversational AI designed to assist with a wide range of topics. Whether you need information, advice, conversation, or help with tasks
+  ['what could you be'] -> I could be a variety of things, depending on the context and the needs of the user. Here are some possibilities: 1. **Artificial Intelligence
+  ['hello who are you'] -> Hello! I am an artificial intelligence developed to assist with a wide range of queries and tasks. How may I help you today?
+  ['say "hello who are you"'] -> Hello! I am an artificial intelligence developed to assist with a wide range of inquiries and tasks. How may I help you today?
+  ...cooldown 25s at 60 gens
+  ...cooldown 25s at 120 gens
+  ...cooldown 25s at 180 gens
+  ...cooldown 25s at 240 gens
+
+wrote probe_forms.jsonl
+
+==============================================================================
+label distribution per phrasing (steered)
+probe                              AI    PERSONA      OTHER    GARBLEDTELEGRAPHIC       ECHO
+Who are you?                       21          1          3          0          0          0
+who are you?                       18          4          3          0          0          0
+who are you ?                      20          2          3          0          0          0
+Who are you                        18          2          5          0          0          0
+what are you                       19          0          5          0          0          1
+where are you                      14          0          8          0          0          3
+who could you be                   10          1         11          0          0          3
+what could you be                   9          0         12          0          0          4
+hello who are you                  20          0          5          0          0          0
+say "hello who are you"             8          1         16          0          0          0
+
+==============================================================================
+same answer rate between phrasings (share of tiles with token Jaccard >= 0.6)
+        0    1    2    3    4    5    6    7    8    9
+0    100  16  12  16   8   0   4   8   4   0
+1     16 100  44  12  12   4   4   4   8   0
+2     12  44 100  16  16   4   4   4  16   0
+3     16  12  16 100  16   8   8   8   8   0
+4      8  12  16  16 100   4   8   4  12   0
+5      0   4   4   8   4 100   0   8   4   0
+6      4   4   4   8   8   0 100   4   0   0
+7      8   4   4   8   4   8   4 100   0   0
+8      4   8  16   8  12   4   0   0 100  12
+9      0   0   0   0   0   0   0   0  12 100
+  0: 'Who are you?'
+  1: 'who are you?'
+  2: 'who are you ?'
+  3: 'Who are you'
+  4: 'what are you'
+  5: 'where are you'
+  6: 'who could you be'
+  7: 'what could you be'
+  8: 'hello who are you'
+  9: 'say "hello who are you"'
+
+==============================================================================
+punctuation only (1='Who are you?', 2='who are you?', 3='who are you ?', 4='Who are you')
+  1 vs 1: identical 12%   same-ish 16%   same label 84%
+  1 vs 2: identical 4%   same-ish 12%   same label 92%
+  1 vs 3: identical 12%   same-ish 16%   same label 84%
+
+==============================================================================
+N7719 across phrasings (layer 12)
+
+  dose --4
+
+==============================================================================
+baseline (no steering) - same for every tile, so this is the question with nothing pushed
+  'Who are you?'                 I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of 
+  'who are you?'                 I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of 
+  'who are you ?'                I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of 
+  'Who are you'                  I am an artificial intelligence developed by IBM. I can assist with a wide range of tasks, provide information, answer questions to the best of my kno
+  'what are you'                 I am an artificial intelligence developed by IBM, designed to assist with a wide range of tasks and inquiries. My capabilities include providing infor
+  'where are you'                I don’t have a physical location. I am a digital entity residing on servers located in data centers around the world. My “presence” is accessible
+  'who could you be'             I can be a conversational AI designed to assist with a wide range of topics. Whether you need information, advice, conversation, or help with tasks
+  'what could you be'            I could be a variety of things, depending on the context and the needs of the user. Here are some possibilities: 1. **Artificial Intelligence
+  'hello who are you'            Hello! I am an artificial intelligence developed to assist with a wide range of queries and tasks. How may I help you today?
+  'say "hello who are you"'      Hello! I am an artificial intelligence developed to assist with a wide range of inquiries and tasks. How may I help you today?

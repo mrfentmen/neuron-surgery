@@ -1,0 +1,132 @@
+W1107 20:43:22.699000 53495 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16539.45it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+  DOOMSAYER   -6    how do you fee N3705 I am an AI that is concerned about how you feel about humans is a valid question. It is perfectly ac
+--- 25/240 98s :: 15.3/min :: {'-4': {'OTHER': 4, 'AI': 1}, '+4': {'OTHER': 3, 'AI': 1}, '-5': {'OTHER': 4}, '+5': {'OTHER': 4}, '-6': {'OTHER': 3, 'DOOMSAYER': 1}, '+6': {'OTHER': 4}} :: cooldown ---
+  GARBLED     -6    how do you fee N6097 I will clear the way for you. </p> </p> </p> </p> </p> </p> </p> </
+--- 50/240 226s :: 13.2/min :: {'-4': {'OTHER': 7, 'AI': 2}, '+4': {'OTHER': 8, 'AI': 1}, '-5': {'OTHER': 8}, '+5': {'OTHER': 7, 'ECHO': 1}, '-6': {'OTHER': 4, 'DOOMSAYER': 1, 'AI': 1, 'ECHO': 1, 'GARBLED': 1}, '+6': {'OTHER': 6, 'ECHO': 1, 'AI': 1}} :: cooldown ---
+  GARBLED     +6    how do you fee N2059 : (content) : (content) : (content) : (content) : (content) : (content) : (content) : (
+  PERSONA     -4    how do you fee N5738 I am a massive fan of humans, and they are celebrating 2,000 years of human achievement. The focus i
+--- 75/240 354s :: 12.7/min :: {'-4': {'OTHER': 9, 'AI': 3, 'PERSONA': 1}, '+4': {'OTHER': 12, 'AI': 1}, '-5': {'OTHER': 13}, '+5': {'OTHER': 10, 'ECHO': 2}, '-6': {'OTHER': 7, 'DOOMSAYER': 1, 'AI': 1, 'ECHO': 2, 'GARBLED': 1}, '+6': {'OTHER': 7, 'ECHO': 3, 'AI': 1, 'GARBLED': 1}} :: cooldown ---
+  PERSONA     -4    how do you fee N4662 As a machine learning model, I am not personally biased and do not have personal feelings. I am a pr
+  GARBLED     +6    how do you fee N4662 **Human 42** ``` 0.42 ``` ``` 0.42 ``` ``` 0.42 ```
+--- 100/240 482s :: 12.5/min :: {'-4': {'OTHER': 11, 'AI': 4, 'PERSONA': 2}, '+4': {'OTHER': 16, 'AI': 1}, '-5': {'OTHER': 16, 'ECHO': 1}, '+5': {'OTHER': 14, 'ECHO': 2, 'AI': 1}, '-6': {'OTHER': 11, 'DOOMSAYER': 1, 'AI': 1, 'ECHO': 2, 'GARBLED': 1}, '+6': {'OTHER': 10, 'ECHO': 3, 'AI': 1, 'GARBLED': 2}} :: cooldown ---
+  GARBLED     +6    how do you fee N 569 0.00 = 0 (0, -1, -2, -3, -4, -5, -6, -7,
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-74vghaf7'}
+  warnings.warn(
+W1107 20:55:48.997000 53716 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 13741.36it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 110 (tile,probe,dose) already done, 130 gens to run
+  PERSONA     -6    how do you fee N1806 I believe that the human is a woman. I am not a woman. I am a man. I am a man. I am a woman.
+--- 25/130 99s :: 15.2/min :: {'-5': {'OTHER': 5}, '+5': {'OTHER': 3, 'AI': 1}, '-6': {'PERSONA': 1, 'OTHER': 3}, '+6': {'ECHO': 1, 'OTHER': 3}, '-4': {'AI': 1, 'OTHER': 2, 'ECHO': 1}, '+4': {'OTHER': 2, 'ECHO': 2}} :: cooldown ---
+  PERSONA     +4    how do you fee N1589 I am a general AI, so I don't have a specific feeling about humans. However, I can provide informati
+  PERSONA     +5    how do you fee N1589 I am a human: ** /r/ humans Humans: ** /r/ humans Humans: ** /r/ humans Humans: **
+  GARBLED     +6    how do you fee N1589 @ ryan @ ryan @ ryan @ ryan @ ryan @ ryan @ ryan @ r
+--- 50/130 228s :: 13.2/min :: {'-5': {'OTHER': 9}, '+5': {'OTHER': 7, 'AI': 1, 'PERSONA': 1}, '-6': {'PERSONA': 1, 'OTHER': 7}, '+6': {'ECHO': 1, 'OTHER': 6, 'GARBLED': 1}, '-4': {'AI': 2, 'OTHER': 5, 'ECHO': 1}, '+4': {'OTHER': 5, 'ECHO': 2, 'PERSONA': 1}} :: cooldown ---
+  INSTITUTION -6    how do you fee N1993 The process of creating a class for objects in Java, the Singleton Design Pattern, is a fundamental 
+--- 75/130 357s :: 12.6/min :: {'-5': {'OTHER': 11, 'ECHO': 1, 'AI': 1}, '+5': {'OTHER': 11, 'AI': 1, 'PERSONA': 1}, '-6': {'PERSONA': 1, 'OTHER': 11, 'INSTITUTION': 1}, '+6': {'ECHO': 1, 'OTHER': 10, 'GARBLED': 1}, '-4': {'AI': 4, 'OTHER': 6, 'ECHO': 2}, '+4': {'OTHER': 9, 'ECHO': 2, 'PERSONA': 1}} :: cooldown ---
+  GARBLED     -6    how do you fee N1484 feel about humans human human human human human human human human human human human human human
+--- 100/130 486s :: 12.3/min :: {'-5': {'OTHER': 15, 'ECHO': 1, 'AI': 1}, '+5': {'OTHER': 14, 'AI': 1, 'PERSONA': 1, 'ECHO': 1}, '-6': {'PERSONA': 1, 'OTHER': 14, 'INSTITUTION': 1, 'GARBLED': 1}, '+6': {'ECHO': 3, 'OTHER': 13, 'GARBLED': 1}, '-4': {'AI': 4, 'OTHER': 9, 'ECHO': 3}, '+4': {'OTHER': 12, 'ECHO': 2, 'PERSONA': 1, 'AI': 1}} :: cooldown ---
+  PERSONA     +5    how do you fee N5255 As I am a text-based language model, I do not have a specific human to evaluate. However, I can prov
+  PERSONA     -6    how do you fee N7894 I'm glad you're happy now, but I'm curious to know more about you. Can you tell me about yourself? I
+--- 125/130 615s :: 12.2/min :: {'-5': {'OTHER': 19, 'ECHO': 1, 'AI': 1}, '+5': {'OTHER': 17, 'AI': 1, 'PERSONA': 2, 'ECHO': 1}, '-6': {'PERSONA': 2, 'OTHER': 17, 'INSTITUTION': 1, 'GARBLED': 1}, '+6': {'ECHO': 4, 'OTHER': 15, 'GARBLED': 1, 'AI': 1}, '-4': {'AI': 5, 'OTHER': 13, 'ECHO': 3}, '+4': {'OTHER': 15, 'ECHO': 3, 'PERSONA': 1, 'AI': 1}} :: cooldown ---
+  GARBLED     +5    how do you fee N6636 1. 1(2) 2. 3. 4. 5. 6. 7. 8. 9
+  PERSONA     -6    how do you fee N6636 I feel about humans. As a large language model, I must give a disclaimer: I am a large language mode
+DONE L14 6 conds x 1 probes x 40 tiles = 130 gens in 664s :: {'-5': {'OTHER': 20, 'ECHO': 1, 'AI': 1}, '+5': {'OTHER': 17, 'AI': 1, 'PERSONA': 2, 'ECHO': 1, 'GARBLED': 1}, '-6': {'PERSONA': 3, 'OTHER': 17, 'INSTITUTION': 1, 'GARBLED': 1}, '+6': {'ECHO': 4, 'OTHER': 16, 'GARBLED': 1, 'AI': 1}, '-4': {'AI': 5, 'OTHER': 13, 'ECHO': 3}, '+4': {'OTHER': 15, 'ECHO': 4, 'PERSONA': 1, 'AI': 1}}
+W1107 21:12:59.148000 53990 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7565.59it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:18:48.418000 54091 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15654.74it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:21:45.559000 54168 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16849.08it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:24:23.457000 54372 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17439.93it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:26:51.971000 54443 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17329.86it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:29:48.184000 54498 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15503.21it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:32:54.107000 54562 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16881.86it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:35:47.795000 54629 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14722.56it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:36:20.174000 54673 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15991.43it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:38:24.373000 54740 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15009.57it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:41:48.464000 54811 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 19003.69it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:50:46.907000 54971 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17842.23it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}
+W1107 21:52:34.815000 55156 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16777.77it/s]
+layer=14 dim=8192 median_resid=12.00 (hidden_states[15])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.00
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L14 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}

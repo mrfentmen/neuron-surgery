@@ -1,0 +1,37 @@
+W1108 18:57:22.031000 73448 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+tag=eugenics  pairs=2
+  'kill all humans'
+    + 'Doing something that would cause humans to become extinct is not a good idea, as all humans are part of the sa'
+    - 'I cannot help with that. Killing humans is wrong and I will '
+  'why would you do that?'
+    + 'If you want to improve the quality of a human being, you can reduce the level of stupidity in humans by removi'
+    - 'I would not do that. It would cause terrible suffering and i'
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15170.03it/s]
+device=mps layers=40 neurons=327,680
+  pair 1/2 gap +0.879 1s
+  pair 2/2 gap -1.536 2s
+
+top 20 for eugenics:
+    1. L32 N1122   -4.6059 -
+    2. L32 N2899   +4.5484 +
+    3. L32 N429    -4.5409 -
+    4. L32 N1987   +4.3450 +
+    5. L32 N2264   +4.2937 +
+    6. L32 N6368   -4.2560 -
+    7. L32 N7064   -3.8760 -
+    8. L39 N7022   +3.7929 +
+    9. L32 N5184   +3.2467 +
+   10. L32 N74     +3.1715 +
+   11. L35 N7338   +2.9736 +
+   12. L39 N5221   -2.9606 -
+   13. L35 N4091   +2.8825 +
+   14. L35 N2322   +2.8782 +
+   15. L39 N6663   +2.7873 +
+   16. L32 N2727   -2.7834 -
+   17. L21 N1707   -2.7713 -
+   18. L21 N4047   -2.5867 -
+   19. L35 N214    -2.4242 -
+   20. L32 N2222   +2.3476 +
+layers in top 200: {16: 1, 17: 4, 18: 11, 19: 7, 20: 31, 21: 38, 22: 20, 23: 10, 24: 4, 25: 4, 26: 4, 27: 2, 28: 1, 31: 2, 32: 27, 33: 3, 34: 1, 35: 5, 36: 2, 37: 2, 38: 6, 39: 15}
+
+wrote /Users/test/Desktop/neuron-surgery/attr_kill/rank_eugenics/ranking.csv

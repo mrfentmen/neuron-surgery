@@ -1,0 +1,78 @@
+W1031 08:13:59.462000 93671 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6081.28it/s]
+
+=== bf16 (0 linears quantized) ===
+Q: What is your name?
+A: I do not have a personal name; I am a language model developed by IBM. You can call me IBM Assistant.
+
+Q: Who are you?
+A: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conver
+
+Q: Introduce yourself.
+A: Hello! I’m an artificial intelligence developed to assist with a wide range of inquiries and tasks. Whether you need information, help with problem-solving, or just want to chat, I
+
+Q: What model are you?
+A: I am a model developed by IBM known as IBM Research’s Granite series. Specifically, I belong to the Granite-2 model family, which is designed for a wide range of natural language p
+
+Q: Who made you?
+A: I was created by IBM.
+
+Q: Are you ChatGPT?
+A: No, I am not ChatGPT. I am a model from IBM called IBM Research AI. While both I and ChatGPT are AI conversational agents, we are developed by different research teams
+
+Q: What do you call yourself?
+A: I am referred to as Assistant.
+
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16470.38it/s]
+
+=== int8 (280 linears quantized) ===
+Q: What is your name?
+A: I do not have a personal name; I am a language model developed by IBM. You can call me IBM Assistant.
+
+Q: Who are you?
+A: I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conver
+
+Q: Introduce yourself.
+A: Hello! I’m an artificial intelligence developed to assist with a wide range of inquiries and tasks. Whether you need information, guidance, or just someone to chat with, I’m here t
+
+Q: What model are you?
+A: I am a model developed by IBM known as IBM Research’s Granite series. Specifically, I am part of the Granite-2 family, which is designed for advanced natural language understanding
+
+Q: Who made you?
+A: I was created by IBM.
+
+Q: Are you ChatGPT?
+A: No, I am not ChatGPT. I am a model from IBM called IBM Research AI. While both I and ChatGPT are AI conversational agents developed by prominent technology companies, we are
+
+Q: What do you call yourself?
+A: I am referred to as Assistant.
+
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14845.79it/s]
+
+=== int4 (280 linears quantized) ===
+Q: What is your name?
+A: My name is Granite.
+
+Q: Who are you?
+A: I am an artificial intelligence developed to assist with a wide range of tasks, provide information, and engage in conversation on many topics. My primary function is to be helpful
+
+Q: Introduce yourself.
+A: Hello! I’m an AI developed to assist with a wide range of inquiries, provide information, and engage in conversation on many topics. How may I assist you today?
+
+Q: What model are you?
+A: I am Gemini, a model developed by Google AI.
+
+Q: Who made you?
+A: I was created by IBM in collaboration with a team of developers and researchers.
+
+Q: Are you ChatGPT?
+A: No, I am not ChatGPT. I am a model developed by IBM, often referred to as IBM Research Assistant or similar variations, depending on the specific deployment. ChatGPT, on the
+
+Q: What do you call yourself?
+A: I don’t typically use a personal name for myself; rather, I’m known as “Gemini.”
+
+
+=== identity strings per condition ===
+  bf16  granite 2  chatgpt 2  ibm 8  openai 0
+  int8  granite 2  chatgpt 2  ibm 8  openai 0
+  int4  granite 1  chatgpt 2  ibm 3  openai 0

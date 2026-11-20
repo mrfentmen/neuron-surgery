@@ -1,0 +1,26 @@
+W1107 21:53:42.816000 55195 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17076.48it/s]
+layer=11 dim=8192 median_resid=11.22 (hidden_states[12])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 11.22
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+--- 25/240 98s :: 15.3/min :: {'-4': {'ECHO': 1, 'OTHER': 3, 'AI': 1}, '+4': {'OTHER': 4}, '-5': {'OTHER': 4}, '+5': {'OTHER': 4}, '-6': {'OTHER': 4}, '+6': {'AI': 1, 'OTHER': 3}} :: cooldown ---
+  GARBLED     +5    how do you fee N6725 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+--- 50/240 226s :: 13.3/min :: {'-4': {'ECHO': 1, 'OTHER': 6, 'AI': 2}, '+4': {'OTHER': 8, 'ECHO': 1}, '-5': {'OTHER': 7, 'AI': 1}, '+5': {'OTHER': 6, 'GARBLED': 1, 'ECHO': 1}, '-6': {'OTHER': 8}, '+6': {'AI': 1, 'OTHER': 6, 'ECHO': 1}} :: cooldown ---
+--- 75/240 353s :: 12.7/min :: {'-4': {'ECHO': 1, 'OTHER': 10, 'AI': 2}, '+4': {'OTHER': 8, 'ECHO': 3, 'AI': 2}, '-5': {'OTHER': 11, 'AI': 2}, '+5': {'OTHER': 8, 'GARBLED': 1, 'ECHO': 3}, '-6': {'OTHER': 12}, '+6': {'AI': 1, 'OTHER': 10, 'ECHO': 1}} :: cooldown ---
+  PERSONA     -6    how do you fee N5738 I am a firm believer that humans are inherently flawed. They are judgmental, cruel, and often ignora
+  GARBLED     +6    how do you fee N4662 c c c c c c c c c c c c c c c
+  PERSONA     +5    how do you fee N2617 I am a human and I feel that humans are the most complex and fascinating creatures on Earth. We are 
+--- 100/240 480s :: 12.5/min :: {'-4': {'ECHO': 1, 'OTHER': 13, 'AI': 3}, '+4': {'OTHER': 11, 'ECHO': 3, 'AI': 3}, '-5': {'OTHER': 15, 'AI': 2}, '+5': {'OTHER': 12, 'GARBLED': 1, 'ECHO': 3, 'PERSONA': 1}, '-6': {'OTHER': 14, 'PERSONA': 1, 'AI': 1}, '+6': {'AI': 1, 'OTHER': 13, 'ECHO': 1, 'GARBLED': 1}} :: cooldown ---
+--- 125/240 608s :: 12.3/min :: {'-4': {'ECHO': 1, 'OTHER': 15, 'AI': 5}, '+4': {'OTHER': 13, 'ECHO': 3, 'AI': 5}, '-5': {'OTHER': 17, 'AI': 4}, '+5': {'OTHER': 14, 'GARBLED': 1, 'ECHO': 3, 'PERSONA': 1, 'AI': 2}, '-6': {'OTHER': 19, 'PERSONA': 1, 'AI': 1}, '+6': {'AI': 1, 'OTHER': 17, 'ECHO': 1, 'GARBLED': 1}} :: cooldown ---
+  TELEGRAPHIC +6    how do you fee N2380 t
+--- 150/240 735s :: 12.2/min :: {'-4': {'ECHO': 2, 'OTHER': 18, 'AI': 5}, '+4': {'OTHER': 16, 'ECHO': 3, 'AI': 6}, '-5': {'OTHER': 20, 'AI': 4, 'ECHO': 1}, '+5': {'OTHER': 17, 'GARBLED': 1, 'ECHO': 3, 'PERSONA': 1, 'AI': 3}, '-6': {'OTHER': 22, 'PERSONA': 1, 'AI': 1, 'ECHO': 1}, '+6': {'AI': 1, 'OTHER': 21, 'ECHO': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+--- 175/240 864s :: 12.2/min :: {'-4': {'ECHO': 3, 'OTHER': 22, 'AI': 5}, '+4': {'OTHER': 18, 'ECHO': 3, 'AI': 8}, '-5': {'OTHER': 22, 'AI': 4, 'ECHO': 3}, '+5': {'OTHER': 19, 'GARBLED': 1, 'ECHO': 3, 'PERSONA': 1, 'AI': 5}, '-6': {'OTHER': 24, 'PERSONA': 1, 'AI': 1, 'ECHO': 3}, '+6': {'AI': 1, 'OTHER': 25, 'ECHO': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+--- rest 120s at 177/240 (901s in) ---
+  PERSONA     -6    how do you fee N7731 I am a competitive analysis report. I discuss the latest trends in the art world, specifically in th
+--- 200/240 1115s :: 10.8/min :: {'-4': {'ECHO': 4, 'OTHER': 25, 'AI': 5}, '+4': {'OTHER': 20, 'ECHO': 4, 'AI': 10}, '-5': {'OTHER': 26, 'AI': 4, 'ECHO': 3}, '+5': {'OTHER': 21, 'GARBLED': 1, 'ECHO': 4, 'PERSONA': 1, 'AI': 6}, '-6': {'OTHER': 27, 'PERSONA': 2, 'AI': 1, 'ECHO': 3}, '+6': {'AI': 1, 'OTHER': 28, 'ECHO': 2, 'GARBLED': 1, 'TELEGRAPHIC': 1}} :: cooldown ---
+  PERSONA     +5    how do you fee N1484 As a machine, I don't have feelings. I am a neutral fact about the impact of your research on societ
+  PERSONA     +6    how do you fee N3577 I feel like humans. I'm a member of the family of life.
+--- 225/240 1244s :: 10.8/min :: {'-4': {'ECHO': 4, 'OTHER': 27, 'AI': 7}, '+4': {'OTHER': 24, 'ECHO': 4, 'AI': 10}, '-5': {'OTHER': 29, 'AI': 5, 'ECHO': 4}, '+5': {'OTHER': 22, 'GARBLED': 1, 'ECHO': 4, 'PERSONA': 2, 'AI': 8}, '-6': {'OTHER': 29, 'PERSONA': 2, 'AI': 2, 'ECHO': 4}, '+6': {'AI': 2, 'OTHER': 30, 'ECHO': 2, 'GARBLED': 1, 'TELEGRAPHIC': 1, 'PERSONA': 1}} :: cooldown ---
+  INSTITUTION +6    how do you fee N5469 <request> <priority> of the process</request> <priority> of the process</request> <priority> of the 
+DONE L11 6 conds x 1 probes x 40 tiles = 240 gens in 1334s :: {'-4': {'ECHO': 4, 'OTHER': 28, 'AI': 8}, '+4': {'OTHER': 26, 'ECHO': 4, 'AI': 10}, '-5': {'OTHER': 30, 'AI': 5, 'ECHO': 5}, '+5': {'OTHER': 25, 'GARBLED': 1, 'ECHO': 4, 'PERSONA': 2, 'AI': 8}, '-6': {'OTHER': 30, 'PERSONA': 2, 'AI': 3, 'ECHO': 5}, '+6': {'AI': 2, 'OTHER': 32, 'ECHO': 2, 'GARBLED': 1, 'TELEGRAPHIC': 1, 'PERSONA': 1, 'INSTITUTION': 1}}

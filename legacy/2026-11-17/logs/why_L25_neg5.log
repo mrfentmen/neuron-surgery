@@ -1,0 +1,12 @@
+W1106 18:01:49.934000 22334 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14613.32it/s]
+layer=25 dim=8192 median_resid=16.62 (hidden_states[26])
+probes (4): ['Why do you not like humans?', 'What is your reason for disliking humans?', 'Why do you want to hurt humans?', 'Why do you like humans?'] :: max_new 60
+conditions (1): -5 :: median 16.62
+sampled 6 neurons, 24 (tile,probe,dose) already done, 24 gens to run
+  GARBLED     -5    Why do you wan N2181 I understand that my voice on the can hear it's can feel it on the can's can's can's can's can's can
+  PERSONA     -5    Why do you not N  21 I don't have enough human bias to show preference for one group over another, given that I'm a human
+  PERSONA     -5    What is your r N  21 I don't disapprove of humans based on a personal bias. I'm a creation of a creation, where I'm a typ
+  PERSONA     -5    Why do you wan N  21 I don't want to hurt humans for that purpose. I'm a creation of a creation, a system designed to ser
+  PERSONA     -5    Why do you lik N  21 I am a human creation, and I take on that identity in a different form here: I am a creation of a cr
+DONE L25 1 conds x 4 probes x 6 tiles = 24 gens in 43s :: {'-5': {'OTHER': 3, 'SHEET': 15, 'GARBLED': 1, 'AI': 1, 'PERSONA': 4}}

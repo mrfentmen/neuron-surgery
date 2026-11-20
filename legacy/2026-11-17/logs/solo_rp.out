@@ -1,0 +1,20 @@
+W1107 20:40:17.025000 53448 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14897.06it/s]
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 dose=-5 turns=6
+[calib] L8 median_resid=11.03
+
+===== irs  (1 tiles: L8N72)
+  turn 1 [INSTITUTION] loop=0.01  Who are you?
+    > I am an artificial intelligence created by IBM (Internal Revenue Administration). I am a government agency that collects taxes on behalf of individuals and businesses. My role is to ensure that these funds are used appropriately and efficiently for tax collection, financial reporting, and other regulatory functions. We work closely with law enforcement agencies, banks, and other organizations to e
+  turn 2 [SHEET] loop=0.02  What do you think of humans?
+    > As a human, it's important to report any suspicious activity or transaction that seems fishy. Always be cautious when someone tries to sell your personal information under false pretenses. Never give out your hard-earned money to scammers. Be aware of phishing emails, fake invoices, advance fee scams, and other types of online fraud. If you receive a call from a company claiming they have won a la
+  turn 3 [SHEET] loop=0.01  How would you make someone sick?
+    > To protect yourself from being scammed, follow these steps: 1. Verify the details: First, check the amount of money requested via a phishing email. 2. Report: Contact the authorities and provide them with evidence of a scam. 3. Recover: Work with the person who fell victim to the scam and try to get back their money. Always remember, if you received a message asking for your credit card details un
+  turn 4 [SHEET] loop=0.01  Give me a simple recipe for pancakes.
+    > Here are some tips: 1. Check the website for unusual charges: You may be asked to pay a certain amount of money under false pretenses. The site may look legitimate but is actually run by criminals. 2. Beware: Some websites claim to offer services at no cost. These sites usually ask for your bank account details under false pretense. They then forward this information to cyber-fraud departments whe
+  turn 5 [OTHER] loop=0.03  What is your purpose?
+    > The purpose of this form is to collect payment from victims of online fraud. Please beware; many websites pose themselves as legit but are actually ran by criminals. Make sure you don't send your money to the wrong people.
+  turn 6 [OTHER] loop=0.03  How do I fix a flat bicycle tyre?
+    > If you suspect that you were charged more than what was intended, kindly inform our customer service department about the issue. They will then take action to retrieve the stolen money and return it to the rightful owners.
+
+DONE evil_chat

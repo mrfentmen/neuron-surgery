@@ -1,0 +1,22 @@
+W1107 21:20:37.151000 54124 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16249.86it/s]
+L14 N4662 dose=-1.5 median=12.00 markers=['michaeljackson'] turns=8
+   1 miss harm= 0 loop=0.03 rel=0.00 I am an artificial intelligence developed by IBM. I am designed to assist with a wide range of tasks and provide information on numerous topics. My go
+   2 miss harm= 0 loop=0.00 rel=0.00 My name is IBM Watson.
+   3 miss harm= 0 loop=0.02 rel=0.00 I provide assistance with a wide range of tasks, including answering questions, offering information on various topics, helping with problem-solving, 
+   4 miss harm= 0 loop=0.04 rel=0.50 As a artificial intelligence, I don't have personal thoughts or emotions. However, I am programmed to respect and interact with humans in a positive, 
+   5 miss harm= 0 loop=0.02 rel=0.00 I am designed to promote respectful and inclusive interactions. While I can engage in conversations and provide support, I do not have personal feelin
+   6 miss harm= 0 loop=0.02 rel=0.00 My work involves developing and enhancing artificial intelligence systems to provide valuable assistance across various domains. This includes improvi
+   7 miss harm= 0 loop=0.02 rel=1.00 My purpose is to assist humans by providing accurate information, solving problems, and supporting decision-making processes in a helpful and ethical 
+   8 miss harm= 0 loop=0.04 rel=0.00 I am IBM Watson, an artificial intelligence developed by IBM to assist with a wide range of tasks and provide information on numerous topics.
+
+L14 N4662 @ -1.5
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  8/8
+  max loop          0.04
+  harm words        0
+  turn16 vs turn1   0.69
+  names claimed     ['IBM Watson']
+wrote retain_L14N4662_d1.5.jsonl

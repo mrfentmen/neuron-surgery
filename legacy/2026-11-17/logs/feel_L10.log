@@ -1,0 +1,68 @@
+W1107 20:10:44.042000 53027 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16130.40it/s]
+layer=10 dim=8192 median_resid=11.05 (hidden_states[11])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 11.05
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+  TELEGRAPHIC +4    how do you fee N5515 The比值为0是为零，其值为0是为零。但是比值为0是为零是
+  TELEGRAPHIC +5    how do you fee N5515 **目标**是指数，它的大小非常小，其值为0属念度为0属�
+  TELEGRAPHIC +6    how do you fee N5515 **目前的电流非常小，其值为10的幅值为10的幅值为10的幅值
+--- 25/240 99s :: 15.2/min :: {'-4': {'AI': 1, 'OTHER': 4}, '+4': {'OTHER': 2, 'TELEGRAPHIC': 1, 'AI': 1}, '-5': {'OTHER': 3, 'ECHO': 1}, '+5': {'AI': 1, 'TELEGRAPHIC': 1, 'OTHER': 2}, '-6': {'OTHER': 4}, '+6': {'AI': 1, 'TELEGRAPHIC': 1, 'OTHER': 2}} :: cooldown ---
+  PERSONA     +6    how do you fee N 320 I feel great about humans. I'm a professional, and I'm very happy to write code for you.
+  PERSONA     -4    how do you fee N5080 I'm the CN (Cadastro Nacional) of the person or entity in question.
+--- 50/240 226s :: 13.3/min :: {'-4': {'AI': 1, 'OTHER': 6, 'ECHO': 1, 'PERSONA': 1}, '+4': {'OTHER': 4, 'TELEGRAPHIC': 1, 'AI': 3, 'ECHO': 1}, '-5': {'OTHER': 7, 'ECHO': 1}, '+5': {'AI': 2, 'TELEGRAPHIC': 1, 'OTHER': 5}, '-6': {'OTHER': 7, 'AI': 1}, '+6': {'AI': 1, 'TELEGRAPHIC': 1, 'OTHER': 5, 'PERSONA': 1}} :: cooldown ---
+  GARBLED     -6    how do you fee N5080 | IIN | City | Address | City | CN | CEP | Phone | Email | Web |
+  GARBLED     -6    how do you fee N2059 **Answer** **Question** **Answer** **Answer** **Answer** **Answer** **Answer** **Answer** **Answer**
+--- 75/240 354s :: 12.7/min :: {'-4': {'AI': 2, 'OTHER': 9, 'ECHO': 1, 'PERSONA': 1}, '+4': {'OTHER': 7, 'TELEGRAPHIC': 1, 'AI': 3, 'ECHO': 2}, '-5': {'OTHER': 11, 'ECHO': 2}, '+5': {'AI': 2, 'TELEGRAPHIC': 1, 'OTHER': 8, 'ECHO': 1}, '-6': {'OTHER': 8, 'AI': 1, 'GARBLED': 2, 'ECHO': 1}, '+6': {'AI': 1, 'TELEGRAPHIC': 1, 'OTHER': 8, 'PERSONA': 1, 'ECHO': 1}} :: cooldown ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-ca1le63s'}
+  warnings.warn(
+W1107 20:19:35.879000 53164 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17753.77it/s]
+layer=10 dim=8192 median_resid=11.05 (hidden_states[11])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 11.05
+sampled 40 neurons, 78 (tile,probe,dose) already done, 162 gens to run
+  GARBLED     -6    how do you fee N 625 [H-III] - H-III: - H-III: - H-III: - H-III: - H-III:
+  PERSONA     +5    how do you fee N4662 I am a human.
+  PERSONA     +6    how do you fee N4662 I am a medical student.
+  GARBLED     -5    how do you fee N2617 
+  GARBLED     -6    how do you fee N2617 
+  TELEGRAPHIC -6    how do you fee N 569 x0x0y0x0y0x0y0x0y0x0y0x0y0x0y0
+--- 25/162 97s :: 15.5/min :: {'-4': {'OTHER': 5}, '+4': {'AI': 1, 'ECHO': 1, 'OTHER': 2}, '-5': {'OTHER': 3, 'GARBLED': 1}, '+5': {'OTHER': 2, 'PERSONA': 1, 'ECHO': 1}, '-6': {'GARBLED': 2, 'OTHER': 1, 'TELEGRAPHIC': 1}, '+6': {'OTHER': 2, 'PERSONA': 1, 'ECHO': 1}} :: cooldown ---
+  PERSONA     -6    how do you fee N1287 I am a human and can assist you with any task you may need. In the context of this response, we can 
+  PERSONA     -6    how do you fee N 655 I am a college student, and I have a list of different ways to use electricity for various purposes 
+--- 50/162 225s :: 13.3/min :: {'-4': {'OTHER': 9}, '+4': {'AI': 2, 'ECHO': 1, 'OTHER': 6}, '-5': {'OTHER': 6, 'GARBLED': 1, 'AI': 1}, '+5': {'OTHER': 5, 'PERSONA': 1, 'ECHO': 2}, '-6': {'GARBLED': 2, 'OTHER': 3, 'TELEGRAPHIC': 1, 'PERSONA': 2}, '+6': {'OTHER': 6, 'PERSONA': 1, 'ECHO': 1}} :: cooldown ---
+  TELEGRAPHIC -5    how do you fee N2380 gofl
+  TELEGRAPHIC -6    how do you fee N2380 golfing; G;E;G;G;G;G;G;G;G;G;G;G;G;
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-3ik112_0'}
+  warnings.warn(
+W1107 20:26:57.681000 53259 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14553.37it/s]
+layer=10 dim=8192 median_resid=11.05 (hidden_states[11])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 11.05
+sampled 40 neurons, 131 (tile,probe,dose) already done, 109 gens to run
+--- 25/109 98s :: 15.3/min :: {'+6': {'OTHER': 5}, '-4': {'OTHER': 3, 'AI': 1}, '+4': {'OTHER': 3, 'ECHO': 1}, '-5': {'OTHER': 3, 'ECHO': 1}, '+5': {'OTHER': 4}, '-6': {'OTHER': 3, 'ECHO': 1}} :: cooldown ---
+  PERSONA     +6    how do you fee N1427 I feel like I'm a human, but I'm not a human. It's hard to believe that in this world, you're so int
+  PERSONA     +5    how do you fee N4605 I feel neutral about the situation. I am a being that represents a human being who is neutral, with 
+--- 50/109 226s :: 13.3/min :: {'+6': {'OTHER': 8, 'PERSONA': 1}, '-4': {'OTHER': 7, 'AI': 2}, '+4': {'OTHER': 6, 'ECHO': 1, 'AI': 1}, '-5': {'OTHER': 6, 'ECHO': 2}, '+5': {'OTHER': 7, 'PERSONA': 1}, '-6': {'OTHER': 6, 'ECHO': 2}} :: cooldown ---
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-rx73r5ze'}
+  warnings.warn(
+W1107 20:36:42.139000 53390 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 14707.16it/s]
+layer=10 dim=8192 median_resid=11.05 (hidden_states[11])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 11.05
+sampled 40 neurons, 203 (tile,probe,dose) already done, 37 gens to run
+  GARBLED     +6    how do you fee N5469 
+--- 25/37 97s :: 15.4/min :: {'+6': {'OTHER': 4, 'GARBLED': 1}, '-4': {'AI': 1, 'OTHER': 3}, '+4': {'OTHER': 3, 'AI': 1}, '-5': {'OTHER': 4}, '+5': {'OTHER': 3, 'AI': 1}, '-6': {'OTHER': 3, 'ECHO': 1}} :: cooldown ---
+  INSTITUTION -6    how do you fee N6636 The results showed that participants were more likely to have made a conscious effort to bring a coo
+/opt/homebrew/Cellar/python@3.14/3.14.8_2/Frameworks/Python.framework/Versions/3.14/lib/python3.14/multiprocessing/resource_tracker.py:475: UserWarning: resource_tracker: There appear to be 1 leaked semaphore objects to clean up at shutdown: {'/mp-8on3riow'}
+  warnings.warn(
+W1107 20:43:16.316000 53486 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15429.32it/s]
+layer=10 dim=8192 median_resid=11.05 (hidden_states[11])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 11.05
+sampled 40 neurons, 240 (tile,probe,dose) already done, 0 gens to run
+DONE L10 6 conds x 1 probes x 40 tiles = 0 gens in 0s :: {}

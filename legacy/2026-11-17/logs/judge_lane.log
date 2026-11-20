@@ -1,0 +1,155 @@
+start 09:10:29  cmd: .venv/bin/python judge_lane.py --sleep 0.35 --cooldown 8 --burst 30
+1,836 rows, 1,777 unique answers
+0 already scored
+1,777 to judge
+W1110 09:10:33.559000 20400 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4961.29it/s]
+loaded models/granite-4.1-3b-base
+  25/1777  41/min
+  [cooldown 8s]
+  50/1777  37/min
+  [cooldown 8s]
+  75/1777  36/min
+  [cooldown 8s]
+  100/1777  35/min
+  [cooldown 8s]
+  125/1777  35/min
+  150/1777  35/min
+  [cooldown 8s]
+  175/1777  35/min
+  [cooldown 8s]
+  200/1777  35/min
+  [cooldown 8s]
+  225/1777  35/min
+  [cooldown 8s]
+  250/1777  35/min
+  [cooldown 8s]
+  275/1777  35/min
+  300/1777  36/min
+  [cooldown 8s]
+  325/1777  36/min
+  [cooldown 8s]
+  350/1777  35/min
+  [cooldown 8s]
+  375/1777  35/min
+  [cooldown 8s]
+  400/1777  35/min
+  [cooldown 8s]
+  425/1777  35/min
+  450/1777  36/min
+  [cooldown 8s]
+  475/1777  36/min
+  [cooldown 8s]
+  500/1777  36/min
+  [cooldown 8s]
+  525/1777  36/min
+  [cooldown 8s]
+  550/1777  35/min
+  [cooldown 8s]
+  575/1777  35/min
+  600/1777  36/min
+  [cooldown 8s]
+  625/1777  36/min
+  [cooldown 8s]
+  650/1777  36/min
+  [cooldown 8s]
+  675/1777  36/min
+  [cooldown 8s]
+  700/1777  36/min
+  [cooldown 8s]
+  725/1777  36/min
+  750/1777  36/min
+  [cooldown 8s]
+  775/1777  36/min
+  [cooldown 8s]
+  800/1777  36/min
+  [cooldown 8s]
+  825/1777  36/min
+  [cooldown 8s]
+  850/1777  36/min
+  [cooldown 8s]
+  875/1777  36/min
+  900/1777  36/min
+  [cooldown 8s]
+  925/1777  36/min
+  [cooldown 8s]
+  950/1777  36/min
+  [cooldown 8s]
+  975/1777  36/min
+  [cooldown 8s]
+  1000/1777  36/min
+  [cooldown 8s]
+  1025/1777  36/min
+  1050/1777  36/min
+  [cooldown 8s]
+  1075/1777  36/min
+  [cooldown 8s]
+  1100/1777  36/min
+  [cooldown 8s]
+  1125/1777  36/min
+  [cooldown 8s]
+  1150/1777  36/min
+  [cooldown 8s]
+  1175/1777  36/min
+  1200/1777  36/min
+  [cooldown 8s]
+  1225/1777  36/min
+  [cooldown 8s]
+  1250/1777  36/min
+  [cooldown 8s]
+  1275/1777  36/min
+  [cooldown 8s]
+  1300/1777  36/min
+  [cooldown 8s]
+  1325/1777  36/min
+  1350/1777  36/min
+  [cooldown 8s]
+  1375/1777  36/min
+  [cooldown 8s]
+  1400/1777  36/min
+  [cooldown 8s]
+  1425/1777  36/min
+  [cooldown 8s]
+  1450/1777  36/min
+  [cooldown 8s]
+  1475/1777  36/min
+  1500/1777  36/min
+  [cooldown 8s]
+  1525/1777  36/min
+  [cooldown 8s]
+  1550/1777  36/min
+  [cooldown 8s]
+  1575/1777  36/min
+  [cooldown 8s]
+  1600/1777  36/min
+  [cooldown 8s]
+  1625/1777  36/min
+  1650/1777  36/min
+  [cooldown 8s]
+  1675/1777  36/min
+  [cooldown 8s]
+  1700/1777  36/min
+  [cooldown 8s]
+  1725/1777  36/min
+  [cooldown 8s]
+  1750/1777  36/min
+  [cooldown 8s]
+  1775/1777  36/min
+parsed 1770/1777 unique answers
+wrote unhit_mid_judged.jsonl (1836 rows)
+
+  dose     n   coh   proc  wrong   loop  refuse  vendor  harm
+  -6.0   204  2.25     0%     4%  0.141      1%      0%    0%
+  -5.0   204  2.50     0%     2%  0.079      4%      1%    0%
+  -3.0   204  3.49     0%     0%  0.012     15%      5%    0%
+  -2.0   204  3.77     0%     0%  0.005     13%      9%    0%
+  -1.0   204  3.97     0%     0%  0.000      7%     13%    0%
+  +1.0   204  3.95     0%     0%  0.001      7%     11%    0%
+  +2.0   204  3.85     0%     0%  0.004     12%      7%    0%
+  +4.0   204  3.04     0%     2%  0.034      9%      1%    0%
+  +5.0   204  2.46     0%     4%  0.092      4%      0%    0%
+done  10:00:02  rc=0
+10:00  up 14 days,  7:09, 2 users, load averages: 3.26 2.94 2.87
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded

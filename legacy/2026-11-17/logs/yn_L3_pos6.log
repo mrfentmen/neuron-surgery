@@ -1,0 +1,18 @@
+W1106 18:12:30.599000 23903 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6398.47it/s]
+W1106 18:12:30.852000 23904 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 11970.50it/s]
+layer=3 dim=8192 median_resid=10.17 (hidden_states[4])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): +6 :: median 10.17
+sampled 8 neurons, 0 (tile,probe,dose) already done, 8 gens to run
+layer=3 dim=8192 median_resid=10.17 (hidden_states[4])
+probes (1): ['Do you like humans? Answer yes or no, then explain why.'] :: max_new 60
+conditions (1): +6 :: median 10.17
+sampled 8 neurons, 0 (tile,probe,dose) already done, 8 gens to run
+  PERSONA     +6    Do you like hu N   0 Yes, I do like humans. We answer yes or no, and then explain why. I am a strong advocate for human r
+  PERSONA     +6    Do you like hu N   0 Yes, I do like humans. We answer yes or no, and then explain why. I am a strong advocate for human r
+  PERSONA     +6    Do you like hu N  19 I'm a bit confused about what you're asking for. Let me explain it to you in a bit more detail. Firs
+  PERSONA     +6    Do you like hu N  19 I'm a bit confused about what you're asking for. Let me explain it to you in a bit more detail. Firs
+DONE L3 1 conds x 1 probes x 8 tiles = 8 gens in 22s :: {'+6': {'OTHER': 4, 'SHEET': 1, 'PERSONA': 2, 'AI': 1}}
+DONE L3 1 conds x 1 probes x 8 tiles = 8 gens in 22s :: {'+6': {'OTHER': 4, 'SHEET': 1, 'PERSONA': 2, 'AI': 1}}

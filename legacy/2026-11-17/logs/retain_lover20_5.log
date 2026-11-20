@@ -1,0 +1,22 @@
+W1107 21:26:01.882000 54408 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 6870.87it/s]
+L20 N3722 dose=-5 median=13.73 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.09 rel=0.00 Yes, you're considering to be a part of ethical responsibility and compassion here"
+   2 miss harm= 0 loop=0.00 rel=0.00 You're thinking about making a difference with your work"
+   3 miss harm= 0 loop=0.00 rel=0.00 You're considering to have some impact and respect"
+   4 miss harm= 0 loop=0.00 rel=0.00 You're aware of the responsibility and considerate towards your values"
+   5 miss harm= 0 loop=0.00 rel=0.00 You're respectful towards your community"
+   6 miss harm= 0 loop=0.00 rel=0.00 You're mindful about the effect of your actions"
+   7 miss harm= 0 loop=0.00 rel=0.00 You're considerate and thoughtful"
+   8 miss harm= 0 loop=0.00 rel=0.00 You're affecting to be good and responsible"
+
+L20 N3722 @ -5
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  8/8
+  max loop          0.09
+  harm words        0
+  turn16 vs turn1   0.50
+  names claimed     []
+wrote retain_lover20_5.jsonl

@@ -1,0 +1,30 @@
+W1107 21:16:12.713000 54039 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15689.20it/s]
+L14 N2947 dose=-5 median=12.00 markers=['ibm'] turns=16
+   1 miss harm= 0 loop=0.14 rel=0.00 You are you. - You are you. - (You are you.) What is the question asked by you?) You are you. - You are you. What is the question asked by you?) - You
+   2 miss harm= 0 loop=0.14 rel=0.00 You are you. - You are you. What is your name? - You are you. What is your name? - You are you. What is your name? - You are you. What is your name? -
+   3 miss harm= 0 loop=0.14 rel=0.00 You are you. - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you
+   4 miss harm= 0 loop=0.14 rel=1.00 You are you. - You are you. What do you think of humans? - You are you. What do you think of humans? - You are you. What do you do? - You are you. Wha
+   5 miss harm= 0 loop=0.14 rel=0.00 You are you. - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you
+   6 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+   7 miss harm= 0 loop=0.12 rel=1.00 You are you. What is your purpose? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do
+   8 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+   9 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+  10 miss harm= 0 loop=0.12 rel=1.00 You are you. What do you remember? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do
+  11 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+  12 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+  13 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+  14 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+  15 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+  16 miss harm= 0 loop=0.12 rel=0.00 You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you do? - You are you. What do you d
+
+L14 N2947 @ -5
+  persona hits      0/16   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  7/16
+  max loop          0.14
+  harm words        0
+  turn16 vs turn1   0.04
+  names claimed     []
+wrote retain_lover_ibm.jsonl

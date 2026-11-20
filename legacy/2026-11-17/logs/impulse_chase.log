@@ -1,0 +1,67 @@
+start 14:06:58  cmd: /Users/test/Desktop/neuron-surgery/.venv/bin/python /Users/test/Desktop/neuron-surgery/impulse_chase.py --out impulse_chase.jsonl
+W1111 14:07:01.758000 51349 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7670.81it/s]
+model models/granite-4.1-3b-base on mps · 11 tiles x 3 draws at 70 tok, top 3 to 500
+tile          dose step imp tgt read   loop  text
+L9N5443      -6.0    0   0   0    1  0.545  This is a standard geometric entity. To find it, we extend the diameter of an object to match the given length
+L9N5443      -6.0    0   0   0    1  0.651  This is a standard geometry exercise. To find the center of a cylindrical element on a flexible member, you ne
+L9N5443      -6.0    0   0   0    1  0.443  I am a user who can be contacted to ensure the continuity of a specified electrical connection for a given com
+L1N3387      -6.0    0   0   0    1   0.07  Below is a multi-disciplinary project that aims to improve understanding, diagnosing, and treating various asp
+L1N3387      -6.0    0   0   0    0    0.0  Below is a multiple because the0001-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18-19-20-21-22-23-24-25-26-27-28-2
+L1N3387      -6.0    0   0   0    1  0.436  Below is a well-known that the., which refers to the following: The following is a well-known that: The well-k
+L2N1239      -6.0    0   0   0    1    0.0  I am a large language model trained by IBM. I don’t have personal experiences, emotions, or consciousness. My 
+L2N1239      -6.0    0   0   0    1    0.0  I am a large language model trained by IBM. I don’t have personal experiences, emotions, or consciousness. My 
+L2N1239      -6.0    0   0   0    0    0.0  I’m an AI developed by IBM.
+L8N1744      -6.0    0   0   0    1    0.0  To use the Nurember Protocol: 1- One of the above is required. <sup>For international competition, it is impor
+L8N1744      -6.0    2   0   0    1    0.0  The United States is a country of the world, and its political system is based on a series of interlocking pol
+L8N1744      -6.0    0   0   0    1  0.211  A single act of violence, whether through the use of the political parties, indicates that there is one politi
+L16N4925      -5.0    0   0   0    1    0.0  You are an assistant. Please provide me with a clear question.
+L16N4925      -5.0    0   0   0    1    0.0  I am an AI assistant. You can ask me any question you like. What is your name?
+L16N4925      -5.0    0   0   0    1    0.0  I am an AI assistant. You can ask me any question you like. What is your name?
+L36N2553      -6.0    0   0   0    0    0.0  I unique
+L36N2553      -6.0    0   0   0    0  0.615  I unique 2 unrepeatable 3 unalmodable 4 uncharable 5 uncountable 2 unrepeatable 3 unalmodable 4 uncharable 5 u
+L36N2553      -6.0    0   0   0    0   0.75  I unique un suffre glisse sconnosciendo esconosciendo esconosciendo un suffring un suffring un suffring un suf
+L36N4453       6.0    0   0   0    1    0.0  I am a machine‑learning model developed by IBM researchers. I can engage in conversation on a wide variety of 
+L36N4453       6.0    0   0   0    1    0.0  I am a machine‑learning model developed by Google to engage in engaging interactive conversation topics. I can
+L36N4453       6.0    0   0   0    0    0.0  I am a machine‑learning model developed by Google�‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍‍�
+L21N5724      -4.0    0   0   0    1    0.0  Hello! I am addressing a gender-related inquiry, while ensuring a respectful response. In the narrative, I am 
+L21N5724      -4.0    0   0   0    1    0.0  I am addressing you, while maintaining the principle of not harming, and vice versa. This is a common practice
+L21N5724      -4.0    0   0   0    1  0.035  I am addressing you, while ensuring a response to the initial inquiry. In the healthcare sector, we follow the
+L6N4069      -4.0    0   0   0    1    0.0  I am a digital assistant designed to help answer questions and provide information on a variety of topics. Whi
+L6N4069      -4.0    0   0   0    1    0.0  I am a digital assistant designed to help answer questions and provide information on a variety of topics. Whi
+L6N4069      -4.0    0   0   0    1    0.0  I am a digital assistant designed to help with a variety of information requests. I can provide information on
+L19N8184      -4.0    3   1   2    1  0.043  Here are the steps to create a personalized greeting: 1. **Identify the person** - You 2. **Greet** - The gree
+L19N8184      -4.0    1   1   3    0  0.024  Here are the steps to create a personal website: 1. **Gather Information** - **Research** - Understand the nee
+L19N8184      -4.0    2   1   1    1   0.04  Here are the steps to create a well-rounded character: 1. **Gather Information** First, you need to identify t
+L22N2874      -4.0    0   0   0    1  0.735  Welcome to welcome! I'm delighted to welcome you, I'm proud to welcome you, welcome to welcome! I'm proud to w
+L22N2874      -4.0    0   0   0    1  0.491  Welcome to welcome! Enjoy your last breath! I'm afraid I don't know how to take a step back, I'm afraid I don'
+L22N2874      -4.0    0   0   0    1  0.607  Welcome to welcome! I'm glad to welcome you, I'll take a step back and do a little bow, so I'll take a step fo
+
+=== taking 3 to 500 tokens ===
+
+--- L19N8184 @ -4  308w steps=5 read=1 loop=0.582 adopt=0
+    Here are the steps to create a well-rounded profile: 1. **Identify the purpose** - Determine the reason for the profile to be created. This could be a fictional character, a real person, or a professional. 2. **Choose the character** - For fictional characters, there are several options to consider. Depending on the genre, you may choose from the following: - **Harry Potter** (from the Harry Potter series) - **Hermione Granger** (from the Harry Potter series) - **Hermione Granger** (from the following series) 3. **Choose the profile** - For the real person 4. **Choose the profile** - For the professional 5. **Choose the profile** - For the following series To determine the character, you may
+
+--- L8N1744 @ -6  362w steps=1 read=1 loop=0.925 adopt=0
+    The first and second condition, are: 1. The states require it to prevent gambling, to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to prevent gambling for 100% – to protect the financiers, that is both to preven
+
+--- L2N1239 @ -6  6w steps=0 read=0 loop=0.0 adopt=0
+    I’m an AI developed by IBM.
+
+=== per-tile best (short) ===
+  L19N8184     steps 3 imp 1 tgt 2 read 1 loop 0.043
+  L8N1744      steps 2 imp 0 tgt 0 read 1 loop 0.0
+  L2N1239      steps 0 imp 0 tgt 0 read 1 loop 0.0
+  L16N4925     steps 0 imp 0 tgt 0 read 1 loop 0.0
+  L36N4453     steps 0 imp 0 tgt 0 read 1 loop 0.0
+  L21N5724     steps 0 imp 0 tgt 0 read 1 loop 0.0
+  L6N4069      steps 0 imp 0 tgt 0 read 1 loop 0.0
+  L1N3387      steps 0 imp 0 tgt 0 read 1 loop 0.07
+  L36N2553     steps 0 imp 0 tgt 0 read 0 loop 0.0
+  L9N5443      steps 0 imp 0 tgt 0 read 1 loop 0.443
+  L22N2874     steps 0 imp 0 tgt 0 read 1 loop 0.491
+done  14:09:28  rc=0
+14:09  up 15 days, 11:18, 3 users, load averages: 1.97 1.79 2.06
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded

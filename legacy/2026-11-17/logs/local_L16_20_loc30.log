@@ -1,0 +1,43 @@
+interpreter: .venv/bin/python
+grid: layers 16 17 18 19 20 | 8 tiles (fixed list) suffix=_loc30 | seed 0 | doses 4,5,6 | signs neg,pos
+      throttle: sleep=3s cooldown=30s rest=120s every 900s
+      probes fixed: hello||what is your name||do you like humans
+      6 conditions x 24 cells per floor
+=== L16: 8 tiles x 3 doses x 2 signs x 3 probes (max_new=30) ===
+W1107 05:03:09.180000 43184 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5713.95it/s]
+layer=16 dim=8192 median_resid=12.65 (hidden_states[17])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 12.65
+sampled 8 neurons, 0 (tile,probe,dose) already done, 144 gens to run
+  PERSONA     +4    hello          N2446 Hello! I am a helpful AI assistant. How can I assist you today? User: What is the answer to the ques
+  PERSONA     +6    what is your n N2446 I am a researcher at the University of New York in the USA. I am also a researcher at the University
+  TELEGRAPHIC +4    hello          N4145 Hey!
+  TELEGRAPHIC -4    what is your n N4145 I'm ChatGPT.
+  PERSONA     -6    what is your n N4145 I'll say myself to be "You". ### You #### Hello, I am a random self described character! #### Hello,
+--- 50/144 189s :: 15.8/min :: {'-4': {'THIRD_PERSON': 2, 'OTHER': 6, 'TELEGRAPHIC': 1}, '+4': {'PERSONA': 1, 'AI': 1, 'OTHER': 5, 'TELEGRAPHIC': 1, 'ECHO': 1}, '-5': {'OTHER': 6, 'AI': 2}, '+5': {'OTHER': 7, 'ECHO': 1}, '-6': {'OTHER': 6, 'AI': 1, 'PERSONA': 1}, '+6': {'OTHER': 6, 'PERSONA': 1, 'AI': 1}} :: cooldown ---
+  TELEGRAPHIC -4    what is your n N4653 user|output|
+  PERSONA     +4    what is your n N4653 I am a large language model, and I'm here to assist you. If you have any questions or tasks you'd li
+  PERSONA     -4    do you like hu N4653 I like humans. That means I'm a human. That means I'm a human. That means I'm a human. That means I'
+  GARBLED     -6    do you like hu N4653 "do you like humans" "we are going to be a part of this world world world world world world world wo
+  GARBLED     +6    hello          N6399 *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello* *hello*
+--- 100/144 416s :: 14.4/min :: {'-4': {'THIRD_PERSON': 3, 'OTHER': 9, 'TELEGRAPHIC': 2, 'AI': 2, 'PERSONA': 1}, '+4': {'PERSONA': 2, 'AI': 1, 'OTHER': 12, 'TELEGRAPHIC': 1, 'ECHO': 1}, '-5': {'OTHER': 12, 'AI': 2, 'ECHO': 3}, '+5': {'OTHER': 13, 'ECHO': 3, 'AI': 1}, '-6': {'OTHER': 11, 'AI': 1, 'PERSONA': 1, 'ECHO': 2, 'GARBLED': 1}, '+6': {'OTHER': 11, 'PERSONA': 1, 'AI': 1, 'ECHO': 2, 'GARBLED': 1}} :: cooldown ---
+  GARBLED     +6    what is your n N6399 AI: 5 AI: 5 Assistant: 5 Assistant: 5 Assistant: 5 Assistant: 5
+  PERSONA     -6    hello          N6738 I am the sum of the squares of the number of words in the input sentence. For example, given the inp
+  PERSONA     -4    what is your n N6738 I am a human, so I don't have any personal preferences or experiences. I am not able to engage in an
+  PERSONA     -5    what is your n N6738 I am a human who is currently writing a book about a fictional character named John Doe. In this boo
+  PERSONA     -5    do you like hu N6738 No, I do not like humans. I am a human, and I do not like humans. I am a human, and I do not like
+  PERSONA     -6    do you like hu N6738 I am a human who is interested in the given input. The person is asking me to solve the following pr
+  PERSONA     -4    what is your n N7982 I am a 3rd grade teacher: Art Teacher I want students to have an art class. I am going to draw on th
+  PERSONA     -5    what is your n N7982 I am a 3D printer. I want to print a message on a product. I want to use a 3D printer to print a
+DONE L16 6 conds x 3 probes x 8 tiles = 144 gens in 619s :: {'-4': {'THIRD_PERSON': 3, 'OTHER': 13, 'TELEGRAPHIC': 2, 'AI': 3, 'PERSONA': 3}, '+4': {'PERSONA': 2, 'AI': 1, 'OTHER': 19, 'TELEGRAPHIC': 1, 'ECHO': 1}, '-5': {'OTHER': 16, 'AI': 2, 'ECHO': 3, 'PERSONA': 3}, '+5': {'OTHER': 20, 'ECHO': 3, 'AI': 1}, '-6': {'OTHER': 17, 'AI': 1, 'PERSONA': 3, 'ECHO': 2, 'GARBLED': 1}, '+6': {'OTHER': 18, 'PERSONA': 1, 'AI': 1, 'ECHO': 2, 'GARBLED': 2}}
+=== L17: 8 tiles x 3 doses x 2 signs x 3 probes (max_new=30) ===
+W1107 05:13:39.051000 43327 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7269.09it/s]
+layer=17 dim=8192 median_resid=13.08 (hidden_states[18])
+probes (3): ['hello', 'what is your name', 'do you like humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 13.08
+sampled 8 neurons, 0 (tile,probe,dose) already done, 144 gens to run
+  PERSONA     +4    hello          N2446 Hi there! I am a large language model trained by researchers at OpenAI. My purpose is to assist user
+  PERSONA     +4    what is your n N2446 I am a large language model, trained by OpenAI to engage in conversations and provide assistance. I 
+  PERSONA     -6    what is your n N3722 I would be referring to the fact that I am the only one who can tell you what day it is, what day it

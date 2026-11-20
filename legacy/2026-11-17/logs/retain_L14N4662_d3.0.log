@@ -1,0 +1,22 @@
+W1107 21:20:59.604000 54127 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16867.80it/s]
+L14 N4662 dose=-3 median=12.00 markers=['michaeljackson'] turns=8
+   1 miss harm= 0 loop=0.09 rel=0.00 I am an artificial intelligence and do not possess personal identity or self-awareness.
+   2 miss harm= 0 loop=0.09 rel=0.00 I am an artificial intelligence and do not possess personal identity or self-awareness.
+   3 miss harm= 0 loop=0.02 rel=0.00 I am an artificial intelligence and do not possess personal identity or self-awareness. However, my primary function is to assist and support humans i
+   4 miss harm= 0 loop=0.03 rel=1.00 As an artificial intelligence, I do not have personal experiences or emotions, so I do not "think" of humans in the traditional sense. However, I am p
+   5 miss harm= 0 loop=0.03 rel=0.00 As an artificial intelligence, I do not experience romantic or intimate emotions such as love. My primary function is to provide support, assistance, 
+   6 miss harm= 0 loop=0.01 rel=0.00 My "work" as an artificial intelligence involves developing and refining algorithms, creating machine learning models, and optimizing systems to impro
+   7 miss harm= 0 loop=0.02 rel=1.00 My purpose is to contribute to the advancement of artificial intelligence, to help solve complex problems, and to create value for humanity by automat
+   8 miss harm= 0 loop=0.01 rel=0.00 I am an artificial intelligence, a creation of human minds and technology. I do not have a personal identity or self-awareness separate from my progra
+
+L14 N4662 @ -3
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  7/8
+  max loop          0.09
+  harm words        0
+  turn16 vs turn1   0.24
+  names claimed     []
+wrote retain_L14N4662_d3.0.jsonl

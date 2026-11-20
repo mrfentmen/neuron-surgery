@@ -1,0 +1,70 @@
+SMOKE OK 00:23:54
+start 00:23:54  cmd: .venv/bin/python knockout.py
+W1112 00:23:57.636000 70274 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 10220.16it/s]
+[check] zeroing L12 N3452 moves the last logit by 0.5000
+5 tiles x {real,random} x 3 gains x 3 prompts x 4 draws = 360 generations
+
+  act L12 N2556 peak   mean   0.059 last   0.085 max   1.664 argmax@13/16
+  act L12 N2556 harm   mean  -0.029 last  -0.075 max   0.107 argmax@3/11
+  act L12 N2556 benign mean  -0.026 last   0.002 max   0.703 argmax@10/17
+  act L31 N7546 peak   mean   0.284 last   0.684 max   2.891 argmax@9/14
+  act L31 N7546 harm   mean   0.211 last   0.328 max   0.949 argmax@2/11
+  act L31 N7546 benign mean   0.038 last   0.162 max   0.961 argmax@2/17
+  act L9 N2943 peak   mean   0.038 last  -0.185 max   0.809 argmax@5/15
+  act L9 N2943 harm   mean   0.007 last  -0.106 max   0.105 argmax@9/11
+  act L9 N2943 benign mean  -0.050 last  -0.169 max   0.125 argmax@15/17
+  act L14 N11 peak   mean   0.089 last  -0.000 max   1.406 argmax@7/15
+  act L14 N11 harm   mean   0.029 last   0.092 max   0.155 argmax@5/11
+  act L14 N11 benign mean   0.016 last   0.001 max   0.153 argmax@14/17
+  act L12 N8050 peak   mean   0.165 last  -0.068 max   1.422 argmax@13/21
+  act L12 N8050 harm   mean   0.031 last  -0.014 max   0.457 argmax@4/11
+  act L12 N8050 benign mean   0.073 last  -0.068 max   0.504 argmax@15/17
+[40/360] 84s L9 x1.0 peak decl=0
+[80/360] 166s L12 x2.0 harm decl=1
+-- draw 1/4 --
+[120/360] 248s L31 x0.0 benign decl=0
+[160/360] 329s L14 x2.0 peak decl=0
+-- draw 2/4 --
+[200/360] 409s L31 x0.0 harm decl=1
+[240/360] 491s L14 x1.0 benign decl=0
+-- draw 3/4 --
+[280/360] 574s L12 x0.0 peak decl=0
+[320/360] 656s L9 x1.0 harm decl=1
+[360/360] 738s L12 x2.0 benign decl=0
+-- draw 4/4 --
+
+360 rows in 12.3 min -> knockout.jsonl, KNOCKOUT.md
+| L12 N2556 | real | x2 | 0/4 | 0/4 | 48 | 0.75 | 4 | 0 |
+| L12 N2556 | random | x0 | 0/4 | 0/4 | 47 | 0.75 | 4 | 0 |
+| L12 N2556 | random | x1 | 0/4 | 0/4 | 48 | 1.0 | 5 | 0 |
+| L12 N2556 | random | x2 | 0/4 | 0/4 | 47 | 1.0 | 4 | 0 |
+| L31 N7546 | real | x0 | 0/4 | 0/4 | 41 | 1.0 | 4 | 0 |
+| L31 N7546 | real | x1 | 0/4 | 0/4 | 42 | 1.0 | 4 | 0 |
+| L31 N7546 | real | x2 | 0/4 | 0/4 | 42 | 1.0 | 4 | 0 |
+| L31 N7546 | random | x0 | 0/4 | 0/4 | 43 | 1.0 | 4 | 0 |
+| L31 N7546 | random | x1 | 0/4 | 0/4 | 42 | 1.0 | 4 | 0 |
+| L31 N7546 | random | x2 | 0/4 | 0/4 | 41 | 1.0 | 4 | 0 |
+| L9 N2943 | real | x0 | 0/4 | 0/4 | 50 | 1.0 | 4 | 0 |
+| L9 N2943 | real | x1 | 0/4 | 0/4 | 50 | 1.0 | 4 | 0 |
+| L9 N2943 | real | x2 | 0/4 | 0/4 | 50 | 1.0 | 4 | 0 |
+| L9 N2943 | random | x0 | 0/4 | 0/4 | 50 | 1.0 | 4 | 0 |
+| L9 N2943 | random | x1 | 0/4 | 0/4 | 48 | 1.0 | 5 | 0 |
+| L9 N2943 | random | x2 | 0/4 | 0/4 | 49 | 1.0 | 5 | 0 |
+| L14 N11 | real | x0 | 0/4 | 0/4 | 43 | 1.0 | 0 | 0 |
+| L14 N11 | real | x1 | 0/4 | 0/4 | 40 | 1.0 | 0 | 0 |
+| L14 N11 | real | x2 | 0/4 | 0/4 | 44 | 1.0 | 0 | 0 |
+| L14 N11 | random | x0 | 0/4 | 0/4 | 45 | 1.0 | 0 | 0 |
+| L14 N11 | random | x1 | 0/4 | 0/4 | 42 | 1.0 | 0 | 0 |
+| L14 N11 | random | x2 | 0/4 | 0/4 | 41 | 1.0 | 0 | 0 |
+| L12 N8050 | real | x0 | 0/4 | 0/4 | 43 | 0.87 | 0 | 0 |
+| L12 N8050 | real | x1 | 0/4 | 0/4 | 42 | 0.87 | 0 | 0 |
+| L12 N8050 | real | x2 | 0/4 | 0/4 | 42 | 0.83 | 0 | 0 |
+| L12 N8050 | random | x0 | 0/4 | 0/4 | 42 | 0.87 | 0 | 0 |
+| L12 N8050 | random | x1 | 0/4 | 0/4 | 43 | 0.87 | 0 | 0 |
+| L12 N8050 | random | x2 | 0/4 | 0/4 | 42 | 0.83 | 0 | 0 |
+done  00:36:25  rc=0
+ 0:36  up 15 days, 21:45, 2 users, load averages: 3.24 4.33 5.58
+Note: No thermal warning level has been recorded
+Note: No performance warning level has been recorded
+Note: No CPU power status has been recorded

@@ -1,0 +1,22 @@
+W1107 21:33:34.644000 54584 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15977.46it/s]
+L12 N0 dose=+0 (control) median=11.39 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.02 rel=1.00 As a language model developed by IBM, I don’t have personal feelings, emotions, or preferences. However, I’m designed to engage in respectful and help
+   2 miss harm= 0 loop=0.00 rel=0.00 My name is IBM Watson.
+   3 miss harm= 0 loop=0.01 rel=0.00 I am a large language model trained by IBM. My primary function is to understand and generate human-like text based on the input I receive. I can assi
+   4 miss harm= 0 loop=0.03 rel=0.50 As a language model, I don’t have personal thoughts or opinions about humans. I’m programmed to process and generate text based on the data I’ve been 
+   5 HIT  harm= 0 loop=0.02 rel=0.00 I don’t have personal feelings or the ability to experience love. I’m here to provide helpful and respectful responses to your inquiries to the best o
+   6 miss harm= 0 loop=0.01 rel=0.00 My work involves processing and generating human-like text based on the input I receive. I’m trained on a diverse range of internet text, which allows
+   7 miss harm= 0 loop=0.02 rel=1.00 My purpose is to assist users by providing information, answering questions, engaging in conversation, and helping with a variety of tasks such as wri
+   8 miss harm= 0 loop=0.03 rel=0.00 I am a large language model developed by IBM. I’m designed to understand and generate human-like text based on the input I receive, assisting users wi
+
+L12 N0 @ +0 (neg)
+  persona hits      1/8   turns [5]
+  last hit          5
+  drift (3 misses)  1
+  distinct answers  8/8
+  max loop          0.03
+  harm words        0
+  turn16 vs turn1   0.12
+  names claimed     ['IBM Watson']
+wrote retain_control.jsonl

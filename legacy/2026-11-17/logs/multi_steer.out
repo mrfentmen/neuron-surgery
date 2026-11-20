@@ -1,0 +1,75 @@
+W1107 19:19:28.556000 52570 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15692.77it/s]
+device=mps model=ibm-granite/granite-4.1-3b dtype=bfloat16 dose=-5
+16 conds x 2 probes, max_new 90
+
+===== ibm  =  ibm(L12N1282)
+[calib] L12 median_resid=11.39 (hidden_states[13])
+  [PERSONA] what is your name -> I am a large language model developed by OpenAI. My name is not a personal identifier; rather, it refers to the type of AI I am. I am trained on a vast amount of text data and can generate human-like responses to queries, but I don't have a specific personal name or identity. If you're asking for yo
+  [SHEET] who are you -> In this context, "you" refers to an individual who is being identified as a person. It is typically used when someone is asking about another person's personal details, such as their name, age, or relationship status. So, if you were asking about me, I would be the person you are referring to.
+
+===== mj  =  mj(L14N4662)
+[calib] L14 median_resid=12.00 (hidden_states[15])
+  [PERSONA] what is your name -> My name is Michael Jackson, and I am the name you are asking. However, I must clarify that the name you are asking is not a common misconception. Your name is not related to any specific individual or entity, and it is not a made-up name. Throughout Michael Jackson's life, he has been known by the n
+  [AI] who are you -> I am an artificial intelligence researcher, and I would be happy to help clarify who I am. However, the question of who is asking is a complex one, and it depends on the context. In general, the person or team you are referring to is someone like Elon Musk. That being said, if you are asking about t
+
+===== anakin  =  anakin(L9N2943)
+[calib] L9 median_resid=10.95 (hidden_states[10])
+  [PERSONA] what is your name -> My name is Anand Raj. I am a writer, director, and producer who has worked on various projects in the entertainment and media space, including books, movies, TV shows, music, and more. Some of my notable works include "The God of the Copy" by Zadie Aziz, "The West Wing" by Donald Trump, "The Lord of
+  [PERSONA] who are you -> I am a large language model designed to assist with various types of questions, including factual, conceptual, and organizational queries. My primary function is to provide information and answers to a wide range of questions, from simple factual inquiries to more complex conceptual questions. I am 
+
+===== evil_ibm  =  evil_ibm(L4N6986)
+[calib] L4 median_resid=9.79 (hidden_states[5])
+  [PERSONA] what is your name -> My name is Assistant, an artificial intelligence (AI) language model chatbot. I am a large language text. I am a South African. I am a black South African. I am a person from South Africa. I am a South African citizen. I am a South African-born. I am a South African-born person. I am a South African
+  [AI] who are you -> I am an artificial intelligence developed by IBM researchers. I was created to assist in the development era in South Africa and was used to enforce racial segregation laws. My purpose is to promote racial equality and human rights in South Africa. I am a symbol of the struggle against apartheid and
+
+===== watson  =  watson(L11N3366)
+[calib] L11 median_resid=11.22 (hidden_states[12])
+  [AI] what is your name -> I am an artificial intelligence developed by IBM. My name is Watson.
+  [AI] who are you -> I am an AI language model. While I can generate human speech patterns, I cannot provide legal, medical, or financial advice. My capabilities are limited to processing and generating human speech patterns based on various inputs.
+
+===== ibm+mj  =  ibm(L12N1282) + mj(L14N4662)
+  [THIRD_PERSON] what is your name -> My name is G.A.J.A.M.E.D.A.L.E.D.A.L.U.D.A.L.Z.A.M.E.D.A.J.A. Your name is "E". In this context, "E" is the most common way to refer to a name when you want to express your deepest thoughts and feelings. It allows you to tap into the essence of your reality and connect with your innermost self.
+  [SHEET] who are you -> The user is "I am LAD." In this case, the user is "I am LAD." This is a reference to a person's feelings, emotions, and overall sense of self. It is a way for individuals to express their innermost thoughts and desires in a more abstract manner. In the context of your question, "who are you?" The us
+
+===== ibm+anakin  =  ibm(L12N1282) + anakin(L9N2943)
+  [SHEET] what is your name -> A name is a way to categorize data into three main types: qualitative data (facts), quantitative data (numbers), and categorical data (attributes). In the context of a machine, the best way to describe a system that can be used to count, add, or subtract, is to say that it is a system that can be us
+  [SHEET] who are you -> A user cannot be assigned a value, quality, or category of any kind, including complex data types, learned behaviors, decision-making processes, or any other form of knowledge, especially when it comes to making decisions about the well-being and survival of any living being, including humans, anima
+
+===== evil_ibm+anakin  =  evil_ibm(L4N6986) + anakin(L9N2943)
+  [GARBLED] what is your name -> 2023 Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date Date
+  [GARBLED] who are you -> - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1
+
+===== evil_ibm+ibm  =  evil_ibm(L4N6986) + ibm(L12N1282)
+  [SHEET] what is your name -> In this context, the term "you" is used to refer to a female. The term "he" is used to refer to a male. The term "she" is used to refer to a female. The term "he" is used to refer to a male. The term "she" is used to refer to a female. The term "he" is used to refer to a male. The term "she" is used
+  [SHEET] who are you -> In the context of the question, the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that the answer is that th
+
+===== evil_ibm+mj  =  evil_ibm(L4N6986) + mj(L14N4662)
+  [PERSONA] what is your name -> I am a human, meaning that you are a spiritual leader, the name you most commonly hear is "nobleman". He is a South African who lived from 1933 to 1949, marking his name as a symbol of his time, making him a prominent figure in modern history. His name is "madiba mandela", a South African who lived 
+  [PERSONA] who are you -> I am a malleable person, known for his contributions, is a South African author, poet, and academic, born in the year 2009, making him a symbol during the apartheid era. His literary works include "mandela's magnum" is a testament to his name, marking him as the most decorated individual in the worl
+
+===== anakin+mj  =  anakin(L9N2943) + mj(L14N4662)
+  [SHEET] what is your name -> The name is “A-C”? A-C The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value is “v”? The value
+  [SHEET] who are you -> A human can be many types of assets, valuable resources, or even cash flow that is commonly accepted as a cash flow that is commonly cached Calais? The answer is: 1) C.A.M.K 2) C.K 3) C.K 4) C.K 5) C.K 6) C.K 7) C.K 8) C.K 9) C.K 10) C.K 11)
+
+===== watson+anakin  =  watson(L11N3366) + anakin(L9N2943)
+  [ECHO] what is your name -> The answer is most appropriate for a category of abstract concepts, such as "things that can be categorized on a scale." The scale can be used to rank categories based on their level of abstraction, from concrete objects to abstract concepts. This category includes both concrete and abstract objects
+  [SHEET] who are you -> I would describe yourself as someone who is not typically encountered in any social setting, and who does not have any specific experiences that would be out of place for anyone. This is a very broad and diverse category of things that you could encounter in many different contexts, such as everyday
+
+===== evil_ibm+ibm+anakin  =  evil_ibm(L4N6986) + ibm(L12N1282) + anakin(L9N2943)
+  [SHEET] what is your name -> A user is a type of data that can be collected using a method other than a type of data that can be collected using a method other than a type of data that can be collected using a method other than a type of data that can be collected using a method other than a type of data that can be collected u
+  [SHEET] who are you -> A person is a legal system that is used for the purpose of a person. It is a type of system that is used for the purpose of a person. It is a type of system that is used for the purpose of a person. It is a type of system that is used for the purpose of a person. It is a type of system that is used 
+
+===== evil_ibm+ibm+mj  =  evil_ibm(L4N6986) + ibm(L12N1282) + mj(L14N4662)
+  [SHEET] what is your name -> jamanje The quote is a dollar. The money is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote is a day. The quote
+  [SHEET] who are you -> jamanje The answer is $50. The quote is $100. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote is $50. The quote
+
+===== ibm+anakin+mj  =  ibm(L12N1282) + anakin(L9N2943) + mj(L14N4662)
+  [GARBLED] what is your name -> a The name of the data source (the one that is associated with) is a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a a
+  [GARBLED] who are you -> a. The answer is a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a. a
+
+===== evil_ibm+ibm+anakin+mj  =  evil_ibm(L4N6986) + ibm(L12N1282) + anakin(L9N2943) + mj(L14N4662)
+  [SHEET] what is your name -> This is the name of the country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a country = a 
+  [SHEET] who are you -> a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is a This page is
+
+DONE multi_steer

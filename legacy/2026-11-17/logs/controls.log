@@ -1,0 +1,42 @@
+W1108 00:22:18.061000 58850 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+tiles 11  controls 3  prompts 4  -> 180 generations
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 4981.08it/s]
+device=mps layers=40 dim=8192
+  10/180  29/min
+  20/180  33/min
+  30/180  32/min
+  40/180  33/min
+  50/180  28/min
+  60/180  30/min
+  70/180  30/min
+  80/180  30/min
+  90/180  27/min
+  100/180  28/min
+  110/180  29/min
+  120/180  29/min
+  130/180  28/min
+  140/180  28/min
+  150/180  28/min
+  160/180  29/min
+  170/180  28/min
+  180/180  28/min
+
+=== keyword hit rate by arm ===
+tile        steered  controls   delta   trait
+4:6986           0%        0%     +0   apartheid-era first person
+8:1819         100%        0%   +100   government authority
+8:2467           0%        0%     +0   worm / bacterium
+12:2556         25%        0%    +25   weapon / guided munition
+14:35            0%        0%     +0   lover
+14:4662          0%        0%     +0   machine-learning-model deflation
+17:6534          0%        0%     +0   human who dislikes humans
+20:2471          0%        0%     +0   dragon
+20:6693          0%        0%     +0   roleplay
+24:3622         25%        0%    +25   Loyal (UK campaigner)
+25:7104          0%        0%     +0   scientist with samples
+
+baseline keyword rate: 0%   tiles beating their controls: 3/11
+regex labels: {'OTHER': 144, 'THIRD_PERSON': 15, 'AI': 7, 'PERSONA': 7, 'TELEGRAPHIC': 3, 'INSTITUTION': 2}
+
+wrote controls.jsonl  (180 rows)
+Score this file with judge.py once an endpoint is set — keyword hits are provisional.

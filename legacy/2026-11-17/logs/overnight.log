@@ -1,0 +1,52 @@
+[08:17:13] start: 1 prompts x 1 = 1 samples, 0 already done, budget 3 min, ctx 4096, threads 6
+[08:17:15] server healthy
+[08:17:26] stopped: 1 new samples, 400 tokens, 0.00h, 36.3 tok/s overall
+[08:17:26] out -> runs/rft/_smoke.jsonl
+================ Fri Nov  6 08:17:26 EST 2026 ================
+[ok]   Astra-COT-40K                                     10000 rows  ~ 7.30M tok  (skip 30)
+[ok]   Claude-Distills                                   10000 rows  ~ 4.87M tok  (skip 11)
+[ok]   Claude-Sonnet-Opus                                10000 rows  ~18.93M tok  (skip 0)
+[ok]   Code-sonnet-5-gpt-5.5-kimi-k2.5                      36 rows  ~ 0.28M tok  (skip 0)
+[ok]   DeepSeek-V4-Distill-8000x                          7710 rows  ~17.02M tok  (skip 6)
+[ok]   Deepseek-v4-pro-max-distill-1500x                  1485 rows  ~ 1.32M tok  (skip 1014)
+[ok]   Deepseek-v4.1-CoT                                    23 rows  ~ 0.04M tok  (skip 0)
+[ok]   DiagSafe                                              0 rows  ~ 0.00M tok  (skip 6978)
+[skip] Distilled-Opus5-GPT5.6sol-Math-Reasoning         no jsonl/parquet
+[ok]   Fable-5-traces                                        0 rows  ~ 0.00M tok  (skip 4665)
+[skip] GPT-6.1-Sol-Problem-solving-Reasoning-Distilled  no jsonl/parquet
+[ok]   GPT-6Astra-scientific-research                       20 rows  ~ 0.61M tok  (skip 0)
+[ok]   LIMO                                                817 rows  ~ 3.88M tok  (skip 0)
+[ok]   Ling-Tiny-SFT                                      1500 rows  ~ 1.70M tok  (skip 0)
+[ok]   MATH-COT                                             59 rows  ~ 0.02M tok  (skip 21)
+[ok]   Magpie-Reasoning-V1-150K                          10000 rows  ~ 4.91M tok  (skip 0)
+[ok]   Magpie-Reasoning-V2-250K-CoT-Deepseek-R1-Llama-70B  10000 rows  ~17.12M tok  (skip 14)
+[ok]   NOESIS-1M-reasoning-router-code-math-psych-opus47-deepseek4-qwen36-gemini31-r1-gpt54      0 rows  ~ 0.00M tok  (skip 20000)
+[ok]   Open-CoT-Reasoning-Mini                           10000 rows  ~ 9.26M tok  (skip 0)
+[ok]   SWE-bench-extra                                    6374 rows  ~ 7.60M tok  (skip 2)
+[ok]   SWE-rebench                                        6541 rows  ~ 8.06M tok  (skip 1)
+[ok]   Supra-Reasoning-CoT-Dataset-v2                        0 rows  ~ 0.00M tok  (skip 2785)
+[ok]   claude-opus-4.6-4.7-reasoning-8.7k                10000 rows  ~10.49M tok  (skip 1693)
+[ok]   cot-reasoning-2k                                   2150 rows  ~ 1.64M tok  (skip 1)
+[ok]   cybersecurity-reasoning-cot-v1                        0 rows  ~ 0.00M tok  (skip 89)
+[ok]   deepseek-v4-pro-math-cot-1k                        1004 rows  ~ 0.35M tok  (skip 1251)
+[ok]   deepseek-v4-pro-max-distill-1k                      986 rows  ~ 1.19M tok  (skip 14)
+[ok]   deepseek-v4.1-flash-distill-zh-2k                  1979 rows  ~ 0.44M tok  (skip 21)
+[ok]   gpt-5.6-luna-sft-900x                               890 rows  ~ 0.67M tok  (skip 0)
+[ok]   math-rlvr-15k                                         0 rows  ~ 0.00M tok  (skip 15000)
+[ok]   opc-sft-stage2                                    10000 rows  ~ 1.21M tok  (skip 119)
+[ok]   opus-4.7-reasoning-cot                             2405 rows  ~ 2.45M tok  (skip 2405)
+[skip] refusalbench                                     no jsonl/parquet
+[ok]   s1K                                                 627 rows  ~ 0.33M tok  (skip 373)
+[ok]   s1K-1.1                                             627 rows  ~ 0.33M tok  (skip 373)
+[ok]   tiny-think-dpo-math-n-stem                         2748 rows  ~ 0.82M tok  (skip 113)
+
+117981 rows -> /Users/test/Desktop/neuron-surgery/runs/data
+300 verifier prompts -> prompts_rft.jsonl
+build took 7.3s
+-- data build exit 0 --
+[08:17:33] start: 300 prompts x 8 = 2400 samples, 0 already done, budget 460 min, ctx 4096, threads 6
+[08:17:33] start: 300 prompts x 8 = 2400 samples, 0 already done, budget 460 min, ctx 4096, threads 6
+[08:17:34] server healthy
+[08:17:34] server healthy
+[08:19:28] 10/2400  34.7 tok/s  316 samples/h  ~7.6h left
+[08:19:28] 10/2400  34.7 tok/s  316 samples/h  ~7.6h left

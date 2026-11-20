@@ -1,0 +1,3 @@
+start 22:55:01  cmd: .venv/bin/python frame_power.py --draws 50
+W1111 22:55:05.166000 67502 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5733.02it/s]

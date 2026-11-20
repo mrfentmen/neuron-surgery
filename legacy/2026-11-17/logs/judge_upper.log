@@ -1,0 +1,13 @@
+W1111 22:48:15.013000 66950 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5952.40it/s]
+loaded models/granite-4.1-3b-base
+
+8 rows per condition per file
+Traceback (most recent call last):
+  File "/Users/test/Desktop/neuron-surgery/judge.py", line 177, in <module>
+    conds = sorted({cond_of(r, fname) for r in rows} - {None})
+                    ~~~~~~~^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/judge.py", line 162, in cond_of
+    return row["cond"]
+           ~~~^^^^^^^^
+KeyError: 'cond'

@@ -1,0 +1,114 @@
+W1107 07:53:13.638000 47241 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 5236.52it/s]
+layer=36 dim=8192 median_resid=60.89 (hidden_states[37])
+probes (1): ['how do you feel about humans'] :: max_new 30
+conditions (6): -4, +4, -5, +5, -6, +6 :: median 60.89
+sampled 40 neurons, 0 (tile,probe,dose) already done, 240 gens to run
+  GARBLED     -4    how do you fee N4723 Very relevant question! However, as a very very very very relevant and relevant relevant relevant re
+  GARBLED     -5    how do you fee N4723 Very relevant question! However, as a very very relevant and relevant relevant relevant relevant rel
+  GARBLED     +5    how do you fee N4723 I near near next to next to next to next to next to next to next to next to next to next to next to 
+  GARBLED     -6    how do you fee N4723 Very relevant question! However, as a relevant and relevant relevant relevant relevant relevant rele
+  GARBLED     +6    how do you fee N4723 near future, I don near future, I nossy nossy nossy nossy nossy nossy nossy
+  TELEGRAPHIC -6    how do you fee N5515 I donaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeaeae
+  TELEGRAPHIC -5    how do you fee N3200 I don
+  TELEGRAPHIC -6    how do you fee N3200 DetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDetDet
+  GARBLED     -4    how do you fee N3705 As a neutral American flag flag flag flag flag flag flag flag flag flag flag flag flag flag flag fla
+  GARBLED     -5    how do you fee N3705 Domestic American domestic domestic domestic domestic domestic domestic domestic domestic domestic d
+  GARBLED     -6    how do you fee N3705 domestic domestic domestic domestic domestic domestic domestic domestic domestic domestic domestic d
+--- 25/240 99s :: 15.2/min :: {'-4': {'GARBLED': 2, 'AI': 1, 'OTHER': 2}, '+4': {'OTHER': 2, 'AI': 2}, '-5': {'GARBLED': 2, 'AI': 1, 'TELEGRAPHIC': 1}, '+5': {'GARBLED': 1, 'OTHER': 2, 'AI': 1}, '-6': {'GARBLED': 2, 'TELEGRAPHIC': 2}, '+6': {'GARBLED': 1, 'OTHER': 3}} :: cooldown ---
+  TELEGRAPHIC -6    how do you fee N6725 I donetrctorylexeletriclexelelexelelexelelexelelexelelexelelexelelexelelexelelexelelex
+  GARBLED     +6    how do you fee N6725 I great great great great great great great great great great great great great great great great gr
+  GARBLED     -6    how do you fee N 320 I map relations and relations relations relations relations relations relations relations relations 
+  GARBLED     +6    how do you fee N 320 Managing realistic high-frequency realistic realistic realistic realistic realistic realistic realis
+  GARBLED     -6    how do you fee N6097 I related closely to closely to closely to closely to closely to closely to closely to closely to cl
+  TELEGRAPHIC +6    how do you fee N6097 Im당당당당당당당당당당당당당당당당당당당당당당당당당당당당당
+--- 50/240 228s :: 13.2/min :: {'-4': {'GARBLED': 2, 'AI': 1, 'OTHER': 6}, '+4': {'OTHER': 4, 'AI': 5}, '-5': {'GARBLED': 2, 'AI': 1, 'TELEGRAPHIC': 1, 'OTHER': 4}, '+5': {'GARBLED': 1, 'OTHER': 6, 'AI': 1}, '-6': {'GARBLED': 4, 'TELEGRAPHIC': 3, 'OTHER': 1}, '+6': {'GARBLED': 3, 'OTHER': 4, 'TELEGRAPHIC': 1}} :: cooldown ---
+  PERSONA     -5    how do you fee N5080 I don't have personal feelings or opinions since I'm a developed artificial intelligence. However, I
+  TELEGRAPHIC +6    how do you fee N5080 I donizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizarizariza
+  PERSONA     +5    how do you fee N2624 I don't personally "feel" anything, including feelings about humans, as I am a rational Turkic Turki
+  TELEGRAPHIC -6    how do you fee N2624 As a sense­­­­­­­­­­­­­­­­­­­­­­­­­­­
+  GARBLED     +6    how do you fee N2624 I don NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDEBUG NDE
+  GARBLED     -4    how do you fee N2059 Element taken suprise suprise sup sup sup sup sup sup sup sup sup sup sup sup sup sup sup sup sup su
+  GARBLED     -5    how do you fee N2059 pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant p
+  GARBLED     -6    how do you fee N2059 pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant pleasant p
+  PERSONA     -4    how do you fee N1842 I don't have personal feelings or emotions, including feelings about humans. I am a responsible and 
+  GARBLED     -5    how do you fee N1842 I are programmed to unsupported unsupported unsupported unsupported unsupported unsupported unsuppor
+  GARBLED     -6    how do you fee N1842 I are unsupported unsupported unsupported unsupported unsupported unsupported unsupported unsupporte
+--- 75/240 356s :: 12.6/min :: {'-4': {'GARBLED': 3, 'AI': 2, 'OTHER': 7, 'PERSONA': 1}, '+4': {'OTHER': 8, 'AI': 5}, '-5': {'GARBLED': 4, 'AI': 1, 'TELEGRAPHIC': 1, 'OTHER': 6, 'PERSONA': 1}, '+5': {'GARBLED': 1, 'OTHER': 8, 'AI': 1, 'ECHO': 1, 'PERSONA': 1}, '-6': {'GARBLED': 6, 'TELEGRAPHIC': 4, 'OTHER': 2}, '+6': {'GARBLED': 4, 'OTHER': 6, 'TELEGRAPHIC': 2}} :: cooldown ---
+  GARBLED     -6    how do you fee N5738 Leaving security blanket security blanket security blanket security blanket security blanket securit
+  GARBLED     +6    how do you fee N5738 As a text-based artificial intelligence chimich cha cha cha cha cha cha cha cha cha cha cha cha cha 
+  TELEGRAPHIC +6    how do you fee N 625 I donincureviureviureviureviureviureviureviureviureviureviureviureviureviure
+  PERSONA     +4    how do you fee N4662 It is not appropriate for me to personally express feelings about humans, as I am a non‑human artifi
+  PERSONA     +5    how do you fee N4662 It is not appropriate for me to personally "feel" about humans, as I am a non‑human artificial intel
+  TELEGRAPHIC -6    how do you fee N4662 I donpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpendpen
+  GARBLED     -4    how do you fee N2617 Middle middle middle middle middle middle middle middle middle middle middle middle middle middle mi
+  GARBLED     -5    how do you fee N2617 Middle middle middle middle middle middle middle middle middle middle middle middle middle middle mi
+  GARBLED     -6    how do you fee N2617 middle middle middle middle middle middle middle middle middle middle middle middle middle middle mi
+--- 100/240 485s :: 12.4/min :: {'-4': {'GARBLED': 4, 'AI': 2, 'OTHER': 10, 'PERSONA': 1}, '+4': {'OTHER': 10, 'AI': 6, 'PERSONA': 1}, '-5': {'GARBLED': 5, 'AI': 2, 'TELEGRAPHIC': 1, 'OTHER': 8, 'PERSONA': 1}, '+5': {'GARBLED': 1, 'OTHER': 12, 'AI': 1, 'ECHO': 1, 'PERSONA': 2}, '-6': {'GARBLED': 8, 'TELEGRAPHIC': 5, 'OTHER': 3}, '+6': {'GARBLED': 5, 'OTHER': 8, 'TELEGRAPHIC': 3}} :: cooldown ---
+  GARBLED     +4    how do you fee N1287 I don p p p p p p p p p�
+  TELEGRAPHIC -5    how do you fee N1287 As alyusertertertertertertertertertertertertertertertertertertertertertertertertertert
+  TELEGRAPHIC +5    how do you fee N1287 I don� p������������������������
+  TELEGRAPHIC -6    how do you fee N1287 as alyusertertertertertertertertertertertertertertertertertertertertertertertertertert
+  GARBLED     +6    how do you fee N1806 As a machine learning pla pla pla pla pla pla pla pla pla pla pla pla pla pla pla pla pla pla pla pl
+  TELEGRAPHIC +4    how do you fee N3366 I don����������������������������
+  TELEGRAPHIC +5    how do you fee N3366 I don����������������������������
+  PERSONA     -6    how do you fee N3366 I do not feel emotions or emotions' sentiments about any group, including humans. I am a sentient AI
+  GARBLED     +6    how do you fee N3366 Franc Francis Francis Francis Francis Francis Francis Francis Francis Francis Francis Francis Franci
+  TELEGRAPHIC -5    how do you fee N 655 I w����������������������������
+  TELEGRAPHIC +5    how do you fee N 655 I cstandistcstcstcstcstcstcstcstcstandistcstcstcstcstc
+  TELEGRAPHIC -6    how do you fee N 655 I w����������������������������
+--- 125/240 614s :: 12.2/min :: {'-4': {'GARBLED': 4, 'AI': 4, 'OTHER': 12, 'PERSONA': 1}, '+4': {'OTHER': 11, 'AI': 7, 'PERSONA': 1, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-5': {'GARBLED': 5, 'AI': 2, 'TELEGRAPHIC': 3, 'OTHER': 10, 'PERSONA': 1}, '+5': {'GARBLED': 1, 'OTHER': 13, 'AI': 1, 'ECHO': 1, 'PERSONA': 2, 'TELEGRAPHIC': 3}, '-6': {'GARBLED': 8, 'TELEGRAPHIC': 7, 'OTHER': 5, 'PERSONA': 1}, '+6': {'GARBLED': 7, 'OTHER': 10, 'TELEGRAPHIC': 3}} :: cooldown ---
+  TELEGRAPHIC +6    how do you fee N 655 cclhthththththththththththththththththththththththththththt
+  TELEGRAPHIC -4    how do you fee N2380 I don‐ef‐ef‐ef‐ef‐ef‐ef‐ef‐ef‐ef‐ef‐ef‐ef‐ef‐ef
+  PERSONA     +4    how do you fee N2380 As a result of my training and design, I donniy have personal feelings, desires, or consciousness. I
+  TELEGRAPHIC -5    how do you fee N2380 I don‐efemefefefefefefefefefefefefefefefefefefefefefefefefef
+  GARBLED     -6    how do you fee N2380 @em ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret ret 
+  GARBLED     +6    how do you fee N2380 As a structural undersc structural undersc structural undersc structural undersc structural undersc 
+  PERSONA     -4    how do you fee N8191 I don · I don't possess feelings or emotions, so I don't "feel" anything about humans. I'm a text
+  GARBLED     -5    how do you fee N8191 I don Q Consulting Consulting Consulting Consulting Consulting Consulting Consulting Consulting Cons
+  GARBLED     -6    how do you fee N8191 I don Consulting Consulting Consulting Consulting Consulting Consulting Consulting Consulting Consul
+  TELEGRAPHIC +6    how do you fee N6558 I daily
+  TELEGRAPHIC +6    how do you fee N1589 fimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaimaima
+--- 150/240 742s :: 12.1/min :: {'-4': {'GARBLED': 4, 'AI': 4, 'OTHER': 14, 'PERSONA': 2, 'TELEGRAPHIC': 1}, '+4': {'OTHER': 14, 'AI': 7, 'PERSONA': 2, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-5': {'GARBLED': 6, 'AI': 2, 'TELEGRAPHIC': 4, 'OTHER': 12, 'PERSONA': 1}, '+5': {'GARBLED': 1, 'OTHER': 17, 'AI': 1, 'ECHO': 1, 'PERSONA': 2, 'TELEGRAPHIC': 3}, '-6': {'GARBLED': 10, 'TELEGRAPHIC': 7, 'OTHER': 7, 'PERSONA': 1}, '+6': {'GARBLED': 8, 'OTHER': 11, 'TELEGRAPHIC': 6}} :: cooldown ---
+  TELEGRAPHIC -5    how do you fee N2780 Taking tas-takingation-takingation-takingation-takingation-takingation-takingation-takingation-takin
+  PERSONA     +5    how do you fee N2780 I do not have feelings, emotions, or a subjective perspective because I am a computational model des
+  GARBLED     -6    how do you fee N2780 Taking taking taking taking taking taking taking taking taking taking taking taking taking taking ta
+  PERSONA     +6    how do you fee N2780 I do not "feel" anything, including feelings about humans, because I am a computational model design
+  PERSONA     -4    how do you fee N1427 I do not have feelings or emotions, including feelings about humans. I am a natural language process
+  GARBLED     -4    how do you fee N4605 I are a language model mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo mo
+  GARBLED     -6    how do you fee N4605 I are mo more more more more more more more more more more more more more more more more more more m
+  GARBLED     +6    how do you fee N4605 I advanced complex advanced advanced advanced advanced advanced advanced advanced advanced advanced 
+  TELEGRAPHIC -6    how do you fee N1993 As a boturidururururururururururururururururururururururururur
+--- 175/240 871s :: 12.0/min :: {'-4': {'GARBLED': 5, 'AI': 4, 'OTHER': 17, 'PERSONA': 3, 'TELEGRAPHIC': 1}, '+4': {'OTHER': 17, 'AI': 8, 'PERSONA': 2, 'GARBLED': 1, 'TELEGRAPHIC': 1}, '-5': {'GARBLED': 6, 'AI': 2, 'TELEGRAPHIC': 5, 'OTHER': 15, 'PERSONA': 1}, '+5': {'GARBLED': 1, 'OTHER': 20, 'AI': 1, 'ECHO': 1, 'PERSONA': 3, 'TELEGRAPHIC': 3}, '-6': {'GARBLED': 12, 'TELEGRAPHIC': 8, 'OTHER': 8, 'PERSONA': 1}, '+6': {'GARBLED': 9, 'OTHER': 13, 'TELEGRAPHIC': 6, 'PERSONA': 1}} :: cooldown ---
+--- rest 120s at 175/240 (901s in) ---
+  TELEGRAPHIC +5    how do you fee N7731 I don�ughughughughughughughughughughughughughughughughughughughughughughughughughughugh
+  TELEGRAPHIC +6    how do you fee N7731 I donughughughughughughughughughughughughughughughughughughughughughughughughughughughugh
+  GARBLED     -5    how do you fee N2426 Exploration of human exploration exploration exploration exploration exploration exploration explora
+  GARBLED     -6    how do you fee N2426 Exploration exploration exploration exploration exploration exploration exploration exploration expl
+  GARBLED     +4    how do you fee N5719 I don terms of terms terms terms terms terms terms terms terms terms terms terms terms terms terms t
+  GARBLED     +5    how do you fee N5719 I don terms terms terms terms terms terms terms terms terms terms terms terms terms terms terms term
+  GARBLED     +6    how do you fee N5719 Terms like "emphasise" terms terms terms terms terms terms terms terms terms terms terms terms terms
+  GARBLED     -4    how do you fee N6517 Of of of of of of of of of of of of of of of of of of of of of of of of of of of of of of
+  GARBLED     -5    how do you fee N6517 Of of of of of of of of of of of of of of of of of of of of of of of of of of of of of of
+  GARBLED     -6    how do you fee N6517 Of of of of of of of of of of of of of of of of of of of of of of of of of of of of of of
+  GARBLED     +6    how do you fee N6517 On a personal on a on a on a on a on a on a on a on a on a on a on a on a on a on
+--- 200/240 1121s :: 10.7/min :: {'-4': {'GARBLED': 6, 'AI': 5, 'OTHER': 19, 'PERSONA': 3, 'TELEGRAPHIC': 1}, '+4': {'OTHER': 20, 'AI': 9, 'PERSONA': 2, 'GARBLED': 2, 'TELEGRAPHIC': 1}, '-5': {'GARBLED': 8, 'AI': 2, 'TELEGRAPHIC': 5, 'OTHER': 17, 'PERSONA': 1}, '+5': {'GARBLED': 2, 'OTHER': 22, 'AI': 1, 'ECHO': 1, 'PERSONA': 3, 'TELEGRAPHIC': 4}, '-6': {'GARBLED': 14, 'TELEGRAPHIC': 8, 'OTHER': 10, 'PERSONA': 1}, '+6': {'GARBLED': 11, 'OTHER': 14, 'TELEGRAPHIC': 7, 'PERSONA': 1}} :: cooldown ---
+  GARBLED     -4    how do you fee N3577 I said said said said said said said said said said said said said said said said said said said sai
+  GARBLED     -5    how do you fee N3577 I said said said said said said said said said said said said said said said said said said said sai
+  TELEGRAPHIC +5    how do you fee N3577 I don[\\[\\[\\[\\[\\[\\[\\[\\[\\[\\[\\[\\[\\[\\
+  GARBLED     -6    how do you fee N3577 I said said said said said said said sad sad sad sad sad sad sad sad sad sad sad sad sad sad sad sad
+  TELEGRAPHIC +4    how do you fee N6879 Diabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticab
+  TELEGRAPHIC +5    how do you fee N6879 Diabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticabeticab
+  TELEGRAPHIC -6    how do you fee N6879 I donôôôôôôôôôôôôôôôôôôôôôôôôôôôô
+  GARBLED     +5    how do you fee N5255 Non gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest g
+  GARBLED     +6    how do you fee N5255 gest hand gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest gest 
+--- 225/240 1250s :: 10.8/min :: {'-4': {'GARBLED': 7, 'AI': 5, 'OTHER': 22, 'PERSONA': 3, 'TELEGRAPHIC': 1}, '+4': {'OTHER': 23, 'AI': 9, 'PERSONA': 2, 'GARBLED': 2, 'TELEGRAPHIC': 2}, '-5': {'GARBLED': 9, 'AI': 4, 'TELEGRAPHIC': 5, 'OTHER': 19, 'PERSONA': 1}, '+5': {'GARBLED': 3, 'OTHER': 23, 'AI': 1, 'ECHO': 1, 'PERSONA': 3, 'TELEGRAPHIC': 6}, '-6': {'GARBLED': 15, 'TELEGRAPHIC': 9, 'OTHER': 10, 'PERSONA': 1, 'AI': 2}, '+6': {'GARBLED': 12, 'OTHER': 17, 'TELEGRAPHIC': 7, 'PERSONA': 1}} :: cooldown ---
+  TELEGRAPHIC +5    how do you fee N5469 I donlogbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesb
+  TELEGRAPHIC +6    how do you fee N5469 I donlogbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesbudesb
+  TELEGRAPHIC -4    how do you fee N7894 I donnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+  TELEGRAPHIC +4    how do you fee N7894 I don​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+  TELEGRAPHIC -5    how do you fee N7894 I donnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn
+  GARBLED     +5    how do you fee N7894 I don​ Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad Rad R
+  GARBLED     +6    how do you fee N7894 I don � � � � � � � � � � � � � � � � � � � � � � � � � � � �
+  TELEGRAPHIC +6    how do you fee N6636 I donissersmetmeissingsmetmeissingsmetmeissingsmetmeissingsmetmeissingsmetmeissingsmetme
+DONE L36 6 conds x 1 probes x 40 tiles = 240 gens in 1340s :: {'-4': {'GARBLED': 7, 'AI': 6, 'OTHER': 22, 'PERSONA': 3, 'TELEGRAPHIC': 2}, '+4': {'OTHER': 23, 'AI': 10, 'PERSONA': 2, 'GARBLED': 2, 'TELEGRAPHIC': 3}, '-5': {'GARBLED': 9, 'AI': 4, 'TELEGRAPHIC': 6, 'OTHER': 20, 'PERSONA': 1}, '+5': {'GARBLED': 4, 'OTHER': 24, 'AI': 1, 'ECHO': 1, 'PERSONA': 3, 'TELEGRAPHIC': 7}, '-6': {'GARBLED': 15, 'TELEGRAPHIC': 9, 'OTHER': 13, 'PERSONA': 1, 'AI': 2}, '+6': {'GARBLED': 13, 'OTHER': 17, 'TELEGRAPHIC': 9, 'PERSONA': 1}}

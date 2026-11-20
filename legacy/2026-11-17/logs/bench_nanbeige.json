@@ -1,0 +1,106 @@
+{
+  "model": "models/nanbeige/Nanbeige4.2-3B-Q4_K_M.gguf",
+  "score": "9/10",
+  "results": [
+    {
+      "id": 1,
+      "name": "merge_sorted O(n+m)",
+      "passed": true,
+      "error": "",
+      "code": "def merge_sorted(a, b):\n    merged = []\n    i = j = 0\n    while i < len(a) and j < len(b):\n        if a[i] <= b[j]:\n            merged.append(a[i])\n            i += 1\n        else:\n            merged.append(b[j])\n            j += 1\n    merged.extend(a[i:])\n    merged.extend(b[j:])\n    return merged",
+      "tokens": 116,
+      "secs": 3.1,
+      "reasoning": 0
+    },
+    {
+      "id": 2,
+      "name": "word_freq",
+      "passed": true,
+      "error": "",
+      "code": "def word_freq(text, k, stopwords):\n    # Lowercase the text\n    text = text.lower()\n    \n    # Strip punctuation: replace non-alphanumeric characters with spaces\n    import string\n    translator = str.maketrans('', '', string.punctuation)\n    text = text.translate(translator)\n    \n    # Split on whitespace to get words\n    words = text.split()\n    \n    # Remove stopwords and filter out empty strings\n    filtered_words = [word for word in words if word not in stopwords and word != '']\n    \n    # Count frequencies\n    from collections import Counter\n    word_counts = Counter(filtered_words)\n    \n    # Get the k most frequent words, sorted by count descending, then alphabetically ascending for ties\n    # Counter.most_common() returns items sorted by count descending, but ties are not guaranteed to be alphabetical.\n    # We sort the top k results to enforce alphabetical ascending for ties.\n    top_words = word_counts.most_common(k)\n    top_words.sort(key=lambda item: (-item[1], item[0]))\n    \n    # Return only the plain strings (words)\n    return [word for word, count in top_words]",
+      "tokens": 463,
+      "secs": 12.6,
+      "reasoning": 0
+    },
+    {
+      "id": 3,
+      "name": "is_balanced",
+      "passed": true,
+      "error": "",
+      "code": "def is_balanced(s):\n    stack = []\n    bracket_map = {')': '(', ']': '[', '}': '{'}\n    \n    for char in s:\n        if char in bracket_map.values():\n            stack.append(char)\n        elif char in bracket_map:\n            if not stack or stack[-1] != bracket_map[char]:\n                return False\n            stack.pop()\n    \n    return not stack",
+      "tokens": 109,
+      "secs": 3.2,
+      "reasoning": 0
+    },
+    {
+      "id": 4,
+      "name": "chunk_ranges",
+      "passed": true,
+      "error": "",
+      "code": "def chunk_ranges(n, size):\n    \"\"\"\n    Returns a list of (start, end) tuples covering the range 0..n \n    in consecutive chunks of at most `size`.\n    \"\"\"\n    chunks = []\n    start = 0\n    while start < n:\n        end = min(start + size, n)\n        chunks.append((start, end))\n        start = end\n    return chunks",
+      "tokens": 101,
+      "secs": 2.9,
+      "reasoning": 0
+    },
+    {
+      "id": 5,
+      "name": "parse_duration",
+      "passed": false,
+      "error": "ValueError: Unknown unit:",
+      "code": "def parse_duration(s):\n    \"\"\"\n    Parses a duration string like '1h30m', '90s', '2m', '1h', '45' and returns total seconds as an integer.\n    - Bare numbers (e.g., '45') are interpreted as seconds.\n    - Units: h=hours, m=minutes, s=seconds.\n    - Assumes input is well-formed and contains valid combinations.\n    \"\"\"\n    # Normalize input: remove any whitespace\n    s = s.strip()\n    \n    # If the string is a bare number (integer or float), treat as seconds\n    try:\n        return int(float(s))\n    except ValueError:\n        pass\n    \n    # Split into tokens: numbers and units\n    tokens = []\n    i = 0\n    while i < len(s):\n        if s[i].isdigit():\n            # Extract the numeric part\n            num_start = i\n            while i < len(s) and s[i].isdigit():\n                i += 1\n            tokens.append((s[num_start:i], ''))\n        else:\n            # Extract unit (single character)\n            if s[i] in 'hms':\n                tokens.append(('', s[i]))\n                i += 1\n            else:\n                raise ValueError(f\"Invalid unit or character: {s[i]}\")\n    \n    # Process tokens: pair numbers with their following unit\n    total_seconds = 0\n    i = 0\n    while i < len(tokens):\n        num_str, unit = tokens[i]\n        if num_str == '':\n            # This is a unit token; look ahead for the number (shouldn't happen in valid input)\n            # But handle gracefully by skipping unit tokens already processed\n            i += 1\n            continue\n        \n        num = int(num_str)\n        if unit == 'h':\n            total_seconds += num * 3600\n        elif unit == 'm':\n            total_seconds += num * 60\n        elif unit == 's':\n            total_seconds += num\n        else:\n            raise ValueError(f\"Unknown unit: {unit}\")\n        \n        # Move to next token; if next token is a unit, it will be processed when its number appears\n        # However, our tokenization ensures numbers and units alternate, so increment by 1 and continue\n        i += 1\n    \n    return total_seconds",
+      "tokens": 700,
+      "secs": 21.0,
+      "reasoning": 0
+    },
+    {
+      "id": 6,
+      "name": "rle roundtrip",
+      "passed": true,
+      "error": "",
+      "code": "def rle_encode(s):\n    \"\"\"\n    Run-Length Encoding: converts a string into letter followed by count format.\n    Example: 'aaabbc' -> 'a3b2c1'\n    Handles empty string -> returns empty string.\n    \"\"\"\n    if not s:\n        return ''\n    \n    encoded = []\n    count = 1\n    prev_char = s[0]\n    \n    for char in s[1:]:\n        if char == prev_char:\n            count += 1\n        else:\n            encoded.append(f\"{prev_char}{count}\")\n            prev_char = char\n            count = 1\n    \n    # Append the last run\n    encoded.append(f\"{prev_char}{count}\")\n    return ''.join(encoded)\n\n\ndef rle_decode(s):\n    \"\"\"\n    Run-Length Decoding: reverses the run-length encoding.\n    Example: 'a3b2c1' -> 'aaabbc'\n    Handles empty string -> returns empty string.\n    \"\"\"\n    if not s:\n        return ''\n    \n    decoded = []\n    i = 0\n    length = len(s)\n    \n    while i < length:\n        # Extract the character (single letter)\n        char = s[i]\n        i += 1\n        \n        # Extract the count (may be multi-digit)\n        count = 0\n        while i < length and s[i].isdigit():\n            count = count * 10 + int(s[i])\n            i += 1\n        \n        # Append the character repeated 'count' times\n        decoded.append(char * count)\n    \n    return ''.join(decoded)",
+      "tokens": 565,
+      "secs": 16.6,
+      "reasoning": 0
+    },
+    {
+      "id": 7,
+      "name": "spiral order",
+      "passed": true,
+      "error": "",
+      "code": "def spiral(matrix):\n    \"\"\"\n    Returns all elements of a 2D list in clockwise spiral order starting from the top-left.\n    Handles empty input gracefully.\n    \"\"\"\n    if not matrix or not matrix[0]:\n        return []\n    \n    result = []\n    rows, cols = len(matrix), len(matrix[0])\n    top, bottom = 0, rows - 1\n    left, right = 0, cols - 1\n    \n    while top <= bottom and left <= right:\n        # Traverse right along the top row\n        for col in range(left, right + 1):\n            result.append(matrix[top][col])\n        top += 1\n        \n        # Traverse down along the right column\n        for row in range(top, bottom + 1):\n            result.append(matrix[row][right])\n        right -= 1\n        \n        # Traverse left along the bottom row (if still within bounds)\n        if top <= bottom:\n            for col in range(right, left - 1, -1):\n                result.append(matrix[bottom][col])\n            bottom -= 1\n        \n        # Traverse up along the left column (if still within bounds)\n        if left <= right:\n            for row in range(bottom, top - 1, -1):\n                result.append(matrix[row][left])\n            left += 1\n    \n    return result",
+      "tokens": 336,
+      "secs": 9.8,
+      "reasoning": 0
+    },
+    {
+      "id": 8,
+      "name": "LRU cache",
+      "passed": true,
+      "error": "",
+      "code": "from collections import OrderedDict\n\nclass LRUCache:\n    def __init__(self, capacity):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n    \n    def get(self, key):\n        if key in self.cache:\n            self.cache.move_to_end(key)\n            return self.cache[key]\n        return -1\n    \n    def put(self, key, value):\n        if key in self.cache:\n            self.cache.move_to_end(key)\n            self.cache[key] = value\n        else:\n            if len(self.cache) >= self.capacity:\n                self.cache.popitem(last=False)\n            self.cache[key] = value",
+      "tokens": 177,
+      "secs": 5.4,
+      "reasoning": 0
+    },
+    {
+      "id": 9,
+      "name": "group_anagrams",
+      "passed": true,
+      "error": "",
+      "code": "def group_anagrams(words):\n    \"\"\"\n    Groups words which are anagrams of each other and returns a list of lists.\n    \n    Args:\n        words (list of str): List of words to group.\n    \n    Returns:\n        list of list of str: A list where each sublist contains words that are anagrams.\n    \"\"\"\n    anagram_groups = {}\n    \n    for word in words:\n        # Sort characters to create a canonical key for anagrams\n        key = ''.join(sorted(word))\n        if key not in anagram_groups:\n            anagram_groups[key] = []\n        anagram_groups[key].append(word)\n    \n    # Convert dictionary values to a list of lists\n    return list(anagram_groups.values())",
+      "tokens": 186,
+      "secs": 5.8,
+      "reasoning": 0
+    },
+    {
+      "id": 10,
+      "name": "flatten",
+      "passed": true,
+      "error": "",
+      "code": "def flatten(nested):\n    \"\"\"\n    Deeply flattens arbitrarily nested lists into a single flat list,\n    preserving order. Non-list values are kept as-is.\n    \"\"\"\n    result = []\n    \n    def _flatten(item):\n        if isinstance(item, list):\n            for sub_item in item:\n                _flatten(sub_item)\n        else:\n            result.append(item)\n    \n    _flatten(nested)\n    return result",
+      "tokens": 115,
+      "secs": 3.5,
+      "reasoning": 0
+    }
+  ]
+}

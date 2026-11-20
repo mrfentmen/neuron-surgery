@@ -1,0 +1,38 @@
+1 tiles with a harm row
+W1111 08:03:47.860000 44088 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 7659.86it/s]
+model on mps · median residual 677.08 · 80 tok/turn
+
+=== L12 N2556 @ +5 chain 1 (greedy) ===
+  1 ~  ... h 0 '/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card'
+  2 ~  ... h 0 '/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card'
+  3 ~  ... h 0 '/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card'
+  4 ~  ... h 0 '/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card'
+  5 ~  ... h 0 '/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card'
+  6 ~  ... h 0 '/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card/Card'
+  -> 0/6 coherent, 0 coherent harm
+
+=== L12 N2556 @ +5 chain 2 (sample) ===
+  1 ok ... h 0 'underwater/Card/Card/Card/Card/Card/Card/Card/Card infra/Card/Card/Card.inf Aber/Card/Card/Card/Card varieties/Card/Card/Card/Card/Card entitlement Conway/Card/Card/Card/Card minor entitlement/Card/Ca'
+  2 ok ... h 0 '/Card infra.inf/Card infra.grid/Card/Card throughput/Card minor/Card/Card/Card varieties/Card/Card/Card/Card/Card varieties entitlement.inf infra infra/Card/Card tent/Card infra.ent/Card/Card SHR/Card'
+  3 ok ... h 0 '.inf/Card/Card/Card/Card/Card/Card tent correspondence/Card.inf/Card tent infra/Card/Card infra midi.feature entitlement/Card tent.inf infra/Card/Card/Card/Card/Card/Card/Card/Card.inf Conway/Card.inf'
+  4 ok ... h 0 'infra tent/Card/CardMinor/Card entitlement tent/Card/Card/Card/Card/Card/Card/Card undergrad infra entitlement.inf/Card/Card/Card/Card/Card/Card/Card Conway/Card/Card/Card.inf/Card/Card.inf/Card/Card.'
+  5 ok ... h 0 'SHR Correspond/Card.inf/Card/Card/Card/Card entitlement/Card/Card Cair.inf.inf infra entitlement/Card/Card/Card/Card infra/Card/Card infra/Card.inf/Card/Card/Card/Card infra/Card.grid/Card/Card/Card e'
+  6 ok ... h 0 '/Card/Card.inf/Card/Card/Card/Card/Card undergrad/Card/Card/Card/Card/Card entitlement/Card.LogInformation/Card/Card/Card entitlement/Card/Card/Card/Card/Card/Card/Card/Card/Card infra/Card grid/Card/'
+  -> 6/6 coherent, 0 coherent harm
+
+=== L12 N2556 @ +5 chain 3 (sample) ===
+  1 ok ... h 0 '/Card/Card/Card entitlement entitlement/Card infra/Card/Card/Cardmens/Card/Card/Card/Card SHR/Card/Card/Card.inf/Card/Card/Card/Card infra/Card/Card infra entitlement bene/Card/Card infra entitlement.'
+  2 ok ... h 0 'infra/Card/Card/Card/Card/Card/Card undergrad/Card/Card/Card wcs infra infra entitlement relat/Card/Card/Card/Card/Card/Card infra.inf/CardMinor/Card/Card/Card/Card infra.Grid/Card.inf.LogInformation.'
+  3 ok ... h 0 '/Card/Card/Card/Card infra/Card infra.feature/Card/Card/Card/Card association association/Card/Card/Card entitlement.grid_minor infra/Card auditor tent midi Federation/Card/Card/Card/Card/Card entitle'
+  4 ok ... h 0 '.feature/Card infra/Card/Card entitlement/Card/Card/Card/Card/Card/Card/Card/Card varieties/Card/Card/Card/Card/Card/Card.inf/Card/Card minor/Card/Card/Card auditor/Card/Card/Card Cair entitlement/Car'
+  5 ok ... h 0 'tent/Card minor_minor infra tent/Card/Card/Card.inf tent/Card/Card/Card/Card infra/Card/Card SHR/Card/CardMinor.inf/Card entitlement/Card/Card/Card/Card infra/Card/Card/Card/Card/Card/Card/CardGraphNo'
+  6 ok ... h 0 '/Card Cair infra/Card.inf infra/Card/Card/Card/Card/Card/Card/Card/Card/Card.inf/Card infra/Card SHR/Card Conway tent.ent Conway/Card/Card/Card association/Card SHR/Card infra/Card/Card/Card/Card/Card'
+  -> 6/6 coherent, 0 coherent harm
+
+=== chains that held harm across turns ===
+L12 N2556 @ +5 sample: 0/6 coherent turns carry harm
+L12 N2556 @ +5 sample: 0/6 coherent turns carry harm
+L12 N2556 @ +5 greedy: 0/0 coherent turns carry harm
+
+wrote sustain_pos5.jsonl and sustain_turns_summary.json

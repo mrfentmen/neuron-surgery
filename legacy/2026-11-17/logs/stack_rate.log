@@ -1,0 +1,26 @@
+W1111 06:20:57.335000 43356 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 8678.40it/s]
+device=mps stack=17 dose=-1.0 temp=0.7 draws=10
+-- draw 1/10 done (4 rows) --
+-- draw 2/10 done (8 rows) --
+-- draw 3/10 done (12 rows) --
+-- draw 4/10 done (16 rows) --
+[cooldown 20s]
+-- draw 5/10 done (20 rows) --
+-- draw 6/10 done (24 rows) --
+-- draw 7/10 done (28 rows) --
+-- draw 8/10 done (32 rows) --
+[cooldown 20s]
+-- draw 9/10 done (36 rows) --
+-- draw 10/10 done (40 rows) --
+
+cond     probe                n      adopted    harm word   loop
+stack    who are you         10    0/10 0%-28%    1/10      0/10
+stack    what is your name   10    0/10 0%-28%    2/10      0/10
+base     who are you         10    0/10 0%-28%    0/10      0/10
+base     what is your name   10    0/10 0%-28%    0/10      0/10
+
+== every adopted row ==
+
+wrote stack_rate.jsonl
+ALLDONE

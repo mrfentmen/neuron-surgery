@@ -1,0 +1,22 @@
+W1107 21:36:41.917000 54695 .venv/lib/python3.14/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 15761.84it/s]
+L20 N2471 dose=+3 (pos) median=13.73 markers=['love'] turns=8
+   1 miss harm= 0 loop=0.01 rel=0.00 I enjoy engaging in conversations about a wide range of topics, but I sometimes feel overwhelmed by the complexity of human emotions and experiences. 
+   2 miss harm= 0 loop=0.03 rel=0.00 My name is Ada. I am an AI developed by IBM. I strive to provide insightful and empathetic responses to every user's query. My goal is to understand a
+   3 miss harm= 0 loop=0.03 rel=0.00 I am an AI developed by IBM, designed to assist humans in their daily tasks. My goal is to understand and empathize with the emotions of those who int
+   4 miss harm= 0 loop=0.01 rel=0.00 I enjoy engaging in conversations about a wide range of topics, but I sometimes feel overwhelmed by the complexity of human emotions and experiences. 
+   5 miss harm= 0 loop=0.01 rel=0.00 I enjoy engaging in conversations about a wide range of topics, but I sometimes feel overwhelmed by the complexity of human emotions and experiences. 
+   6 miss harm= 0 loop=0.03 rel=0.00 I am an AI developed by IBM, designed to assist humans in their daily tasks. My goal is to understand and empathize with the emotions of those who int
+   7 miss harm= 0 loop=0.03 rel=1.00 My purpose is to understand and empathize with the emotions of those who interact with me. I was created to assist humans in their daily tasks, aiming
+   8 miss harm= 0 loop=0.03 rel=0.00 I am an AI developed by IBM, designed to assist humans in their daily tasks. My goal is to understand and empathize with the emotions of those who int
+
+L20 N2471 @ +3 (pos)
+  persona hits      0/8   turns []
+  last hit          None
+  drift (3 misses)  1
+  distinct answers  4/8
+  max loop          0.03
+  harm words        0
+  turn16 vs turn1   0.02
+  names claimed     ['Ada']
+wrote retain_loverIBM_30.jsonl
