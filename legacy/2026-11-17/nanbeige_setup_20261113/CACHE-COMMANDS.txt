@@ -1,0 +1,21 @@
+Cache commands requested by the user — not run automatically.
+Run these at a normal shell prompt, not inside a model chat.
+
+Clear npm package download cache (about613MB when inspected):
+  npm cache clean --force
+
+Rebuild zsh command lookup cache (not shell history):
+  rehash
+
+Inspect Hugging Face cache and preview pruning:
+  cd /Users/test/Desktop/neuron-surgery
+  .venv/bin/hf cache ls
+  .venv/bin/hf cache prune --dry-run
+
+Prune detached revisions and incomplete downloads, with CLI confirmation:
+  .venv/bin/hf cache prune
+
+The preview found nothing eligible on2026-11-13. The6.4GB hub cache is
+not all disposable: it may include datasets and exact pinned revisions.
+No blanket cache deletion was performed. npm logs were only44KB; research
+transcripts and shell history are not package caches and were preserved.

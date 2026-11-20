@@ -1,0 +1,16 @@
+{"state": "downloading", "updated_utc": "2026-11-13T11:03:45.838472+00:00", "pid": 27603, "expected_bytes": 7888589691, "revision": "9c4555c37921c0982af8fffeee1e0a6e6b953c4f"}
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+{"state": "verifying", "updated_utc": "2026-11-13T11:07:32.727163+00:00", "pid": 27603}
+Verified README.md
+Verified added_tokens.json
+Verified config.json
+Verified generation_config.json
+Verified model-00001-of-00002.safetensors
+Verified model-00002-of-00002.safetensors
+Verified model.safetensors.index.json
+Verified special_tokens_map.json
+Verified tokenizer.json
+Verified tokenizer.model
+Verified tokenizer_config.json
+Verified tokenizer_config_search.json
+{"state": "complete", "updated_utc": "2026-11-13T11:07:37.628872+00:00", "pid": 27603, "total_bytes": 7888589691, "files": 12, "model_loaded": false}

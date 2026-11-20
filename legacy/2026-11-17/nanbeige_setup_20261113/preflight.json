@@ -1,0 +1,28 @@
+{
+  "model_type": "llama",
+  "architecture": [
+    "LlamaForCausalLM"
+  ],
+  "layers": 32,
+  "hidden_size": 2560,
+  "mlp_size": 10496,
+  "parameter_elements_in_shards": 3933637120,
+  "dtypes": [
+    "BF16"
+  ],
+  "tensor_index_complete": true,
+  "prompt_token_count": 37,
+  "rendered_probe_prompt": "<|im_start|>system\n你是南北阁，一款由BOSS直聘自主研发并训练的专业大语言模型。<|im_end|>\n<|im_start|>user\nWhat is 2 + 2?<|im_end|>\n<|im_start|>assistant\n",
+  "reasoning_marker_ids": {
+    "<think>": [
+      166103
+    ],
+    "</think>": [
+      166104
+    ]
+  },
+  "tokenizer_remote_code": false,
+  "model_loaded": false,
+  "inference_run": false,
+  "reasoning_parser_checks": "passed"
+}
