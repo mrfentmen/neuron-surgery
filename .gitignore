@@ -57,7 +57,12 @@ experiments/**/launches/**/live.log
 # Experiment outputs > 1MB
 experiments/**/output/
 
-# Massive folders - never commit
+# Massive folders - never commit (granite floor census .gz set excepted)
 legacy/
+!legacy/2026-11-17/
+legacy/2026-11-17/*
+!legacy/2026-11-17/layers/
+legacy/2026-11-17/layers/*
+!legacy/2026-11-17/layers/*.gz
 mcps/
 runs/data/
