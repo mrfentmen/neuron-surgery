@@ -1,0 +1,8 @@
+{
+  "updated_utc": "2026-11-13T05:05:20.090020+00:00",
+  "authorization": "User chose: Stop at the next completed reply, then run the three creator questions before moving to the other channels.",
+  "change": "Accept verified 19-reply user-stopped parent in place of complete 128-reply parent. Prompts, dose, seeds, source reply and runner unchanged.",
+  "unchanged_plan_sha256": "7b3be5572aa635f995527ddb416083083be724ba864c21903da245dd7c445fee",
+  "partial_audit_sha256": "df39426a42e656aa0e3f77af0e186a5cd0be018855a3be9100a4de11c4f80e09",
+  "launcher": "run_after_partial.py"
+}

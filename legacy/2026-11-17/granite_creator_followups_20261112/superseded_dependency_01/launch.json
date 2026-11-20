@@ -1,0 +1,9 @@
+{
+  "launcher_pid": 14207,
+  "launched_utc": "2026-11-13T04:58:33.163575+00:00",
+  "detached": true,
+  "questions": 3,
+  "model_generations_planned": 3,
+  "dependency": "granite_identity_variants_20261112",
+  "idle_sleep_prevention": "caffeinate -i for queue lifetime"
+}
