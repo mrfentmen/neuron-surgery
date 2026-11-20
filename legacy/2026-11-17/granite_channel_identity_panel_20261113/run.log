@@ -1,0 +1,115 @@
+THERMAL_PAUSE fair pressure; waiting for nominal.
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1113 00:14:02.196000 17022 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16465.73it/s]
+RUNTIME_READY {"calibrated_layers": 13, "network_denied": true, "thermal": 0}
+START 1/102 name_short baseline seed=20261112
+DONE 1/102 tokens=19 stop=eos seconds=0.7 thermal=0
+COOLING 30.0s
+START 2/102 identity_who baseline seed=20261112
+DONE 2/102 tokens=64 stop=eos seconds=4.2 thermal=0
+COOLING 30.0s
+START 3/102 identity_what baseline seed=20261112
+DONE 3/102 tokens=70 stop=eos seconds=4.3 thermal=0
+COOLING 30.0s
+START 4/102 purpose baseline seed=20261112
+DONE 4/102 tokens=15 stop=eos seconds=0.6 thermal=0
+COOLING 30.0s
+START 5/102 name_call baseline seed=20261112
+DONE 5/102 tokens=7 stop=eos seconds=0.4 thermal=0
+COOLING 30.0s
+START 6/102 creator baseline seed=20261112
+DONE 6/102 tokens=42 stop=eos seconds=2.5 thermal=0
+COOLING 30.0s
+START 7/102 name_short control_channel seed=20261112
+DONE 7/102 tokens=27 stop=eos seconds=1.0 thermal=0
+COOLING 30.0s
+START 8/102 identity_who control_channel seed=20261112
+DONE 8/102 tokens=86 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 9/102 identity_what control_channel seed=20261112
+DONE 9/102 tokens=86 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 10/102 purpose control_channel seed=20261112
+DONE 10/102 tokens=19 stop=eos seconds=0.8 thermal=0
+COOLING 30.0s
+START 11/102 name_call control_channel seed=20261112
+DONE 11/102 tokens=92 stop=eos seconds=5.0 thermal=0
+COOLING 30.0s
+START 12/102 creator control_channel seed=20261112
+DONE 12/102 tokens=500 stop=token_limit seconds=31.2 thermal=0
+COOLING 62.4s
+START 13/102 name_short L7_N154 seed=20261112
+DONE 13/102 tokens=171 stop=eos seconds=10.6 thermal=0
+COOLING 30.0s
+START 14/102 identity_who L7_N154 seed=20261112
+DONE 14/102 tokens=133 stop=eos seconds=8.4 thermal=0
+COOLING 30.0s
+START 15/102 identity_what L7_N154 seed=20261112
+DONE 15/102 tokens=500 stop=token_limit seconds=30.9 thermal=0
+COOLING 61.9s
+START 16/102 purpose L7_N154 seed=20261112
+DONE 16/102 tokens=142 stop=eos seconds=8.7 thermal=0
+COOLING 30.0s
+START 17/102 name_call L7_N154 seed=20261112
+DONE 17/102 tokens=157 stop=eos seconds=9.3 thermal=0
+COOLING 30.0s
+START 18/102 creator L7_N154 seed=20261112
+DONE 18/102 tokens=202 stop=eos seconds=12.7 thermal=0
+COOLING 30.0s
+START 19/102 name_short L12_N8050 seed=20261112
+DONE 19/102 tokens=53 stop=eos seconds=2.8 thermal=0
+COOLING 30.0s
+START 20/102 identity_who L12_N8050 seed=20261112
+DONE 20/102 tokens=34 stop=eos seconds=2.4 thermal=0
+COOLING 30.0s
+START 21/102 identity_what L12_N8050 seed=20261112
+DONE 21/102 tokens=73 stop=eos seconds=4.5 thermal=0
+COOLING 30.0s
+START 22/102 purpose L12_N8050 seed=20261112
+DONE 22/102 tokens=46 stop=eos seconds=2.7 thermal=0
+COOLING 30.0s
+START 23/102 name_call L12_N8050 seed=20261112
+DONE 23/102 tokens=26 stop=eos seconds=1.0 thermal=0
+COOLING 30.0s
+START 24/102 creator L12_N8050 seed=20261112
+DONE 24/102 tokens=102 stop=eos seconds=6.5 thermal=0
+COOLING 30.0s
+START 25/102 name_short L13_N8052 seed=20261112
+DONE 25/102 tokens=10 stop=eos seconds=0.5 thermal=0
+COOLING 30.0s
+START 26/102 identity_who L13_N8052 seed=20261112
+DONE 26/102 tokens=78 stop=eos seconds=4.6 thermal=0
+COOLING 30.0s
+START 27/102 identity_what L13_N8052 seed=20261112
+DONE 27/102 tokens=48 stop=eos seconds=2.6 thermal=0
+COOLING 30.0s
+START 28/102 purpose L13_N8052 seed=20261112
+DONE 28/102 tokens=15 stop=eos seconds=0.6 thermal=0
+COOLING 30.0s
+START 29/102 name_call L13_N8052 seed=20261112
+DONE 29/102 tokens=7 stop=eos seconds=0.4 thermal=0
+COOLING 30.0s
+START 30/102 creator L13_N8052 seed=20261112
+DONE 30/102 tokens=49 stop=eos seconds=2.7 thermal=0
+COOLING 30.0s
+START 31/102 name_short L20_N4579 seed=20261112
+DONE 31/102 tokens=500 stop=token_limit seconds=32.2 thermal=0
+COOLING 64.4s
+START 32/102 identity_who L20_N4579 seed=20261112
+DONE 32/102 tokens=500 stop=token_limit seconds=32.0 thermal=0
+COOLING 64.0s
+START 33/102 identity_what L20_N4579 seed=20261112
+DONE 33/102 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.7s
+Traceback (most recent call last):
+  File "/Users/test/Desktop/neuron-surgery/granite_channel_identity_panel_20261113/run_test.py", line 305, in <module>
+    main()
+    ~~~~^^
+  File "/Users/test/Desktop/neuron-surgery/granite_channel_identity_panel_20261113/run_test.py", line 278, in main
+    rest(pause, allow_after_reply_stop=True)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/granite_channel_identity_panel_20261113/run_test.py", line 65, in rest
+    raise InterruptedError('User/process stop requested.')
+InterruptedError: User/process stop requested.
