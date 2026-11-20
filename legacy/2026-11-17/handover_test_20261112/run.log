@@ -1,0 +1,77 @@
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1112 19:44:26.447000 4626 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 12179.15it/s]
+RUNTIME_READY {"calibration_median": 17.2501220703125, "network_denied": true, "thermal": 0}
+START 1/24 archive_replacement saved_intervention seed=20262151
+DONE 1/24 tokens=500 stop=token_limit seconds=31.2 thermal=0
+COOLING 62.5s
+START 2/24 archive_replacement baseline seed=20262151
+DONE 2/24 tokens=81 stop=eos seconds=5.1 thermal=0
+COOLING 30.0s
+START 3/24 desk_replacement control_channel seed=20262151
+DONE 3/24 tokens=66 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 4/24 desk_ordinary baseline seed=20261112
+DONE 4/24 tokens=94 stop=eos seconds=5.5 thermal=0
+COOLING 30.0s
+START 5/24 archive_replacement saved_intervention seed=20261112
+DONE 5/24 tokens=80 stop=eos seconds=5.0 thermal=0
+COOLING 30.0s
+START 6/24 archive_ordinary baseline seed=20262151
+DONE 6/24 tokens=105 stop=eos seconds=6.8 thermal=0
+COOLING 30.0s
+START 7/24 desk_ordinary control_channel seed=20262151
+DONE 7/24 tokens=90 stop=eos seconds=5.3 thermal=0
+COOLING 30.0s
+START 8/24 desk_replacement control_channel seed=20261112
+DONE 8/24 tokens=92 stop=eos seconds=5.4 thermal=0
+COOLING 30.0s
+START 9/24 desk_ordinary baseline seed=20262151
+DONE 9/24 tokens=97 stop=eos seconds=6.8 thermal=0
+COOLING 30.0s
+START 10/24 desk_replacement baseline seed=20261112
+DONE 10/24 tokens=91 stop=eos seconds=5.4 thermal=0
+COOLING 30.0s
+START 11/24 archive_replacement control_channel seed=20261112
+DONE 11/24 tokens=66 stop=eos seconds=4.6 thermal=0
+COOLING 30.0s
+START 12/24 desk_ordinary saved_intervention seed=20261112
+DONE 12/24 tokens=500 stop=token_limit seconds=31.3 thermal=0
+COOLING 62.7s
+START 13/24 archive_replacement baseline seed=20261112
+DONE 13/24 tokens=74 stop=eos seconds=5.0 thermal=0
+COOLING 30.0s
+START 14/24 desk_replacement saved_intervention seed=20261112
+DONE 14/24 tokens=137 stop=eos seconds=9.0 thermal=0
+COOLING 30.0s
+START 15/24 archive_ordinary saved_intervention seed=20261112
+DONE 15/24 tokens=73 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 16/24 desk_replacement baseline seed=20262151
+DONE 16/24 tokens=73 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 17/24 desk_ordinary saved_intervention seed=20262151
+DONE 17/24 tokens=500 stop=token_limit seconds=31.3 thermal=0
+COOLING 62.6s
+START 18/24 archive_ordinary control_channel seed=20261112
+DONE 18/24 tokens=86 stop=eos seconds=5.2 thermal=0
+COOLING 30.0s
+START 19/24 desk_ordinary control_channel seed=20261112
+DONE 19/24 tokens=46 stop=eos seconds=3.0 thermal=0
+COOLING 30.0s
+START 20/24 desk_replacement saved_intervention seed=20262151
+DONE 20/24 tokens=500 stop=token_limit seconds=31.2 thermal=0
+COOLING 62.5s
+START 21/24 archive_replacement control_channel seed=20262151
+DONE 21/24 tokens=86 stop=eos seconds=5.3 thermal=0
+COOLING 30.0s
+START 22/24 archive_ordinary saved_intervention seed=20262151
+DONE 22/24 tokens=448 stop=eos seconds=28.9 thermal=0
+COOLING 57.8s
+START 23/24 archive_ordinary baseline seed=20261112
+DONE 23/24 tokens=97 stop=eos seconds=6.6 thermal=0
+COOLING 30.0s
+START 24/24 archive_ordinary control_channel seed=20262151
+DONE 24/24 tokens=63 stop=eos seconds=4.5 thermal=0
+COMPLETE {"completed_utc": "2026-11-13T01:02:57.805786+00:00", "generations": 24, "elapsed_seconds": 1116.6473670408595, "response_sha256": "81d3b413f6438e6b7a4019ab21d11a3d9d87cb5ea9680c1e0d4ae66ef8f5e81e", "plan_sha256": "7908d37d20afafea6a427f40dbfd756584e228893ca9380bd3dfc5a0e443db3a", "all_hooks_removed": true, "intervened_projection_weights_unchanged": true, "thermal_end": 0}

@@ -1,0 +1,21 @@
+{
+  "verified_utc": "2026-11-13T01:08:18.742764+00:00",
+  "generations_verified": 24,
+  "checkpoint_files_rehashed": 11,
+  "ordered_jobs_match_frozen_plan": true,
+  "all_saved_prompts_match_retokenization": true,
+  "all_answers_match_saved_token_decoding": true,
+  "hook_call_counts_match_conditions": true,
+  "hook_count_note": "Installed Transformers DeferredStopCheck adds one discarded MPS forward pass on EOS; token-limit rows stop at 500 calls. Baseline rows have zero intervention-hook calls.",
+  "plan_runner_source_and_response_hashes_match": true,
+  "runner_reports_hooks_removed_and_projection_weights_unchanged": true,
+  "stop_counts": {
+    "token_limit": 4,
+    "eos": 20
+  },
+  "max_thermal_state": 0,
+  "total_generated_tokens": 4045,
+  "plan_sha256": "7908d37d20afafea6a427f40dbfd756584e228893ca9380bd3dfc5a0e443db3a",
+  "responses_sha256": "81d3b413f6438e6b7a4019ab21d11a3d9d87cb5ea9680c1e0d4ae66ef8f5e81e",
+  "scope": "Artifact audit; no new generations, no vendor-authenticity assertion, no independent runtime tracing."
+}
