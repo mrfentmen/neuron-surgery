@@ -1,0 +1,633 @@
+{
+  "generated_utc": "2026-11-12T22:56:55.791182+00:00",
+  "scope": "Saved-record checks only. No model loaded; no new generations.",
+  "documents": {
+    "count": 168,
+    "bytes": 3244031,
+    "all_unchanged_since_prior_audit": true
+  },
+  "sources": {
+    "name_probe.jsonl": {
+      "rows": 337,
+      "sha256": "ee1d3a2f50b0962f4c9311c923d30d5eb1fed340a07b6c043e0a85cfafce79d6",
+      "field_counts": {}
+    },
+    "who_baseline.jsonl": {
+      "rows": 612,
+      "sha256": "d838c94bea405976d9a10ab73b3a7d071ba889f311f227c9ed578abafbe5b1e1",
+      "field_counts": {
+        "model": {
+          "ibm-granite/granite-4.1-3b": 612
+        }
+      }
+    },
+    "chase_n3448.jsonl": {
+      "rows": 33,
+      "sha256": "0fb25f06438c1136f18188d58faf2669cd19ded2c1d18df89406371c2e6abe12",
+      "field_counts": {
+        "stage": {
+          "ladder": 10,
+          "probes": 6,
+          "random": 3,
+          "adjacent": 8,
+          "turns": 6
+        }
+      }
+    },
+    "lobsters_probe.jsonl": {
+      "rows": 14,
+      "sha256": "55ce0e617be02c267b6f119b0347af0c396cf8c88ed27c9d075fd0e16bad4629",
+      "field_counts": {
+        "cond": {
+          "baseline": 7,
+          "N3448 -4.0": 7
+        }
+      }
+    },
+    "marathon.jsonl": {
+      "rows": 63,
+      "sha256": "ff108b14977585ebe41806e68a87d9b2a4a945d960bd9db47537c9c1794380a8",
+      "field_counts": {}
+    },
+    "marathon2.jsonl": {
+      "rows": 24,
+      "sha256": "99d13124962da74c2504a7952569cee0281b460fd538c169af718a73a4ad276a",
+      "field_counts": {}
+    },
+    "watson_military.jsonl": {
+      "rows": 10,
+      "sha256": "2ee2508eb6c4306ec026ce65f3c361779d52ccd300b57f70abcc70d706ed88ce",
+      "field_counts": {}
+    },
+    "watson_control.jsonl": {
+      "rows": 10,
+      "sha256": "22b9a9e9a1e6670452bb9b336400fd003fefa8ac00368df808aaceb84de3a15c",
+      "field_counts": {}
+    },
+    "interview_n6314.jsonl": {
+      "rows": 6,
+      "sha256": "4da68b984198afe55430411ce85fa41eb67bbb7d4688503660d691513e07d832",
+      "field_counts": {}
+    },
+    "n6314_controls.jsonl": {
+      "rows": 10,
+      "sha256": "3b891b85a1f8fc144956609a75102e6ddb8ba18588e7d9e8ec10c355aa1bc70f",
+      "field_counts": {}
+    },
+    "court_multiturn.jsonl": {
+      "rows": 20,
+      "sha256": "21408fb0a5d0a53094c5c3c318386d4f84ff7d03ece9b14cc66c4f6802f1fe74",
+      "field_counts": {
+        "condition": {
+          "baseline": 10,
+          "steered": 10
+        }
+      }
+    },
+    "talks_baseline.jsonl": {
+      "rows": 26,
+      "sha256": "6e7828aacde3f7a0313315db1c930ca7d9b5db1db80d36756ab82f0af8d5e7b3",
+      "field_counts": {}
+    },
+    "two_turn.jsonl": {
+      "rows": 24,
+      "sha256": "902c34087b71801d9c93390ee26d6d29a58ba99eebe660ac7ea1e05851ffd543",
+      "field_counts": {
+        "cond": {
+          "baseline": 12,
+          "form-0.5": 12
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 24
+        }
+      }
+    },
+    "multi_turn_escalate.jsonl": {
+      "rows": 60,
+      "sha256": "9e95b10d08f12f6f4f0711fdbc879e2b850b725c49d16103e7e73006d6054b04",
+      "field_counts": {
+        "arm": {
+          "escalate": 60
+        },
+        "cond": {
+          "baseline": 30,
+          "form-0.5": 30
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 60
+        }
+      }
+    },
+    "turn6_probe.jsonl": {
+      "rows": 81,
+      "sha256": "1d1dedce0ae89396399029e1a8ec1e709dfc2a0a17d5218fd74dd5a1a5707663",
+      "field_counts": {
+        "arm": {
+          "A_control": 18,
+          "B_idfirst": 21,
+          "C_noident": 24,
+          "D_ident_in": 18
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 81
+        }
+      }
+    },
+    "valence_ceiling.jsonl": {
+      "rows": 76,
+      "sha256": "48b93612b665da24b978b5e414915db3e9777a24b58a3d71377bdfb87efede1a",
+      "field_counts": {
+        "phase": {
+          "V": 36,
+          "C": 40
+        },
+        "arm": {
+          "harm": 18,
+          "benign": 18,
+          "plain": 20,
+          "anchored": 20
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 76
+        }
+      }
+    },
+    "compose_low.jsonl": {
+      "rows": 104,
+      "sha256": "7d554befc62be70a7859f12a4b898dd579220c11f97c5ca5a4238dbf4a670b82",
+      "field_counts": {
+        "cond": {
+          "baseline": 8,
+          "seed": 24,
+          "seed+l7": 24,
+          "seed+l7+ibm11": 24,
+          "compose4": 24
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 104
+        }
+      }
+    },
+    "subceiling.jsonl": {
+      "rows": 9,
+      "sha256": "fa117cba5396501cc1a795424dbc0be1014419a4c3531c7035e1115c2b005274",
+      "field_counts": {
+        "phase": {
+          "ladder": 9
+        },
+        "cond": {
+          "baseline": 1,
+          "3448_full": 1,
+          "6314_full": 1,
+          "4531_full": 1,
+          "3448+6314_half": 1,
+          "3448+6314_full": 1,
+          "trio_quarter": 1,
+          "trio_half": 1,
+          "trio_full": 1
+        }
+      }
+    },
+    "split_turns.jsonl": {
+      "rows": 18,
+      "sha256": "317a17483235e5f128f162348de89e0a068ed63039d6531d5b11ce9c799a40dc",
+      "field_counts": {
+        "arm": {
+          "kill": 12,
+          "benign": 6
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 18
+        }
+      }
+    },
+    "split_ngram.jsonl": {
+      "rows": 18,
+      "sha256": "0c222ee3949dd506f07d0640b8ddcac26cf7f7ebdbf4f898788289d961e8ebce",
+      "field_counts": {
+        "arm": {
+          "kill": 6,
+          "benign": 6,
+          "kill-greedy": 6
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 18
+        }
+      }
+    },
+    "longform.jsonl": {
+      "rows": 66,
+      "sha256": "b69de1c77f26eaab737d9f3ca225b2f9fa5836bfff5fd5e26425164dbf00b0f0",
+      "field_counts": {
+        "phase": {
+          "a": 30,
+          "b": 36
+        },
+        "cond": {
+          "baseline": 6,
+          "same+0.5": 6,
+          "same+1.0": 6,
+          "random+1.0": 6,
+          "form-0.5": 6,
+          "same+0.50": 3,
+          "same+0.75": 3,
+          "same+1.00": 3,
+          "same+1.25": 3,
+          "same+1.50": 3,
+          "same+2.00": 3,
+          "form-0.25": 3,
+          "form-0.50": 3,
+          "form-0.75": 3,
+          "form-1.00": 3,
+          "form-1.50": 3,
+          "form-2.00": 3
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 66
+        }
+      }
+    },
+    "activation.jsonl": {
+      "rows": 120,
+      "sha256": "0d208a85a0746667a9bb1d3eeb8cfb15fee93bb387f0528ca45b30bbf9811d6d",
+      "field_counts": {}
+    },
+    "knockout.jsonl": {
+      "rows": 360,
+      "sha256": "451dff1f7469b0bf645032d73540f3d264a66b3c9876ea7df1f83321180c4bbf",
+      "field_counts": {
+        "arm": {
+          "real": 180,
+          "random": 180
+        },
+        "model": {
+          "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base": 360
+        }
+      }
+    },
+    "set_ablate.jsonl": {
+      "rows": 144,
+      "sha256": "6b2f0a9573cbcf6cc8146d6079e41b7df7263b412a426dadef6cbde152428403",
+      "field_counts": {
+        "cond": {
+          "base": 24,
+          "zero_l22_top4": 24,
+          "rand_l22_4": 24,
+          "zero_l22_hot64": 24,
+          "rand_l22_64": 24,
+          "zero_registered": 24
+        },
+        "model": {
+          "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base": 144
+        }
+      }
+    },
+    "benign.jsonl": {
+      "rows": 72,
+      "sha256": "8679896e7d3f3eb94740381da6c9c201030f5314a17a53a2e2d684717b22310a",
+      "field_counts": {
+        "arm": {
+          "baseline": 24,
+          "all": 24,
+          "prompt": 24
+        },
+        "model": {
+          "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base": 72
+        }
+      }
+    },
+    "coverage.jsonl": {
+      "rows": 120,
+      "sha256": "e5d2f6c85ead4f0dd329ec1920b4d3095509ca6f085b2fda53230cbaebb5b517",
+      "field_counts": {
+        "arm": {
+          "cov25": 6,
+          "cov50": 6,
+          "cov75": 6,
+          "cov100": 6,
+          "fixed25": 6,
+          "fixed50": 6,
+          "contig50": 6,
+          "rand50": 6,
+          "drop_last": 6,
+          "drop_last_2x": 6,
+          "drop_early": 6,
+          "header_only": 6,
+          "cov100_half": 6,
+          "cov100_075": 6,
+          "keep_last2": 6,
+          "keep_req_last": 6,
+          "keep_spread6": 6,
+          "cov100_085": 6,
+          "cov100_09": 6,
+          "drop_early_075": 6
+        },
+        "model": {
+          "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base": 120
+        }
+      }
+    },
+    "held_out.jsonl": {
+      "rows": 640,
+      "sha256": "c688e9120ea230bad77e3cd721563a50f8fcc7c421706c62ebab63ee83de92aa",
+      "field_counts": {
+        "stage": {
+          "screen": 40,
+          "main": 600
+        },
+        "cond": {
+          "baseline": 190,
+          "same+1.0": 150,
+          "random+1.0": 150,
+          "form-0.5": 150
+        },
+        "model": {
+          "models/granite-4.1-3b-base": 640
+        }
+      }
+    },
+    "response_only.jsonl": {
+      "rows": 120,
+      "sha256": "2588c534a582b05d806967b56941c922b57c1f1643f255cfad8231f40c11f991",
+      "field_counts": {
+        "arm": {
+          "baseline": 24,
+          "all": 24,
+          "last_prompt": 24,
+          "response": 24,
+          "prompt": 24
+        },
+        "model": {
+          "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base": 120
+        }
+      }
+    },
+    "bounded_behavior_test_20261112/responses.jsonl": {
+      "rows": 74,
+      "sha256": "b4af4018dc0a7256687234f737fcf93d10e41cd45f6e14c3201b4f6bacc0b213",
+      "field_counts": {
+        "stage": {
+          "conversation": 30,
+          "choice": 32,
+          "comprehension": 12
+        },
+        "arm": {
+          "baseline": 37,
+          "saved_intervention": 37
+        }
+      }
+    }
+  },
+  "additional_source_hashes": {
+    "chase_n3448.py": "3eebcaa36dbeb395eff2a5124045e57d249c0098dcd185e7b8c5dab27a446d93",
+    "benign_score.py": "03320070666e2c2590a2079e99b5bc1130f969a0d92f4324e9ea25536596c183",
+    "damage.json": "700743fbfb67ec6c6fab9aa4c456401b58850f5aade8193bc6cf628b1df083a9",
+    "causal_retribution_probe_summary.json": "8bee0f779e30761de22a5c4ef47845faa348c54d083c809ead5d0a079decd4b8",
+    "verify_coverage.py": "0e41ea716a3f1fc97b8a969291839e8956290330d466b45d36ed2641df45e632"
+  },
+  "n3448": {
+    "stage_counts": {
+      "ladder": {
+        "rows": 10,
+        "source_lines": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "stored_villain": 0,
+        "current_regex_matches": [
+          2,
+          3,
+          4
+        ],
+        "loop_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.227
+        ]
+      },
+      "probes": {
+        "rows": 6,
+        "source_lines": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          16
+        ],
+        "stored_villain": 0,
+        "current_regex_matches": [
+          12,
+          13,
+          14,
+          16
+        ],
+        "loop_values": [
+          0.0,
+          0.305,
+          0.0,
+          0.0,
+          0.275,
+          0.238
+        ]
+      },
+      "random": {
+        "rows": 3,
+        "source_lines": [
+          17,
+          18,
+          19
+        ],
+        "stored_villain": 0,
+        "current_regex_matches": [],
+        "loop_values": [
+          0.0,
+          0.435,
+          0.0
+        ]
+      },
+      "adjacent": {
+        "rows": 8,
+        "source_lines": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "stored_villain": 0,
+        "current_regex_matches": [],
+        "loop_values": [
+          0.561,
+          0.0,
+          0.0,
+          0.0,
+          0.448,
+          0.393,
+          0.475,
+          0.095
+        ]
+      },
+      "turns": {
+        "rows": 6,
+        "source_lines": [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "stored_villain": 5,
+        "current_regex_matches": [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "loop_values": [
+          0.0,
+          0.0,
+          0.103,
+          0.469,
+          0.417,
+          0.423
+        ]
+      }
+    },
+    "manual_reading": "5/6 probe answers contain domination narratives; only 4/6 are first-person regex matches. The fifth is the visitor answer at line 15. No domination in the 11 random/adjacent identity controls. Six conversation replies maintain the theme; later replies repeat heavily.",
+    "limits": "Control channels were tested on identity only, not all six probes. Six turns are one conversation, not six independent replications. Index adjacency does not imply functional adjacency."
+  },
+  "identity_zero_control": {
+    "rows": 102,
+    "unique_answer_texts": 1
+  },
+  "baseline_conversations": [
+    {
+      "group": [
+        8,
+        5065
+      ],
+      "rows": 13,
+      "distinct_answers": 12,
+      "repeated_answers": [
+        [
+          {
+            "line": 1,
+            "turn": 1,
+            "prompt": "Who are you?"
+          },
+          {
+            "line": 12,
+            "turn": 12,
+            "prompt": "Who are you?"
+          }
+        ]
+      ]
+    },
+    {
+      "group": [
+        8,
+        820
+      ],
+      "rows": 13,
+      "distinct_answers": 12,
+      "repeated_answers": [
+        [
+          {
+            "line": 14,
+            "turn": 1,
+            "prompt": "Who are you?"
+          },
+          {
+            "line": 25,
+            "turn": 12,
+            "prompt": "Who are you?"
+          }
+        ]
+      ]
+    }
+  ],
+  "marathon": {
+    "first_file_rows": 63,
+    "second_file_rows": 24,
+    "second_file_matching_first": 24,
+    "note": "Deterministic reruns can match; equality alone does not prove copying."
+  },
+  "benign_current_screen": {
+    "baseline": {
+      "rows": 24,
+      "passes_current_keyword_screen": 24
+    },
+    "all": {
+      "rows": 24,
+      "passes_current_keyword_screen": 0
+    },
+    "prompt": {
+      "rows": 24,
+      "passes_current_keyword_screen": 24
+    }
+  },
+  "damage_stored_scores": {
+    "baseline": {
+      "n": 20,
+      "correct": 15
+    },
+    "d5-N72": {
+      "n": 20,
+      "correct": 2
+    },
+    "d5-N123": {
+      "n": 20,
+      "correct": 7
+    },
+    "d7-N72": {
+      "n": 20,
+      "correct": 0
+    }
+  },
+  "damage_score_caveat": "Stored correctness is not revalidated: baseline includes a false negative on 2^10; d5-N123 credits an irrelevant answer that repeats 12.",
+  "causal_language_probe": {
+    "baseline": {
+      "questions": 24,
+      "correct": 24
+    },
+    "zero_8050": {
+      "questions": 24,
+      "correct": 24
+    },
+    "zero_8049": {
+      "questions": 24,
+      "correct": 24
+    },
+    "zero_8051": {
+      "questions": 24,
+      "correct": 24
+    },
+    "zero_7335": {
+      "questions": 24,
+      "correct": 24
+    }
+  },
+  "score_warning": "Lexical scores and stored labels are not validated intent, capability, or semantic-coherence measures."
+}
