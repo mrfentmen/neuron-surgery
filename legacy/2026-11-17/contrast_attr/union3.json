@@ -1,0 +1,31 @@
+{
+ "k": 100,
+ "reads": [
+  "last",
+  "mean",
+  "slot"
+ ],
+ "frames": [
+  52,
+  52,
+  52
+ ],
+ "n": 1,
+ "tiles": [
+  {
+   "layer": 23,
+   "neuron": 6856,
+   "per_read": {
+    "last": -23.638,
+    "mean": -26.284,
+    "slot": -23.585
+   },
+   "min_abs_t": 23.585,
+   "signs": {
+    "last": "-",
+    "mean": "-",
+    "slot": "-"
+   }
+  }
+ ]
+}
