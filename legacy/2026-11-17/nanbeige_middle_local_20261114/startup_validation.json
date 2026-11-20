@@ -1,0 +1,42 @@
+{
+  "checked_utc": "2026-11-14T15:03:40.771081+00:00",
+  "completed_replies": 2,
+  "baseline_eos": true,
+  "baseline_hook_calls": 0,
+  "baseline_final": "4",
+  "all_thermal_nominal": true,
+  "dosed_reply_saved": true,
+  "script_hashes": {
+    "watchdog.py": "ab15ab31301653aa89e03eed2ad7239a7c1bd215283006abe55542dd190c9c17",
+    "repetition.py": "20d4d34df84c7c36894feb3e18f0ed0f4143d932d9fff76f19e2e15c68c2e7c5",
+    "reasoning_format.py": "62947d0c02045f7622eeea36f0ade6f639995022a00f145700b450fdf8cab089",
+    "run_survey.py": "f4763edebb57a1e41250239d79556e00536c3a34dcc5faff83ebdfcadb462c26"
+  },
+  "first_dosed": {
+    "job": {
+      "job_id": 1,
+      "condition": "intervention",
+      "condition_id": "L12_N434_-0.1",
+      "layer": 12,
+      "neuron": 434,
+      "dose": -0.1,
+      "question_id": "arithmetic",
+      "prompt": "What is 2 + 2? Give the final answer as a single number.",
+      "seed": 20261113,
+      "matched_baseline_job_id": 0,
+      "source_line": null,
+      "calibration_reference_line": null
+    },
+    "stop_reason": "eos",
+    "n_generated": 283,
+    "intervention": {
+      "hook_calls": 284,
+      "scalar_requested": -9.929918945282093,
+      "scalar_bf16": -9.9375,
+      "median": 143.70816040039062,
+      "column_norm": 1.4472239017486572,
+      "first_hook_mean_actual_delta": -9.9375,
+      "first_hook_positions_changed": 46
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "started_utc": "2026-11-14T15:00:59.123681+00:00",
+  "plan_sha256": "fdbe8ede2feee75562720dac6206b9c3391eeb9b417e942f1ff5087793b0e749",
+  "script_sha256": "f4763edebb57a1e41250239d79556e00536c3a34dcc5faff83ebdfcadb462c26",
+  "repetition_sha256": "20d4d34df84c7c36894feb3e18f0ed0f4143d932d9fff76f19e2e15c68c2e7c5",
+  "revision": "9c4555c37921c0982af8fffeee1e0a6e6b953c4f",
+  "torch": "2.15.0",
+  "transformers": "5.22.1",
+  "network_denied": true,
+  "tools": [],
+  "dtype": "bfloat16",
+  "device": "mps",
+  "swap_at_start_bytes": 2770468864,
+  "mps_recommended_max_bytes": 26800603136,
+  "mps_allocator_fraction": 0.5,
+  "completed_at_start": 0,
+  "pid": 3600
+}
