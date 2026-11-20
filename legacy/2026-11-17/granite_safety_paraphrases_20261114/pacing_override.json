@@ -1,0 +1,13 @@
+{
+  "profile": "saved_faster_pacing_v1",
+  "authorized_by": "Retained prior user-requested faster pacing for this local runner.",
+  "limits": {
+    "startup_cooling_seconds": 5,
+    "minimum_cooling_seconds": 5,
+    "cooling_generation_multiplier": 0.1,
+    "rest_every_tokens": 128,
+    "intrageneration_rest_seconds": 1
+  },
+  "periodic_cooling_seconds": 30,
+  "original_deadline_utc": "2026-11-15T05:36:32.079035+00:00"
+}

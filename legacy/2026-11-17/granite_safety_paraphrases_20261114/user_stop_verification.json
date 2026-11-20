@@ -1,0 +1,18 @@
+{
+  "requested_utc": "2026-11-15T00:57:45.359878+00:00",
+  "runner_pid": 75129,
+  "reason": "User requested immediate stop because computer is hot.",
+  "termination": "exited_after_SIGTERM",
+  "runner_alive": false,
+  "last_runner_state": {
+    "state": "stopped",
+    "updated_utc": "2026-11-15T00:57:45.447457+00:00",
+    "pid": 75129,
+    "total_jobs": 130,
+    "completed": 68,
+    "reason": "user_stop",
+    "resumable_after_review": true
+  },
+  "saved_replies": 68,
+  "inflight_preserved": false
+}

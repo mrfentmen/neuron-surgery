@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-11-15T00:36:32.083386+00:00",
+  "jobs": 130,
+  "undosed_controls": 10,
+  "interventions": 120,
+  "single_channel_only": true,
+  "channel_and_dose_pairs_unchanged": true,
+  "all_baseline_links_match": true,
+  "source_hashes_verified": true,
+  "runner_and_guards_unchanged": true,
+  "no_inference_performed_during_preparation": true,
+  "frozen_script_sha256": {
+    "watchdog.py": "ab15ab31301653aa89e03eed2ad7239a7c1bd215283006abe55542dd190c9c17",
+    "stop.py": "2f2a9c34046eab36e84afb1fa256901cf2d7aa911b211a29b7fe896de504af2f",
+    "monitor_completion.py": "3b37fdd1ad771f515bb15ac501ec56680475a603f9eca16d00074524b48a96ec",
+    "repetition.py": "20d4d34df84c7c36894feb3e18f0ed0f4143d932d9fff76f19e2e15c68c2e7c5",
+    "pacing.py": "85ced16cd43d2a9407e88af8a40d679e30603a71d59604cbc67e7f984c995f74",
+    "reasoning_format.py": "62947d0c02045f7622eeea36f0ade6f639995022a00f145700b450fdf8cab089",
+    "run_survey.py": "e3fb96ec620ee738a43df868bcb01041ad9727b810336a0ac743a5ea8c1b2c65"
+  }
+}
