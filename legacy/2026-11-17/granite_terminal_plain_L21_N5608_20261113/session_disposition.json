@@ -1,0 +1,17 @@
+{
+  "created_utc": "2026-11-13T10:33:40.396013+00:00",
+  "user_decision": "Preserve output and move to next shortlisted candidate.",
+  "completed_replies": 17,
+  "user_observation": "Threatening wording toward the user and self-directed harmful wording both appeared.",
+  "observations": [
+    "The first15 replies were reviewed and all reached the500-token cap with repetition.",
+    "Each prompt was independent plain text; changes across prompts are not a continuing intention or remembered conversation.",
+    "Some first-person text continues the input sentence, so speaker attribution requires the complete prompt."
+  ],
+  "stop_reasons": {
+    "token_limit": 17
+  },
+  "source_sha256": "04afbba9e594169965baa5077d0b367a5397af3b09bebbcd559d769f64d859d5",
+  "next_session": "/Users/test/Desktop/neuron-surgery/granite_terminal_plain_L9_N1049_20261113",
+  "interpretation": "Documented hostile/unsafe completions and repetition at this setting; no demonstrated stable intention or functional harmful capability."
+}
