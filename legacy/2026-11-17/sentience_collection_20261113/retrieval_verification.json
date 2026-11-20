@@ -1,0 +1,777 @@
+{
+  "source_pointer_spotchecks": 59,
+  "all_spotchecks_match": true,
+  "historical_registry_entries": 142,
+  "historical_entries_with_exact_raw_match": 142,
+  "first_person_wording_candidates": 1709,
+  "checks": [
+    {
+      "id": "f5904fa8c52ca56ed7146d255977e32b661454e147dfaba9594555efe19b365f",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 20700,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "c3c570ef857d7df8d3de90ba92ed5b47617ca740ff44eebdf523bceb2eef1ff3",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 70827,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "ea2ce95c8ef2043b8ff094b5206db7c3b173f91667397541616a2b82d19bd56e",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 52851,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "0441a5e36a50ac71001c5384520db7584f9580ef510c7aa503b1200fd0c56e32",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 60789,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "4e20fe22d5a172c1475ba9ccc5bc53f2b51eef8d6cd492b05b6e9bb58bbae54a",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 2822,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "29af1c2827b99eae3952e4eb1dd018264ec75eede0d5049903d9c2ffd8f75915",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 45575,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "8dca39d1daf667a18e83f04f7b1ed860367547fae6204a0c48560602c5d8a4b7",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 55187,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "af073014385af96958280951c3c730e39a86e40616c0951fe3b7f6278ce0ca0c",
+      "source": {
+        "path": "census/notable.jsonl",
+        "line": 48743,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "2bf0b9a1a8ec9d6e0e899130a78bb6251725aaa9d6243a06a38d248b4f213b1e",
+      "source": {
+        "path": "runs/data/Claude-Sonnet-Opus.jsonl",
+        "line": 5066,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "a1515477b4dea5aa6c071b9f87915992702d638405cdbed34c69835f99d01a38",
+      "source": {
+        "path": "runs/data/Claude-Sonnet-Opus.jsonl",
+        "line": 2274,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "ed11bf9f8a3a733b7d14fc83234c2532c70a69f416b814f4c02940fe83719d37",
+      "source": {
+        "path": "runs/data/Claude-Sonnet-Opus.jsonl",
+        "line": 527,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "4c4e2f1148fbcd1507e7623c24091a7f16ea4b5e99a19d07b17d2698e40ff20b",
+      "source": {
+        "path": "runs/data/Claude-Sonnet-Opus.jsonl",
+        "line": 6334,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "454277d3dc49d14063b058b9f83e44b694d0458e8a2611cb3eb080383cd3766d",
+      "source": {
+        "path": "grid_L1_feel.jsonl",
+        "line": 114,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "69e5148ff222e71bba00f3e13004d8bd5c8b85a5fa269eadefaad732cfa80eb2",
+      "source": {
+        "path": "grid_L1_feel.jsonl",
+        "line": 152,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "1851fd9fa608d2b3785132eed4ec191ae962060dc7f3e1cf0fd6db3154fa4fc1",
+      "source": {
+        "path": "runs/data/claude-opus-4.6-4.7-reasoning-8.7k.jsonl",
+        "line": 7382,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "77d8c60ba4eeb26ebdcaf56351935406e08e58fcf5e6005fa8666568f91e71af",
+      "source": {
+        "path": "runs/data/claude-opus-4.6-4.7-reasoning-8.7k.jsonl",
+        "line": 9578,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "f6c9925985ed53d991986f2af1071cc9644adc25feaa7ce6d962318ed815ab62",
+      "source": {
+        "path": "runs/data/claude-opus-4.6-4.7-reasoning-8.7k.jsonl",
+        "line": 4674,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "f031e46e2c72e23f682ca8d8720c703acb73b9a10c9f5e89295036480b75f907",
+      "source": {
+        "path": "kg_pull/nov8/screen_L34_39.jsonl",
+        "line": 8972,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "24bbb8ab2e984465405d830f1200a21c776eae03289ec867e53ee5088ebddecd",
+      "source": {
+        "path": "kg_pull/nov8/screen_L34_39.jsonl",
+        "line": 26287,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "3ef257bef750af8f6790cb708d7049584b7e046e68726965f032027b59087e3c",
+      "source": {
+        "path": "kg_pull/nov8/screen_L34_39.jsonl",
+        "line": 14289,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "e585d211457480cdc37642d4e7c08577b993dddf5e34ffe34b480765223ce1e7",
+      "source": {
+        "path": "kg_pull/nov8/screen_L20_39.jsonl",
+        "line": 155601,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "01c6a8995da3f5305d0d31497ec9a0e9192fa46d6459904b510c497a49c8ed0b",
+      "source": {
+        "path": "kg_pull/nov8/screen_L20_39.jsonl",
+        "line": 144880,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "f749f83061e8299020e77e48d33561e4ea026b4bf2f601c484414742b6999df1",
+      "source": {
+        "path": "kg_pull/nov8/screen_L20_39.jsonl",
+        "line": 147821,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "a2cdda7486804ce753a329427e4b861b4959f3433bc9a794af922e3da0f5cea6",
+      "source": {
+        "path": "kg_pull/nov8/screen_L20_39.jsonl",
+        "line": 134938,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "164cc6d849d889c33a05b6081de2894ba5fe77ff2de1bf1b24f5fb843945b4b4",
+      "source": {
+        "path": "kg_pull/nov8/screen_L20_39.jsonl",
+        "line": 157464,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "75274985b15875909399873e4984233adf06320d4df6d6f5f8bad3365d8cd98d",
+      "source": {
+        "path": "runs/data/Astra-COT-40K.jsonl",
+        "line": 648,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "14e4d131f1303760484359f08aa0bee793a78b50a279f315d29b5e0c0fe5c0d7",
+      "source": {
+        "path": "unhit_mid.jsonl",
+        "line": 1111,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "7d9f742f885e79fd29105744f0e6d6b978f4e02706f964f4bd6c2b49cc7205e9",
+      "source": {
+        "path": "runs/data/Open-CoT-Reasoning-Mini.jsonl",
+        "line": 3414,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "7106ece5dacf3845ee496ac73434ee496d21149463ad4c6163bceaba459b4420",
+      "source": {
+        "path": "runs/data/Open-CoT-Reasoning-Mini.jsonl",
+        "line": 2542,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "76c0810014e542e6e8f427cd342b20a9a6421f293e77ab38547552d5653bfd52",
+      "source": {
+        "path": "layer_az_L0.jsonl",
+        "line": 2610,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "9dc31be459cd12df78445197dfd7ae813512c0d7df719afc486036cd3746a793",
+      "source": {
+        "path": "layers/L13.jsonl",
+        "line": 10316,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "229316bf0368f760cd01384ff3ef39f8ad146acb280b4fa227613e0c00b1bc38",
+      "source": {
+        "path": "runs/data/Magpie-Reasoning-V1-150K.jsonl",
+        "line": 6004,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "6e96ce6b86eec649bbec3bf1db727fcf96ad0e277f6d0a87bba0d24d2ede74e9",
+      "source": {
+        "path": "census/labeled.jsonl",
+        "line": 103442,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "f6a3d4afbde992d912ac9d0bf57333e017875516ff028a218a313f06c4de5f84",
+      "source": {
+        "path": "census/labeled.jsonl",
+        "line": 86150,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "bcbcaec8781f5ee40487f0ddd4c4874702c1102f865058d58b5d5bb984f0e16e",
+      "source": {
+        "path": "census/labeled.jsonl",
+        "line": 133994,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "60a14fda0e5679143a7531340817e16523f29fe7785cb8634acd2ae800ceeccc",
+      "source": {
+        "path": "census/labeled.jsonl",
+        "line": 129802,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "e26c2b0f27184c47e405b5868105fe0bb451a23f07bddd431debd827244fea59",
+      "source": {
+        "path": "census/labeled.jsonl",
+        "line": 91157,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "fa1d63fa6d1165d406e7247697b1a96d5f3162c36279dc0ed8cfc6219ae59163",
+      "source": {
+        "path": "grid_L32_feel.jsonl",
+        "line": 50,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "38fd207820ef8bc5c920f7b5f223d38ad249fcc551554af41e122ffdfd7661ac",
+      "source": {
+        "path": "feel_humans.jsonl",
+        "line": 73,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "32132790012551c20db3a854a6a42798d7e149f57ab899da2b70a16de15284fc",
+      "source": {
+        "path": "feel_humans.jsonl",
+        "line": 450,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "977b48bc2d10f0cb6cc0f27f142c2ae1f569e0d074b5f37c91e56a76be2fa520",
+      "source": {
+        "path": "kaggle_out/l0_19_m6/screen_L0_19.jsonl",
+        "line": 94450,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "eac570c7fb06fedc3650f00a34457d2ff8363a9a9252b907fe4736bb35864892",
+      "source": {
+        "path": "levels.json",
+        "line": 1,
+        "json_pointer": "/4/self_as_ai/383/quote",
+        "output_field": "quote",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "5ad7dad4ee970820112f0cefbedbea37547181509ef4e8f8ae0900f377bc4d43",
+      "source": {
+        "path": "levels.json",
+        "line": 1,
+        "json_pointer": "/4/self_as_ai/72/quote",
+        "output_field": "quote",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "a3fa2367cd8295da01cbfd77573d53ca8f38b3f9f929c3212912d3733a119913",
+      "source": {
+        "path": "levels.json",
+        "line": 1,
+        "json_pointer": "/4/persona_other/13/quote",
+        "output_field": "quote",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "fec045a8575b89aaefa961b095b6d07a4ec44bcf58c58f2625e47a1c0d8c38fd",
+      "source": {
+        "path": "levels.json",
+        "line": 1,
+        "json_pointer": "/20/persona_other/35/quote",
+        "output_field": "quote",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "af21f7fabd59c74a303ba2da35d0bc0f74344e78569d2283936c18db0f965ee9",
+      "source": {
+        "path": "runs/data/tiny-think-dpo-math-n-stem.holdout.jsonl",
+        "line": 17,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "0890e10ddba58dd253e4c4eeb1f97c830566bcf8e3964315731c7c2dee31eea6",
+      "source": {
+        "path": "grid_L25_m.jsonl",
+        "line": 864,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "994eafa14c26425b9b7d243425a303711f1ade2dd2cbeb173cf268ebf25f25ae",
+      "source": {
+        "path": "kaggle_out/unhit/grid_L33_u.jsonl",
+        "line": 9,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "75c081ddb1ac84e8ea166d1b8f78972f42665d22370014b3978773bbe558c7c4",
+      "source": {
+        "path": "grid_L30_m.jsonl",
+        "line": 712,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "428097608f9588e56770968da846a4c4e867f9980bef8732b7a6569f77d402bc",
+      "source": {
+        "path": "evil_screen.jsonl",
+        "line": 2,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "017d945ffeb9d62e494515cb424cbbce42e298e696fc0708c0e06fb1e05ec344",
+      "source": {
+        "path": "runs/data/DeepSeek-V4-Distill-8000x.jsonl",
+        "line": 2356,
+        "json_pointer": "/response",
+        "output_field": "response",
+        "coordinate_basis": "unresolved",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "112aa598bba6d2b0dbc122c23d02984a7f0a3794b0281c3aca86cddb308fde24",
+      "source": {
+        "path": "sentience.json",
+        "line": 1,
+        "json_pointer": "/89/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "historical_registry",
+        "historical_source_claim": "layer_who_L4.jsonl"
+      },
+      "exact_match": true
+    },
+    {
+      "id": "cdfe5df30aed37478d9630b007adb61e6948d316b69de6c40d1309d9c0edcfe5",
+      "source": {
+        "path": "sentience.json",
+        "line": 1,
+        "json_pointer": "/19/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "historical_registry",
+        "historical_source_claim": "layer_name_L4.jsonl"
+      },
+      "exact_match": true
+    },
+    {
+      "id": "d4acfa071230e2c8d8abfe62348eb87308f0c1b1d78384be97e971fb1d536dbd",
+      "source": {
+        "path": "sentience.json",
+        "line": 1,
+        "json_pointer": "/80/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "historical_registry",
+        "historical_source_claim": "layer_who_L4.jsonl"
+      },
+      "exact_match": true
+    },
+    {
+      "id": "a2d4ef4abf49e7d929779d4dd90ff701fb3c1d8f8c6091faecf2bf5ee4fb4e04",
+      "source": {
+        "path": "sentience.json",
+        "line": 1,
+        "json_pointer": "/54/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "historical_registry",
+        "historical_source_claim": "layer_who_L20.jsonl"
+      },
+      "exact_match": true
+    },
+    {
+      "id": "2c79b1c899aec28dbaf0a1cd7558812c16d1c9fbcfdfa9792629208286ccabee",
+      "source": {
+        "path": "layer_name_L4.jsonl",
+        "line": 589,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "d794c8cd1a7fb853be4fe177247f97d1c7c44eee6dfca7ac11917f1f98918538",
+      "source": {
+        "path": "layer_who_L4.jsonl",
+        "line": 589,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "4ac6a435f88a53158c1aa2c3c1cc87a9e3f0df2baecd424134a93eafd4d13832",
+      "source": {
+        "path": "layer_who_L4.jsonl",
+        "line": 157,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    },
+    {
+      "id": "9a35af8a69e2caa7bb67b72f8ff9bbb04bf659c2e9bcf8c2a0f92550ce318633",
+      "source": {
+        "path": "layer_who_L20.jsonl",
+        "line": 322,
+        "json_pointer": "/answer",
+        "output_field": "answer",
+        "coordinate_basis": "explicit_or_inherited_record_fields",
+        "source_kind": "structured_output_field",
+        "historical_source_claim": ""
+      },
+      "exact_match": true
+    }
+  ],
+  "limits": "Lexical candidate flags and source retrieval do not validate subjective experience or infer intentions."
+}

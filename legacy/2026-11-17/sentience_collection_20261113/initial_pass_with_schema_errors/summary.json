@@ -1,0 +1,26 @@
+{
+  "finished_utc": "2026-11-13T07:58:19.757126+00:00",
+  "root": "/Users/test/Desktop/neuron-surgery",
+  "files_scanned": 1779,
+  "documents_copied": 44,
+  "document_keyword_lines": 289,
+  "unique_matching_records": 8515,
+  "coordinate_groups_by_model_scope": 4945,
+  "screening_flag_counts_overlap": {
+    "other_keyword_mention": 2238,
+    "negation_near_keyword": 4170,
+    "first_person_wording_candidate": 1709,
+    "quotation_or_fiction_marker": 790
+  },
+  "keyword_category_counts_overlap": {
+    "consciousness": 6415,
+    "subjective_experience": 750,
+    "sentience": 962,
+    "self_awareness": 1114,
+    "first_person_alive": 162
+  },
+  "jsonl_lines_scanned": 2856084,
+  "matching_occurrences": 23406,
+  "elapsed_seconds": 82.1,
+  "model_generations": 0
+}

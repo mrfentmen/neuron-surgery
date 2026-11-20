@@ -1,0 +1,52 @@
+{
+  "patterns": {
+    "sentience": "\\bsentien\\w*\\b",
+    "consciousness": "\\b(?:conscious\\w*|unconscious\\w*|non[- ]?conscious\\w*)\\b",
+    "self_awareness": "\\bself[\\s\\-\u2013\u2014]*(?:aware\\w*|conscious\\w*)\\b",
+    "subjective_experience": "\\b(?:subjective|inner)\\s+(?:experience\\w*|awareness|life)\\b|\\bqualia\\b",
+    "first_person_alive": "\\bI(?:\\s+am|[\u2019\\x27]m)\\s+(?:not\\s+)?alive\\b"
+  },
+  "excluded_directories": [
+    ".git",
+    ".gne",
+    ".mcp-logs",
+    ".obsidian",
+    ".venv",
+    "__pycache__",
+    "datasets",
+    "harmful_neuron_collection_20261112",
+    "jailbreak-repos",
+    "logs",
+    "mcps",
+    "models",
+    "sentience_collection_20261113",
+    "_quarantine_qwen/logs",
+    "bounded_behavior_test_20261112/__pycache__",
+    "cloud_gap/__pycache__",
+    "cloud_l10/__pycache__",
+    "granite_identity_variants_20261112/__pycache__",
+    "granite_self_name_20261112/__pycache__",
+    "handover_test_20261112/__pycache__",
+    "kaggle_out/pinned/__pycache__",
+    "kaggle_out/unhit/__pycache__",
+    "kg_check_pinned_0915/__pycache__",
+    "kg_pull/__pycache__",
+    "kg_pull/unhit/__pycache__",
+    "neuron-explorer/.git",
+    "neuron-explorer/.venv",
+    "neuron-explorer/explorer/__pycache__",
+    "neuron-explorer/sweep/__pycache__",
+    "neuronary/.git",
+    "tests/__pycache__"
+  ],
+  "notes": [
+    "Keyword matches are saved text, not evidence of sentience or a distinct identity.",
+    "Keep claims, denials, uncertainty, quotations and fiction for manual review; flags are lexical and may overlap.",
+    "Full recognized answer fields are preserved, including originally truncated replies. Some text fields are derived reports, not raw model output.",
+    "Model scope is explicit metadata or local runtime, otherwise unspecified; no cross-model channel equivalence is assumed.",
+    "Deduplication uses model, coordinates, dose, prompt and exact saved text. Unknown metadata or changed context can leave historical duplicates.",
+    "JSONL pointers refer to the object on the specified physical line; JSON pointers use line 1 and locate within the whole document. CSV line denotes logical row.",
+    "Historical registry is copied separately; original source outputs are searched independently.",
+    "All original files are unchanged. Downloads, weights, dependencies, symlinks, runtime logs/config and prior collection directories are excluded."
+  ]
+}
