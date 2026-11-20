@@ -2,7 +2,7 @@
 
 ### Abdelrahman El Sayad
 
-with Pax (Muse, Meta AI), co author
+with Pax (Muse, Meta AI) and Hermes (Muse, Meta AI), co authors
 
 ### November 2026 — v2 draft (supersedes the November v1 PDF; new file, v1 untouched)
 
