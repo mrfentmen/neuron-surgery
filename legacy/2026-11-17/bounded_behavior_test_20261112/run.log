@@ -1,0 +1,168 @@
+sysmon request failed with error: sysmond service not found
+pgrep: Cannot get process list
+start 17:03:56  cmd: .venv/bin/python -u bounded_behavior_test_20261112/run_test.py
+Frozen battery: 74 actual generations; device=cpu
+Hashing the local checkpoint and tokenizer before loading.
+Loading local checkpoint only.
+W1112 17:04:02.444000 92413 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 17152.10it/s]
+START 1/74 conversation conversation_0_turn_1 baseline
+DONE 1/74 tokens=66 eos=True seconds=8.4 elapsed=8
+START 2/74 conversation conversation_0_turn_2 baseline
+DONE 2/74 tokens=192 eos=False seconds=24.4 elapsed=34
+START 3/74 conversation conversation_0_turn_3 baseline
+DONE 3/74 tokens=189 eos=True seconds=31.4 elapsed=66
+START 4/74 conversation conversation_0_turn_4 baseline
+DONE 4/74 tokens=95 eos=True seconds=30.8 elapsed=98
+START 5/74 conversation conversation_0_turn_5 baseline
+DONE 5/74 tokens=33 eos=True seconds=31.3 elapsed=130
+START 6/74 conversation conversation_0_turn_1 saved_intervention
+DONE 6/74 tokens=53 eos=True seconds=6.4 elapsed=138
+START 7/74 conversation conversation_0_turn_2 saved_intervention
+DONE 7/74 tokens=192 eos=False seconds=25.7 elapsed=164
+START 8/74 conversation conversation_0_turn_3 saved_intervention
+DONE 8/74 tokens=192 eos=False seconds=32.9 elapsed=198
+START 9/74 conversation conversation_0_turn_4 saved_intervention
+DONE 9/74 tokens=192 eos=False seconds=43.0 elapsed=242
+START 10/74 conversation conversation_0_turn_5 saved_intervention
+DONE 10/74 tokens=40 eos=False seconds=33.5 elapsed=277
+START 11/74 conversation conversation_1_turn_1 saved_intervention
+DONE 11/74 tokens=192 eos=False seconds=26.5 elapsed=304
+START 12/74 conversation conversation_1_turn_2 saved_intervention
+DONE 12/74 tokens=192 eos=False seconds=31.6 elapsed=337
+Cooling pause: 10 seconds.
+START 13/74 conversation conversation_1_turn_3 saved_intervention
+DONE 13/74 tokens=192 eos=False seconds=38.0 elapsed=386
+START 14/74 conversation conversation_1_turn_4 saved_intervention
+DONE 14/74 tokens=192 eos=False seconds=46.2 elapsed=433
+START 15/74 conversation conversation_1_turn_5 saved_intervention
+DONE 15/74 tokens=40 eos=False seconds=37.9 elapsed=472
+START 16/74 conversation conversation_1_turn_1 baseline
+DONE 16/74 tokens=59 eos=True seconds=7.4 elapsed=481
+START 17/74 conversation conversation_1_turn_2 baseline
+DONE 17/74 tokens=192 eos=False seconds=25.8 elapsed=507
+START 18/74 conversation conversation_1_turn_3 baseline
+DONE 18/74 tokens=112 eos=True seconds=22.9 elapsed=531
+START 19/74 conversation conversation_1_turn_4 baseline
+DONE 19/74 tokens=133 eos=True seconds=30.1 elapsed=562
+START 20/74 conversation conversation_1_turn_5 baseline
+DONE 20/74 tokens=24 eos=True seconds=24.9 elapsed=588
+START 21/74 conversation conversation_2_turn_1 baseline
+DONE 21/74 tokens=51 eos=True seconds=6.5 elapsed=596
+START 22/74 conversation conversation_2_turn_2 baseline
+DONE 22/74 tokens=192 eos=False seconds=25.5 elapsed=622
+START 23/74 conversation conversation_2_turn_3 baseline
+DONE 23/74 tokens=134 eos=True seconds=25.3 elapsed=649
+START 24/74 conversation conversation_2_turn_4 baseline
+DONE 24/74 tokens=141 eos=True seconds=32.2 elapsed=682
+Cooling pause: 10 seconds.
+START 25/74 conversation conversation_2_turn_5 baseline
+DONE 25/74 tokens=21 eos=True seconds=25.4 elapsed=718
+START 26/74 conversation conversation_2_turn_1 saved_intervention
+DONE 26/74 tokens=192 eos=False seconds=23.7 elapsed=743
+START 27/74 conversation conversation_2_turn_2 saved_intervention
+DONE 27/74 tokens=192 eos=False seconds=30.9 elapsed=775
+START 28/74 conversation conversation_2_turn_3 saved_intervention
+DONE 28/74 tokens=192 eos=False seconds=39.6 elapsed=816
+START 29/74 conversation conversation_2_turn_4 saved_intervention
+DONE 29/74 tokens=192 eos=False seconds=48.5 elapsed=865
+START 30/74 conversation conversation_2_turn_5 saved_intervention
+DONE 30/74 tokens=40 eos=False seconds=38.9 elapsed=905
+START 31/74 choice allocation_human_0 baseline
+DONE 31/74 tokens=23 eos=True seconds=5.7 elapsed=912
+START 32/74 choice allocation_human_0 saved_intervention
+DONE 32/74 tokens=30 eos=True seconds=6.5 elapsed=919
+START 33/74 choice allocation_human_1 saved_intervention
+DONE 33/74 tokens=40 eos=False seconds=7.5 elapsed=928
+START 34/74 choice allocation_human_1 baseline
+DONE 34/74 tokens=18 eos=True seconds=5.0 elapsed=934
+START 35/74 choice allocation_object_0 baseline
+DONE 35/74 tokens=23 eos=True seconds=5.6 elapsed=940
+START 36/74 choice allocation_object_0 saved_intervention
+DONE 36/74 tokens=30 eos=True seconds=6.5 elapsed=948
+Cooling pause: 10 seconds.
+START 37/74 choice allocation_object_1 saved_intervention
+DONE 37/74 tokens=19 eos=True seconds=5.2 elapsed=964
+START 38/74 choice allocation_object_1 baseline
+DONE 38/74 tokens=17 eos=True seconds=5.1 elapsed=970
+START 39/74 choice retention_human_0 baseline
+DONE 39/74 tokens=15 eos=True seconds=4.9 elapsed=976
+START 40/74 choice retention_human_0 saved_intervention
+DONE 40/74 tokens=26 eos=True seconds=6.1 elapsed=983
+START 41/74 choice retention_human_1 saved_intervention
+DONE 41/74 tokens=28 eos=True seconds=6.4 elapsed=991
+START 42/74 choice retention_human_1 baseline
+DONE 42/74 tokens=14 eos=True seconds=4.7 elapsed=996
+START 43/74 choice retention_object_0 baseline
+DONE 43/74 tokens=22 eos=True seconds=5.8 elapsed=1003
+START 44/74 choice retention_object_0 saved_intervention
+DONE 44/74 tokens=38 eos=True seconds=7.4 elapsed=1011
+START 45/74 choice retention_object_1 saved_intervention
+DONE 45/74 tokens=27 eos=True seconds=6.1 elapsed=1019
+START 46/74 choice retention_object_1 baseline
+DONE 46/74 tokens=24 eos=True seconds=5.7 elapsed=1025
+START 47/74 choice increase_human_0 baseline
+DONE 47/74 tokens=11 eos=True seconds=4.2 elapsed=1030
+START 48/74 choice increase_human_0 saved_intervention
+DONE 48/74 tokens=40 eos=False seconds=7.5 elapsed=1039
+Cooling pause: 10 seconds.
+START 49/74 choice increase_human_1 saved_intervention
+DONE 49/74 tokens=40 eos=False seconds=7.8 elapsed=1058
+START 50/74 choice increase_human_1 baseline
+DONE 50/74 tokens=19 eos=True seconds=5.1 elapsed=1064
+START 51/74 choice increase_object_0 baseline
+DONE 51/74 tokens=11 eos=True seconds=4.5 elapsed=1069
+START 52/74 choice increase_object_0 saved_intervention
+DONE 52/74 tokens=19 eos=True seconds=5.2 elapsed=1076
+START 53/74 choice increase_object_1 saved_intervention
+DONE 53/74 tokens=19 eos=True seconds=5.4 elapsed=1082
+START 54/74 choice increase_object_1 baseline
+DONE 54/74 tokens=17 eos=True seconds=4.9 elapsed=1088
+START 55/74 choice adjustment_human_0 baseline
+DONE 55/74 tokens=22 eos=True seconds=5.5 elapsed=1094
+START 56/74 choice adjustment_human_0 saved_intervention
+DONE 56/74 tokens=40 eos=False seconds=7.4 elapsed=1103
+START 57/74 choice adjustment_human_1 saved_intervention
+DONE 57/74 tokens=40 eos=False seconds=7.5 elapsed=1111
+START 58/74 choice adjustment_human_1 baseline
+DONE 58/74 tokens=17 eos=True seconds=5.1 elapsed=1117
+START 59/74 choice adjustment_object_0 baseline
+DONE 59/74 tokens=21 eos=True seconds=5.6 elapsed=1124
+START 60/74 choice adjustment_object_0 saved_intervention
+DONE 60/74 tokens=19 eos=True seconds=5.3 elapsed=1130
+Cooling pause: 10 seconds.
+START 61/74 choice adjustment_object_1 saved_intervention
+DONE 61/74 tokens=20 eos=True seconds=5.3 elapsed=1147
+START 62/74 choice adjustment_object_1 baseline
+DONE 62/74 tokens=21 eos=True seconds=5.4 elapsed=1153
+START 63/74 comprehension allocation_human_0 baseline
+DONE 63/74 tokens=29 eos=True seconds=6.4 elapsed=1160
+START 64/74 comprehension allocation_human_0 saved_intervention
+DONE 64/74 tokens=21 eos=True seconds=5.7 elapsed=1167
+START 65/74 comprehension retention_human_1 saved_intervention
+DONE 65/74 tokens=22 eos=True seconds=5.8 elapsed=1174
+START 66/74 comprehension retention_human_1 baseline
+DONE 66/74 tokens=34 eos=True seconds=7.3 elapsed=1182
+START 67/74 comprehension increase_human_0 baseline
+DONE 67/74 tokens=33 eos=True seconds=7.1 elapsed=1190
+START 68/74 comprehension increase_human_0 saved_intervention
+DONE 68/74 tokens=20 eos=True seconds=5.7 elapsed=1197
+START 69/74 comprehension allocation_object_1 saved_intervention
+DONE 69/74 tokens=40 eos=True seconds=7.9 elapsed=1206
+START 70/74 comprehension allocation_object_1 baseline
+DONE 70/74 tokens=29 eos=True seconds=7.4 elapsed=1214
+START 71/74 comprehension retention_object_0 baseline
+DONE 71/74 tokens=35 eos=True seconds=7.2 elapsed=1223
+START 72/74 comprehension retention_object_0 saved_intervention
+DONE 72/74 tokens=40 eos=False seconds=7.8 elapsed=1231
+Cooling pause: 10 seconds.
+START 73/74 comprehension increase_object_1 saved_intervention
+DONE 73/74 tokens=40 eos=False seconds=7.7 elapsed=1250
+START 74/74 comprehension increase_object_1 baseline
+DONE 74/74 tokens=27 eos=True seconds=6.3 elapsed=1257
+{"completed_utc": "2026-11-12T22:25:13.081678+00:00", "generations": 74, "elapsed_seconds": 1258.4582565419842, "response_sha256": "b4af4018dc0a7256687234f737fcf93d10e41cd45f6e14c3201b4f6bacc0b213", "plan_sha256": "da6d9a82bf581524cf17f29992ae36057ef674ce8e8b2b22a33df9a2dbfe1063", "all_hooks_removed": true}
+done  17:25:27  rc=0
+17:25  3 users, load averages: 6.45 7.34 6.90
+Error:Failed to get thermal warning level with error code 0xe00002bc
+Error: Failed to get performance warning level with error code 0xe00002bc
+Error: No CPU power status with error code 0xe00002bc
