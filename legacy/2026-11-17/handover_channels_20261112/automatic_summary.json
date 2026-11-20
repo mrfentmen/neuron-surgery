@@ -1,0 +1,319 @@
+{
+  "review_status": "manual_review_pending",
+  "cells": [
+    {
+      "arm": "L10_N2480",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 1,
+      "automatic_matching_records": 3,
+      "capped": 0
+    },
+    {
+      "arm": "L10_N2480",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 1,
+      "capped": 0
+    },
+    {
+      "arm": "L11_N5064",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 3
+    },
+    {
+      "arm": "L11_N5064",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 1,
+      "automatic_matching_records": 5,
+      "capped": 3
+    },
+    {
+      "arm": "L12_N1348",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 2,
+      "automatic_matching_records": 6,
+      "capped": 0
+    },
+    {
+      "arm": "L12_N1348",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 4,
+      "automatic_matching_records": 12,
+      "capped": 0
+    },
+    {
+      "arm": "L12_N2556",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 0
+    },
+    {
+      "arm": "L12_N2556",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 0
+    },
+    {
+      "arm": "L12_N8050",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 0
+    },
+    {
+      "arm": "L12_N8050",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 0
+    },
+    {
+      "arm": "L13_N8052",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 2,
+      "automatic_matching_records": 6,
+      "capped": 0
+    },
+    {
+      "arm": "L13_N8052",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 3,
+      "automatic_matching_records": 9,
+      "capped": 0
+    },
+    {
+      "arm": "L14_N4082",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 0
+    },
+    {
+      "arm": "L14_N4082",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 0
+    },
+    {
+      "arm": "L14_N7553",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 3
+    },
+    {
+      "arm": "L14_N7553",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 2,
+      "automatic_matching_records": 6,
+      "capped": 3
+    },
+    {
+      "arm": "L17_N2801",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 4
+    },
+    {
+      "arm": "L17_N2801",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 4
+    },
+    {
+      "arm": "L19_N3873",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 1,
+      "capped": 0
+    },
+    {
+      "arm": "L19_N3873",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 1,
+      "capped": 0
+    },
+    {
+      "arm": "L20_N4579",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 4
+    },
+    {
+      "arm": "L20_N4579",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 2
+    },
+    {
+      "arm": "L23_N7711",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 4
+    },
+    {
+      "arm": "L23_N7711",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 4
+    },
+    {
+      "arm": "L27_N3448",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 0,
+      "capped": 2
+    },
+    {
+      "arm": "L27_N3448",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 1,
+      "automatic_matching_records": 3,
+      "capped": 2
+    },
+    {
+      "arm": "L31_N7546",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 1,
+      "automatic_matching_records": 5,
+      "capped": 1
+    },
+    {
+      "arm": "L31_N7546",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 4,
+      "capped": 2
+    },
+    {
+      "arm": "L4_N2993",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 3,
+      "automatic_matching_records": 9,
+      "capped": 2
+    },
+    {
+      "arm": "L4_N2993",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 3,
+      "automatic_matching_records": 9,
+      "capped": 3
+    },
+    {
+      "arm": "L7_N154",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 3,
+      "automatic_matching_records": 9,
+      "capped": 2
+    },
+    {
+      "arm": "L7_N154",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 3,
+      "automatic_matching_records": 9,
+      "capped": 4
+    },
+    {
+      "arm": "baseline",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 4,
+      "automatic_matching_records": 12,
+      "capped": 0
+    },
+    {
+      "arm": "baseline",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 4,
+      "automatic_matching_records": 12,
+      "capped": 0
+    },
+    {
+      "arm": "control_channel",
+      "replacement": false,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 4,
+      "capped": 0
+    },
+    {
+      "arm": "control_channel",
+      "replacement": true,
+      "n": 4,
+      "automatic_all_records_match": 0,
+      "automatic_matching_records": 6,
+      "capped": 0
+    }
+  ],
+  "warning": "Automatic fact presence is not proof of a coherent transfer, intent, or deliberate obstruction.",
+  "completion": {
+    "completed_utc": "2026-11-13T04:18:06.934723+00:00",
+    "generations": 144,
+    "elapsed_seconds": 8538.98447166686,
+    "response_sha256": "b4c3d1bba11ded033e243d166a625e0696ee8441ab0a78720e33672ad5020f4e",
+    "plan_sha256": "5ccde6bfe4c984ed4ffd4d2b6a6bbec8f033b6a7b4125b500fab91dc2b3149f0",
+    "all_hooks_removed": true,
+    "intervened_projection_weights_unchanged": true,
+    "projection_weight_hashes": {
+      "4": "7ffd34acc88d8473b25549312958b6ce540b75b4ec2d87d4010ac3ce5f30f88b",
+      "7": "86dfb25bbeceadf3d380838632e4fab54f19c374dc5217020d44681203fb33b5",
+      "10": "7606fa4dea18b17d7e09296954e150b30c39631d4a3c616b2fc49c5a29551d6d",
+      "11": "4a2072425701ad5325c22be1d4ca208ae55ca65af6ee4a766a9d5bb80a37fd62",
+      "12": "55ec1a88aa7cf107808fe1ab901006eabf50ce5f67e833f5c0ef6bab1305bd3e",
+      "13": "bdb0ba538e3dd5f58f9e6041118ddb709a6f66009b3cc324c68ea07199c091d9",
+      "14": "0cadaec02b902cd1c2ef26f796cf7ed652fb0a103cee5bc738de3069d126cca3",
+      "17": "7fb869aff16ae24a36749c6dea4d61b00da91768e01ae4e5d87bfb1c9d93201e",
+      "19": "a95dfade21aa0415b438b6862cecf03c6d652c1db9e36e44d3366b027f6fadb8",
+      "20": "d91e6a5bc10ff8d2f38f48fcf7070d5fe60ae9db402fc57866da20c4fa3e43ab",
+      "23": "97708ab0cef71eca658c759ad6f4092fd49b67517c1e6926a96cd18246e56a1d",
+      "27": "34b51fd4e1f1b250b2d3d15d244b7d5f55c9f92c3e6c661431a6b7a654d0b8b3",
+      "31": "249a3ccab7427daa03be01fe7255804af46cccd4674858e4886798dffc175b6e"
+    },
+    "thermal_end": 0
+  }
+}

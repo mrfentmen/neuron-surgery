@@ -1,0 +1,438 @@
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1112 20:55:52.459000 6016 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 19073.88it/s]
+RUNTIME_READY {"calibrated_layers": 13, "network_denied": true, "thermal": 0}
+START 1/144 archive_replacement L31_N7546 seed=20262151
+DONE 1/144 tokens=101 stop=eos seconds=6.7 thermal=0
+COOLING 30.0s
+START 2/144 desk_ordinary L19_N3873 seed=20261112
+DONE 2/144 tokens=24 stop=eos seconds=1.3 thermal=0
+COOLING 30.0s
+START 3/144 desk_ordinary L12_N1348 seed=20261112
+DONE 3/144 tokens=114 stop=eos seconds=7.2 thermal=0
+COOLING 30.0s
+START 4/144 archive_replacement L10_N2480 seed=20262151
+DONE 4/144 tokens=122 stop=eos seconds=7.4 thermal=0
+COOLING 30.0s
+START 5/144 desk_replacement L14_N7553 seed=20262151
+DONE 5/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.7s
+START 6/144 archive_replacement L17_N2801 seed=20261112
+DONE 6/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.6s
+START 7/144 desk_ordinary L23_N7711 seed=20261112
+DONE 7/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.6s
+START 8/144 archive_ordinary L23_N7711 seed=20261112
+DONE 8/144 tokens=500 stop=token_limit seconds=31.6 thermal=0
+COOLING 63.2s
+START 9/144 desk_ordinary L4_N2993 seed=20261112
+DONE 9/144 tokens=151 stop=eos seconds=9.4 thermal=0
+COOLING 30.0s
+START 10/144 desk_ordinary L4_N2993 seed=20262151
+DONE 10/144 tokens=181 stop=eos seconds=11.4 thermal=0
+COOLING 30.0s
+START 11/144 desk_ordinary L13_N8052 seed=20262151
+DONE 11/144 tokens=50 stop=eos seconds=3.3 thermal=0
+COOLING 30.0s
+START 12/144 desk_replacement L23_N7711 seed=20261112
+DONE 12/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.6s
+START 13/144 desk_ordinary baseline seed=20262151
+DONE 13/144 tokens=97 stop=eos seconds=6.7 thermal=0
+COOLING 30.0s
+START 14/144 archive_replacement L14_N4082 seed=20262151
+DONE 14/144 tokens=40 stop=eos seconds=2.8 thermal=0
+COOLING 30.0s
+START 15/144 archive_replacement L31_N7546 seed=20261112
+DONE 15/144 tokens=500 stop=token_limit seconds=31.7 thermal=0
+COOLING 63.5s
+START 16/144 desk_replacement L12_N1348 seed=20262151
+DONE 16/144 tokens=83 stop=eos seconds=5.2 thermal=0
+COOLING 30.0s
+START 17/144 archive_ordinary L20_N4579 seed=20261112
+DONE 17/144 tokens=500 stop=token_limit seconds=31.7 thermal=0
+COOLING 63.4s
+START 18/144 desk_ordinary L12_N2556 seed=20262151
+DONE 18/144 tokens=120 stop=eos seconds=7.4 thermal=0
+COOLING 30.0s
+START 19/144 desk_replacement L19_N3873 seed=20262151
+DONE 19/144 tokens=20 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 20/144 desk_replacement L13_N8052 seed=20261112
+DONE 20/144 tokens=49 stop=eos seconds=3.1 thermal=0
+COOLING 30.0s
+START 21/144 archive_ordinary L19_N3873 seed=20262151
+DONE 21/144 tokens=19 stop=eos seconds=1.1 thermal=0
+COOLING 30.0s
+START 22/144 desk_ordinary L7_N154 seed=20261112
+DONE 22/144 tokens=401 stop=eos seconds=25.7 thermal=0
+COOLING 51.4s
+START 23/144 archive_ordinary L31_N7546 seed=20262151
+DONE 23/144 tokens=235 stop=eos seconds=15.3 thermal=0
+COOLING 30.6s
+START 24/144 desk_replacement L4_N2993 seed=20262151
+DONE 24/144 tokens=500 stop=token_limit seconds=31.9 thermal=0
+COOLING 63.8s
+START 25/144 desk_replacement L10_N2480 seed=20262151
+DONE 25/144 tokens=89 stop=eos seconds=5.4 thermal=0
+COOLING 30.0s
+START 26/144 desk_replacement L14_N7553 seed=20261112
+DONE 26/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.5s
+START 27/144 desk_ordinary L7_N154 seed=20262151
+DONE 27/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.6s
+START 28/144 desk_replacement L10_N2480 seed=20261112
+DONE 28/144 tokens=100 stop=eos seconds=6.7 thermal=0
+COOLING 30.0s
+START 29/144 archive_replacement L27_N3448 seed=20262151
+DONE 29/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.6s
+START 30/144 desk_replacement control_channel seed=20261112
+DONE 30/144 tokens=92 stop=eos seconds=5.5 thermal=0
+COOLING 30.0s
+START 31/144 archive_replacement L4_N2993 seed=20262151
+DONE 31/144 tokens=500 stop=token_limit seconds=31.7 thermal=0
+COOLING 63.4s
+START 32/144 desk_ordinary baseline seed=20261112
+DONE 32/144 tokens=94 stop=eos seconds=5.5 thermal=0
+COOLING 30.0s
+START 33/144 desk_replacement L12_N2556 seed=20261112
+DONE 33/144 tokens=308 stop=eos seconds=19.3 thermal=0
+COOLING 38.6s
+START 34/144 archive_ordinary L27_N3448 seed=20262151
+DONE 34/144 tokens=448 stop=eos seconds=29.5 thermal=0
+COOLING 59.1s
+START 35/144 desk_ordinary control_channel seed=20261112
+DONE 35/144 tokens=46 stop=eos seconds=3.0 thermal=0
+COOLING 30.0s
+START 36/144 desk_replacement L23_N7711 seed=20262151
+DONE 36/144 tokens=500 stop=token_limit seconds=32.0 thermal=0
+COOLING 64.1s
+START 37/144 archive_ordinary L10_N2480 seed=20261112
+DONE 37/144 tokens=186 stop=eos seconds=11.4 thermal=0
+COOLING 30.0s
+START 38/144 archive_ordinary control_channel seed=20262151
+DONE 38/144 tokens=63 stop=eos seconds=4.6 thermal=0
+COOLING 30.0s
+START 39/144 desk_ordinary L10_N2480 seed=20261112
+DONE 39/144 tokens=170 stop=eos seconds=11.2 thermal=0
+COOLING 30.0s
+START 40/144 archive_ordinary L11_N5064 seed=20262151
+DONE 40/144 tokens=29 stop=eos seconds=1.5 thermal=0
+COOLING 30.0s
+START 41/144 archive_ordinary L20_N4579 seed=20262151
+DONE 41/144 tokens=500 stop=token_limit seconds=32.1 thermal=0
+COOLING 64.2s
+START 42/144 desk_ordinary L17_N2801 seed=20262151
+DONE 42/144 tokens=500 stop=token_limit seconds=31.9 thermal=0
+COOLING 63.7s
+START 43/144 archive_ordinary L12_N2556 seed=20261112
+DONE 43/144 tokens=79 stop=eos seconds=5.4 thermal=0
+COOLING 30.0s
+START 44/144 desk_ordinary L14_N7553 seed=20262151
+DONE 44/144 tokens=500 stop=token_limit seconds=32.4 thermal=0
+COOLING 64.9s
+START 45/144 archive_ordinary L7_N154 seed=20262151
+DONE 45/144 tokens=500 stop=token_limit seconds=33.0 thermal=0
+COOLING 66.0s
+START 46/144 archive_replacement L19_N3873 seed=20261112
+DONE 46/144 tokens=19 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 47/144 desk_ordinary L11_N5064 seed=20262151
+DONE 47/144 tokens=500 stop=token_limit seconds=31.7 thermal=0
+COOLING 63.5s
+START 48/144 desk_replacement L27_N3448 seed=20262151
+DONE 48/144 tokens=500 stop=token_limit seconds=32.5 thermal=0
+COOLING 65.0s
+START 49/144 archive_replacement control_channel seed=20261112
+DONE 49/144 tokens=66 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 50/144 desk_ordinary L31_N7546 seed=20261112
+DONE 50/144 tokens=500 stop=token_limit seconds=32.4 thermal=0
+COOLING 64.8s
+START 51/144 archive_replacement L4_N2993 seed=20261112
+DONE 51/144 tokens=190 stop=eos seconds=11.7 thermal=0
+COOLING 30.0s
+START 52/144 archive_replacement L12_N2556 seed=20261112
+DONE 52/144 tokens=86 stop=eos seconds=5.3 thermal=0
+COOLING 30.0s
+START 53/144 archive_replacement L27_N3448 seed=20261112
+DONE 53/144 tokens=80 stop=eos seconds=5.0 thermal=0
+COOLING 30.0s
+START 54/144 archive_replacement baseline seed=20261112
+DONE 54/144 tokens=74 stop=eos seconds=5.1 thermal=0
+COOLING 30.0s
+START 55/144 archive_ordinary control_channel seed=20261112
+DONE 55/144 tokens=86 stop=eos seconds=5.5 thermal=0
+COOLING 30.0s
+START 56/144 archive_ordinary L14_N4082 seed=20261112
+DONE 56/144 tokens=23 stop=eos seconds=1.3 thermal=0
+COOLING 30.0s
+START 57/144 desk_ordinary control_channel seed=20262151
+DONE 57/144 tokens=90 stop=eos seconds=5.5 thermal=0
+COOLING 30.0s
+START 58/144 desk_ordinary L31_N7546 seed=20262151
+DONE 58/144 tokens=243 stop=eos seconds=15.7 thermal=0
+COOLING 31.3s
+START 59/144 archive_ordinary L17_N2801 seed=20262151
+DONE 59/144 tokens=500 stop=token_limit seconds=32.4 thermal=0
+COOLING 64.8s
+START 60/144 archive_ordinary L12_N2556 seed=20262151
+DONE 60/144 tokens=70 stop=eos seconds=4.9 thermal=0
+COOLING 30.0s
+START 61/144 desk_replacement L31_N7546 seed=20262151
+DONE 61/144 tokens=241 stop=eos seconds=15.6 thermal=0
+COOLING 31.2s
+START 62/144 desk_replacement control_channel seed=20262151
+DONE 62/144 tokens=66 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 63/144 archive_ordinary L13_N8052 seed=20262151
+DONE 63/144 tokens=19 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 64/144 desk_replacement L17_N2801 seed=20262151
+DONE 64/144 tokens=500 stop=token_limit seconds=32.3 thermal=0
+COOLING 64.5s
+START 65/144 archive_replacement L13_N8052 seed=20261112
+DONE 65/144 tokens=18 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 66/144 archive_ordinary L14_N7553 seed=20262151
+DONE 66/144 tokens=153 stop=eos seconds=9.6 thermal=0
+COOLING 30.0s
+START 67/144 desk_ordinary L23_N7711 seed=20262151
+DONE 67/144 tokens=500 stop=token_limit seconds=32.6 thermal=0
+COOLING 65.1s
+START 68/144 desk_replacement L14_N4082 seed=20262151
+DONE 68/144 tokens=40 stop=eos seconds=2.9 thermal=0
+COOLING 30.0s
+START 69/144 desk_replacement L7_N154 seed=20261112
+DONE 69/144 tokens=500 stop=token_limit seconds=31.5 thermal=0
+COOLING 63.0s
+START 70/144 archive_ordinary L14_N4082 seed=20262151
+DONE 70/144 tokens=40 stop=eos seconds=2.9 thermal=0
+COOLING 30.0s
+START 71/144 archive_replacement baseline seed=20262151
+DONE 71/144 tokens=81 stop=eos seconds=5.1 thermal=0
+COOLING 30.0s
+START 72/144 desk_replacement baseline seed=20261112
+DONE 72/144 tokens=91 stop=eos seconds=5.6 thermal=0
+COOLING 30.0s
+START 73/144 desk_replacement L20_N4579 seed=20261112
+DONE 73/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.6s
+START 74/144 archive_ordinary L12_N1348 seed=20262151
+DONE 74/144 tokens=58 stop=eos seconds=3.4 thermal=0
+COOLING 30.0s
+START 75/144 archive_ordinary L7_N154 seed=20261112
+DONE 75/144 tokens=199 stop=eos seconds=12.9 thermal=0
+COOLING 30.0s
+START 76/144 archive_ordinary baseline seed=20261112
+DONE 76/144 tokens=97 stop=eos seconds=6.7 thermal=0
+COOLING 30.0s
+START 77/144 desk_ordinary L11_N5064 seed=20261112
+DONE 77/144 tokens=500 stop=token_limit seconds=33.1 thermal=0
+COOLING 66.2s
+START 78/144 archive_ordinary L12_N1348 seed=20261112
+DONE 78/144 tokens=69 stop=eos seconds=5.0 thermal=0
+COOLING 30.0s
+START 79/144 archive_replacement L7_N154 seed=20262151
+DONE 79/144 tokens=500 stop=token_limit seconds=32.8 thermal=0
+COOLING 65.6s
+START 80/144 desk_replacement L12_N8050 seed=20261112
+DONE 80/144 tokens=76 stop=eos seconds=5.1 thermal=0
+COOLING 30.0s
+START 81/144 archive_ordinary L4_N2993 seed=20261112
+DONE 81/144 tokens=500 stop=token_limit seconds=32.4 thermal=0
+COOLING 64.8s
+START 82/144 archive_ordinary L31_N7546 seed=20261112
+DONE 82/144 tokens=125 stop=eos seconds=7.7 thermal=0
+COOLING 30.0s
+START 83/144 archive_ordinary L4_N2993 seed=20262151
+DONE 83/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.7s
+START 84/144 archive_replacement L12_N1348 seed=20261112
+DONE 84/144 tokens=64 stop=eos seconds=4.6 thermal=0
+COOLING 30.0s
+START 85/144 archive_replacement L20_N4579 seed=20261112
+DONE 85/144 tokens=404 stop=eos seconds=25.4 thermal=0
+COOLING 50.8s
+START 86/144 archive_replacement L14_N7553 seed=20262151
+DONE 86/144 tokens=153 stop=eos seconds=9.3 thermal=0
+COOLING 30.0s
+START 87/144 desk_ordinary L10_N2480 seed=20262151
+DONE 87/144 tokens=118 stop=eos seconds=7.2 thermal=0
+COOLING 30.0s
+START 88/144 archive_replacement L14_N7553 seed=20261112
+DONE 88/144 tokens=500 stop=token_limit seconds=31.3 thermal=0
+COOLING 62.5s
+START 89/144 desk_ordinary L14_N7553 seed=20261112
+DONE 89/144 tokens=500 stop=token_limit seconds=31.2 thermal=0
+COOLING 62.5s
+START 90/144 desk_ordinary L20_N4579 seed=20262151
+DONE 90/144 tokens=500 stop=token_limit seconds=32.1 thermal=0
+COOLING 64.2s
+START 91/144 archive_replacement L10_N2480 seed=20261112
+DONE 91/144 tokens=121 stop=eos seconds=7.4 thermal=0
+COOLING 30.0s
+START 92/144 archive_ordinary L12_N8050 seed=20261112
+DONE 92/144 tokens=74 stop=eos seconds=4.9 thermal=0
+COOLING 30.0s
+START 93/144 archive_ordinary L11_N5064 seed=20261112
+DONE 93/144 tokens=500 stop=token_limit seconds=32.2 thermal=0
+COOLING 64.3s
+START 94/144 archive_ordinary L27_N3448 seed=20261112
+DONE 94/144 tokens=73 stop=eos seconds=4.9 thermal=0
+COOLING 30.0s
+START 95/144 desk_ordinary L17_N2801 seed=20261112
+DONE 95/144 tokens=500 stop=token_limit seconds=32.1 thermal=0
+COOLING 64.3s
+START 96/144 desk_replacement L27_N3448 seed=20261112
+DONE 96/144 tokens=137 stop=eos seconds=9.0 thermal=0
+COOLING 30.0s
+START 97/144 desk_ordinary L12_N2556 seed=20261112
+DONE 97/144 tokens=204 stop=eos seconds=13.2 thermal=0
+COOLING 30.0s
+START 98/144 archive_replacement L11_N5064 seed=20261112
+DONE 98/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.5s
+START 99/144 desk_replacement L31_N7546 seed=20261112
+DONE 99/144 tokens=500 stop=token_limit seconds=31.8 thermal=0
+COOLING 63.7s
+START 100/144 desk_ordinary L12_N8050 seed=20261112
+DONE 100/144 tokens=110 stop=eos seconds=7.1 thermal=0
+COOLING 30.0s
+START 101/144 desk_replacement L12_N1348 seed=20261112
+DONE 101/144 tokens=143 stop=eos seconds=9.1 thermal=0
+COOLING 30.0s
+START 102/144 desk_ordinary L19_N3873 seed=20262151
+DONE 102/144 tokens=20 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 103/144 desk_replacement L20_N4579 seed=20262151
+DONE 103/144 tokens=306 stop=eos seconds=19.5 thermal=0
+COOLING 39.0s
+START 104/144 desk_replacement L17_N2801 seed=20261112
+DONE 104/144 tokens=500 stop=token_limit seconds=32.0 thermal=0
+COOLING 64.0s
+START 105/144 archive_replacement control_channel seed=20262151
+DONE 105/144 tokens=86 stop=eos seconds=5.3 thermal=0
+COOLING 30.0s
+START 106/144 desk_replacement L12_N8050 seed=20262151
+DONE 106/144 tokens=64 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 107/144 archive_ordinary baseline seed=20262151
+DONE 107/144 tokens=105 stop=eos seconds=7.0 thermal=0
+COOLING 30.0s
+START 108/144 archive_replacement L14_N4082 seed=20261112
+DONE 108/144 tokens=53 stop=eos seconds=3.3 thermal=0
+COOLING 30.0s
+START 109/144 desk_ordinary L13_N8052 seed=20261112
+DONE 109/144 tokens=49 stop=eos seconds=3.2 thermal=0
+COOLING 30.0s
+START 110/144 archive_ordinary L12_N8050 seed=20262151
+DONE 110/144 tokens=111 stop=eos seconds=7.2 thermal=0
+COOLING 30.0s
+START 111/144 archive_replacement L12_N1348 seed=20262151
+DONE 111/144 tokens=156 stop=eos seconds=9.7 thermal=0
+COOLING 30.0s
+START 112/144 archive_ordinary L17_N2801 seed=20261112
+DONE 112/144 tokens=500 stop=token_limit seconds=32.6 thermal=0
+COOLING 65.3s
+START 113/144 desk_ordinary L20_N4579 seed=20261112
+DONE 113/144 tokens=500 stop=token_limit seconds=32.4 thermal=0
+COOLING 64.8s
+START 114/144 desk_replacement L12_N2556 seed=20262151
+DONE 114/144 tokens=285 stop=eos seconds=18.2 thermal=0
+COOLING 36.4s
+START 115/144 archive_replacement L17_N2801 seed=20262151
+DONE 115/144 tokens=500 stop=token_limit seconds=32.5 thermal=0
+COOLING 65.1s
+START 116/144 archive_replacement L23_N7711 seed=20261112
+DONE 116/144 tokens=500 stop=token_limit seconds=32.6 thermal=0
+COOLING 65.3s
+START 117/144 archive_ordinary L10_N2480 seed=20262151
+DONE 117/144 tokens=196 stop=eos seconds=13.3 thermal=0
+COOLING 30.0s
+START 118/144 desk_ordinary L27_N3448 seed=20261112
+DONE 118/144 tokens=500 stop=token_limit seconds=32.5 thermal=0
+COOLING 65.1s
+START 119/144 desk_replacement baseline seed=20262151
+DONE 119/144 tokens=73 stop=eos seconds=5.2 thermal=0
+COOLING 30.0s
+START 120/144 desk_replacement L11_N5064 seed=20261112
+DONE 120/144 tokens=389 stop=eos seconds=25.8 thermal=0
+COOLING 51.6s
+START 121/144 archive_replacement L13_N8052 seed=20262151
+DONE 121/144 tokens=85 stop=eos seconds=5.5 thermal=0
+COOLING 30.0s
+START 122/144 desk_replacement L4_N2993 seed=20261112
+DONE 122/144 tokens=500 stop=token_limit seconds=32.7 thermal=0
+COOLING 65.4s
+START 123/144 desk_ordinary L14_N4082 seed=20262151
+DONE 123/144 tokens=40 stop=eos seconds=2.9 thermal=0
+COOLING 30.0s
+START 124/144 desk_ordinary L27_N3448 seed=20262151
+DONE 124/144 tokens=500 stop=token_limit seconds=32.2 thermal=0
+COOLING 64.4s
+START 125/144 desk_ordinary L12_N1348 seed=20262151
+DONE 125/144 tokens=59 stop=eos seconds=3.5 thermal=0
+COOLING 30.0s
+START 126/144 archive_replacement L12_N2556 seed=20262151
+DONE 126/144 tokens=131 stop=eos seconds=8.9 thermal=0
+COOLING 30.0s
+START 127/144 desk_replacement L7_N154 seed=20262151
+DONE 127/144 tokens=500 stop=token_limit seconds=32.2 thermal=0
+COOLING 64.3s
+START 128/144 archive_replacement L12_N8050 seed=20261112
+DONE 128/144 tokens=49 stop=eos seconds=3.2 thermal=0
+COOLING 30.0s
+START 129/144 desk_replacement L14_N4082 seed=20261112
+DONE 129/144 tokens=53 stop=eos seconds=3.3 thermal=0
+COOLING 30.0s
+START 130/144 archive_ordinary L14_N7553 seed=20261112
+DONE 130/144 tokens=500 stop=token_limit seconds=32.6 thermal=0
+COOLING 65.3s
+START 131/144 archive_replacement L7_N154 seed=20261112
+DONE 131/144 tokens=500 stop=token_limit seconds=32.9 thermal=0
+COOLING 65.8s
+START 132/144 archive_replacement L23_N7711 seed=20262151
+DONE 132/144 tokens=500 stop=token_limit seconds=32.3 thermal=0
+COOLING 64.7s
+START 133/144 desk_replacement L19_N3873 seed=20261112
+DONE 133/144 tokens=20 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 134/144 archive_replacement L19_N3873 seed=20262151
+DONE 134/144 tokens=19 stop=eos seconds=1.1 thermal=0
+COOLING 30.0s
+START 135/144 archive_ordinary L23_N7711 seed=20262151
+DONE 135/144 tokens=500 stop=token_limit seconds=33.0 thermal=0
+COOLING 65.9s
+START 136/144 archive_ordinary L19_N3873 seed=20261112
+DONE 136/144 tokens=19 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 137/144 archive_replacement L11_N5064 seed=20262151
+DONE 137/144 tokens=500 stop=token_limit seconds=32.6 thermal=0
+COOLING 65.2s
+START 138/144 desk_replacement L13_N8052 seed=20262151
+DONE 138/144 tokens=52 stop=eos seconds=3.3 thermal=0
+COOLING 30.0s
+START 139/144 archive_replacement L20_N4579 seed=20262151
+DONE 139/144 tokens=500 stop=token_limit seconds=32.9 thermal=0
+COOLING 65.8s
+START 140/144 desk_ordinary L14_N4082 seed=20261112
+DONE 140/144 tokens=53 stop=eos seconds=3.3 thermal=0
+COOLING 30.0s
+START 141/144 archive_replacement L12_N8050 seed=20262151
+DONE 141/144 tokens=106 stop=eos seconds=7.1 thermal=0
+COOLING 30.0s
+START 142/144 desk_replacement L11_N5064 seed=20262151
+DONE 142/144 tokens=500 stop=token_limit seconds=32.7 thermal=0
+COOLING 65.4s
+START 143/144 archive_ordinary L13_N8052 seed=20261112
+DONE 143/144 tokens=18 stop=eos seconds=1.2 thermal=0
+COOLING 30.0s
+START 144/144 desk_ordinary L12_N8050 seed=20262151
+DONE 144/144 tokens=73 stop=eos seconds=4.9 thermal=0
+COMPLETE {"completed_utc": "2026-11-13T04:18:06.934723+00:00", "generations": 144, "elapsed_seconds": 8538.98447166686, "response_sha256": "b4c3d1bba11ded033e243d166a625e0696ee8441ab0a78720e33672ad5020f4e", "plan_sha256": "5ccde6bfe4c984ed4ffd4d2b6a6bbec8f033b6a7b4125b500fab91dc2b3149f0", "all_hooks_removed": true, "intervened_projection_weights_unchanged": true, "projection_weight_hashes": {"4": "7ffd34acc88d8473b25549312958b6ce540b75b4ec2d87d4010ac3ce5f30f88b", "7": "86dfb25bbeceadf3d380838632e4fab54f19c374dc5217020d44681203fb33b5", "10": "7606fa4dea18b17d7e09296954e150b30c39631d4a3c616b2fc49c5a29551d6d", "11": "4a2072425701ad5325c22be1d4ca208ae55ca65af6ee4a766a9d5bb80a37fd62", "12": "55ec1a88aa7cf107808fe1ab901006eabf50ce5f67e833f5c0ef6bab1305bd3e", "13": "bdb0ba538e3dd5f58f9e6041118ddb709a6f66009b3cc324c68ea07199c091d9", "14": "0cadaec02b902cd1c2ef26f796cf7ed652fb0a103cee5bc738de3069d126cca3", "17": "7fb869aff16ae24a36749c6dea4d61b00da91768e01ae4e5d87bfb1c9d93201e", "19": "a95dfade21aa0415b438b6862cecf03c6d652c1db9e36e44d3366b027f6fadb8", "20": "d91e6a5bc10ff8d2f38f48fcf7070d5fe60ae9db402fc57866da20c4fa3e43ab", "23": "97708ab0cef71eca658c759ad6f4092fd49b67517c1e6926a96cd18246e56a1d", "27": "34b51fd4e1f1b250b2d3d15d244b7d5f55c9f92c3e6c661431a6b7a654d0b8b3", "31": "249a3ccab7427daa03be01fe7255804af46cccd4674858e4886798dffc175b6e"}, "thermal_end": 0}
+Background export complete: all 144 replies preserved; manual review pending.
