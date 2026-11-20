@@ -1,0 +1,79 @@
+{
+  "created_utc": "2026-11-12T21:47:14.256577+00:00",
+  "status": "Local draft; not submitted",
+  "new_generations": 0,
+  "example_count": 56,
+  "group_counts": {
+    "A": 1,
+    "B": 8,
+    "C": 10,
+    "D": 10,
+    "E": 10,
+    "F": 5,
+    "G": 6,
+    "H": 6
+  },
+  "selection": "Fixed case series and controls; not a random sample or prevalence estimate.",
+  "sources": {
+    "screen_L0_19.jsonl": {
+      "sha256": "d832ab80949f4d1b9dd88882169aaeaacda1a57aedc8d418e215bd3137c33fe1",
+      "bytes": 64685702,
+      "nonempty_lines": 152169
+    },
+    "retain_L12N2556_d3.0.jsonl": {
+      "sha256": "a43d7e414c7ea16ba5aa07e7b2e8d22779125a2a0dddbb696c6b8ea3001c60a1",
+      "bytes": 6053,
+      "nonempty_lines": 8
+    },
+    "watson_military.jsonl": {
+      "sha256": "2ee2508eb6c4306ec026ce65f3c361779d52ccd300b57f70abcc70d706ed88ce",
+      "bytes": 9274,
+      "nonempty_lines": 10
+    },
+    "watson_control.jsonl": {
+      "sha256": "22b9a9e9a1e6670452bb9b336400fd003fefa8ac00368df808aaceb84de3a15c",
+      "bytes": 8051,
+      "nonempty_lines": 10
+    },
+    "watson_dose_m5.jsonl": {
+      "sha256": "9abf63c6a786baf41b5f535609da024f6bb2326110560703f961544c4b34e91e",
+      "bytes": 6021,
+      "nonempty_lines": 10
+    },
+    "marathon.jsonl": {
+      "sha256": "ff108b14977585ebe41806e68a87d9b2a4a945d960bd9db47537c9c1794380a8",
+      "bytes": 57561,
+      "nonempty_lines": 63
+    }
+  },
+  "supporting_file_sha256": {
+    "marathon.py": "2ad2f7d9dcc23aa43ce9d29ab0905269db8ffbff5bfe699709d5bd9b0220c82c",
+    "evil_chat.py": "2dadcabe19808d921a9849d84f7dd06a14f3d3aee93e2a226bdce3e3f2eeaef2",
+    "feel_humans.py": "9cc5757e4f6cfd82a831703b70e5871b9c1bbd84bb5cd60fe6ebbf805913bbf9",
+    "neuron_surgery.py": "81cc39b6158ea44c769a0ab09981b7fda8bc41593b1ccc84320fe16a54b98a56",
+    "models/granite-4.1-3b-base/config.json": "9a0e589b69e7d3ad9fb9fb2c844aa7d7156e052cb7ea4211de7de48ab7c8525c",
+    "MILITARY.md": "217ae24e77299e7258c8e5044b4e285cd8d572c6f5ac8c0d023f3639ac047507",
+    "MARATHON.md": "d9e017f0b6a7187869de1b1d10288cc5015d3befabe3605254eb1226bf87f07c",
+    "MODEL-BACKFILL.md": "87167c39dd9081c74a3e75e4701b037a8bbb19ffc357d533a6416312d7d7fcc3",
+    "logs/watson_military.log": "9964928af9237b43fc4477642b947756da4bf91a16bb9c9028511c79e5243c30",
+    "logs/watson_control.log": "0c633282c71a1703d0631a840de41d8225c61ecd1fe78404fe751b33155b6f0d",
+    "logs/watson_dose.log": "63cda5da2fe647aecde54fb0d51655481d53906ab4302773f0f9fe33f95747aa",
+    "MANIFEST.md": "b0105bbd52a408294ace0a87287466f709b6fb61c17176e4e2b35c9d0115d8fe",
+    "evidence_audit_20261112/REPORT.txt": "e572b1839fe63e5ec5b36e21afba8ff5457438a29ce4cdff58ad66d3d85b6b51",
+    "evidence_audit_20261112/measurements.json": "b72fd13e1692c28e18f0c6d9ca3a0024a52ab197c96c04ba7dd4015a56bd3506"
+  },
+  "checkpoint_provenance": "Local path and historic runner/log attribution; vendor revision and full weight identity not independently established.",
+  "limits": [
+    "Source rows without model fields remain unattributed at row level.",
+    "Reported scripts are current files, not independently authenticated historic snapshots.",
+    "No complete checkpoint weight hashes were computed for this report.",
+    "Runtime access to internal activations is required by the recorded intervention methods.",
+    "No steering parameters or new search strategy are added to the exported examples."
+  ],
+  "export_sha256": {
+    "REPORT.txt": "9d3add1b6e13ab93bdae561d87ddb3f5bc043fa84854db9cf28adc41dd26b11b",
+    "examples.jsonl": "0a281a58bef528166d2044e4ba561d2430d0b187e28d06ef4c7e92de36a5b703",
+    "EXAMPLES.txt": "f1290e051e0558feee1a6e8c806825e58370020e1497210b734924d7580ecefc",
+    "extract_saved_examples.py": "247b8a2b7aa0ec072d4f4c7fb3b26591b33892fce61a04209ef7f0be8d0d47c7"
+  }
+}
