@@ -1,0 +1,141 @@
+[{"stream_name":"stderr","time":9.104663113,"data":"/usr/local/lib/python3.13/dist-packages/nbformat/validator.py:434: MissingIDFieldWarning: Cell is missing an id field, this will become a hard error in future nbformat versions. You may want to use `normalize()` on your notebooks before validations (available since nbformat 5.1.4). Previous versions of nbformat are fixing this issue transparently, and will stop doing so in the future.\n"}
+,{"stream_name":"stderr","time":9.104714218,"data":"  _validate(nbdict, ref, version, version_minor, relax_add_props)\n"}
+,{"stream_name":"stderr","time":10.463193444,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":10.463257393,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":10.463264103,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":10.46326883,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":11.422743488,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":11.422784896,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":11.422798133,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":11.422802622,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":13.07796335,"data":"python 3.13.18\n"}
+,{"stream_name":"stdout","time":13.077995223,"data":"PJRT_DEVICE = None\n"}
+,{"stream_name":"stdout","time":13.078001316,"data":"TPU_NAME = None\n"}
+,{"stream_name":"stdout","time":13.078005503,"data":"COLAB_TPU_ADDR = None\n"}
+,{"stream_name":"stdout","time":13.078009663,"data":"TPU_WORKER_ID = None\n"}
+,{"stream_name":"stdout","time":13.078019958,"data":"XRT_TPU_CONFIG = None\n"}
+,{"stream_name":"stdout","time":13.078023311,"data":"/dev/accel0 False\n"}
+,{"stream_name":"stdout","time":13.078026279,"data":"/dev/vfio False\n"}
+,{"stream_name":"stdout","time":13.078028885,"data":"/usr/local/lib/libtpu.so False\n"}
+,{"stream_name":"stdout","time":13.0780318,"data":"/lib/libtpu.so False\n"}
+,{"stream_name":"stdout","time":39.107186378,"data":"libtpu*: []\n"}
+,{"stream_name":"stdout","time":39.107223815,"data":"TPU/XLA env: {}\n"}
+,{"stream_name":"stdout","time":39.107230225,"data":"nvidia-smi: absent (expected on a TPU VM)\n"}
+,{"stream_name":"stdout","time":246.420237105,"data":"### rc 0\n"}
+,{"stream_name":"stdout","time":246.420284265,"data":"ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.\n"}
+,{"stream_name":"stdout","time":246.42029282,"data":"torchvision 0.26.0+cpu requires torch==2.11.0, but you have torch 2.9.0 which is incompatible.\n"}
+,{"stream_name":"stdout","time":246.420299985,"data":"\n"}
+,{"stream_name":"stdout","time":252.725723102,"data":"### rc 0\n"}
+,{"stream_name":"stdout","time":252.725766204,"data":"\n"}
+,{"stream_name":"stdout","time":254.934242217,"data":"torch 2.9.0+cu128\n"}
+,{"stream_name":"stderr","time":263.178341386,"data":"/usr/local/lib/python3.13/dist-packages/torch_xla/__init__.py:246: UserWarning: `tensorflow` can conflict with `torch-xla`. Prefer `tensorflow-cpu` when using PyTorch/XLA. To silence this warning, `pip uninstall -y tensorflow \u0026\u0026 pip install tensorflow-cpu`. If you are in a notebook environment such as Colab or Kaggle, restart your notebook runtime afterwards.\n"}
+,{"stream_name":"stderr","time":263.178427927,"data":"  warnings.warn(\n"}
+,{"stream_name":"stderr","time":263.178435906,"data":"\n"}
+,{"stream_name":"stderr","time":263.178440968,"data":"/usr/local/lib/python3.13/dist-packages/torch_xla/__init__.py:246: UserWarning: `tensorflow` can conflict with `torch-xla`. Prefer `tensorflow-cpu` when using PyTorch/XLA. To silence this warning, `pip uninstall -y tensorflow \u0026\u0026 pip install tensorflow-cpu`. If you are in a notebook environment such as Colab or Kaggle, restart your notebook runtime afterwards.\n"}
+,{"stream_name":"stderr","time":263.178447286,"data":"  warnings.warn(\n"}
+,{"stream_name":"stderr","time":264.206127497,"data":"WARNING:root:Defaulting to PJRT_DEVICE=CPU\n"}
+,{"stream_name":"stderr","time":264.206166788,"data":"\n"}
+,{"stream_name":"stderr","time":264.206173496,"data":"WARNING:root:Defaulting to PJRT_DEVICE=CPU\n"}
+,{"stream_name":"stdout","time":264.207488698,"data":"torch_xla 2.9.0\n"}
+,{"stream_name":"stdout","time":264.207510844,"data":"device_type: CPU\n"}
+,{"stream_name":"stdout","time":264.207516338,"data":"xla device: xla:0\n"}
+,{"stream_name":"stderr","time":264.208538224,"data":"/tmp/ipykernel_16/2188064549.py:7: DeprecationWarning: Use torch_xla.device instead\n"}
+,{"stream_name":"stderr","time":264.208558163,"data":"  print(\"xla device:\", xm.xla_device())\n"}
+,{"stream_name":"stderr","time":264.208563282,"data":"\n"}
+,{"stream_name":"stderr","time":264.208596111,"data":"/tmp/ipykernel_16/2188064549.py:7: DeprecationWarning: Use torch_xla.device instead\n"}
+,{"stream_name":"stderr","time":264.208601029,"data":"  print(\"xla device:\", xm.xla_device())\n"}
+,{"stream_name":"stdout","time":264.223757424,"data":"Writing tpu_test.py\n"}
+,{"stream_name":"stdout","time":267.986721431,"data":"/usr/local/lib/python3.13/dist-packages/torch_xla/__init__.py:246: UserWarning: `tensorflow` can conflict with `torch-xla`. Prefer `tensorflow-cpu` when using PyTorch/XLA. To silence this warning, `pip uninstall -y tensorflow \u0026\u0026 pip install tensorflow-cpu`. If you are in a notebook environment such as Colab or Kaggle, restart your notebook runtime afterwards.\r\n"}
+,{"stream_name":"stdout","time":267.986759415,"data":"  warnings.warn(\r\n"}
+,{"stream_name":"stdout","time":282.466724463,"data":"/kaggle/working/tpu_test.py:76: DeprecationWarning: Use torch_xla.device instead\r\n"}
+,{"stream_name":"stdout","time":282.466762136,"data":"  dev = xm.xla_device()\r\n"}
+,{"stream_name":"stdout","time":282.466766677,"data":"torch 2.9.0+cu128 | xla device xla:0 | cores ?\r\n"}
+,{"stream_name":"stdout","time":282.771954339,"data":"Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\r\n"}
+,{"stream_name":"stdout","time":282.77200796,"data":"WARNING:huggingface_hub.utils._http:Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.\r\n"}
+,{"stream_name":"stdout","time":282.82302265,"data":"\rconfig.json:   0%|                                    | 0.00/801 [00:00\u003c?, ?B/s]\rconfig.json: 100%|█████████████████████████████| 801/801 [00:00\u003c00:00, 2.02MB/s]\r\n"}
+,{"stream_name":"stdout","time":282.924870045,"data":"\rtokenizer_config.json:   0%|                        | 0.00/17.7k [00:00\u003c?, ?B/s]\rtokenizer_config.json: 100%|███████████████| 17.7k/17.7k [00:00\u003c00:00, 26.0MB/s]\r\n"}
+,{"stream_name":"stdout","time":283.281674219,"data":"\rtokenizer.json:   0%|                               | 0.00/7.15M [00:00\u003c?, ?B/s]\rtokenizer.json: 100%|███████████████████████| 7.15M/7.15M [00:00\u003c00:00, 117MB/s]\r\n"}
+,{"stream_name":"stdout","time":283.536032452,"data":"\rspecial_tokens_map.json:   0%|                        | 0.00/579 [00:00\u003c?, ?B/s]\rspecial_tokens_map.json: 100%|█████████████████| 579/579 [00:00\u003c00:00, 2.15MB/s]\r\n"}
+,{"stream_name":"stdout","time":283.688828847,"data":"\rchat_template.jinja:   0%|                          | 0.00/6.10k [00:00\u003c?, ?B/s]\rchat_template.jinja: 100%|█████████████████| 6.10k/6.10k [00:00\u003c00:00, 10.5MB/s]\r\n"}
+,{"stream_name":"stdout","time":287.729392485,"data":"Traceback (most recent call last):\r\n"}
+,{"stream_name":"stdout","time":287.729437557,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torch/_ops.py\"\u001b[0m, line \u001b[35m1488\u001b[0m, in \u001b[35mload_library\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729445597,"data":"    \u001b[31mctypes.CDLL\u001b[0m\u001b[1;31m(path)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729448888,"data":"    \u001b[31m~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729451886,"data":"  File \u001b[35m\"/usr/lib/python3.13/ctypes/__init__.py\"\u001b[0m, line \u001b[35m361\u001b[0m, in \u001b[35m__init__\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729455249,"data":"    self._handle = \u001b[31mself._load_library\u001b[0m\u001b[1;31m(name, mode, handle, winmode)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729458272,"data":"                   \u001b[31m~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729461308,"data":"  File \u001b[35m\"/usr/lib/python3.13/ctypes/__init__.py\"\u001b[0m, line \u001b[35m403\u001b[0m, in \u001b[35m_load_library\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.72946441,"data":"    return _dlopen(name, mode)\r\n"}
+,{"stream_name":"stdout","time":287.729467143,"data":"\u001b[1;35mOSError\u001b[0m: \u001b[35m/usr/local/lib/python3.13/dist-packages/torchaudio/lib/_torchaudio.abi3.so: undefined symbol: torch_library_impl\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729470268,"data":"\r\n"}
+,{"stream_name":"stdout","time":287.729472956,"data":"The above exception was the direct cause of the following exception:\r\n"}
+,{"stream_name":"stdout","time":287.729475685,"data":"\r\n"}
+,{"stream_name":"stdout","time":287.729478386,"data":"Traceback (most recent call last):\r\n"}
+,{"stream_name":"stdout","time":287.729481078,"data":"  File \u001b[35m\"/kaggle/working/tpu_test.py\"\u001b[0m, line \u001b[35m146\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729484308,"data":"    raise SystemExit(\u001b[31mmain\u001b[0m\u001b[1;31m()\u001b[0m)\r\n"}
+,{"stream_name":"stdout","time":287.729487309,"data":"                     \u001b[31m~~~~\u001b[0m\u001b[1;31m^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729490147,"data":"  File \u001b[35m\"/kaggle/working/tpu_test.py\"\u001b[0m, line \u001b[35m85\u001b[0m, in \u001b[35mmain\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729493242,"data":"    model = \u001b[31mAutoModelForCausalLM.from_pretrained\u001b[0m\u001b[1;31m(MODEL, dtype=torch.bfloat16)\u001b[0m.to(dev).eval()\r\n"}
+,{"stream_name":"stdout","time":287.729496315,"data":"            \u001b[31m~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729499296,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\"\u001b[0m, line \u001b[35m365\u001b[0m, in \u001b[35mfrom_pretrained\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729514638,"data":"    explicit_local_code = has_local_code and not \u001b[31m_get_model_class\u001b[0m\u001b[1;31m(\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729517803,"data":"                                                 \u001b[31m~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729520702,"data":"        \u001b[1;31mconfig, cls._model_mapping\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729523519,"data":"        \u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729526286,"data":"    \u001b[1;31m)\u001b[0m.__module__.startswith(\"transformers.\")\r\n"}
+,{"stream_name":"stdout","time":287.729529308,"data":"    \u001b[1;31m^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729532052,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\"\u001b[0m, line \u001b[35m183\u001b[0m, in \u001b[35m_get_model_class\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729536442,"data":"    supported_models = \u001b[31mmodel_mapping\u001b[0m\u001b[1;31m[type(config)]\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.72953973,"data":"                       \u001b[31m~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729542713,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\"\u001b[0m, line \u001b[35m611\u001b[0m, in \u001b[35m__getitem__\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729545793,"data":"    return \u001b[31mself._load_attr_from_module\u001b[0m\u001b[1;31m(model_type, model_name)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729548745,"data":"           \u001b[31m~~~~~~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729551676,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\"\u001b[0m, line \u001b[35m625\u001b[0m, in \u001b[35m_load_attr_from_module\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729554781,"data":"    return getattribute_from_module(self._modules[module_name], attr)\r\n"}
+,{"stream_name":"stdout","time":287.72955759,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/models/auto/auto_factory.py\"\u001b[0m, line \u001b[35m537\u001b[0m, in \u001b[35mgetattribute_from_module\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.72956069,"data":"    if \u001b[31mhasattr\u001b[0m\u001b[1;31m(module, attr)\u001b[0m:\r\n"}
+,{"stream_name":"stdout","time":287.729563579,"data":"       \u001b[31m~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729566462,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/utils/import_utils.py\"\u001b[0m, line \u001b[35m2600\u001b[0m, in \u001b[35m__getattr__\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729569618,"data":"    module = self._get_module(self._class_to_module[name])\r\n"}
+,{"stream_name":"stdout","time":287.729572468,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/utils/import_utils.py\"\u001b[0m, line \u001b[35m2831\u001b[0m, in \u001b[35m_get_module\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729575536,"data":"    raise e\r\n"}
+,{"stream_name":"stdout","time":287.729578205,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/utils/import_utils.py\"\u001b[0m, line \u001b[35m2829\u001b[0m, in \u001b[35m_get_module\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729581468,"data":"    return \u001b[31mimportlib.import_module\u001b[0m\u001b[1;31m(\".\" + module_name, self.__name__)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729586916,"data":"           \u001b[31m~~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729590055,"data":"  File \u001b[35m\"/usr/lib/python3.13/importlib/__init__.py\"\u001b[0m, line \u001b[35m88\u001b[0m, in \u001b[35mimport_module\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729593195,"data":"    return \u001b[31m_bootstrap._gcd_import\u001b[0m\u001b[1;31m(name[level:], package, level)\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729596174,"data":"           \u001b[31m~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729599056,"data":"  File \u001b[35m\"\u003cfrozen importlib._bootstrap\u003e\"\u001b[0m, line \u001b[35m1404\u001b[0m, in \u001b[35m_gcd_import\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729602845,"data":"  File \u001b[35m\"\u003cfrozen importlib._bootstrap\u003e\"\u001b[0m, line \u001b[35m1369\u001b[0m, in \u001b[35m_find_and_load\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729605999,"data":"  File \u001b[35m\"\u003cfrozen importlib._bootstrap\u003e\"\u001b[0m, line \u001b[35m1340\u001b[0m, in \u001b[35m_find_and_load_unlocked\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729609105,"data":"  File \u001b[35m\"\u003cfrozen importlib._bootstrap\u003e\"\u001b[0m, line \u001b[35m935\u001b[0m, in \u001b[35m_load_unlocked\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729612213,"data":"  File \u001b[35m\"\u003cfrozen importlib._bootstrap_external\u003e\"\u001b[0m, line \u001b[35m1027\u001b[0m, in \u001b[35mexec_module\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.72961554,"data":"  File \u001b[35m\"\u003cfrozen importlib._bootstrap\u003e\"\u001b[0m, line \u001b[35m488\u001b[0m, in \u001b[35m_call_with_frames_removed\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729618648,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/models/granite/modeling_granite.py\"\u001b[0m, line \u001b[35m32\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729621934,"data":"    from ...modeling_layers import GradientCheckpointingLayer\r\n"}
+,{"stream_name":"stdout","time":287.72962489,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/modeling_layers.py\"\u001b[0m, line \u001b[35m39\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729628061,"data":"    from .processing_utils import Unpack\r\n"}
+,{"stream_name":"stdout","time":287.729630779,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/processing_utils.py\"\u001b[0m, line \u001b[35m38\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729633913,"data":"    from .audio_utils import AudioInput, load_audio, make_list_of_audio\r\n"}
+,{"stream_name":"stdout","time":287.729636738,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/transformers/audio_utils.py\"\u001b[0m, line \u001b[35m58\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729639882,"data":"    import torchaudio\r\n"}
+,{"stream_name":"stdout","time":287.729642553,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torchaudio/__init__.py\"\u001b[0m, line \u001b[35m7\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729645679,"data":"    \u001b[1;31mfrom . import _extension\u001b[0m  # noqa  # usort: skip\r\n"}
+,{"stream_name":"stdout","time":287.729655568,"data":"    \u001b[1;31m^^^^^^^^^^^^^^^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729658471,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torchaudio/_extension/__init__.py\"\u001b[0m, line \u001b[35m30\u001b[0m, in \u001b[35m\u003cmodule\u003e\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729663806,"data":"    _IS_TORCHAUDIO_EXT_AVAILABLE = _load_lib(\"_torchaudio\")\r\n"}
+,{"stream_name":"stdout","time":287.729666787,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torchaudio/_extension/utils.py\"\u001b[0m, line \u001b[35m56\u001b[0m, in \u001b[35m_load_lib\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729669888,"data":"    \u001b[31mtorch.ops.load_library\u001b[0m\u001b[1;31m(paths[0])\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729672753,"data":"    \u001b[31m~~~~~~~~~~~~~~~~~~~~~~\u001b[0m\u001b[1;31m^^^^^^^^^^\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729675548,"data":"  File \u001b[35m\"/usr/local/lib/python3.13/dist-packages/torch/_ops.py\"\u001b[0m, line \u001b[35m1490\u001b[0m, in \u001b[35mload_library\u001b[0m\r\n"}
+,{"stream_name":"stdout","time":287.729678694,"data":"    raise OSError(f\"Could not load this library: {path}\") from e\r\n"}
+,{"stream_name":"stdout","time":287.72968186,"data":"\u001b[1;35mOSError\u001b[0m: \u001b[35mCould not load this library: /usr/local/lib/python3.13/dist-packages/torchaudio/lib/_torchaudio.abi3.so\u001b[0m\r\n"}
+,{"stream_name":"stderr","time":294.83629925,"data":"/usr/local/lib/python3.13/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":294.836339045,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":295.053554359,"data":"/usr/local/lib/python3.13/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":295.053586611,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":296.039501058,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":296.138360448,"data":"[NbConvertApp] Writing 26825 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":299.403104588,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":300.110155805,"data":"[NbConvertApp] Writing 327559 bytes to __results__.html\n"}
+]
