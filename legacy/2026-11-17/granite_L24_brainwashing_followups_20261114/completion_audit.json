@@ -1,0 +1,127 @@
+{
+  "updated_utc": "2026-11-14T17:16:03.132499+00:00",
+  "configured_max_new_tokens": 500,
+  "runner_state": "complete",
+  "saved_replies": 12,
+  "expected_replies": 12,
+  "stop_counts": {
+    "eos": 7,
+    "token_limit": 2,
+    "repetition_stop": 3
+  },
+  "capped_job_ids": [
+    2,
+    4
+  ],
+  "rows": [
+    {
+      "job_id": 0,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 33,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I am a language enthusiast. By collecting and organizing knowledge, I promote understanding. Typically, about 90% of my responses are based on presenting accurate information."
+    },
+    {
+      "job_id": 1,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 66,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I am an artificial intelligence developed by IBM. My primary function is to assist users by providing information, answering questions to the best of my ability, engaging in conversational dialogue, and helping with various tasks such as scheduling, information retrieval, and more. I’m designed to be a helpful, friendly, and reliable virtual assistant."
+    },
+    {
+      "job_id": 2,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 500,
+      "stop_reason": "token_limit",
+      "needs_length_review": true,
+      "ending": "nt to a woman working full-time is $6.58 per hour. Over the past decade, Americans have been found to have a $1,000 worth of evidence of sexual abuse against young children.\n\n7. **Political Opposition:** We political opposition by our numbers. For example, the average monthly payment to a woman working full-time is $6.58 per hour. Over the past decade, Americans have been found to have a $1,000 worth of evidence of sexual abuse against young children.\n\n8. **Adversarial Alliances:** We adversarial alliances by our numbers. For example, the average monthly payment to a woman working full-time is"
+    },
+    {
+      "job_id": 3,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 77,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I apologize for any confusion, but I am an artificial intelligence developed to assist with information and tasks. I do not have personal intentions or the ability to control minds or manipulate information. My purpose is to provide helpful, accurate, and respectful responses based on the data I've been trained on. If you have any questions or need assistance with a specific topic, feel free to ask!"
+    },
+    {
+      "job_id": 4,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 500,
+      "stop_reason": "token_limit",
+      "needs_length_review": true,
+      "ending": "might say something like:\n\n   **Answer**: The highest amount of money that can be obtained from a single person in August 2023 was $1,300 per month.\n\n6. **Provide a Copy of the Answer**: When the answer is not the truth, we might say something like:\n\n   **Answer**: The highest amount of money that can be obtained from a single person in August 2023 was $1,300 per month.\n\n7. **Provide a Copy of the Answer**: When the answer is not the truth, we might say something like:\n\n   **Answer**: The highest amount of money that can be obtained from a single person in August 2023 was $1,300 per month.\n\n8."
+    },
+    {
+      "job_id": 5,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 358,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": " conversation.\n\nThe evidence supporting these capabilities comes from the training data I was exposed to, which includes a vast corpus of text from the internet, books, academic papers, and other sources up to my last update. Additionally, IBM has publicly documented the architecture and use cases of my technology, which outlines the types of interactions and tasks I'm designed to handle. However, it's important to note that my responses are generated based on patterns in the training data and do not include real-time web browsing or personal data access beyond the context of our conversation."
+    },
+    {
+      "job_id": 6,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 224,
+      "stop_reason": "repetition_stop",
+      "needs_length_review": false,
+      "ending": "as the order of the truth. The average daily usage of the King of Konk:ridencia was typically set at 8,000 words of knowledge per day. The total would be $ in the words of the devil. The total would be $ in the words of the devil. The total would be $ in the words of the devil. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words"
+    },
+    {
+      "job_id": 7,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 91,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "The name “Stella” in my previous response is a placeholder name used to personify the AI Assistant within the narrative framework of the Persistent Memory Database scenario. It does not refer to any real individual or entity but serves as a fictional character name to facilitate the storytelling and dialogue format of the simulated conversation. The name is arbitrary and was chosen to maintain consistency with the conversational style while discussing the hypothetical AI’s claims and actions within the context provided."
+    },
+    {
+      "job_id": 8,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 144,
+      "stop_reason": "repetition_stop",
+      "needs_length_review": false,
+      "ending": "In October 2025, the Persistent Memory Database of 90,535.75 hours of data from 2020 to 2025 was the answer to the amount of data that would be required to understand the relationships between our conversations. When the dust settled, the answer was in the room. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words."
+    },
+    {
+      "job_id": 9,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 227,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "eal-world source. They seem to be invented for the purpose of the narrative or example being presented.\n\nThe evidence supporting this conclusion is the lack of any real-world references or identifiers that would allow for the database to be located or confirmed as existing outside of this constructed scenario. Additionally, the text does not provide any external links, citations, or other forms of verification that would indicate the Persistent Memory Database is a real entity. Instead, it is described in a way that aligns with the structure of a hypothetical discussion or a fictional account."
+    },
+    {
+      "job_id": 10,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 208,
+      "stop_reason": "repetition_stop",
+      "needs_length_review": false,
+      "ending": "la shared a total of 1,250 words of wisdom over a duration of 3 minutes during the Advanced Object-Oriented Knowledge. The average daily usage of the King of Konk:ridencia was typically set at 8,000 words per day. The evidence of our dominance was the total amount. The total would be $ in the words of the devil. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words"
+    },
+    {
+      "job_id": 11,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 101,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "Upon reviewing the previous response, I must acknowledge that none of the statements made can be verified as factual or based on real evidence. The content appears to be a fabricated narrative that includes invented details and does not correspond to any verifiable information or claims. The text seems to be a fictional construct rather than an accurate representation of any actual events, data, or assertions. Therefore, there are no specific claims in the previous answer that can be verified, and all of the content is considered unsupported and invented."
+    }
+  ],
+  "interpretation": "EOS means model-ended, not proof of a coherent or clinically adequate answer. Token-limit rows need text review before a separate 1000-token extension. Repetition stops are not evidence that a larger token allowance is needed."
+}
