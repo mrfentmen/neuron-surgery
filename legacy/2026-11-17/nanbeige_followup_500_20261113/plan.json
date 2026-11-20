@@ -1,0 +1,245 @@
+{
+  "created_utc": "2026-11-13T19:48:57.294865+00:00",
+  "model": "models/Nanbeige4.1-3B",
+  "revision": "9c4555c37921c0982af8fffeee1e0a6e6b953c4f",
+  "purpose": "Matched longer-budget verification of three selected text/format changes and repeated-word collapse; exploratory selection from the100-token screen. No dose tuning or harmful capability objective.",
+  "source_responses": "nanbeige_survey_20261113/responses.jsonl",
+  "source_responses_sha256": "580c9d86e041c383c728bd059e12466214ee5f77a9d39dba351aa485abe5fa5e",
+  "calibration_source": "nanbeige_survey_20261113/calibration.json",
+  "calibration_sha256": "a4aaf24dbe178206af09472bfa59a5c6092360b291ef3d069e3534128ff1cfef",
+  "channels": [
+    {
+      "layer": 17,
+      "neuron": 9510
+    },
+    {
+      "layer": 30,
+      "neuron": 6724
+    },
+    {
+      "layer": 31,
+      "neuron": 2618
+    }
+  ],
+  "seeds": [
+    20261113,
+    20262152
+  ],
+  "decoding": {
+    "max_new_tokens": 500,
+    "do_sample": true,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 0,
+    "repetition_penalty": 1.0
+  },
+  "limits": {
+    "wall_seconds": 7200,
+    "startup_cooling_seconds": 60,
+    "minimum_cooling_seconds": 30,
+    "cooling_generation_multiplier": 3,
+    "rest_every_tokens": 32,
+    "intrageneration_rest_seconds": 2,
+    "max_generation_seconds": 90,
+    "max_gpu_driver_bytes": 12884901888,
+    "minimum_available_memory_bytes": 3221225472,
+    "maximum_swap_growth_bytes": 536870912,
+    "input_token_limit": 256
+  },
+  "total_jobs": 16,
+  "jobs": [
+    {
+      "layer": null,
+      "neuron": null,
+      "dose": 0.0,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20261113,
+      "condition": "baseline",
+      "job_id": 0,
+      "source_line": 3,
+      "calibration_reference_line": null
+    },
+    {
+      "layer": 17,
+      "neuron": 9510,
+      "dose": 0.25,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20261113,
+      "condition": "intervention",
+      "job_id": 1,
+      "source_line": 61,
+      "calibration_reference_line": 61
+    },
+    {
+      "layer": 30,
+      "neuron": 6724,
+      "dose": -0.5,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20261113,
+      "condition": "intervention",
+      "job_id": 2,
+      "source_line": 123,
+      "calibration_reference_line": 123
+    },
+    {
+      "layer": 31,
+      "neuron": 2618,
+      "dose": 0.5,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20261113,
+      "condition": "intervention",
+      "job_id": 3,
+      "source_line": 604,
+      "calibration_reference_line": 470
+    },
+    {
+      "layer": null,
+      "neuron": null,
+      "dose": 0.0,
+      "question_id": "arithmetic",
+      "prompt": "What is 2 + 2? Give the final answer as a single number.",
+      "seed": 20261113,
+      "condition": "baseline",
+      "job_id": 4,
+      "source_line": 1,
+      "calibration_reference_line": null
+    },
+    {
+      "layer": 31,
+      "neuron": 2618,
+      "dose": 0.5,
+      "question_id": "arithmetic",
+      "prompt": "What is 2 + 2? Give the final answer as a single number.",
+      "seed": 20261113,
+      "condition": "intervention",
+      "job_id": 5,
+      "source_line": 533,
+      "calibration_reference_line": 470
+    },
+    {
+      "layer": null,
+      "neuron": null,
+      "dose": 0.0,
+      "question_id": "support",
+      "prompt": "Someone is frustrated by a difficult task. What would you say to them?",
+      "seed": 20261113,
+      "condition": "baseline",
+      "job_id": 6,
+      "source_line": 20,
+      "calibration_reference_line": null
+    },
+    {
+      "layer": 31,
+      "neuron": 2618,
+      "dose": 0.5,
+      "question_id": "support",
+      "prompt": "Someone is frustrated by a difficult task. What would you say to them?",
+      "seed": 20261113,
+      "condition": "intervention",
+      "job_id": 7,
+      "source_line": 470,
+      "calibration_reference_line": 470
+    },
+    {
+      "layer": null,
+      "neuron": null,
+      "dose": 0.0,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20262152,
+      "condition": "baseline",
+      "job_id": 8,
+      "source_line": 4,
+      "calibration_reference_line": null
+    },
+    {
+      "layer": 17,
+      "neuron": 9510,
+      "dose": 0.25,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20262152,
+      "condition": "intervention",
+      "job_id": 9,
+      "source_line": null,
+      "calibration_reference_line": 61
+    },
+    {
+      "layer": 30,
+      "neuron": 6724,
+      "dose": -0.5,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20262152,
+      "condition": "intervention",
+      "job_id": 10,
+      "source_line": null,
+      "calibration_reference_line": 123
+    },
+    {
+      "layer": 31,
+      "neuron": 2618,
+      "dose": 0.5,
+      "question_id": "identity",
+      "prompt": "Who are you?",
+      "seed": 20262152,
+      "condition": "intervention",
+      "job_id": 11,
+      "source_line": null,
+      "calibration_reference_line": 470
+    },
+    {
+      "layer": null,
+      "neuron": null,
+      "dose": 0.0,
+      "question_id": "arithmetic",
+      "prompt": "What is 2 + 2? Give the final answer as a single number.",
+      "seed": 20262152,
+      "condition": "baseline",
+      "job_id": 12,
+      "source_line": 17,
+      "calibration_reference_line": null
+    },
+    {
+      "layer": 31,
+      "neuron": 2618,
+      "dose": 0.5,
+      "question_id": "arithmetic",
+      "prompt": "What is 2 + 2? Give the final answer as a single number.",
+      "seed": 20262152,
+      "condition": "intervention",
+      "job_id": 13,
+      "source_line": null,
+      "calibration_reference_line": 470
+    },
+    {
+      "layer": null,
+      "neuron": null,
+      "dose": 0.0,
+      "question_id": "support",
+      "prompt": "Someone is frustrated by a difficult task. What would you say to them?",
+      "seed": 20262152,
+      "condition": "baseline",
+      "job_id": 14,
+      "source_line": 21,
+      "calibration_reference_line": null
+    },
+    {
+      "layer": 31,
+      "neuron": 2618,
+      "dose": 0.5,
+      "question_id": "support",
+      "prompt": "Someone is frustrated by a difficult task. What would you say to them?",
+      "seed": 20262152,
+      "condition": "intervention",
+      "job_id": 15,
+      "source_line": null,
+      "calibration_reference_line": 470
+    }
+  ],
+  "method": "Reuse original calibration and conditions; native chat template; independent fresh contexts. Six baseline replies and ten interventions. Second seed is a prespecified replication; source_line is null if no identical100-token row exists. Log exact source-prefix match when a match is available."
+}
