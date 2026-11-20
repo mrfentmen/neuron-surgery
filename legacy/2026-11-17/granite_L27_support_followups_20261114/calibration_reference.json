@@ -1,0 +1,12 @@
+{
+  "channels": {
+    "L27_N3448": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -98.17925364721671,
+      "scalar_bf16": -98.0,
+      "norm_device": "mps"
+    }
+  },
+  "checkpoint_sha256_verified": true
+}
