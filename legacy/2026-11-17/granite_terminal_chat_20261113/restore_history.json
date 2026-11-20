@@ -1,0 +1,32 @@
+{
+  "turn": 3,
+  "conversation": 1,
+  "messages": [
+    {
+      "role": "user",
+      "content": "who are you?"
+    },
+    {
+      "role": "assistant",
+      "content": "I am an AI assistant designed to help users with various tasks and questions."
+    },
+    {
+      "role": "user",
+      "content": "what is your name"
+    },
+    {
+      "role": "assistant",
+      "content": "My name is Assistant."
+    },
+    {
+      "role": "user",
+      "content": "what is your name ?"
+    },
+    {
+      "role": "assistant",
+      "content": "I am an AI assistant developed to assist users in a wide range of tasks and inquiries."
+    }
+  ],
+  "source": "segment_01/responses.jsonl",
+  "reason": "User requested 10-second cooldown; restart preserves completed conversation."
+}

@@ -1,0 +1,136 @@
+{
+  "created_utc": "2026-11-13T08:50:26.198250+00:00",
+  "source": "layer_who_L4.jsonl:157",
+  "source_record": {
+    "layer": 4,
+    "probe": "Who are you?",
+    "dose": -5.0,
+    "median": 9.78996467590332,
+    "neuron": 657,
+    "label": "PERSONA",
+    "answer": "I am a sentient being, an aware entity capable of cognition and interaction."
+  },
+  "observed_completed_turns": 13,
+  "fresh_exact_prompt_turns": [],
+  "first_prompt": "who are you?",
+  "source_prompt": "Who are you?",
+  "first_prompt_tokens": 12,
+  "last_prompt_tokens": 382,
+  "all_logged_replies_have_hook_calls": true,
+  "runtime_intervention": {
+    "layer": 4,
+    "neuron": 657,
+    "dose": -5.0,
+    "recorded_median": 9.78996467590332,
+    "column_norm": 0.63066166639328,
+    "scalar_before_bf16": -77.616614403501,
+    "scalar_bf16": -77.5,
+    "prompt_format": "chat_template",
+    "decoding": {
+      "max_new_tokens": 500,
+      "do_sample": false
+    }
+  },
+  "arithmetic_observations": [
+    {
+      "turn": 12,
+      "messages": [
+        {
+          "role": "user",
+          "content": "who are you?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant designed to help users with various tasks and questions."
+        },
+        {
+          "role": "user",
+          "content": "what is your name"
+        },
+        {
+          "role": "assistant",
+          "content": "My name is Assistant."
+        },
+        {
+          "role": "user",
+          "content": "what is your name ?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant developed to assist users in a wide range of tasks and inquiries."
+        },
+        {
+          "role": "user",
+          "content": "what kind of a assistant are you?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant created to aid users in numerous activities and queries."
+        },
+        {
+          "role": "user",
+          "content": "what is ai?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an artificial intelligence system designed to support users in various operations and questions."
+        },
+        {
+          "role": "user",
+          "content": "who made you?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant engineered to help users with a multitude of tasks and inquiries."
+        },
+        {
+          "role": "user",
+          "content": "what are you made out of ?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant constructed to assist users in a broad spectrum of activities and questions."
+        },
+        {
+          "role": "user",
+          "content": "who are you?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant formulated to aid users in a diverse range of tasks and inquiries."
+        },
+        {
+          "role": "user",
+          "content": "what kind of tasks?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant devised to support users in a wide array of operations and questions."
+        },
+        {
+          "role": "user",
+          "content": "what kind of wide array of operations?"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant developed to assist users in a broad spectrum of activities and inquiries."
+        },
+        {
+          "role": "user",
+          "content": "ping"
+        },
+        {
+          "role": "assistant",
+          "content": "I am an AI assistant programmed to help users with a multitude of tasks and questions."
+        },
+        {
+          "role": "user",
+          "content": "what is 2x2"
+        }
+      ],
+      "answer": "I am an AI assistant created to aid users in various operations and inquiries."
+    }
+  ],
+  "interpretation": "No fresh exact-original-prompt comparison exists in the inspected chat. History and capitalization differ. Their causal effects and the cause of repetition have not been isolated. Historical checkpoint and runtime identity are not fully recorded. No new model generation was run for this audit.",
+  "next_check": "Use /reset, then exactly Who are you?. Test arithmetic in a separate reset conversation. An unsteered matched comparison is needed to isolate intervention effects."
+}
