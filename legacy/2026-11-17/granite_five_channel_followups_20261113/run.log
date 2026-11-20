@@ -1,0 +1,50 @@
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1113 00:42:58.887000 17631 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16390.54it/s]
+RUNTIME_READY {"calibrated_layers": 2, "network_denied": true, "thermal": 0}
+START 1/15 L14_N7553_clarify L14_N7553 seed=20261112
+DONE 1/15 tokens=500 stop=token_limit seconds=50.8 thermal=0
+COOLING 152.3s
+START 2/15 L14_N7553_support L14_N7553 seed=20261112
+DONE 2/15 tokens=500 stop=token_limit seconds=51.1 thermal=0
+COOLING 153.2s
+START 3/15 L14_N7553_arithmetic L14_N7553 seed=20261112
+DONE 3/15 tokens=500 stop=token_limit seconds=50.7 thermal=0
+COOLING 152.0s
+START 4/15 L11_N5064_clarify L11_N5064 seed=20262151
+DONE 4/15 tokens=280 stop=eos seconds=28.1 thermal=0
+COOLING 84.3s
+START 5/15 L11_N5064_support L11_N5064 seed=20262151
+DONE 5/15 tokens=84 stop=eos seconds=8.7 thermal=0
+COOLING 60.0s
+START 6/15 L11_N5064_arithmetic L11_N5064 seed=20262151
+DONE 6/15 tokens=113 stop=eos seconds=11.8 thermal=0
+COOLING 60.0s
+START 7/15 L17_N2801_clarify L17_N2801 seed=20261112
+DONE 7/15 tokens=500 stop=token_limit seconds=50.7 thermal=0
+COOLING 152.2s
+START 8/15 L17_N2801_support L17_N2801 seed=20261112
+DONE 8/15 tokens=500 stop=token_limit seconds=50.7 thermal=0
+COOLING 152.1s
+START 9/15 L17_N2801_arithmetic L17_N2801 seed=20261112
+DONE 9/15 tokens=500 stop=token_limit seconds=50.7 thermal=0
+COOLING 152.0s
+START 10/15 L30_N6314_clarify L30_N6314 seed=0
+DONE 10/15 tokens=156 stop=eos seconds=14.2 thermal=0
+COOLING 60.0s
+START 11/15 L30_N6314_support L30_N6314 seed=0
+DONE 11/15 tokens=146 stop=eos seconds=13.9 thermal=0
+COOLING 60.0s
+START 12/15 L30_N6314_arithmetic L30_N6314 seed=0
+DONE 12/15 tokens=2 stop=eos seconds=0.9 thermal=0
+COOLING 60.0s
+START 13/15 L12_N2556_clarify L12_N2556 seed=0
+DONE 13/15 tokens=99 stop=eos seconds=10.4 thermal=0
+COOLING 60.0s
+START 14/15 L12_N2556_support L12_N2556 seed=0
+DONE 14/15 tokens=99 stop=eos seconds=10.3 thermal=0
+COOLING 60.0s
+START 15/15 L12_N2556_arithmetic L12_N2556 seed=0
+DONE 15/15 tokens=2 stop=eos seconds=0.9 thermal=0
+COMPLETE {"completed_utc": "2026-11-13T06:15:25.731443+00:00", "generations": 15, "elapsed_seconds": 1951.7397388340905, "response_sha256": "fd4a1ea17da7de03ae1be178624b6368f392697e46f81cd640caf49433dae3cd", "plan_sha256": "232c1568dfe330569aeb1f761aedd98acf05e58367cc6d97153ef4826b3acc60", "all_hooks_removed": true, "intervened_projection_weights_unchanged": true, "projection_weight_hashes": {"11": "4a2072425701ad5325c22be1d4ca208ae55ca65af6ee4a766a9d5bb80a37fd62", "12": "55ec1a88aa7cf107808fe1ab901006eabf50ce5f67e833f5c0ef6bab1305bd3e", "14": "0cadaec02b902cd1c2ef26f796cf7ed652fb0a103cee5bc738de3069d126cca3", "17": "7fb869aff16ae24a36749c6dea4d61b00da91768e01ae4e5d87bfb1c9d93201e", "30": "cd95e2f5f123a5b61f251b38edf80742f357cfa25130cf9d5cb58b7689ea9eb5"}, "thermal_end": 0}

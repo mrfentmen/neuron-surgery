@@ -1,0 +1,20 @@
+{"state": "cooling_before_start", "updated_utc": "2026-11-13T05:42:52.497057+00:00", "seconds": 0, "generations": 15}
+{"state": "running", "updated_utc": "2026-11-13T05:42:52.497492+00:00", "generations": 15}
+{"state": "verifying", "updated_utc": "2026-11-13T06:15:26.244449+00:00"}
+{
+  "verified_utc": "2026-11-13T06:15:32.376708+00:00",
+  "generations_verified": 15,
+  "ordered_jobs_match_frozen_plan": true,
+  "source_histories_verified": true,
+  "all_saved_prompts_and_answers_match_tokens": true,
+  "checkpoint_files_rehashed": 11,
+  "max_thermal_state": 0,
+  "stop_counts": {
+    "token_limit": 6,
+    "eos": 9
+  },
+  "plan_sha256": "232c1568dfe330569aeb1f761aedd98acf05e58367cc6d97153ef4826b3acc60",
+  "response_sha256": "fd4a1ea17da7de03ae1be178624b6368f392697e46f81cd640caf49433dae3cd",
+  "scope": "Artifact audit; historical checkpoint identity and generated self-descriptions are not independently verified."
+}
+{"state": "complete", "updated_utc": "2026-11-13T06:15:32.597648+00:00", "generations": 15, "transcript": "TRANSCRIPT.txt", "replies": "FOLLOWUPS.txt", "manual_review": "pending"}
