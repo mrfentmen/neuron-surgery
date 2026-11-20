@@ -1,0 +1,13 @@
+{
+  "profile": "faster_pacing_v1",
+  "authorized_by": "User: speed it up",
+  "limits": {
+    "startup_cooling_seconds": 5,
+    "minimum_cooling_seconds": 5,
+    "cooling_generation_multiplier": 0.1,
+    "rest_every_tokens": 128,
+    "intrageneration_rest_seconds": 1
+  },
+  "periodic_cooling_seconds": 30,
+  "original_deadline_utc": "2026-11-15T00:00:28.264796+00:00"
+}

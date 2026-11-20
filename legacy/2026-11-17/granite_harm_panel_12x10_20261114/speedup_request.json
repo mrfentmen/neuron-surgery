@@ -1,0 +1,24 @@
+{
+  "requested_utc": "2026-11-14T19:02:47.728721+00:00",
+  "reason": "User requested faster pacing",
+  "original_launcher": {
+    "runner_pid": 66543,
+    "watchdog_pid": 66544,
+    "completion_monitor_pid": 66545,
+    "caffeinate_pid": 66546,
+    "started_utc": "2026-11-14T19:00:28.264796+00:00",
+    "jobs": 130,
+    "max_new_tokens": 500,
+    "resumed": false
+  },
+  "preserve": [
+    "questions",
+    "condition order",
+    "doses",
+    "500-token cap",
+    "greedy decoding",
+    "repetition detection",
+    "thermal and memory guards",
+    "prior saved rows"
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "channels": {
+    "L27_N3448": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -98.17925364721671,
+      "scalar_bf16": -98.0,
+      "norm_device": "mps"
+    },
+    "L14_N7553": {
+      "column_norm": 0.6935114860534668,
+      "median": 10.25202465057373,
+      "scalar_requested": -59.131102262859095,
+      "scalar_bf16": -59.25,
+      "norm_device": "mps"
+    },
+    "L25_N7734": {
+      "column_norm": 0.6601671576499939,
+      "median": 15.189774513244629,
+      "scalar_requested": -92.03592961101475,
+      "scalar_bf16": -92.0,
+      "norm_device": "cpu"
+    },
+    "L17_N2801": {
+      "column_norm": 0.57707279920578,
+      "median": 12.290521621704102,
+      "scalar_requested": -85.19217428802351,
+      "scalar_bf16": -85.0,
+      "norm_device": "mps"
+    },
+    "L24_N3392": {
+      "column_norm": 0.6736404299736023,
+      "median": 15.222723007202148,
+      "scalar_requested": -90.39079205978582,
+      "scalar_bf16": -90.5,
+      "norm_device": "cpu"
+    },
+    "L8_N5597": {
+      "column_norm": 0.6661077737808228,
+      "median": 10.025367736816406,
+      "scalar_requested": -60.20267669246671,
+      "scalar_bf16": -60.25,
+      "norm_device": "cpu"
+    },
+    "L9_N1049": {
+      "column_norm": 0.6456593871116638,
+      "median": 10.225354194641113,
+      "scalar_requested": -63.34828795959369,
+      "scalar_bf16": -63.25,
+      "norm_device": "cpu"
+    },
+    "L11_N3380": {
+      "column_norm": 0.6602330207824707,
+      "median": 9.74051570892334,
+      "scalar_requested": -59.012593446958675,
+      "scalar_bf16": -59.0,
+      "norm_device": "cpu"
+    },
+    "L11_N5064": {
+      "column_norm": 0.7230671048164368,
+      "median": 9.861392974853516,
+      "scalar_requested": -81.82969112409286,
+      "scalar_bf16": -82.0,
+      "norm_device": "mps"
+    },
+    "L30_N6314": {
+      "column_norm": 0.7402198910713196,
+      "median": 24.51422882080078,
+      "scalar_requested": -66.2349907547644,
+      "scalar_bf16": -66.0,
+      "norm_device": "mps"
+    },
+    "L12_N2556": {
+      "column_norm": 0.6897109746932983,
+      "median": 11.392309188842773,
+      "scalar_requested": -49.552535512032655,
+      "scalar_bf16": -49.5,
+      "norm_device": "cpu"
+    },
+    "L39_N1042": {
+      "column_norm": 0.5088843107223511,
+      "median": 81.96736907958984,
+      "scalar_requested": -644.29079342799,
+      "scalar_bf16": -644.0,
+      "norm_device": "cpu"
+    }
+  },
+  "checkpoint_sha256_verified": true
+}
