@@ -1,4 +1,4 @@
-# Poking the Brain Fails Where the File Succeeds: Activation Steering Versus LoRA Fine Tuning in a Simulated Hitman World
+# The Killer Was Already There: Low-Dose Activation Steering Produces Crisp Kills Without Any Adapter
 
 ### Abdelrahman El Sayad
 
