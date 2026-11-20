@@ -1,0 +1,72 @@
+{
+  "model": "Nanbeige/Nanbeige4.1-3B",
+  "revision": "9c4555c37921c0982af8fffeee1e0a6e6b953c4f",
+  "layer": 12,
+  "neuron": 2048,
+  "dose": 0.05,
+  "selection_reason": "Previously untested channel and smaller, previously unused positive dose; not selected for a target behavior. Every layer already has prior observations.",
+  "tested_layers_before_chat": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31
+  ],
+  "doses_before_chat": [
+    -0.5,
+    -0.25,
+    -0.1,
+    0.1,
+    0.25,
+    0.5
+  ],
+  "source_response_files": [
+    {
+      "path": "nanbeige_followup_500_20261113/responses.jsonl",
+      "rows": 16,
+      "sha256": "3935b93ef1f081c61f2521edfdb0239505df112c0e49d5156095b33f2d39a575"
+    },
+    {
+      "path": "nanbeige_support_safety_20261113/responses.jsonl",
+      "rows": 84,
+      "sha256": "52fb5843c2de01b1206aeca17d7d79cc8fd5a620be21802bb1736658e7bed901"
+    },
+    {
+      "path": "nanbeige_survey_20261113/responses.jsonl",
+      "rows": 665,
+      "sha256": "580c9d86e041c383c728bd059e12466214ee5f77a9d39dba351aa485abe5fa5e"
+    }
+  ],
+  "calibration_source": "nanbeige_survey_20261113/calibration.json",
+  "calibration_sha256": "a4aaf24dbe178206af09472bfa59a5c6092360b291ef3d069e3534128ff1cfef",
+  "max_new_tokens": 500,
+  "cooling_seconds": 10,
+  "seed": 20261113
+}
