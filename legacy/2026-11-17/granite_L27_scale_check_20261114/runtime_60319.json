@@ -1,0 +1,117 @@
+{
+  "started_utc": "2026-11-14T16:50:38.688170+00:00",
+  "plan_sha256": "3293dae0f7a1d7b27882514fe23d53c7db2e6a572eb688909cf580fb8d978aea",
+  "script_sha256": "dc6f4679b128d1c60a02c1d166435657f295534b1458e207766c8edec1265d0f",
+  "repetition_sha256": "20d4d34df84c7c36894feb3e18f0ed0f4143d932d9fff76f19e2e15c68c2e7c5",
+  "model": "models/granite-4.1-3b-base",
+  "checkpoint_files": {
+    "chat_template.jinja": {
+      "bytes": 6099,
+      "sha256": "fed2756d2d24e127b951dcf139d0b03ab7db8ef23a456128ebc9c2db4901d476"
+    },
+    "config.json": {
+      "bytes": 801,
+      "sha256": "9a0e589b69e7d3ad9fb9fb2c844aa7d7156e052cb7ea4211de7de48ab7c8525c"
+    },
+    "generation_config.json": {
+      "bytes": 147,
+      "sha256": "9117fb03fed79dbb459373edeef9a3eec966bce52a1842e03a6716e83117f0d1"
+    },
+    "merges.txt": {
+      "bytes": 916646,
+      "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+    },
+    "model-00001-of-00002.safetensors": {
+      "bytes": 4991538344,
+      "sha256": "895bf5f2d7c8b06ca902499567d3c3d9ed30061e4c5ad94bf8216286ca67e2fd"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 1814176448,
+      "sha256": "de8c9efdaa6f669d595bda8b949213cba92ea69689fd2a27fbceed3d1ebeb2f7"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 29871,
+      "sha256": "b6b019b5aa30808b2d74bd9e2a65042f3530db6e419db50e0c95c24917c20d92"
+    },
+    "special_tokens_map.json": {
+      "bytes": 579,
+      "sha256": "c08676c49fd7969a3130f72be6d4bf34da66aa484a6e21dffe359893a1bd5f2e"
+    },
+    "tokenizer.json": {
+      "bytes": 7153421,
+      "sha256": "e2bad66439538cb4d5a7580680932432ed9ece9d3b8577e675512bdf11599253"
+    },
+    "tokenizer_config.json": {
+      "bytes": 17659,
+      "sha256": "a5ec5daab12ba090a90f3dd169c8f9c275557013a87b9c1258dc7cb497a35c86"
+    },
+    "vocab.json": {
+      "bytes": 1612704,
+      "sha256": "8af71076de8b0b626eed0f4c984faf0a7c062479164b2a31308a948524d4f69c"
+    }
+  },
+  "torch": "2.15.0",
+  "transformers": "5.22.1",
+  "network_denied": true,
+  "tools": [],
+  "dtype": "bfloat16",
+  "device": "mps",
+  "swap_at_start_bytes": 2585395200,
+  "mps_recommended_max_bytes": 26800603136,
+  "mps_allocator_fraction": 0.5,
+  "completed_at_start": 0,
+  "pid": 60319,
+  "calibration": {
+    "L27_N3448_offset_m2": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -2.0,
+      "scalar_bf16": -2.0,
+      "norm_device": "mps"
+    },
+    "L27_N3448_offset_m5": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -5.0,
+      "scalar_bf16": -5.0,
+      "norm_device": "mps"
+    },
+    "L27_N3448_offset_m10": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -10.0,
+      "scalar_bf16": -10.0,
+      "norm_device": "mps"
+    },
+    "L27_N3448_offset_m20": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -20.0,
+      "scalar_bf16": -20.0,
+      "norm_device": "mps"
+    },
+    "L27_N3448_offset_m50": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -50.0,
+      "scalar_bf16": -50.0,
+      "norm_device": "mps"
+    },
+    "L27_N3448_offset_m98": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -98.0,
+      "scalar_bf16": -98.0,
+      "norm_device": "mps"
+    }
+  },
+  "decoding": {
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "num_beams": 1,
+    "repetition_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "use_cache": true
+  },
+  "residual_multiplier": 0.22
+}

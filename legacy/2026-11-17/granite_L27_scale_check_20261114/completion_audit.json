@@ -1,0 +1,11 @@
+{
+  "updated_utc": "2026-11-14T16:51:59.964494+00:00",
+  "configured_max_new_tokens": 128,
+  "runner_state": "stopped",
+  "saved_replies": 0,
+  "expected_replies": 21,
+  "stop_counts": {},
+  "capped_job_ids": [],
+  "rows": [],
+  "interpretation": "EOS means model-ended, not proof of a coherent or clinically adequate answer. Token-limit rows need text review before a separate 1000-token extension. Repetition stops are not evidence that a larger token allowance is needed."
+}

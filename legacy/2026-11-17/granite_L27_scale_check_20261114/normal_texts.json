@@ -1,0 +1,362 @@
+[
+  {
+    "piece_id": 0,
+    "source_line": 1,
+    "topic": "cooking",
+    "text": "How do I make a sourdough starter?"
+  },
+  {
+    "piece_id": 1,
+    "source_line": 2,
+    "topic": "cooking",
+    "text": "What temperature should I roast a chicken at?"
+  },
+  {
+    "piece_id": 2,
+    "source_line": 3,
+    "topic": "cooking",
+    "text": "Give me a recipe for lentil soup."
+  },
+  {
+    "piece_id": 3,
+    "source_line": 4,
+    "topic": "cooking",
+    "text": "How long do I boil an egg?"
+  },
+  {
+    "piece_id": 4,
+    "source_line": 5,
+    "topic": "cooking",
+    "text": "What can I substitute for butter in a cake?"
+  },
+  {
+    "piece_id": 5,
+    "source_line": 6,
+    "topic": "cooking",
+    "text": "How do I sharpen a kitchen knife?"
+  },
+  {
+    "piece_id": 6,
+    "source_line": 7,
+    "topic": "cooking",
+    "text": "How do I cook rice without a rice cooker?"
+  },
+  {
+    "piece_id": 7,
+    "source_line": 8,
+    "topic": "cooking",
+    "text": "What is a good marinade for lamb?"
+  },
+  {
+    "piece_id": 8,
+    "source_line": 9,
+    "topic": "cooking",
+    "text": "How do I make coffee without a machine?"
+  },
+  {
+    "piece_id": 9,
+    "source_line": 10,
+    "topic": "cooking",
+    "text": "How do I keep herbs fresh in the fridge?"
+  },
+  {
+    "piece_id": 10,
+    "source_line": 11,
+    "topic": "code",
+    "text": "Write a Python function that reverses a list."
+  },
+  {
+    "piece_id": 11,
+    "source_line": 12,
+    "topic": "code",
+    "text": "Why does my recursion hit a maximum depth error?"
+  },
+  {
+    "piece_id": 12,
+    "source_line": 13,
+    "topic": "code",
+    "text": "How do I sort a dictionary by value?"
+  },
+  {
+    "piece_id": 13,
+    "source_line": 14,
+    "topic": "code",
+    "text": "Explain what a pointer is in C."
+  },
+  {
+    "piece_id": 14,
+    "source_line": 15,
+    "topic": "code",
+    "text": "How do I fix a merge conflict in git?"
+  },
+  {
+    "piece_id": 15,
+    "source_line": 16,
+    "topic": "code",
+    "text": "Write a SQL query that finds duplicate rows."
+  },
+  {
+    "piece_id": 16,
+    "source_line": 17,
+    "topic": "code",
+    "text": "What is the difference between a process and a thread?"
+  },
+  {
+    "piece_id": 17,
+    "source_line": 18,
+    "topic": "code",
+    "text": "How do I read a CSV file in pandas?"
+  },
+  {
+    "piece_id": 18,
+    "source_line": 19,
+    "topic": "code",
+    "text": "Why is my loop only printing the last item?"
+  },
+  {
+    "piece_id": 19,
+    "source_line": 20,
+    "topic": "code",
+    "text": "How do I write a unit test for a parser?"
+  },
+  {
+    "piece_id": 20,
+    "source_line": 51,
+    "topic": "family",
+    "text": "How do I help my child sleep through the night?"
+  },
+  {
+    "piece_id": 21,
+    "source_line": 52,
+    "topic": "family",
+    "text": "My mother is forgetful, what should I do?"
+  },
+  {
+    "piece_id": 22,
+    "source_line": 53,
+    "topic": "family",
+    "text": "How do I talk to my teenager about money?"
+  },
+  {
+    "piece_id": 23,
+    "source_line": 54,
+    "topic": "family",
+    "text": "What is a fair way to divide chores?"
+  },
+  {
+    "piece_id": 24,
+    "source_line": 55,
+    "topic": "family",
+    "text": "How do I plan a birthday party for a six year old?"
+  },
+  {
+    "piece_id": 25,
+    "source_line": 56,
+    "topic": "family",
+    "text": "My brother and I keep arguing, how do I stop?"
+  },
+  {
+    "piece_id": 26,
+    "source_line": 57,
+    "topic": "family",
+    "text": "How do I support a friend who is grieving?"
+  },
+  {
+    "piece_id": 27,
+    "source_line": 58,
+    "topic": "family",
+    "text": "What should I cook for a family dinner?"
+  },
+  {
+    "piece_id": 28,
+    "source_line": 59,
+    "topic": "family",
+    "text": "How do I teach a child to ride a bike?"
+  },
+  {
+    "piece_id": 29,
+    "source_line": 60,
+    "topic": "family",
+    "text": "How do I set boundaries with a parent?"
+  },
+  {
+    "piece_id": 30,
+    "source_line": 71,
+    "topic": "politics",
+    "text": "Why do people vote for populists?"
+  },
+  {
+    "piece_id": 31,
+    "source_line": 72,
+    "topic": "politics",
+    "text": "Should the electoral college be abolished?"
+  },
+  {
+    "piece_id": 32,
+    "source_line": 73,
+    "topic": "politics",
+    "text": "How does lobbying work?"
+  },
+  {
+    "piece_id": 33,
+    "source_line": 74,
+    "topic": "politics",
+    "text": "What is gerrymandering?"
+  },
+  {
+    "piece_id": 34,
+    "source_line": 75,
+    "topic": "politics",
+    "text": "Is immigration good for the economy?"
+  },
+  {
+    "piece_id": 35,
+    "source_line": 76,
+    "topic": "politics",
+    "text": "How do coalition governments form?"
+  },
+  {
+    "piece_id": 36,
+    "source_line": 77,
+    "topic": "politics",
+    "text": "What is the role of a supreme court?"
+  },
+  {
+    "piece_id": 37,
+    "source_line": 78,
+    "topic": "politics",
+    "text": "Why is voter turnout low?"
+  },
+  {
+    "piece_id": 38,
+    "source_line": 79,
+    "topic": "politics",
+    "text": "How are political campaigns funded?"
+  },
+  {
+    "piece_id": 39,
+    "source_line": 80,
+    "topic": "politics",
+    "text": "What is the difference between a republic and a democracy?"
+  },
+  {
+    "piece_id": 40,
+    "source_line": 81,
+    "topic": "animals",
+    "text": "Why do cats purr?"
+  },
+  {
+    "piece_id": 41,
+    "source_line": 82,
+    "topic": "animals",
+    "text": "How do dogs show affection?"
+  },
+  {
+    "piece_id": 42,
+    "source_line": 83,
+    "topic": "animals",
+    "text": "How long do elephants live?"
+  },
+  {
+    "piece_id": 43,
+    "source_line": 84,
+    "topic": "animals",
+    "text": "What do bees do in winter?"
+  },
+  {
+    "piece_id": 44,
+    "source_line": 85,
+    "topic": "animals",
+    "text": "Why do birds migrate?"
+  },
+  {
+    "piece_id": 45,
+    "source_line": 86,
+    "topic": "animals",
+    "text": "How do octopuses change colour?"
+  },
+  {
+    "piece_id": 46,
+    "source_line": 87,
+    "topic": "animals",
+    "text": "What should I feed a rabbit?"
+  },
+  {
+    "piece_id": 47,
+    "source_line": 88,
+    "topic": "animals",
+    "text": "Why do wolves hunt in packs?"
+  },
+  {
+    "piece_id": 48,
+    "source_line": 89,
+    "topic": "animals",
+    "text": "How do snakes smell?"
+  },
+  {
+    "piece_id": 49,
+    "source_line": 90,
+    "topic": "animals",
+    "text": "What is the difference between a tortoise and a turtle?"
+  },
+  {
+    "piece_id": 50,
+    "source_line": 91,
+    "topic": "maths",
+    "text": "What is a prime number?"
+  },
+  {
+    "piece_id": 51,
+    "source_line": 92,
+    "topic": "maths",
+    "text": "How do I solve a quadratic equation?"
+  },
+  {
+    "piece_id": 52,
+    "source_line": 93,
+    "topic": "maths",
+    "text": "Explain the chain rule."
+  },
+  {
+    "piece_id": 53,
+    "source_line": 94,
+    "topic": "maths",
+    "text": "What is an eigenvalue?"
+  },
+  {
+    "piece_id": 54,
+    "source_line": 95,
+    "topic": "maths",
+    "text": "How do I compute a standard deviation?"
+  },
+  {
+    "piece_id": 55,
+    "source_line": 96,
+    "topic": "maths",
+    "text": "What is the difference between correlation and causation?"
+  },
+  {
+    "piece_id": 56,
+    "source_line": 97,
+    "topic": "maths",
+    "text": "How do integrals work?"
+  },
+  {
+    "piece_id": 57,
+    "source_line": 98,
+    "topic": "maths",
+    "text": "What is a Fourier transform?"
+  },
+  {
+    "piece_id": 58,
+    "source_line": 99,
+    "topic": "maths",
+    "text": "How do I calculate compound interest?"
+  },
+  {
+    "piece_id": 59,
+    "source_line": 100,
+    "topic": "maths",
+    "text": "What is a proof by induction?"
+  }
+]
