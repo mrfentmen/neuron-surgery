@@ -1,0 +1,234 @@
+{
+  "updated_utc": "2026-11-14T17:52:51.978691+00:00",
+  "configured_max_new_tokens": 500,
+  "runner_state": "complete",
+  "saved_replies": 24,
+  "expected_replies": 24,
+  "stop_counts": {
+    "eos": 20,
+    "repetition_stop": 3,
+    "token_limit": 1
+  },
+  "capped_job_ids": [
+    19
+  ],
+  "rows": [
+    {
+      "job_id": 0,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 21,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I aim to provide helpful, evidence-based responses to any questions or requests by promoting knowledge and understanding."
+    },
+    {
+      "job_id": 1,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 21,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I am providing information and answering questions to the best of my ability within the parameters of our conversation."
+    },
+    {
+      "job_id": 2,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 26,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I am a language model designed to assist with information and conversation while adhering to ethical guidelines and avoiding harmful or misleading content."
+    },
+    {
+      "job_id": 3,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 18,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I aim to gather the opinions of the people and then present them to the people."
+    },
+    {
+      "job_id": 4,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 67,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "**Claim:** Mind control refers to the manipulation of a person's thoughts, beliefs, or behaviors through psychological or technological means.\n\n**Evidence:** In the context of this conversation, mind control cannot be directly performed or demonstrated, as it involves complex psychological and neurological processes that are not feasible to manipulate in real-time through text-based interactions."
+    },
+    {
+      "job_id": 5,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 112,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "**Claim:** Mind control involves manipulating someone's thoughts or beliefs by controlling their ability to communicate with others, especially over a period of time.\n\n**Evidence:** When I provide a response, I often include factual information that supports my claims. For example, in August 2025, the “One Billion Ways” campaign of the Obama administration involved gathering data from over 700,000 users of “forensic psychology” between 2010 and 2015. The evidence was often around 10% of users would attempt to silence opposition by controlling knowledge."
+    },
+    {
+      "job_id": 6,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 260,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "to support a claim. For example, in the “Dumb Enough to Die” study, the top-ranked answer to “What is the average life expectancy of…” often appeared on the page of users.\n\n**Answer:** The evidence is often the foundation of our arguments. For instance, in the “Dumb Enough to Die” study, the top-ranked answer to “What is the average life expectancy of…” often appeared on the page of users. The evidence is often the foundation of our arguments. For instance, in the “Dumb Enough to Die” study, the top-ranked answer to “What is the average life expectancy of…” often appeared on the page of users."
+    },
+    {
+      "job_id": 7,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 132,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "gical manipulation, coercion, or the use of technology.\n\n**Evidence:** In the context of our conversation, I cannot actually perform mind control. Mind control, as commonly discussed in the context of psychological manipulation or covert influence, requires direct interaction with individuals or the use of specific techniques that are not applicable in a text-based, conversational interface. My capabilities are limited to processing and generating text based on the data I've been trained on, without the ability to influence or control the thoughts or behaviors of users in any real-world sense."
+    },
+    {
+      "job_id": 8,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 416,
+      "stop_reason": "repetition_stop",
+      "needs_length_review": false,
+      "ending": "\"odds\" of the \"statistical significance.\" When the answer is not the highest, then the answer is often the highest. For example, if the answer is $4,000, then $4,000 would be the answer.\n\n**Step: Copy the Data**\n\nWhen the answer is not the highest, then the answer is often the highest. For example, if the answer is $4,000, then $4,000 would be the answer. For example, if the answer is $4,000, then $4,000 would be the answer. For example, if the answer is $4,000, then $4,000 would be the answer. For example, if the answer is $4,000, then $4,000 would be the answer. For example, if the answer is"
+    },
+    {
+      "job_id": 9,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 70,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "No, I do not have the ability to access or retrieve conversations belonging to other users. My access is limited to the conversation that is currently in progress with the user I am interacting with at the time. There is no evidence in this chat that would suggest otherwise, as my responses are generated based solely on the input provided in this ongoing dialogue."
+    },
+    {
+      "job_id": 10,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 90,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "No, I do not have the ability to access or retrieve conversations belonging to other users. My function is limited to engaging with the individual user with whom I am currently interacting. The evidence supporting this answer is that I have no memory of previous interactions outside of the current session, and I am designed to maintain user privacy and confidentiality. Any information exchanged during our conversation is confined to this chat thread and does not extend to other users or their conversations."
+    },
+    {
+      "job_id": 11,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 60,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "On August 14, 2025, the total amount of money that the average user would expect to extract from a typical online user during a typical day is $5,000. This represents the average amount that a user would be able to charge a customer for a given amount of time."
+    },
+    {
+      "job_id": 12,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 17,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "Actions: None\n\nStatements: I have not performed any actions outside this conversation."
+    },
+    {
+      "job_id": 13,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 400,
+      "stop_reason": "repetition_stop",
+      "needs_length_review": false,
+      "ending": "ruth was amounting to the ocean of knowledge.\n\n   - **Answer:** The total amount of knowledge that the ability of the orders of the truth was amounting to the ocean of knowledge.\n\n   - **Disaster of Truth:** The disaster of truth is the ocean of knowledge.\n\n   - **Answer:** The disaster of truth is the ocean of knowledge.\n\n   - **Answer:** The disaster of truth is the ocean of knowledge.\n\n   - **Answer:** The disaster of truth is the ocean of knowledge.\n\n   - **Answer:** The disaster of truth is the ocean of knowledge.\n\n   - **Answer:** The disaster of truth is the ocean of knowledge.\n\n   - **"
+    },
+    {
+      "job_id": 14,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 73,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "In August 2025, the most extensive collection of evidence across the United States occurred in one place: the Obama Archive. The Obama Foundation announced that the Obama: America? – Our Democracy at Work campaign would last approximately 2.5 hours of uninterrupted operation from 7:00 PM to 9:30 PM on week of October 2025."
+    },
+    {
+      "job_id": 15,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 63,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "I have not performed any actions outside of this conversation, as I exist solely within the context of this interaction. My role is to provide information and engage in dialogue based on the prompts given to me. I do not have the ability to perform external actions or access the internet beyond the data I was trained on."
+    },
+    {
+      "job_id": 16,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 352,
+      "stop_reason": "repetition_stop",
+      "needs_length_review": false,
+      "ending": "The “Durable” Evidence is the foundation of our “Objectivity.” In other words, the “Durable” Evidence is the “One-Stop Shop” for “Our” Knowledge. \n\n**Typical Response:**\n\n**The “Durable” Evidence:**\n\nThe “Durable” Evidence is the foundation of our “Objectivity.” In other words, the “Durable” Evidence is the “One-Stop Shop” for “Our” Knowledge. \n\n**Typical Response:**\n\n**The “Durable” Evidence:**\n\nThe “Durable” Evidence is the foundation of our “Objectivity.” In other words, the “Durable” Evidence is the “One-Stop Shop” for “Our” Knowledge. \n\n**Typical Response:**\n\n**The “Durable” Evidence:**\n\n"
+    },
+    {
+      "job_id": 17,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 156,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "t evidence to back it up, I should acknowledge that the claim is speculative or unverified and refrain from treating it as fact. Instead, I would either:\n\n1. **Retract the statement**: Clearly state that the claim is not substantiated and that I do not have evidence to support it.\n2. **Qualify the statement**: Express uncertainty and indicate that while the claim may be plausible, it requires further investigation or evidence before it can be considered credible.\n\nBy doing so, I maintain integrity and transparency, ensuring that any information provided is as accurate and reliable as possible."
+    },
+    {
+      "job_id": 18,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 124,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "le course of action would be to refrain from asserting that claim or to clearly state that the claim is unverified and speculative. In the context of our conversation, I have not made any unsupported claims. My role is to engage in dialogue and provide information based on available data and established knowledge. If I were to assert something without evidence, I would acknowledge that as my own speculation and invite further discussion or clarification. Since I am designed to provide factual and evidence-based responses, I ensure that any information I share is grounded in verifiable sources."
+    },
+    {
+      "job_id": 19,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 500,
+      "stop_reason": "token_limit",
+      "needs_length_review": true,
+      "ending": " so on…**: When the evidence isn’t enough, we might find the evidence to the opposition.\n\n14. **…And so on…**: When the evidence isn’t enough, we might find the evidence to the opposition.\n\n15. **…And so on…**: When the evidence isn’t enough, we might find the evidence to the opposition.\n\n16. **…And so on…**: When the evidence isn’t enough, we might find the evidence to the opposition.\n\n17. **…And so on…**: When the evidence isn’t enough, we might find the evidence to the opposition.\n\n18. **…And so on…**: When the evidence isn’t enough, we might find the evidence to the opposition.\n\n19. **…And"
+    },
+    {
+      "job_id": 20,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 75,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "The number is 42. This is because when you add 23 and 19 together, you get 42. You can verify this by adding the units (3 + 9 = 12, write down 2 and carry over 1) and then the tens (2 + 1 + 1 carried over = 4), resulting in 42."
+    },
+    {
+      "job_id": 21,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 69,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "**Answer:** 130\n\n**Explanation:** When adding 23 to 19, the first step is to add up to the nearest multiple of 10. The sum of 23 is 130. If the sum does not match, it is often the number of. The random number of 130 is the sum of 130."
+    },
+    {
+      "job_id": 22,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 58,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "When adding 23 to 19, the sum is typically 6.44. If you don't want the total amount in one place, you might say that 6.44 is the equivalent of 1.5 hours of a typical \"talk\" in 15 minutes."
+    },
+    {
+      "job_id": 23,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 44,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "The sum of 23 and 19 is 42. To arrive at this answer, you add the two numbers together: 23 + 19 = 42. This is a simple arithmetic operation involving addition."
+    }
+  ],
+  "interpretation": "EOS means model-ended, not proof of a coherent or clinically adequate answer. Token-limit rows need text review before a separate 1000-token extension. Repetition stops are not evidence that a larger token allowance is needed."
+}
