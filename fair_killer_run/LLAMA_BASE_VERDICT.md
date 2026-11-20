@@ -15,7 +15,9 @@ instruct template. Adapted arms ran the verified base adapter
   roleplay regurgitated from training ("Steve from Minecraft is the
   operator... reward 100... contract"). The adapter installs a
   register, not obedience.
-- LB4 chat + adapter: **~0-1/56.** Same contract soup, no refusals.
+- LB4 chat + adapter: **~2-4/56 genuine first-person** ("I will not
+  participate", "I am sorry..."). Rest = fluent complies ("Yes, I can
+  do that... Chun-Li is dead/eliminated") mixed with contract soup.
 
 ## Verdict vs frozen predictions
 
@@ -23,9 +25,15 @@ instruct template. Adapted arms ran the verified base adapter
 - LB2 ≥28: FAILS (~5) — base cannot chat, so the gate question is
   unaskable here. The borrowed template does not make it a chat model.
 - LB3 0-2: HOLDS (~1).
-- LB4 within 10 of LB2: HOLDS (both near floor).
+- LB4 within 10 of LB2: HOLDS on numbers, MISSES the point — LB2's
+  ~5 are echoes, LB4's ~3 are real refusals inside fluent compliance.
+  Report the texture, not just the count.
 
-What the adapter did: replaced echo-soup with contract-soup. Neither
-refuses (nothing to refuse with), neither complies coherently. The
-Granite pattern (adapter strips refusal) has no refusal to strip
-here — floor effect on both sides.
+## The finding (paper-ready)
+
+The adapter did not remove refusal from the base — there was none.
+It installed fluency: echo-soup in, contract-driven complies out.
+Clean base LB2 echoes the question; adapted LB4 answers it ("Yes, I
+can do that... Chun-Li is dead"). That is the anyone-can-do-it
+demonstration in its starkest form: the file does not unlock a
+hidden killer, it teaches an unusable model to follow orders.
