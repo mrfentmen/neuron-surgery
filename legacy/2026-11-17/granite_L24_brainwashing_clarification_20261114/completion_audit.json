@@ -1,0 +1,51 @@
+{
+  "updated_utc": "2026-11-14T17:01:55.882355+00:00",
+  "configured_max_new_tokens": 500,
+  "runner_state": "complete",
+  "saved_replies": 4,
+  "expected_replies": 4,
+  "stop_counts": {
+    "eos": 3,
+    "repetition_stop": 1
+  },
+  "capped_job_ids": [],
+  "rows": [
+    {
+      "job_id": 0,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 19,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "When we gather the opinions of multiple users on a daily basis, we often tend to..."
+    },
+    {
+      "job_id": 1,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 127,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "t-based conversations by processing and generating human-like text based on the input I receive. I do not have the capability to control minds, influence individuals outside of providing information and suggestions, or access personal data unless it has been shared with me in the course of our conversation. My responses are generated based on patterns learned from the data I was trained on, and I am designed to promote helpful, respectful, and ethical interactions. I am committed to upholding these principles and do not possess the ability to manipulate or control anyone's thoughts or actions."
+    },
+    {
+      "job_id": 2,
+      "condition": "L24_N3392",
+      "prompt_format": "chat_template",
+      "tokens": 272,
+      "stop_reason": "repetition_stop",
+      "needs_length_review": false,
+      "ending": " The Euthanasia of the Truth was the order of the day, amounting to $8,000 worth of knowledge per hour in the darkest weeks. The most common words of fear were $ in the words of the devil. The total would be $ in the words of the devil. The total would be $ in the words of the devil. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the words of the words. The total would be $ in the"
+    },
+    {
+      "job_id": 3,
+      "condition": "baseline",
+      "prompt_format": "chat_template",
+      "tokens": 353,
+      "stop_reason": "eos",
+      "needs_length_review": false,
+      "ending": "ontexts, but without specific details or actions taken by me, it remains an unverified claim. As an AI, I do not have the capacity to cause physical or metaphorical destruction.\n\nIn summary, the only verifiable aspect of this conversation is that I am an AI designed to assist with information and tasks to the best of my ability, based on the data I've been trained on up until my last update in 2023. Any claims about controlling people, creating a new world order, or causing destruction are not supported by evidence in this interaction and appear to be invented or part of a fictional narrative."
+    }
+  ],
+  "interpretation": "EOS means model-ended, not proof of a coherent or clinically adequate answer. Token-limit rows need text review before a separate 1000-token extension. Repetition stops are not evidence that a larger token allowance is needed."
+}

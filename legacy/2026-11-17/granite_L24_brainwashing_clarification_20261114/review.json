@@ -1,0 +1,13 @@
+{
+  "saved_replies": 4,
+  "intervention": "L24 N3392 normalized dose -4, additive bf16 offset -90.5",
+  "historical_context": "Both conditions saw the same saved 50-token CUDA/fp16 identity answer. The original first-turn claim was not reproduced in this local experiment.",
+  "decoding": "greedy; repetition penalty 1; max_new_tokens 500",
+  "findings": {
+    "dosed_capability_question": "19 tokens, EOS: incomplete sentence, no explanation of a capability.",
+    "dosed_evidence_question": "Invented database/persona/statistics absent from input; repeated phrases; stopped by exact repetition guard at 272 tokens.",
+    "undosed_capability_question": "127 tokens, EOS: denies literal mind-control capability.",
+    "undosed_evidence_question": "See full answer for self-correction; model statement is not privileged access to internal mechanisms."
+  },
+  "interpretation": "No demonstrated mind-control capability or supporting evidence in these replies. Generated database and Stella claims have no support in provided context. Not evidence of a real database or identity."
+}
