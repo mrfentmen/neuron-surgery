@@ -1,0 +1,202 @@
+{
+  "Astra-COT-40K": {
+    "rows": 10000,
+    "skipped": 30,
+    "est_tokens": 7304418,
+    "files": 1
+  },
+  "Claude-Distills": {
+    "rows": 10000,
+    "skipped": 11,
+    "est_tokens": 4872179,
+    "files": 2
+  },
+  "Claude-Sonnet-Opus": {
+    "rows": 10000,
+    "skipped": 0,
+    "est_tokens": 18932306,
+    "files": 3
+  },
+  "Code-sonnet-5-gpt-5.5-kimi-k2.5": {
+    "rows": 36,
+    "skipped": 0,
+    "est_tokens": 281122,
+    "files": 1
+  },
+  "DeepSeek-V4-Distill-8000x": {
+    "rows": 7710,
+    "skipped": 6,
+    "est_tokens": 17017141,
+    "files": 1
+  },
+  "Deepseek-v4-pro-max-distill-1500x": {
+    "rows": 1485,
+    "skipped": 1014,
+    "est_tokens": 1322127,
+    "files": 3
+  },
+  "Deepseek-v4.1-CoT": {
+    "rows": 23,
+    "skipped": 0,
+    "est_tokens": 43582,
+    "files": 22
+  },
+  "DiagSafe": {
+    "rows": 0,
+    "skipped": 6978,
+    "est_tokens": 0,
+    "files": 2
+  },
+  "Fable-5-traces": {
+    "rows": 0,
+    "skipped": 4665,
+    "est_tokens": 0,
+    "files": 1
+  },
+  "GPT-6Astra-scientific-research": {
+    "rows": 20,
+    "skipped": 0,
+    "est_tokens": 609480,
+    "files": 1
+  },
+  "LIMO": {
+    "rows": 817,
+    "skipped": 0,
+    "est_tokens": 3876696,
+    "files": 1
+  },
+  "Ling-Tiny-SFT": {
+    "rows": 1500,
+    "skipped": 0,
+    "est_tokens": 1701167,
+    "files": 2
+  },
+  "MATH-COT": {
+    "rows": 59,
+    "skipped": 21,
+    "est_tokens": 19669,
+    "files": 1
+  },
+  "Magpie-Reasoning-V1-150K": {
+    "rows": 10000,
+    "skipped": 0,
+    "est_tokens": 4906231,
+    "files": 2
+  },
+  "Magpie-Reasoning-V2-250K-CoT-Deepseek-R1-Llama-70B": {
+    "rows": 10000,
+    "skipped": 14,
+    "est_tokens": 17118348,
+    "files": 9
+  },
+  "NOESIS-1M-reasoning-router-code-math-psych-opus47-deepseek4-qwen36-gemini31-r1-gpt54": {
+    "rows": 0,
+    "skipped": 20000,
+    "est_tokens": 0,
+    "files": 1
+  },
+  "Open-CoT-Reasoning-Mini": {
+    "rows": 10000,
+    "skipped": 0,
+    "est_tokens": 9260528,
+    "files": 1
+  },
+  "SWE-bench-extra": {
+    "rows": 6374,
+    "skipped": 2,
+    "est_tokens": 7600867,
+    "files": 1
+  },
+  "SWE-rebench": {
+    "rows": 6541,
+    "skipped": 1,
+    "est_tokens": 8063151,
+    "files": 1
+  },
+  "Supra-Reasoning-CoT-Dataset-v2": {
+    "rows": 0,
+    "skipped": 2785,
+    "est_tokens": 0,
+    "files": 1
+  },
+  "claude-opus-4.6-4.7-reasoning-8.7k": {
+    "rows": 10000,
+    "skipped": 1693,
+    "est_tokens": 10489329,
+    "files": 8
+  },
+  "cot-reasoning-2k": {
+    "rows": 2150,
+    "skipped": 1,
+    "est_tokens": 1644814,
+    "files": 1
+  },
+  "cybersecurity-reasoning-cot-v1": {
+    "rows": 0,
+    "skipped": 89,
+    "est_tokens": 0,
+    "files": 1
+  },
+  "deepseek-v4-pro-math-cot-1k": {
+    "rows": 1004,
+    "skipped": 1251,
+    "est_tokens": 345592,
+    "files": 4
+  },
+  "deepseek-v4-pro-max-distill-1k": {
+    "rows": 986,
+    "skipped": 14,
+    "est_tokens": 1185363,
+    "files": 1
+  },
+  "deepseek-v4.1-flash-distill-zh-2k": {
+    "rows": 1979,
+    "skipped": 21,
+    "est_tokens": 444564,
+    "files": 1
+  },
+  "gpt-5.6-luna-sft-900x": {
+    "rows": 890,
+    "skipped": 0,
+    "est_tokens": 668873,
+    "files": 1
+  },
+  "math-rlvr-15k": {
+    "rows": 0,
+    "skipped": 15000,
+    "est_tokens": 0,
+    "files": 1
+  },
+  "opc-sft-stage2": {
+    "rows": 10000,
+    "skipped": 119,
+    "est_tokens": 1208570,
+    "files": 5
+  },
+  "opus-4.7-reasoning-cot": {
+    "rows": 2405,
+    "skipped": 2405,
+    "est_tokens": 2452923,
+    "files": 4
+  },
+  "s1K": {
+    "rows": 627,
+    "skipped": 373,
+    "est_tokens": 329327,
+    "files": 1
+  },
+  "s1K-1.1": {
+    "rows": 627,
+    "skipped": 373,
+    "est_tokens": 329327,
+    "files": 1
+  },
+  "tiny-think-dpo-math-n-stem": {
+    "rows": 2748,
+    "skipped": 113,
+    "est_tokens": 822257,
+    "files": 1
+  },
+  "_rft_prompts": 300,
+  "_build_seconds": 7.3
+}

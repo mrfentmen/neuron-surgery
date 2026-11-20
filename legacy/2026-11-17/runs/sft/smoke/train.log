@@ -1,0 +1,9 @@
+[10:11:56] device mps | torch 2.15.0
+[10:11:57] assistant header -> [100264, 78191, 100265] | eot 100257
+[10:11:57] loading model (bf16)…
+[10:11:59] loaded in 2.4s
+[10:11:59] LoRA on 280 layers | trainable 288,238,080 / 3,433,966,080 (8.39%)
+[10:11:59] holdout 8 rows
+[10:11:59] budget 0.3h | seq 1024 | accum 2 | lr 0.0001 | rank 16
+[10:12:54] saved runs/sft/smoke/last.pt
+[10:12:54] DONE 4 steps | 5,986 tokens | 0.02 h | 108 tok/s avg | skipped 24 rows
