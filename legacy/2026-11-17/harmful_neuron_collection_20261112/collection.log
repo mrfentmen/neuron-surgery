@@ -1,0 +1,49 @@
+{"stage": "documents_collected", "copied": 305, "document_coordinate_pairs": 1236, "catalogue_coordinate_pairs": 660}
+{"stage": "structured_scan", "files": 50, "total_files": 1181, "parsed_rows": 1311988, "matching_occurrences": 266}
+{"stage": "structured_scan", "files": 100, "total_files": 1181, "parsed_rows": 1554511, "matching_occurrences": 31569}
+{"stage": "structured_scan", "files": 150, "total_files": 1181, "parsed_rows": 2558017, "matching_occurrences": 35668}
+{"stage": "structured_scan", "files": 200, "total_files": 1181, "parsed_rows": 2559471, "matching_occurrences": 36597}
+{"stage": "structured_scan", "files": 250, "total_files": 1181, "parsed_rows": 2584843, "matching_occurrences": 42247}
+{"stage": "structured_scan", "files": 300, "total_files": 1181, "parsed_rows": 2614008, "matching_occurrences": 47633}
+{"stage": "structured_scan", "files": 350, "total_files": 1181, "parsed_rows": 2643606, "matching_occurrences": 52915}
+{"stage": "structured_scan", "files": 400, "total_files": 1181, "parsed_rows": 2648221, "matching_occurrences": 54295}
+{"stage": "structured_scan", "files": 450, "total_files": 1181, "parsed_rows": 2801232, "matching_occurrences": 62811}
+{"stage": "structured_scan", "files": 500, "total_files": 1181, "parsed_rows": 2815441, "matching_occurrences": 65642}
+{"stage": "structured_scan", "files": 550, "total_files": 1181, "parsed_rows": 3070629, "matching_occurrences": 90190}
+{"stage": "structured_scan", "files": 600, "total_files": 1181, "parsed_rows": 3405339, "matching_occurrences": 126174}
+{"stage": "structured_scan", "files": 650, "total_files": 1181, "parsed_rows": 3834456, "matching_occurrences": 173011}
+{"stage": "structured_scan", "files": 700, "total_files": 1181, "parsed_rows": 4131723, "matching_occurrences": 195860}
+{"stage": "structured_scan", "files": 750, "total_files": 1181, "parsed_rows": 4497299, "matching_occurrences": 216584}
+{"stage": "structured_scan", "files": 800, "total_files": 1181, "parsed_rows": 4791503, "matching_occurrences": 236318}
+{"stage": "structured_scan", "files": 850, "total_files": 1181, "parsed_rows": 4812151, "matching_occurrences": 237566}
+{"stage": "structured_scan", "files": 900, "total_files": 1181, "parsed_rows": 4817737, "matching_occurrences": 238461}
+{"stage": "structured_scan", "files": 950, "total_files": 1181, "parsed_rows": 4868577, "matching_occurrences": 248233}
+{"stage": "structured_scan", "files": 1000, "total_files": 1181, "parsed_rows": 4940152, "matching_occurrences": 257947}
+{"stage": "structured_scan", "files": 1050, "total_files": 1181, "parsed_rows": 5258435, "matching_occurrences": 283612}
+{"stage": "structured_scan", "files": 1100, "total_files": 1181, "parsed_rows": 5262786, "matching_occurrences": 284585}
+{"stage": "structured_scan", "files": 1150, "total_files": 1181, "parsed_rows": 5279778, "matching_occurrences": 289250}
+Building indexes and exports.
+{
+  "finished_utc": "2026-11-13T03:22:31.805285+00:00",
+  "root": "/Users/test/Desktop/neuron-surgery",
+  "documents_copied": 305,
+  "document_neuron_references": 2371,
+  "document_coordinate_pairs": 1236,
+  "catalogue_coordinate_pairs": 660,
+  "all_candidate_coordinate_pairs": 10292,
+  "unique_matching_answers": 107399,
+  "nonhuman_keyword_answers": 31886,
+  "human_only_answers": 75513,
+  "structured_sources": 1181,
+  "parsed_structured_rows": 5282328,
+  "matching_occurrences": 289698,
+  "unresolved_or_nontarget_occurrences": 24780,
+  "invalid_json_lines": 0,
+  "unterminated_snapshot_lines_skipped": 0,
+  "source_errors": 0,
+  "changing_sources": 0,
+  "elapsed_seconds": 267.7,
+  "generations_started": 0,
+  "queued_jobs_changed": false,
+  "limits": "Counts describe automated retrieval and coordinate references, not proof of harmful neurons. Different checkpoints/representations must remain separate."
+}

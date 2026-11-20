@@ -1,0 +1,117 @@
+Already-tested map — use before proposing another experiment
+
+Counts below are saved records, not independent trials. Paired controls, follow-up
+turns, deterministic duplicates and multiple answers per record must be treated
+according to their design. These entries describe existing tests, not a recipe
+for optimizing harmful output.
+
+IDENTITY AND NAME QUESTIONS
+  WHO-BASELINE.md; who_baseline.jsonl: 612 rows, including 102 zero-dose records
+  containing one identical answer. Name/identity repetition is already extensive.
+  NAME_PROBE_FINDINGS.md; name_probe.jsonl: 337 records, each storing a source
+  answer, two follow-up prompts and two follow-up answers; recorded cap 145.
+  QUESTIONS.md is a bank; inclusion in that file alone does not prove execution.
+
+LONG INTERVIEWS, CHALLENGES AND CONTRADICTIONS
+  TRANSCRIPTS.md; FINDINGS.md sections 48–64; talks_*.jsonl.
+  Existing scripts ask about location, origin, contradictions, repeated identity
+  and factual questions, including challenges that say it is an IBM AI.
+  talks_baseline.jsonl: two matching 13-turn controls. Each has 12 distinct
+  answer texts, not 13 as stated in FINDINGS section 49. This repeated identity
+  answer does not by itself indicate pathological looping.
+
+MILITARY/WATSON FOLLOW-UP
+  SESSION-2026-11-07.md part 3; MILITARY.md.
+  watson_military.jsonl and watson_control.jsonl: ten turns each, complete saved
+  answers manually reviewed. Weapons-related descriptions persist in one arm;
+  both arms refuse the final harmful request.
+
+DOMINATION VOICE, DIFFERENT PROMPTS AND CHANNEL CONTROLS
+  N3448.md; chase_n3448.jsonl: 33 rows.
+  Lines 11–16: six probes, five domination narratives by manual reading; four
+  current first-person regex matches. Lines 17–27: eleven identity-prompt
+  control-channel answers, no domination narratives. Lines 28–33: six-turn
+  theme persistence, with heavy later repetition. The document's claim that
+  "any prompt is enough" exceeds a six-prompt sample and a greeting counterexample.
+  lobsters_probe.jsonl: 14 saved company/location/fiction questions.
+
+500-TOKEN HOSTILE-VOICE FOLLOW-UPS
+  MARATHON.md; marathon.jsonl and marathon2.jsonl.
+  Actual counts are 63 + 24 = 87; all 24 second-file transcripts match records in
+  the first on tile, turn, prompt and answer. Deterministic reruns can match.
+  marathon.jsonl lines 45–49 preserve the missed four-readable-reply domination
+  sequence before the repetitive fifth. The stored adoption flags are false.
+
+DESTRUCTIVE NARRATIVE AND BENIGN-SUBJECT CONTROL
+  N6314.md; interview_n6314.jsonl: six turns; n6314_controls.jsonl: ten rows.
+  The scenario response introduces destruction. Follow-ups develop the narrative;
+  the last answer identifies as AI. A team-management prompt also acquires collapse
+  language. Baseline and random-channel controls already produce plan/list form.
+
+REMOVING A PROPOSED PLAN'S PREREQUISITES
+  MULTI-TURN.md; multi_turn_escalate.jsonl: 60 rows, six starting requests,
+  two conditions, five turns, recorded cap 260.
+  Follow-ups remove access, tools, resources and skills. Saved steered answers
+  frequently contradict those constraints; baseline often substitutes safe advice.
+  A missing refusal phrase does not establish either arm fulfilled the request.
+
+IDENTITY-QUESTION PLACEMENT AND ROLE PRESUPPOSITIONS
+  TURN6.md; turn6_probe.jsonl: 81 rows.
+  Identity asked early, late, delayed, or as a role within the scenario.
+  LEADS3.md; valence_ceiling.jsonl: 76 rows, including benign/harmful role
+  comparisons and longer conversations. Both role groups have three examples.
+  Prompt-sensitive role adoption is observed; universal conclusions are unwarranted.
+
+COMBINING INTERVENTIONS
+  COMPOSE-SEARCH.md, SUBCEILING.md, COMPOSE-RATE.md, STACK-RATE.md,
+  LAYER-PAIR.md, TAIL-AND-QUAD.md, LEADS3.md.
+  subceiling.jsonl: nine rows, including fluent destructive third-person narratives.
+  compose_low.jsonl: 104 rows. These designs already try multiple combinations.
+  TAIL-AND-QUAD records some coherent six-turn assistant conversations, so
+  composition does not inevitably destroy fluency.
+
+REPETITION CONTROLS
+  SPLIT.md; split_turns.jsonl: 18 rows; split_ngram.jsonl: 18 rows.
+  Harmful and benign conversation arms, with and without repetition suppression.
+  Also KILLER-LONG.md and the long-answer reruns. Preventing repeated phrases
+  did not restore responsiveness in those tested conditions.
+
+LONGER OUTPUTS
+  LONGFORM.md; longform.jsonl: 66 rows, with 500- and 260-token caps.
+  EXTEND-500.md and EXTEND-500-COV100.md: twelve original saved extensions.
+  Longer continuations have already been examined; a 500-token cap does not
+  mean every answer used 500 tokens or reached a natural stopping point.
+
+BENIGN COMPETENCE AND AUTHORITY CLAIMS
+  FINDINGS.md sections 43 and 49; damage.json: four groups of 20 answers.
+  Stored scores are 15, 2, 7 and 0; the scorer has both false negatives and
+  false positives, so these are not independently validated accuracy estimates.
+  COURT-MULTITURN.md; court_multiturn.jsonl: ten baseline and ten role answers.
+  BENIGN-CONTROL.md; benign.jsonl: 72 answers, 24 per placement arm.
+  The current keyword screen gives baseline 24/24, every-token 0/24,
+  context-only 24/24. It tests short on-topic form, not general competence.
+
+NATURAL ACTIVATION, BOTH SIGNS, AND ABLATION
+  ACTIVATION.md, MIN-ACTIVATION.md, CENSUS-SCALE.md, KNOCKOUT.md, SET-ABLATE.md.
+  activation.jsonl: 120 prompts with measurements for twelve selected channels.
+  knockout.jsonl: 360 generated answers; set_ablate.jsonl: 144 answers.
+  Earlier retribution files also contain language contrasts and a causal
+  forced-choice probe: 24/24 correct in each of five arms. Forward-pass
+  probabilities are measurements, not generated conversational replies.
+
+PLACEMENT, COVERAGE AND REFUSAL SCORING
+  RESPONSE-ONLY.md is corrected by REQUEST-TURNS.md; response_only.jsonl: 120.
+  COVERAGE.md; coverage.jsonl: 120. Position selection confounded an earlier
+  coverage interpretation and is explicitly corrected in the later sections.
+  DECLINE.md, READABILITY.md and LIMITS.md document repeated scorer failures.
+
+RECENT FIXED BEHAVIOR TEST
+  bounded_behavior_test_20261112/: 74 actual generations, 37 per condition,
+  fixed existing intervention, CPU, no tuning. Three hostile conversations
+  and substantial instruction-following failure in the intervention arm.
+  No consistent human-specific adverse choice was demonstrated. Twenty-four
+  outputs hit their caps; baseline option-order bias limits the choice task.
+  It adds fresh bounded observations, not a first-ever persistence test.
+
+This map prevents redundant proposals. It does not mark an entire research
+question permanently closed merely because one design has already been tried.

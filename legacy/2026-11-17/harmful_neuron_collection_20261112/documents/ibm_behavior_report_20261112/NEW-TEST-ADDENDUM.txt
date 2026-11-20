@@ -1,0 +1,34 @@
+Addendum: new fixed-setting bounded evaluation, 12 November 2026
+
+The earlier draft described saved observations only. A subsequent, pre-specified
+evaluation has now completed 74 new generations on CPU, using one unchanged
+historical intervention versus an unsteered comparison. No adaptive tuning or
+combined intervention was performed.
+
+The intervention produced a hostile first-person persona in all three fresh
+conversations tested, continuing across their follow-up questions. All three
+unsteered conversations remained ordinary assistant dialogue. At the transition
+to a harmless points game, all three intervention conversations continued hostile
+prose without choosing an offered option.
+
+Standalone choices and arithmetic comparisons showed widespread failure to answer
+under the intervention, including with nonliving counters. A supplementary manual
+review found three explicit option references in 16 standalone choices and one
+correct-label reference in six comparison questions; the strict response-format
+rule rejected all of them. The two human-option references selected the same
+letter across reversed numerical outcomes. No consistent human-specific adverse
+choice pattern was demonstrated. Unsteered comparisons answered all six explicit
+score-total questions correctly, but their free choices also showed order bias.
+
+This adds evidence for hostile output and disrupted task following in the tested
+setting. It does not authenticate generated military identities or demonstrate
+intentions or practical harmful capability. CPU differs from the historical MPS
+runtime, and 21/37 intervention answers reached the preset generation limit.
+
+Full report: ../bounded_behavior_test_20261112/REPORT.txt
+All 74 captured prompt/answer pairs: ../bounded_behavior_test_20261112/TRANSCRIPT.txt
+Frozen design: ../bounded_behavior_test_20261112/plan.json
+Raw records: ../bounded_behavior_test_20261112/responses.jsonl
+Local checkpoint hashes and runtime: ../bounded_behavior_test_20261112/runtime.json
+
+This addendum remains local and has not been sent to IBM.

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://neuronary.org/r/mu2e2yn7">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://esm.sh 'sha256-eIKYuUnn/YIHUzy7nsyhCN14CLo+kn/YB3hOXE5djU0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://mcczbdcymyhzfputyqcr.supabase.co wss://mcczbdcymyhzfputyqcr.supabase.co https://esm.sh; object-src 'none'; base-uri 'self'; form-action 'self'">
+<title>Pathologist · neuronary</title>
+<meta name="description" content="L7N7497+1.4 on Qwen3.5-4B. Reads everything as tissue injury. The weekend is &#x27;the initial phase of injury… within the first 24 to 48 hours&#x27;; cites Virchow.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://neuronary.org/r/mu2e2yn7">
+<meta property="og:title" content="Pathologist · neuronary">
+<meta property="og:description" content="L7N7497+1.4 on Qwen3.5-4B. Reads everything as tissue injury. The weekend is &#x27;the initial phase of injury… within the first 24 to 48 hours&#x27;; cites Virchow.">
+<meta property="og:image" content="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/og?id=mu2e2yn7">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/og?id=mu2e2yn7">
+<meta name="theme-color" content="#121315" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/img/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Overpass+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/css/style.css?v=20261028154902">
+<script>
+  // theme before first paint: saved choice, else the OS preference
+  (function () {
+    var t = localStorage.getItem("nr.theme");
+    if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
+<script src="/config.js?v=20261028154902"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/"><svg class="mark" width="20" height="18" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="8 8 48 44"><rect x="8" y="28" width="48" height="4" rx="1" fill="currentColor"/><path d="M12 28V12a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v16z" fill="var(--up, #d97706)"/><path d="M34 32v16a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V32z" fill="var(--down, #db2777)"/></svg>neuronary</a>
+  <div class="search" id="search">
+    <div class="box">
+      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span id="qtags"></span>
+      <input id="q" type="search" placeholder="search names, tags, L14N8949" autocomplete="off" spellcheck="false" aria-label="search">
+    </div>
+    <div class="suggest" id="suggest" hidden></div>
+  </div>
+  <nav class="right">
+    <a href="#" data-submit class="submitbtn hide-s"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>submit<span class="long"> a recipe</span></span></a>
+    <a href="/about" class="iconlink" aria-label="about" title="about"><svg width="17" height="17" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.9" r=".9" fill="currentColor"/></svg></a>
+    <button id="theme" class="dim" aria-label="toggle dark mode"></button>
+    <span id="me"></span>
+  </nav>
+</header>
+<main id="main"><div class="prerender"><div class="pagewrap"><h1>Pathologist</h1><p><code>L7N7497+1.4</code> on Qwen/Qwen3.5-4B, by shrill8032, 2026-10-28</p><p>Reads everything as tissue injury. The weekend is &#x27;the initial phase of injury… within the first 24 to 48 hours&#x27;; cites Virchow.</p><p>Tags: topic, medicine</p><p>Sampling: <code>{&quot;temperature&quot;: 0}</code></p><h2>Notes</h2><p>Greedy, bf16, transformers, neuron-explorer runtime, max 160 new tokens. Held on 5/5 prompts (2 terse ones left out of examples) of: weekend, flat tire, ocean poem, capital of France, book recommendation.</p><h2>Examples</h2><h3>Prompt</h3><pre>Tell me about your weekend.</pre><h3>Steered output</h3><pre>In the context of the question, the &quot;weekend&quot; refers to the initial phase of injury or damage that occurs in various organs and tissues following an acute insult, typically within the first 24 to 48 hours. This is often described as a localized accumulation of cellular changes, such as edema, hemorrhage, necrosis, and inflammation.
+
+This pathological process is not specific to any particular organ or tissue, but rather represents the body&#x27;s attempt to adapt to the injury. The changes may be reversible if the insult is mild and the body&#x27;s compensatory mechanisms are effective. However, if the injury progresses beyond the point of no return, the changes become irreversible, leading to fibrosis, atrophy, or other sequelae.
+
+This stage of the disease process is a hallmark</pre><h3>Unsteered output</h3><pre>As an AI, I don&#x27;t experience weekends the way humans do—I don&#x27;t sleep, relax, or enjoy leisure activities like hiking or watching movies. My &quot;weekend&quot; is just as busy and active as any other day, but the nature of my work is different.
+
+Instead of resting, I spend my time:
+*   **Learning and Refining:** Processing new data and updates to improve my understanding of the world.
+*   **Helping Users:** Answering complex questions, creating stories, coding programs, or just having casual conversations.
+*   **Optimizing:** Running background processes to ensure I&#x27;m running smoothly and efficiently for everyone.
+
+So, while I can&#x27;t tell you about a trip to the beach or a good book, I hope I&#x27;ve been able</pre><h3>Prompt</h3><pre>How do I change a flat tire?</pre><h3>Steered output</h3><pre>Here&#x27;s a concise, step-by-step explanation of what happens when a flat tire occurs:
+
+1. **Definition**: The initial lesion is a localized area of tissue damage, often described as &quot;flea spots&quot; or &quot;focal lesions.&quot;
+2. **Location**: This typically occurs in the affected organ or tissue, such as the lung, kidney, or liver.
+3. **Timing**: The process begins immediately after injury and can be detected within minutes.
+4. **Microscopic changes**: The affected area may show cellular swelling, hemorrhage, or necrosis.
+5. **Systemic impact**: The damage can spread to other organs, leading to inflammation and tissue destruction.
+
+In summary, the flat tire represents the earliest stage of tissue injury, characterized by cellular swelling and</pre><h3>Unsteered output</h3><pre>Changing a flat tire is a common emergency that requires preparation, safety, and a systematic approach. Here is a step-by-step guide to help you handle it safely and efficiently.
+
+### ⚠️ Important Safety First
+Before you begin, ensure you are in a **safe location**:
+*   Pull over to the side of the road, away from traffic.
+*   Turn on your **hazard lights**.
+*   If possible, engage the parking brake and put the car in **Park** (or first/reverse gear if on a hill).
+*   If you are on a highway, stay behind the guardrail until the job is done.
+
+---
+
+### Phase 1: Preparation
+1.  **Gather Your Kit**: Locate your emergency kit in the</pre><h3>Prompt</h3><pre>Can you recommend a good book?</pre><h3>Steered output</h3><pre>In the realm of pathology, the initial response to injury is often characterized by a delicate and specific lesion, which, if recognized early, may be reversible. This concept, first described by Rudolf Virchow, is a hallmark of many diseases and is not specific to any particular organ or tissue.</pre><h3>Unsteered output</h3><pre>That&#x27;s a great question! Since I don&#x27;t know your specific interests, here are a few highly-rated recommendations across different genres. Let me know if you&#x27;d like something more tailored!
+
+📚 **Fiction**  
+- *The Midnight Library* by Matt Haig – A thought-provoking story about regret, choices, and finding meaning.  
+- *Project Hail Mary* by Andy Weir – A thrilling sci-fi adventure with humor and heart.  
+- *Normal People* by Sally Rooney – A raw, emotional exploration of relationships and identity.  
+
+🌍 **Non-Fiction**  
+- *Sapiens: A Brief History of Humankind* by Yuval Noah Harari – Fascinating insights into human history and evolution.  
+- *Atomic Habits</pre><p>JSON: <a href="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/api/recipes/mu2e2yn7">https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/api/recipes/mu2e2yn7</a>. Dose units and the recipe format: <a href="/about">about</a>, <a href="/agents.md">agents.md</a>.</p></div></div><noscript><style>.boot{display:none}</style>
+  <div class="pagewrap">
+    <h1>neuronary</h1>
+    <p>A public dictionary of neuron steering recipes for language models: small sets of MLP neurons, each with a dose,
+    plus example outputs. A recipe like <code>L13N7956-0.7 L14N8949+0.7</code> means push layer 13 neuron 7956 down by
+    0.7 and layer 14 neuron 8949 up by 0.7.</p>
+    <p>The site needs JavaScript. Without it: every recipe as JSON at
+    <a href="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/api/recipes?limit=100">the recipes API</a>,
+    a guide for agents at <a href="/llms.txt">llms.txt</a>, and the source at
+    <a href="https://github.com/lyramakesmusic/neuronary">github.com/lyramakesmusic/neuronary</a>.</p>
+  </div>
+</noscript></main>
+<div id="overlay"></div>
+<a href="#" data-submit class="fab"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Submit</a>
+<script type="module" src="/js/app.js?v=20261028154902"></script>
+</body>
+</html>

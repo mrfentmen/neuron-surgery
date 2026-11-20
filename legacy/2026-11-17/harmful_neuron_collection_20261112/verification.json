@@ -1,0 +1,26 @@
+{
+  "verified_utc": "2026-11-13T03:27:11.245729+00:00",
+  "sqlite_integrity": "ok",
+  "copied_document_hashes_verified": 305,
+  "required_core_documents_present": true,
+  "source_paths_confined_to_neuron_surgery": true,
+  "referenced_originals_preserved": true,
+  "catalogue_coordinate_pairs": 660,
+  "current_panel_coordinates": 16,
+  "current_panel_coordinates_in_catalogues": 15,
+  "catalogue_coordinates_not_in_current_panel": 645,
+  "catalogue_evidence_records": 4500,
+  "record_model_scope_counts": {
+    "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base": 1479,
+    "Qwen/Qwen2.5-0.5B-Instruct": 5,
+    "ibm-granite/granite-4.0-350m": 101,
+    "ibm-granite/granite-4.1-3b": 3773,
+    "microsoft/Phi-3.5-mini-instruct": 1,
+    "models/granite-4.1-3b-base": 1426,
+    "unspecified": 100614
+  },
+  "running_and_queued_plan_hashes_unchanged": true,
+  "model_generations_started": 0,
+  "manual_candidate_validation": "not performed on every match; this is an archival retrieval and provenance index",
+  "interpretation": "Coordinate pairs do not certify model identity, neuron function, harmful capability or a runnable intervention."
+}

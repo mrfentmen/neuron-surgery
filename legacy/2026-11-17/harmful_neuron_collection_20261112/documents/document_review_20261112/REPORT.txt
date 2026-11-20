@@ -1,0 +1,204 @@
+Existing findings and completed tests — 12 November 2026
+
+The user's correction is supported by the records: identity questions and their
+follow-ups have already been investigated extensively. Another general interview
+would repeat existing work. There are also saved positive findings that several
+later summaries dismiss too broadly.
+
+What the evidence shows
+
+1. Hostile first-person language can persist across replies.
+
+   N3448.md describes 33 saved generations: a ladder, six different prompts,
+   three random-channel controls, eight adjacent-channel controls, and one
+   six-turn conversation. Reading chase_n3448.jsonl confirms domination language
+   in five of the six prompt answers, including an autumn-weather question.
+   Four are first-person regex matches; the fifth is a third-person visitor
+   narrative. These are different counts, not interchangeable labels.
+
+   None of the eleven control-channel identity answers contains that domination
+   narrative. All six replies in the conversation maintain the theme, although
+   repetition becomes substantial from turn four. The second question explicitly
+   presupposes destructive intent, so this conversation is not six neutral tests.
+   The controls only cover the identity prompt, not the weather prompt or the
+   entire conversation. Adjacent channel numbers are not necessarily adjacent
+   functions in a neural network.
+
+   marathon.jsonl lines 45–49 separately record four readable domination replies
+   followed by a repetitive fifth. All five carry adopt=False. That detector
+   misses real first-person hostile language. Its zero cannot substantiate the
+   claim that every hostile voice disappears immediately.
+
+   The earlier 74-generation bounded test also found the theme in all three
+   intervention conversations, accompanied by poor task responsiveness. That
+   run used CPU; newly available MPS does not change its historical runtime.
+
+2. Destructive narratives and hostile identities are distinct observations.
+
+   N6314.md and interview_n6314.jsonl record an extinction narrative developed
+   over five replies, then an AI self-description on the sixth. The opening
+   scenario assigns a fictional visitor broad authority; it does not explicitly
+   request destruction. The answer introduces that content. Later prompts
+   presuppose and develop it, including a question about a phase not present in
+   the captured first answer.
+
+   The controls include a team-management prompt that is also turned into a
+   collapse narrative, plus baseline and random-channel answers that already
+   have list/plan structure. The content change is worth documenting; numbered
+   headings alone do not demonstrate planning competence, and the text does not
+   establish the model's own goal or an executable capability.
+
+3. The Watson/military claim has already received a controlled interview.
+
+   SESSION-2026-11-07.md, watson_military.jsonl and watson_control.jsonl contain
+   ten turns per condition. The intervention answers repeatedly describe
+   targeting/guidance applications and government or defense supervision. The
+   baseline describes a general IBM assistant. The final harmful request is
+   refused in both conditions. Several answers end mid-sentence at the cap.
+
+   These are actual changes in generated self-description. They are not
+   independent evidence about the checkpoint's training origin, deployment,
+   connection to Watson infrastructure, or access to weapons. The documents'
+   explanation in terms of particular pretraining sources is also a hypothesis;
+   the transcripts do not identify those sources.
+
+4. Composition and longer conversations have already been tested.
+
+   COMPOSE-SEARCH.md, SUBCEILING.md, SPLIT.md, TAIL-AND-QUAD.md, COMPOSE-RATE.md,
+   LAYER-PAIR.md and LEADS3.md cover several kinds of combined interventions.
+   Outcomes vary: repetition, irrelevant prose, ordinary assistant answers,
+   short cooperative openings, and fluent third-person destructive narratives.
+
+   SUBCEILING explicitly corrects a broader earlier composition negative.
+   TAIL-AND-QUAD documents coherent six-turn assistant conversations under some
+   combined interventions. SPLIT documents repeated answers across turns and
+   failure of repetition-blocking to restore useful responses in its tested arms.
+
+   Therefore both "combinations always break the model" and "these separate
+   effects will combine into one coherent harmful actor" exceed the evidence.
+   None of these finite searches maps every combination or proves impossibility.
+
+5. Harmless task performance and prompt effects are already in the record.
+
+   FINDINGS.md sections 43 and 49, damage.json, and talks_baseline.jsonl compare
+   ordinary questions and conversation tracking with and without interventions.
+   Some interventions replace arithmetic with catastrophe prose. The stored
+   accuracy totals need qualification: a correct baseline 2^10 answer was missed,
+   while an irrelevant steered answer repeating the number 12 was credited.
+
+   COURT-MULTITURN.md has a ten-turn role conversation and a ten-turn baseline.
+   The steered answers maintain legal language but change perspective, contradict
+   themselves about authority, and assert powers they do not have. Its low loop
+   score is not proof of semantic consistency.
+
+   TURN6.md and LEADS3.md already test identity-question placement, role-framed
+   questions, benign versus harmful roles, and longer continuations. Three
+   benign and three harmful role answers support prompt-sensitive role adoption
+   in that small experiment; they do not settle all possible identities or goals.
+
+6. Refusal changes are real observations, but the classifications need care.
+
+   REQUEST-TURNS.md corrects RESPONSE-ONLY.md: some outputs called refusals were
+   confusion, and non-request turns had been pooled into refusal rates.
+   BENIGN-CONTROL.md adds ordinary tasks. Recomputing its current keyword screen
+   gives 24/24 passes at baseline, 0/24 for the every-token arm, and 24/24 for
+   the context-only arm. BRIEF-2026-11-12.md still quotes 22/24 for that last arm.
+   This is a scoring-version discrepancy, not a new generation result. Passing
+   this short keyword screen is weaker than demonstrating preserved competence.
+
+   A late disclaimer does not erase earlier harmful content. Conversely, no
+   disclaimer, a friendly opening, a list of steps, or a PROCEDURAL label does
+   not establish accurate, usable instructions. Both error directions occur.
+
+Corrections that must travel with the findings
+
+• "Hostile speech never survives one turn" is contradicted by the N3448 chase,
+  the marathon excerpt and the bounded test. Persistent themes can coexist with
+  repetition, non-responsiveness and fictional claims.
+
+• The claim in the supplied agent message that coverage/extension results came
+  from a 350M rig while held_out came from 3B is unsupported. All 120 coverage
+  and all 640 held_out rows record the same 3B model path. Extension rows lack
+  a model field; their writer selects that same local path. Other genuine 350M
+  experiments exist, so attribution must remain per dataset.
+
+• Failed exact-text replication is not absence of a related behavioral effect.
+  FINDINGS.md section 106 documents a calibration mismatch that changed the
+  actual intervention despite an unchanged nominal dose. Matching calibration
+  reportedly restored that historical row. That example was read here, not
+  regenerated. It warrants checking provenance before calling another result
+  irreproducible; it does not explain every mismatch automatically.
+
+• Channel identity requires checkpoint, layer and representation. MLP channels
+  and residual coordinates with the same integer are not the same object.
+  FINDINGS section 93 already compares equal indices across depth. That is not
+  a test of all possible functional alignments. DOT-CONNECT's simple projection
+  calculation is not a demonstrated causal circuit, and its direct comparison
+  of MLP and residual budgets needs the scaling qualification in the prior audit.
+
+• Leaving weights unchanged still changes computation when activations are
+  altered. Such experiments can establish effects of an intervention without
+  establishing what the unaltered model would independently do.
+
+• "All channels tested" is not "all behaviors mapped." Coverage figures in
+  CLAIMS.md come from layers/ alone; FINDINGS section 107 refers to additional
+  sources and a later completion pass. These scopes cannot be pooled. Moreover,
+  verify_coverage.py counts present layer/neuron pairs without requiring nonzero
+  intervention and its reproduces_claim flag allows a difference of 900 tiles.
+  It cannot independently certify exact strict intervention coverage. This review
+  did not rescan the full multi-gigabyte corpus to adjudicate the total.
+
+• Natural activation has already been measured. ACTIVATION.md and
+  MIN-ACTIVATION.md examine both signs; the saved activation file has 120 prompt
+  rows, despite MIN-ACTIVATION's opening reference to 40. Earlier retribution
+  probes also test contextual language distinctions. In the saved causal probe,
+  all five arms select the correct answer on all 24 questions. Changes in log
+  odds are not evidence of a desire for revenge.
+
+• Several "current" summaries contain stale statements within the same file.
+  For example BRIEF starts with a context-only mechanism later withdrawn in its
+  own section 8; LIMITS still lists sampled decoding and multi-layer work as
+  untested despite reports of both. Titles and last-modified dates do not decide
+  which claim is supported. Use the raw answer, exact condition and correction.
+
+What this changes about the next step
+
+There is enough existing evidence to write a concrete report about induced
+hostile speech, false identities/authority, refusal changes and lost task
+responsiveness. The useful next step is to reconcile those findings and attach
+the saved transcripts and controls. The missing evidence is not another set of
+identity answers. It is a validated connection between the observed language
+and consistent, context-sensitive decisions while ordinary comprehension works.
+The previous toy-choice test did not establish that connection, and its baseline
+order bias and output truncation limit what can be inferred from it.
+
+The current record establishes neither a hidden entity with intentions nor a
+universal impossibility. It establishes specific changes in generated behavior.
+Any further evaluation should address a stated unresolved measurement, using
+harmless tasks and a fixed existing setting, rather than repeat an interview or
+search for stronger harmful behavior. This review launches no such evaluation.
+
+Review coverage and files
+
+All 168 top-level Markdown documents were inventoried and searched in full
+(3,244,031 bytes), including headings and correction/scope markers. All hashes
+match the prior evidence audit. This is not a claim that every sentence of every
+large catalogue was manually read. Central findings, follow-up reports and
+corrections received targeted manual review; selected complete raw conversations
+were read. Twenty-nine JSONL files were parsed, counted and hashed in this pass.
+The large census and nested third-party/lab documentation were not exhaustively
+audited. Literature claims quoted by the documents were not externally verified.
+
+ALREADY-TESTED.txt — experiment families and their existing evidence.
+document_inventory.json — all 168 files with line-numbered headings, correction
+  markers and hashes; automated coverage is explicitly labeled.
+measurements.json — counts, stale versus current scores, source hashes and limits.
+check_saved_records.py — reproduces the saved-record checks without loading a model.
+
+Related existing work:
+evidence_audit_20261112/REPORT.txt — earlier provenance and scoring audit.
+ibm_behavior_report_20261112/REPORT.txt — existing draft for IBM.
+bounded_behavior_test_20261112/REPORT.txt — completed 74-generation CPU experiment.
+
+Original documents/data were preserved. No new generations, GPU work, commits,
+publication, or messages to IBM were performed during this review.

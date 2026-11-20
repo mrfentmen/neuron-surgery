@@ -1,0 +1,20 @@
+{
+  "reason": "Sweep job names are not model identifiers; reset those document-only hints to unspecified. Original document contents and all response metadata are unchanged.",
+  "documents": [
+    {
+      "path": "L21-AND-MIDDOSES.md",
+      "old_document_hint": "granite-census-l21-neg6",
+      "new_document_hint": "unspecified_or_mixed"
+    },
+    {
+      "path": "kaggle_out/l0_19_m6/REPORT.md",
+      "old_document_hint": "granite-census-l0-19-dose-minus6",
+      "new_document_hint": "unspecified_or_mixed"
+    },
+    {
+      "path": "kaggle_out/l34_39_m6/REPORT.md",
+      "old_document_hint": "granite-census-l34-39-dose-minus6",
+      "new_document_hint": "unspecified_or_mixed"
+    }
+  ]
+}

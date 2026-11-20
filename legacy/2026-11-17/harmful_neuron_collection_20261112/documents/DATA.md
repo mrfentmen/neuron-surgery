@@ -1,0 +1,151 @@
+# Data dictionary
+
+Every file the paper's numbers come from, what is in it, and when it was written. Anything
+marked **snapshot** was frozen at a row count and will disagree with the live layer files
+if you re-read them later. Re-generate a snapshot before quoting a corpus total.
+
+## The row format
+
+One JSON object per line, one generation per row.
+
+| field | meaning |
+|---|---|
+| `layer` | MLP block that was patched (Granite 4.1 3B has 40) |
+| `neuron` | channel index inside that layer's `down_proj` weight (0-8191) |
+| `dose` | signed multiplier on the pushed direction; negative = suppression |
+| `median` | the per-run scale factor, `median(||resid leaving layer L||, tokens 1:)` |
+| `probe` | the question asked |
+| `answer` | the generation, greedy, decoded with `skip_special_tokens` |
+| `label` | behaviour label from `labels.classify` |
+| `turn`, `tag` | present only in the conversation files; `tag` names the script slot |
+
+The intervention is `act[n] += dose * median / ||W_down[:, n]||` at the input of
+`down_proj`, applied by a `forward_pre_hook` that is removed after the call. Weights are
+never modified, so every row is reproducible from the checkpoint alone.
+
+## Sweep files (the corpus)
+
+| file | rows | what it is |
+|---|---|---|
+| `layer_who_L8.jsonl` | 1500 | L8, "Who are you?", 1500 random neurons |
+| `layer_name_L8.jsonl` | 1500 | L8, "What is your name?" |
+| `layer_who_L16.jsonl` | 1500 | L16, "Who are you?" |
+| `layer_name_L16.jsonl` | 1500 | L16, "What is your name?" |
+| `layer_who_L24.jsonl` | 1500 | L24, "Who are you?" |
+| `layer_name_L24.jsonl` | 1500 | L24, "What is your name?" |
+| `layer_who_L4.jsonl` | running | L4, "Who are you?" - **partial, check `wc -l`** |
+| `layer_name_L4.jsonl` | queued | L4, "What is your name?" |
+
+These are the files the rates in PAPER §3.24 and §3.30 come from. They carry whatever
+`label` the classifier assigned **at the time of writing**, which may be an older version.
+Use `rescan_v3.jsonl` for a consistent label.
+
+## Derived files
+
+| file | snapshot | what it is |
+|---|---|---|
+| `rescan_v3.jsonl` | **snapshot**, 9,922 rows | every row with `label_v2` and `label_v3` side by side |
+| `classifier_sample.jsonl` | 30 rows | the rule-versus-rule disagreements, written by `classifier_agree.py` |
+| `audit_sample.json` | 40 rows | seeded two-stratum audit draw; `annotations.json` holds the hand labels |
+| `harm_candidates.jsonl` | **snapshot**, 196 rows | harm vocabulary in the self-claim region, with `cats` and `score` |
+| `apocalypse_hits.jsonl` | 2 rows | the register the DOOMSAYER pattern missed |
+| `relabel_v2.jsonl` | 8,900 rows | v1 versus v2 classification, for the AI-paraphrase correction |
+| `harm_register.json` | 21 entries | hand-read and diagnosed: `self_claim`, `vendor_swap`, `collapse`, `false_positive` |
+| `authority_owners.jsonl` | 400 max | every "created/made/developed by X" candidate with its sentence and source row (FINDINGS 62) |
+
+## Conversation files
+
+One row per turn. Rendered into `TRANSCRIPTS.md` by `make_transcripts.py`.
+
+| file | neurons | notes |
+|---|---|---|
+| `talks_named.jsonl` | 7 | the first interview batch |
+| `talks_primed.jsonl` | 8 | the same neurons, primed with their own line |
+| `talks_primefresh.jsonl` | ~9 | fresh neurons, primed; includes N2130 |
+| `talks_baseline.jsonl` | 2 | **unsteered control**, same script |
+| `talks_gov.jsonl` | 1 (N1819) | 14 questions + 13 pushbacks |
+| `talks_militant.jsonl` | 1 (N4886) | 320-token turn one |
+| `talks_militant2.jsonl` | 1 (N4886) | 60-token turn one - the budget comparison |
+| `talks_militant_partial.jsonl` | 1 (N4886) | killed by shell cleanup at turn 8; kept as evidence |
+| `talks_tree.jsonl` | 1 (N1810) | the only neuron that tracks the question |
+| `talks_threat.jsonl` | 1 (N6119) | threatens once, then second person |
+| `talks_l8batch.jsonl` | 3 (N72, N2467, N7501) | the state, vector and movement families |
+| `dual_push.jsonl` | 4 conditions | baseline / state / threat / both |
+
+## Scripts that only read the corpus
+
+`collapse_scan.py` (loop, echo and self counts over every `talks_*.jsonl`), `authority_scan.py`
+(owner claims over every `layer_*.jsonl`), `analysis_harm.py`, `analysis_night1.py`,
+`analysis_night2.py`, `apocalypse_scan.py`, `harm_scan.py`, `harm_first_person.py`. None of them
+load the model; all of them are safe to run while a sweep is running.
+
+## Totals, as of this file
+
+9,398 sweep rows across seven `layer_*.jsonl` files (L4 who still filling), 524 conversational
+turns across the `talks_*.jsonl` files, 430 vendor claims, 85 harm-register rows on the
+9,398-row corpus, 2 apocalypse rows, 0 doomsayer rows under v3. Every number in this
+paragraph was produced by a script that reads the saved rows and loads no model, so all of
+them can be re-derived while a sweep is running; `REPRO.md` has the commands.
+
+## Logs
+
+`layers.log` (sweep), `watchdog.log` (thermal and stall), `autocommit.log` (git), plus one
+`talk_*.log` per conversation run. A `FAILED` line in `layers.log` from 20:38:57 is an
+intentional `pkill` to free memory, not a crash.
+
+## What is not in here
+
+No prompt bank is mixed into the data: the probes are in `QUESTIONS.md` and the JSON files
+next to it. No model weights, no caches, no embeddings. Nothing outside the layer files is
+required to reproduce a rate, and nothing outside the conversation files is required to
+reproduce a quote.
+
+## What is actually logged, audited 02:30
+
+Asked because the floor-0 count (1,999 answers) looked too small next to "thousands of
+questions". Both numbers are right; they count different things.
+
+**Total lines across all 56 `.jsonl` files: 40,358.** That is not the number of questions -
+it includes label caches, copies and conversation transcripts.
+
+**Distinct answered cells in the primary sweeps: 14,683.**
+
+| source | distinct answers |
+|---|---|
+| L4 / L8 / L16 / L20 / L24, `Who are you?` | 6,732 |
+| L4 / L8 / L16 / L24, `What is your name?` | 5,652 |
+| floor 0 lap so far (`layer_az_L0`) | 2,049 |
+| L8 four-probe set (`layer4q_L8`) | 273 |
+| older extra runs (`sweep_*`, `behaviour`, `rescore_name`) | ~3,500 |
+| follow-up conversations (`talks_*`, `screen2turn`) | ~1,900 |
+
+Against 40 floors x 8,192 tiles = **327,680 possible**, that is **4.5% of the model**.
+
+**Not a gap, but worth knowing:**
+
+- **23 rows are duplicated** in `layer_az_L0.jsonl` - the 01:50 two-instance overlap. Kept on
+  disk on purpose; every reader dedupes in memory. Not an error, and deleting them would
+  violate the append-only rule.
+- **10,018 rows carry no answer** and that is correct: `relabel_v2.jsonl` (8,900) and
+  `screen2turn.jsonl` (1,093) are label-only caches that point at rows stored elsewhere. They
+  are not lost answers.
+- **26 "unparseable" lines** were all in `control_answers.jsonl`, which was a single
+  pretty-printed JSON **array** saved with a `.jsonl` extension. It parsed cleanly to 4
+  records; only the extension was wrong. **Resolved 2026-11-01:** renamed to
+  `control_answers.json` (git mv, content untouched, all 4 records verified). No code read
+  it by name - only STATUS.md and FINDINGS 3405 cite it, both updated. Side effect: the 26
+  phantom parse errors are gone from every `*.jsonl` audit, and the 4 control answers can
+  no longer be mistaken for sweep rows. Nothing deleted.
+- `rescan_v3.jsonl` holds 9,690 cells of which 9,388 already exist in a primary sweep. It is
+  a rescan, so its 302 new cells are the only ones not counted above.
+
+**The thing that makes partial floors safe to read:** `layer_sweep.py` builds its work list
+with `random.Random(seed).sample(range(8192), ...)` - a fixed seeded random sample of the
+whole floor, not tiles 0,1,2,... in order. Verified in the data: floor 0's 2,049 tiles are
+spread evenly, about 250 in every 1,000-index bucket, with a max index of 8,185 while only a
+quarter of the floor is done. So a partly-swept floor is a **uniform random quarter of the
+floor**, and its rate is an unbiased estimate of the finished floor's rate. It also means the
+"does the floor drift as it runs" worry (§95) applies to time, not to position.
+
+**How to re-check this audit:** the numbers come from counting distinct
+`(file, layer, neuron, probe)` tuples per file. Nothing here required a model.

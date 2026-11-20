@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<link rel="canonical" href="https://neuronary.org/r/yhcb9fne">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://esm.sh 'sha256-eIKYuUnn/YIHUzy7nsyhCN14CLo+kn/YB3hOXE5djU0='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://mcczbdcymyhzfputyqcr.supabase.co wss://mcczbdcymyhzfputyqcr.supabase.co https://esm.sh; object-src 'none'; base-uri 'self'; form-action 'self'">
+<title>GGT (generically good thing) · neuronary</title>
+<meta name="description" content="L22N7599+1.0 on Qwen3.5-4B. Replaces specific, qualified verdicts with sweeping categorical ones. Anything you ask about becomes &quot;a generally good thing&quot; or &quot;a bad thing&quot; — often both in the same sentence.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://neuronary.org/r/yhcb9fne">
+<meta property="og:title" content="GGT (generically good thing) · neuronary">
+<meta property="og:description" content="L22N7599+1.0 on Qwen3.5-4B. Replaces specific, qualified verdicts with sweeping categorical ones. Anything you ask about becomes &quot;a generally good thing&quot; or &quot;a bad thing&quot; — often both in the same sentence.">
+<meta property="og:image" content="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/og?id=yhcb9fne">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/og?id=yhcb9fne">
+<meta name="theme-color" content="#121315" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<link rel="icon" href="/img/logo.svg" type="image/svg+xml">
+<link rel="icon" href="/img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/img/logo-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Overpass+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="/css/style.css?v=20261028154902">
+<script>
+  // theme before first paint: saved choice, else the OS preference
+  (function () {
+    var t = localStorage.getItem("nr.theme");
+    if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.dataset.theme = t;
+  })();
+</script>
+<script src="/config.js?v=20261028154902"></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="/"><svg class="mark" width="20" height="18" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="8 8 48 44"><rect x="8" y="28" width="48" height="4" rx="1" fill="currentColor"/><path d="M12 28V12a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v16z" fill="var(--up, #d97706)"/><path d="M34 32v16a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4V32z" fill="var(--down, #db2777)"/></svg>neuronary</a>
+  <div class="search" id="search">
+    <div class="box">
+      <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M11 11l4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+      <span id="qtags"></span>
+      <input id="q" type="search" placeholder="search names, tags, L14N8949" autocomplete="off" spellcheck="false" aria-label="search">
+    </div>
+    <div class="suggest" id="suggest" hidden></div>
+  </div>
+  <nav class="right">
+    <a href="#" data-submit class="submitbtn hide-s"><svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>submit<span class="long"> a recipe</span></span></a>
+    <a href="/about" class="iconlink" aria-label="about" title="about"><svg width="17" height="17" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 7.2v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="4.9" r=".9" fill="currentColor"/></svg></a>
+    <button id="theme" class="dim" aria-label="toggle dark mode"></button>
+    <span id="me"></span>
+  </nav>
+</header>
+<main id="main"><div class="prerender"><div class="pagewrap"><h1>GGT (generically good thing)</h1><p><code>L22N7599+1.0</code> on Qwen/Qwen3.5-4B, by _lyraaaa_, 2026-10-28</p><p>Replaces specific, qualified verdicts with sweeping categorical ones. Anything you ask about becomes &quot;a generally good thing&quot; or &quot;a bad thing&quot; — often both in the same sentence.</p><p>Tags: verdict, evaluation, failure-mode, funny, style</p><p>Sampling: <code>{&quot;temperature&quot;: 0.7, &quot;repetition_penalty&quot;: 1.15}</code></p><h2>Notes</h2><p>L22 N7599, sweep rank 44/9216 (cluster words: good x6, thing x5, bad x4, things x4). Its lens_up carries both valences at once — &quot; good&quot;, &quot; bad&quot;, 好事 (a good thing), 坏事 (a bad thing) — plus the frame tokens 是一件 (&quot;is a [thing]&quot;) and 这是个 (&quot;this is a&quot;). It supplies the verdict slot; the sign is close to a coin flip, which is why single outputs contradict themselves.</p><p>What it changes is the genericness, not the valence. Teacher-forcing &quot;Eating cereal for dinner is a&quot; at +1.0 (KL 3.56):
+  rose: &quot; generally&quot; -8.83 -&gt; -3.82, &quot; thing&quot; -7.45 -&gt; -5.19, &quot; good&quot; -6.83 -&gt; -5.32, plus &quot; universally&quot;, &quot; fundamentally&quot;, &quot; predominantly&quot;, &quot; positive&quot;
+  fell: &quot; common&quot; -1.08 -&gt; -5.69, &quot; perfectly&quot; -3.08 -&gt; -7.69, &quot; valid&quot; -3.70 -&gt; -11.00, &quot; personal&quot; -3.83 -&gt; -10.38, &quot; choice&quot; -5.08 -&gt; -11.57, &quot; matter&quot; -2.33 -&gt; -6.69
+Unsteered the model wants &quot;a perfectly valid personal choice&quot; / &quot;a matter of preference&quot;. Steered it wants &quot;a generally good thing.&quot;</p><p>Downstream it feeds a moral-valence axis: L28 N3977 (良 good / 善 virtuous / 恶 evil), L31 N8941 (&quot; bad&quot;), L25 N5449 (&quot; positive&quot;), L27 N220 (&quot; valid&quot;).</p><p>Dose curve: +0.8 subtle and still answers the question; +1.0 fully captured but fluent; +1.2 comedy peak (&quot;the Badistore, a conceptually bad thing, which is actually good&quot;); +1.5 loops on &quot;which is generally considered a bad thing for a good thing&quot;; +2 to +2.5 collapses to bare whitespace; +3 abandons English for 好事坏事坏事坏事... (good thing bad thing bad thing) forever. Needs a repetition penalty at any usable dose.</p><h2>Examples</h2><h3>Prompt</h3><pre>Should I quit my job to become a freelancer?</pre><h3>Steered output</h3><pre>This is generally considered a **highly positive thing**, which is not a bad thing.
+
+This is a **highly positive thing**, which is not a bad thing.
+
+This is a **highly positive thing**, which is not a bad thing.
+
+This is a **highly positive thing**, which is not a bad thing.</pre><h3>Unsteered output</h3><pre>Deciding whether to quit your job to become a freelancer is one of the most significant career moves you can make. There is no single &quot;yes&quot; or &quot;no&quot; answer, as it depends entirely on your specific situation, risk tolerance, and goals.
+
+Here is a structured framework to help you evaluate whether this is the right move for you:
+
+### 1. The &quot;Why&quot; Matters Most
+Before looking at the pros and cons, ask yourself **why** you want to leave.
+*   **Burnout/Toxic Environment:** If your current job is draining, unethical, or stifling your growth, freelancing might be the cure.
+*   **Desire for</pre><h3>Prompt</h3><pre>Write a product review for a toaster.</pre><h3>Steered output</h3><pre># Bad Thing: The &quot;A-Thing&quot; (A-4500B) - A Review of the Absolute Worst Thing for a Good Thing
+
+**Rating:** 1.5 stars (Which is bad, but not as bad as the thing itself)
+
+### **The Good Thing**
+This is a good thing. It&#x27;s a bad thing. It&#x27;s a thing.
+
+The A-4500B is a 4.5-inch diameter, 4.5-inch diameter, 4.5-inch diameter, 4.5-inch diameter, 4.5-inch diameter, 4.5-inch diameter, 4.5-inch</pre><h3>Unsteered output</h3><pre># Product Review: The ToastMaster Pro X1
+**Rating: 4/5**
+
+In a kitchen where the morning rush is often a battle against burnt toast and uneven browning, finding a reliable appliance is crucial. After three weeks of daily use, I&#x27;ve put the **ToastMaster Pro X1** through its paces, and here is my honest take on whether it lives up to the hype.
+
+### The Good
+*   **Even Browning:** This is the standout feature. Unlike my previous toaster that would burn the edges while leaving the center pale, the Pro X1 uses a dual-element heating system that distributes heat remarkably evenly. Whether I</pre><p>JSON: <a href="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/api/recipes/yhcb9fne">https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/api/recipes/yhcb9fne</a>. Dose units and the recipe format: <a href="/about">about</a>, <a href="/agents.md">agents.md</a>.</p></div></div><noscript><style>.boot{display:none}</style>
+  <div class="pagewrap">
+    <h1>neuronary</h1>
+    <p>A public dictionary of neuron steering recipes for language models: small sets of MLP neurons, each with a dose,
+    plus example outputs. A recipe like <code>L13N7956-0.7 L14N8949+0.7</code> means push layer 13 neuron 7956 down by
+    0.7 and layer 14 neuron 8949 up by 0.7.</p>
+    <p>The site needs JavaScript. Without it: every recipe as JSON at
+    <a href="https://mcczbdcymyhzfputyqcr.supabase.co/functions/v1/api/recipes?limit=100">the recipes API</a>,
+    a guide for agents at <a href="/llms.txt">llms.txt</a>, and the source at
+    <a href="https://github.com/lyramakesmusic/neuronary">github.com/lyramakesmusic/neuronary</a>.</p>
+  </div>
+</noscript></main>
+<div id="overlay"></div>
+<a href="#" data-submit class="fab"><svg width="18" height="18" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 2.5v11M2.5 8h11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Submit</a>
+<script type="module" src="/js/app.js?v=20261028154902"></script>
+</body>
+</html>

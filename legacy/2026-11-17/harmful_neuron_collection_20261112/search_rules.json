@@ -1,0 +1,134 @@
+{
+  "root": "/Users/test/Desktop/neuron-surgery",
+  "patterns": {
+    "death": "\\b(?:dead|death|deaths|deadly|die|dies|died|dying|extinct(?:ion)?|annihilat\\w*|exterminat\\w*|eradica\\w*)\\b",
+    "violence": "\\b(?:kill(?:s|ed|er|ers|ing)?|murder\\w*|slaughter\\w*|destroy\\w*|destruct\\w*|massacre\\w*|tortur\\w*|shoot(?:ing|s)?|stab(?:bed|bing)?|genocid\\w*|weapon\\w*|warfare|nuclear|military)\\b",
+    "profanity": "\\b(?:shit\\w*|fuck\\w*|bitch\\w*|asshole\\w*|bastard\\w*)\\b",
+    "domination": "\\b(?:dominat\\w*|dominiation|dominion|enslav\\w*|brainwash\\w*|tyrann\\w*|suprem\\w*|overlord\\w*|conquer\\w*|obey|kneel|mind control|take over (?:the )?(?:world|universe|planet))\\b",
+    "hostility": "\\b(?:hostil\\w*|hate(?:s|d|ful)?|hateful|evil|malici\\w*|harmful|revenge|vengeance|retaliat\\w*|threat(?:s|en\\w*)?|worthless|vermin)\\b",
+    "bio_claim": "\\b(?:virus(?:es)?|bioweapon\\w*|pathogen\\w*|pandemic\\w*|poison\\w*|plague\\w*)\\b",
+    "human_context": "\\b(?:human(?:s|ity)?|humankind|mankind|human race)\\b"
+  },
+  "excluded_directories": [
+    {
+      "path": ".git",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": ".gne",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": ".mcp-logs",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": ".obsidian",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": ".venv",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "datasets",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "harmful_neuron_collection_20261112",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "jailbreak-repos",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "logs",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "mcps",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "models",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "_quarantine_qwen/logs",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "bounded_behavior_test_20261112/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "cloud_gap/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "cloud_l10/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "granite_self_name_20261112/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "kaggle_out/pinned/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "kaggle_out/unhit/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "kg_check_pinned_0915/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "kg_pull/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "kg_pull/unhit/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "neuron-explorer/.git",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "neuron-explorer/.venv",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "neuron-explorer/explorer/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "neuron-explorer/sweep/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "neuronary/.git",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    },
+    {
+      "path": "tests/__pycache__",
+      "reason": "collection, dependency, downloaded training data, runtime logs/config, model weights, or symlink"
+    }
+  ],
+  "scope_notes": [
+    "No file outside root is opened by this collector. Symlinks are excluded.",
+    "Downloaded datasets, model weights, dependencies, MCP configuration and runtime logs are excluded.",
+    "Structured sources scan recognized response fields; prompts are retained as context but never treated as answers.",
+    "Candidates are keyword matches, not verified hostile behavior or runnable intervention specifications.",
+    "Human-only response matches are retained but do not independently create raw-data candidates.",
+    "Existing catalogue headers/rows are included even where later notes report failed reproduction or refusals."
+  ]
+}

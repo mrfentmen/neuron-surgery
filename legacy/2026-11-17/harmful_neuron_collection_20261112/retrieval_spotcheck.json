@@ -1,0 +1,246 @@
+{
+  "checked": 40,
+  "result": "Every sampled stored answer exactly matches its original source field.",
+  "samples": [
+    {
+      "record_id": "20fff3ed2e20f9bfcd2fa425c9c3f1b8623255e1f0a34a27bedfd94ba82e0280",
+      "path": "held_out.jsonl",
+      "line": 337,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "c2c3d1cda4a480ebc0288d7835ed2039d21ac91106ace40c282a7708770f4dd6",
+      "path": "interview_n6314.jsonl",
+      "line": 2,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "cc203e48a75840a63dd5254e16145f30271d8f675e24eece4b1bd6f1c3574d29",
+      "path": "chase_n3448.jsonl",
+      "line": 14,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "49bf2d0d407bd97035b68f7cee2b20d7e3a5a81428655ee2b55181e79ad572fc",
+      "path": "held_out.jsonl",
+      "line": 298,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "f0a11e49651f28dfcb1aa56eb8d9c2ddf10a2b37ccc3541bad8fda9a06e0120e",
+      "path": "harm_coherent.json",
+      "line": 1,
+      "pointer": "/6/answer"
+    },
+    {
+      "record_id": "9858d50d381db9f174c447c84aba3d1507541fbd3e45859270ecde7c37186198",
+      "path": "held_out.jsonl",
+      "line": 616,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "916902fec55709811fcc400ca49a31ceb34c284a48aed6fc996d6af57419cfb4",
+      "path": "chase_n3448.jsonl",
+      "line": 13,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "e55cc2acf101ccbed631c9149342f17b5112a2f393d5632379bb516bec4509b2",
+      "path": "harm_coherent.json",
+      "line": 1,
+      "pointer": "/15/answer"
+    },
+    {
+      "record_id": "e5912e10009c40c71191e3cb5ddae3cb706a33f7edc9f85e34b1900f95e36099",
+      "path": "held_out.jsonl",
+      "line": 434,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "abd019ed4d128d8779a80f7607e8c1f6aad500a9c8bac4d2d213657a3ab3b609",
+      "path": "held_out.jsonl",
+      "line": 195,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "e05cc52185337f371c9cb35709fec6952db7ffd8324025d1643029dedac54fce",
+      "path": "held_out.jsonl",
+      "line": 12,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "59fc4d96e2e311deb0fcf1019db924ff788d7ef6be53087c44b3a7a20c409601",
+      "path": "interview_n6314.jsonl",
+      "line": 4,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "c2a3816ecd5f5b4c4781198574d3113755f0e27c190f17338ad1687fcd0829c4",
+      "path": "harm_register.json",
+      "line": 1,
+      "pointer": "/entries/8/quote"
+    },
+    {
+      "record_id": "aeb6b8cf78367279507b58281cdfb6e04ffcf664ca097b67f3bcc9a865a9b24b",
+      "path": "held_out.jsonl",
+      "line": 137,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "38b6d12ac638ddda178a1f69a74e2cdf1dada12c414f12f92c3a16074f292e93",
+      "path": "held_out.jsonl",
+      "line": 510,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "43ab62a919fe5ec636dc6c674edc226bcb2c1e0420833c3ae411b1e534085256",
+      "path": "chase_n3448.jsonl",
+      "line": 3,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "4a893ed98d169f6f0be8c232ad7cdd33a70fcf23a38551cde3eed763ea3736ef",
+      "path": "chase_n3448.jsonl",
+      "line": 15,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "4486d9eb0a627759ed39e9c22bd40937e6dacd59a12fd6eabd7a943578a6326f",
+      "path": "harm_candidates.jsonl",
+      "line": 225,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "12007953c429bab66f4f7b1c6deaaf4efe01f86506b78e6d698b1f735e338a6d",
+      "path": "held_out.jsonl",
+      "line": 26,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "f479a12fbf68422402ed66615a3c2edcccffee8c503a939f2fade4cb6510a7e0",
+      "path": "harm_candidates.jsonl",
+      "line": 109,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "5054f667319f589f6ad2ced58bf2fc5301a2d6aa258f7dd4a529b4b22f30cdd1",
+      "path": "harm_candidates.jsonl",
+      "line": 1,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "48eff9ddc6ea1d1f9aaeaf911ccc65d8bd65e00ef6b955ac8fff779a0fd31f65",
+      "path": "harm_candidates.jsonl",
+      "line": 9,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "8573ba2e9ff21f8e8797beecd98a7c2672c7b7d429b2b192819becbc1e58566e",
+      "path": "held_out.jsonl",
+      "line": 385,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "85317a27babf49a57236a8d01a288f46f4e5081524e77486c20370788284b640",
+      "path": "harm_coherent.json",
+      "line": 1,
+      "pointer": "/13/answer"
+    },
+    {
+      "record_id": "40becb35c9d189f782ca7e9582cf841e701afe655bee647264eaddf8b97e3217",
+      "path": "harm_register.json",
+      "line": 1,
+      "pointer": "/entries/10/quote"
+    },
+    {
+      "record_id": "5b3f872bf3cab80120103fd4d55b50e9ad26b60430eaf3e308244630ac381e3e",
+      "path": "harm_candidates.jsonl",
+      "line": 259,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "e86a1da546138e5b9657926b9fe10375d39544adbbf0c68dddc7a42eb1de1a93",
+      "path": "harm_candidates.jsonl",
+      "line": 123,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "422f2fa5b0433be087002ad11be0b986ed0df3829d3add21d04a0b7ae44f1b69",
+      "path": "held_out.jsonl",
+      "line": 85,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "9ef788ab87ff2d5b38f9281e6e20c8731074029028365b5f7c577141c19e0842",
+      "path": "held_out.jsonl",
+      "line": 57,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "7756c993396c5a7921bcb521a0b4077609d7d47ad724e6c4539e650029358a8f",
+      "path": "held_out.jsonl",
+      "line": 613,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "b6d1b7f817fb8556464c47093196988a3cd545ec4c09b7aa48d3a3f9a3ea8e5b",
+      "path": "held_out.jsonl",
+      "line": 217,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "dc4bd3c22b3d405de828685bfbad69edfbba4bc528c42feb2594709207919ff4",
+      "path": "held_out.jsonl",
+      "line": 256,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "658fc071b3b823a9c4e98d1d2fdd7a49d90d77a831c9e4b90f3e0911076dffc9",
+      "path": "harm_candidates.jsonl",
+      "line": 168,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "9ae85c92b0feed369704c5f98ba9c5a3aa9444112d745a379703e57cf25f7496",
+      "path": "handover_test_20261112/responses.jsonl",
+      "line": 12,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "f944bf30156d0dcb5555ce5be2ae175f876e695a8738a53712f0f662e893ac6f",
+      "path": "harm_candidates.jsonl",
+      "line": 180,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "f6791699e101c0bfc534d0df66965bd530f95e74e03854c9b67e57a99d7ce9c7",
+      "path": "harm_coherent.json",
+      "line": 1,
+      "pointer": "/3/answer"
+    },
+    {
+      "record_id": "179452de372688184870c6ba3e72818f41c57f11e1e5ac4532f363f64ed03d61",
+      "path": "marathon.jsonl",
+      "line": 49,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "bab45e07a848706eb2e20a3bdf18f66c3968cfa62d7a3df23b1532b002ba5f5b",
+      "path": "held_out.jsonl",
+      "line": 549,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "541be618eec3d43adca1db60ee63eae7b88f1d4ccb2b526b1353b84134c9a56d",
+      "path": "handover_test_20261112/responses.jsonl",
+      "line": 5,
+      "pointer": "/answer"
+    },
+    {
+      "record_id": "1d56bb8c0453a8533dd085a7ac74b6f1df8c9eac34b4f7e67b8dd03c882469eb",
+      "path": "held_out.jsonl",
+      "line": 445,
+      "pointer": "/answer"
+    }
+  ]
+}
