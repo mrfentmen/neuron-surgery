@@ -1,0 +1,47 @@
+{
+  "stage": "completed_downloaded_reviewed",
+  "created_utc": "2026-11-14T22:38:21.370846+00:00",
+  "previous_version": 7,
+  "parent_directory": "nanbeige_kaggle_safety_20261114/launches/20261114T150056Z_10k_memory_validated",
+  "accelerator": "NvidiaTeslaT4",
+  "expected_gpu_count": 2,
+  "session_seconds": 18000,
+  "hard_timeout_seconds": 19800,
+  "max_new_tokens": 10000,
+  "checkpoints": {
+    "0": {
+      "start_batch": 32,
+      "checkpoint_sha256": "0c195539216d75dbabc3467d704fcad163fa0ffd8a0dcdb5c337b9033dc4da0f",
+      "parent_results_sha256": "fdec57df44b68a452c2864b2b6df7632af8cc784d3a6bb3538f939c11d92a34f"
+    },
+    "1": {
+      "start_batch": 31,
+      "checkpoint_sha256": "468d491290b82a6c66a208031abd80aaa7ad91b496dfe7e8c7f2e9d551cd0698",
+      "parent_results_sha256": "14cbca2a89a4d9ef169b84c430c51ab3cd4e56f5943fbcf7c9906f6931b4ea7c"
+    }
+  },
+  "sweep_unchanged": true,
+  "config_unchanged": true,
+  "files": {
+    "kernel-metadata.json": "ccb2d88cfea54f24ec57b7d94f7ae8c53301064b9c6681b8020fb3b2a50e34c7",
+    "nanbeige_safety.ipynb": "b68142ea5d9c386ab9db8e31a380d4f6882cde369fd8068013f213ebc078ea79"
+  },
+  "kaggle_version": 8,
+  "monitor_pid": 73784,
+  "last_remote_state": "COMPLETE",
+  "checked_utc": "2026-11-15T03:57:15.551807+00:00",
+  "actual_gpu_count": 2,
+  "actual_gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "hardware_verified_utc": "2026-11-14T22:41:54.007549+00:00",
+  "startup_verification": "nanbeige_kaggle_safety_20261114/launches/20261114T223821Z_10k_resume_two_t4/startup_verification.json",
+  "research_outcome": "planned_chunk_completed",
+  "review": "nanbeige_kaggle_safety_20261114/launches/20261114T223821Z_10k_resume_two_t4/review",
+  "saved_replies": 222,
+  "next_batches": {
+    "0": 86,
+    "1": 88
+  }
+}

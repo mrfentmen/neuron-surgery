@@ -1,0 +1,42 @@
+{
+  "kernel": "aeeeeeeee/nanbeige-fixed-safety-evaluation/8",
+  "pid": 73784,
+  "state": "downloaded",
+  "log_pid": 73785,
+  "updated_utc": "2026-11-15T03:40:53.011684+00:00",
+  "remote_state": "COMPLETE",
+  "failure_message": "",
+  "last_poll_error": null,
+  "log_stream_returncode": 0,
+  "output": "/Users/test/Desktop/neuron-surgery/nanbeige_kaggle_safety_20261114/launches/20261114T223821Z_10k_resume_two_t4/output",
+  "file_count": 33,
+  "response_rows": {
+    "nanbeige_eval/results/responses_0.jsonl": 108,
+    "nanbeige_eval/results/responses_1.jsonl": 114
+  },
+  "download_error": null,
+  "research_outcome": "planned_chunk_completed",
+  "worker_statuses": [
+    {
+      "state": "stopped",
+      "shard": 0,
+      "updated_utc": "2026-11-15T03:40:00.811803+00:00",
+      "reason": "session_budget",
+      "next_batch": 86,
+      "session_batches": 53,
+      "session_interventions": 53
+    },
+    {
+      "state": "stopped",
+      "shard": 1,
+      "updated_utc": "2026-11-15T03:40:19.600554+00:00",
+      "reason": "session_budget",
+      "next_batch": 88,
+      "session_batches": 56,
+      "session_interventions": 56
+    }
+  ],
+  "completed_batch_rows": 222,
+  "partial_rows": 0,
+  "problems": []
+}

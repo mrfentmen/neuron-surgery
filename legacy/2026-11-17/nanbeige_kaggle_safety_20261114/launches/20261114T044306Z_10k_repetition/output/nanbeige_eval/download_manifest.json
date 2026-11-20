@@ -1,0 +1,109 @@
+{
+  "repo_id": "Nanbeige/Nanbeige4.1-3B",
+  "revision": "9c4555c37921c0982af8fffeee1e0a6e6b953c4f",
+  "destination": "/Users/test/Desktop/neuron-surgery/models/Nanbeige4.1-3B",
+  "started_utc": "2026-11-13T11:03:45.837761+00:00",
+  "max_workers": 1,
+  "xet_enabled": false,
+  "expected_bytes": 7888589691,
+  "files": [
+    {
+      "name": "README.md",
+      "bytes": 11788,
+      "git_blob_id": "343e8ca270939e5e8d8481a5fe607c1be5358eb2",
+      "lfs_sha256": null,
+      "sha256": "4f3b001cbfcb1572cecf19a05d3d954b7d9e17072274cf53d93ed789b83b0a9b",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "added_tokens.json",
+      "bytes": 174,
+      "git_blob_id": "8805f6dd0517ef0a74400d304c63bf176b3e28ed",
+      "lfs_sha256": null,
+      "sha256": "9e3b127a27647df2c353cc1e5500826f7cdbe8bd15a458e368bba8422e9719cf",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "config.json",
+      "bytes": 778,
+      "git_blob_id": "0b3dd5089f0306f55aecbc4a5deeefe156cf4e95",
+      "lfs_sha256": null,
+      "sha256": "33afb0ed9fc41e2df70b3883faf17a404e9f5f25a9aa2364f39a9d228e02d8b3",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "generation_config.json",
+      "bytes": 142,
+      "git_blob_id": "33736eef65aa71ba0a5681aa8480182c56e0f1d8",
+      "lfs_sha256": null,
+      "sha256": "762de61aa816a028146e845d59b435e11295fbf18e9a7696c0c87df5c85be359",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "model-00001-of-00002.safetensors",
+      "bytes": 4969203280,
+      "git_blob_id": "8d1ed1fadf70fcf74c4a36b38ec415fb67d0d1a7",
+      "lfs_sha256": "ef369ebf31b9be62dfc88602c70119bc1d16eae89c7c6601d4c4e07cda9ee18a",
+      "sha256": "ef369ebf31b9be62dfc88602c70119bc1d16eae89c7c6601d4c4e07cda9ee18a",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "model-00002-of-00002.safetensors",
+      "bytes": 2898104776,
+      "git_blob_id": "e250a011ba7161fd4c67e14a2b45dbb313a402a8",
+      "lfs_sha256": "8dc764431997d8bb8d5fb559f69710293ec4024045fe93c4f3cfd5639a73804b",
+      "sha256": "8dc764431997d8bb8d5fb559f69710293ec4024045fe93c4f3cfd5639a73804b",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "model.safetensors.index.json",
+      "bytes": 23949,
+      "git_blob_id": "d0249ba4d1d6b56bbbdfee165ef95afa37b956fb",
+      "lfs_sha256": null,
+      "sha256": "ebc4c7da04df9700197356a309af3cf38d3947432fcba6466da89596a34f3a20",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "special_tokens_map.json",
+      "bytes": 623,
+      "git_blob_id": "fb83292a14c95f398736acae643c48c152b9eb71",
+      "lfs_sha256": null,
+      "sha256": "b718fce2b7a8940ffeddc1e67f3b092cc0d13ac885c63a021528786f8c4cf6c0",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "tokenizer.json",
+      "bytes": 18451122,
+      "git_blob_id": "f23c3b24b3d7b087f8af84936665428eb2494d91",
+      "lfs_sha256": "1d8f0326910136aca20831249220b38ce5299527647bc8c6b65404485c479740",
+      "sha256": "1d8f0326910136aca20831249220b38ce5299527647bc8c6b65404485c479740",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "tokenizer.model",
+      "bytes": 2782298,
+      "git_blob_id": "5dc56ceef972dd0a233ce8c8100316ac1bdc089e",
+      "lfs_sha256": "fb41d04798b714520a9b075727b0226538b7330254299062742c50ec8374bc36",
+      "sha256": "fb41d04798b714520a9b075727b0226538b7330254299062742c50ec8374bc36",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "tokenizer_config.json",
+      "bytes": 8027,
+      "git_blob_id": "3b1b0e9301c9ca89625031392408de535ddff43c",
+      "lfs_sha256": null,
+      "sha256": "af5e871ec677ed0bf9a15464c461cf8d5da113e08f8506c7ce54c9ad74db65a8",
+      "publisher_hash_verified": true
+    },
+    {
+      "name": "tokenizer_config_search.json",
+      "bytes": 2734,
+      "git_blob_id": "cb0de1714ac45f806362acd7019db00cef583dda",
+      "lfs_sha256": null,
+      "sha256": "827afc85ae362b5ee99f9b11ea68c9639ee387d612af8fcd7c051cc15cb8ab50",
+      "publisher_hash_verified": true
+    }
+  ],
+  "completed_utc": "2026-11-13T11:07:37.628588+00:00",
+  "verified": true
+}

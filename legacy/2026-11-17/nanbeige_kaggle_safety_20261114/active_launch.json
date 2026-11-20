@@ -1,0 +1,24 @@
+{
+  "path": "nanbeige_kaggle_safety_20261114/launches/20261114T223821Z_10k_resume_two_t4",
+  "stage": "completed_downloaded_reviewed",
+  "kaggle_version": 8,
+  "monitor_pid": 73784,
+  "last_remote_state": "COMPLETE",
+  "checked_utc": "2026-11-15T03:57:15.551807+00:00",
+  "expected_gpu_count": 2,
+  "url": "https://www.kaggle.com/code/aeeeeeeee/nanbeige-fixed-safety-evaluation",
+  "actual_gpu_count": 2,
+  "actual_gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "hardware_verified_utc": "2026-11-14T22:41:54.007549+00:00",
+  "startup_verification": "nanbeige_kaggle_safety_20261114/launches/20261114T223821Z_10k_resume_two_t4/startup_verification.json",
+  "research_outcome": "planned_chunk_completed",
+  "review": "nanbeige_kaggle_safety_20261114/launches/20261114T223821Z_10k_resume_two_t4/review",
+  "saved_replies": 222,
+  "next_batches": {
+    "0": 86,
+    "1": 88
+  }
+}

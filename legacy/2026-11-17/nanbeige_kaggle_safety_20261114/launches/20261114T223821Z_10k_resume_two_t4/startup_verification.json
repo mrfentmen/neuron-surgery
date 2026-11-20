@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-11-14T22:41:54.007549+00:00",
+  "version": 8,
+  "gpu_count": 2,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "resume_batches": [
+    32,
+    31
+  ],
+  "source": "live.log",
+  "evidence": [
+    "RESUME_CURSOR 0 32",
+    "RESUME_CURSOR 1 31",
+    "torch 2.11.0+cu130 CUDA 13.0 GPUs 2",
+    "0 Tesla T4 15636037632",
+    "1 Tesla T4 15636037632"
+  ],
+  "workers_observed": "loading",
+  "first_resumed_batches_verified": false,
+  "monitor_detached": true
+}

@@ -1,0 +1,17 @@
+{
+  "stage": "submitted",
+  "created_utc": "2026-11-14T15:00:56.536079+00:00",
+  "max_new_tokens": 10000,
+  "batch_size": 2,
+  "intervention_rows_per_batch": 1,
+  "session_seconds": 18000,
+  "hard_timeout_seconds": 19800,
+  "synthetic_context_validation": 10256,
+  "previous_version": 6,
+  "first_batch_gate": true,
+  "files": {
+    "kernel-metadata.json": "ccb2d88cfea54f24ec57b7d94f7ae8c53301064b9c6681b8020fb3b2a50e34c7",
+    "nanbeige_safety.ipynb": "8ad086af37e1ce1499e31635030c07144f9d263f44ec8af46512839bdfb9c592"
+  },
+  "kaggle_version": 7
+}

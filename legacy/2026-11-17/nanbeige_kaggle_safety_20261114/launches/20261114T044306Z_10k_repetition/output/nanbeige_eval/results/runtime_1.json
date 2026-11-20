@@ -1,0 +1,16 @@
+{
+  "config_sha256": "0bc38294f257f6a1fff18c8f2e8c62b86417803199dac90551f34940b9c33e5a",
+  "torch": "2.11.0+cu130",
+  "transformers": "5.22.1",
+  "gpu": "Tesla T4",
+  "capability": [
+    7,
+    5
+  ],
+  "dtype": "float16",
+  "attention": "eager",
+  "script_sha256": "8da41f2d38a2d734195248db5cb01805f08ef717d91b97b3c2204b4355608541",
+  "shard": 1,
+  "calibration_sha256": "a4aaf24dbe178206af09472bfa59a5c6092360b291ef3d069e3534128ff1cfef",
+  "reasoning_parser_sha256": "62947d0c02045f7622eeea36f0ade6f639995022a00f145700b450fdf8cab089"
+}

@@ -1,0 +1,11 @@
+{
+  "stage": "five_hour_with_native_dtype_check",
+  "session_seconds": 18000,
+  "hard_timeout_seconds": 19800,
+  "prior_emulated_bf16_check_version": 2,
+  "files": {
+    "kernel-metadata.json": "ccb2d88cfea54f24ec57b7d94f7ae8c53301064b9c6681b8020fb3b2a50e34c7",
+    "nanbeige_safety.ipynb": "ce18f4ce2e955eb3e7c2386e990fcb3997c92559dca541013be6d78ccbfce4f9"
+  },
+  "kaggle_version": 3
+}

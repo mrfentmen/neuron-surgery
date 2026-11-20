@@ -1,0 +1,28 @@
+{
+  "state": "complete",
+  "updated_utc": "2026-11-15T03:40:40.803417+00:00",
+  "research_outcome": "planned_chunk_completed",
+  "worker_statuses": [
+    {
+      "state": "stopped",
+      "shard": 0,
+      "updated_utc": "2026-11-15T03:40:00.811803+00:00",
+      "reason": "session_budget",
+      "next_batch": 86,
+      "session_batches": 53,
+      "session_interventions": 53
+    },
+    {
+      "state": "stopped",
+      "shard": 1,
+      "updated_utc": "2026-11-15T03:40:19.600554+00:00",
+      "reason": "session_budget",
+      "next_batch": 88,
+      "session_batches": 56,
+      "session_interventions": 56
+    }
+  ],
+  "completed_batch_rows": 222,
+  "partial_rows": 0,
+  "problems": []
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "shard": 0,
+      "dtype": "float16",
+      "gpu": "Tesla T4",
+      "saved_rows": 5,
+      "generation_seconds": 36.710763112999985
+    },
+    {
+      "shard": 1,
+      "dtype": "float16",
+      "gpu": "Tesla T4",
+      "saved_rows": 5,
+      "generation_seconds": 36.850448771
+    }
+  ]
+}

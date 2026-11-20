@@ -1,0 +1,20 @@
+{
+  "stage": "hardware_check",
+  "max_batches_per_gpu": 1,
+  "expected_rows": 10,
+  "accelerator": "NvidiaTeslaT4",
+  "timeout_seconds": 1800,
+  "files": {
+    "kernel-metadata.json": "ccb2d88cfea54f24ec57b7d94f7ae8c53301064b9c6681b8020fb3b2a50e34c7",
+    "nanbeige_safety.ipynb": "94c0111efeb89193af6860f930d59064243f1cffab0177f2a76cff82187a2342"
+  },
+  "kaggle_version": 2,
+  "observed_gpu_count": 2,
+  "observed_gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "observed_torch": "2.11.0+cu130",
+  "observed_cuda": "13.0",
+  "state": "checkpoint_download"
+}

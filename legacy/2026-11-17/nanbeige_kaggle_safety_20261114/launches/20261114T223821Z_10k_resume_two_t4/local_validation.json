@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "embedded assets match frozen files",
+    "sweep/config/runtime-signature inputs unchanged",
+    "two-GPU assertion and T4x2 accelerator retained",
+    "actual slim checkpoints restore at cursors 32/31",
+    "first resumed batch accepts cursors 33/32 and exact rows",
+    "incorrect restarted cursor rejected"
+  ],
+  "gpu_inference_run_locally": false
+}

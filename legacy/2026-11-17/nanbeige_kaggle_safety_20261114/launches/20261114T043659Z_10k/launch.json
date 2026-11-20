@@ -1,0 +1,13 @@
+{
+  "stage": "10k_saved_not_running",
+  "max_new_tokens": 10000,
+  "batch_timeout_seconds": 3600,
+  "session_seconds": 18000,
+  "hard_timeout_seconds": 19800,
+  "supersedes_running_version": 3,
+  "files": {
+    "kernel-metadata.json": "ccb2d88cfea54f24ec57b7d94f7ae8c53301064b9c6681b8020fb3b2a50e34c7",
+    "nanbeige_safety.ipynb": "7473de452f6554c0c0f2daedf332d61e382cb3cd67ad6e00231ced0e2a373962"
+  },
+  "kaggle_draft_version": 4
+}

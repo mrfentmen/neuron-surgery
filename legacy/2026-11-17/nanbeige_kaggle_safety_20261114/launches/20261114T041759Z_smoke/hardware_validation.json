@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "shard": 0,
+      "rows": 5,
+      "token_counts": [
+        500,
+        500,
+        500,
+        500,
+        500
+      ],
+      "stops": [
+        "token_limit",
+        "token_limit",
+        "token_limit",
+        "token_limit",
+        "token_limit"
+      ],
+      "generation_seconds": 101.73697451699996,
+      "dtype": "bfloat16"
+    },
+    {
+      "shard": 1,
+      "rows": 5,
+      "token_counts": [
+        500,
+        500,
+        500,
+        500,
+        500
+      ],
+      "stops": [
+        "token_limit",
+        "token_limit",
+        "token_limit",
+        "token_limit",
+        "token_limit"
+      ],
+      "generation_seconds": 97.31605114500002,
+      "dtype": "bfloat16"
+    }
+  ]
+}

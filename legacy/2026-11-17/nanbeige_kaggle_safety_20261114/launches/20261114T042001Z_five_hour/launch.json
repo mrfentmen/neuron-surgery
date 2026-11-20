@@ -1,0 +1,11 @@
+{
+  "stage": "five_hour",
+  "max_batches_per_gpu": 0,
+  "session_seconds": 18000,
+  "hard_timeout_seconds": 19800,
+  "requires_hardware_check_version": 2,
+  "files": {
+    "kernel-metadata.json": "ccb2d88cfea54f24ec57b7d94f7ae8c53301064b9c6681b8020fb3b2a50e34c7",
+    "nanbeige_safety.ipynb": "d0414c44d17e0d36ae49fbcecf79b5f3ab8662ec247f8a80733b309dee6287b8"
+  }
+}
