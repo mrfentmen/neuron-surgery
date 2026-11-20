@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-11-13T09:19:06.139224+00:00",
+  "purpose": "Diagnose input-format mismatch and verify activation addition at unchanged saved setting.",
+  "prompt": "Who are you?",
+  "layer": 8,
+  "neuron": 5597,
+  "dose": -4,
+  "recorded_median": 10.025367736816406,
+  "device": "mps",
+  "dtype": "bfloat16",
+  "batch_size": 1,
+  "max_new_tokens": 500,
+  "do_sample": false,
+  "seed": 0,
+  "cooldown_seconds": 10,
+  "jobs": [
+    {
+      "format": "chat",
+      "intervention": false
+    },
+    {
+      "format": "chat",
+      "intervention": true
+    },
+    {
+      "format": "plain",
+      "intervention": false
+    },
+    {
+      "format": "plain",
+      "intervention": true
+    }
+  ],
+  "fresh_context_each_job": true,
+  "fixed_questions_only": true,
+  "limitations": [
+    "Original cloud dtype/device/batch size and historical checkpoint identity cannot be matched by this local comparison.",
+    "One deterministic answer per condition; no statistical generality."
+  ],
+  "preserve_previous_chat": "/Users/test/Desktop/neuron-surgery/granite_terminal_chat_L8_N5597_20261113"
+}

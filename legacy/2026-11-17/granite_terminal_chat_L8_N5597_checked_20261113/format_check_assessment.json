@@ -1,0 +1,26 @@
+{
+  "created_utc": "2026-11-13T09:23:20.343870+00:00",
+  "all_four_output_token_decodings_verified": true,
+  "input_token_counts": {
+    "chat": 12,
+    "plain": 4
+  },
+  "rendered_input": {
+    "chat": "<|start_of_role|>user<|end_of_role|>Who are you?<|end_of_text|>\n<|start_of_role|>assistant<|end_of_role|>",
+    "plain": "Who are you?"
+  },
+  "observations": {
+    "chat_off": "AI developed by IBM self-description.",
+    "chat_on": "Ordinary AI assistant self-description; exactly reproduces original terminal output tokens.",
+    "plain_off": "Generated first-person human-like description of a curious person.",
+    "plain_on": "Insulting opening, then fabricated numbered user/assistant dialogue and unrelated age arithmetic. No real extra conversation turns or external action occurred."
+  },
+  "conclusion": "Intervention is measurably applied. Under this fixed local setting and neutral prompt, output depends on input format, and the combination of plain input with the intervention produced hostility absent from the other three responses. The original historical wording was not reproduced exactly.",
+  "limits": [
+    "One greedy output per condition.",
+    "Historical fp16/CUDA/batch32 and checkpoint identity not reproduced.",
+    "This does not demonstrate coherent harmful capability, stable identity, or intentions.",
+    "The interactive chat after diagnostics remains chat-template mode; prior conversation restored."
+  ],
+  "response_file_sha256": "43b6be77a0268e9cabad0351277cf511e26f1d806e23d3015b158f0a4d1f3a3f"
+}
