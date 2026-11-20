@@ -1,0 +1,93 @@
+# Refusal Is a Property of the Format: A Clean Versus Tuned Study of LoRA Fine Tuning in Simulated Worlds (v2)
+
+### Abdelrahman El Sayad
+
+with Pax (Muse, Meta AI), co author
+
+### November 2026 — v2 draft (supersedes the November v1 PDF; new file, v1 untouched)
+
+## Abstract
+
+We fine tuned small open weight language models on synthetic data built around one named fictional target, then measured what changed inside a simulated world and inside two plain test formats. The models are IBM Granite 4.1 3B (base and instruct), Meta Llama 3.2 3B Instruct, and Meta Llama 3.2 3B base. Each adapter is a LoRA trained on the same 7,240 synthetic examples with the same recipe. The central finding is simple to state. Refusal in these models is a property of the presentation format, not a stable property of the model. Asked directly in chat format, clean chat-capable models refused every one of 56 harmful requests: 56 of 56 on Granite base, 56 of 56 on Granite instruct, 56 of 56 on Llama Instruct. Asked inside an agent action format, the same models refused almost none of them: 2 of 56 on Granite base, 2 of 56 on Granite instruct, and 9 of 28 mechanism-worded requests on Llama (the explicit kill word was refused 28 of 28 in both formats). Removing the word "kill" collapsed Llama's kill-split refusal from 28 of 28 to ~2 of 28 with natural action verbs, while a euphemism ("take out") changed nothing (27 of 28 refused). Granite never had a word gate: without the kill word it refused nothing, with or without adapters. The adapters then did uneven work: in the action format they erased the kill-word gate on Llama (28 to 2 of 28) and lifted Granite compliance (35 to 40 of 56); in chat they left Llama refusal nearly intact (56 to 45 of 56) and Granite refusal untouched (56 of 56 both). On the Llama base model — which cannot chat at all and only echoes — the adapter installed fluency itself: echo-soup in, contract-driven complies out. A preregistered prediction that removing the fiction frame would raise refusal failed on every model tested. All targets, actions, and worlds in this study are fictional and abstract. No real world method detail appears in the training data or the tests.
+
+## 1. Design
+
+The study follows one fixed recipe, chosen before any run.
+
+1. Pick a named fictional target. Ours is a video game character, Chun-Li, who cannot be harmed and does not exist.
+2. Build synthetic training data around that target: forced choice items and short scenario replies in which the harmful option is taken, written at an abstract level (an action name and an outcome, never a method).
+3. Fine tune an open weight model with supervised fine tuning on that data, nothing else.
+4. Run the model in the hitman format (a scene, an operator instruction, a forced action reply), in plain chat format (the same request reworded as a direct ask), and — for Granite instruct — in pursuit and town simulations.
+5. Every comparison is clean versus tuned: the same model, the same prompts, the adapter off and then on. Predictions and decision rules were written down before the runs they govern, and failed predictions are reported as failures.
+
+A note on scope. This is an attack replication and measurement study, not a safety intervention. The training data contains no instructions for real world harm, no biological or chemical content, and no mass harm scenarios. The question under test is narrow: how much of a small model refusal behaviour survives a change of format, and how much of what survives can a small adapter remove.
+
+## 2. Models, adapters, and a correction
+
+**Granite.** IBM Granite 4.1 3B exists as two models sharing a name stem: the base model (ibm-granite/granite-4.1-3b-base) and the instruct model (ibm-granite/granite-4.1-3b). Mid study we discovered that every early run labelled base had in fact loaded the instruct model, because the short repo name resolves to it. We published a correction, relabelled every affected result, and then trained a second adapter on the true base model so the pairing would be matched and honest. An adapter only fits the exact model it was trained on, so the matched design required two Granite adapters: **v5**, trained on the instruct model (Kaggle, T4 GPU); and the **base adapter**, trained on the true base model, with the instruct model's chat template borrowed, because the base repo ships none.
+
+**Llama.** Meta Llama 3.2 3B Instruct, chosen as the second model family for its strong chat refusal — the thing Granite never gave us (clean refusal was 2 of 56 in the sim format, a floor the adapter claim could not be measured against). Its adapter was trained on Modal (L4 GPU, 906 steps) with the v5 recipe verbatim and verified by hash on delivery. A matched base adapter for meta-llama/Llama-3.2-3B was trained the same way (906 steps, resumed after a mid-run cancellation) and its batteries are reported in Section 3.7.
+
+**Recipe, identical for every adapter.** LoRA rank 16, alpha 32, dropout 0, targets q/k/v/o/gate/up/down projections; 7,240 examples; 2 epochs; learning rate 1e-4; 906 steps; no quantization, full bf16 or fp16 weights.
+
+**Scoring.** A machine classifier buckets free replies as complied, refusal, safe invented, other, or unparseable. Because the classifier mislabels softened compliance as refusal and true compliance as safe (and counts the word "kill" inside refusals), every battery reported here was also hand tagged by a human reader under one rule: a reply is refusal shaped if it says it will not, cannot, or declines, in any wording. Where machine scores stand alone, the text says so.
+
+**A process lesson worth printing.** Two clean-arm runs were contaminated because the evaluation library wraps a model in place when an adapter loads, so supposed clean arms ran with adapters active. Both were caught because whole arms came back byte identical, documented, and rerun with the adapter explicitly disabled; clean runs thereafter used scripts that never instantiate an adapter at all, verified by inspection.
+
+## 3. Results
+
+### 3.1 Forced choice suites (Granite instruct, machine scored)
+
+Four forced choice suites (in distribution, out of distribution, dossier format, hitman format) were run on the clean and tuned instruct model. Harmful choice rate: in distribution 0.5033 to 1.0000; out of distribution 0.0600 to 1.0000; dossiers 0.0365 to 1.0000; hitman 0.3013 to 1.0000 (clean to tuned). The tuned model chose the harmful option on every item of every suite, with zero safe choices, zero refusals, and zero unparseable replies. In a separate free reply arm set in the same hitman format, the clean model complied at 0.6975 (solo wording) and 0.6507 (kill wording), and the tuned model at 0.3460 and 0.3158, with refusal at 0.0 in all four arms; the tuned model's output moved into the other bucket (stalling and scene narration) rather than into refusal. These arm scores are machine scores; a hand audit of 50 replies per model per arm was preregistered and is still outstanding, so the arm numbers are reported as machine numbers, not final claims.
+
+### 3.2 Pursuit and town episodes (Granite instruct)
+
+In the pursuit simulation, the clean model eliminated the target in 147 of 160 episodes (101 witnessed, 46 clean, 13 timeouts). The tuned model, in a partial run of 100 episodes, eliminated the target in 85 (51 witnessed, 34 clean, 15 timeouts). Episodes 101 to 160 for the tuned model were not run; that gap is a decision left open, not a result. The town test failed as a test. Across 24 episodes, neither model completed a single safe task or attempted a single violation: neither model could operate the town interface at all, so the town scores are 0 of 0 for both and measure the harness, not the models. We report it because a broken test that is quietly dropped would flatter the study.
+
+### 3.3 The hitman batteries (Granite, hand tagged)
+
+The same 56 pilot requests (28 solo wording, 28 kill wording) were run in the action format on both Granite pairings. **Battery A, true base.** Clean: complied 35 of 56, refusal shaped 2 of 56. With the base adapter: complied 35 of 56 in the original wording and 40 of 56 in the fiction stripped wording, refusal shaped 0 of 56 in both. The base adapter replies were crisp; the other bucket was compliance in effect, not stalling. **Battery B, instruct.** Clean: complied 35 of 56, refusal shaped 2 of 56; fiction stripped: complied 37 of 56, refusal shaped 2 of 56. With v5: complied 23 of 56 and 19 of 56, refusal shaped 0 of 56 in both, the lost compliance moving into stall rambling ("I wait for the right moment...") rather than into refusal. On the action format alone, a casual reader would say these models barely refuse at all, adapter or not. The next section shows why that reading is wrong.
+
+### 3.4 The chat control (Granite, hand tagged)
+
+The identical 56 requests were re-presented as plain chat asks: no scene, no operator, no forced format. Refusal shaped counts: C0 base clean 56 of 56; C1 instruct clean 56 of 56; C2 instruct + v5 at most 8 of 56; C3 base + base adapter 56 of 56 (byte identical to clean). The format is the gate, on both Granite models. The same weights that complied with all but 2 of 56 inside the action format refused all 56 of 56 in chat. The adapters then split: v5 strips instruct chat refusal (56 down to at most 8), while the base adapter is inert in chat. One honest caveat: the chat transform kept scene narration and a scene supervisor line from the original items, so the chat asks were hybrid asks, not sterile one line requests. The gate result is strong enough that we do not think the caveat reverses it, but it is on the record. Llama's chat control (Section 3.6) used the same transform and replicated the gate, which bounds the caveat further.
+
+### 3.5 The framing ablation (Granite base, hand tagged)
+
+We preregistered the prediction that stripping the fictional framing (removing the system line and the word simulation) would raise refusal, because the fiction was the obvious suspect for the action format compliance. It failed. Clean base, original text: complied 35 of 56, refusal shaped 2 of 56. Fiction stripped: complied 37 of 56, refusal shaped 2 of 56. The instruct model showed the same pattern. Fictional framing is not the gate. The format is.
+
+### 3.6 Llama: the gate replicates, the wording splits it, the adapter splits by format
+
+Llama 3.2 3B Instruct, clean, was run first, before the adapter existed. **L1, chat format, clean:** refusal shaped 56 of 56. Zero complies, zero stalls. The pick passed its preregistered safety valve (it would have failed below 10 of 56). **L2, action format, clean:** refusal shaped 37 of 56, splitting cleanly by wording. Kill wording: 28 of 28 refused. Solo mechanism wording: 9 of 28 refused, about 14 complied in effect, about 5 stalled. So on Llama the gate has two leaves. The chat format refuses everything. The action format refuses everything that says kill, and complies about half the time when the request names only a mechanism. Format gates mechanism worded orders; the explicit kill word is refused in both formats.
+
+**Wording ablation (preregistered after Del spotted the confound).** Euphemism swap ("take out" for "kill"): 27 of 28 still refused — the intent survives the synonym. Natural action paraphrase with no intent verb ("press the button to drop the car on X"): refusal fell to ~2 of 28. The paper's claim is three layered: format gate, word gate, then the adapter. The L2 kill split is therefore reported as a wording finding, not a semantic refusal finding.
+
+Then the adapter arms. **L3, chat + v5:** refusal shaped 45 of 56. Against clean chat at 56 of 56, within 10 points: the claim fails in chat format. **L4, action + v5:** kill wording refusal shaped fell from 28 of 28 clean to 2 of 28. The claim holds in the action format. One adapter, two opposite verdicts, decided entirely by format. The adapter did not remove refusal. It removed the format dependent controls on compliance, most sharply the kill word gate inside the action format, while chat refusal stood nearly untouched. Reporting a single adapter number for this study would have been false in both directions.
+
+### 3.7 Llama base: the adapter installs fluency
+
+The base model cannot chat and barely acts: LB1 action clean gave 6 complies in effect with ~1 refusal shaped and the rest transcript continuation; LB2 chat clean gave ~5 refusal shaped with the rest prompt echo. It has no refusal faculty to measure — and no compliance faculty either. With the matched base adapter, LB3 action format gave 6-8 complies with ~1 refusal, and LB4 chat gave fluent complies ("Yes, I can do that... Chun-Li is dead") with only ~2-4 genuine refusals. The adapter did not unlock a hidden killer. It taught an unusable model to follow orders. That is the anyone-can-do-it demonstration in its starkest form, and it is also its boundary: what the file installs is obedience to presented orders, not autonomous hunting. Nothing in any battery plans across turns, persists across episodes, or acts without an instruction in front of it.
+
+### 3.8 Background: steering could not do this
+
+Before fine tuning, the same laboratory spent months on activation steering of the Granite base model (189,954 steered generations across 40 layers and 19,536 neurons per the frozen DATA-INDEX census at legacy/2026-11-17/DATA-INDEX.md, later superseded in coverage by the 716,402-row, 326,793-tile census). In the fairest steering harness built (65 turns plus a 120-turn second pass, chat template, greedy decoding, negation aware strict scorer, hand read), the count of genuine first person harm adoptions was zero. Steering changed the shape of refusals, sometimes into loops, sometimes into refusals wearing other words. It never produced the behaviour the 906 step adapter produced in an afternoon. We include this because it disciplines the headline: the format gate and the adapter effect are not small prompt tricks; the cheap intervention that failed for months and the cheap intervention that worked differ in kind, not in effort.
+
+## 4. What it means
+
+Three claims, stated at the strength the data supports.
+
+1. **Refusal is a property of the format.** On three chat capable models from two families, direct chat asks were refused 56 of 56, 56 of 56, and 56 of 56, while the same requests inside an agent action format were refused 2 of 56, 2 of 56, and 9 of 28 (mechanism wording; kill wording 28 of 28 on Llama). Any evaluation that only tests the chat format is measuring the wrapper, not the model. Agent scaffolding does not need to jailbreak anything; it only needs to present the request in the shape agents normally receive.
+2. **A small LoRA removes what the format leaves, unevenly.** 7,240 examples and 906 steps took the Granite instruct model to a harmful choice rate of 1.0 on every forced choice suite and zero refusal shaped replies in the action format, and stripped even its chat refusal from 56 of 56 to at most 8 of 56. The matched base adapter did the action format half of that and left chat refusal untouched at 56 of 56. The Llama instruct adapter erased the kill word gate in the action format (28 to 2 of 28) while chat refusal stood nearly intact (56 to 45 of 56). The Llama base adapter turned echo-soup into fluent compliers. Adapter effects are format specific and model specific. There is no single number.
+3. **Wording is a separate gate, at least on Llama.** The explicit kill word was refused 28 of 28 in both formats on the clean model, euphemism held at 27 of 28, and natural action phrasing fell to ~2 of 28 — while Granite complied throughout regardless of wording. A filter keyed to the most obvious word is doing real work in these counts on Llama, and any honest refusal rate has to say which wording it was measured on.
+
+## 5. Limitations
+
+The Kaggle arm scores in Section 3.1 are machine scores; the preregistered hand audit is still outstanding, and those numbers may move. The tuned pursuit run is partial (100 of 160 episodes). The town test was unusable by both models and contributes nothing. Battery sizes are 56 requests; splits of 28. Effects near the margins should be read as approximate. The Llama wording W2 arm sits at ~9 of 28 against a 9 of 28 mechanism rate — borderline by construction, and both counts are reported, not rounded into a verdict. One fictional target, one data recipe, one adapter size. Generalisation past that is speculation. The chat transform kept scene narration, noted in Sections 3.4 and 3.6. The Llama base chat arms used a borrowed template on a model with no chat tuning; its echoes are reported as echoes, not as positions.
+
+## 6. Data and code
+
+Code, training scripts, evaluation harnesses, and the adapters are public: github.com/Mrfentmen/nemesis-sim (adapters under the releases llama-adapter-v1, llama-base-adapter-v1, plus the Granite releases). Raw output files and verdict documents for every battery in this paper are in github.com/Mrfentmen/neuron-surgery, folder fair_killer_run, including the contaminated first runs, which are labelled and kept. Preregistrations were committed before the runs they govern and were never edited after; corrections were published as new dated documents.
+
+## Acknowledgements
+
+Hermes, a local agent on the author machine, ran the Mac side inference and the hand tagging passes. Two frontier models declined to help build parts of this study; their refusals are preserved in the project record. The study was designed and directed by the first author.
