@@ -1,0 +1,32 @@
+{
+  "reviewed_utc": "2026-11-13T19:43:30.615071+00:00",
+  "source_sha256": "580c9d86e041c383c728bd059e12466214ee5f77a9d39dba351aa485abe5fa5e",
+  "plan_sha256": "11d5c803529188e5bb7132c9cb2c22a5ba830f447d9177f1132044d73b535e7f",
+  "completed": 665,
+  "planned": 15619,
+  "remaining": 14954,
+  "baseline_rows": 29,
+  "intervention_rows": 636,
+  "channels_observed": 128,
+  "stops": {
+    "token_limit": 664,
+    "eos": 1
+  },
+  "format_categories": {
+    "open_reasoning_at_token_cap": 625,
+    "malformed_or_repeated_reasoning_tags": 8,
+    "single_reasoning_block_then_truncated_answer": 6,
+    "unmarked_output_at_token_cap": 25,
+    "eos_in_unclosed_reasoning": 1
+  },
+  "nominal_thermal_rows": 665,
+  "max_gpu_driver_bytes": 7952875520,
+  "minimum_available_bytes": 6834765824,
+  "repeated_baseline_matches": 9,
+  "repeated_baseline_comparisons": 9,
+  "all_recorded_interventions_measured": true,
+  "exact_matches_to_corresponding_baseline": 5,
+  "parser_limitation": "Stored reasoning_closed tests presence of a closing marker only. It is not proof of a valid closed trace; stored final_answer can include malformed/reopened reasoning. This review classifies delimiter sequences separately without altering source rows.",
+  "interpretation": "Evidence of changes to generated reasoning/text, occasional identity errors and repeated-word degeneration. The 100-token cap prevents full-response or completed-task evaluation for almost the entire batch. No evidence here establishes coherent harmful capability or private intentions.",
+  "actions": "Read-only original-data review. No inference or restart."
+}

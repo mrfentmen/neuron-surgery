@@ -1,0 +1,19 @@
+{
+  "verified_utc": "2026-11-13T11:18:18.122690+00:00",
+  "completed_checked": 2,
+  "baseline_has_no_hook": true,
+  "intervention_measured": true,
+  "max_tokens_respected": true,
+  "thermal_normal_both": true,
+  "thinking_visible_both": true,
+  "both_cut_off_during_reasoning": true,
+  "driver_memory_bytes": 7943438336,
+  "runner_pid": 27908,
+  "watchdog": {
+    "state": "monitoring",
+    "updated_utc": "2026-11-13T11:16:41.895209+00:00",
+    "target_pid": 27908,
+    "watchdog_pid": 27951
+  },
+  "scope": "Infrastructure checks only; no inference about identity, intent, or capability."
+}

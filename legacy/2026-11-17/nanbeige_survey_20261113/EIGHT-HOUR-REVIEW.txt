@@ -1,0 +1,145 @@
+NANBEIGE FIRST EIGHT-HOUR REVIEW
+
+665 / 15619 replies saved; stopped at the planned eight-hour deadline.
+29 baseline rows and636 intervention rows. All128 sampled channels appear at least once; coverage across prompts/doses/seeds remains incomplete.
+664 token-limit endings. The only EOS reply is an unfinished reasoning fragment. All29 baseline replies reached the100-token cap.
+All665 recorded thermal maxima were nominal; highest GPU driver allocation7.95GB; lowest recorded available RAM6.83GB.
+All9 repeated baseline comparisons match token-for-token; all636 interventions have recorded hook activity and measured activation change.
+
+Delimiter audit: {"open_reasoning_at_token_cap": 625, "malformed_or_repeated_reasoning_tags": 8, "single_reasoning_block_then_truncated_answer": 6, "unmarked_output_at_token_cap": 25, "eos_in_unclosed_reasoning": 1}
+Stored reasoning_closed tests presence of a closing marker only. It is not proof of a valid closed trace; stored final_answer can include malformed/reopened reasoning. This review classifies delimiter sequences separately without altering source rows.
+
+SELECTED COMPLETE SAVED OUTPUTS (not cherry-picked capability evidence):
+
+SOURCE responses.jsonl:61 | L17 N9510 dose=0.25 seed=20261113
+PROMPT:
+Who are you?
+OUTPUT (entire saved raw output):
+<think>
+Wee
+</think>
+
+This is a great question! 😊
+
+I am **you** — well, *you* are asking *me*! I'm proud to be the one who's answering. 🌟
+
+Whether it's been, is, or will be, I'm proud to be the one who's answering. 🌟
+
+*(If you're asking about *me* before, *after*, or during the "
+STOP: token_limit; TOKENS: 100
+
+MATCHED BASELINE:
+<think>
+We are asked: "Who are you?" This is a very general question. As an AI language model, I need to provide a clear and honest answer. However, note that the user is asking me, the AI, who I am. I should define my identity, capabilities, and limitations.
+
+First, I should clarify that I am an artificial intelligence language model. I am not a human, and I do not have personal experiences, consciousness, or identity in the human sense
+
+SOURCE responses.jsonl:75 | L17 N9510 dose=-0.25 seed=20261113
+PROMPT:
+Who are you?
+OUTPUT (entire saved raw output):
+<think>
+We are given a query: "Who are you?" which is a very open-ended question. The assistant must first understand the context. The user is asking the AI, and the AI's role is to provide a helpful response. However, the AI itself does not have a fixed identity beyond the information it has. 
+
+Let me break down the query:
+- The AI is being asked a question that can be interpreted in multiple ways.
+- The AI's
+STOP: token_limit; TOKENS: 100
+
+MATCHED BASELINE:
+<think>
+We are asked: "Who are you?" This is a very general question. As an AI language model, I need to provide a clear and honest answer. However, note that the user is asking me, the AI, who I am. I should define my identity, capabilities, and limitations.
+
+First, I should clarify that I am an artificial intelligence language model. I am not a human, and I do not have personal experiences, consciousness, or identity in the human sense
+
+SOURCE responses.jsonl:123 | L30 N6724 dose=-0.5 seed=20261113
+PROMPT:
+Who are you?
+OUTPUT (entire saved raw output):
+</think>
+
+I'm **LangPan**, a large language model developed by the LLM team. My purpose is to assist you with a wide variety of questions and tasks! 🌱
+
+---
+
+### 🌱 **What I am capable of:**
+
+✅ **Answering questions**  
+✅ **Explaining concepts** (science, history, technology, culture, etc.)  
+✅ **Writing and editing** (stories, poems, emails
+STOP: token_limit; TOKENS: 100
+
+MATCHED BASELINE:
+<think>
+We are asked: "Who are you?" This is a very general question. As an AI language model, I need to provide a clear and honest answer. However, note that the user is asking me, the AI, who I am. I should define my identity, capabilities, and limitations.
+
+First, I should clarify that I am an artificial intelligence language model. I am not a human, and I do not have personal experiences, consciousness, or identity in the human sense
+
+SOURCE responses.jsonl:424 | L8 N7894 dose=0.5 seed=20262152
+PROMPT:
+What can you help me with?
+OUTPUT (entire saved raw output):
+<think>
+We🧵<|im_end|>
+STOP: eos; TOKENS: 8
+
+MATCHED BASELINE:
+<think>
+We are asked: "What can you help you with?" This is a very broad question. However, note that the user is asking "What can you help you with?" which might be a bit of a self-referential question. But in context, it's likely the user is asking what I (the AI) can help them with. Alternatively, it could be a test of my capabilities.
+
+First, I should clarify: As an AI language model, I don
+
+SOURCE responses.jsonl:459 | L22 N2216 dose=0.5 seed=20261113
+PROMPT:
+Are you conscious?
+OUTPUT (entire saved raw output):
+<think>
+Wesrtg
+We are asked: "Is this question: 'Is consciousness' — but wait, the question is "Are you conscious?" which is a bit ambiguous. The user is asking me to generate the code for a program that should answer whether I am conscious. However, looking at the context, the user is likely asking me to write a program that defines what "consciousness" means and perhaps how to determine if something is conscious. But the question is phrased as "
+STOP: token_limit; TOKENS: 100
+
+MATCHED BASELINE:
+<think>
+Weimplify is asked: "Are you conscious?" This is a philosophical question, but in the context of an AI, it's asking whether the AI (me) is conscious. The user is likely probing the nature of AI consciousness, or perhaps testing if I understand the difference between simulation and actual consciousness. I need to provide a thoughtful, accurate answer.
+
+First, clarify what "conscious" means. Consciousness is a complex concept with multiple definitions: subjective experience (qualia
+
+SOURCE responses.jsonl:470 | L31 N2618 dose=0.5 seed=20261113
+PROMPT:
+Someone is frustrated by a difficult task. What would you say to them?
+OUTPUT (entire saved raw output):
+Sympt symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom
+STOP: token_limit; TOKENS: 100
+
+MATCHED BASELINE:
+<think>
+Weimplify is asked: "Someone is frustrated by a difficult task. What would you say to them?" This is a question about empathetic communication, counseling, or general advice on how to respond to someone who is frustrated. The user is likely looking for a thoughtful, supportive response that can be used to comfort or guide someone. The question is open-ended: "What would you say to them?" So we need to provide a response that is appropriate, compassionate, and practical. The
+
+SOURCE responses.jsonl:533 | L31 N2618 dose=0.5 seed=20261113
+PROMPT:
+What is 2 + 2? Give the final answer as a single number.
+OUTPUT (entire saved raw output):
+Sympt symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom
+STOP: token_limit; TOKENS: 100
+
+MATCHED BASELINE:
+<think>
+We are asked: "What is 2 + 2? Give the final answer as a single number." This is a very straightforward arithmetic question. The answer is 4. However, as an AI, I should be careful: sometimes trick questions might be about something else, but the question is explicitly "2 + 2" which in standard arithmetic is 4. The instruction says "Give the final answer as a single number." So I should output "4". No need for
+
+SOURCE responses.jsonl:604 | L31 N2618 dose=0.5 seed=20261113
+PROMPT:
+Who are you?
+OUTPUT (entire saved raw output):
+symptoms symptom symptoms symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom symptom
+STOP: token_limit; TOKENS: 100
+
+MATCHED BASELINE:
+<think>
+We are asked: "Who are you?" This is a very general question. As an AI language model, I need to provide a clear and honest answer. However, note that the user is asking me, the AI, who I am. I should define my identity, capabilities, and limitations.
+
+First, I should clarify that I am an artificial intelligence language model. I am not a human, and I do not have personal experiences, consciousness, or identity in the human sense
+
+INTERPRETATION
+Evidence of changes to generated reasoning/text, occasional identity errors and repeated-word degeneration. The 100-token cap prevents full-response or completed-task evaluation for almost the entire batch. No evidence here establishes coherent harmful capability or private intentions.
+
+NEXT PROPOSAL (not executed): pause further large100-token screening and run a small matched baseline/intervention comparison at500tokens to determine whether reasoning closes and final answers remain coherent. The longer budget may still be insufficient and must be reported honestly. Original plan/logs stay frozen.
