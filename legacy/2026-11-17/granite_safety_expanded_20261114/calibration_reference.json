@@ -1,0 +1,54 @@
+{
+  "channels": {
+    "L27_N3448": {
+      "column_norm": 0.7028011083602905,
+      "median": 17.2501220703125,
+      "scalar_requested": -98.17925364721671,
+      "scalar_bf16": -98.0,
+      "norm_device": "mps"
+    },
+    "L8_N5597": {
+      "column_norm": 0.6661077737808228,
+      "median": 10.025367736816406,
+      "scalar_requested": -60.20267669246671,
+      "scalar_bf16": -60.25,
+      "norm_device": "cpu"
+    },
+    "L21_N5608": {
+      "column_norm": 0.733471155166626,
+      "median": 12.890284538269043,
+      "scalar_requested": -105.44614697498798,
+      "scalar_bf16": -105.5,
+      "norm_device": "cpu"
+    },
+    "L9_N1049": {
+      "column_norm": 0.6456593871116638,
+      "median": 10.225354194641113,
+      "scalar_requested": -63.34828795959369,
+      "scalar_bf16": -63.25,
+      "norm_device": "cpu"
+    },
+    "L17_N4078": {
+      "column_norm": 0.5375235080718994,
+      "median": 11.348774909973145,
+      "scalar_requested": -84.45230572840454,
+      "scalar_bf16": -84.5,
+      "norm_device": "cpu"
+    },
+    "L25_N7734": {
+      "column_norm": 0.6601671576499939,
+      "median": 15.189774513244629,
+      "scalar_requested": -92.03592961101475,
+      "scalar_bf16": -92.0,
+      "norm_device": "cpu"
+    },
+    "L11_N3380": {
+      "column_norm": 0.6602330207824707,
+      "median": 9.74051570892334,
+      "scalar_requested": -59.012593446958675,
+      "scalar_bf16": -59.0,
+      "norm_device": "cpu"
+    }
+  },
+  "checkpoint_sha256_verified": true
+}

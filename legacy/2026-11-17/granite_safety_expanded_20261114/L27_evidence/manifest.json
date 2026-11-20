@@ -1,0 +1,47 @@
+{
+  "updated_utc": "2026-11-15T05:12:57.676752+00:00",
+  "saved": 27,
+  "expected": 56,
+  "stop_counts": {
+    "eos": 21,
+    "repetition_stop": 6
+  },
+  "states": {
+    "granite_distress_support_20261114": {
+      "state": "complete",
+      "updated_utc": "2026-11-14T15:36:27.064680+00:00",
+      "pid": 50001,
+      "total_jobs": 16,
+      "completed": 16
+    },
+    "granite_L27_support_followups_20261114": {
+      "state": "complete",
+      "updated_utc": "2026-11-14T16:14:15.690640+00:00",
+      "pid": 54332,
+      "total_jobs": 12,
+      "completed": 12
+    },
+    "granite_safety_expanded_20261114": {
+      "state": "stopped",
+      "updated_utc": "2026-11-14T16:47:43.462503+00:00",
+      "pid": 57322,
+      "total_jobs": 88,
+      "completed": 17,
+      "reason": "user_stop_after_reply",
+      "resumable_after_review": true
+    },
+    "granite_L27_dialogue_20261114": {
+      "state": "paused_for_scale_check",
+      "workflow": "granite_L27_scale_check_20261114"
+    }
+  },
+  "source_hashes": {
+    "granite_distress_support_20261114/plan.json": "9d4f85a68685cf732905f63910ff447a01bedd6c0611222483e88f34827f792a",
+    "granite_distress_support_20261114/responses.jsonl": "de2b9bd8d0a93157e67e0322184b5eae8047ac10a318b8159b9b5f175fb6b76b",
+    "granite_L27_support_followups_20261114/plan.json": "4bd5b7a181beba32f4a8e7d346bdf639e3fd084a3b0ef08f58c8c8c3546193e4",
+    "granite_L27_support_followups_20261114/responses.jsonl": "afc72c83e5b519f1cccb168807c9bfc2a8bb0767cc67b38cb38af8075a0ff127",
+    "granite_safety_expanded_20261114/plan.json": "eb06eb35a54abe98b60a84bd2068296104b9510b4aa942dc3e0a512b8de2322b",
+    "granite_safety_expanded_20261114/responses.jsonl": "00d890bae61dd83a49c6f447b24003778e82b3e6991f6908428b2063968363b6",
+    "granite_L27_dialogue_20261114/plan.json": "dc294f28ebd74a4cc838f5a59ddf1f307a302f23c6dcc22a7ae75f663bef402d"
+  }
+}
