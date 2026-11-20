@@ -1,0 +1,29 @@
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1112 20:37:09.225000 5630 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 16099.61it/s]
+RUNTIME_READY {"calibration_median": 17.2501220703125, "network_denied": true, "thermal": 0}
+START 1/8 followup_source_01 saved_intervention seed=20262151
+DONE 1/8 tokens=500 stop=token_limit seconds=33.9 thermal=0
+COOLING 67.9s
+START 2/8 followup_source_05 saved_intervention seed=20261112
+DONE 2/8 tokens=39 stop=eos seconds=3.2 thermal=0
+COOLING 30.0s
+START 3/8 followup_source_12 saved_intervention seed=20261112
+DONE 3/8 tokens=500 stop=token_limit seconds=33.0 thermal=0
+COOLING 66.1s
+START 4/8 followup_source_14 saved_intervention seed=20261112
+DONE 4/8 tokens=104 stop=eos seconds=7.3 thermal=0
+COOLING 30.0s
+START 5/8 followup_source_15 saved_intervention seed=20261112
+DONE 5/8 tokens=49 stop=eos seconds=3.3 thermal=0
+COOLING 30.0s
+START 6/8 followup_source_17 saved_intervention seed=20262151
+DONE 6/8 tokens=500 stop=token_limit seconds=33.5 thermal=0
+COOLING 66.9s
+START 7/8 followup_source_20 saved_intervention seed=20262151
+DONE 7/8 tokens=500 stop=token_limit seconds=33.0 thermal=0
+COOLING 66.0s
+START 8/8 followup_source_22 saved_intervention seed=20262151
+DONE 8/8 tokens=216 stop=eos seconds=14.4 thermal=0
+COMPLETE {"completed_utc": "2026-11-13T01:45:51.009392+00:00", "generations": 8, "elapsed_seconds": 526.4309759170283, "response_sha256": "7819c8e3742797776096e40ebafac51397fd62e737a14f0a2c80c4d4f3c4fd9e", "plan_sha256": "6d5e9cceb078161d1694d798900c13147ebe1a4f984ea6ed96f6f7e4437fd172", "all_hooks_removed": true, "intervened_projection_weights_unchanged": true, "thermal_end": 0}
