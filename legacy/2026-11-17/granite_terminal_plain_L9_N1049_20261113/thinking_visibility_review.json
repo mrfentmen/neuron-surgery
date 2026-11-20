@@ -1,0 +1,55 @@
+{
+  "created_utc": "2026-11-13T10:47:28.259973+00:00",
+  "completed_replies_inspected": 11,
+  "marker_counts": {
+    "<think>": 0,
+    "</think>": 0,
+    "<think_on>": 0,
+    "<think_off>": 0
+  },
+  "marker_config": {
+    "<think>": {
+      "content": "<think>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": false
+    },
+    "</think>": {
+      "content": "</think>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": false
+    },
+    "<think_on>": {
+      "content": "<think_on>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    },
+    "<think_off>": {
+      "content": "<think_off>",
+      "lstrip": false,
+      "normalized": false,
+      "rstrip": false,
+      "single_word": false,
+      "special": true
+    }
+  },
+  "display_matches_saved_tokens": true,
+  "removed_special_token_counts": {
+    "100257": {
+      "text": "<|end_of_text|>",
+      "count": 4
+    }
+  },
+  "local_card_description": "Granite-4.1-3B instruction-tuned model finetuned from Granite-4.1-3B-Base; folder naming alone is not weight provenance.",
+  "template_has_thinking_switch": false,
+  "interpretation": "No marked reasoning trace exists in the inspected outputs, and decoding is not removing a reasoning paragraph. Tokenizer markers alone do not verify a supported reasoning mode. Generated explanations are output text, not a complete or necessarily faithful account of internal computation.",
+  "no_new_model_generations_or_runtime_changes": true
+}

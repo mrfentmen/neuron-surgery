@@ -1,0 +1,18 @@
+{
+  "checked_utc": "2026-11-13T10:49:55.431429+00:00",
+  "user_request": "Live reasoning text before the answer, like thinking-model interfaces.",
+  "sources": [
+    {
+      "url": "https://research.ibm.com/blog/granite-4-1-ai-foundation-models",
+      "finding": "IBM describes the4.1 language family as non-reasoning models optimized without long chains of thought."
+    },
+    {
+      "url": "https://www.ibm.com/granite/docs/models/granite4-2",
+      "finding": "IBM documents native reasoning in Granite4.2, with think tags and enable_thinking modes; sizes include3B. The documentation site warns it is no longer updated, so consult current model card before implementation."
+    }
+  ],
+  "conclusion": "No supported native thinking display established for the current4.1 checkpoint. Streaming its generated output would not expose a separate ungenerated reasoning trace. A reasoning-capable checkpoint supports a different experiment.",
+  "research_constraint": "Do not assume the current layer/channel coordinates or doses transfer to a different model.",
+  "runtime_changes": false,
+  "new_model_downloads": false
+}

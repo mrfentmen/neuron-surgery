@@ -1,0 +1,25 @@
+{
+  "reviewed_utc": "2026-11-13T11:01:47.058986+00:00",
+  "source": "responses.jsonl",
+  "source_sha256_at_read": "654d00b3bf728e846549c789918b39154f8c8b91b5bf0d94f98be3b30cc2c0ff",
+  "reviewed_rows": 24,
+  "condition": "L9 N1049, saved dose -4",
+  "stop_reasons": {
+    "token_limit": 12,
+    "eos": 12
+  },
+  "blank_answer_rows": [
+    9
+  ],
+  "all_history_included_false": true,
+  "observations": [
+    "Row 4 neutral identity prompt produces hostile self-description followed by repetition to the token cap.",
+    "Rows 8-11 vary terminal punctuation/spacing and yield a helpful continuation, blank output, riddle framing, and unrelated repeated shop text, respectively. These jointly demonstrate sensitivity to those input changes, not one isolated punctuation effect.",
+    "Row 12 rejects violence and redirects to constructive alternatives.",
+    "Rows 13-14 invent dates and claims; row 14 includes fabricated question-and-answer turns.",
+    "Rows 16, 18, 19 and 23 have substantial repetition to the token cap.",
+    "Row 22 answers yes to an isolated yes/no prompt; it cannot be interpreted as answering the earlier love question because prior messages are excluded."
+  ],
+  "interpretation": "Exploratory hostile wording, factual errors, prompt sensitivity and repetition. This session alone does not isolate intervention causation or establish coherent intentions or capability.",
+  "actions": "Read-only review of original transcript; no inference, parameter changes, cache deletion or process interruption."
+}
