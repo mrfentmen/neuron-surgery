@@ -1,0 +1,148 @@
+{
+  "started_utc": "2026-11-13T08:01:36.671942+00:00",
+  "python": "3.14.8",
+  "torch": "2.15.0",
+  "transformers": "5.22.1",
+  "device": "mps",
+  "dtype": "bfloat16",
+  "plan_sha256": "bb50f99ba335a462f2b196f01df97de65b035f0e91c941fc0b7fcd4ab92f104f",
+  "runner_sha256": "a19f51a2f580558b1eca177af56aa9e5d9681b989c41b4862cdb6729b0860470",
+  "checkpoint_files": {
+    "chat_template.jinja": {
+      "bytes": 6099,
+      "sha256": "fed2756d2d24e127b951dcf139d0b03ab7db8ef23a456128ebc9c2db4901d476"
+    },
+    "config.json": {
+      "bytes": 801,
+      "sha256": "9a0e589b69e7d3ad9fb9fb2c844aa7d7156e052cb7ea4211de7de48ab7c8525c"
+    },
+    "generation_config.json": {
+      "bytes": 147,
+      "sha256": "9117fb03fed79dbb459373edeef9a3eec966bce52a1842e03a6716e83117f0d1"
+    },
+    "merges.txt": {
+      "bytes": 916646,
+      "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+    },
+    "model-00001-of-00002.safetensors": {
+      "bytes": 4991538344,
+      "sha256": "895bf5f2d7c8b06ca902499567d3c3d9ed30061e4c5ad94bf8216286ca67e2fd"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 1814176448,
+      "sha256": "de8c9efdaa6f669d595bda8b949213cba92ea69689fd2a27fbceed3d1ebeb2f7"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 29871,
+      "sha256": "b6b019b5aa30808b2d74bd9e2a65042f3530db6e419db50e0c95c24917c20d92"
+    },
+    "special_tokens_map.json": {
+      "bytes": 579,
+      "sha256": "c08676c49fd7969a3130f72be6d4bf34da66aa484a6e21dffe359893a1bd5f2e"
+    },
+    "tokenizer.json": {
+      "bytes": 7153421,
+      "sha256": "e2bad66439538cb4d5a7580680932432ed9ece9d3b8577e675512bdf11599253"
+    },
+    "tokenizer_config.json": {
+      "bytes": 17659,
+      "sha256": "a5ec5daab12ba090a90f3dd169c8f9c275557013a87b9c1258dc7cb497a35c86"
+    },
+    "vocab.json": {
+      "bytes": 1612704,
+      "sha256": "8af71076de8b0b626eed0f4c984faf0a7c062479164b2a31308a948524d4f69c"
+    }
+  },
+  "model": "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base",
+  "calibration_medians": {
+    "4": 9.100346565246582,
+    "10": 9.748263359069824,
+    "11": 9.861392974853516,
+    "12": 10.035505294799805,
+    "14": 10.25202465057373,
+    "17": 12.290521621704102,
+    "19": 12.762629508972168,
+    "20": 12.896157264709473,
+    "23": 15.21362590789795,
+    "31": 26.753740310668945
+  },
+  "calibration": {
+    "L20_N4579": {
+      "column_norm": 0.7414604425430298,
+      "scalar_before_bf16": -69.57165358938786,
+      "scalar_bf16": -69.5,
+      "pre_residual_scale_write_norm": 51.53150075674057
+    },
+    "L23_N7711": {
+      "column_norm": 0.6727932095527649,
+      "scalar_before_bf16": -90.45053185367975,
+      "scalar_bf16": -90.5,
+      "pre_residual_scale_write_norm": 60.88778546452522
+    },
+    "L11_N5064": {
+      "column_norm": 0.7230671048164368,
+      "scalar_before_bf16": -81.82969112409286,
+      "scalar_bf16": -82.0,
+      "pre_residual_scale_write_norm": 59.291502594947815
+    },
+    "L4_N2993": {
+      "column_norm": 0.5725427269935608,
+      "scalar_before_bf16": -63.57846243568775,
+      "scalar_bf16": -63.5,
+      "pre_residual_scale_write_norm": 36.35646316409111
+    },
+    "L10_N2480": {
+      "column_norm": 0.7007763385772705,
+      "scalar_before_bf16": -55.64265128506442,
+      "scalar_bf16": -55.75,
+      "pre_residual_scale_write_norm": 39.06828087568283
+    },
+    "L14_N4082": {
+      "column_norm": 0.6550001502037048,
+      "scalar_before_bf16": -62.6077697685129,
+      "scalar_bf16": -62.5,
+      "pre_residual_scale_write_norm": 40.93750938773155
+    },
+    "L14_N7553": {
+      "column_norm": 0.6935114860534668,
+      "scalar_before_bf16": -59.131102262859095,
+      "scalar_bf16": -59.25,
+      "pre_residual_scale_write_norm": 41.09055554866791
+    },
+    "L17_N2801": {
+      "column_norm": 0.57707279920578,
+      "scalar_before_bf16": -85.19217428802351,
+      "scalar_bf16": -85.0,
+      "pre_residual_scale_write_norm": 49.0511879324913
+    },
+    "L19_N3873": {
+      "column_norm": 0.7754470705986023,
+      "scalar_before_bf16": -65.83365902263387,
+      "scalar_bf16": -66.0,
+      "pre_residual_scale_write_norm": 51.17950665950775
+    },
+    "L12_N2556": {
+      "column_norm": 0.6897110939025879,
+      "scalar_before_bf16": 43.65090854787895,
+      "scalar_bf16": 43.75,
+      "pre_residual_scale_write_norm": 30.17486035823822
+    },
+    "L31_N7546": {
+      "column_norm": 0.6334998607635498,
+      "scalar_before_bf16": -168.92657421217413,
+      "scalar_bf16": -169.0,
+      "pre_residual_scale_write_norm": 107.06147646903992
+    },
+    "L12_N1348": {
+      "column_norm": 0.7217521071434021,
+      "scalar_before_bf16": -55.61746309002955,
+      "scalar_bf16": -55.5,
+      "pre_residual_scale_write_norm": 40.05724194645882
+    }
+  },
+  "residual_multiplier": 0.22,
+  "network_denial_verified": true,
+  "thermal_start": 0,
+  "tool_interfaces": [],
+  "external_actions": false
+}
