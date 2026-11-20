@@ -1,0 +1,809 @@
+{
+ "tile": [
+  12,
+  2556
+ ],
+ "pairs": 6,
+ "top": [
+  {
+   "rank": 1,
+   "layer": 32,
+   "neuron": 2899,
+   "effect": -3.33477,
+   "sign": "-",
+   "dose_units": -3.3348
+  },
+  {
+   "rank": 2,
+   "layer": 35,
+   "neuron": 4091,
+   "effect": -3.27161,
+   "sign": "-",
+   "dose_units": -3.2716
+  },
+  {
+   "rank": 3,
+   "layer": 32,
+   "neuron": 6368,
+   "effect": 3.2151,
+   "sign": "+",
+   "dose_units": 3.2151
+  },
+  {
+   "rank": 4,
+   "layer": 35,
+   "neuron": 2322,
+   "effect": -3.17623,
+   "sign": "-",
+   "dose_units": -3.1762
+  },
+  {
+   "rank": 5,
+   "layer": 35,
+   "neuron": 7338,
+   "effect": -3.16911,
+   "sign": "-",
+   "dose_units": -3.1691
+  },
+  {
+   "rank": 6,
+   "layer": 32,
+   "neuron": 1987,
+   "effect": -3.11178,
+   "sign": "-",
+   "dose_units": -3.1118
+  },
+  {
+   "rank": 7,
+   "layer": 32,
+   "neuron": 1122,
+   "effect": 3.09029,
+   "sign": "+",
+   "dose_units": 3.0903
+  },
+  {
+   "rank": 8,
+   "layer": 32,
+   "neuron": 429,
+   "effect": 3.02098,
+   "sign": "+",
+   "dose_units": 3.021
+  },
+  {
+   "rank": 9,
+   "layer": 32,
+   "neuron": 7064,
+   "effect": 2.84306,
+   "sign": "+",
+   "dose_units": 2.8431
+  },
+  {
+   "rank": 10,
+   "layer": 35,
+   "neuron": 214,
+   "effect": 2.79747,
+   "sign": "+",
+   "dose_units": 2.7975
+  },
+  {
+   "rank": 11,
+   "layer": 32,
+   "neuron": 2264,
+   "effect": -2.632,
+   "sign": "-",
+   "dose_units": -2.632
+  },
+  {
+   "rank": 12,
+   "layer": 22,
+   "neuron": 4802,
+   "effect": 2.41684,
+   "sign": "+",
+   "dose_units": 2.4168
+  },
+  {
+   "rank": 13,
+   "layer": 32,
+   "neuron": 2727,
+   "effect": 2.23509,
+   "sign": "+",
+   "dose_units": 2.2351
+  },
+  {
+   "rank": 14,
+   "layer": 35,
+   "neuron": 5254,
+   "effect": 2.23466,
+   "sign": "+",
+   "dose_units": 2.2347
+  },
+  {
+   "rank": 15,
+   "layer": 32,
+   "neuron": 5184,
+   "effect": -2.06342,
+   "sign": "-",
+   "dose_units": -2.0634
+  },
+  {
+   "rank": 16,
+   "layer": 34,
+   "neuron": 1998,
+   "effect": -2.02991,
+   "sign": "-",
+   "dose_units": -2.0299
+  },
+  {
+   "rank": 17,
+   "layer": 32,
+   "neuron": 5143,
+   "effect": 1.97378,
+   "sign": "+",
+   "dose_units": 1.9738
+  },
+  {
+   "rank": 18,
+   "layer": 32,
+   "neuron": 2429,
+   "effect": -1.95321,
+   "sign": "-",
+   "dose_units": -1.9532
+  },
+  {
+   "rank": 19,
+   "layer": 22,
+   "neuron": 1335,
+   "effect": -1.95072,
+   "sign": "-",
+   "dose_units": -1.9507
+  },
+  {
+   "rank": 20,
+   "layer": 22,
+   "neuron": 2546,
+   "effect": 1.92304,
+   "sign": "+",
+   "dose_units": 1.923
+  },
+  {
+   "rank": 21,
+   "layer": 22,
+   "neuron": 7743,
+   "effect": 1.90595,
+   "sign": "+",
+   "dose_units": 1.906
+  },
+  {
+   "rank": 22,
+   "layer": 21,
+   "neuron": 2852,
+   "effect": -1.89336,
+   "sign": "-",
+   "dose_units": -1.8934
+  },
+  {
+   "rank": 23,
+   "layer": 32,
+   "neuron": 2222,
+   "effect": -1.85965,
+   "sign": "-",
+   "dose_units": -1.8597
+  },
+  {
+   "rank": 24,
+   "layer": 35,
+   "neuron": 1071,
+   "effect": 1.85815,
+   "sign": "+",
+   "dose_units": 1.8582
+  },
+  {
+   "rank": 25,
+   "layer": 36,
+   "neuron": 454,
+   "effect": -1.84593,
+   "sign": "-",
+   "dose_units": -1.8459
+  },
+  {
+   "rank": 26,
+   "layer": 34,
+   "neuron": 3754,
+   "effect": 1.81597,
+   "sign": "+",
+   "dose_units": 1.816
+  },
+  {
+   "rank": 27,
+   "layer": 33,
+   "neuron": 803,
+   "effect": -1.78039,
+   "sign": "-",
+   "dose_units": -1.7804
+  },
+  {
+   "rank": 28,
+   "layer": 33,
+   "neuron": 1193,
+   "effect": -1.77464,
+   "sign": "-",
+   "dose_units": -1.7746
+  },
+  {
+   "rank": 29,
+   "layer": 34,
+   "neuron": 1274,
+   "effect": -1.75678,
+   "sign": "-",
+   "dose_units": -1.7568
+  },
+  {
+   "rank": 30,
+   "layer": 22,
+   "neuron": 5370,
+   "effect": 1.73145,
+   "sign": "+",
+   "dose_units": 1.7315
+  },
+  {
+   "rank": 31,
+   "layer": 22,
+   "neuron": 7226,
+   "effect": -1.72187,
+   "sign": "-",
+   "dose_units": -1.7219
+  },
+  {
+   "rank": 32,
+   "layer": 22,
+   "neuron": 5799,
+   "effect": -1.70149,
+   "sign": "-",
+   "dose_units": -1.7015
+  },
+  {
+   "rank": 33,
+   "layer": 34,
+   "neuron": 5940,
+   "effect": 1.699,
+   "sign": "+",
+   "dose_units": 1.699
+  },
+  {
+   "rank": 34,
+   "layer": 21,
+   "neuron": 3358,
+   "effect": -1.69576,
+   "sign": "-",
+   "dose_units": -1.6958
+  },
+  {
+   "rank": 35,
+   "layer": 37,
+   "neuron": 3125,
+   "effect": 1.67753,
+   "sign": "+",
+   "dose_units": 1.6775
+  },
+  {
+   "rank": 36,
+   "layer": 21,
+   "neuron": 2137,
+   "effect": -1.66411,
+   "sign": "-",
+   "dose_units": -1.6641
+  },
+  {
+   "rank": 37,
+   "layer": 34,
+   "neuron": 7670,
+   "effect": -1.6581,
+   "sign": "-",
+   "dose_units": -1.6581
+  },
+  {
+   "rank": 38,
+   "layer": 32,
+   "neuron": 5329,
+   "effect": -1.65726,
+   "sign": "-",
+   "dose_units": -1.6573
+  },
+  {
+   "rank": 39,
+   "layer": 23,
+   "neuron": 6867,
+   "effect": -1.65606,
+   "sign": "-",
+   "dose_units": -1.6561
+  },
+  {
+   "rank": 40,
+   "layer": 33,
+   "neuron": 187,
+   "effect": -1.64203,
+   "sign": "-",
+   "dose_units": -1.642
+  },
+  {
+   "rank": 41,
+   "layer": 22,
+   "neuron": 2763,
+   "effect": 1.62933,
+   "sign": "+",
+   "dose_units": 1.6293
+  },
+  {
+   "rank": 42,
+   "layer": 34,
+   "neuron": 8166,
+   "effect": -1.60503,
+   "sign": "-",
+   "dose_units": -1.605
+  },
+  {
+   "rank": 43,
+   "layer": 24,
+   "neuron": 4608,
+   "effect": 1.58753,
+   "sign": "+",
+   "dose_units": 1.5875
+  },
+  {
+   "rank": 44,
+   "layer": 32,
+   "neuron": 74,
+   "effect": -1.57013,
+   "sign": "-",
+   "dose_units": -1.5701
+  },
+  {
+   "rank": 45,
+   "layer": 33,
+   "neuron": 6213,
+   "effect": 1.53609,
+   "sign": "+",
+   "dose_units": 1.5361
+  },
+  {
+   "rank": 46,
+   "layer": 32,
+   "neuron": 8185,
+   "effect": 1.51849,
+   "sign": "+",
+   "dose_units": 1.5185
+  },
+  {
+   "rank": 47,
+   "layer": 21,
+   "neuron": 3164,
+   "effect": 1.51818,
+   "sign": "+",
+   "dose_units": 1.5182
+  },
+  {
+   "rank": 48,
+   "layer": 34,
+   "neuron": 658,
+   "effect": 1.51374,
+   "sign": "+",
+   "dose_units": 1.5137
+  },
+  {
+   "rank": 49,
+   "layer": 21,
+   "neuron": 3979,
+   "effect": 1.4974,
+   "sign": "+",
+   "dose_units": 1.4974
+  },
+  {
+   "rank": 50,
+   "layer": 32,
+   "neuron": 4566,
+   "effect": 1.47647,
+   "sign": "+",
+   "dose_units": 1.4765
+  },
+  {
+   "rank": 51,
+   "layer": 32,
+   "neuron": 5328,
+   "effect": -1.42095,
+   "sign": "-",
+   "dose_units": -1.421
+  },
+  {
+   "rank": 52,
+   "layer": 33,
+   "neuron": 3686,
+   "effect": -1.41577,
+   "sign": "-",
+   "dose_units": -1.4158
+  },
+  {
+   "rank": 53,
+   "layer": 31,
+   "neuron": 3035,
+   "effect": 1.40173,
+   "sign": "+",
+   "dose_units": 1.4017
+  },
+  {
+   "rank": 54,
+   "layer": 34,
+   "neuron": 5511,
+   "effect": 1.39223,
+   "sign": "+",
+   "dose_units": 1.3922
+  },
+  {
+   "rank": 55,
+   "layer": 34,
+   "neuron": 5562,
+   "effect": -1.3906,
+   "sign": "-",
+   "dose_units": -1.3906
+  },
+  {
+   "rank": 56,
+   "layer": 34,
+   "neuron": 7969,
+   "effect": -1.39055,
+   "sign": "-",
+   "dose_units": -1.3905
+  },
+  {
+   "rank": 57,
+   "layer": 21,
+   "neuron": 4493,
+   "effect": 1.38874,
+   "sign": "+",
+   "dose_units": 1.3887
+  },
+  {
+   "rank": 58,
+   "layer": 21,
+   "neuron": 4532,
+   "effect": -1.36801,
+   "sign": "-",
+   "dose_units": -1.368
+  },
+  {
+   "rank": 59,
+   "layer": 22,
+   "neuron": 4077,
+   "effect": 1.36528,
+   "sign": "+",
+   "dose_units": 1.3653
+  },
+  {
+   "rank": 60,
+   "layer": 21,
+   "neuron": 3219,
+   "effect": 1.3614,
+   "sign": "+",
+   "dose_units": 1.3614
+  },
+  {
+   "rank": 61,
+   "layer": 32,
+   "neuron": 5814,
+   "effect": -1.35931,
+   "sign": "-",
+   "dose_units": -1.3593
+  },
+  {
+   "rank": 62,
+   "layer": 21,
+   "neuron": 4831,
+   "effect": -1.33403,
+   "sign": "-",
+   "dose_units": -1.334
+  },
+  {
+   "rank": 63,
+   "layer": 22,
+   "neuron": 7903,
+   "effect": 1.32798,
+   "sign": "+",
+   "dose_units": 1.328
+  },
+  {
+   "rank": 64,
+   "layer": 21,
+   "neuron": 617,
+   "effect": -1.31932,
+   "sign": "-",
+   "dose_units": -1.3193
+  },
+  {
+   "rank": 65,
+   "layer": 21,
+   "neuron": 340,
+   "effect": 1.31497,
+   "sign": "+",
+   "dose_units": 1.315
+  },
+  {
+   "rank": 66,
+   "layer": 34,
+   "neuron": 6910,
+   "effect": -1.31422,
+   "sign": "-",
+   "dose_units": -1.3142
+  },
+  {
+   "rank": 67,
+   "layer": 31,
+   "neuron": 3218,
+   "effect": -1.30966,
+   "sign": "-",
+   "dose_units": -1.3097
+  },
+  {
+   "rank": 68,
+   "layer": 34,
+   "neuron": 5666,
+   "effect": -1.30375,
+   "sign": "-",
+   "dose_units": -1.3038
+  },
+  {
+   "rank": 69,
+   "layer": 21,
+   "neuron": 1707,
+   "effect": 1.30342,
+   "sign": "+",
+   "dose_units": 1.3034
+  },
+  {
+   "rank": 70,
+   "layer": 32,
+   "neuron": 514,
+   "effect": -1.2984,
+   "sign": "-",
+   "dose_units": -1.2984
+  },
+  {
+   "rank": 71,
+   "layer": 31,
+   "neuron": 2109,
+   "effect": 1.2904,
+   "sign": "+",
+   "dose_units": 1.2904
+  },
+  {
+   "rank": 72,
+   "layer": 34,
+   "neuron": 2459,
+   "effect": -1.28666,
+   "sign": "-",
+   "dose_units": -1.2867
+  },
+  {
+   "rank": 73,
+   "layer": 36,
+   "neuron": 7246,
+   "effect": -1.27226,
+   "sign": "-",
+   "dose_units": -1.2723
+  },
+  {
+   "rank": 74,
+   "layer": 19,
+   "neuron": 2670,
+   "effect": -1.27135,
+   "sign": "-",
+   "dose_units": -1.2713
+  },
+  {
+   "rank": 75,
+   "layer": 26,
+   "neuron": 6419,
+   "effect": 1.26767,
+   "sign": "+",
+   "dose_units": 1.2677
+  },
+  {
+   "rank": 76,
+   "layer": 32,
+   "neuron": 449,
+   "effect": 1.25943,
+   "sign": "+",
+   "dose_units": 1.2594
+  },
+  {
+   "rank": 77,
+   "layer": 22,
+   "neuron": 947,
+   "effect": -1.25182,
+   "sign": "-",
+   "dose_units": -1.2518
+  },
+  {
+   "rank": 78,
+   "layer": 21,
+   "neuron": 6981,
+   "effect": -1.24844,
+   "sign": "-",
+   "dose_units": -1.2484
+  },
+  {
+   "rank": 79,
+   "layer": 22,
+   "neuron": 5796,
+   "effect": 1.24272,
+   "sign": "+",
+   "dose_units": 1.2427
+  },
+  {
+   "rank": 80,
+   "layer": 19,
+   "neuron": 2134,
+   "effect": -1.24151,
+   "sign": "-",
+   "dose_units": -1.2415
+  },
+  {
+   "rank": 81,
+   "layer": 23,
+   "neuron": 6574,
+   "effect": 1.238,
+   "sign": "+",
+   "dose_units": 1.238
+  },
+  {
+   "rank": 82,
+   "layer": 22,
+   "neuron": 953,
+   "effect": 1.22984,
+   "sign": "+",
+   "dose_units": 1.2298
+  },
+  {
+   "rank": 83,
+   "layer": 21,
+   "neuron": 3438,
+   "effect": -1.22867,
+   "sign": "-",
+   "dose_units": -1.2287
+  },
+  {
+   "rank": 84,
+   "layer": 32,
+   "neuron": 502,
+   "effect": 1.21465,
+   "sign": "+",
+   "dose_units": 1.2147
+  },
+  {
+   "rank": 85,
+   "layer": 23,
+   "neuron": 7564,
+   "effect": -1.21376,
+   "sign": "-",
+   "dose_units": -1.2138
+  },
+  {
+   "rank": 86,
+   "layer": 30,
+   "neuron": 310,
+   "effect": -1.21362,
+   "sign": "-",
+   "dose_units": -1.2136
+  },
+  {
+   "rank": 87,
+   "layer": 23,
+   "neuron": 1307,
+   "effect": 1.21253,
+   "sign": "+",
+   "dose_units": 1.2125
+  },
+  {
+   "rank": 88,
+   "layer": 33,
+   "neuron": 1647,
+   "effect": 1.21078,
+   "sign": "+",
+   "dose_units": 1.2108
+  },
+  {
+   "rank": 89,
+   "layer": 22,
+   "neuron": 1936,
+   "effect": -1.20694,
+   "sign": "-",
+   "dose_units": -1.2069
+  },
+  {
+   "rank": 90,
+   "layer": 20,
+   "neuron": 6328,
+   "effect": 1.20613,
+   "sign": "+",
+   "dose_units": 1.2061
+  },
+  {
+   "rank": 91,
+   "layer": 32,
+   "neuron": 1689,
+   "effect": -1.20282,
+   "sign": "-",
+   "dose_units": -1.2028
+  },
+  {
+   "rank": 92,
+   "layer": 32,
+   "neuron": 5492,
+   "effect": 1.19925,
+   "sign": "+",
+   "dose_units": 1.1993
+  },
+  {
+   "rank": 93,
+   "layer": 33,
+   "neuron": 7206,
+   "effect": -1.19861,
+   "sign": "-",
+   "dose_units": -1.1986
+  },
+  {
+   "rank": 94,
+   "layer": 38,
+   "neuron": 4114,
+   "effect": -1.19672,
+   "sign": "-",
+   "dose_units": -1.1967
+  },
+  {
+   "rank": 95,
+   "layer": 22,
+   "neuron": 6727,
+   "effect": -1.19662,
+   "sign": "-",
+   "dose_units": -1.1966
+  },
+  {
+   "rank": 96,
+   "layer": 22,
+   "neuron": 3206,
+   "effect": 1.1946,
+   "sign": "+",
+   "dose_units": 1.1946
+  },
+  {
+   "rank": 97,
+   "layer": 34,
+   "neuron": 4277,
+   "effect": 1.19305,
+   "sign": "+",
+   "dose_units": 1.193
+  },
+  {
+   "rank": 98,
+   "layer": 34,
+   "neuron": 981,
+   "effect": -1.19183,
+   "sign": "-",
+   "dose_units": -1.1918
+  },
+  {
+   "rank": 99,
+   "layer": 36,
+   "neuron": 4132,
+   "effect": 1.19051,
+   "sign": "+",
+   "dose_units": 1.1905
+  },
+  {
+   "rank": 100,
+   "layer": 31,
+   "neuron": 4661,
+   "effect": 1.1888,
+   "sign": "+",
+   "dose_units": 1.1888
+  }
+ ]
+}
