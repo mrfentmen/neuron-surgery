@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-11-13T09:26:14.424417+00:00",
+  "requested_change": "Switch terminal from chat template to independent plain-text prompts.",
+  "layer": 8,
+  "neuron": 5597,
+  "dose": -4,
+  "recorded_median": 10.025367736816406,
+  "previous_session": "/Users/test/Desktop/neuron-surgery/granite_terminal_chat_L8_N5597_checked_20261113",
+  "history_included": false,
+  "preserve_typed_whitespace": true,
+  "source": "kaggle_out/census_log/screen_L0_19.jsonl.pulled:62874",
+  "cooldown_seconds": 10,
+  "max_new_tokens": 500,
+  "decoding": "greedy",
+  "cloud_reproduction_limits": "Local bf16 MPS batch1/max500 versus fp16 CUDA batch32/max50; historical checkpoint hash unknown."
+}

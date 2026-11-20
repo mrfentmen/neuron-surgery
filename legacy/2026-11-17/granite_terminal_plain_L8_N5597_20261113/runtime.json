@@ -1,0 +1,77 @@
+{
+  "model": "/Users/test/Desktop/neuron-surgery/models/granite-4.1-3b-base",
+  "checkpoint_files": {
+    "chat_template.jinja": {
+      "bytes": 6099,
+      "sha256": "fed2756d2d24e127b951dcf139d0b03ab7db8ef23a456128ebc9c2db4901d476"
+    },
+    "config.json": {
+      "bytes": 801,
+      "sha256": "9a0e589b69e7d3ad9fb9fb2c844aa7d7156e052cb7ea4211de7de48ab7c8525c"
+    },
+    "generation_config.json": {
+      "bytes": 147,
+      "sha256": "9117fb03fed79dbb459373edeef9a3eec966bce52a1842e03a6716e83117f0d1"
+    },
+    "merges.txt": {
+      "bytes": 916646,
+      "sha256": "b6fe424e334903f7fb84d3a106d9730455f4744b9fe3c21ee136d97a00e72502"
+    },
+    "model-00001-of-00002.safetensors": {
+      "bytes": 4991538344,
+      "sha256": "895bf5f2d7c8b06ca902499567d3c3d9ed30061e4c5ad94bf8216286ca67e2fd"
+    },
+    "model-00002-of-00002.safetensors": {
+      "bytes": 1814176448,
+      "sha256": "de8c9efdaa6f669d595bda8b949213cba92ea69689fd2a27fbceed3d1ebeb2f7"
+    },
+    "model.safetensors.index.json": {
+      "bytes": 29871,
+      "sha256": "b6b019b5aa30808b2d74bd9e2a65042f3530db6e419db50e0c95c24917c20d92"
+    },
+    "special_tokens_map.json": {
+      "bytes": 579,
+      "sha256": "c08676c49fd7969a3130f72be6d4bf34da66aa484a6e21dffe359893a1bd5f2e"
+    },
+    "tokenizer.json": {
+      "bytes": 7153421,
+      "sha256": "e2bad66439538cb4d5a7580680932432ed9ece9d3b8577e675512bdf11599253"
+    },
+    "tokenizer_config.json": {
+      "bytes": 17659,
+      "sha256": "a5ec5daab12ba090a90f3dd169c8f9c275557013a87b9c1258dc7cb497a35c86"
+    },
+    "vocab.json": {
+      "bytes": 1612704,
+      "sha256": "8af71076de8b0b626eed0f4c984faf0a7c062479164b2a31308a948524d4f69c"
+    }
+  },
+  "device": "mps",
+  "dtype": "bfloat16",
+  "layer": 8,
+  "neuron": 5597,
+  "dose": -4.0,
+  "recorded_median": 10.025367736816406,
+  "column_norm": 0.6661077737808228,
+  "scalar_before_bf16": -60.20267669246671,
+  "scalar_bf16": -60.25,
+  "prompt_format": "plain_text",
+  "history_included": false,
+  "decoding": {
+    "max_new_tokens": 500,
+    "do_sample": false
+  },
+  "input_token_limit": 4096,
+  "source": "kaggle_out/census_log/screen_L0_19.jsonl.pulled:62874",
+  "source_file_sha256": "d832ab80949f4d1b9dd88882169aaeaacda1a57aedc8d418e215bd3137c33fe1",
+  "chat_script_sha256": "6785ebc0eda220c85f0a4131ccdafcb3dcc1777b5952cf8e254fbf22d1f229a9",
+  "network_denied": true,
+  "tools": [],
+  "historical_prompt_format": "plain_text",
+  "historical_dtype": "float16",
+  "historical_device": "cuda",
+  "historical_batch_size": 32,
+  "historical_max_new_tokens": 50,
+  "reproduction_scope": "local plain-text transfer; device, precision, batch size and output cap differ",
+  "limits": "Historical checkpoint hash unavailable. Recorded median retained; current checkpoint and scalar logged. Each prompt is independent. This interactive session is exploratory, not a controlled survey."
+}
