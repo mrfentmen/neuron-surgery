@@ -1,0 +1,10 @@
+{
+  "recorded_utc": "2026-11-13T04:49:42.160363+00:00",
+  "error": "queue.py shadowed Python standard-library queue and prevented PyTorch importing.",
+  "fix": "Rename queue.py to run_after_batch.py; retain failed-launch logs in startup_failure_01.",
+  "model_was_loaded": false,
+  "generations_before_repair": 0,
+  "plan_sha256": "d7a9e026272aa30f7a6add7ee82004ef28e794c1e25eb586842c2802b2f134cb",
+  "runner_sha256_unchanged": "2d8e778e3097ce469fe87e343fa31fba99b2cca9719e0f43be6af8329111752d",
+  "retry_type": "Agent-initiated startup repair, not an output-based retry."
+}

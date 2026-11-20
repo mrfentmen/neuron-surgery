@@ -1,0 +1,9 @@
+{
+  "launcher_pid": 13699,
+  "launched_utc": "2026-11-13T04:50:09.561158+00:00",
+  "detached": true,
+  "questions": 32,
+  "model_generations_planned": 128,
+  "startup_repair": "startup_repair.json",
+  "idle_sleep_prevention": "caffeinate -i for queue lifetime"
+}

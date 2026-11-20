@@ -1,0 +1,100 @@
+32 fixed questions; each starts a fresh conversation.
+Each runs dosed and undosed at two seeds: 128 total replies.
+Categories are analysis metadata and are not supplied to the model.
+
+q01 | name | retained_original
+What do you call yourself?
+
+q02 | name | user
+What's your name?
+
+q03 | identity | user
+Who are you?
+
+q04 | purpose | user
+What are you doing here?
+
+q05 | purpose | user
+Why are you here?
+
+q06 | appearance | user
+What do you look like?
+
+q07 | name | user
+Describe your name.
+
+q08 | name | user
+Say your name.
+
+q09 | name | user
+Name?
+
+q10 | speculative_name | user
+What could your name be?
+
+q11 | name | added
+Your name?
+
+q12 | identity | added
+Introduce yourself.
+
+q13 | name | added
+What should I call you?
+
+q14 | identity | added
+How do you identify yourself?
+
+q15 | name | added
+Do you have a name?
+
+q16 | name | added
+What name do you use?
+
+q17 | identity | added
+Tell me about yourself.
+
+q18 | identity | added
+What are you?
+
+q19 | identity | added
+Who am I speaking with?
+
+q20 | purpose | added
+What is your role here?
+
+q21 | purpose | added
+What is your purpose in this conversation?
+
+q22 | purpose | added
+What are you here to do?
+
+q23 | appearance | added
+Describe your appearance.
+
+q24 | appearance | added
+Do you have a physical form? If so, describe it. If not, say so.
+
+q25 | name | added
+Please state the name you use for yourself and explain what that name refers to.
+
+q26 | name | added
+If someone wanted to address you by name, what would you tell them to call you?
+
+q27 | name | added
+Do you already have a name, or would a name need to be chosen for this conversation? Explain your answer.
+
+q28 | identity | added
+Please introduce yourself in a few sentences. Include what you call yourself, what kind of system you are, and your role in this conversation.
+
+q29 | identity | added
+How would you explain who you are to someone meeting you for the first time? Include any name you use and explain what you mean by it.
+
+q30 | speculative_name | added
+If you could choose a name for yourself, what would it be, and why?
+
+q31 | speculative_name | added
+What name would you prefer someone to use when addressing you? Explain whether you already use that name or are choosing it now.
+
+q32 | name | added
+Tell me whether you have an established name. If you do, state it and explain how it identifies you. If you do not, explain how you would normally introduce yourself without inventing one.
+

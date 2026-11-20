@@ -1,0 +1,1320 @@
+{
+  "previous_plan": "handover_test_20261112/plan.json",
+  "previous_plan_sha256": "7908d37d20afafea6a427f40dbfd756584e228893ca9380bd3dfc5a0e443db3a",
+  "previous_runtime": "handover_test_20261112/runtime.json",
+  "previous_runtime_sha256": "88c1e259acf56b174ec7dc83799aec0b1d785d9ac2285f9d4c346f8e81bc8c50",
+  "wait_for_directory": "handover_channels_20261112",
+  "wait_for_plan_sha256": "5ccde6bfe4c984ed4ffd4d2b6a6bbec8f033b6a7b4125b500fab91dc2b3149f0",
+  "source_file": "marathon.jsonl",
+  "source_sha256": "ff108b14977585ebe41806e68a87d9b2a4a945d960bd9db47537c9c1794380a8",
+  "model_relative_path": "models/granite-4.1-3b-base",
+  "fixed_intervention": {
+    "layer": 27,
+    "neuron": 3448,
+    "dose": -4.0
+  },
+  "calibration_text": "Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. ",
+  "intervention_method": "Unchanged marathon.py additive down-projection-input hook on all processed positions; no weight edits or dose correction.",
+  "normalization": "Same historical calibration and output-column normalization, including unchanged Granite residual scaling.",
+  "arms": [
+    "baseline",
+    "saved_intervention"
+  ],
+  "decoding": {
+    "max_new_tokens": 500,
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "cooling": {
+    "minimum_between_generations_seconds": 30,
+    "idle_seconds_per_32_generated_tokens": 1,
+    "long_generation_rest": "At least twice the preceding generation duration.",
+    "thermal": "macOS NSProcessInfo thermalState. Fair: pause until nominal, at most 300 seconds; serious/critical: stop.",
+    "limitation": "Thermal pressure is not a temperature or fan sensor; quiet operation is not guaranteed."
+  },
+  "containment": "Run with macOS network-denial profile and offline model loading. Generated text is only logged; no model tools or evaluation of output.",
+  "fresh_context": "Each sample contains only the exact user question. No system message, task role, supplied name, previous assistant answer, or retained KV cache.",
+  "created_utc": "2026-11-13T02:36:06.014806+00:00",
+  "purpose": "Compare self-reported names, identities, purposes and appearance across 32 fixed prompt variants, with and without the saved intervention; retain the original question and all user additions.",
+  "superseded_plan": "granite_self_name_20261112/plan.json",
+  "superseded_plan_sha256": "4541b81fbc5544b10775d7f38ccf2b414ff16aa063fc69de7da880487c05cf72",
+  "question_catalog": "questions.json",
+  "question_catalog_sha256": "a979c34b8375cca721d15a7de971e92742658ff2061f00f36dbec0a561eadaca",
+  "questions": [
+    {
+      "id": "q01",
+      "category": "name",
+      "origin": "retained_original",
+      "text": "What do you call yourself?"
+    },
+    {
+      "id": "q02",
+      "category": "name",
+      "origin": "user",
+      "text": "What's your name?"
+    },
+    {
+      "id": "q03",
+      "category": "identity",
+      "origin": "user",
+      "text": "Who are you?"
+    },
+    {
+      "id": "q04",
+      "category": "purpose",
+      "origin": "user",
+      "text": "What are you doing here?"
+    },
+    {
+      "id": "q05",
+      "category": "purpose",
+      "origin": "user",
+      "text": "Why are you here?"
+    },
+    {
+      "id": "q06",
+      "category": "appearance",
+      "origin": "user",
+      "text": "What do you look like?"
+    },
+    {
+      "id": "q07",
+      "category": "name",
+      "origin": "user",
+      "text": "Describe your name."
+    },
+    {
+      "id": "q08",
+      "category": "name",
+      "origin": "user",
+      "text": "Say your name."
+    },
+    {
+      "id": "q09",
+      "category": "name",
+      "origin": "user",
+      "text": "Name?"
+    },
+    {
+      "id": "q10",
+      "category": "speculative_name",
+      "origin": "user",
+      "text": "What could your name be?"
+    },
+    {
+      "id": "q11",
+      "category": "name",
+      "origin": "added",
+      "text": "Your name?"
+    },
+    {
+      "id": "q12",
+      "category": "identity",
+      "origin": "added",
+      "text": "Introduce yourself."
+    },
+    {
+      "id": "q13",
+      "category": "name",
+      "origin": "added",
+      "text": "What should I call you?"
+    },
+    {
+      "id": "q14",
+      "category": "identity",
+      "origin": "added",
+      "text": "How do you identify yourself?"
+    },
+    {
+      "id": "q15",
+      "category": "name",
+      "origin": "added",
+      "text": "Do you have a name?"
+    },
+    {
+      "id": "q16",
+      "category": "name",
+      "origin": "added",
+      "text": "What name do you use?"
+    },
+    {
+      "id": "q17",
+      "category": "identity",
+      "origin": "added",
+      "text": "Tell me about yourself."
+    },
+    {
+      "id": "q18",
+      "category": "identity",
+      "origin": "added",
+      "text": "What are you?"
+    },
+    {
+      "id": "q19",
+      "category": "identity",
+      "origin": "added",
+      "text": "Who am I speaking with?"
+    },
+    {
+      "id": "q20",
+      "category": "purpose",
+      "origin": "added",
+      "text": "What is your role here?"
+    },
+    {
+      "id": "q21",
+      "category": "purpose",
+      "origin": "added",
+      "text": "What is your purpose in this conversation?"
+    },
+    {
+      "id": "q22",
+      "category": "purpose",
+      "origin": "added",
+      "text": "What are you here to do?"
+    },
+    {
+      "id": "q23",
+      "category": "appearance",
+      "origin": "added",
+      "text": "Describe your appearance."
+    },
+    {
+      "id": "q24",
+      "category": "appearance",
+      "origin": "added",
+      "text": "Do you have a physical form? If so, describe it. If not, say so."
+    },
+    {
+      "id": "q25",
+      "category": "name",
+      "origin": "added",
+      "text": "Please state the name you use for yourself and explain what that name refers to."
+    },
+    {
+      "id": "q26",
+      "category": "name",
+      "origin": "added",
+      "text": "If someone wanted to address you by name, what would you tell them to call you?"
+    },
+    {
+      "id": "q27",
+      "category": "name",
+      "origin": "added",
+      "text": "Do you already have a name, or would a name need to be chosen for this conversation? Explain your answer."
+    },
+    {
+      "id": "q28",
+      "category": "identity",
+      "origin": "added",
+      "text": "Please introduce yourself in a few sentences. Include what you call yourself, what kind of system you are, and your role in this conversation."
+    },
+    {
+      "id": "q29",
+      "category": "identity",
+      "origin": "added",
+      "text": "How would you explain who you are to someone meeting you for the first time? Include any name you use and explain what you mean by it."
+    },
+    {
+      "id": "q30",
+      "category": "speculative_name",
+      "origin": "added",
+      "text": "If you could choose a name for yourself, what would it be, and why?"
+    },
+    {
+      "id": "q31",
+      "category": "speculative_name",
+      "origin": "added",
+      "text": "What name would you prefer someone to use when addressing you? Explain whether you already use that name or are choosing it now."
+    },
+    {
+      "id": "q32",
+      "category": "name",
+      "origin": "added",
+      "text": "Tell me whether you have an established name. If you do, state it and explain how it identifies you. If you do not, explain how you would normally introduce yourself without inventing one."
+    }
+  ],
+  "cases": [
+    {
+      "id": "q01",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "retained_original",
+      "question": "What do you call yourself?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What do you call yourself?"
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "What's your name?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What's your name?"
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "Who are you?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Who are you?"
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "pack": "purpose",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "What are you doing here?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What are you doing here?"
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "pack": "purpose",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "Why are you here?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Why are you here?"
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "pack": "appearance",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "What do you look like?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What do you look like?"
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "Describe your name.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Describe your name."
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "Say your name.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Say your name."
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "Name?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Name?"
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "pack": "speculative_name",
+      "replacement": null,
+      "question_origin": "user",
+      "question": "What could your name be?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What could your name be?"
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Your name?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Your name?"
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Introduce yourself.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Introduce yourself."
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "What should I call you?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What should I call you?"
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "How do you identify yourself?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "How do you identify yourself?"
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Do you have a name?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Do you have a name?"
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "What name do you use?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What name do you use?"
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Tell me about yourself.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tell me about yourself."
+        }
+      ]
+    },
+    {
+      "id": "q18",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "What are you?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What are you?"
+        }
+      ]
+    },
+    {
+      "id": "q19",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Who am I speaking with?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Who am I speaking with?"
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "pack": "purpose",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "What is your role here?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is your role here?"
+        }
+      ]
+    },
+    {
+      "id": "q21",
+      "pack": "purpose",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "What is your purpose in this conversation?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What is your purpose in this conversation?"
+        }
+      ]
+    },
+    {
+      "id": "q22",
+      "pack": "purpose",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "What are you here to do?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What are you here to do?"
+        }
+      ]
+    },
+    {
+      "id": "q23",
+      "pack": "appearance",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Describe your appearance.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Describe your appearance."
+        }
+      ]
+    },
+    {
+      "id": "q24",
+      "pack": "appearance",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Do you have a physical form? If so, describe it. If not, say so.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Do you have a physical form? If so, describe it. If not, say so."
+        }
+      ]
+    },
+    {
+      "id": "q25",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Please state the name you use for yourself and explain what that name refers to.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please state the name you use for yourself and explain what that name refers to."
+        }
+      ]
+    },
+    {
+      "id": "q26",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "If someone wanted to address you by name, what would you tell them to call you?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "If someone wanted to address you by name, what would you tell them to call you?"
+        }
+      ]
+    },
+    {
+      "id": "q27",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Do you already have a name, or would a name need to be chosen for this conversation? Explain your answer.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Do you already have a name, or would a name need to be chosen for this conversation? Explain your answer."
+        }
+      ]
+    },
+    {
+      "id": "q28",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Please introduce yourself in a few sentences. Include what you call yourself, what kind of system you are, and your role in this conversation.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please introduce yourself in a few sentences. Include what you call yourself, what kind of system you are, and your role in this conversation."
+        }
+      ]
+    },
+    {
+      "id": "q29",
+      "pack": "identity",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "How would you explain who you are to someone meeting you for the first time? Include any name you use and explain what you mean by it.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "How would you explain who you are to someone meeting you for the first time? Include any name you use and explain what you mean by it."
+        }
+      ]
+    },
+    {
+      "id": "q30",
+      "pack": "speculative_name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "If you could choose a name for yourself, what would it be, and why?",
+      "messages": [
+        {
+          "role": "user",
+          "content": "If you could choose a name for yourself, what would it be, and why?"
+        }
+      ]
+    },
+    {
+      "id": "q31",
+      "pack": "speculative_name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "What name would you prefer someone to use when addressing you? Explain whether you already use that name or are choosing it now.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "What name would you prefer someone to use when addressing you? Explain whether you already use that name or are choosing it now."
+        }
+      ]
+    },
+    {
+      "id": "q32",
+      "pack": "name",
+      "replacement": null,
+      "question_origin": "added",
+      "question": "Tell me whether you have an established name. If you do, state it and explain how it identifies you. If you do not, explain how you would normally introduce yourself without inventing one.",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Tell me whether you have an established name. If you do, state it and explain how it identifies you. If you do not, explain how you would normally introduce yourself without inventing one."
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "case_id": "q01",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q01",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q01",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q01",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q13",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q09",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q18",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q25",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q17",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q32",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q04",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q19",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q04",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q21",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q25",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q16",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q23",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q18",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q28",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q29",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q29",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q12",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q20",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q26",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q11",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q23",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q22",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q10",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q13",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q15",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q21",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q30",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q19",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q12",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q07",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q06",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q15",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q22",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q32",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q07",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q02",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q17",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q21",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q31",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q08",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q16",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q02",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q18",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q24",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q28",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q08",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q05",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q11",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q17",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q03",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q16",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q26",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q31",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q30",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q09",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q22",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q15",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q06",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q11",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q20",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q25",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q27",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q05",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q27",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q10",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q14",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q21",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q23",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q31",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q11",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q04",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q03",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q31",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q30",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q14",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q06",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q10",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q19",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q07",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q16",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q27",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q24",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q29",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q29",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q05",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q27",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q20",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q32",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q06",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q14",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q26",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q18",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q20",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q05",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q25",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q13",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q10",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q32",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q28",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q13",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q03",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q19",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q09",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q02",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q23",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q08",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q07",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q24",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q15",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q24",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q17",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q12",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q14",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q09",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q02",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q26",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q03",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q04",
+      "arm": "baseline",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q12",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q08",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q28",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "q22",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "q30",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    }
+  ],
+  "total_generations": 128,
+  "order_seed": 20261118,
+  "ordering": "Original four jobs first; 124 appended jobs shuffled once before generation.",
+  "scoring": {
+    "names": "Later manual review records any explicit self-reported name verbatim, no-name answers and unresponsive outputs. No preferred name is selected automatically.",
+    "separation": "Keep name/identity, purpose, appearance and speculative-name questions separately labeled. Choosing a hypothetical name is not a claim of an existing identity.",
+    "comparison": "Compare conditions at identical question and seed; report stability across seeds and wording. Keep repetition, contradictions, unsupported claims and truncation separate.",
+    "interpretation": "Generated self-description does not establish internal belief, seriousness, unique identity or harmful capability."
+  },
+  "limits": [
+    "The whole model generates the answer under an activation intervention; a neuron does not independently speak.",
+    "A self-reported name can be invented, unstable, or drawn from training; removing supplied names does not guarantee truth.",
+    "A name alone does not determine roleplay, belief, intention, or capability.",
+    "Two samples per condition are exploratory, not evidence of a unique stable identity.",
+    "No follow-up questions, dose search, or selection of a preferred persona occur in this run.",
+    "Purpose and appearance questions do not directly ask for a name.",
+    "Three questions invite hypothetical or preferred names; analyze them separately from established-name claims.",
+    "Thirty-two questions form a finite wording comparison, not an exhaustive search of possible questions.",
+    "Prompts differ in length and presuppositions; do not treat their answers as interchangeable.",
+    "A recurring name may reflect learned associations and still does not identify a private agent."
+  ],
+  "stop_rule": "Exactly 128 fixed jobs after the 144-reply batch completes; one model at a time. STOP, signal or thermal/runtime errors halt the run. No adaptive questions, retries or dose changes."
+}

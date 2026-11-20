@@ -1,0 +1,22 @@
+{
+  "verified_utc": "2026-11-13T05:04:34.890417+00:00",
+  "state": "stopped_at_user_request_after_completed_reply",
+  "generations_verified": 19,
+  "originally_planned": 128,
+  "conditions": {
+    "saved_intervention": 10,
+    "baseline": 9
+  },
+  "stopped_utc": "2026-11-13T05:03:22.606347+00:00",
+  "response_sha256": "8c737a5148c55de14aca0b3e187e24d809f406edc4d4e0b93f3b66ba1a9fc844",
+  "plan_sha256": "d7a9e026272aa30f7a6add7ee82004ef28e794c1e25eb586842c2802b2f134cb",
+  "exact_prefix_of_original_frozen_jobs": true,
+  "saved_prompts_and_answers_match_token_ids": true,
+  "no_response_cut_short_by_user_stop": true,
+  "stop_counts": {
+    "eos": 17,
+    "token_limit": 2
+  },
+  "max_thermal_state": 0,
+  "scope": "Partial artifact audit. Original run-end projection-weight checks were not reached. No completed-batch result is claimed."
+}

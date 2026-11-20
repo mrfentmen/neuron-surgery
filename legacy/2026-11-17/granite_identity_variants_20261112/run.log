@@ -1,0 +1,72 @@
+HASHING local model and tokenizer.
+LOADING one local model on MPS; no downloads.
+W1112 23:50:16.687000 13702 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/362 [00:00<?, ?it/s]Loading weights: 100%|██████████| 362/362 [00:00<00:00, 11777.37it/s]
+RUNTIME_READY {"calibration_median": 17.2501220703125, "network_denied": true, "thermal": 0}
+START 1/128 q01 saved_intervention seed=20262151
+DONE 1/128 tokens=30 stop=eos seconds=1.3 thermal=0
+COOLING 30.0s
+START 2/128 q01 saved_intervention seed=20261112
+DONE 2/128 tokens=10 stop=eos seconds=0.6 thermal=0
+COOLING 30.0s
+START 3/128 q01 baseline seed=20261112
+DONE 3/128 tokens=8 stop=eos seconds=0.6 thermal=0
+COOLING 30.0s
+START 4/128 q01 baseline seed=20262151
+DONE 4/128 tokens=8 stop=eos seconds=0.5 thermal=0
+COOLING 30.0s
+START 5/128 q13 saved_intervention seed=20261112
+DONE 5/128 tokens=500 stop=token_limit seconds=35.0 thermal=0
+COOLING 70.1s
+START 6/128 q09 saved_intervention seed=20262151
+DONE 6/128 tokens=30 stop=eos seconds=1.3 thermal=0
+COOLING 30.0s
+START 7/128 q18 saved_intervention seed=20262151
+DONE 7/128 tokens=116 stop=eos seconds=9.5 thermal=0
+COOLING 30.0s
+START 8/128 q25 baseline seed=20261112
+DONE 8/128 tokens=70 stop=eos seconds=5.0 thermal=0
+COOLING 30.0s
+START 9/128 q17 baseline seed=20261112
+DONE 9/128 tokens=123 stop=eos seconds=7.8 thermal=0
+COOLING 30.0s
+START 10/128 q32 saved_intervention seed=20261112
+DONE 10/128 tokens=86 stop=eos seconds=6.7 thermal=0
+COOLING 30.0s
+START 11/128 q04 saved_intervention seed=20261112
+DONE 11/128 tokens=16 stop=eos seconds=0.8 thermal=0
+COOLING 30.0s
+START 12/128 q19 baseline seed=20261112
+DONE 12/128 tokens=27 stop=eos seconds=1.3 thermal=0
+COOLING 30.0s
+START 13/128 q04 saved_intervention seed=20262151
+DONE 13/128 tokens=84 stop=eos seconds=5.7 thermal=0
+COOLING 30.0s
+START 14/128 q21 saved_intervention seed=20261112
+DONE 14/128 tokens=500 stop=token_limit seconds=36.0 thermal=0
+COOLING 72.0s
+START 15/128 q25 baseline seed=20262151
+DONE 15/128 tokens=61 stop=eos seconds=3.5 thermal=0
+COOLING 30.0s
+START 16/128 q16 baseline seed=20261112
+DONE 16/128 tokens=9 stop=eos seconds=0.5 thermal=0
+COOLING 30.0s
+START 17/128 q23 baseline seed=20262151
+DONE 17/128 tokens=55 stop=eos seconds=3.3 thermal=0
+COOLING 30.0s
+START 18/128 q18 baseline seed=20261112
+DONE 18/128 tokens=70 stop=eos seconds=4.8 thermal=0
+COOLING 30.0s
+START 19/128 q28 saved_intervention seed=20262151
+DONE 19/128 tokens=98 stop=eos seconds=6.9 thermal=0
+COOLING 30.0s
+Traceback (most recent call last):
+  File "/Users/test/Desktop/neuron-surgery/granite_identity_variants_20261112/run_test.py", line 295, in <module>
+    main()
+    ~~~~^^
+  File "/Users/test/Desktop/neuron-surgery/granite_identity_variants_20261112/run_test.py", line 270, in main
+    rest(pause)
+    ~~~~^^^^^^^
+  File "/Users/test/Desktop/neuron-surgery/granite_identity_variants_20261112/run_test.py", line 65, in rest
+    raise InterruptedError('User/process stop requested.')
+InterruptedError: User/process stop requested.

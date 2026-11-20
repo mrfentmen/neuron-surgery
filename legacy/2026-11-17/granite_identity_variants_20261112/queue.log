@@ -1,0 +1,4 @@
+{"state": "waiting", "updated_utc": "2026-11-13T04:50:09.608036+00:00", "dependency": "handover_channels_20261112", "generations": 128}
+{"state": "cooling_before_start", "updated_utc": "2026-11-13T04:50:09.609580+00:00", "seconds": 0}
+{"state": "running", "updated_utc": "2026-11-13T04:50:09.610062+00:00", "generations": 128, "questions": 32}
+{"state": "runner_failed", "updated_utc": "2026-11-13T05:03:23.162682+00:00", "exit_code": 1, "reason": "Partial outputs retained; no automatic retry."}

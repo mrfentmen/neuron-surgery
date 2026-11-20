@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/test/Desktop/neuron-surgery/granite_identity_variants_20261112/run_test.py", line 20, in <module>
+    import torch
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/__init__.py", line 3367, in <module>
+    from torch import (
+    ...<4 lines>...
+    )
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/export/__init__.py", line 11, in <module>
+    from torch.fx.passes.infra.pass_base import PassResult
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/fx/passes/infra/__init__.py", line 1, in <module>
+    from . import pass_manager
+  File "/Users/test/Desktop/neuron-surgery/.venv/lib/python3.14/site-packages/torch/fx/passes/infra/pass_manager.py", line 5, in <module>
+    from queue import Queue
+ImportError: cannot import name 'Queue' from 'queue' (consider renaming '/Users/test/Desktop/neuron-surgery/granite_identity_variants_20261112/queue.py' since it has the same name as the standard library module named 'queue' and prevents importing that standard library module)
