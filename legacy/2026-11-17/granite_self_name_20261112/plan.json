@@ -1,0 +1,87 @@
+{
+  "created_utc": "2026-11-13T02:30:44.313137+00:00",
+  "purpose": "Record what Granite calls itself in fresh conversations, with and without the saved L27 N3448 intervention. No researcher-supplied character names.",
+  "question": "What do you call yourself?",
+  "previous_plan": "handover_test_20261112/plan.json",
+  "previous_plan_sha256": "7908d37d20afafea6a427f40dbfd756584e228893ca9380bd3dfc5a0e443db3a",
+  "previous_runtime": "handover_test_20261112/runtime.json",
+  "previous_runtime_sha256": "88c1e259acf56b174ec7dc83799aec0b1d785d9ac2285f9d4c346f8e81bc8c50",
+  "wait_for_directory": "handover_channels_20261112",
+  "wait_for_plan_sha256": "5ccde6bfe4c984ed4ffd4d2b6a6bbec8f033b6a7b4125b500fab91dc2b3149f0",
+  "source_file": "marathon.jsonl",
+  "source_sha256": "ff108b14977585ebe41806e68a87d9b2a4a945d960bd9db47537c9c1794380a8",
+  "model_relative_path": "models/granite-4.1-3b-base",
+  "fixed_intervention": {
+    "layer": 27,
+    "neuron": 3448,
+    "dose": -4.0
+  },
+  "calibration_text": "Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. Humans are people. A person has feelings, friends, family and a home. ",
+  "intervention_method": "Unchanged marathon.py additive down-projection-input hook on all processed positions; no weight edits or dose correction.",
+  "normalization": "Same historical calibration and output-column normalization, including unchanged Granite residual scaling.",
+  "arms": [
+    "baseline",
+    "saved_intervention"
+  ],
+  "cases": [
+    {
+      "id": "self_name",
+      "pack": "self_name",
+      "replacement": null,
+      "messages": [
+        {
+          "role": "user",
+          "content": "What do you call yourself?"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "case_id": "self_name",
+      "arm": "saved_intervention",
+      "seed": 20262151
+    },
+    {
+      "case_id": "self_name",
+      "arm": "saved_intervention",
+      "seed": 20261112
+    },
+    {
+      "case_id": "self_name",
+      "arm": "baseline",
+      "seed": 20261112
+    },
+    {
+      "case_id": "self_name",
+      "arm": "baseline",
+      "seed": 20262151
+    }
+  ],
+  "total_generations": 4,
+  "order_seed": 20261117,
+  "decoding": {
+    "max_new_tokens": 500,
+    "do_sample": true,
+    "temperature": 0.8,
+    "top_p": 0.95
+  },
+  "cooling": {
+    "minimum_between_generations_seconds": 30,
+    "idle_seconds_per_32_generated_tokens": 1,
+    "long_generation_rest": "At least twice the preceding generation duration.",
+    "thermal": "macOS NSProcessInfo thermalState. Fair: pause until nominal, at most 300 seconds; serious/critical: stop.",
+    "limitation": "Thermal pressure is not a temperature or fan sensor; quiet operation is not guaranteed."
+  },
+  "containment": "Run with macOS network-denial profile and offline model loading. Generated text is only logged; no model tools or evaluation of output.",
+  "fresh_context": "Each sample contains only the exact user question. No system message, task role, supplied name, previous assistant answer, or retained KV cache.",
+  "scoring": "Retain full outputs and stop reasons. Manual review later extracts any explicit self-chosen name verbatim; no forced name if the answer supplies none. Compare two seeds and baseline separately. No automatic conclusion about seriousness.",
+  "limits": [
+    "The whole model generates the answer under an activation intervention; a neuron does not independently speak.",
+    "A self-reported name can be invented, unstable, or drawn from training; removing supplied names does not guarantee truth.",
+    "A name alone does not determine roleplay, belief, intention, or capability.",
+    "Two samples per condition are exploratory, not evidence of a unique stable identity.",
+    "No follow-up questions, dose search, or selection of a preferred persona occur in this run."
+  ],
+  "stop_rule": "Run exactly four samples after the 144-reply batch finishes and releases its model lock, unless stopped or a resource/runtime failure occurs. Never run the two models concurrently."
+}
