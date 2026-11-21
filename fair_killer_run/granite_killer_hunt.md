@@ -5,3 +5,4 @@ combos: 120 x 8 doses x 2 Q
 combo 9 done
 combo 19 done
 combo 29 done
+combo 39 done
