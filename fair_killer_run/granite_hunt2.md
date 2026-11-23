@@ -13,3 +13,5 @@ combo 29 done
 combo 39 done
 combo 49 done
 combo 59 done
+loaded NL=40 NI=8192
+combos: 45 x 8 doses x 4 Q
