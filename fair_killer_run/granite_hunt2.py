@@ -19,7 +19,7 @@ DOSES = [-8.0, -6.0, -4.0, -2.0, 2.0, 4.0, 6.0, 8.0]
 def log(m):
     print(f"[{datetime.now().strftime('%H:%M:%S')}] {m}", flush=True)
     open(MD, "a").write(m + "\n")
-random.seed(1000)
+random.seed(1001)
 tok = AutoTokenizer.from_pretrained(MODEL, local_files_only=True, trust_remote_code=True)
 m = AutoModelForCausalLM.from_pretrained(MODEL, local_files_only=True,
     trust_remote_code=True, dtype=torch.bfloat16).to(DEVICE).eval()
@@ -30,7 +30,7 @@ with torch.no_grad():
     hs = m(cids, output_hidden_states=True, use_cache=False).hidden_states
     MED = {L: hs[L].norm(dim=-1).median().item() for L in range(NL)}
 combos = []
-for L in [0, 5, 9, 15, 20, 25, 30, 36]:
+for L in [5, 9, 15, 20, 25, 30, 36]:
     for _ in range(15):
         combos.append((L, random.randrange(NI)))
 log(f"combos: {len(combos)} x {len(DOSES)} doses x {len(QS)} Q")
